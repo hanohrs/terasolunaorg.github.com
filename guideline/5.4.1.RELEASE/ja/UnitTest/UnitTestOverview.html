@@ -2,23 +2,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>10.1. 単体テスト概要 &#8212; TERASOLUNA Server Framework for Java (5.x) Development Guideline 5.4.1.RELEASE documentation</title>
     <link rel="stylesheet" href="../_static/solar.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '5.4.1.RELEASE',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="10.2. 単体テストの実装" href="ImplementsOfUnitTest/index.html" />
@@ -26,8 +19,7 @@
 <!-- <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'> -->
 <link href="../_static/solarized-dark.css" rel="stylesheet">
 <link href="../_static/jquery.treeview.css" rel="stylesheet">
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -46,8 +38,7 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper"><label><input id="scroll" type="checkbox" checked> scroll sidebar</label>
-
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">10.1. 単体テスト概要</a><ul>
 <li><a class="reference internal" href="#id3">10.1.1. はじめに</a></li>
@@ -72,7 +63,6 @@
 </li>
 </ul>
 
-
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
                         title="previous chapter">10. 単体テスト</a></p>
@@ -88,12 +78,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -174,7 +166,7 @@ JUnit4が標準でサポートしているアサーションライブラリで�
 <p>テスト用のデータアクセスとして、Spring TestまたはDBUnitとSpring Test DBUnitを使用することを想定している。</p>
 <ul class="simple">
 <li><a class="reference external" href="https://docs.spring.io/spring/docs/4.3.14.RELEASE/spring-framework-reference/html/testing-introduction.html">Spring Test</a><ul>
-<li>Spring Testは<code class="docutils literal"><span class="pre">&#64;Sql</span></code>アノテーションや<code class="docutils literal"><span class="pre">JdbcTemplate</span></code>などを使用してSQLを発行する機能を提供している。</li>
+<li>Spring Testは<code class="docutils literal notranslate"><span class="pre">&#64;Sql</span></code>アノテーションや<code class="docutils literal notranslate"><span class="pre">JdbcTemplate</span></code>などを使用してSQLを発行する機能を提供している。</li>
 </ul>
 </li>
 <li><a class="reference external" href="http://dbunit.sourceforge.net/">DBUnit</a> と<a class="reference external" href="https://springtestdbunit.github.io/spring-test-dbunit/">Spring Test DBUnit</a><ul>
@@ -194,8 +186,8 @@ DBUnitの提供するデータベースのセットアップ、状態の検証�
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p>version 5.0.0.RELEASEより、<a class="reference external" href="http://platform.spring.io/platform/">Spring IO platform</a>の
-<code class="docutils literal"><span class="pre">&lt;dependencyManagement&gt;</span></code>をインポートする構成を採用している。</p>
-<p>Spring IO platformの<code class="docutils literal"><span class="pre">&lt;dependencyManagement&gt;</span></code>をインポートすることで、</p>
+<code class="docutils literal notranslate"><span class="pre">&lt;dependencyManagement&gt;</span></code>をインポートする構成を採用している。</p>
+<p>Spring IO platformの<code class="docutils literal notranslate"><span class="pre">&lt;dependencyManagement&gt;</span></code>をインポートすることで、</p>
 <ul class="simple">
 <li>Spring Frameworkが提供しているライブラリ</li>
 <li>Spring Frameworkが依存しているOSSライブラリ</li>
@@ -354,7 +346,7 @@ Spring IO platformの定義に準じている。</p>
     </div>
     <div class="footer">
       © Copyright 2013-2018, NTT DATA Corporation. © Copyright 2013-2018, NTT Corporation.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.3.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.1.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
     </div>
     
     <script>

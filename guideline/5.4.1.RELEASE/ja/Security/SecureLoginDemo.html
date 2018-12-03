@@ -2,23 +2,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>9.10. 代表的なセキュリティ要件の実装例 &#8212; TERASOLUNA Server Framework for Java (5.x) Development Guideline 5.4.1.RELEASE documentation</title>
     <link rel="stylesheet" href="../_static/solar.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '5.4.1.RELEASE',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="10. 単体テスト" href="../UnitTest/index.html" />
@@ -26,8 +19,7 @@
 <!-- <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'> -->
 <link href="../_static/solarized-dark.css" rel="stylesheet">
 <link href="../_static/jquery.treeview.css" rel="stylesheet">
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -46,8 +38,7 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper"><label><input id="scroll" type="checkbox" checked> scroll sidebar</label>
-
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">9.10. 代表的なセキュリティ要件の実装例</a><ul>
 <li><a class="reference internal" href="#id3">9.10.1. はじめに</a><ul>
@@ -166,7 +157,6 @@
 </li>
 </ul>
 
-
   <h4>Previous topic</h4>
   <p class="topless"><a href="OAuth.html"
                         title="previous chapter">9.9. OAuth</a></p>
@@ -182,12 +172,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -1262,16 +1254,16 @@
 <li>認証済みのユーザが初回パスワードを使用している場合</li>
 <li>認証済みのユーザが管理ユーザであり、かつパスワードの有効期限が切れている場合</li>
 </ul>
-<p><code class="docutils literal"><span class="pre">org.springframework.web.servlet.handler.HandlerInterceptor</span></code> を利用して、Controllerのハンドラメソッド実行前に上記の条件に該当するかどうかの判定を行う。</p>
+<p><code class="docutils literal notranslate"><span class="pre">org.springframework.web.servlet.handler.HandlerInterceptor</span></code> を利用して、Controllerのハンドラメソッド実行前に上記の条件に該当するかどうかの判定を行う。</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p class="last">認証後にパスワード変更画面へリダイレクトさせる方法は他にもあるが、方法によってはリダイレクト後にURLを直打ちすることでパスワード変更を避けて別画面にアクセスできてしまう可能性がある。
-<code class="docutils literal"><span class="pre">HandlerInterceptor</span></code> を使用する方法ではハンドラメソッド実行前に処理を行うため、URLを直打ちするなどの方法で回避することはできない。</p>
+<code class="docutils literal notranslate"><span class="pre">HandlerInterceptor</span></code> を使用する方法ではハンドラメソッド実行前に処理を行うため、URLを直打ちするなどの方法で回避することはできない。</p>
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last"><code class="docutils literal"><span class="pre">HandlerInterceptor</span></code> の代わりにServlet Filterを用いることもできる。両者の説明については <a class="reference internal" href="../ImplementationAtEachLayer/ApplicationLayer.html#controller-common-process"><span class="std std-ref">Controllerの呼び出し前後で行う共通処理の実装</span></a> を参照すること。
-ここでは、アプリケーションが許可したリクエストのみに対して処理を行うために、<code class="docutils literal"><span class="pre">HandlerInterceptor</span></code> を用いている。</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">HandlerInterceptor</span></code> の代わりにServlet Filterを用いることもできる。両者の説明については <a class="reference internal" href="../ImplementationAtEachLayer/ApplicationLayer.html#controller-common-process"><span class="std std-ref">Controllerの呼び出し前後で行う共通処理の実装</span></a> を参照すること。
+ここでは、アプリケーションが許可したリクエストのみに対して処理を行うために、<code class="docutils literal notranslate"><span class="pre">HandlerInterceptor</span></code> を用いている。</p>
 </div>
 </li>
 <li><p class="first">パスワード変更を促すメッセージの表示</p>
@@ -1288,7 +1280,7 @@
 <ul>
 <li><p class="first">Entityの実装</p>
 <p>パスワード変更履歴エンティティの実装は以下の通り。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.model</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.model</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -1347,7 +1339,7 @@
 </li>
 <li><p class="first">Repositoryの実装</p>
 <p>データベースに対するパスワード変更履歴エンティティの登録、検索を行うためのRepositoryを以下に示す。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.repository.passwordhistory</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.repository.passwordhistory</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -1380,7 +1372,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">引数として与えられた<code class="docutils literal"><span class="pre">PasswordHistory</span></code> オブジェクトをデータベースのレコードとして登録するメソッド</div>
+<div class="line">引数として与えられた<code class="docutils literal notranslate"><span class="pre">PasswordHistory</span></code> オブジェクトをデータベースのレコードとして登録するメソッド</div>
 </div>
 </td>
 </tr>
@@ -1389,7 +1381,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">引数として与えられたユーザ名をキーとして、パスワードの使用開始日時が指定された日付よりも新しい<code class="docutils literal"><span class="pre">PasswordHistory</span></code> オブジェクトを降順(新しい順)に取得するメソッド</div>
+<div class="line">引数として与えられたユーザ名をキーとして、パスワードの使用開始日時が指定された日付よりも新しい<code class="docutils literal notranslate"><span class="pre">PasswordHistory</span></code> オブジェクトを降順(新しい順)に取得するメソッド</div>
 </div>
 </td>
 </tr>
@@ -1398,14 +1390,14 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">引数として与えられたユーザ名をキーとして、指定された個数の<code class="docutils literal"><span class="pre">PasswordHistory</span></code> オブジェクトを新しい順に取得するメソッド</div>
+<div class="line">引数として与えられたユーザ名をキーとして、指定された個数の<code class="docutils literal notranslate"><span class="pre">PasswordHistory</span></code> オブジェクトを新しい順に取得するメソッド</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
 <p>マッピングファイルは以下の通り。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="cp">&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span>
 <span class="cp">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span>
 
@@ -1468,7 +1460,7 @@
 <li><p class="first">Serviceの実装</p>
 <p>パスワード変更履歴エンティティの操作は <a class="reference internal" href="#password-strength"><span class="std std-ref">パスワードの品質チェック</span></a> においても使用する。
 そのため、以下のようにSharedServiceからRepositoryのメソッドを呼び出す。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordhistory</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordhistory</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -1501,7 +1493,7 @@
 </pre></div>
 </div>
 <p>パスワード変更時にパスワード変更履歴エンティティをデータベースに保存する処理の実装を以下に示す。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.account</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.account</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -1596,7 +1588,7 @@
 </li>
 <li><p class="first">初期パスワード、パスワード有効期限切れの判定</p>
 <p>データベースに登録されたパスワード変更履歴エンティティを用いて、初期パスワードを使用しているかどうかの判定と、パスワードの有効期限が切れているかどうかを判定する処理の実装を以下に示す。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.account</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.account</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -1746,8 +1738,8 @@
 </table>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p>isInitialPassword および isCurrentPasswordExpired に付与されている <code class="docutils literal"><span class="pre">&#64;Cacheable</span></code>は Spring の Cache Abstraction 機能を使用するためのアノテーションである。
-<code class="docutils literal"><span class="pre">&#64;Cacheable</span></code> アノテーションを付与することで、メソッドの引数に対する結果をキャッシュすることができる。
+<p>isInitialPassword および isCurrentPasswordExpired に付与されている <code class="docutils literal notranslate"><span class="pre">&#64;Cacheable</span></code>は Spring の Cache Abstraction 機能を使用するためのアノテーションである。
+<code class="docutils literal notranslate"><span class="pre">&#64;Cacheable</span></code> アノテーションを付与することで、メソッドの引数に対する結果をキャッシュすることができる。
 ここでは、キャッシュの使用により初期パスワード判定、パスワード期限切れ判定のたびにデータベースへのアクセスが発生することを防止し、パフォーマンスの低下を防いでいる。
 Cache Abstraction については <a class="reference external" href="http://docs.spring.io/spring/docs/4.3.14.RELEASE/spring-framework-reference/html/cache.html">公式ドキュメント - Cache</a> を参照すること。</p>
 <p>尚、キャッシュを使用する際には、必要なタイミングでキャッシュをクリアする必要があることに注意すること。
@@ -1757,7 +1749,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </li>
 <li><p class="first">パスワード変更画面への強制リダイレクト</p>
 <p>パスワードの変更を強制するために、パスワード変更画面へリダイレクトさせる処理の実装を以下に示す。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.interceptor</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.interceptor</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -1809,7 +1801,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Controllerのハンドラメソッド実行前に処理を挟み込むために、<code class="docutils literal"><span class="pre">org.springframework.web.servlet.handler.HandlerInterceptorAdapter</span></code> を継承する。</div>
+<div class="line">Controllerのハンドラメソッド実行前に処理を挟み込むために、<code class="docutils literal notranslate"><span class="pre">org.springframework.web.servlet.handler.HandlerInterceptorAdapter</span></code> を継承する。</div>
 </div>
 </td>
 </tr>
@@ -1827,7 +1819,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">取得したユーザ情報が<code class="docutils literal"><span class="pre">org.springframework.security.core.userdetails.UserDetails</span></code> のオブジェクトであるかどうかを確認する。</div>
+<div class="line">取得したユーザ情報が<code class="docutils literal notranslate"><span class="pre">org.springframework.security.core.userdetails.UserDetails</span></code> のオブジェクトであるかどうかを確認する。</div>
 </div>
 </td>
 </tr>
@@ -1836,7 +1828,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">UserDetails</span></code> のオブジェクトを取得する。本アプリケーションでは、<code class="docutils literal"><span class="pre">UserDetails</span></code> の実装として<code class="docutils literal"><span class="pre">LoggedInUser</span></code> というクラスを作成して用いている。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">UserDetails</span></code> のオブジェクトを取得する。本アプリケーションでは、<code class="docutils literal notranslate"><span class="pre">UserDetails</span></code> の実装として<code class="docutils literal notranslate"><span class="pre">LoggedInUser</span></code> というクラスを作成して用いている。</div>
 </div>
 </td>
 </tr>
@@ -1845,7 +1837,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">UserDetails</span></code> オブジェクトからロールを取得してユーザが管理ユーザであるかどうかを判定する。その後、パスワード有効期限が切れているかどうかを判定する処理を呼び出す。二つの判定結果の論理積(And)をとる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">UserDetails</span></code> オブジェクトからロールを取得してユーザが管理ユーザであるかどうかを判定する。その後、パスワード有効期限が切れているかどうかを判定する処理を呼び出す。二つの判定結果の論理積(And)をとる。</div>
 </div>
 </td>
 </tr>
@@ -1863,7 +1855,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">(5)または(6)のいずれかが真である場合、<code class="docutils literal"><span class="pre">javax.servlet.http.HttpServletResponse</span></code> の<code class="docutils literal"><span class="pre">sendRedirect</span></code> メソッドを使用して、パスワード変更画面へリダイレクトさせる。</div>
+<div class="line">(5)または(6)のいずれかが真である場合、<code class="docutils literal notranslate"><span class="pre">javax.servlet.http.HttpServletResponse</span></code> の<code class="docutils literal notranslate"><span class="pre">sendRedirect</span></code> メソッドを使用して、パスワード変更画面へリダイレクトさせる。</div>
 </div>
 </td>
 </tr>
@@ -1880,7 +1872,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </table>
 <p>上記のリダイレクト処理を有効にするための設定は以下の通り。</p>
 <p><strong>spring-mvc.xml</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
 
 <span class="nt">&lt;mvc:interceptors&gt;</span>
 
@@ -1919,7 +1911,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">“/”以下のすべてのパスに対するアクセスに<code class="docutils literal"><span class="pre">HandlerInterceptor</span></code> を適用する。</div>
+<div class="line">“/”以下のすべてのパスに対するアクセスに<code class="docutils literal notranslate"><span class="pre">HandlerInterceptor</span></code> を適用する。</div>
 </div>
 </td>
 </tr>
@@ -1946,7 +1938,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">HandlerInterceptor</span></code> のクラスを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">HandlerInterceptor</span></code> のクラスを指定する。</div>
 </div>
 </td>
 </tr>
@@ -1955,7 +1947,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </li>
 <li><p class="first">パスワード変更を促すメッセージの表示</p>
 <p>トップ画面にパスワード変更を促すメッセージを表示するための、Controllerの実装を以下に示す。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.welcome</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.welcome</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -2006,7 +1998,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">AuthenticationPrincipal</span></code> アノテーションを指定して、<code class="docutils literal"><span class="pre">UserDetails</span></code> を実装した<code class="docutils literal"><span class="pre">LoggedInUser</span></code> のオブジェクトを取得する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">AuthenticationPrincipal</span></code> アノテーションを指定して、<code class="docutils literal notranslate"><span class="pre">UserDetails</span></code> を実装した<code class="docutils literal notranslate"><span class="pre">LoggedInUser</span></code> のオブジェクトを取得する。</div>
 </div>
 </td>
 </tr>
@@ -2015,7 +2007,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">LoggedInUser</span></code> が保持しているアカウント情報を取得する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">LoggedInUser</span></code> が保持しているアカウント情報を取得する。</div>
 </div>
 </td>
 </tr>
@@ -2032,7 +2024,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </table>
 <p>Viewの実装は以下の通り。</p>
 <p><strong>トップ画面(home.jsp)</strong></p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
 
 <span class="nt">&lt;body&gt;</span>
    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
@@ -2144,10 +2136,10 @@ Cache Abstraction については <a class="reference external" href="http://doc
 <li><p class="first">Passayの検証規則の作成</p>
 <div class="line-block">
 <div class="line">本アプリケーションで使用するほとんどの検証規則は、Passayにデフォルトで用意されたクラスを利用することで定義できる。</div>
-<div class="line">しかしながら、Passayが提供するクラスでは、<code class="docutils literal"><span class="pre">org.springframework.security.crypto.password.PasswordEncoder</span></code> でハッシュ化された過去のパスワードと比較する検証規則を定義することができない。</div>
+<div class="line">しかしながら、Passayが提供するクラスでは、<code class="docutils literal notranslate"><span class="pre">org.springframework.security.crypto.password.PasswordEncoder</span></code> でハッシュ化された過去のパスワードと比較する検証規則を定義することができない。</div>
 <div class="line">そのため、Passayが提供するクラスを拡張し、独自の検証規則のクラスを以下のように作成する必要がある。</div>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation.rule</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation.rule</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -2183,7 +2175,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">パスワードが過去に使用したパスワードに含まれないかをチェックするための<code class="docutils literal"><span class="pre">org.passay.HistoryRule</span></code> を拡張する。</div>
+<div class="line">パスワードが過去に使用したパスワードに含まれないかをチェックするための<code class="docutils literal notranslate"><span class="pre">org.passay.HistoryRule</span></code> を拡張する。</div>
 </div>
 </td>
 </tr>
@@ -2192,7 +2184,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">パスワードのハッシュ化に用いている<code class="docutils literal"><span class="pre">PasswordEncoder</span></code> をインジェクションする。</div>
+<div class="line">パスワードのハッシュ化に用いている<code class="docutils literal notranslate"><span class="pre">PasswordEncoder</span></code> をインジェクションする。</div>
 </div>
 </td>
 </tr>
@@ -2210,7 +2202,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">PasswordEncoder</span></code> の <code class="docutils literal"><span class="pre">matches</span></code> メソッドを使用してハッシュ化されたパスワードとの比較を行う。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">PasswordEncoder</span></code> の <code class="docutils literal notranslate"><span class="pre">matches</span></code> メソッドを使用してハッシュ化されたパスワードとの比較を行う。</div>
 </div>
 </td>
 </tr>
@@ -2218,7 +2210,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </table>
 <p>Passayの検証規則を以下に示す通りBean定義する。</p>
 <p><strong>applicationContext.xml</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;lengthRule&quot;</span> <span class="na">class=</span><span class="s">&quot;org.passay.LengthRule&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;lengthRule&quot;</span> <span class="na">class=</span><span class="s">&quot;org.passay.LengthRule&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;minimumLength&quot;</span> <span class="na">value=</span><span class="s">&quot;${security.passwordMinimumLength}&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/bean&gt;</span>
 <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;upperCaseRule&quot;</span> <span class="na">class=</span><span class="s">&quot;org.passay.CharacterRule&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
@@ -2279,7 +2271,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">パスワードの長さをチェックするための<code class="docutils literal"><span class="pre">org.passay.LengthRule</span></code> のプロパティに、プロパティファイルから取得したパスワードの最短長を設定する。</div>
+<div class="line">パスワードの長さをチェックするための<code class="docutils literal notranslate"><span class="pre">org.passay.LengthRule</span></code> のプロパティに、プロパティファイルから取得したパスワードの最短長を設定する。</div>
 </div>
 </td>
 </tr>
@@ -2288,7 +2280,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">半角英大文字を一文字以上含むことをチェックする検証規則。パスワードに含まれる文字種別に関するチェックを行うための<code class="docutils literal"><span class="pre">org.passay.CharacterRule</span></code> のコンストラクタに、<code class="docutils literal"><span class="pre">org.passay.EnglishCharacterData.UpperCase</span></code> と数値の1を設定する。</div>
+<div class="line">半角英大文字を一文字以上含むことをチェックする検証規則。パスワードに含まれる文字種別に関するチェックを行うための<code class="docutils literal notranslate"><span class="pre">org.passay.CharacterRule</span></code> のコンストラクタに、<code class="docutils literal notranslate"><span class="pre">org.passay.EnglishCharacterData.UpperCase</span></code> と数値の1を設定する。</div>
 </div>
 </td>
 </tr>
@@ -2297,7 +2289,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">半角英小文字を一文字以上含むことをチェックする検証規則。パスワードに含まれる文字種別に関するチェックを行うための<code class="docutils literal"><span class="pre">org.passay.CharacterRule</span></code> のコンストラクタに、<code class="docutils literal"><span class="pre">org.passay.EnglishCharacterData.LowerCase</span></code> と数値の1を設定する。</div>
+<div class="line">半角英小文字を一文字以上含むことをチェックする検証規則。パスワードに含まれる文字種別に関するチェックを行うための<code class="docutils literal notranslate"><span class="pre">org.passay.CharacterRule</span></code> のコンストラクタに、<code class="docutils literal notranslate"><span class="pre">org.passay.EnglishCharacterData.LowerCase</span></code> と数値の1を設定する。</div>
 </div>
 </td>
 </tr>
@@ -2306,7 +2298,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">半角数字を一文字以上含むことをチェックする検証規則。パスワードに含まれる文字種別に関するチェックを行うための<code class="docutils literal"><span class="pre">org.passay.CharacterRule</span></code> のコンストラクタに、<code class="docutils literal"><span class="pre">org.passay.EnglishCharacterData.Digit</span></code> と数値の1を設定する。</div>
+<div class="line">半角数字を一文字以上含むことをチェックする検証規則。パスワードに含まれる文字種別に関するチェックを行うための<code class="docutils literal notranslate"><span class="pre">org.passay.CharacterRule</span></code> のコンストラクタに、<code class="docutils literal notranslate"><span class="pre">org.passay.EnglishCharacterData.Digit</span></code> と数値の1を設定する。</div>
 </div>
 </td>
 </tr>
@@ -2315,7 +2307,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">半角記号を一文字以上含むことをチェックする検証規則。パスワードに含まれる文字種別に関するチェックを行うための<code class="docutils literal"><span class="pre">org.passay.CharacterRule</span></code> のコンストラクタに、<code class="docutils literal"><span class="pre">org.passay.EnglishCharacterData.Special</span></code> と数値の1を設定する。</div>
+<div class="line">半角記号を一文字以上含むことをチェックする検証規則。パスワードに含まれる文字種別に関するチェックを行うための<code class="docutils literal notranslate"><span class="pre">org.passay.CharacterRule</span></code> のコンストラクタに、<code class="docutils literal notranslate"><span class="pre">org.passay.EnglishCharacterData.Special</span></code> と数値の1を設定する。</div>
 </div>
 </td>
 </tr>
@@ -2324,7 +2316,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">(2)-(5)の4つの検証規則のうち、3つを満たすことをチェックするための検証規則。<code class="docutils literal"><span class="pre">org.passay.CharacterCharacteristicsRule</span></code> のプロパティに、(2)-(5)で定義したBeanのリストと、数値の3を設定する。</div>
+<div class="line">(2)-(5)の4つの検証規則のうち、3つを満たすことをチェックするための検証規則。<code class="docutils literal notranslate"><span class="pre">org.passay.CharacterCharacteristicsRule</span></code> のプロパティに、(2)-(5)で定義したBeanのリストと、数値の3を設定する。</div>
 </div>
 </td>
 </tr>
@@ -2352,7 +2344,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 <li><p class="first">Passayの検証器の作成</p>
 <p>前述したPassayの検証規則を用いて、実際に検証を行う検証器のBean定義を以下に示す。</p>
 <p><strong>applicationContext.xml</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;characteristicPasswordValidator&quot;</span> <span class="na">class=</span><span class="s">&quot;org.passay.PasswordValidator&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;characteristicPasswordValidator&quot;</span> <span class="na">class=</span><span class="s">&quot;org.passay.PasswordValidator&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
     <span class="nt">&lt;constructor-arg</span> <span class="na">name=</span><span class="s">&quot;rules&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;list&gt;</span>
             <span class="nt">&lt;ref</span> <span class="na">bean=</span><span class="s">&quot;lengthRule&quot;</span> <span class="nt">/&gt;</span>
@@ -2386,7 +2378,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">パスワード自体の性質を検証するための検証器。プロパティとして、<code class="docutils literal"><span class="pre">LengthRule</span></code> , <code class="docutils literal"><span class="pre">CharacterCharacteristicsRule</span></code> , <code class="docutils literal"><span class="pre">UsernameRule</span></code> のBeanを設定する。</div>
+<div class="line">パスワード自体の性質を検証するための検証器。プロパティとして、<code class="docutils literal notranslate"><span class="pre">LengthRule</span></code> , <code class="docutils literal notranslate"><span class="pre">CharacterCharacteristicsRule</span></code> , <code class="docutils literal notranslate"><span class="pre">UsernameRule</span></code> のBeanを設定する。</div>
 </div>
 </td>
 </tr>
@@ -2395,7 +2387,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">過去に使用したパスワードの履歴を使用したチェックを行うための検証器。プロパティとして<code class="docutils literal"><span class="pre">EncodedPasswordHistoryRule</span></code> のBeanを設定する。</div>
+<div class="line">過去に使用したパスワードの履歴を使用したチェックを行うための検証器。プロパティとして<code class="docutils literal notranslate"><span class="pre">EncodedPasswordHistoryRule</span></code> のBeanを設定する。</div>
 </div>
 </td>
 </tr>
@@ -2407,7 +2399,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 <ul>
 <li><p class="first">パスワード自体の性質を検証するアノテーション</p>
 <p>パスワードが最小文字列長よりも長いこと、指定した文字種別の文字を含むこと、ユーザ名を含まないことという三つの検証規則をチェックするアノテーションの実装を以下に示す。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -2451,7 +2443,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">アノテーション付与時に使用する<code class="docutils literal"><span class="pre">ConstraintValidator</span></code> を指定する。</div>
+<div class="line">アノテーション付与時に使用する<code class="docutils literal notranslate"><span class="pre">ConstraintValidator</span></code> を指定する。</div>
 </div>
 </td>
 </tr>
@@ -2475,7 +2467,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </tr>
 </tbody>
 </table>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -2547,7 +2539,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">パスワードとユーザ名を指定した<code class="docutils literal"><span class="pre">org.passay.PasswordData</span></code> のインスタンスを作成し、検証器で入力チェックを行う。</div>
+<div class="line">パスワードとユーザ名を指定した<code class="docutils literal notranslate"><span class="pre">org.passay.PasswordData</span></code> のインスタンスを作成し、検証器で入力チェックを行う。</div>
 </div>
 </td>
 </tr>
@@ -2582,7 +2574,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 <p class="last">「いくつ前までのパスワードの再使用を禁止するか」のみの設定では、短時間の間にパスワード変更を繰り返すことでパスワードを再使用することが可能となってしまう。
 これを防ぐために、本アプリケーションでは「いつ以降使用したパスワードの再使用を禁止するか」を設定して検査を行う。</p>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
 
 <span class="nd">@Documented</span>
 <span class="nd">@Constraint</span><span class="o">(</span><span class="n">validatedBy</span> <span class="o">=</span> <span class="o">{</span> <span class="n">NotReusedPasswordValidator</span><span class="o">.</span><span class="na">class</span> <span class="o">})</span> <span class="c1">// (1)</span>
@@ -2624,7 +2616,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">アノテーション付与時に使用する<code class="docutils literal"><span class="pre">ConstraintValidator</span></code> を指定する。</div>
+<div class="line">アノテーション付与時に使用する<code class="docutils literal notranslate"><span class="pre">ConstraintValidator</span></code> を指定する。</div>
 </div>
 </td>
 </tr>
@@ -2648,7 +2640,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </tr>
 </tbody>
 </table>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -2827,7 +2819,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Passayの検証器で過去のパスワードとの比較を行うために、パスワード変更履歴エンティティからパスワードを取得し、<code class="docutils literal"><span class="pre">org.passay.PasswordData.HistoricalReference</span></code> のリストを作成する。</div>
+<div class="line">Passayの検証器で過去のパスワードとの比較を行うために、パスワード変更履歴エンティティからパスワードを取得し、<code class="docutils literal notranslate"><span class="pre">org.passay.PasswordData.HistoricalReference</span></code> のリストを作成する。</div>
 </div>
 </td>
 </tr>
@@ -2836,7 +2828,7 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">パスワード、ユーザ名、過去のパスワードのリストを指定した<code class="docutils literal"><span class="pre">org.passay.PasswordData</span></code> のインスタンスを作成する。</div>
+<div class="line">パスワード、ユーザ名、過去のパスワードのリストを指定した<code class="docutils literal notranslate"><span class="pre">org.passay.PasswordData</span></code> のインスタンスを作成する。</div>
 </div>
 </td>
 </tr>
@@ -2874,8 +2866,8 @@ Cache Abstraction については <a class="reference external" href="http://doc
 </li>
 <li><p class="first">パスワードの入力チェック</p>
 <p>Bean Validationアノテーションを使用してアプリケーション層で、パスワード入力チェックを行う。
-Formクラスに付与されたアノテーションによってNullチェック以外の入力チェックが網羅されていることから、単項目チェックとしては<code class="docutils literal"><span class="pre">&#64;NotNull</span></code> のみを付与している。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.passwordchange</span><span class="o">;</span>
+Formクラスに付与されたアノテーションによってNullチェック以外の入力チェックが網羅されていることから、単項目チェックとしては<code class="docutils literal notranslate"><span class="pre">&#64;NotNull</span></code> のみを付与している。</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.passwordchange</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -2954,7 +2946,7 @@ Formクラスに付与されたアノテーションによってNullチェック
 </tr>
 </tbody>
 </table>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.passwordchange</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.passwordchange</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -3006,7 +2998,7 @@ Formクラスに付与されたアノテーションによってNullチェック
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">パスワード変更時に呼び出されるハンドラメソッド。パラメータ中のFormに<code class="docutils literal"><span class="pre">&#64;Validated</span></code> アノテーションを付与して、入力チェックを行う。</div>
+<div class="line">パスワード変更時に呼び出されるハンドラメソッド。パラメータ中のFormに<code class="docutils literal notranslate"><span class="pre">&#64;Validated</span></code> アノテーションを付与して、入力チェックを行う。</div>
 </div>
 </td>
 </tr>
@@ -3024,7 +3016,7 @@ Formクラスに付与されたアノテーションによってNullチェック
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">本アプリケーションではBean Valiidationでユーザ名を用いたパスワード入力チェックを行うために、ユーザ名をFormから取得している。
-Viewでは<code class="docutils literal"><span class="pre">Model</span></code> に設定したユーザ名をhiddenで保持することを想定しているが、改ざんされる恐れがあるため、パスワード変更前にFormから取得したユーザ名の確認を行っている。</p>
+Viewでは<code class="docutils literal notranslate"><span class="pre">Model</span></code> に設定したユーザ名をhiddenで保持することを想定しているが、改ざんされる恐れがあるため、パスワード変更前にFormから取得したユーザ名の確認を行っている。</p>
 </div>
 </li>
 </ul>
@@ -3065,9 +3057,9 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 <div class="section" id="id30">
 <h4><a class="toc-backref" href="#id103">9.10.3.3.3. 実装方法</a><a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h4>
 <div class="line-block">
-<div class="line">Spring Securityでは、<code class="docutils literal"><span class="pre">org.springframework.security.core.userdetails.UserDetails</span></code> に対してアカウントのロックアウト状態を設定することができる。</div>
-<div class="line">「ロックアウト状態である」と設定した場合、Spring Securityがその設定を読み取って<code class="docutils literal"><span class="pre">org.springframework.security.authentication.LockedException</span></code> をthrowする。</div>
-<div class="line">この機能を用いることにより、アカウントがロックアウト状態であるか否かを判定して<code class="docutils literal"><span class="pre">UserDetails</span></code> に設定する処理のみを実装すれば、ロックアウト機能が実現できる。</div>
+<div class="line">Spring Securityでは、<code class="docutils literal notranslate"><span class="pre">org.springframework.security.core.userdetails.UserDetails</span></code> に対してアカウントのロックアウト状態を設定することができる。</div>
+<div class="line">「ロックアウト状態である」と設定した場合、Spring Securityがその設定を読み取って<code class="docutils literal notranslate"><span class="pre">org.springframework.security.authentication.LockedException</span></code> をthrowする。</div>
+<div class="line">この機能を用いることにより、アカウントがロックアウト状態であるか否かを判定して<code class="docutils literal notranslate"><span class="pre">UserDetails</span></code> に設定する処理のみを実装すれば、ロックアウト機能が実現できる。</div>
 </div>
 <div class="line-block">
 <div class="line">本アプリケーションでは、認証に失敗した履歴を「認証失敗イベント」エンティティとしてデータベースに保存し、この認証失敗イベントエンティティを使用してアカウントのロックアウト状態の判定を行う。</div>
@@ -3079,7 +3071,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </li>
 <li><p class="first">ロックアウト状態の判定</p>
 <p>あるアカウントについて、現在時刻から一定以上新しい認証失敗イベントエンティティが一定個数以上存在する場合、該当アカウントはロックアウト状態であると判定する。
-認証時にこの判定処理を呼び出し、判定結果を<code class="docutils literal"><span class="pre">UserDetails</span></code> の実装クラスに設定する。</p>
+認証時にこの判定処理を呼び出し、判定結果を<code class="docutils literal notranslate"><span class="pre">UserDetails</span></code> の実装クラスに設定する。</p>
 </li>
 <li><p class="first">認証失敗イベントエンティティの削除</p>
 <div class="line-block">
@@ -3170,7 +3162,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 <ul>
 <li><p class="first">Entityの実装</p>
 <p>ユーザ名と認証試行日時を持つ認証失敗イベントエンティティの実装を以下に示す。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.model</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.model</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -3218,7 +3210,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </li>
 <li><p class="first">Repositoryの実装</p>
 <p>認証失敗イベントエンティティの検索、登録、削除のためのRepositoryを以下に示す。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.repository.authenticationevent</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.repository.authenticationevent</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -3249,7 +3241,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">引数として与えられた<code class="docutils literal"><span class="pre">FailedAuthentication</span></code>オブジェクトをデータベースのレコードとして登録するメソッド</div>
+<div class="line">引数として与えられた<code class="docutils literal notranslate"><span class="pre">FailedAuthentication</span></code>オブジェクトをデータベースのレコードとして登録するメソッド</div>
 </div>
 </td>
 </tr>
@@ -3258,7 +3250,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">引数として与えられたユーザ名をキーとして、指定された個数の<code class="docutils literal"><span class="pre">FailedAuthentication</span></code>オブジェクトを新しい順に取得するメソッド</div>
+<div class="line">引数として与えられたユーザ名をキーとして、指定された個数の<code class="docutils literal notranslate"><span class="pre">FailedAuthentication</span></code>オブジェクトを新しい順に取得するメソッド</div>
 </div>
 </td>
 </tr>
@@ -3274,7 +3266,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </tbody>
 </table>
 <p>マッピングファイルは以下の通り。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="cp">&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span>
 <span class="cp">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span>
 
@@ -3327,7 +3319,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </li>
 <li><p class="first">Serviceの実装</p>
 <p>作成したRepositoryのメソッドを呼び出すServiceを以下の通り定義する。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.authenticationevent</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.authenticationevent</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -3396,7 +3388,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 <td><div class="first last line-block">
 <div class="line">認証失敗イベントエンティティを作成してデータベースに登録するメソッド。</div>
 <div class="line">引数として受け取ったユーザ名のアカウントが存在しない場合、データベースの外部キー制約に違反するため、データベースへの登録処理をスキップする。</div>
-<div class="line">本メソッド実行後の例外により認証失敗イベントエンティティが登録されない可能性を考慮し、トランザクションの伝搬方法に<code class="docutils literal"><span class="pre">REQUIRES_NEW</span></code> を指定している。</div>
+<div class="line">本メソッド実行後の例外により認証失敗イベントエンティティが登録されない可能性を考慮し、トランザクションの伝搬方法に<code class="docutils literal notranslate"><span class="pre">REQUIRES_NEW</span></code> を指定している。</div>
 </div>
 </td>
 </tr>
@@ -3409,9 +3401,9 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 <p>以下、実装方法に従って実装されたコードについて順に解説する。</p>
 <ul>
 <li><p class="first">認証失敗イベントエンティティの保存</p>
-<p>認証失敗時に発生するイベントをハンドリングして処理を行うために、<code class="docutils literal"><span class="pre">&#64;EventListener</span></code> アノテーションを使用する。
-<code class="docutils literal"><span class="pre">&#64;EventListener</span></code> アノテーションによるイベントのハンドリングについては <a class="reference internal" href="Authentication.html#springsecurityauthenticationevent"><span class="std std-ref">認証イベントのハンドリング</span></a> を参照すること。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.account</span><span class="o">;</span>
+<p>認証失敗時に発生するイベントをハンドリングして処理を行うために、<code class="docutils literal notranslate"><span class="pre">&#64;EventListener</span></code> アノテーションを使用する。
+<code class="docutils literal notranslate"><span class="pre">&#64;EventListener</span></code> アノテーションによるイベントのハンドリングについては <a class="reference internal" href="Authentication.html#springsecurityauthenticationevent"><span class="std std-ref">認証イベントのハンドリング</span></a> を参照すること。</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.account</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -3449,7 +3441,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;EventListener</span></code> アノテーションを付与することで、誤ったパスワード等の不正な認証情報によって認証が失敗した際に、<code class="docutils literal"><span class="pre">onApplicationEvent</span></code> メソッドが実行される。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;EventListener</span></code> アノテーションを付与することで、誤ったパスワード等の不正な認証情報によって認証が失敗した際に、<code class="docutils literal notranslate"><span class="pre">onApplicationEvent</span></code> メソッドが実行される。</div>
 </div>
 </td>
 </tr>
@@ -3458,7 +3450,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">AuthenticationFailureBadCredentialsEvent</span></code> オブジェクトから、認証に使用したユーザ名を取得する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">AuthenticationFailureBadCredentialsEvent</span></code> オブジェクトから、認証に使用したユーザ名を取得する。</div>
 </div>
 </td>
 </tr>
@@ -3476,7 +3468,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </li>
 <li><p class="first">ロックアウト状態の判定</p>
 <p>認証失敗イベントエンティティを用いてアカウントのロックアウト状態を判定する処理を記述する。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.account</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.account</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -3583,10 +3575,10 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </tbody>
 </table>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">UserDetails</span></code> の実装クラスである<code class="docutils literal"><span class="pre">org.springframework.security.core.userdetails.User</span></code> では、コンストラクタにロックアウト状態を渡すことができる。</div>
-<div class="line">本アプリケーションでは以下のように<code class="docutils literal"><span class="pre">User</span></code> を継承したクラスと、<code class="docutils literal"><span class="pre">org.springframework.security.core.userdetails.UserDetailsService</span></code> を実装したクラスを用いる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">UserDetails</span></code> の実装クラスである<code class="docutils literal notranslate"><span class="pre">org.springframework.security.core.userdetails.User</span></code> では、コンストラクタにロックアウト状態を渡すことができる。</div>
+<div class="line">本アプリケーションでは以下のように<code class="docutils literal notranslate"><span class="pre">User</span></code> を継承したクラスと、<code class="docutils literal notranslate"><span class="pre">org.springframework.security.core.userdetails.UserDetailsService</span></code> を実装したクラスを用いる。</div>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.userdetails</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.userdetails</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -3630,13 +3622,13 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">親クラスである<code class="docutils literal"><span class="pre">User</span></code> のコンストラクタに <strong>ロックアウト状態でないかどうか</strong> を真理値で渡す。ロックアウト状態でない場合にtrueを渡す必要があることに注意する。</div>
+<div class="line">親クラスである<code class="docutils literal notranslate"><span class="pre">User</span></code> のコンストラクタに <strong>ロックアウト状態でないかどうか</strong> を真理値で渡す。ロックアウト状態でない場合にtrueを渡す必要があることに注意する。</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.userdetails</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.userdetails</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -3685,15 +3677,15 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">LoggedInUser</span></code> のコンストラクタに、<code class="docutils literal"><span class="pre">isLocked</span></code> メソッドによるロックアウト状態の判定結果を渡す。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">LoggedInUser</span></code> のコンストラクタに、<code class="docutils literal notranslate"><span class="pre">isLocked</span></code> メソッドによるロックアウト状態の判定結果を渡す。</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
-<p>作成した<code class="docutils literal"><span class="pre">UserDetailsService</span></code> を使用するための設定は以下の通り。</p>
+<p>作成した<code class="docutils literal notranslate"><span class="pre">UserDetailsService</span></code> を使用するための設定は以下の通り。</p>
 <p><strong>spring-security.xml</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
 
 <span class="nt">&lt;sec:authentication-manager&gt;</span>
     <span class="nt">&lt;sec:authentication-provider</span>
@@ -3721,7 +3713,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">UserDetailsService</span></code> のBeanのidを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">UserDetailsService</span></code> のBeanのidを指定する。</div>
 </div>
 </td>
 </tr>
@@ -3733,7 +3725,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 <li><p class="first">認証成功時の認証失敗イベントエンティティの削除</p>
 <p>連続した認証失敗のみをロックアウトの判定に使用するため、認証に成功した際にはアカウントの認証失敗イベントエンティティを削除する。
 共通部分として作成したServiceに、認証成功時に実行するメソッドを作成する。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.authenticationevent</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.authenticationevent</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -3780,8 +3772,8 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </tr>
 </tbody>
 </table>
-<p>認証成功時に発生するイベントをハンドリングして処理を行うために、 <code class="docutils literal"><span class="pre">&#64;EventListener</span></code> アノテーションを使用する。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.account</span><span class="o">;</span>
+<p>認証成功時に発生するイベントをハンドリングして処理を行うために、 <code class="docutils literal notranslate"><span class="pre">&#64;EventListener</span></code> アノテーションを使用する。</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.account</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -3821,7 +3813,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;EventListener</span></code> アノテーションを付与することで、認証が成功した際に<code class="docutils literal"><span class="pre">onApplicationEvent</span></code> メソッドが実行される。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;EventListener</span></code> アノテーションを付与することで、認証が成功した際に<code class="docutils literal notranslate"><span class="pre">onApplicationEvent</span></code> メソッドが実行される。</div>
 </div>
 </td>
 </tr>
@@ -3830,7 +3822,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">AuthenticationSuccessEvent</span></code> からユーザ名を取得し、認証失敗イベントエンティティを削除する処理を呼び出す。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">AuthenticationSuccessEvent</span></code> からユーザ名を取得し、認証失敗イベントエンティティを削除する処理を呼び出す。</div>
 </div>
 </td>
 </tr>
@@ -3844,7 +3836,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 <li><p class="first">認可の設定</p>
 <p>ロックアウトの解除を行うことができるユーザの権限を以下の通りに設定する。</p>
 <p><strong>spring-security.xml</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
 
   <span class="nt">&lt;sec:http</span> <span class="na">pattern=</span><span class="s">&quot;/resources/**&quot;</span> <span class="na">security=</span><span class="s">&quot;none&quot;</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;sec:http&gt;</span>
@@ -3884,7 +3876,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </table>
 </li>
 <li><p class="first">Serviceの実装</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.unlock</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.unlock</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -3930,7 +3922,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </table>
 </li>
 <li><p class="first">Formの実装</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.unlock</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.unlock</span><span class="o">;</span>
 
 <span class="nd">@Data</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">UnlockForm</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
@@ -3945,7 +3937,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </li>
 <li><p class="first">Viewの実装</p>
 <p><strong>トップ画面(home.jsp)</strong></p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
 
 <span class="nt">&lt;body&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
@@ -3991,7 +3983,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </tbody>
 </table>
 <p><strong>ロックアウト解除フォーム(unlokcForm.jsp)</strong></p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
 
 <span class="nt">&lt;body&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
@@ -4018,7 +4010,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </pre></div>
 </div>
 <p><strong>ロックアウト解除完了画面(unlockComplete.jsp)</strong></p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
 
 <span class="nt">&lt;body&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
@@ -4032,7 +4024,7 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 </div>
 </li>
 <li><p class="first">Controllerの実装</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.unlock</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.unlock</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -4138,8 +4130,8 @@ Viewでは<code class="docutils literal"><span class="pre">Model</span></code> �
 <p>認証に成功した際にSpring Securityが発生させるイベントをハンドリングし、認証に使用したユーザ名と認証に成功した日時を認証成功イベントエンティティとしてデータベースに登録する。</p>
 </li>
 <li><p class="first">前回ログイン日時の取得と表示</p>
-<p>認証時に、アカウントにおける最新の認証成功イベントエンティティをデータベースから取得し、イベントエンティティから認証成功日時を取得して<code class="docutils literal"><span class="pre">org.springframework.security.core.userdetails.UserDetails</span></code> に設定する。
-jspに<code class="docutils literal"><span class="pre">UserDetails</span></code> が保持している認証成功日時をフォーマットして渡し、表示する。</p>
+<p>認証時に、アカウントにおける最新の認証成功イベントエンティティをデータベースから取得し、イベントエンティティから認証成功日時を取得して<code class="docutils literal notranslate"><span class="pre">org.springframework.security.core.userdetails.UserDetails</span></code> に設定する。
+jspに<code class="docutils literal notranslate"><span class="pre">UserDetails</span></code> が保持している認証成功日時をフォーマットして渡し、表示する。</p>
 </li>
 </ul>
 </div>
@@ -4152,7 +4144,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 <ul>
 <li><p class="first">Entityの実装</p>
 <p>ユーザ名と認証成功日時を持つ認証成功イベントエンティティの実装は以下の通り。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.model</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.model</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -4202,7 +4194,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </li>
 <li><p class="first">Repositoryの実装</p>
 <p>認証成功イベントエンティティの検索、登録を行うためのRepositoryを以下に示す。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.repository.authenticationevent</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.repository.authenticationevent</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -4231,7 +4223,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">引数として与えられた<code class="docutils literal"><span class="pre">SuccessfulAuthentication</span></code>オブジェクトをデータベースのレコードとして登録するメソッド</div>
+<div class="line">引数として与えられた<code class="docutils literal notranslate"><span class="pre">SuccessfulAuthentication</span></code>オブジェクトをデータベースのレコードとして登録するメソッド</div>
 </div>
 </td>
 </tr>
@@ -4240,14 +4232,14 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">引数として与えられたユーザ名をキーとして、指定された個数の<code class="docutils literal"><span class="pre">SuccessfulAuthentication</span></code>オブジェクトを新しい順に取得するメソッド</div>
+<div class="line">引数として与えられたユーザ名をキーとして、指定された個数の<code class="docutils literal notranslate"><span class="pre">SuccessfulAuthentication</span></code>オブジェクトを新しい順に取得するメソッド</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
 <p>マッピングファイルは以下の通り。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="cp">&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span>
 <span class="cp">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span>
 
@@ -4291,7 +4283,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </li>
 <li><p class="first">Serviceの実装</p>
 <p>作成したRepositoryのメソッドを呼び出すServiceを以下に示す。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.authenticationevent</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.authenticationevent</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -4337,8 +4329,8 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 <p>以下、実装方法に従って実装されたコードについて順に解説する。</p>
 <ul>
 <li><p class="first">認証成功イベントエンティティの保存</p>
-<p>認証成功時に発生するイベントをハンドリングして処理を行うために、<code class="docutils literal"><span class="pre">&#64;EventListener</span></code> アノテーションを使用する。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.account</span><span class="o">;</span>
+<p>認証成功時に発生するイベントをハンドリングして処理を行うために、<code class="docutils literal notranslate"><span class="pre">&#64;EventListener</span></code> アノテーションを使用する。</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.account</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -4376,7 +4368,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;EventListener</span></code> アノテーションを付与することで、認証が成功した際に、<code class="docutils literal"><span class="pre">onApplicationEvent</span></code> メソッドが実行される。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;EventListener</span></code> アノテーションを付与することで、認証が成功した際に、<code class="docutils literal notranslate"><span class="pre">onApplicationEvent</span></code> メソッドが実行される。</div>
 </div>
 </td>
 </tr>
@@ -4385,7 +4377,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">AuthenticationSuccessEvent</span></code> オブジェクトから、<code class="docutils literal"><span class="pre">UserDetails</span></code> の実装クラスを取得する。このクラスについては以降で説明する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">AuthenticationSuccessEvent</span></code> オブジェクトから、<code class="docutils literal notranslate"><span class="pre">UserDetails</span></code> の実装クラスを取得する。このクラスについては以降で説明する。</div>
 </div>
 </td>
 </tr>
@@ -4404,7 +4396,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 <li><p class="first">前回ログイン日時の取得と表示</p>
 <p>認証成功イベントエンティティから前回ログイン日時を取得するためのServiceを以下に示す。</p>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.account</span><span class="o">;</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.account</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -4476,8 +4468,8 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </tr>
 </tbody>
 </table>
-<p>ログイン時に前回ログイン日時を取得して<code class="docutils literal"><span class="pre">UserDetails</span></code> に保持させるために、以下のように<code class="docutils literal"><span class="pre">User</span></code> を継承したクラスと、<code class="docutils literal"><span class="pre">UserDetailsService</span></code> を実装したクラスを作成する。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.userdetails</span><span class="o">;</span>
+<p>ログイン時に前回ログイン日時を取得して<code class="docutils literal notranslate"><span class="pre">UserDetails</span></code> に保持させるために、以下のように<code class="docutils literal notranslate"><span class="pre">User</span></code> を継承したクラスと、<code class="docutils literal notranslate"><span class="pre">UserDetailsService</span></code> を実装したクラスを作成する。</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.userdetails</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -4546,7 +4538,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </tr>
 </tbody>
 </table>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.userdetails</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.userdetails</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -4595,14 +4587,14 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Serviceのメソッドを呼び出して前回ログイン日時を取得し、<code class="docutils literal"><span class="pre">LoggedInUser</span></code> のコンストラクタに渡す。</div>
+<div class="line">Serviceのメソッドを呼び出して前回ログイン日時を取得し、<code class="docutils literal notranslate"><span class="pre">LoggedInUser</span></code> のコンストラクタに渡す。</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
 <p>トップ画面に前回ログイン日時を表示するためのアプリケーション層の実装を行う。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.welcome</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.welcome</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -4648,7 +4640,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;AuthenticationPrincipal</span></code> を使用してUserDetailsオブジェクトを取得する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;AuthenticationPrincipal</span></code> を使用してUserDetailsオブジェクトを取得する。</div>
 </div>
 </td>
 </tr>
@@ -4657,7 +4649,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">LoggedInUserDetails</span></code> から最終ログイン日時を取得する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">LoggedInUserDetails</span></code> から最終ログイン日時を取得する。</div>
 </div>
 </td>
 </tr>
@@ -4673,7 +4665,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </tbody>
 </table>
 <p><strong>トップ画面(home.jsp)</strong></p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;body&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;body&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
 
       <span class="c">&lt;!-- omitted --&gt;</span>
@@ -4763,7 +4755,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 <li>秘密情報：パスワード再発行時にユーザに入力させるために生成するランダムな文字列</li>
 <li>有効期限：パスワード再発行のための認証情報の有効期限</li>
 </ul>
-<p>トークンの生成には<code class="docutils literal"><span class="pre">java.util.UUID</span></code> クラスの<code class="docutils literal"><span class="pre">randomUUID</span></code> メソッドを用い、秘密情報の生成にはPassayのパスワード生成機能を用いる。</p>
+<p>トークンの生成には<code class="docutils literal notranslate"><span class="pre">java.util.UUID</span></code> クラスの<code class="docutils literal notranslate"><span class="pre">randomUUID</span></code> メソッドを用い、秘密情報の生成にはPassayのパスワード生成機能を用いる。</p>
 <p>秘密情報については、パスワードと同様にハッシュ化してデータベースへ保存する。
 有効期限の設定と確認処理については、<a class="reference internal" href="#reissue-info-validate"><span class="std std-ref">パスワード再発行実行時の検査</span></a> に記す。
 パスワード再発行のための認証情報をユーザに配布する方法については、<a class="reference internal" href="#reissue-info-delivery"><span class="std std-ref">パスワード再発行のための認証情報の配布</span></a> を参照。</p>
@@ -4779,7 +4771,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 <ul>
 <li><p class="first">Entityの作成</p>
 <p>パスワード再発行のための認証情報のEntityを作成する。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.model</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.model</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -4849,7 +4841,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </li>
 <li><p class="first">Repositoryの実装</p>
 <p>パスワード再発行のための認証情報の検索、登録、削除を行うためのRepositoryを以下に示す。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.repository.passwordreissue</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.repository.passwordreissue</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -4885,7 +4877,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">引数として与えられた<code class="docutils literal"><span class="pre">PasswordReissueInfo</span></code>オブジェクトをデータベースのレコードとして登録するメソッド</div>
+<div class="line">引数として与えられた<code class="docutils literal notranslate"><span class="pre">PasswordReissueInfo</span></code>オブジェクトをデータベースのレコードとして登録するメソッド</div>
 </div>
 </td>
 </tr>
@@ -4894,7 +4886,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">引数として与えられたトークンをキーとして、<code class="docutils literal"><span class="pre">PasswordReissueInfo</span></code>オブジェクトを検索し、取得するメソッド</div>
+<div class="line">引数として与えられたトークンをキーとして、<code class="docutils literal notranslate"><span class="pre">PasswordReissueInfo</span></code>オブジェクトを検索し、取得するメソッド</div>
 </div>
 </td>
 </tr>
@@ -4903,14 +4895,14 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">引数として与えられたトークンをキーとして、<code class="docutils literal"><span class="pre">PasswordReissueInfo</span></code>オブジェクトを削除するメソッド</div>
+<div class="line">引数として与えられたトークンをキーとして、<code class="docutils literal notranslate"><span class="pre">PasswordReissueInfo</span></code>オブジェクトを削除するメソッド</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
 <p>マッピングファイルは以下の通り。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="cp">&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span>
 <span class="cp">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span>
 
@@ -5010,7 +5002,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </tbody>
 </table>
 <p><strong>applicationContext.xml</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;passwordGenerator&quot;</span> <span class="na">class=</span><span class="s">&quot;org.passay.PasswordGenerator&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;passwordGenerator&quot;</span> <span class="na">class=</span><span class="s">&quot;org.passay.PasswordGenerator&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
 <span class="nt">&lt;util:list</span> <span class="na">id=</span><span class="s">&quot;passwordGenerationRules&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;ref</span> <span class="na">bean=</span><span class="s">&quot;upperCaseRule&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;ref</span> <span class="na">bean=</span><span class="s">&quot;lowerCaseRule&quot;</span> <span class="nt">/&gt;</span>
@@ -5021,7 +5013,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </li>
 <li><p class="first">Serviceの実装</p>
 <p>パスワード再発行のための認証情報を作成し、データベースへ保存するための処理の実装を以下に示す。この処理中で生成した認証情報をメール送信する。メール送信については後述するため、ここでは省略する。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordreissue</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordreissue</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -5157,7 +5149,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">トークンとして用いるために、<code class="docutils literal"><span class="pre">java.util.UUID</span></code> クラスの<code class="docutils literal"><span class="pre">randomUUID</span></code> メソッドを用いてランダムな文字列を生成する。</div>
+<div class="line">トークンとして用いるために、<code class="docutils literal notranslate"><span class="pre">java.util.UUID</span></code> クラスの<code class="docutils literal notranslate"><span class="pre">randomUUID</span></code> メソッドを用いてランダムな文字列を生成する。</div>
 </div>
 </td>
 </tr>
@@ -5184,7 +5176,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">秘密情報はハッシュ化を行ってから<code class="docutils literal"><span class="pre">PasswordReissueInfo</span></code> に設定する。</div>
+<div class="line">秘密情報はハッシュ化を行ってから<code class="docutils literal notranslate"><span class="pre">PasswordReissueInfo</span></code> に設定する。</div>
 </div>
 </td>
 </tr>
@@ -5210,7 +5202,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </table>
 </li>
 <li><p class="first">Formの実装</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.passwordreissue</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.passwordreissue</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -5227,7 +5219,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </li>
 <li><p class="first">Viewの実装</p>
 <p><strong>パスワード再発行のための認証情報生成画面(createReissueInfoForm.xml)</strong></p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
 
 <span class="nt">&lt;body&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
@@ -5255,7 +5247,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </div>
 </li>
 <li><p class="first">Controllerの実装</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.passwordreissue</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.passwordreissue</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -5363,7 +5355,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 <ul>
 <li><p class="first">秘密情報の画面表示</p>
 <p>Controllerから秘密情報の生成処理を呼び出し、Viewに表示するための一連の実装を以下に示す。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.passwordreissue</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.passwordreissue</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -5441,7 +5433,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </tbody>
 </table>
 <p><strong>パスワード再発行用の認証情報生成完了画面(createReissueInfoComplete.jsp)</strong></p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
 
 <span class="nt">&lt;body&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
@@ -5481,7 +5473,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 <li><p class="first">パスワード再発行画面のURLのメール送付</p>
 <p>パスワード再発行用の認証情報からパスワード再発行画面のURLを作成し、メール送付する処理の実装を以下に示す。
 依存ライブラリの追加方法やメールセッションの取得方法等の詳細については、<a class="reference internal" href="../ArchitectureInDetail/MessagingDetail/Email.html"><span class="doc">E-mail送信(SMTP)</span></a> を参照。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.mail</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.mail</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -5525,7 +5517,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">org.springframework.mail.javamail.JavaMailSender</span></code> のBeanをインジェクションする。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">org.springframework.mail.javamail.JavaMailSender</span></code> のBeanをインジェクションする。</div>
 </div>
 </td>
 </tr>
@@ -5534,8 +5526,8 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">送信元のメールアドレスとメールタイトルが設定された、<code class="docutils literal"><span class="pre">org.springframework.mail.SimpleMailMessage</span></code> のBeanをインジェクションする。</div>
-<div class="line">本アプリケーションでは<code class="docutils literal"><span class="pre">SimpleMailMessage</span></code> のBeanは一つしか定義されていないが、一般にはメールのテンプレートとして複数のBeanが定義されるため、 <code class="docutils literal"><span class="pre">&#64;Named</span></code> でBean名を指定している。</div>
+<div class="line">送信元のメールアドレスとメールタイトルが設定された、<code class="docutils literal notranslate"><span class="pre">org.springframework.mail.SimpleMailMessage</span></code> のBeanをインジェクションする。</div>
+<div class="line">本アプリケーションでは<code class="docutils literal notranslate"><span class="pre">SimpleMailMessage</span></code> のBeanは一つしか定義されていないが、一般にはメールのテンプレートとして複数のBeanが定義されるため、 <code class="docutils literal notranslate"><span class="pre">&#64;Named</span></code> でBean名を指定している。</div>
 </div>
 </td>
 </tr>
@@ -5544,13 +5536,13 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">テンプレートから<code class="docutils literal"><span class="pre">SimpleMailMessage</span></code> のインスタンスを生成し、引数として与えられた宛先メールアドレスと本文を設定して送信する。</div>
+<div class="line">テンプレートから<code class="docutils literal notranslate"><span class="pre">SimpleMailMessage</span></code> のインスタンスを生成し、引数として与えられた宛先メールアドレスと本文を設定して送信する。</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordreissue</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordreissue</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -5648,7 +5640,7 @@ jspに<code class="docutils literal"><span class="pre">UserDetails</span></code>
 </td>
 <td><div class="first last line-block">
 <div class="line">(1)で取得した値と、生成したパスワード再発行用の認証情報に含まれるトークンを使用して、ユーザに配布するパスワード再発行画面のURLを作成する。</div>
-<div class="line">URLの作成には <code class="docutils literal"><span class="pre">org.springframework.web.util.UriComponentsBuilder</span></code> を利用する。<code class="docutils literal"><span class="pre">UriComponentsBuilder</span></code> については、<a class="reference internal" href="../ArchitectureInDetail/WebServiceDetail/REST.html#restappendixhypermedialink"><span class="std std-ref">ハイパーメディアリンクの実装</span></a> の中で説明されている。</div>
+<div class="line">URLの作成には <code class="docutils literal notranslate"><span class="pre">org.springframework.web.util.UriComponentsBuilder</span></code> を利用する。<code class="docutils literal notranslate"><span class="pre">UriComponentsBuilder</span></code> については、<a class="reference internal" href="../ArchitectureInDetail/WebServiceDetail/REST.html#restappendixhypermedialink"><span class="std std-ref">ハイパーメディアリンクの実装</span></a> の中で説明されている。</div>
 <div class="line">上記例では、作成されるURLのパス以下は”reissue/resetpassword?form&amp;token=512f1a33-da20-4b9f-9e26-8961e9071618”のようになる。（token部分はランダムに生成される。）</div>
 </div>
 </td>
@@ -5717,7 +5709,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 <p>パスワード再発行用の認証情報への有効期限の設定自体は、 <a class="reference internal" href="#reissue-info-create"><span class="std std-ref">パスワード再発行のための認証情報の生成</span></a> で説明した処理に含まれている。ここでは、関連する実装箇所のみ再掲する。</p>
 <ul>
 <li><p class="first">Serviceの実装</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordreissue</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordreissue</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -5818,7 +5810,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 この処理中ではパスワード再発行の失敗上限を超過しているかどうかの検査も行うが、後述するため、ここでは省略する。</p>
 <ul>
 <li><p class="first">Serviceの実装</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordreissue</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordreissue</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -5885,7 +5877,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">有効期限が切れている場合は、<code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.exception.BusinessException</span></code> をthrowする。</div>
+<div class="line">有効期限が切れている場合は、<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.exception.BusinessException</span></code> をthrowする。</div>
 </div>
 </td>
 </tr>
@@ -5893,7 +5885,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </table>
 </li>
 <li><p class="first">Controllerの実装</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.passwordreissue</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.passwordreissue</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -5962,7 +5954,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 この確認処理はパスワード再発行固有のロジックであり、かつデータベースの内容によって結果が異なるチェックであることから、Bean ValidationやSpring Validatorを用いず、Serviceに実装している。</p>
 <ul>
 <li><p class="first">Serviceの実装</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordreissue</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordreissue</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -6000,7 +5992,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </tr>
 </tbody>
 </table>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordreissue</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordreissue</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -6068,7 +6060,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">パスワード再発行用の認証情報に含まれるハッシュ化された秘密情報と、引数として与えられた秘密情報を比較する。異なる場合には<code class="docutils literal"><span class="pre">BusinessException</span></code> をthrowする。この場合、パスワードの再発行は失敗となる。</div>
+<div class="line">パスワード再発行用の認証情報に含まれるハッシュ化された秘密情報と、引数として与えられた秘密情報を比較する。異なる場合には<code class="docutils literal notranslate"><span class="pre">BusinessException</span></code> をthrowする。この場合、パスワードの再発行は失敗となる。</div>
 </div>
 </td>
 </tr>
@@ -6094,8 +6086,8 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </table>
 </li>
 <li><p class="first">Formの実装</p>
-<p>クラスに付与されたアノテーションによってNullチェック以外の入力チェックが網羅されていることから、単項目チェックとしては<code class="docutils literal"><span class="pre">&#64;NotNull</span></code> のみを付与している。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.passwordreissue</span><span class="o">;</span>
+<p>クラスに付与されたアノテーションによってNullチェック以外の入力チェックが網羅されていることから、単項目チェックとしては<code class="docutils literal notranslate"><span class="pre">&#64;NotNull</span></code> のみを付与している。</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.passwordreissue</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -6158,7 +6150,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </li>
 <li><p class="first">Viewの実装</p>
 <p><strong>パスワード再発行画面(passwordResetForm.jsp)</strong></p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;body&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;body&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;h1&gt;</span>Reset Password<span class="nt">&lt;/h1&gt;</span>
         <span class="nt">&lt;t:messagesPanel</span> <span class="nt">/&gt;</span>
@@ -6245,7 +6237,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </tbody>
 </table>
 <p><strong>パスワード再発行画面(passwordResetComplete.jsp)</strong></p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;body&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;body&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;h1&gt;</span>Your password was successfully reset.<span class="nt">&lt;/h1&gt;</span>
         <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;${f:h(pageContext.request.contextPath)}/&quot;</span><span class="nt">&gt;</span>go to Top<span class="nt">&lt;/a&gt;</span>
@@ -6255,7 +6247,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </li>
 <li><p class="first">Controllerの実装</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.passwordreissue</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.passwordreissue</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -6370,7 +6362,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 <ul>
 <li><p class="first">Entityの実装</p>
 <p>パスワード再発行失敗イベントエンティティの実装は以下の通り。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.model</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.model</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -6418,7 +6410,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </li>
 <li><p class="first">Repositoryの実装</p>
 <p>Entityの検索、登録、削除を行うためのRepositoryを以下に示す。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.repository.passwordreissue</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.repository.passwordreissue</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -6451,7 +6443,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">引数として与えられたトークンをキーとして<code class="docutils literal"><span class="pre">FailedPasswordReissue</span></code>オブジェクトの個数を取得するメソッド</div>
+<div class="line">引数として与えられたトークンをキーとして<code class="docutils literal notranslate"><span class="pre">FailedPasswordReissue</span></code>オブジェクトの個数を取得するメソッド</div>
 </div>
 </td>
 </tr>
@@ -6460,7 +6452,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">引数として与えられた<code class="docutils literal"><span class="pre">FailedPasswordReissue</span></code>オブジェクトをデータベースのレコードとして登録するメソッド</div>
+<div class="line">引数として与えられた<code class="docutils literal notranslate"><span class="pre">FailedPasswordReissue</span></code>オブジェクトをデータベースのレコードとして登録するメソッド</div>
 </div>
 </td>
 </tr>
@@ -6469,14 +6461,14 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">引数として与えられたトークンをキーとして<code class="docutils literal"><span class="pre">FailedPasswordReissue</span></code>オブジェクトを削除するメソッド</div>
+<div class="line">引数として与えられたトークンをキーとして<code class="docutils literal notranslate"><span class="pre">FailedPasswordReissue</span></code>オブジェクトを削除するメソッド</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
 <p>マッピングファイルは以下の通り。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="cp">&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span>
 <span class="cp">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span>
 
@@ -6526,7 +6518,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 <ul>
 <li><p class="first">パスワード再発行失敗イベントエンティティの保存</p>
 <p>パスワード再発行失敗時に行う処理を実装したクラスを以下に示す。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordreissue</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordreissue</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PasswordReissueFailureSharedService</span> <span class="o">{</span>
 
@@ -6535,7 +6527,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 <span class="o">}</span>
 </pre></div>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordreissue</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordreissue</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -6606,7 +6598,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </tbody>
 </table>
 <p><a class="reference internal" href="#reissue-info-validate"><span class="std std-ref">パスワード再発行実行時の検査</span></a> の「パスワード再発行のための認証情報を用いたユーザの確認」処理の中から、パスワード再発行失敗時の処理を呼び出す。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordreissue</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordreissue</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -6699,7 +6691,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </li>
 <li><p class="first">パスワード再発行時の例外のスロー</p>
 <p>パスワード再発行の失敗回数の取得と、失敗回数が上限に達した際の処理の実装を以下に示す。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordreissue</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.service.passwordreissue</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -6872,9 +6864,9 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </tbody>
 </table>
 <div class="line-block">
-<div class="line">尚、以下のコードでは <code class="docutils literal"><span class="pre">org.springframework.web.multipart.MultipartRequest</span></code> を使用するため、<code class="docutils literal"><span class="pre">org.springframework.web.multipart.support.MultipartFilter</span></code> の使用を前提としている。<code class="docutils literal"><span class="pre">MultipartFilter</span></code> については <a class="reference internal" href="../ArchitectureInDetail/WebApplicationDetail/FileUpload.html"><span class="doc">ファイルアップロード</span></a>を参照のこと。</div>
+<div class="line">尚、以下のコードでは <code class="docutils literal notranslate"><span class="pre">org.springframework.web.multipart.MultipartRequest</span></code> を使用するため、<code class="docutils literal notranslate"><span class="pre">org.springframework.web.multipart.support.MultipartFilter</span></code> の使用を前提としている。<code class="docutils literal notranslate"><span class="pre">MultipartFilter</span></code> については <a class="reference internal" href="../ArchitectureInDetail/WebApplicationDetail/FileUpload.html"><span class="doc">ファイルアップロード</span></a>を参照のこと。</div>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.filter</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.filter</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -6956,7 +6948,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">org.springframework.web.filter.OncePerRequestFilter</span></code> を継承することで、リクエストに対して一度だけ処理が実行されることが保証される</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">org.springframework.web.filter.OncePerRequestFilter</span></code> を継承することで、リクエストに対して一度だけ処理が実行されることが保証される</div>
 </div>
 </td>
 </tr>
@@ -6992,8 +6984,8 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">ファイルアップロードリクエスト(Content-Typeが<code class="docutils literal"><span class="pre">multipart/form-data</span></code> のPOSTリクエスト)の場合、<code class="docutils literal"><span class="pre">MultipartFilter</span></code> の機能によって、ここでの<code class="docutils literal"><span class="pre">request</span></code> オブジェクトは<code class="docutils literal"><span class="pre">MultipartRequest</span></code> を実装した<code class="docutils literal"><span class="pre">StandardMultipartHttpServletRequest</span></code> のインスタンスとなる</div>
-<div class="line"><code class="docutils literal"><span class="pre">MultipartRequest</span></code> のAPIを用いてファイル名を取り出し、入力チェックを行うメソッドを呼び出す</div>
+<div class="line">ファイルアップロードリクエスト(Content-Typeが<code class="docutils literal notranslate"><span class="pre">multipart/form-data</span></code> のPOSTリクエスト)の場合、<code class="docutils literal notranslate"><span class="pre">MultipartFilter</span></code> の機能によって、ここでの<code class="docutils literal notranslate"><span class="pre">request</span></code> オブジェクトは<code class="docutils literal notranslate"><span class="pre">MultipartRequest</span></code> を実装した<code class="docutils literal notranslate"><span class="pre">StandardMultipartHttpServletRequest</span></code> のインスタンスとなる</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">MultipartRequest</span></code> のAPIを用いてファイル名を取り出し、入力チェックを行うメソッドを呼び出す</div>
 </div>
 </td>
 </tr>
@@ -7011,7 +7003,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">HttpServletRequest</span></code> からリクエストパラメータの一覧を取得し、各リクエストパラメータ名およびリクエストパラメータ値について、実際の入力チェックを行うメソッドを呼び出す</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">HttpServletRequest</span></code> からリクエストパラメータの一覧を取得し、各リクエストパラメータ名およびリクエストパラメータ値について、実際の入力チェックを行うメソッドを呼び出す</div>
 </div>
 </td>
 </tr>
@@ -7020,7 +7012,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">MultipartRequest</span></code> からアップロードされたファイルの一覧を取得し、実際のファイル名を取得する</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">MultipartRequest</span></code> からアップロードされたファイルの一覧を取得し、実際のファイル名を取得する</div>
 <div class="line">クライアントのブラウザやOSによってはファイル名にパスが含まれたり、パス区切り文字が異なるため、ファイル名のみを取得する際にこのような処理が必要となる</div>
 </div>
 </td>
@@ -7040,7 +7032,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </td>
 <td><div class="first last line-block">
 <div class="line">入力チェック対象の文字列を一文字ずつ順に、禁止文字に含まれているかどうかをチェックし、含まれている場合は例外を投げる</div>
-<div class="line"><code class="docutils literal"><span class="pre">InvalidCharacterException</span></code> は <code class="docutils literal"><span class="pre">RuntimeException</span></code> を継承して作成した例外である。コードは省略する</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">InvalidCharacterException</span></code> は <code class="docutils literal notranslate"><span class="pre">RuntimeException</span></code> を継承して作成した例外である。コードは省略する</div>
 </div>
 </td>
 </tr>
@@ -7049,16 +7041,16 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p class="last">本アプリケーションではリクエストパラメータおよびファイル名のチェックのみ共通的な禁止文字のチェックを行っている。
-必要に応じて、<code class="docutils literal"><span class="pre">HttpServletRequest</span></code> の <code class="docutils literal"><span class="pre">getHeaders</span></code> や <code class="docutils literal"><span class="pre">getCookies</span></code> を用いてHTTPヘッダやCookieの値を取得することにより、HTTPヘッダやCookieに対しても同様の方法でチェックすることができる。</p>
+必要に応じて、<code class="docutils literal notranslate"><span class="pre">HttpServletRequest</span></code> の <code class="docutils literal notranslate"><span class="pre">getHeaders</span></code> や <code class="docutils literal notranslate"><span class="pre">getCookies</span></code> を用いてHTTPヘッダやCookieの値を取得することにより、HTTPヘッダやCookieに対しても同様の方法でチェックすることができる。</p>
 </div>
 </li>
 <li><p class="first">Servlet Filterの設定</p>
 <div class="line-block">
-<div class="line">作成した<code class="docutils literal"><span class="pre">InputValidationFilter</span></code> を有効にするため、web.xmlに設定を行う。</div>
-<div class="line">禁止文字をプロパティファイルから読み込み、<code class="docutils literal"><span class="pre">InputValidationFilter</span></code> をBean定義した上で、<code class="docutils literal"><span class="pre">org.springframework.web.filter.DelegatingFilterProxy</span></code> を使用して設定する。</div>
+<div class="line">作成した<code class="docutils literal notranslate"><span class="pre">InputValidationFilter</span></code> を有効にするため、web.xmlに設定を行う。</div>
+<div class="line">禁止文字をプロパティファイルから読み込み、<code class="docutils literal notranslate"><span class="pre">InputValidationFilter</span></code> をBean定義した上で、<code class="docutils literal notranslate"><span class="pre">org.springframework.web.filter.DelegatingFilterProxy</span></code> を使用して設定する。</div>
 </div>
 <p><strong>web.xml</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;filter&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;filter&gt;</span>
     <span class="nt">&lt;filter-name&gt;</span>MultipartFilter<span class="nt">&lt;/filter-name&gt;</span>
     <span class="nt">&lt;filter-class&gt;</span>org.springframework.web.multipart.support.MultipartFilter<span class="nt">&lt;/filter-class&gt;</span>  <span class="c">&lt;!-- (1) --&gt;</span>
 <span class="nt">&lt;/filter&gt;</span>
@@ -7100,8 +7092,8 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">InputValidationFilter</span></code> の使用の前提となっている <code class="docutils literal"><span class="pre">MultipartFilter</span></code> を設定する</div>
-<div class="line"><code class="docutils literal"><span class="pre">MultipartFilter</span></code> を<code class="docutils literal"><span class="pre">InputValidationFilter</span></code> よりも前に定義する必要があることに注意すること</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">InputValidationFilter</span></code> の使用の前提となっている <code class="docutils literal notranslate"><span class="pre">MultipartFilter</span></code> を設定する</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">MultipartFilter</span></code> を<code class="docutils literal notranslate"><span class="pre">InputValidationFilter</span></code> よりも前に定義する必要があることに注意すること</div>
 </div>
 </td>
 </tr>
@@ -7110,8 +7102,8 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">DelegatingFilterProxy</span></code> を用いて、Bean定義した <code class="docutils literal"><span class="pre">InputValidationFilter</span></code> を設定する</div>
-<div class="line"><code class="docutils literal"><span class="pre">&lt;filter-name&gt;</span></code> にはBean名を指定すること</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">DelegatingFilterProxy</span></code> を用いて、Bean定義した <code class="docutils literal notranslate"><span class="pre">InputValidationFilter</span></code> を設定する</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;filter-name&gt;</span></code> にはBean名を指定すること</div>
 </div>
 </td>
 </tr>
@@ -7120,7 +7112,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">InvalidCharacterException</span></code> がスローされた際に表示するエラー画面を設定する</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">InvalidCharacterException</span></code> がスローされた際に表示するエラー画面を設定する</div>
 </div>
 </td>
 </tr>
@@ -7128,10 +7120,10 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">ファイル名の入力チェックのために<code class="docutils literal"><span class="pre">MultipartFilter</span></code> を利用しているため、ここに記述した内容に加えて <a class="reference internal" href="../ArchitectureInDetail/WebApplicationDetail/FileUpload.html#file-upload-how-to-usr-application-settings"><span class="std std-ref">アプリケーションの設定</span></a> に記したServlet 3.0のアップロード機能を有効化するための設定が必要となる。</p>
+<p class="last">ファイル名の入力チェックのために<code class="docutils literal notranslate"><span class="pre">MultipartFilter</span></code> を利用しているため、ここに記述した内容に加えて <a class="reference internal" href="../ArchitectureInDetail/WebApplicationDetail/FileUpload.html#file-upload-how-to-usr-application-settings"><span class="std std-ref">アプリケーションの設定</span></a> に記したServlet 3.0のアップロード機能を有効化するための設定が必要となる。</p>
 </div>
 <p><strong>invalidCharacterError.jsp</strong></p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="k">&lt;%</span> <span class="n">response</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="n">HttpServletResponse</span><span class="o">.</span><span class="na">SC_BAD_REQUEST</span><span class="o">);</span> <span class="k">%&gt;</span>  <span class="c">&lt;!-- (1) --&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;%</span> <span class="n">response</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="n">HttpServletResponse</span><span class="o">.</span><span class="na">SC_BAD_REQUEST</span><span class="o">);</span> <span class="k">%&gt;</span>  <span class="c">&lt;!-- (1) --&gt;</span>
 <span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
@@ -7157,14 +7149,14 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">InvalidCharacterException</span></code> はクライアントの入力に起因して発生する例外であるため、のHTTPステータスコードを<code class="docutils literal"><span class="pre">400</span></code> (Bad Request)に設定する</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">InvalidCharacterException</span></code> はクライアントの入力に起因して発生する例外であるため、のHTTPステータスコードを<code class="docutils literal notranslate"><span class="pre">400</span></code> (Bad Request)に設定する</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
 <p><strong>applicationContext.xml</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;inputValidationFilter&quot;</span> <span class="na">class=</span><span class="s">&quot;org.terasoluna.securelogin.app.common.filter.InputValidationFilter&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;inputValidationFilter&quot;</span> <span class="na">class=</span><span class="s">&quot;org.terasoluna.securelogin.app.common.filter.InputValidationFilter&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;constructor-arg</span> <span class="na">index=</span><span class="s">&quot;0&quot;</span> <span class="na">value=</span><span class="s">&quot;${app.security.prohibitedChars}&quot;</span><span class="nt">/&gt;</span>  <span class="c">&lt;!-- (1) --&gt;</span>
     <span class="nt">&lt;constructor-arg</span> <span class="na">index=</span><span class="s">&quot;1&quot;</span> <span class="na">value=</span><span class="s">&quot;${app.security.prohibitedCharsForFileName}&quot;</span><span class="nt">/&gt;</span>  <span class="c">&lt;!-- (2) --&gt;</span>
 <span class="nt">&lt;/bean&gt;</span>
@@ -7202,7 +7194,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </tbody>
 </table>
 <p><strong>application.properties</strong></p>
-<div class="highlight-properties"><div class="highlight"><pre><span></span><span class="c">## (1)</span>
+<div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="c">## (1)</span>
 <span class="na">app.security.prohibitedChars</span><span class="o">=</span><span class="s">&amp;\\!&quot;&lt;&gt;*</span>
 
 <span class="c">## (2)</span>
@@ -7250,7 +7242,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 <div class="line">文章の入力の際には制御文字のうち改行コードのみを許容する場合も多いため、改行コードを許可するアノテーションも別途作成する。</div>
 <div class="line">正規表現を用いたチェックを行うことで制御文字が含まれていないことを検証することができる。</div>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 <span class="nd">@Documented</span>
@@ -7291,7 +7283,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">エラーメッセージとして、このアノテーションで指定したメッセージのみを出力するために<code class="docutils literal"><span class="pre">&#64;ReportAsSingleViolation</span></code> アノテーションを付与する</div>
+<div class="line">エラーメッセージとして、このアノテーションで指定したメッセージのみを出力するために<code class="docutils literal notranslate"><span class="pre">&#64;ReportAsSingleViolation</span></code> アノテーションを付与する</div>
 </div>
 </td>
 </tr>
@@ -7300,8 +7292,8 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">正規表現を用いた入力チェックを行うために<code class="docutils literal"><span class="pre">&#64;Pattern</span></code> アノテーションを付与する</div>
-<div class="line"><code class="docutils literal"><span class="pre">\P{Cntrl}</span></code> はJavaの正規表現において「制御文字以外の文字」を意味するため、<code class="docutils literal"><span class="pre">^\\P{Cntrl}*$</span></code> は最初から最後まで制御文字を含まない文字列のみにマッチする</div>
+<div class="line">正規表現を用いた入力チェックを行うために<code class="docutils literal notranslate"><span class="pre">&#64;Pattern</span></code> アノテーションを付与する</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">\P{Cntrl}</span></code> はJavaの正規表現において「制御文字以外の文字」を意味するため、<code class="docutils literal notranslate"><span class="pre">^\\P{Cntrl}*$</span></code> は最初から最後まで制御文字を含まない文字列のみにマッチする</div>
 </div>
 </td>
 </tr>
@@ -7310,7 +7302,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 <div class="line-block">
 <div class="line">同様に、改行コードを許容する場合のアノテーションの実装例を以下に示す。</div>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 <span class="nd">@Documented</span>
@@ -7351,7 +7343,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">「制御文字以外の文字(<code class="docutils literal"><span class="pre">\P{Cntrl}</span></code> )」と改行コード(<code class="docutils literal"><span class="pre">\r</span></code> , <code class="docutils literal"><span class="pre">\n</span></code> )のみで構成される文字列にマッチするように、正規表現を指定する。</div>
+<div class="line">「制御文字以外の文字(<code class="docutils literal notranslate"><span class="pre">\P{Cntrl}</span></code> )」と改行コード(<code class="docutils literal notranslate"><span class="pre">\r</span></code> , <code class="docutils literal notranslate"><span class="pre">\n</span></code> )のみで構成される文字列にマッチするように、正規表現を指定する。</div>
 </div>
 </td>
 </tr>
@@ -7367,7 +7359,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 <p class="first admonition-title">Warning</p>
 <p class="last">ファイルの拡張子は容易に偽装され得るため、拡張子のチェックを行った場合であっても無条件にファイル形式を信用してはならない。</p>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -7420,13 +7412,13 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">大文字・小文字の違いを無視するか否か。デフォルト値は <code class="docutils literal"><span class="pre">true</span></code> （無視する）</div>
+<div class="line">大文字・小文字の違いを無視するか否か。デフォルト値は <code class="docutils literal notranslate"><span class="pre">true</span></code> （無視する）</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -7485,7 +7477,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">null</span></code> チェックは他のアノテーションを用いて行うため、<code class="docutils literal"><span class="pre">null</span></code> の場合は <code class="docutils literal"><span class="pre">true</span></code> を返す</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">null</span></code> チェックは他のアノテーションを用いて行うため、<code class="docutils literal notranslate"><span class="pre">null</span></code> の場合は <code class="docutils literal notranslate"><span class="pre">true</span></code> を返す</div>
 </div>
 </td>
 </tr>
@@ -7494,7 +7486,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">org.springframework.util.StringUtils</span></code> の <code class="docutils literal"><span class="pre">getFilenameExtension</span></code> メソッドを用いてファイル名から拡張子を取得する</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">org.springframework.util.StringUtils</span></code> の <code class="docutils literal notranslate"><span class="pre">getFilenameExtension</span></code> メソッドを用いてファイル名から拡張子を取得する</div>
 </div>
 </td>
 </tr>
@@ -7503,7 +7495,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">拡張子の無いファイルは許容しないため、拡張子が無い場合は <code class="docutils literal"><span class="pre">false</span></code> を返す</div>
+<div class="line">拡張子の無いファイルは許容しないため、拡張子が無い場合は <code class="docutils literal notranslate"><span class="pre">false</span></code> を返す</div>
 </div>
 </td>
 </tr>
@@ -7513,7 +7505,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </td>
 <td><div class="first last line-block">
 <div class="line">許容する拡張子の一覧から拡張子を一つずつ取り出し、ファイル名から取得した文字列と比較する</div>
-<div class="line">一つでも一致するものがあれば <code class="docutils literal"><span class="pre">true</span></code> を返し、いずれとも一致しなければ　<code class="docutils literal"><span class="pre">false</span></code> を返す。</div>
+<div class="line">一つでも一致するものがあれば <code class="docutils literal notranslate"><span class="pre">true</span></code> を返し、いずれとも一致しなければ　<code class="docutils literal notranslate"><span class="pre">false</span></code> を返す。</div>
 </div>
 </td>
 </tr>
@@ -7522,7 +7514,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </li>
 <li><p class="first">アップロードされるファイルのファイル名が許容されているパターンと一致することを検証するアノテーション</p>
 <p>ユーザからのファイルのアップロードを受け付ける際、受け付けるファイル名の形式を制限したい場合がある。そのような場合に、許容するファイル名のパターンを正規表現で設定し、アップロードされたファイルのファイル名がパターンと一致するかをチェックする。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -7572,7 +7564,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </tr>
 </tbody>
 </table>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -7616,7 +7608,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">チェックする正規表現のパターンを <code class="docutils literal"><span class="pre">Pattern</span></code> として作成し、保持する</div>
+<div class="line">チェックする正規表現のパターンを <code class="docutils literal notranslate"><span class="pre">Pattern</span></code> として作成し、保持する</div>
 </div>
 </td>
 </tr>
@@ -7625,7 +7617,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">null</span></code> チェックは他のアノテーションを用いて行うため、<code class="docutils literal"><span class="pre">null</span></code> の場合は <code class="docutils literal"><span class="pre">true</span></code> を返す</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">null</span></code> チェックは他のアノテーションを用いて行うため、<code class="docutils literal notranslate"><span class="pre">null</span></code> の場合は <code class="docutils literal notranslate"><span class="pre">true</span></code> を返す</div>
 </div>
 </td>
 </tr>
@@ -7634,7 +7626,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">MultipartRequest</span></code> から実際のファイル名を取得する。クライアントのブラウザやOSによってはファイル名にパスが含まれたり、パス区切り文字が異なるため、ファイル名のみを取得する際にこのような処理が必要となる</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">MultipartRequest</span></code> から実際のファイル名を取得する。クライアントのブラウザやOSによってはファイル名にパスが含まれたり、パス区切り文字が異なるため、ファイル名のみを取得する際にこのような処理が必要となる</div>
 </div>
 </td>
 </tr>
@@ -7643,7 +7635,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">(1)で作成した <code class="docutils literal"><span class="pre">Pattern</span></code> とファイル名がマッチする場合は <code class="docutils literal"><span class="pre">true</span></code> を返し、マッチしない場合は<code class="docutils literal"><span class="pre">false</span></code> を返す</div>
+<div class="line">(1)で作成した <code class="docutils literal notranslate"><span class="pre">Pattern</span></code> とファイル名がマッチする場合は <code class="docutils literal notranslate"><span class="pre">true</span></code> を返し、マッチしない場合は<code class="docutils literal notranslate"><span class="pre">false</span></code> を返す</div>
 </div>
 </td>
 </tr>
@@ -7653,9 +7645,9 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 <li><p class="first">入力されたURLのドメインが許容されているものであることを検証するアノテーション</p>
 <div class="line-block">
 <div class="line">ユーザからURLの入力を受け付ける際、許容するドメインを制限したい場合がある。そのような場合に、許容するドメインの一覧を設定し、入力されたURLのドメインが一覧に含まれているドメインかまたはそのサブドメインであるかをチェックする。</div>
-<div class="line">同時にURL形式であることをチェックするため、<code class="docutils literal"><span class="pre">org.hibernate.validator.constraints.URL</span></code> と組み合わせて実装する。</div>
+<div class="line">同時にURL形式であることをチェックするため、<code class="docutils literal notranslate"><span class="pre">org.hibernate.validator.constraints.URL</span></code> と組み合わせて実装する。</div>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -7700,7 +7692,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">URL形式であることをチェックするために、<code class="docutils literal"><span class="pre">&#64;URL</span></code> を付与する</div>
+<div class="line">URL形式であることをチェックするために、<code class="docutils literal notranslate"><span class="pre">&#64;URL</span></code> を付与する</div>
 </div>
 </td>
 </tr>
@@ -7715,7 +7707,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </tr>
 </tbody>
 </table>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -7772,8 +7764,8 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">URLのドメインを取得するための正規表現のパターンを <code class="docutils literal"><span class="pre">Pattern</span></code> として作成し、保持する</div>
-<div class="line">正しいURL形式であるかどうかの検証は<code class="docutils literal"><span class="pre">&#64;URL</span></code> で行うため、ここでは必要最小限の正規表現を指定している</div>
+<div class="line">URLのドメインを取得するための正規表現のパターンを <code class="docutils literal notranslate"><span class="pre">Pattern</span></code> として作成し、保持する</div>
+<div class="line">正しいURL形式であるかどうかの検証は<code class="docutils literal notranslate"><span class="pre">&#64;URL</span></code> で行うため、ここでは必要最小限の正規表現を指定している</div>
 </div>
 </td>
 </tr>
@@ -7791,7 +7783,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">URL形式であるかどうかをチェックする。不正な形式の場合は、組み合わせて利用している<code class="docutils literal"><span class="pre">URL</span></code> アノテーションによって検証エラーとなるため、ここでは <code class="docutils literal"><span class="pre">true</span></code> を返す</div>
+<div class="line">URL形式であるかどうかをチェックする。不正な形式の場合は、組み合わせて利用している<code class="docutils literal notranslate"><span class="pre">URL</span></code> アノテーションによって検証エラーとなるため、ここでは <code class="docutils literal notranslate"><span class="pre">true</span></code> を返す</div>
 </div>
 </td>
 </tr>
@@ -7800,7 +7792,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">許容されるドメインの一覧から一つずつ取り出し、URLのホスト部の末尾と一致するかをチェックする。一つでも一致すれば <code class="docutils literal"><span class="pre">true</span></code> を返し、一つも一致しなければ <code class="docutils literal"><span class="pre">false</span></code> を返す</div>
+<div class="line">許容されるドメインの一覧から一つずつ取り出し、URLのホスト部の末尾と一致するかをチェックする。一つでも一致すれば <code class="docutils literal notranslate"><span class="pre">true</span></code> を返し、一つも一致しなければ <code class="docutils literal notranslate"><span class="pre">false</span></code> を返す</div>
 </div>
 </td>
 </tr>
@@ -7810,9 +7802,9 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 <li><p class="first">入力されたメールアドレスのドメインが許容されているものであることを検証するアノテーション</p>
 <div class="line-block">
 <div class="line">ユーザからメールアドレスの入力を受け付ける際、許容するドメインを制限したい場合がある。そのような場合に、許容するドメインの一覧を設定し、入力されたメールアドレスのドメインが一覧に含まれているかをチェックする。許容するドメインのサブドメインまで許すか否かを切り替えられる仕様とする。</div>
-<div class="line">同時にメールアドレス形式であることをチェックするため、<code class="docutils literal"><span class="pre">org.hibernate.validator.constraints.Email</span></code> と組み合わせて実装する。</div>
+<div class="line">同時にメールアドレス形式であることをチェックするため、<code class="docutils literal notranslate"><span class="pre">org.hibernate.validator.constraints.Email</span></code> と組み合わせて実装する。</div>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -7857,7 +7849,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">メールアドレス形式であることをチェックするために、<code class="docutils literal"><span class="pre">&#64;Email</span></code> を付与する</div>
+<div class="line">メールアドレス形式であることをチェックするために、<code class="docutils literal notranslate"><span class="pre">&#64;Email</span></code> を付与する</div>
 </div>
 </td>
 </tr>
@@ -7875,13 +7867,13 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">サブドメインを許容するか否か。デフォルト値は <code class="docutils literal"><span class="pre">false</span></code> （許容しない）</div>
+<div class="line">サブドメインを許容するか否か。デフォルト値は <code class="docutils literal notranslate"><span class="pre">false</span></code> （許容しない）</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.common.validation</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -7953,7 +7945,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">null</span></code> チェックは他のアノテーションを用いて行うため、<code class="docutils literal"><span class="pre">null</span></code> の場合は <code class="docutils literal"><span class="pre">true</span></code> を返す</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">null</span></code> チェックは他のアノテーションを用いて行うため、<code class="docutils literal notranslate"><span class="pre">null</span></code> の場合は <code class="docutils literal notranslate"><span class="pre">true</span></code> を返す</div>
 </div>
 </td>
 </tr>
@@ -7962,7 +7954,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">許容されるドメインの一覧から一つずつ取り出し、メールアドレスのドメイン部と一致するかをチェックする。一つでも一致すれば <code class="docutils literal"><span class="pre">true</span></code> を返し、一つも一致しなければ <code class="docutils literal"><span class="pre">false</span></code> を返す</div>
+<div class="line">許容されるドメインの一覧から一つずつ取り出し、メールアドレスのドメイン部と一致するかをチェックする。一つでも一致すれば <code class="docutils literal notranslate"><span class="pre">true</span></code> を返し、一つも一致しなければ <code class="docutils literal notranslate"><span class="pre">false</span></code> を返す</div>
 </div>
 </td>
 </tr>
@@ -7973,7 +7965,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </li>
 <li><p class="first">Formクラスへのアノテーションの付与</p>
 <p>作成したアノテーションをアカウント新規作成のFormクラスのフィールドに付与する。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.account</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.app.account</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
 
@@ -8103,7 +8095,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 <p>監査目的で、アプリケーションに対していつ、誰が、どのような操作を行ったのかといった情報を確認できるようにするため、サービスクラスのメソッドを呼び出す際に、呼び出し日時、呼び出し元ユーザ名、メソッド名をログ出力する。
 また、メソッド実行の結果として例外が発生しなければ操作成功としてログを出力し、例外が発生した場合は操作失敗としてログを出力する。</p>
 <p>ログのフォーマットは以下の通りとする。</p>
-<p><code class="docutils literal"><span class="pre">｛メソッド呼び出し日時｝｛スレッド｝｛呼び出し元ユーザ名｝｛X-Track｝｛ログレベル｝｛ロガー｝｛メッセージ｝</span></code> </p>
+<p><code class="docutils literal notranslate"><span class="pre">｛メソッド呼び出し日時｝｛スレッド｝｛呼び出し元ユーザ名｝｛X-Track｝｛ログレベル｝｛ロガー｝｛メッセージ｝</span></code> </p>
 <table border="1" class="colwidths-given longtable docutils">
 <colgroup>
 <col width="30%" />
@@ -8159,7 +8151,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </td>
 <td><div class="first last line-block">
 <div class="line">出力されたログのレベル</div>
-<div class="line">本アプリケーションにおいては<code class="docutils literal"><span class="pre">info</span></code> レベルで出力する</div>
+<div class="line">本アプリケーションにおいては<code class="docutils literal notranslate"><span class="pre">info</span></code> レベルで出力する</div>
 </div>
 </td>
 </tr>
@@ -8189,7 +8181,7 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 <div class="section" id="id65">
 <h4><a class="toc-backref" href="#id138">9.10.3.10.3. 実装方法</a><a class="headerlink" href="#id65" title="Permalink to this headline">¶</a></h4>
 <div class="line-block">
-<div class="line">ログにユーザ名を出力するために、Spring Securityの認証情報からユーザ名を取得する。 ユーザ名の取得およびログ出力は<a class="reference internal" href="../ArchitectureInDetail/GeneralFuncDetail/Logging.html"><span class="doc">ロギング</span></a> で解説している <code class="docutils literal"><span class="pre">org.terasoluna.gfw.security.web.logging.UserIdMDCPutFilter</span></code> を用いて実現する。</div>
+<div class="line">ログにユーザ名を出力するために、Spring Securityの認証情報からユーザ名を取得する。 ユーザ名の取得およびログ出力は<a class="reference internal" href="../ArchitectureInDetail/GeneralFuncDetail/Logging.html"><span class="doc">ロギング</span></a> で解説している <code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.security.web.logging.UserIdMDCPutFilter</span></code> を用いて実現する。</div>
 <div class="line">さらに、本アプリケーションにおいて、リクエストに対する操作内容と操作結果をそれぞれ以下の通り定義し、ログに出力する。</div>
 </div>
 <ul class="simple">
@@ -8198,13 +8190,13 @@ URLに含まれるトークンと秘密情報の組が正しい場合にのみ�
 </ul>
 <div class="line-block">
 <div class="line">すべてのサービスクラスのメソッド呼び出しに対してログ出力を行うといった、横断的な機能を実現するためには、Springが提供するAOP(Aspect Oriented Programming)の機能を利用することができる。</div>
-<div class="line">Springが提供しているAOPの実装方法は複数あるが、本アプリケーションでは <a class="reference external" href="https://github.com/terasolunaorg/terasoluna-gfw">共通ライブラリ</a> で提供しているロギング関連の部品の実装と合わせることを重視し、<code class="docutils literal"><span class="pre">org.aopalliance.intercept.MethodInterceptor</span></code> を実装する方式を採用する。</div>
+<div class="line">Springが提供しているAOPの実装方法は複数あるが、本アプリケーションでは <a class="reference external" href="https://github.com/terasolunaorg/terasoluna-gfw">共通ライブラリ</a> で提供しているロギング関連の部品の実装と合わせることを重視し、<code class="docutils literal notranslate"><span class="pre">org.aopalliance.intercept.MethodInterceptor</span></code> を実装する方式を採用する。</div>
 <div class="line">具体的には以下の実装・設定を行うことで要件を実現する。</div>
 </div>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">UserIdMDCPutFilter</span></code> を設定する</li>
+<li><code class="docutils literal notranslate"><span class="pre">UserIdMDCPutFilter</span></code> を設定する</li>
 <li>メソッド呼び出し時および実行後にログ出力を行うアドバイスを作成する</li>
-<li>上記で定義したアドバイスを<code class="docutils literal"><span class="pre">&#64;Service</span></code> の付与されたクラスに対して適用するための設定を行う</li>
+<li>上記で定義したアドバイスを<code class="docutils literal notranslate"><span class="pre">&#64;Service</span></code> の付与されたクラスに対して適用するための設定を行う</li>
 </ul>
 <blockquote>
 <div><div class="admonition note">
@@ -8219,10 +8211,10 @@ Springが提供するAOP機能に関しては、<a class="reference external" hr
 <h4><a class="toc-backref" href="#id139">9.10.3.10.4. コード解説</a><a class="headerlink" href="#id67" title="Permalink to this headline">¶</a></h4>
 <p>上記の実装方法に従って実装されたコードについて順に解説する。</p>
 <ul>
-<li><p class="first"><code class="docutils literal"><span class="pre">UserIdMDCPutFilter</span></code> を設定する</p>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">UserIdMDCPutFilter</span></code> を設定する</p>
 <p>ログにSpring Securityの認証ユーザ名を出力するための設定を以下に示す。</p>
 <p><strong>spring-security.xml</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
 
 <span class="nt">&lt;sec:http&gt;</span>
     <span class="c">&lt;!-- omitted --&gt;</span>
@@ -8251,15 +8243,15 @@ Springが提供するAOP機能に関しては、<a class="reference external" hr
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">ユーザ情報が生成された後すぐにログ出力するために、Spring SecurityのFilter Chainに<code class="docutils literal"><span class="pre">UserIdMDCPutFilter</span></code> を設定する</div>
-<div class="line"><code class="docutils literal"><span class="pre">UserIdMDCPutFilter</span></code> を設定することによって、MDCに<code class="docutils literal"><span class="pre">USER</span></code> というキーで認証ユーザ名が追加される。</div>
+<div class="line">ユーザ情報が生成された後すぐにログ出力するために、Spring SecurityのFilter Chainに<code class="docutils literal notranslate"><span class="pre">UserIdMDCPutFilter</span></code> を設定する</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">UserIdMDCPutFilter</span></code> を設定することによって、MDCに<code class="docutils literal notranslate"><span class="pre">USER</span></code> というキーで認証ユーザ名が追加される。</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
 <p><strong>logback.xml</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
 
 <span class="nt">&lt;appender</span> <span class="na">name=</span><span class="s">&quot;AUDIT_LOG_FILE&quot;</span>
     <span class="na">class=</span><span class="s">&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;</span><span class="nt">&gt;</span>  <span class="c">&lt;!-- (1) --&gt;</span>
@@ -8321,7 +8313,7 @@ Springが提供するAOP機能に関しては、<a class="reference external" hr
 </td>
 <td><div class="first last line-block">
 <div class="line">監査ログ出力用のloggerを定義する</div>
-<div class="line"><code class="docutils literal"><span class="pre">org.terasoluna.securelogin.domain.common.interceptor.ServiceCallLoggingInterceptor</span></code> の実装については以降で説明する</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">org.terasoluna.securelogin.domain.common.interceptor.ServiceCallLoggingInterceptor</span></code> の実装については以降で説明する</div>
 </div>
 </td>
 </tr>
@@ -8330,7 +8322,7 @@ Springが提供するAOP機能に関しては、<a class="reference external" hr
 </li>
 <li><p class="first">メソッド呼び出し時および実行後にログ出力を行うアドバイスを作成する</p>
 <p>操作内容と操作結果をログ出力するための実装および設定を以下に示す。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span>  <span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.common.interceptor</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>  <span class="kn">package</span> <span class="nn">org.terasoluna.securelogin.domain.common.interceptor</span><span class="o">;</span>
 
   <span class="c1">// omitted</span>
 
@@ -8376,7 +8368,7 @@ Springが提供するAOP機能に関しては、<a class="reference external" hr
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">メソッド呼び出しの前後で行う処理を記述するために、<code class="docutils literal"><span class="pre">MethodInterceptor</span></code> を実装する</div>
+<div class="line">メソッド呼び出しの前後で行う処理を記述するために、<code class="docutils literal notranslate"><span class="pre">MethodInterceptor</span></code> を実装する</div>
 </div>
 </td>
 </tr>
@@ -8385,8 +8377,8 @@ Springが提供するAOP機能に関しては、<a class="reference external" hr
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">MethodInterceptor</span></code> に定義されている、<code class="docutils literal"><span class="pre">invoke</span></code> メソッドをオーバーライドする</div>
-<div class="line">引数の <code class="docutils literal"><span class="pre">org.aopalliance.intercept.MethodInvocation</span></code> オブジェクトから、呼び出すメソッドの名前等の情報を取得することができる</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">MethodInterceptor</span></code> に定義されている、<code class="docutils literal notranslate"><span class="pre">invoke</span></code> メソッドをオーバーライドする</div>
+<div class="line">引数の <code class="docutils literal notranslate"><span class="pre">org.aopalliance.intercept.MethodInvocation</span></code> オブジェクトから、呼び出すメソッドの名前等の情報を取得することができる</div>
 </div>
 </td>
 </tr>
@@ -8462,10 +8454,10 @@ Springが提供するAOP機能に関しては、<a class="reference external" hr
 ただし、その場合はハッシュ化されていないパスワード等がログ出力される可能性があるため、マスキングを行う等の対策が必要となることに注意すること。</p>
 </div>
 </li>
-<li><p class="first">アドバイスを<code class="docutils literal"><span class="pre">&#64;Service</span></code> の付与されたクラスに対して適用するための設定を行う</p>
+<li><p class="first">アドバイスを<code class="docutils literal notranslate"><span class="pre">&#64;Service</span></code> の付与されたクラスに対して適用するための設定を行う</p>
 <p>アドバイスに対するポイントカットの設定を以下に示す。</p>
 <p><strong>secure-login-domain.xml</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- omitted --&gt;</span>
 
 <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;serviceCallLoggingInterceptor&quot;</span>
     <span class="na">class=</span><span class="s">&quot;org.terasoluna.securelogin.domain.common.interceptor.ServiceCallLoggingInterceptor&quot;</span> <span class="nt">/&gt;</span>  <span class="c">&lt;!-- (1) --&gt;</span>
@@ -8493,7 +8485,7 @@ Springが提供するAOP機能に関しては、<a class="reference external" hr
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">上記で作成したアドバイスクラス(<code class="docutils literal"><span class="pre">MethodInterceptor</span></code> の実装クラス)をBean定義する</div>
+<div class="line">上記で作成したアドバイスクラス(<code class="docutils literal notranslate"><span class="pre">MethodInterceptor</span></code> の実装クラス)をBean定義する</div>
 </div>
 </td>
 </tr>
@@ -8502,8 +8494,8 @@ Springが提供するAOP機能に関しては、<a class="reference external" hr
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">aop:advisor</span></code> タグの <code class="docutils literal"><span class="pre">advice-ref</span></code> 属性にアドバイスが実装されているBeanを、 <code class="docutils literal"><span class="pre">pointcut</span></code> 属性にポイントカットをそれぞれ設定する</div>
-<div class="line"><code class="docutils literal"><span class="pre">&#64;within(org.springframework.stereotype.Service)</span></code> というポイントカットの定義により、 <code class="docutils literal"><span class="pre">&#64;Service</span></code> の付与されたクラスのメソッド呼び出しがアドバイスの対象となる</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">aop:advisor</span></code> タグの <code class="docutils literal notranslate"><span class="pre">advice-ref</span></code> 属性にアドバイスが実装されているBeanを、 <code class="docutils literal notranslate"><span class="pre">pointcut</span></code> 属性にポイントカットをそれぞれ設定する</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;within(org.springframework.stereotype.Service)</span></code> というポイントカットの定義により、 <code class="docutils literal notranslate"><span class="pre">&#64;Service</span></code> の付与されたクラスのメソッド呼び出しがアドバイスの対象となる</div>
 </div>
 </td>
 </tr>
@@ -8512,18 +8504,18 @@ Springが提供するAOP機能に関しては、<a class="reference external" hr
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">SpringのAOPは、自動的に作成されたプロキシクラスがメソッド呼び出しをハンドリングする、プロキシ方式を採用している。
-プロキシ方式のAOPの制限として、可視性が<code class="docutils literal"><span class="pre">public</span></code> 以外のメソッドの呼び出しや、同一クラス内のメソッド呼び出しの際にはアドバイスが実行されない点に注意する必要がある。
+プロキシ方式のAOPの制限として、可視性が<code class="docutils literal notranslate"><span class="pre">public</span></code> 以外のメソッドの呼び出しや、同一クラス内のメソッド呼び出しの際にはアドバイスが実行されない点に注意する必要がある。
 詳細は <a class="reference external" href="http://docs.spring.io/spring/docs/4.3.14.RELEASE/spring-framework-reference/html/aop.html#aop-understanding-aop-proxies">公式ドキュメント</a> を参照すること。</p>
 </div>
 <p>ログの出力結果を以下に示す。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">date:2016-08-18 13:45:42   thread:tomcat-http--7   USER:demo   X-Track:f514cc4159324ba28d8393f2c3062d89    level:INFO  logger:o.t.s.d.c.i.ServiceCallLoggingInterceptor        message:[START SERVICE]AccountSharedService.isInitialPassword</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">date:2016-08-18 13:45:42   thread:tomcat-http--7   USER:demo   X-Track:f514cc4159324ba28d8393f2c3062d89    level:INFO  logger:o.t.s.d.c.i.ServiceCallLoggingInterceptor        message:[START SERVICE]AccountSharedService.isInitialPassword</span>
 <span class="go">date:2016-08-18 13:45:42   thread:tomcat-http--7   USER:demo   X-Track:f514cc4159324ba28d8393f2c3062d89    level:INFO  logger:o.t.s.d.c.i.ServiceCallLoggingInterceptor        message:[START SERVICE]PasswordHistorySharedService.findLatest</span>
 <span class="go">date:2016-08-18 13:45:42   thread:tomcat-http--7   USER:demo   X-Track:f514cc4159324ba28d8393f2c3062d89    level:INFO  logger:o.t.s.d.c.i.ServiceCallLoggingInterceptor        message:[COMPLETE SERVICE]PasswordHistorySharedService.findLatest</span>
 <span class="go">date:2016-08-18 13:45:42   thread:tomcat-http--7   USER:demo   X-Track:f514cc4159324ba28d8393f2c3062d89    level:INFO  logger:o.t.s.d.c.i.ServiceCallLoggingInterceptor        message:[COMPLETE SERVICE]AccountSharedService.isInitialPassword</span>
 </pre></div>
 </div>
 <p>例外発生時のログは以下のようになる。ログイン前に行われた処理に対するログであるため、ユーザ名が表示されていない。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">date:2016-08-18 13:52:32   thread:tomcat-http--10  USER:   X-Track:1a37a9a280014216a300b61e2f4bbb66    level:INFO  logger:o.t.s.d.c.i.ServiceCallLoggingInterceptor        message:[SERVICE THROWS EXCEPTION]AccountSharedService.findOne</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">date:2016-08-18 13:52:32   thread:tomcat-http--10  USER:   X-Track:1a37a9a280014216a300b61e2f4bbb66    level:INFO  logger:o.t.s.d.c.i.ServiceCallLoggingInterceptor        message:[SERVICE THROWS EXCEPTION]AccountSharedService.findOne</span>
 <span class="go">date:2016-08-18 13:52:32   thread:tomcat-http--10  USER:   X-Track:1a37a9a280014216a300b61e2f4bbb66    level:INFO  logger:o.t.s.d.c.i.ServiceCallLoggingInterceptor        message:[SERVICE THROWS EXCEPTION]UserDetailsService.loadUserByUsername</span>
 <span class="go">date:2016-08-18 13:52:32   thread:tomcat-http--10  USER:   X-Track:1a37a9a280014216a300b61e2f4bbb66    level:INFO  logger:o.t.s.d.c.i.ServiceCallLoggingInterceptor        message:user not found</span>
 </pre></div>
@@ -8558,7 +8550,7 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </li>
 </ul>
 <p>Passayの機能を使用する場合は、pom.xmlに以下の定義を追加すること。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;dependencies&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependencies&gt;</span>
   <span class="nt">&lt;dependency&gt;</span>
       <span class="nt">&lt;groupId&gt;</span>org.passay<span class="nt">&lt;/groupId&gt;</span>
       <span class="nt">&lt;artifactId&gt;</span>passay<span class="nt">&lt;/artifactId&gt;</span>
@@ -8593,9 +8585,9 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">org.passay.PasswordData</span></code> のインスタンスを作成し、入力チェック対象のパスワードに関する情報を設定する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">PasswordData</span></code> は、パスワード、ユーザ名に加え、過去に使用したパスワードのリスト等をプロパティとして持つことができる。</div>
-<div class="line">過去に使用したパスワード等は<code class="docutils literal"><span class="pre">org.passay.PasswordData.Reference</span></code> のインスタンスとして保持する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">org.passay.PasswordData</span></code> のインスタンスを作成し、入力チェック対象のパスワードに関する情報を設定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">PasswordData</span></code> は、パスワード、ユーザ名に加え、過去に使用したパスワードのリスト等をプロパティとして持つことができる。</div>
+<div class="line">過去に使用したパスワード等は<code class="docutils literal notranslate"><span class="pre">org.passay.PasswordData.Reference</span></code> のインスタンスとして保持する。</div>
 </div>
 </td>
 </tr>
@@ -8604,8 +8596,8 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">検証規則に従い、検証器を用いて<code class="docutils literal"><span class="pre">PasswordData</span></code> に対する入力チェックを行う。</div>
-<div class="line">検証規則は<code class="docutils literal"><span class="pre">org.passay.Rule</span></code> の実装クラスのインスタンスとして作成する。検証器は<code class="docutils literal"><span class="pre">org.passay.PasswordValidator</span></code> のインスタンスであり、複数の検証規則をプロパティとして持つことができる。</div>
+<div class="line">検証規則に従い、検証器を用いて<code class="docutils literal notranslate"><span class="pre">PasswordData</span></code> に対する入力チェックを行う。</div>
+<div class="line">検証規則は<code class="docutils literal notranslate"><span class="pre">org.passay.Rule</span></code> の実装クラスのインスタンスとして作成する。検証器は<code class="docutils literal notranslate"><span class="pre">org.passay.PasswordValidator</span></code> のインスタンスであり、複数の検証規則をプロパティとして持つことができる。</div>
 </div>
 </td>
 </tr>
@@ -8614,7 +8606,7 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">検証器による入力チェックの結果として<code class="docutils literal"><span class="pre">org.passay.RuleResult</span></code> のインスタンスが作成される。</div>
+<div class="line">検証器による入力チェックの結果として<code class="docutils literal notranslate"><span class="pre">org.passay.RuleResult</span></code> のインスタンスが作成される。</div>
 </div>
 </td>
 </tr>
@@ -8623,7 +8615,7 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">RuleResult</span></code> からパスワード入力チェックの結果を<code class="docutils literal"><span class="pre">boolean</span></code> として得ることができる。また、検証器を使って<code class="docutils literal"><span class="pre">RuleResult</span></code> からエラーメッセージが取得できる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">RuleResult</span></code> からパスワード入力チェックの結果を<code class="docutils literal notranslate"><span class="pre">boolean</span></code> として得ることができる。また、検証器を使って<code class="docutils literal notranslate"><span class="pre">RuleResult</span></code> からエラーメッセージが取得できる。</div>
 </div>
 </td>
 </tr>
@@ -8644,7 +8636,7 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">LengthRule</span></code> </div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">LengthRule</span></code> </div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -8652,13 +8644,13 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">minimuxLength</span></code> : パスワード長の最小値(<code class="docutils literal"><span class="pre">int</span></code> )。コンストラクタまたはsetterで設定。</div>
-<div class="line"><code class="docutils literal"><span class="pre">maximumLength</span></code> : パスワード長の最大値(<code class="docutils literal"><span class="pre">int</span></code> )。コンストラクタまたはsetterで設定。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">minimuxLength</span></code> : パスワード長の最小値(<code class="docutils literal notranslate"><span class="pre">int</span></code> )。コンストラクタまたはsetterで設定。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">maximumLength</span></code> : パスワード長の最大値(<code class="docutils literal notranslate"><span class="pre">int</span></code> )。コンストラクタまたはsetterで設定。</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">CharacterRule</span></code> </div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">CharacterRule</span></code> </div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -8666,27 +8658,27 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">characterData</span></code>: 文字種別(<code class="docutils literal"><span class="pre">org.passay.CharacterData</span></code> )。コンストラクタで設定。</div>
-<div class="line"><code class="docutils literal"><span class="pre">numberOfCharacters</span></code> : 最低文字数(<code class="docutils literal"><span class="pre">int</span></code> )。コンストラクタまたはsetterで設定。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">characterData</span></code>: 文字種別(<code class="docutils literal notranslate"><span class="pre">org.passay.CharacterData</span></code> )。コンストラクタで設定。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">numberOfCharacters</span></code> : 最低文字数(<code class="docutils literal notranslate"><span class="pre">int</span></code> )。コンストラクタまたはsetterで設定。</div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">CharacterCharacteristicsRule</span></code> </div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">CharacterCharacteristicsRule</span></code> </div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">複数の<code class="docutils literal"><span class="pre">CharacterRule</span></code> のうち、いくつ以上の規則を満たす必要があるかを規定するための検証規則のクラス</div>
+<div class="line">複数の<code class="docutils literal notranslate"><span class="pre">CharacterRule</span></code> のうち、いくつ以上の規則を満たす必要があるかを規定するための検証規則のクラス</div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">rules</span></code>: 文字種別に関する検証規則のリスト(<code class="docutils literal"><span class="pre">List&lt;CharacterRule&gt;</span></code> )。setterで設定。</div>
-<div class="line"><code class="docutils literal"><span class="pre">numberOfCharacteristics</span></code> : 満たすべき検証規則の数の最小値(<code class="docutils literal"><span class="pre">int</span></code> )。setterで設定。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">rules</span></code>: 文字種別に関する検証規則のリスト(<code class="docutils literal notranslate"><span class="pre">List&lt;CharacterRule&gt;</span></code> )。setterで設定。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">numberOfCharacteristics</span></code> : 満たすべき検証規則の数の最小値(<code class="docutils literal notranslate"><span class="pre">int</span></code> )。setterで設定。</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">HistoryRule</span></code> </div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">HistoryRule</span></code> </div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -8699,7 +8691,7 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">UsernameRule</span></code> </div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">UsernameRule</span></code> </div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -8707,8 +8699,8 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">matchBackwards</span></code> : ユーザ名を逆にした文字列もチェックする(<code class="docutils literal"><span class="pre">boolean</span></code> )。コンストラクタまたはsetterで設定。</div>
-<div class="line"><code class="docutils literal"><span class="pre">ignoreCase</span></code> : 大文字、小文字を区別しない(<code class="docutils literal"><span class="pre">boolean</span></code> )。コンストラクタまたはsetterで設定。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">matchBackwards</span></code> : ユーザ名を逆にした文字列もチェックする(<code class="docutils literal notranslate"><span class="pre">boolean</span></code> )。コンストラクタまたはsetterで設定。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ignoreCase</span></code> : 大文字、小文字を区別しない(<code class="docutils literal notranslate"><span class="pre">boolean</span></code> )。コンストラクタまたはsetterで設定。</div>
 </div>
 </td>
 </tr>
@@ -8719,10 +8711,10 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </div>
 <div class="section" id="how-to-use">
 <h5>9.10.5.1.1.2. How to use<a class="headerlink" href="#how-to-use" title="Permalink to this headline">¶</a></h5>
-<p><code class="docutils literal"><span class="pre">PasswordValidator</span></code> のコンストラクタに<code class="docutils literal"><span class="pre">org.passay.Rule</span></code> のインスタンスのリストを渡すことによって、検証器を作成することができる。
+<p><code class="docutils literal notranslate"><span class="pre">PasswordValidator</span></code> のコンストラクタに<code class="docutils literal notranslate"><span class="pre">org.passay.Rule</span></code> のインスタンスのリストを渡すことによって、検証器を作成することができる。
 検証規則を設定した検証器を以下のようにBeanとして定義しておくことでDIが可能となる。
-尚、複数の検証規則をBean定義する場合、<code class="docutils literal"><span class="pre">&#64;Inject</span></code> と<code class="docutils literal"><span class="pre">&#64;Named</span></code> を併用することでBean名によるDIを行うこと。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Password Rules. --&gt;</span>
+尚、複数の検証規則をBean定義する場合、<code class="docutils literal notranslate"><span class="pre">&#64;Inject</span></code> と<code class="docutils literal notranslate"><span class="pre">&#64;Named</span></code> を併用することでBean名によるDIを行うこと。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Password Rules. --&gt;</span>
 <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;upperCaseRule&quot;</span> <span class="na">class=</span><span class="s">&quot;org.passay.CharacterRule&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
     <span class="nt">&lt;constructor-arg</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;util:constant</span> <span class="na">static-field=</span><span class="s">&quot;org.passay.EnglishCharacterData.UpperCase&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
@@ -8779,7 +8771,7 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">文字種別を指定する。ここでは、<code class="docutils literal"><span class="pre">org.passay.EnglishCharacterData.UpperCase</span></code> を渡しているため、半角英大文字に関する検証規則となる。</div>
+<div class="line">文字種別を指定する。ここでは、<code class="docutils literal notranslate"><span class="pre">org.passay.EnglishCharacterData.UpperCase</span></code> を渡しているため、半角英大文字に関する検証規則となる。</div>
 </div>
 </td>
 </tr>
@@ -8797,7 +8789,7 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">(1)-(3)と同様だが、文字種別として<code class="docutils literal"><span class="pre">org.passay.EnglishCharacterData.LowerCase</span></code> を渡しているため、半角英小文字を一文字以上含むことをチェックする検証規則のBean定義となる。</div>
+<div class="line">(1)-(3)と同様だが、文字種別として<code class="docutils literal notranslate"><span class="pre">org.passay.EnglishCharacterData.LowerCase</span></code> を渡しているため、半角英小文字を一文字以上含むことをチェックする検証規則のBean定義となる。</div>
 </div>
 </td>
 </tr>
@@ -8806,7 +8798,7 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">(1)-(3)と同様だが、文字種別として<code class="docutils literal"><span class="pre">org.passay.EnglishCharacterData.Digit</span></code> を渡しているため、半角数字を一文字以上含むことをチェックする検証規則のBean定義となる。</div>
+<div class="line">(1)-(3)と同様だが、文字種別として<code class="docutils literal notranslate"><span class="pre">org.passay.EnglishCharacterData.Digit</span></code> を渡しているため、半角数字を一文字以上含むことをチェックする検証規則のBean定義となる。</div>
 </div>
 </td>
 </tr>
@@ -8822,7 +8814,7 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </tbody>
 </table>
 <p>作成した検証器を使用してパスワード入力チェックを行う。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@Inject</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Inject</span>
 <span class="n">PasswordValidator</span> <span class="n">characterPasswordValidator</span><span class="o">;</span>
 
 <span class="c1">// omitted</span>
@@ -8859,7 +8851,7 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">検証対象のパスワードを <code class="docutils literal"><span class="pre">PasswordData</span></code> のコンストラクタに渡し、インスタンスを作成する。</div>
+<div class="line">検証対象のパスワードを <code class="docutils literal notranslate"><span class="pre">PasswordData</span></code> のコンストラクタに渡し、インスタンスを作成する。</div>
 </div>
 </td>
 </tr>
@@ -8868,7 +8860,7 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">PasswordValidator</span></code> の <code class="docutils literal"><span class="pre">validate</span></code> メソッドに <code class="docutils literal"><span class="pre">PasswordData</span></code> を引数として渡し、パスワード入力チェックを実行する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">PasswordValidator</span></code> の <code class="docutils literal notranslate"><span class="pre">validate</span></code> メソッドに <code class="docutils literal notranslate"><span class="pre">PasswordData</span></code> を引数として渡し、パスワード入力チェックを実行する。</div>
 </div>
 </td>
 </tr>
@@ -8877,7 +8869,7 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">RuleResult</span></code> の <code class="docutils literal"><span class="pre">isValid</span></code> メソッドを使用して、パスワード入力チェックの結果を真理値で取得する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">RuleResult</span></code> の <code class="docutils literal notranslate"><span class="pre">isValid</span></code> メソッドを使用して、パスワード入力チェックの結果を真理値で取得する。</div>
 </div>
 </td>
 </tr>
@@ -8886,7 +8878,7 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">PasswordValidator</span></code> の <code class="docutils literal"><span class="pre">getMessages</span></code> メソッドに <code class="docutils literal"><span class="pre">RuleResult</span></code> を引数として渡し、エラーメッセージを取得する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">PasswordValidator</span></code> の <code class="docutils literal notranslate"><span class="pre">getMessages</span></code> メソッドに <code class="docutils literal notranslate"><span class="pre">RuleResult</span></code> を引数として渡し、エラーメッセージを取得する。</div>
 </div>
 </td>
 </tr>
@@ -8899,7 +8891,7 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 <div class="section" id="id73">
 <h5>9.10.5.1.2.1. Overview<a class="headerlink" href="#id73" title="Permalink to this headline">¶</a></h5>
 <div class="line-block">
-<div class="line">Passayにおけるパスワード生成機能では、パスワードの生成器と生成規則を用いる。生成器は<code class="docutils literal"><span class="pre">org.passay.PasswordGenerator</span></code> のインスタンスであり、生成規則は文字種別に関する検証規則(<code class="docutils literal"><span class="pre">org.passay.CharacterRule</span></code> )のリストである。</div>
+<div class="line">Passayにおけるパスワード生成機能では、パスワードの生成器と生成規則を用いる。生成器は<code class="docutils literal notranslate"><span class="pre">org.passay.PasswordGenerator</span></code> のインスタンスであり、生成規則は文字種別に関する検証規則(<code class="docutils literal notranslate"><span class="pre">org.passay.CharacterRule</span></code> )のリストである。</div>
 <div class="line">生成器のメソッドに生成するパスワードの長さと生成規則を引数として与えることで、生成規則を満たしたパスワードが生成される。</div>
 </div>
 </div>
@@ -8907,7 +8899,7 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 <h5>9.10.5.1.2.2. How to use<a class="headerlink" href="#id74" title="Permalink to this headline">¶</a></h5>
 <p>生成規則に含まれる、文字種別に関する検証規則の作成方法は、<a class="reference internal" href="#password-validation"><span class="std std-ref">パスワード入力チェック</span></a> と同様である。
 生成規則と生成器を以下のようにBeanとして定義しておくことでDIが可能となる。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Password Rules. --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Password Rules. --&gt;</span>
 <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;upperCaseRule&quot;</span> <span class="na">class=</span><span class="s">&quot;org.passay.CharacterRule&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
     <span class="nt">&lt;constructor-arg</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;util:constant</span> <span class="na">static-field=</span><span class="s">&quot;org.passay.EnglishCharacterData.UpperCase&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
@@ -8961,7 +8953,7 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">文字種別を指定する。ここでは、<code class="docutils literal"><span class="pre">org.passay.EnglishCharacterData.UpperCase</span></code> を渡しているため、半角英大文字に関する検証規則となる。</div>
+<div class="line">文字種別を指定する。ここでは、<code class="docutils literal notranslate"><span class="pre">org.passay.EnglishCharacterData.UpperCase</span></code> を渡しているため、半角英大文字に関する検証規則となる。</div>
 </div>
 </td>
 </tr>
@@ -8979,7 +8971,7 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">(1)-(3)と同様だが、文字種別として<code class="docutils literal"><span class="pre">org.passay.EnglishCharacterData.LowerCase</span></code> を渡しているため、半角英小文字を一文字以上含むことをチェックする検証規則のBean定義となる。</div>
+<div class="line">(1)-(3)と同様だが、文字種別として<code class="docutils literal notranslate"><span class="pre">org.passay.EnglishCharacterData.LowerCase</span></code> を渡しているため、半角英小文字を一文字以上含むことをチェックする検証規則のBean定義となる。</div>
 </div>
 </td>
 </tr>
@@ -8988,7 +8980,7 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">(1)-(3)と同様だが、文字種別として<code class="docutils literal"><span class="pre">org.passay.EnglishCharacterData.Digit</span></code> を渡しているため、半角数字を一文字以上含むことをチェックする検証規則のBean定義となる。</div>
+<div class="line">(1)-(3)と同様だが、文字種別として<code class="docutils literal notranslate"><span class="pre">org.passay.EnglishCharacterData.Digit</span></code> を渡しているため、半角数字を一文字以上含むことをチェックする検証規則のBean定義となる。</div>
 </div>
 </td>
 </tr>
@@ -9013,7 +9005,7 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </tbody>
 </table>
 <p>作成した生成器と生成規則を使用してパスワード生成を行う。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@Inject</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Inject</span>
 <span class="n">PasswordGenerator</span> <span class="n">passwordGenerator</span><span class="o">;</span>
 
 <span class="nd">@Resource</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;passwordGenerationRules&quot;</span><span class="o">)</span>
@@ -9044,7 +9036,7 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">PasswordGenerator</span></code> の<code class="docutils literal"><span class="pre">generatePassword</span></code> メソッドに、生成するパスワードの長さと生成規則を引数として渡すと、生成規則を満たしたパスワードが生成される。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">PasswordGenerator</span></code> の<code class="docutils literal notranslate"><span class="pre">generatePassword</span></code> メソッドに、生成するパスワードの長さと生成規則を引数として渡すと、生成規則を満たしたパスワードが生成される。</div>
 </div>
 </td>
 </tr>
@@ -9052,8 +9044,8 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
 </table>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">Bean定義したコレクションをDIする際には、<code class="docutils literal"><span class="pre">&#64;Inject</span></code> + <code class="docutils literal"><span class="pre">&#64;Named</span></code> では期待した動作をしない。
-そのため、代わりに<code class="docutils literal"><span class="pre">&#64;Resource</span></code> を使用してBean名でDIする。</p>
+<p class="last">Bean定義したコレクションをDIする際には、<code class="docutils literal notranslate"><span class="pre">&#64;Inject</span></code> + <code class="docutils literal notranslate"><span class="pre">&#64;Named</span></code> では期待した動作をしない。
+そのため、代わりに<code class="docutils literal notranslate"><span class="pre">&#64;Resource</span></code> を使用してBean名でDIする。</p>
 </div>
 </div>
 </div>
@@ -9085,7 +9077,7 @@ PassayのAPIは以下の三つの主要コンポーネントで構成される�
     </div>
     <div class="footer">
       © Copyright 2013-2018, NTT DATA Corporation. © Copyright 2013-2018, NTT Corporation.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.3.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.1.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
     </div>
     
     <script>

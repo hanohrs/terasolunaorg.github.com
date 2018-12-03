@@ -2,23 +2,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>9.3. 認可 &#8212; TERASOLUNA Server Framework for Java (5.x) Development Guideline 5.4.1.RELEASE documentation</title>
     <link rel="stylesheet" href="../_static/solar.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '5.4.1.RELEASE',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="9.4. セッション管理" href="SessionManagement.html" />
@@ -26,8 +19,7 @@
 <!-- <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'> -->
 <link href="../_static/solarized-dark.css" rel="stylesheet">
 <link href="../_static/jquery.treeview.css" rel="stylesheet">
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -46,8 +38,7 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper"><label><input id="scroll" type="checkbox" checked> scroll sidebar</label>
-
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">9.3. 認可</a><ul>
 <li><a class="reference internal" href="#overview">9.3.1. Overview</a><ul>
@@ -122,7 +113,6 @@
 </li>
 </ul>
 
-
   <h4>Previous topic</h4>
   <p class="topless"><a href="Authentication.html"
                         title="previous chapter">9.2. 認証</a></p>
@@ -138,12 +128,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -285,7 +277,7 @@ Spring Securityでは、以下の3つのリソースに対してアクセスポ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">FilterSecurityInterceptor</span></code>クラスは、<code class="docutils literal"><span class="pre">AccessDecisionManager</span></code>インタフェースのメソッドを呼び出し、リソースへのアクセス権の有無をチェックする。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">FilterSecurityInterceptor</span></code>クラスは、<code class="docutils literal notranslate"><span class="pre">AccessDecisionManager</span></code>インタフェースのメソッドを呼び出し、リソースへのアクセス権の有無をチェックする。</div>
 </div>
 </td>
 </tr>
@@ -294,7 +286,7 @@ Spring Securityでは、以下の3つのリソースに対してアクセスポ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">AffirmativeBased</span></code>クラス(デフォルトで使用される<code class="docutils literal"><span class="pre">AccessDecisionManager</span></code>の実装クラス)は、<code class="docutils literal"><span class="pre">AccessDecisionVoter</span></code>インタフェースのメソッドを呼び出し、アクセス権の有無を投票させる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">AffirmativeBased</span></code>クラス(デフォルトで使用される<code class="docutils literal notranslate"><span class="pre">AccessDecisionManager</span></code>の実装クラス)は、<code class="docutils literal notranslate"><span class="pre">AccessDecisionVoter</span></code>インタフェースのメソッドを呼び出し、アクセス権の有無を投票させる。</div>
 </div>
 </td>
 </tr>
@@ -303,7 +295,7 @@ Spring Securityでは、以下の3つのリソースに対してアクセスポ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">FilterSecurityInterceptor</span></code>は、<code class="docutils literal"><span class="pre">AccessDecisionManager</span></code>によってアクセス権が付与された場合に限り、リソースへアクセスする。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">FilterSecurityInterceptor</span></code>は、<code class="docutils literal notranslate"><span class="pre">AccessDecisionManager</span></code>によってアクセス権が付与された場合に限り、リソースへアクセスする。</div>
 </div>
 </td>
 </tr>
@@ -314,7 +306,7 @@ Spring Securityでは、以下の3つのリソースに対してアクセスポ�
 </div>
 <div class="section" id="exceptiontranslationfilter">
 <h4><a class="toc-backref" href="#id44">9.3.1.1.1. ExceptionTranslationFilter</a><a class="headerlink" href="#exceptiontranslationfilter" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">ExceptionTranslationFilter</span></code>は、認可処理(<code class="docutils literal"><span class="pre">AccessDecisionManager</span></code>)で発生した例外をハンドリングし、クライアントへ適切なレスポンスを行うためのSecurity Filterである。
+<p><code class="docutils literal notranslate"><span class="pre">ExceptionTranslationFilter</span></code>は、認可処理(<code class="docutils literal notranslate"><span class="pre">AccessDecisionManager</span></code>)で発生した例外をハンドリングし、クライアントへ適切なレスポンスを行うためのSecurity Filterである。
 デフォルトの実装では、未認証ユーザーからのアクセスの場合は認証を促すレスポンス、認証済みのユーザーからのアクセスの場合は認可エラーを通知するレスポンスを返却する。</p>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -322,18 +314,18 @@ Spring Securityでは、以下の3つのリソースに対してアクセスポ�
 </div>
 <div class="section" id="filtersecurityinterceptor">
 <h4><a class="toc-backref" href="#id45">9.3.1.1.2. FilterSecurityInterceptor</a><a class="headerlink" href="#filtersecurityinterceptor" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">FilterSecurityInterceptor</span></code>は、HTTPリクエストに対して認可処理を適用するためのSecurity Filterで、実際の認可処理は<code class="docutils literal"><span class="pre">AccessDecisionManager</span></code>に委譲する。
-<code class="docutils literal"><span class="pre">AccessDecisionManager</span></code>インタフェースのメソッドを呼び出す際には、クライアントがアクセスしようとしたリソースに指定されているアクセスポリシーを連携する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">FilterSecurityInterceptor</span></code>は、HTTPリクエストに対して認可処理を適用するためのSecurity Filterで、実際の認可処理は<code class="docutils literal notranslate"><span class="pre">AccessDecisionManager</span></code>に委譲する。
+<code class="docutils literal notranslate"><span class="pre">AccessDecisionManager</span></code>インタフェースのメソッドを呼び出す際には、クライアントがアクセスしようとしたリソースに指定されているアクセスポリシーを連携する。</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 </div>
 <div class="section" id="accessdecisionmanager">
 <h4><a class="toc-backref" href="#id46">9.3.1.1.3. AccessDecisionManager</a><a class="headerlink" href="#accessdecisionmanager" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">AccessDecisionManager</span></code>は、アクセスしようとしたリソースに対してアクセス権があるかチェックを行うためのインタフェースである。</p>
-<p>Spring Securityが提供する実装クラスは3種類存在するが、いずれも<code class="docutils literal"><span class="pre">AccessDecisionVoter</span></code>というインタフェースのメソッドを呼び出してアクセス権を付与するか否かを判定させている。
-<code class="docutils literal"><span class="pre">AccessDecisionVoter</span></code>は「付与」「拒否」「棄権」のいずれかを投票し、<code class="docutils literal"><span class="pre">AccessDecisionManager</span></code>の実装クラスが投票結果を集約して最終的なアクセス権を判断する。
-アクセス権がないと判断した場合は、<code class="docutils literal"><span class="pre">AccessDeniedException</span></code>を発生させアクセスを拒否する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">AccessDecisionManager</span></code>は、アクセスしようとしたリソースに対してアクセス権があるかチェックを行うためのインタフェースである。</p>
+<p>Spring Securityが提供する実装クラスは3種類存在するが、いずれも<code class="docutils literal notranslate"><span class="pre">AccessDecisionVoter</span></code>というインタフェースのメソッドを呼び出してアクセス権を付与するか否かを判定させている。
+<code class="docutils literal notranslate"><span class="pre">AccessDecisionVoter</span></code>は「付与」「拒否」「棄権」のいずれかを投票し、<code class="docutils literal notranslate"><span class="pre">AccessDecisionManager</span></code>の実装クラスが投票結果を集約して最終的なアクセス権を判断する。
+アクセス権がないと判断した場合は、<code class="docutils literal notranslate"><span class="pre">AccessDeniedException</span></code>を発生させアクセスを拒否する。</p>
 <p>なお、すべての投票結果が「棄権」であった場合、Spring Securityのでデフォルトでは、「アクセス権なし」と判定される。</p>
 <table border="1" class="colwidths-given docutils" id="id33">
 <caption><span class="caption-text"><strong>Spring Securityが提供するAccessDecisionManagerの実装クラス</strong></span><a class="headerlink" href="#id33" title="Permalink to this table">¶</a></caption>
@@ -348,31 +340,31 @@ Spring Securityでは、以下の3つのリソースに対してアクセスポ�
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">AffirmativeBased</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">AffirmativeBased</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">AccessDecisionVoter</span></code>に投票させ、「付与」が１件投票された時点でアクセス権を与える実装クラス。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">AccessDecisionVoter</span></code>に投票させ、「付与」が１件投票された時点でアクセス権を与える実装クラス。</div>
 <div class="line"><strong>デフォルトで使用される実装クラス。</strong></div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ConsensusBased</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ConsensusBased</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">全ての<code class="docutils literal"><span class="pre">AccessDecisionVoter</span></code>に投票させ、「付与」の投票数が多い場合にアクセス権を与える実装クラス。</div>
+<div class="line">全ての<code class="docutils literal notranslate"><span class="pre">AccessDecisionVoter</span></code>に投票させ、「付与」の投票数が多い場合にアクセス権を与える実装クラス。</div>
 <div class="line">「付与」「拒否」が１件以上、且つ同数の場合、Spring Securityのデフォルトでは、「アクセス権あり」と判定される。</div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">UnanimousBased</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">UnanimousBased</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">AccessDecisionVoter</span></code>に投票させ、「拒否」が１件投票された時点で <strong>アクセス権を与えない</strong> 実装クラス。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">AccessDecisionVoter</span></code>に投票させ、「拒否」が１件投票された時点で <strong>アクセス権を与えない</strong> 実装クラス。</div>
 </div>
 </td>
 </tr>
@@ -381,8 +373,8 @@ Spring Securityでは、以下の3つのリソースに対してアクセスポ�
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>AccessDecisionVoterの選択</strong></p>
-<p class="last">使用する<code class="docutils literal"><span class="pre">AccessDecisionVoter</span></code>が1つの場合はどの実装クラスを使っても動作に違いはない。
-複数の<code class="docutils literal"><span class="pre">AccessDecisionVoter</span></code>を使用する場合は、要件に合わせて実装クラスを選択されたい。</p>
+<p class="last">使用する<code class="docutils literal notranslate"><span class="pre">AccessDecisionVoter</span></code>が1つの場合はどの実装クラスを使っても動作に違いはない。
+複数の<code class="docutils literal notranslate"><span class="pre">AccessDecisionVoter</span></code>を使用する場合は、要件に合わせて実装クラスを選択されたい。</p>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -390,7 +382,7 @@ Spring Securityでは、以下の3つのリソースに対してアクセスポ�
 </div>
 <div class="section" id="accessdecisionvoter">
 <h4><a class="toc-backref" href="#id47">9.3.1.1.4. AccessDecisionVoter</a><a class="headerlink" href="#accessdecisionvoter" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">AccessDecisionVoter</span></code>は、アクセスしようとしたリソースに指定されているアクセスポリシーを参照してアクセス権を付与するかを投票するためのインタフェースである。</p>
+<p><code class="docutils literal notranslate"><span class="pre">AccessDecisionVoter</span></code>は、アクセスしようとしたリソースに指定されているアクセスポリシーを参照してアクセス権を付与するかを投票するためのインタフェースである。</p>
 <p>Spring Securityが提供する主な実装クラスは以下の通り。</p>
 <table border="1" class="colwidths-given docutils" id="id34">
 <caption><span class="caption-text"><strong>Spring Securityが提供するAccessDecisionVoterの主な実装クラス</strong></span><a class="headerlink" href="#id34" title="Permalink to this table">¶</a></caption>
@@ -405,16 +397,16 @@ Spring Securityでは、以下の3つのリソースに対してアクセスポ�
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">WebExpressionVoter</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">WebExpressionVoter</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">SpEL経由で認証情報(<code class="docutils literal"><span class="pre">Authentication</span></code>)が保持する権限情報とリクエスト情報(<code class="docutils literal"><span class="pre">HttpServletRequest</span></code>)を参照して投票を行う実装クラス。</div>
+<div class="line">SpEL経由で認証情報(<code class="docutils literal notranslate"><span class="pre">Authentication</span></code>)が保持する権限情報とリクエスト情報(<code class="docutils literal notranslate"><span class="pre">HttpServletRequest</span></code>)を参照して投票を行う実装クラス。</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">RoleVoter</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">RoleVoter</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -423,7 +415,7 @@ Spring Securityでは、以下の3つのリソースに対してアクセスポ�
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">RoleHierarchyVoter</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">RoleHierarchyVoter</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -432,7 +424,7 @@ Spring Securityでは、以下の3つのリソースに対してアクセスポ�
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">AuthenticatedVoter</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">AuthenticatedVoter</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -445,9 +437,9 @@ Spring Securityでは、以下の3つのリソースに対してアクセスポ�
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>デフォルトで適用されるAccessDecisionVoter</strong></p>
-<p class="last">デフォルトで適用される<code class="docutils literal"><span class="pre">AccessDecisionVoter</span></code>インタフェースの実装クラスは、Spring Security 4.0から<code class="docutils literal"><span class="pre">WebExpressionVoter</span></code>に統一されている。
-<code class="docutils literal"><span class="pre">WebExpressionVoter</span></code>は、<code class="docutils literal"><span class="pre">RoleVoter</span></code>、<code class="docutils literal"><span class="pre">RoleHierarchyVoter</span></code>、<code class="docutils literal"><span class="pre">AuthenticatedVoter</span></code>を使用した時と同じことが実現できるため、
-本ガイドラインでも、デフォルトの<code class="docutils literal"><span class="pre">WebExpressionVoter</span></code>を使って認可処理を行う前提で説明を行う。</p>
+<p class="last">デフォルトで適用される<code class="docutils literal notranslate"><span class="pre">AccessDecisionVoter</span></code>インタフェースの実装クラスは、Spring Security 4.0から<code class="docutils literal notranslate"><span class="pre">WebExpressionVoter</span></code>に統一されている。
+<code class="docutils literal notranslate"><span class="pre">WebExpressionVoter</span></code>は、<code class="docutils literal notranslate"><span class="pre">RoleVoter</span></code>、<code class="docutils literal notranslate"><span class="pre">RoleHierarchyVoter</span></code>、<code class="docutils literal notranslate"><span class="pre">AuthenticatedVoter</span></code>を使用した時と同じことが実現できるため、
+本ガイドラインでも、デフォルトの<code class="docutils literal notranslate"><span class="pre">WebExpressionVoter</span></code>を使って認可処理を行う前提で説明を行う。</p>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -486,92 +478,92 @@ SpELの使い方については本節でも紹介するが、より詳しい使�
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">hasRole(String</span> <span class="pre">role)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">hasRole(String</span> <span class="pre">role)</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">ログインユーザーが、引数に指定したロールを保持している場合に<code class="docutils literal"><span class="pre">true</span></code>を返却する。</div>
+<div class="line">ログインユーザーが、引数に指定したロールを保持している場合に<code class="docutils literal notranslate"><span class="pre">true</span></code>を返却する。</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">hasAnyRole(String...</span> <span class="pre">roles)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">hasAnyRole(String...</span> <span class="pre">roles)</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">ログインユーザーが、引数に指定したロールのいずれかを保持している場合に<code class="docutils literal"><span class="pre">true</span></code>を返却する。</div>
+<div class="line">ログインユーザーが、引数に指定したロールのいずれかを保持している場合に<code class="docutils literal notranslate"><span class="pre">true</span></code>を返却する。</div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">isAnonymous()</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">isAnonymous()</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">ログインしていない匿名ユーザーの場合に<code class="docutils literal"><span class="pre">true</span></code>を返却する。</div>
+<div class="line">ログインしていない匿名ユーザーの場合に<code class="docutils literal notranslate"><span class="pre">true</span></code>を返却する。</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">isRememberMe()</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">isRememberMe()</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Remember Me認証によってログインしたユーザーの場合に<code class="docutils literal"><span class="pre">true</span></code>を返却する。</div>
+<div class="line">Remember Me認証によってログインしたユーザーの場合に<code class="docutils literal notranslate"><span class="pre">true</span></code>を返却する。</div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">isAuthenticated()</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">isAuthenticated()</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">ログイン中の場合に<code class="docutils literal"><span class="pre">true</span></code>を返却する。</div>
+<div class="line">ログイン中の場合に<code class="docutils literal notranslate"><span class="pre">true</span></code>を返却する。</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">isFullyAuthenticated()</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">isFullyAuthenticated()</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Remember Me認証ではなく通常の認証プロセスによってログインしたユーザーの場合に<code class="docutils literal"><span class="pre">true</span></code>を返却する。</div>
+<div class="line">Remember Me認証ではなく通常の認証プロセスによってログインしたユーザーの場合に<code class="docutils literal notranslate"><span class="pre">true</span></code>を返却する。</div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">permitAll</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">permitAll</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">常に<code class="docutils literal"><span class="pre">true</span></code>を返却する。</div>
+<div class="line">常に<code class="docutils literal notranslate"><span class="pre">true</span></code>を返却する。</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">denyAll</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">denyAll</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">常に<code class="docutils literal"><span class="pre">false</span></code>を返却する。</div>
+<div class="line">常に<code class="docutils literal notranslate"><span class="pre">false</span></code>を返却する。</div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">principal</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">principal</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">認証されたユーザーのユーザー情報(<code class="docutils literal"><span class="pre">UserDetails</span></code>インタフェースを実装したクラスのオブジェクト)を返却する。</div>
+<div class="line">認証されたユーザーのユーザー情報(<code class="docutils literal notranslate"><span class="pre">UserDetails</span></code>インタフェースを実装したクラスのオブジェクト)を返却する。</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">authentication</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">authentication</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">認証されたユーザーの認証情報(<code class="docutils literal"><span class="pre">Authentication</span></code>インタフェースを実装したクラスのオブジェクト)を返却する。</div>
+<div class="line">認証されたユーザーの認証情報(<code class="docutils literal notranslate"><span class="pre">Authentication</span></code>インタフェースを実装したクラスのオブジェクト)を返却する。</div>
 </div>
 </td>
 </tr>
@@ -580,16 +572,16 @@ SpELの使い方については本節でも紹介するが、より詳しい使�
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>Expressionを使用した認証情報へのアクセス</strong></p>
-<p class="last">Expressionとして<code class="docutils literal"><span class="pre">principal</span></code>や<code class="docutils literal"><span class="pre">authentication</span></code>を使用すると、ログインユーザーのユーザー情報や認証情報を参照することができるため、ロール以外の属性を使ってアクセスポリシーを設定することが可能になる。</p>
+<p class="last">Expressionとして<code class="docutils literal notranslate"><span class="pre">principal</span></code>や<code class="docutils literal notranslate"><span class="pre">authentication</span></code>を使用すると、ログインユーザーのユーザー情報や認証情報を参照することができるため、ロール以外の属性を使ってアクセスポリシーを設定することが可能になる。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>ロール名のプレフィックス</strong></p>
-<p>Spring Security 3.2までは、ロール名には<code class="docutils literal"><span class="pre">ROLE_</span></code> プレフィックスを指定する必要があったが、Spring Security 4.0から<code class="docutils literal"><span class="pre">ROLE_</span></code> プレフィックスの指定が不要となっている。</p>
+<p>Spring Security 3.2までは、ロール名には<code class="docutils literal notranslate"><span class="pre">ROLE_</span></code> プレフィックスを指定する必要があったが、Spring Security 4.0から<code class="docutils literal notranslate"><span class="pre">ROLE_</span></code> プレフィックスの指定が不要となっている。</p>
 <p>例）</p>
 <ul class="last simple">
-<li>Spring Secuirty 3.2以前 : <code class="docutils literal"><span class="pre">hasRole('ROLE_USER')</span></code></li>
-<li>Spring Security 4.0以降 : <code class="docutils literal"><span class="pre">hasRole('USER')</span></code></li>
+<li>Spring Secuirty 3.2以前 : <code class="docutils literal notranslate"><span class="pre">hasRole('ROLE_USER')</span></code></li>
+<li>Spring Security 4.0以降 : <code class="docutils literal notranslate"><span class="pre">hasRole('USER')</span></code></li>
 </ul>
 </div>
 <div class="line-block">
@@ -612,11 +604,11 @@ SpELの使い方については本節でも紹介するが、より詳しい使�
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">hasIpAddress(String</span> <span class="pre">ipAddress)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">hasIpAddress(String</span> <span class="pre">ipAddress)</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">リクエスト元のIPアドレスが、引数に指定したIPアドレス体系に一致する場合に<code class="docutils literal"><span class="pre">true</span></code>を返却する。</div>
+<div class="line">リクエスト元のIPアドレスが、引数に指定したIPアドレス体系に一致する場合に<code class="docutils literal notranslate"><span class="pre">true</span></code>を返却する。</div>
 </div>
 </td>
 </tr>
@@ -629,7 +621,7 @@ SpELの使い方については本節でも紹介するが、より詳しい使�
 以下の例では、ロールと、リクエストされたIPアドレス両方に合致した場合、アクセス可能となる。</p>
 <ul>
 <li><p class="first">spring-security.xmlの定義例</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
     <span class="nt">&lt;sec:intercept-url</span> <span class="na">pattern=</span><span class="s">&quot;/admin/**&quot;</span> <span class="na">access=</span><span class="s">&quot;hasRole(&#39;ADMIN&#39;) and hasIpAddress(&#39;192.168.10.1&#39;)&quot;</span><span class="nt">/&gt;</span>
     <span class="c">&lt;!-- omitted --&gt;</span>
 <span class="nt">&lt;/sec:http&gt;</span>
@@ -648,7 +640,7 @@ SpELの使い方については本節でも紹介するが、より詳しい使�
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">[式1]</span> <span class="pre">and</span> <span class="pre">[式2]</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">[式1]</span> <span class="pre">and</span> <span class="pre">[式2]</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -657,7 +649,7 @@ SpELの使い方については本節でも紹介するが、より詳しい使�
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">[式1]</span> <span class="pre">or</span> <span class="pre">[式2]</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">[式1]</span> <span class="pre">or</span> <span class="pre">[式2]</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -666,7 +658,7 @@ SpELの使い方については本節でも紹介するが、より詳しい使�
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">![式]</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">![式]</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -692,7 +684,7 @@ SpELの使い方については本節でも紹介するが、より詳しい使�
 <ul class="simple">
 <li>spring-security.xmlの定義例</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
     <span class="c">&lt;!-- omitted --&gt;</span>
     <span class="nt">&lt;sec:intercept-url</span> <span class="na">pattern=</span><span class="s">&quot;/**&quot;</span> <span class="na">access=</span><span class="s">&quot;isAuthenticated()&quot;</span> <span class="nt">/&gt;</span>  <span class="c">&lt;!-- (1) --&gt;</span>
     <span class="c">&lt;!-- omitted --&gt;</span>
@@ -715,7 +707,7 @@ SpELの使い方については本節でも紹介するが、より詳しい使�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;sec:intercept-url&gt;</span></code>タグに、HTTPリクエストに対してアクセスポリシーを定義する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;sec:intercept-url&gt;</span></code>タグに、HTTPリクエストに対してアクセスポリシーを定義する。</div>
 <div class="line">ここでは、SpELを使用して「Webアプリケーション配下の全てのリクエストに対して認証済みのユーザーのみアクセスを許可する」というアクセスポリシーを定義している。</div>
 </div>
 </td>
@@ -725,7 +717,7 @@ SpELの使い方については本節でも紹介するが、より詳しい使�
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>use-expressionsのデフォルト定義</strong></p>
-<p class="last">Spring Security 4.0から、<code class="docutils literal"><span class="pre">&lt;sec:http&gt;</span></code> タグの<code class="docutils literal"><span class="pre">use-expressions</span></code>属性のデフォルト値が<code class="docutils literal"><span class="pre">true</span></code>に変更になっているため、<code class="docutils literal"><span class="pre">true</span></code>を使用する場合に明示的な記述は不要となった。</p>
+<p class="last">Spring Security 4.0から、<code class="docutils literal notranslate"><span class="pre">&lt;sec:http&gt;</span></code> タグの<code class="docutils literal notranslate"><span class="pre">use-expressions</span></code>属性のデフォルト値が<code class="docutils literal notranslate"><span class="pre">true</span></code>に変更になっているため、<code class="docutils literal notranslate"><span class="pre">true</span></code>を使用する場合に明示的な記述は不要となった。</p>
 </div>
 </div>
 <div class="section" id="id9">
@@ -734,7 +726,7 @@ SpELの使い方については本節でも紹介するが、より詳しい使�
 <div class="section" id="access-policy-designate-web-resource">
 <span id="id10"></span><h5><a class="toc-backref" href="#id56">9.3.2.2.2.1. アクセスポリシーを適用するWebリソースの指定</a><a class="headerlink" href="#access-policy-designate-web-resource" title="Permalink to this headline">¶</a></h5>
 <p>まず、アクセスポリシーを適用するリソース(HTTPリクエスト)を指定する。
-アクセスポリシーを適用するリソースの指定は、<code class="docutils literal"><span class="pre">&lt;sec:intercept-url&gt;</span></code>タグの以下の属性を使用する。</p>
+アクセスポリシーを適用するリソースの指定は、<code class="docutils literal notranslate"><span class="pre">&lt;sec:intercept-url&gt;</span></code>タグの以下の属性を使用する。</p>
 <table border="1" class="colwidths-given docutils" id="id37">
 <caption><span class="caption-text"><strong>アクセスポリシーを適用するリソースを指定するための属性</strong></span><a class="headerlink" href="#id37" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -748,7 +740,7 @@ SpELの使い方については本節でも紹介するが、より詳しい使�
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">pattern</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">pattern</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -757,7 +749,7 @@ SpELの使い方については本節でも紹介するが、より詳しい使�
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">method</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">method</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -766,7 +758,7 @@ SpELの使い方については本節でも紹介するが、より詳しい使�
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">requires-channel</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">requires-channel</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -779,9 +771,9 @@ SpELの使い方については本節でも紹介するが、より詳しい使�
 </table>
 <p>上記以外の属性については、<a class="reference external" href="http://docs.spring.io/spring-security/site/docs/4.2.4.RELEASE/reference/htmlsingle/#nsa-intercept-url">&lt;intercept-url&gt;</a>を参照されたい。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">&lt;sec:intercept-url&gt;</span></code>タグ<code class="docutils literal"><span class="pre">pattern</span></code>属性の定義例（spring-security.xml）</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;sec:intercept-url&gt;</span></code>タグ<code class="docutils literal notranslate"><span class="pre">pattern</span></code>属性の定義例（spring-security.xml）</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http</span> <span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http</span> <span class="nt">&gt;</span>
     <span class="nt">&lt;sec:intercept-url</span> <span class="na">pattern=</span><span class="s">&quot;/admin/accounts/**&quot;</span> <span class="na">access=</span><span class="s">&quot;...&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;sec:intercept-url</span> <span class="na">pattern=</span><span class="s">&quot;/admin/**&quot;</span> <span class="na">access=</span><span class="s">&quot;...&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;sec:intercept-url</span> <span class="na">pattern=</span><span class="s">&quot;/**&quot;</span> <span class="na">access=</span><span class="s">&quot;...&quot;</span><span class="nt">/&gt;</span>
@@ -795,10 +787,10 @@ SpELの使い方については本節でも紹介するが、より詳しい使�
 <p class="first admonition-title">Tip</p>
 <p><strong>パスパターンの解釈</strong></p>
 <p>Spring Securityのデフォルトの動作では、パスパターンはAnt形式で解釈する。
-パスパターンを正規表現で指定したい場合は、<code class="docutils literal"><span class="pre">&lt;sec:http&gt;</span></code>タグの<code class="docutils literal"><span class="pre">request-matcher</span></code>属性に
-<code class="docutils literal"><span class="pre">regex</span></code>を指定すること。</p>
+パスパターンを正規表現で指定したい場合は、<code class="docutils literal notranslate"><span class="pre">&lt;sec:http&gt;</span></code>タグの<code class="docutils literal notranslate"><span class="pre">request-matcher</span></code>属性に
+<code class="docutils literal notranslate"><span class="pre">regex</span></code>を指定すること。</p>
 <blockquote class="last">
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http</span> <span class="na">request-matcher=</span><span class="s">&quot;regex&quot;</span><span class="nt">&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http</span> <span class="na">request-matcher=</span><span class="s">&quot;regex&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;sec:intercept-url</span> <span class="na">pattern=</span><span class="s">&quot;/admin/accounts/.*&quot;</span> <span class="na">access=</span><span class="s">&quot;hasRole(&#39;ACCOUNT_MANAGER&#39;)&quot;</span> <span class="nt">/&gt;</span>
     <span class="c">&lt;!-- omitted --&gt;</span>
 <span class="nt">&lt;/sec:http&gt;</span>
@@ -809,14 +801,14 @@ SpELの使い方については本節でも紹介するが、より詳しい使�
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p>Spring Security 4.1以降、Spring Securityがデフォルトで使用している<cite>AntPathRequestMatcher</cite> のパスマッチングの仕様が大文字・小文字を区別する様になった。</p>
-<p>例えば以下に示すように、<code class="docutils literal"><span class="pre">/Todo/List</span></code>というパスが割り当てられたSpring MVCのエンドポイントに対してアクセスポリシーを定義する場合は、
-<code class="docutils literal"><span class="pre">&lt;sec:intercept-url&gt;</span></code>タグの <code class="docutils literal"><span class="pre">pattern</span></code>属性に指定する値は <code class="docutils literal"><span class="pre">/Todo/List</span></code>や <code class="docutils literal"><span class="pre">/Todo/*</span></code>など大文字・小文字をそろえる必要がある。
-誤って<code class="docutils literal"><span class="pre">/todo/list</span></code>や<code class="docutils literal"><span class="pre">/todo/**</span></code>など大文字・小文字がそろっていない値を指定してしまうと、意図した認可制御が行われなくなるので注意されたい。</p>
+<p>例えば以下に示すように、<code class="docutils literal notranslate"><span class="pre">/Todo/List</span></code>というパスが割り当てられたSpring MVCのエンドポイントに対してアクセスポリシーを定義する場合は、
+<code class="docutils literal notranslate"><span class="pre">&lt;sec:intercept-url&gt;</span></code>タグの <code class="docutils literal notranslate"><span class="pre">pattern</span></code>属性に指定する値は <code class="docutils literal notranslate"><span class="pre">/Todo/List</span></code>や <code class="docutils literal notranslate"><span class="pre">/Todo/*</span></code>など大文字・小文字をそろえる必要がある。
+誤って<code class="docutils literal notranslate"><span class="pre">/todo/list</span></code>や<code class="docutils literal notranslate"><span class="pre">/todo/**</span></code>など大文字・小文字がそろっていない値を指定してしまうと、意図した認可制御が行われなくなるので注意されたい。</p>
 <ul class="simple">
 <li>Spring MVCのエンドポイントの実装例</li>
 </ul>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span><span class="o">=</span><span class="s">&quot;/Todo/List&quot;</span><span class="o">)</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span><span class="o">=</span><span class="s">&quot;/Todo/List&quot;</span><span class="o">)</span>
 <span class="kd">public</span> <span class="n">String</span> <span class="nf">viewTodoList</span><span class="o">(){</span>
    <span class="c1">//...</span>
 <span class="o">}</span>
@@ -827,7 +819,7 @@ SpELの使い方については本節でも紹介するが、より詳しい使�
 <li>アクセスポリシーの定義例</li>
 </ul>
 <blockquote class="last">
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
     <span class="nt">&lt;sec:intercept-url</span> <span class="na">pattern=</span><span class="s">&quot;/Todo/List&quot;</span> <span class="na">access=</span><span class="s">&quot;isAuthenticated()&quot;</span> <span class="nt">/&gt;</span>
     <span class="c">&lt;!-- omitted --&gt;</span>
 <span class="nt">&lt;/sec:http&gt;</span>
@@ -844,11 +836,11 @@ Spring Framework 4.2以前は <cite>trimTokens</cite> プロパティのデフ�
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p>特定のURLに対してアクセスポリシーを設ける(<code class="docutils literal"><span class="pre">pattern</span></code>属性に”<code class="docutils literal"><span class="pre">*</span></code>”や<code class="docutils literal"><span class="pre">**</span></code>などのワイルドカード指定を含めない)場合、
-拡張子を付けたパターンとリクエストパスの末尾に”<code class="docutils literal"><span class="pre">/</span></code>”を付けたパターンに対するアクセスポリシーの追加が必須である。</p>
-<p>下記の設定例は、<code class="docutils literal"><span class="pre">/restrict</span></code>に対して「ROLE_ADMIN」ロールを持つユーザからのアクセスのみを許可している。</p>
+<p>特定のURLに対してアクセスポリシーを設ける(<code class="docutils literal notranslate"><span class="pre">pattern</span></code>属性に”<code class="docutils literal notranslate"><span class="pre">*</span></code>”や<code class="docutils literal notranslate"><span class="pre">**</span></code>などのワイルドカード指定を含めない)場合、
+拡張子を付けたパターンとリクエストパスの末尾に”<code class="docutils literal notranslate"><span class="pre">/</span></code>”を付けたパターンに対するアクセスポリシーの追加が必須である。</p>
+<p>下記の設定例は、<code class="docutils literal notranslate"><span class="pre">/restrict</span></code>に対して「ROLE_ADMIN」ロールを持つユーザからのアクセスのみを許可している。</p>
 <blockquote class="last">
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
     <span class="nt">&lt;sec:intercept-url</span> <span class="na">pattern=</span><span class="s">&quot;/restrict.*&quot;</span> <span class="na">access=</span><span class="s">&quot;hasRole(&#39;ADMIN&#39;)&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
     <span class="nt">&lt;sec:intercept-url</span> <span class="na">pattern=</span><span class="s">&quot;/restrict/&quot;</span> <span class="na">access=</span><span class="s">&quot;hasRole(&#39;ADMIN&#39;)&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
     <span class="nt">&lt;sec:intercept-url</span> <span class="na">pattern=</span><span class="s">&quot;/restrict&quot;</span> <span class="na">access=</span><span class="s">&quot;hasRole(&#39;ADMIN&#39;)&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (3) --&gt;</span>
@@ -872,7 +864,7 @@ Spring Framework 4.2以前は <cite>trimTokens</cite> プロパティのデフ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">/restrict</span></code>に拡張子を付けたパターン(<code class="docutils literal"><span class="pre">/restrict.json</span></code>など)のアクセスポリシーを定義する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/restrict</span></code>に拡張子を付けたパターン(<code class="docutils literal notranslate"><span class="pre">/restrict.json</span></code>など)のアクセスポリシーを定義する。</div>
 </div>
 </td>
 </tr>
@@ -881,7 +873,7 @@ Spring Framework 4.2以前は <cite>trimTokens</cite> プロパティのデフ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">/restrict</span></code>にリクエストパスの末尾に”<code class="docutils literal"><span class="pre">/</span></code>”を付けたパターン(<code class="docutils literal"><span class="pre">/restrict/</span></code>など)のアクセスポリシーを定義する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/restrict</span></code>にリクエストパスの末尾に”<code class="docutils literal notranslate"><span class="pre">/</span></code>”を付けたパターン(<code class="docutils literal notranslate"><span class="pre">/restrict/</span></code>など)のアクセスポリシーを定義する。</div>
 </div>
 </td>
 </tr>
@@ -890,7 +882,7 @@ Spring Framework 4.2以前は <cite>trimTokens</cite> プロパティのデフ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">/restrict</span></code>に対するアクセスポリシーを定義する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/restrict</span></code>に対するアクセスポリシーを定義する。</div>
 </div>
 </td>
 </tr>
@@ -902,10 +894,10 @@ Spring Framework 4.2以前は <cite>trimTokens</cite> プロパティのデフ�
 <div class="section" id="id11">
 <h5><a class="toc-backref" href="#id57">9.3.2.2.2.2. アクセスポリシーの指定</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h5>
 <p>つぎに、アクセスポリシーを指定する。
-アクセスポリシーの指定は、<code class="docutils literal"><span class="pre">&lt;sec:intercept-url&gt;</span></code>タグの<code class="docutils literal"><span class="pre">access</span></code>属性に指定する。</p>
+アクセスポリシーの指定は、<code class="docutils literal notranslate"><span class="pre">&lt;sec:intercept-url&gt;</span></code>タグの<code class="docutils literal notranslate"><span class="pre">access</span></code>属性に指定する。</p>
 <ul>
-<li><p class="first"><code class="docutils literal"><span class="pre">&lt;sec:intercept-url&gt;</span></code>タグ<code class="docutils literal"><span class="pre">access</span></code>属性の定義例（<code class="docutils literal"><span class="pre">spring-security.xml</span></code>）</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">&lt;sec:intercept-url&gt;</span></code>タグ<code class="docutils literal notranslate"><span class="pre">access</span></code>属性の定義例（<code class="docutils literal notranslate"><span class="pre">spring-security.xml</span></code>）</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
     <span class="nt">&lt;sec:intercept-url</span> <span class="na">pattern=</span><span class="s">&quot;/admin/accounts/**&quot;</span> <span class="na">access=</span><span class="s">&quot;hasRole(&#39;ACCOUNT_MANAGER&#39;)&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;sec:intercept-url</span> <span class="na">pattern=</span><span class="s">&quot;/admin/configurations/**&quot;</span> <span class="na">access=</span><span class="s">&quot;hasIpAddress(&#39;127.0.0.1&#39;) and hasRole(&#39;CONFIGURATION_MANAGER&#39;)&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;sec:intercept-url</span> <span class="na">pattern=</span><span class="s">&quot;/admin/**&quot;</span> <span class="na">access=</span><span class="s">&quot;hasRole(&#39;ADMIN&#39;)&quot;</span> <span class="nt">/&gt;</span>
@@ -926,7 +918,7 @@ Spring Framework 4.2以前は <cite>trimTokens</cite> プロパティのデフ�
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">access</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">access</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -942,8 +934,8 @@ Spring Framework 4.2以前は <cite>trimTokens</cite> プロパティのデフ�
 <div class="line">ログインユーザーに「ROLE_USER」「ROLE_ADMIN」というロールがある場合を例に、設定例を示す。</div>
 </div>
 <ul>
-<li><p class="first"><code class="docutils literal"><span class="pre">&lt;sec:intercept-url&gt;</span></code>タグ<code class="docutils literal"><span class="pre">pattern</span></code>属性の定義例（spring-security.xml）</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">&lt;sec:intercept-url&gt;</span></code>タグ<code class="docutils literal notranslate"><span class="pre">pattern</span></code>属性の定義例（spring-security.xml）</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
     <span class="nt">&lt;sec:intercept-url</span> <span class="na">pattern=</span><span class="s">&quot;/reserve/**&quot;</span> <span class="na">access=</span><span class="s">&quot;hasAnyRole(&#39;USER&#39;,&#39;ADMIN&#39;)&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
     <span class="nt">&lt;sec:intercept-url</span> <span class="na">pattern=</span><span class="s">&quot;/admin/**&quot;</span> <span class="na">access=</span><span class="s">&quot;hasRole(&#39;ADMIN&#39;)&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
     <span class="nt">&lt;sec:intercept-url</span> <span class="na">pattern=</span><span class="s">&quot;/**&quot;</span> <span class="na">access=</span><span class="s">&quot;denyAll&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (3) --&gt;</span>
@@ -967,8 +959,8 @@ Spring Framework 4.2以前は <cite>trimTokens</cite> プロパティのデフ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">「<code class="docutils literal"><span class="pre">/reserve/**</span></code>」にアクセスするためには、「ROLE_USER」もしくは「ROLE_ADMIN」ロールが必要である。</div>
-<div class="line"><code class="docutils literal"><span class="pre">hasAnyRole</span></code>については、後述する。</div>
+<div class="line">「<code class="docutils literal notranslate"><span class="pre">/reserve/**</span></code>」にアクセスするためには、「ROLE_USER」もしくは「ROLE_ADMIN」ロールが必要である。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">hasAnyRole</span></code>については、後述する。</div>
 </div>
 </td>
 </tr>
@@ -977,8 +969,8 @@ Spring Framework 4.2以前は <cite>trimTokens</cite> プロパティのデフ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">「<code class="docutils literal"><span class="pre">/admin/**</span></code>」にアクセスするためには、「ROLE_ADMIN」ロールが必要である。</div>
-<div class="line"><code class="docutils literal"><span class="pre">hasRole</span></code>については、後述する。</div>
+<div class="line">「<code class="docutils literal notranslate"><span class="pre">/admin/**</span></code>」にアクセスするためには、「ROLE_ADMIN」ロールが必要である。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">hasRole</span></code>については、後述する。</div>
 </div>
 </td>
 </tr>
@@ -987,9 +979,9 @@ Spring Framework 4.2以前は <cite>trimTokens</cite> プロパティのデフ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">denyAll</span></code>を全てのパターンに設定し、</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">denyAll</span></code>を全てのパターンに設定し、</div>
 <div class="line">権限設定が記述されていないURLに対してはどのユーザーもアクセス出来ない設定としている。</div>
-<div class="line"><code class="docutils literal"><span class="pre">denyAll</span></code>については、後述する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">denyAll</span></code>については、後述する。</div>
 </div>
 </td>
 </tr>
@@ -1004,11 +996,11 @@ Spring Framework 4.2以前は <cite>trimTokens</cite> プロパティのデフ�
 </li>
 </ul>
 <p>Spring Securiyではデフォルトで、SpELが有効になっている。
-<code class="docutils literal"><span class="pre">access</span></code>属性に記述したSpELは真偽値で評価され、式が真の場合に、アクセスが認可される。
+<code class="docutils literal notranslate"><span class="pre">access</span></code>属性に記述したSpELは真偽値で評価され、式が真の場合に、アクセスが認可される。
 以下に使用例を示す。</p>
 <ul>
 <li><p class="first">spring-security.xmlの定義例</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
     <span class="nt">&lt;sec:intercept-url</span> <span class="na">pattern=</span><span class="s">&quot;/admin/**&quot;</span> <span class="na">access=</span><span class="s">&quot;hasRole(&#39;ADMIN&#39;)&quot;</span><span class="nt">/&gt;</span>  <span class="c">&lt;!-- (1) --&gt;</span>
     <span class="c">&lt;!-- omitted --&gt;</span>
 <span class="nt">&lt;/sec:http&gt;</span>
@@ -1030,7 +1022,7 @@ Spring Framework 4.2以前は <cite>trimTokens</cite> プロパティのデフ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">hasRole('ロール名')</span></code>を指定することで、ログインユーザーが指定したロールを保持していれば真を返す。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">hasRole('ロール名')</span></code>を指定することで、ログインユーザーが指定したロールを保持していれば真を返す。</div>
 </div>
 </td>
 </tr>
@@ -1046,16 +1038,16 @@ Spring Framework 4.2以前は <cite>trimTokens</cite> プロパティのデフ�
 <div class="section" id="id12">
 <h5><a class="toc-backref" href="#id58">9.3.2.2.2.3. パス変数の参照</a><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h5>
 <p>Spring Security 4.1以降では、アクセスポリシーを適用するリソースを指定する際にパス変数<a class="footnote-reference" href="#fpathvariabledescription" id="id13">[2]</a>を使用することができ、
-アクセスポリシーの定義内で<code class="docutils literal"><span class="pre">#パス変数名</span></code>と指定することで参照できる。</p>
+アクセスポリシーの定義内で<code class="docutils literal notranslate"><span class="pre">#パス変数名</span></code>と指定することで参照できる。</p>
 <p>ただし、拡張子を付けてアクセス可能なパスに対してパス変数を使用するアクセスポリシーを定義する場合は、パス変数値に拡張子部分が格納されない様に定義する必要がある。</p>
-<p>例えば、パターンに<code class="docutils literal"><span class="pre">/users/{userName}</span></code>と定義し、<code class="docutils literal"><span class="pre">/users/personName.json</span></code>というリクエストパスを送信した際、
-アクセスポリシーの定義内で参照しているパス変数<code class="docutils literal"><span class="pre">#userName</span></code>には<code class="docutils literal"><span class="pre">personName</span></code>ではなく<code class="docutils literal"><span class="pre">personName.json</span></code>が格納され、
+<p>例えば、パターンに<code class="docutils literal notranslate"><span class="pre">/users/{userName}</span></code>と定義し、<code class="docutils literal notranslate"><span class="pre">/users/personName.json</span></code>というリクエストパスを送信した際、
+アクセスポリシーの定義内で参照しているパス変数<code class="docutils literal notranslate"><span class="pre">#userName</span></code>には<code class="docutils literal notranslate"><span class="pre">personName</span></code>ではなく<code class="docutils literal notranslate"><span class="pre">personName.json</span></code>が格納され、
 意図しない認可制御が行われてしまう。</p>
 <p>この事象を防ぐためには、「拡張子を付けたパスに対するアクセスポリシー」を定義した後に、「拡張子を付けないパスに対するアクセスポリシー」を定義する必要がある。</p>
 <p>以下の例は、ログインユーザが自身のユーザ情報のみアクセスできる様にアクセスポリシーを定義している。</p>
 <ul>
 <li><p class="first">spring-security.xmlの定義例（ワイルドカードを使用する場合）</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
     <span class="c">&lt;!-- (1) --&gt;</span>
     <span class="nt">&lt;sec:intercept-url</span> <span class="na">pattern=</span><span class="s">&quot;/users/{userName}.*&quot;</span>  <span class="na">access=</span><span class="s">&quot;isAuthenticated() and #userName == principal.username&quot;</span><span class="nt">/&gt;</span>
     <span class="c">&lt;!-- (2) --&gt;</span>
@@ -1090,7 +1082,7 @@ Spring Framework 4.2以前は <cite>trimTokens</cite> プロパティのデフ�
 </td>
 <td><div class="first last line-block">
 <div class="line">「拡張子を付けないパスに対するアクセスポリシー」を定義する。</div>
-<div class="line">ワイルドカードを使用して<code class="docutils literal"><span class="pre">/users/{userName}</span></code>で始まるパスに対するアクセスポリシーを定義する。</div>
+<div class="line">ワイルドカードを使用して<code class="docutils literal notranslate"><span class="pre">/users/{userName}</span></code>で始まるパスに対するアクセスポリシーを定義する。</div>
 </div>
 </td>
 </tr>
@@ -1103,7 +1095,7 @@ Spring Framework 4.2以前は <cite>trimTokens</cite> プロパティのデフ�
 </div>
 <ul>
 <li><p class="first">spring-security.xmlの定義例（ワイルドカードを使用しない場合）</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
     <span class="c">&lt;!-- (1) --&gt;</span>
     <span class="nt">&lt;sec:intercept-url</span> <span class="na">pattern=</span><span class="s">&quot;/users/{userName}.*&quot;</span> <span class="na">access=</span><span class="s">&quot;isAuthenticated() and #userName == principal.username&quot;</span><span class="nt">/&gt;</span>
     <span class="c">&lt;!-- (2) --&gt;</span>
@@ -1140,7 +1132,7 @@ Spring Framework 4.2以前は <cite>trimTokens</cite> プロパティのデフ�
 <td><div class="first last line-block">
 <div class="line">「拡張子を付けないパスに対するアクセスポリシー」を定義する。</div>
 <div class="line">ワイルドカードを使用しない場合、Spring MVCとSpring Securityのパスマッチングの差を吸収するために</div>
-<div class="line">末尾が”<code class="docutils literal"><span class="pre">/</span></code>” で終わるパスに対するアクセスポリシーも定義する。</div>
+<div class="line">末尾が”<code class="docutils literal notranslate"><span class="pre">/</span></code>” で終わるパスに対するアクセスポリシーも定義する。</div>
 </div>
 </td>
 </tr>
@@ -1174,15 +1166,15 @@ Spring Framework 4.2以前は <cite>trimTokens</cite> プロパティのデフ�
 AOPを有効化すると、アクセスポリシーをメソッドのアノテーションに定義できるようになる。</p>
 <p>Spring Securityは、以下のアノテーションをサポートしている。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">&#64;PreAuthorize</span></code>、<code class="docutils literal"><span class="pre">&#64;PostAuthorize</span></code>、<code class="docutils literal"><span class="pre">&#64;PreFilter</span></code>、<code class="docutils literal"><span class="pre">&#64;PostFilter</span></code></li>
-<li>JSR-250 (<code class="docutils literal"><span class="pre">javax.annotation.security</span></code>パッケージ)のアノテーション(<code class="docutils literal"><span class="pre">&#64;RolesAllowed</span></code>など)</li>
-<li><code class="docutils literal"><span class="pre">&#64;Secured</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&#64;PreAuthorize</span></code>、<code class="docutils literal notranslate"><span class="pre">&#64;PostAuthorize</span></code>、<code class="docutils literal notranslate"><span class="pre">&#64;PreFilter</span></code>、<code class="docutils literal notranslate"><span class="pre">&#64;PostFilter</span></code></li>
+<li>JSR-250 (<code class="docutils literal notranslate"><span class="pre">javax.annotation.security</span></code>パッケージ)のアノテーション(<code class="docutils literal notranslate"><span class="pre">&#64;RolesAllowed</span></code>など)</li>
+<li><code class="docutils literal notranslate"><span class="pre">&#64;Secured</span></code></li>
 </ul>
-<p>本ガイドラインでは、アクセスポリシーをExpressionで使用することができる<code class="docutils literal"><span class="pre">&#64;PreAuthorize</span></code>、<code class="docutils literal"><span class="pre">&#64;PostAuthorize</span></code>を使用する方法を説明する。</p>
+<p>本ガイドラインでは、アクセスポリシーをExpressionで使用することができる<code class="docutils literal notranslate"><span class="pre">&#64;PreAuthorize</span></code>、<code class="docutils literal notranslate"><span class="pre">&#64;PostAuthorize</span></code>を使用する方法を説明する。</p>
 <ul class="simple">
 <li>spring-security.xmlの定義例</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:global-method-security</span> <span class="na">pre-post-annotations=</span><span class="s">&quot;enabled&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (1) (2) --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:global-method-security</span> <span class="na">pre-post-annotations=</span><span class="s">&quot;enabled&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (1) (2) --&gt;</span>
 </pre></div>
 </div>
 <table border="1" class="colwidths-given docutils">
@@ -1201,7 +1193,7 @@ AOPを有効化すると、アクセスポリシーをメソッドのアノテ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;sec:global-method-security&gt;</span></code>タグを付与すると、メソッド呼び出しに対する認可処理を行うAOPが有効になる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;sec:global-method-security&gt;</span></code>タグを付与すると、メソッド呼び出しに対する認可処理を行うAOPが有効になる。</div>
 </div>
 </td>
 </tr>
@@ -1210,8 +1202,8 @@ AOPを有効化すると、アクセスポリシーをメソッドのアノテ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">pre-post-annotations</span></code>属性に<code class="docutils literal"><span class="pre">enabled</span></code>を指定する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">pre-post-annotations</span></code>属性に<code class="docutils literal"><span class="pre">enabled</span></code>を指定すると、Expressionを指定してアクセスポリシーを定義できるアノテーションが有効になる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">pre-post-annotations</span></code>属性に<code class="docutils literal notranslate"><span class="pre">enabled</span></code>を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">pre-post-annotations</span></code>属性に<code class="docutils literal notranslate"><span class="pre">enabled</span></code>を指定すると、Expressionを指定してアクセスポリシーを定義できるアノテーションが有効になる。</div>
 </div>
 </td>
 </tr>
@@ -1229,13 +1221,13 @@ AOPを有効化すると、アクセスポリシーをメソッドのアノテ�
 <h4><a class="toc-backref" href="#id62">9.3.2.3.3. アクセスポリシーの定義</a><a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="id17">
 <h5><a class="toc-backref" href="#id63">9.3.2.3.3.1. メソッド実行前に適用するアクセスポリシーの指定</a><a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h5>
-<p>メソッドの実行前に適用するアクセスポリシーを指定する場合は、<code class="docutils literal"><span class="pre">&#64;PreAuthorize</span></code>を使用する。</p>
-<p><code class="docutils literal"><span class="pre">&#64;PreAuthorize</span></code>の<code class="docutils literal"><span class="pre">value</span></code>属性に指定したExpressionの結果が<code class="docutils literal"><span class="pre">true</span></code>になるとメソッドの実行が許可される。
+<p>メソッドの実行前に適用するアクセスポリシーを指定する場合は、<code class="docutils literal notranslate"><span class="pre">&#64;PreAuthorize</span></code>を使用する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">&#64;PreAuthorize</span></code>の<code class="docutils literal notranslate"><span class="pre">value</span></code>属性に指定したExpressionの結果が<code class="docutils literal notranslate"><span class="pre">true</span></code>になるとメソッドの実行が許可される。
 下記例では、管理者以外は、他人のアカウント情報にアクセスできないように定義している。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">&#64;PreAuthorize</span></code>の定義例</li>
+<li><code class="docutils literal notranslate"><span class="pre">&#64;PreAuthorize</span></code>の定義例</li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// (1) (2)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// (1) (2)</span>
 <span class="nd">@PreAuthorize</span><span class="o">(</span><span class="s">&quot;hasRole(&#39;ADMIN&#39;) or (#username == principal.username)&quot;</span><span class="o">)</span>
 <span class="kd">public</span> <span class="n">Account</span> <span class="nf">findOne</span><span class="o">(</span><span class="n">String</span> <span class="n">username</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">return</span> <span class="n">accountRepository</span><span class="o">.</span><span class="na">findOne</span><span class="o">(</span><span class="n">username</span><span class="o">);</span>
@@ -1258,7 +1250,7 @@ AOPを有効化すると、アクセスポリシーをメソッドのアノテ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">認可処理を適用したいメソッドに、<code class="docutils literal"><span class="pre">&#64;PreAuthorize</span></code>を付与する。</div>
+<div class="line">認可処理を適用したいメソッドに、<code class="docutils literal notranslate"><span class="pre">&#64;PreAuthorize</span></code>を付与する。</div>
 </div>
 </td>
 </tr>
@@ -1267,7 +1259,7 @@ AOPを有効化すると、アクセスポリシーをメソッドのアノテ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">value</span></code>属性に、メソッドに対してアクセスポリシーを定義する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">value</span></code>属性に、メソッドに対してアクセスポリシーを定義する。</div>
 <div class="line">ここでは、「管理者の場合は全てのアカウントへのアクセスを許可する」「管理者以外の場合は自身のアカウントへのアクセスのみ許可する」というアクセスポリシーを定義している。</div>
 </div>
 </td>
@@ -1275,20 +1267,20 @@ AOPを有効化すると、アクセスポリシーをメソッドのアノテ�
 </tbody>
 </table>
 <p>ここでポイントになるのは、Expressionの中からメソッドの引数にアクセスしている部分である。
-具体的には、「<code class="docutils literal"><span class="pre">#username</span></code>」の部分が引数にアクセスしている部分である。
+具体的には、「<code class="docutils literal notranslate"><span class="pre">#username</span></code>」の部分が引数にアクセスしている部分である。
 Expression内で「# + 引数名」形式のExpressionを指定することで、メソッドの引数にアクセスすることができる。</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p><strong>引数名を指定するアノテーション</strong></p>
 <p>Spring Securityは、クラスに出力されているデバッグ情報から引数名を解決する仕組み
-になっているが、アノテーション(<code class="docutils literal"><span class="pre">&#64;org.springframework.security.access.method.P</span></code>)
+になっているが、アノテーション(<code class="docutils literal notranslate"><span class="pre">&#64;org.springframework.security.access.method.P</span></code>)
 を使用して明示的に引数名を指定することもできる。</p>
 <p>以下のケースにあてはまる場合は、アノテーションを使用して明示的に変数名を指定する。</p>
 <ul>
 <li><p class="first">クラスに変数のデバッグ情報を出力しない</p>
 </li>
 <li><p class="first">Expressionの中から実際の変数名とは別の名前を使ってアクセスしたい (例えば短縮した名前)</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@PreAuthorize</span><span class="o">(</span><span class="s">&quot;hasRole(&#39;ADMIN&#39;) or (#username == principal.username)&quot;</span><span class="o">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@PreAuthorize</span><span class="o">(</span><span class="s">&quot;hasRole(&#39;ADMIN&#39;) or (#username == principal.username)&quot;</span><span class="o">)</span>
 <span class="kd">public</span> <span class="n">Account</span> <span class="nf">findOne</span><span class="o">(</span><span class="nd">@P</span><span class="o">(</span><span class="s">&quot;username&quot;</span><span class="o">)</span> <span class="n">String</span> <span class="n">username</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">return</span> <span class="n">accountRepository</span><span class="o">.</span><span class="na">findOne</span><span class="o">(</span><span class="n">username</span><span class="o">);</span>
 <span class="o">}</span>
@@ -1296,21 +1288,21 @@ Expression内で「# + 引数名」形式のExpressionを指定することで�
 </div>
 </li>
 </ul>
-<p>なお、<code class="docutils literal"><span class="pre">#username</span></code>と、メソッドの引数である <code class="docutils literal"><span class="pre">username</span></code>の名称が一致している場合は <code class="docutils literal"><span class="pre">&#64;P</span></code>を省略することが可能である。
-ただし、Spring Securityは引数名の解決を、実装クラスの引数名を使用して行っているため <code class="docutils literal"><span class="pre">&#64;PreAuthorize</span></code> アノテーションをインターフェースに定義している場合には、
+<p>なお、<code class="docutils literal notranslate"><span class="pre">#username</span></code>と、メソッドの引数である <code class="docutils literal notranslate"><span class="pre">username</span></code>の名称が一致している場合は <code class="docutils literal notranslate"><span class="pre">&#64;P</span></code>を省略することが可能である。
+ただし、Spring Securityは引数名の解決を、実装クラスの引数名を使用して行っているため <code class="docutils literal notranslate"><span class="pre">&#64;PreAuthorize</span></code> アノテーションをインターフェースに定義している場合には、
 <strong>実装クラスの引数名を、 &#64;PreAuthorize 内で指定した #username と一致させる必要がある</strong> ので、注意されたい。</p>
-<p class="last">JDK 8 から追加されたコンパイルオプション(<code class="docutils literal"><span class="pre">-parameters</span></code>)を使用すると、メソッドパラメータにリフレクション用のメタデータが生成されるため、アノテーションを指定しなくても引数名が解決される。</p>
+<p class="last">JDK 8 から追加されたコンパイルオプション(<code class="docutils literal notranslate"><span class="pre">-parameters</span></code>)を使用すると、メソッドパラメータにリフレクション用のメタデータが生成されるため、アノテーションを指定しなくても引数名が解決される。</p>
 </div>
 </div>
 <div class="section" id="id18">
 <h5><a class="toc-backref" href="#id64">9.3.2.3.3.2. メソッド実行後に適用するアクセスポリシーの指定</a><a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h5>
-<p>メソッドの実行後に適用するアクセスポリシーを指定する場合は、<code class="docutils literal"><span class="pre">&#64;PostAuthorize</span></code>を使用する。</p>
-<p><code class="docutils literal"><span class="pre">&#64;PostAuthorize</span></code>の<code class="docutils literal"><span class="pre">value</span></code>属性に指定したExpressionの結果が<code class="docutils literal"><span class="pre">true</span></code>になるとメソッドの実行結果が呼び出し元に返却される。
+<p>メソッドの実行後に適用するアクセスポリシーを指定する場合は、<code class="docutils literal notranslate"><span class="pre">&#64;PostAuthorize</span></code>を使用する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">&#64;PostAuthorize</span></code>の<code class="docutils literal notranslate"><span class="pre">value</span></code>属性に指定したExpressionの結果が<code class="docutils literal notranslate"><span class="pre">true</span></code>になるとメソッドの実行結果が呼び出し元に返却される。
 下記例では、所属する部署が違うユーザーのアカウント情報にアクセスできないように定義している。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">&#64;PostAuthorize</span></code>の定義例</li>
+<li><code class="docutils literal notranslate"><span class="pre">&#64;PostAuthorize</span></code>の定義例</li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@PreAuthorize</span><span class="o">(</span><span class="s">&quot;...&quot;</span><span class="o">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@PreAuthorize</span><span class="o">(</span><span class="s">&quot;...&quot;</span><span class="o">)</span>
 <span class="nd">@PostAuthorize</span><span class="o">(</span><span class="s">&quot;(returnObject == null) &quot;</span> <span class="o">+</span>
         <span class="s">&quot;or (returnObject.departmentCode == principal.account.departmentCode)&quot;</span><span class="o">)</span>
 <span class="kd">public</span> <span class="n">Account</span> <span class="nf">findOne</span><span class="o">(</span><span class="n">String</span> <span class="n">username</span><span class="o">)</span> <span class="o">{</span>
@@ -1319,8 +1311,8 @@ Expression内で「# + 引数名」形式のExpressionを指定することで�
 </pre></div>
 </div>
 <p>ここでポイントになるのは、Expressionの中からメソッドの返り値にアクセスしている部分である。
-具体的には、「<code class="docutils literal"><span class="pre">returnObject.departmentCode</span></code>」の部分が返り値にアクセスしている部分である。
-Expression内で「<code class="docutils literal"><span class="pre">returnObject</span></code>」を指定すると、メソッドの返り値にアクセスすることができる。</p>
+具体的には、「<code class="docutils literal notranslate"><span class="pre">returnObject.departmentCode</span></code>」の部分が返り値にアクセスしている部分である。
+Expression内で「<code class="docutils literal notranslate"><span class="pre">returnObject</span></code>」を指定すると、メソッドの返り値にアクセスすることができる。</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -1340,7 +1332,7 @@ Expression内で「<code class="docutils literal"><span class="pre">returnObject
 <ul class="simple">
 <li>アクセスポリシー定義例</li>
 </ul>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="k">&lt;%@</span> <span class="n">taglib</span> <span class="n">prefix</span><span class="o">=</span><span class="s">&quot;sec&quot;</span> <span class="n">uri</span><span class="o">=</span><span class="s">&quot;http://www.springframework.org/security/tags&quot;</span> <span class="k">%&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;%@</span> <span class="n">taglib</span> <span class="n">prefix</span><span class="o">=</span><span class="s">&quot;sec&quot;</span> <span class="n">uri</span><span class="o">=</span><span class="s">&quot;http://www.springframework.org/security/tags&quot;</span> <span class="k">%&gt;</span>
 
 <span class="c">&lt;!-- (1) --&gt;</span>
 <span class="nt">&lt;sec:authorize</span> <span class="na">access=</span><span class="s">&quot;hasRole(&#39;ADMIN&#39;)&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
@@ -1365,7 +1357,7 @@ Expression内で「<code class="docutils literal"><span class="pre">returnObject
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">アクセスポリシーを適用したい部分を<code class="docutils literal"><span class="pre">&lt;sec:authorize&gt;</span></code>タグで囲む。</div>
+<div class="line">アクセスポリシーを適用したい部分を<code class="docutils literal notranslate"><span class="pre">&lt;sec:authorize&gt;</span></code>タグで囲む。</div>
 </div>
 </td>
 </tr>
@@ -1374,7 +1366,7 @@ Expression内で「<code class="docutils literal"><span class="pre">returnObject
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">access</span></code>属性にアクセスポリシーを定義する。ここでは、「管理者の場合は表示を許可する」というアクセスポリシーを定義している。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">access</span></code>属性にアクセスポリシーを定義する。ここでは、「管理者の場合は表示を許可する」というアクセスポリシーを定義している。</div>
 </div>
 </td>
 </tr>
@@ -1387,12 +1379,12 @@ Expression内で「<code class="docutils literal"><span class="pre">returnObject
 <div class="section" id="id20">
 <h4><a class="toc-backref" href="#id67">9.3.2.4.2. Webリソースに指定したアクセスポリシーとの連動</a><a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
 <p>ボタンやリンクなど(サーバーへのリクエストを伴う画面項目)に対してアクセスポリシーを定義する際は、リクエスト先のWebリソースに定義されているアクセスポリシーと連動させる。
-Webリソースに指定したアクセスポリシーと連動させる場合は、<code class="docutils literal"><span class="pre">&lt;sec:authorize&gt;</span></code>タグの<code class="docutils literal"><span class="pre">url</span></code>属性を使用する。</p>
-<p><code class="docutils literal"><span class="pre">url</span></code>属性に指定したWebリソースにアクセスできる場合に限り<code class="docutils literal"><span class="pre">&lt;sec:authorize&gt;</span></code>タグの中に実装したJSPの処理が実行される。</p>
+Webリソースに指定したアクセスポリシーと連動させる場合は、<code class="docutils literal notranslate"><span class="pre">&lt;sec:authorize&gt;</span></code>タグの<code class="docutils literal notranslate"><span class="pre">url</span></code>属性を使用する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">url</span></code>属性に指定したWebリソースにアクセスできる場合に限り<code class="docutils literal notranslate"><span class="pre">&lt;sec:authorize&gt;</span></code>タグの中に実装したJSPの処理が実行される。</p>
 <ul class="simple">
 <li>Webリソースに定義されているアクセスポリシーとの連携例</li>
 </ul>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;ul&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ul&gt;</span>
     <span class="c">&lt;!-- (1) --&gt;</span>
     <span class="nt">&lt;sec:authorize</span> <span class="na">url=</span><span class="s">&quot;/admin/accounts&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
         <span class="nt">&lt;li&gt;</span>
@@ -1418,7 +1410,7 @@ Webリソースに指定したアクセスポリシーと連動させる場合�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">ボタンやリンクを出力する部分を<code class="docutils literal"><span class="pre">&lt;sec:authorize&gt;</span></code>タグで囲む。</div>
+<div class="line">ボタンやリンクを出力する部分を<code class="docutils literal notranslate"><span class="pre">&lt;sec:authorize&gt;</span></code>タグで囲む。</div>
 </div>
 </td>
 </tr>
@@ -1427,8 +1419,8 @@ Webリソースに指定したアクセスポリシーと連動させる場合�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;sec:authorize&gt;</span></code>タグの<code class="docutils literal"><span class="pre">url</span></code>属性にWebリソースへアクセスするためのURLを指定する。</div>
-<div class="line">ここでは、「<code class="docutils literal"><span class="pre">/admin/accounts</span></code>というURLが割り振られているWebリソースにアクセス可能な場合は表示を許可する」というアクセスポリシーを定義しており、Webリソースに定義されているアクセスポリシーを直接意識する必要がない。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;sec:authorize&gt;</span></code>タグの<code class="docutils literal notranslate"><span class="pre">url</span></code>属性にWebリソースへアクセスするためのURLを指定する。</div>
+<div class="line">ここでは、「<code class="docutils literal notranslate"><span class="pre">/admin/accounts</span></code>というURLが割り振られているWebリソースにアクセス可能な場合は表示を許可する」というアクセスポリシーを定義しており、Webリソースに定義されているアクセスポリシーを直接意識する必要がない。</div>
 </div>
 </td>
 </tr>
@@ -1437,7 +1429,7 @@ Webリソースに指定したアクセスポリシーと連動させる場合�
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>HTTPメソッドによるポリシーの指定</strong></p>
-<p class="last">Webリソースのアクセスポリシーの定義をする際に、HTTPメソッドによって異なるアクセスポリシーを指定している場合は、<code class="docutils literal"><span class="pre">&lt;sec:authorize&gt;</span></code>タグの<code class="docutils literal"><span class="pre">method</span></code>属性を指定して、連動させる定義を特定すること。</p>
+<p class="last">Webリソースのアクセスポリシーの定義をする際に、HTTPメソッドによって異なるアクセスポリシーを指定している場合は、<code class="docutils literal notranslate"><span class="pre">&lt;sec:authorize&gt;</span></code>タグの<code class="docutils literal notranslate"><span class="pre">method</span></code>属性を指定して、連動させる定義を特定すること。</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -1452,11 +1444,11 @@ URLを直接してアクセスするような不正なアクセスを防ぐこ�
 </div>
 <div class="section" id="id21">
 <h4><a class="toc-backref" href="#id68">9.3.2.4.3. 認可処理の判定結果を変数に格納</a><a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">&lt;sec:authorize&gt;</span></code>タグを使って呼び出した認可処理の判定結果は、変数に格納して使いまわすことができる。</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;sec:authorize&gt;</span></code>タグを使って呼び出した認可処理の判定結果は、変数に格納して使いまわすことができる。</p>
 <ul class="simple">
 <li>JSPの実装例</li>
 </ul>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:authorize</span> <span class="na">url=</span><span class="s">&quot;/admin/accounts&quot;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:authorize</span> <span class="na">url=</span><span class="s">&quot;/admin/accounts&quot;</span>
                <span class="na">var=</span><span class="s">&quot;hasAccountsAuthority&quot;</span><span class="nt">/&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
 
 <span class="nt">&lt;c:if</span> <span class="na">test=</span><span class="s">&quot;${hasAccountsAuthority}&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
@@ -1480,8 +1472,8 @@ URLを直接してアクセスするような不正なアクセスを防ぐこ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">var</span></code>属性に判定結果を格納するための変数名を指定する。</div>
-<div class="line">アクセスが許可された場合は、変数に<code class="docutils literal"><span class="pre">true</span></code>が設定される。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">var</span></code>属性に判定結果を格納するための変数名を指定する。</div>
+<div class="line">アクセスが許可された場合は、変数に<code class="docutils literal notranslate"><span class="pre">true</span></code>が設定される。</div>
 </div>
 </td>
 </tr>
@@ -1524,7 +1516,7 @@ URLを直接してアクセスするような不正なアクセスを防ぐこ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Spring Securityは、リソースやメソッドへのアクセスを拒否するために、<code class="docutils literal"><span class="pre">AccessDeniedException</span></code>を発生させる。</div>
+<div class="line">Spring Securityは、リソースやメソッドへのアクセスを拒否するために、<code class="docutils literal notranslate"><span class="pre">AccessDeniedException</span></code>を発生させる。</div>
 </div>
 </td>
 </tr>
@@ -1533,7 +1525,7 @@ URLを直接してアクセスするような不正なアクセスを防ぐこ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ExceptionTranslationFilter</span></code>クラスは、<code class="docutils literal"><span class="pre">AccessDeniedException</span></code>をキャッチし、<code class="docutils literal"><span class="pre">AccessDeniedHandler</span></code>または<code class="docutils literal"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースのメソッドを呼び出してエラー応答を行う。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ExceptionTranslationFilter</span></code>クラスは、<code class="docutils literal notranslate"><span class="pre">AccessDeniedException</span></code>をキャッチし、<code class="docutils literal notranslate"><span class="pre">AccessDeniedHandler</span></code>または<code class="docutils literal notranslate"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースのメソッドを呼び出してエラー応答を行う。</div>
 </div>
 </td>
 </tr>
@@ -1542,7 +1534,7 @@ URLを直接してアクセスするような不正なアクセスを防ぐこ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">認証済みのユーザーからのアクセスの場合は、<code class="docutils literal"><span class="pre">AccessDeniedHandler</span></code>インタフェースのメソッドを呼び出してエラー応答を行う。</div>
+<div class="line">認証済みのユーザーからのアクセスの場合は、<code class="docutils literal notranslate"><span class="pre">AccessDeniedHandler</span></code>インタフェースのメソッドを呼び出してエラー応答を行う。</div>
 </div>
 </td>
 </tr>
@@ -1551,7 +1543,7 @@ URLを直接してアクセスするような不正なアクセスを防ぐこ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">未認証のユーザーからのアクセスの場合は、<code class="docutils literal"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースのメソッドを呼び出してエラー応答を行う。</div>
+<div class="line">未認証のユーザーからのアクセスの場合は、<code class="docutils literal notranslate"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースのメソッドを呼び出してエラー応答を行う。</div>
 </div>
 </td>
 </tr>
@@ -1562,8 +1554,8 @@ URLを直接してアクセスするような不正なアクセスを防ぐこ�
 </div>
 <div class="section" id="accessdeniedhandler">
 <h4><a class="toc-backref" href="#id70">9.3.2.5.1. AccessDeniedHandler</a><a class="headerlink" href="#accessdeniedhandler" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">AccessDeniedHandler</span></code>インタフェースは、認証済みのユーザーからのアクセスを拒否した際のエラー応答を行うためのインタフェースである。
-Spring Securityは、<code class="docutils literal"><span class="pre">AccessDeniedHandler</span></code>インタフェースの実装クラスとして以下のクラスを提供している。</p>
+<p><code class="docutils literal notranslate"><span class="pre">AccessDeniedHandler</span></code>インタフェースは、認証済みのユーザーからのアクセスを拒否した際のエラー応答を行うためのインタフェースである。
+Spring Securityは、<code class="docutils literal notranslate"><span class="pre">AccessDeniedHandler</span></code>インタフェースの実装クラスとして以下のクラスを提供している。</p>
 <table border="1" class="colwidths-given docutils" id="id40">
 <caption><span class="caption-text"><strong>Spring Securityが提供するAccessDeniedHandlerの実装クラス</strong></span><a class="headerlink" href="#id40" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -1577,46 +1569,46 @@ Spring Securityは、<code class="docutils literal"><span class="pre">AccessDeni
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">AccessDeniedHandlerImpl</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">AccessDeniedHandlerImpl</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
 <div class="line">HTTPレスポンスコードに403(Forbidden)を設定し、指定されたエラーページに遷移する。</div>
-<div class="line">エラーページの指定がない場合は、HTTPレスポンスコードに403(Forbidden)を設定してエラー応答(<code class="docutils literal"><span class="pre">HttpServletResponse#sendError</span></code>)を行う。</div>
+<div class="line">エラーページの指定がない場合は、HTTPレスポンスコードに403(Forbidden)を設定してエラー応答(<code class="docutils literal notranslate"><span class="pre">HttpServletResponse#sendError</span></code>)を行う。</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">InvalidSessionAccessDeniedHandler</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">InvalidSessionAccessDeniedHandler</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">InvalidSessionStrategy</span></code>インタフェースの実装クラスに処理を委譲する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">InvalidSessionStrategy</span></code>インタフェースの実装クラスに処理を委譲する。</div>
 <div class="line">このクラスは、CSRF対策とセッション管理機能を使用してセッションタイムアウトを検知する設定を有効にした際に、CSRFトークンがセッションに存在しない(つまりセッションタイムアウトが発生している)場合に使用される。</div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">DelegatingAccessDeniedHandler</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">DelegatingAccessDeniedHandler</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">AccessDeniedException</span></code>と<code class="docutils literal"><span class="pre">AccessDeniedHandler</span></code>インタフェースの実装クラスのマッピングを行い、発生した<code class="docutils literal"><span class="pre">AccessDeniedException</span></code>に対応する<code class="docutils literal"><span class="pre">AccessDeniedHandler</span></code>インタフェースの実装クラスに処理を委譲する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">InvalidSessionAccessDeniedHandler</span></code>はこの仕組みを利用して呼び出されている。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">AccessDeniedException</span></code>と<code class="docutils literal notranslate"><span class="pre">AccessDeniedHandler</span></code>インタフェースの実装クラスのマッピングを行い、発生した<code class="docutils literal notranslate"><span class="pre">AccessDeniedException</span></code>に対応する<code class="docutils literal notranslate"><span class="pre">AccessDeniedHandler</span></code>インタフェースの実装クラスに処理を委譲する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">InvalidSessionAccessDeniedHandler</span></code>はこの仕組みを利用して呼び出されている。</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
-<p>Spring Securityのデフォルトの設定では、エラーページの指定がない<code class="docutils literal"><span class="pre">AccessDeniedHandlerImpl</span></code>が使用される。</p>
+<p>Spring Securityのデフォルトの設定では、エラーページの指定がない<code class="docutils literal notranslate"><span class="pre">AccessDeniedHandlerImpl</span></code>が使用される。</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 </div>
 <div class="section" id="authenticationentrypoint">
 <h4><a class="toc-backref" href="#id71">9.3.2.5.2. AuthenticationEntryPoint</a><a class="headerlink" href="#authenticationentrypoint" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースは、未認証のユーザーからのアクセスを拒否した際のエラー応答を行うためのインタフェースである。
-Spring Securityは、<code class="docutils literal"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースの実装クラスとして以下のクラスを提供している。</p>
+<p><code class="docutils literal notranslate"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースは、未認証のユーザーからのアクセスを拒否した際のエラー応答を行うためのインタフェースである。
+Spring Securityは、<code class="docutils literal notranslate"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースの実装クラスとして以下のクラスを提供している。</p>
 <table border="1" class="colwidths-given docutils" id="id41">
 <caption><span class="caption-text"><strong>Spring Securityが提供する主なAuthenticationEntryPointの実装クラス</strong></span><a class="headerlink" href="#id41" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -1630,7 +1622,7 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">LoginUrlAuthenticationEntryPoint</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">LoginUrlAuthenticationEntryPoint</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -1639,46 +1631,46 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">BasicAuthenticationEntryPoint</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">BasicAuthenticationEntryPoint</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
 <div class="line">Basic認証用のエラー応答を行う。</div>
-<div class="line">具体的には、HTTPレスポンスコードに401(Unauthorized)を、レスポンスヘッダとしてBasic認証用の「<code class="docutils literal"><span class="pre">WWW-Authenticate</span></code>」ヘッダを設定してエラー応答(<code class="docutils literal"><span class="pre">HttpServletResponse#sendError</span></code>)を行う。</div>
+<div class="line">具体的には、HTTPレスポンスコードに401(Unauthorized)を、レスポンスヘッダとしてBasic認証用の「<code class="docutils literal notranslate"><span class="pre">WWW-Authenticate</span></code>」ヘッダを設定してエラー応答(<code class="docutils literal notranslate"><span class="pre">HttpServletResponse#sendError</span></code>)を行う。</div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">DigestAuthenticationEntryPoint</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">DigestAuthenticationEntryPoint</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
 <div class="line">Digest認証用のエラー応答を行う。</div>
-<div class="line">具体的には、HTTPレスポンスコードに401(Unauthorized)を、レスポンスヘッダとしてDigest認証用の「<code class="docutils literal"><span class="pre">WWW-Authenticate</span></code>」ヘッダを設定してエラー応答(<code class="docutils literal"><span class="pre">HttpServletResponse#sendError</span></code>)を行う。</div>
+<div class="line">具体的には、HTTPレスポンスコードに401(Unauthorized)を、レスポンスヘッダとしてDigest認証用の「<code class="docutils literal notranslate"><span class="pre">WWW-Authenticate</span></code>」ヘッダを設定してエラー応答(<code class="docutils literal notranslate"><span class="pre">HttpServletResponse#sendError</span></code>)を行う。</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">Http403ForbiddenEntryPoint</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Http403ForbiddenEntryPoint</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">HTTPレスポンスコードに403(Forbidden)を設定してエラー応答(<code class="docutils literal"><span class="pre">HttpServletResponse#sendError</span></code>)を行う。</div>
+<div class="line">HTTPレスポンスコードに403(Forbidden)を設定してエラー応答(<code class="docutils literal notranslate"><span class="pre">HttpServletResponse#sendError</span></code>)を行う。</div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">DelegatingAuthenticationEntryPoint</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">DelegatingAuthenticationEntryPoint</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">RequestMatcher</span></code>と<code class="docutils literal"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースの実装クラスのマッピングを行い、HTTPリクエストに対応する<code class="docutils literal"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースの実装クラスに処理を委譲する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">RequestMatcher</span></code>と<code class="docutils literal notranslate"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースの実装クラスのマッピングを行い、HTTPリクエストに対応する<code class="docutils literal notranslate"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースの実装クラスに処理を委譲する。</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
-<p>Spring Securityのデフォルトの設定では、認証方式に対応する<code class="docutils literal"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースの実装クラスが使用される。</p>
+<p>Spring Securityのデフォルトの設定では、認証方式に対応する<code class="docutils literal notranslate"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースの実装クラスが使用される。</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -1691,7 +1683,7 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 <ul class="simple">
 <li>spring-security.xmlの定義例</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
     <span class="c">&lt;!-- omitted --&gt;</span>
     <span class="nt">&lt;sec:access-denied-handler</span>
         <span class="na">error-page=</span><span class="s">&quot;/WEB-INF/views/common/error/accessDeniedError.jsp&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
@@ -1715,7 +1707,7 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;sec:access-denied-handler&gt;</span></code>タグの<code class="docutils literal"><span class="pre">error-page</span></code>属性に認可エラー用のエラーページを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;sec:access-denied-handler&gt;</span></code>タグの<code class="docutils literal notranslate"><span class="pre">error-page</span></code>属性に認可エラー用のエラーページを指定する。</div>
 </div>
 </td>
 </tr>
@@ -1725,9 +1717,9 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 <p class="first admonition-title">Tip</p>
 <p><strong>サーブレットコンテナのエラーページ機能の利用</strong></p>
 <p>認可エラーのエラーページは、サーブレットコンテナのエラーページ機能を使って指定することもできる。</p>
-<p>サーブレットコンテナのエラーページ機能を使う場合は、<code class="docutils literal"><span class="pre">web.xml</span></code>の<code class="docutils literal"><span class="pre">&lt;error-page&gt;</span></code>タグを使用してエラーページを指定する。</p>
+<p>サーブレットコンテナのエラーページ機能を使う場合は、<code class="docutils literal notranslate"><span class="pre">web.xml</span></code>の<code class="docutils literal notranslate"><span class="pre">&lt;error-page&gt;</span></code>タグを使用してエラーページを指定する。</p>
 <blockquote class="last">
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;error-page&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;error-page&gt;</span>
     <span class="nt">&lt;error-code&gt;</span>403<span class="nt">&lt;/error-code&gt;</span>
     <span class="nt">&lt;location&gt;</span>/WEB-INF/views/common/error/accessDeniedError.jsp<span class="nt">&lt;/location&gt;</span>
 <span class="nt">&lt;/error-page&gt;</span>
@@ -1751,13 +1743,13 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 <p>ここでは、認証済みユーザーからのアクセスを拒否した際の動作をカスタマイズする方法を説明する。</p>
 <div class="section" id="springsecurityauthorizationaccessdeniedhandler">
 <span id="id25"></span><h4><a class="toc-backref" href="#id75">9.3.3.1.1. AccessDeniedHandlerの適用</a><a class="headerlink" href="#springsecurityauthorizationaccessdeniedhandler" title="Permalink to this headline">¶</a></h4>
-<p>Spring Securityが提供しているデフォルトの動作をカスタマイズする仕組みだけでは要件をみたせない場合は、<code class="docutils literal"><span class="pre">AccessDeniedHandler</span></code>インタフェースの実装クラスを直接適用することができる。</p>
+<p>Spring Securityが提供しているデフォルトの動作をカスタマイズする仕組みだけでは要件をみたせない場合は、<code class="docutils literal notranslate"><span class="pre">AccessDeniedHandler</span></code>インタフェースの実装クラスを直接適用することができる。</p>
 <p>例えば、Ajaxのリクエスト(REST APIなど)で認可エラーが発生した場合は、エラーページ(HTML)ではなくJSON形式でエラー情報を応答することが求められるケースがある。
-そのような場合は、<code class="docutils literal"><span class="pre">AccessDeniedHandler</span></code>インタフェースの実装クラスを作成してSpring Securityに適用することで実現することができる。</p>
+そのような場合は、<code class="docutils literal notranslate"><span class="pre">AccessDeniedHandler</span></code>インタフェースの実装クラスを作成してSpring Securityに適用することで実現することができる。</p>
 <ul class="simple">
 <li>AccessDeniedHandlerインタフェースの実装クラスの作成例</li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">JsonDelegatingAccessDeniedHandler</span> <span class="kd">implements</span> <span class="n">AccessDeniedHandler</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">JsonDelegatingAccessDeniedHandler</span> <span class="kd">implements</span> <span class="n">AccessDeniedHandler</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="kd">final</span> <span class="n">RequestMatcher</span> <span class="n">jsonRequestMatcher</span><span class="o">;</span>
     <span class="kd">private</span> <span class="kd">final</span> <span class="n">AccessDeniedHandler</span> <span class="n">delegateHandler</span><span class="o">;</span>
@@ -1788,7 +1780,7 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 <ul class="simple">
 <li>spring-security.xmlの定義例</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- (1) --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- (1) --&gt;</span>
 <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;accessDeniedHandler&quot;</span>
       <span class="na">class=</span><span class="s">&quot;com.example.web.security.JsonDelegatingAccessDeniedHandler&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;constructor-arg&gt;</span>
@@ -1823,10 +1815,10 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>(1)</td>
-<td><code class="docutils literal"><span class="pre">AccessDeniedHandler</span></code>インタフェースの実装クラスをbean定義してDIコンテナに登録する。</td>
+<td><code class="docutils literal notranslate"><span class="pre">AccessDeniedHandler</span></code>インタフェースの実装クラスをbean定義してDIコンテナに登録する。</td>
 </tr>
 <tr class="row-odd"><td>(2)</td>
-<td><code class="docutils literal"><span class="pre">&lt;sec:access-denied-handler&gt;</span></code>タグの<code class="docutils literal"><span class="pre">ref</span></code>属性に<code class="docutils literal"><span class="pre">AccessDeniedHandler</span></code>のbeanを指定する。</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;sec:access-denied-handler&gt;</span></code>タグの<code class="docutils literal notranslate"><span class="pre">ref</span></code>属性に<code class="docutils literal notranslate"><span class="pre">AccessDeniedHandler</span></code>のbeanを指定する。</td>
 </tr>
 </tbody>
 </table>
@@ -1841,11 +1833,11 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 <div class="section" id="id27">
 <h4><a class="toc-backref" href="#id77">9.3.3.2.1. リクエスト毎にAuthenticationEntryPointを適用</a><a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h4>
 <p>認証済みユーザーと同様に、Ajaxのリクエスト(REST APIなど)で認可エラーが発生した場合は、ログインページ(HTML)ではなくJSON形式でエラー情報を応答することが求められるケースがある。
-そのような場合は、リクエストのパターン毎に<code class="docutils literal"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースの実装クラスをSpring Securityに適用することで実現することができる。</p>
+そのような場合は、リクエストのパターン毎に<code class="docutils literal notranslate"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースの実装クラスをSpring Securityに適用することで実現することができる。</p>
 <ul class="simple">
 <li>spring-security.xmlの定義例</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- (1) --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- (1) --&gt;</span>
 <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;authenticationEntryPoint&quot;</span>
       <span class="na">class=</span><span class="s">&quot;org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;constructor-arg&gt;</span>
@@ -1888,8 +1880,8 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースの実装クラスをbean定義してDIコンテナに登録する。</div>
-<div class="line">ここでは、Spring Securityが提供している<code class="docutils literal"><span class="pre">DelegatingAuthenticationEntryPoint</span></code>クラスを利用して、リクエストのパターン毎に<code class="docutils literal"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースの実装クラスを適用している。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースの実装クラスをbean定義してDIコンテナに登録する。</div>
+<div class="line">ここでは、Spring Securityが提供している<code class="docutils literal notranslate"><span class="pre">DelegatingAuthenticationEntryPoint</span></code>クラスを利用して、リクエストのパターン毎に<code class="docutils literal notranslate"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースの実装クラスを適用している。</div>
 </div>
 </td>
 </tr>
@@ -1898,7 +1890,7 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;sec:http&gt;</span></code>タグの<code class="docutils literal"><span class="pre">entry-point-ref</span></code>属性に<code class="docutils literal"><span class="pre">AuthenticationEntryPoint</span></code>のbeanを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;sec:http&gt;</span></code>タグの<code class="docutils literal notranslate"><span class="pre">entry-point-ref</span></code>属性に<code class="docutils literal notranslate"><span class="pre">AuthenticationEntryPoint</span></code>のbeanを指定する。</div>
 </div>
 </td>
 </tr>
@@ -1907,8 +1899,8 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>デフォルトで適用されるAuthenticationEntryPoint</strong></p>
-<p class="last">リクエストに対応する<code class="docutils literal"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースの実装クラスの指定がない場合は、Spring Securityがデフォルトで定義する<code class="docutils literal"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースの実装クラスが使用される仕組みになっている。
-認証方式としてフォーム認証を使用する場合は、<code class="docutils literal"><span class="pre">LoginUrlAuthenticationEntryPoint</span></code>クラスが使用されログインフォームが表示される。</p>
+<p class="last">リクエストに対応する<code class="docutils literal notranslate"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースの実装クラスの指定がない場合は、Spring Securityがデフォルトで定義する<code class="docutils literal notranslate"><span class="pre">AuthenticationEntryPoint</span></code>インタフェースの実装クラスが使用される仕組みになっている。
+認証方式としてフォーム認証を使用する場合は、<code class="docutils literal notranslate"><span class="pre">LoginUrlAuthenticationEntryPoint</span></code>クラスが使用されログインフォームが表示される。</p>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -1922,11 +1914,11 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 ロールの関係が複雑な場合は、階層関係も設けることも検討されたい。</p>
 <p>例えば、「ROLE_ADMIN」が上位ロール、「ROLE_USER」が下位ロールという階層関係を設けた場合、
 下記のようアクセスポリシーを設定すると、「ROLE_ADMIN」権限を持つユーザーは、
-<code class="docutils literal"><span class="pre">/user</span></code>配下のパス(「ROLE_USER」権限を持つユーザーがアクセスできるパス)にアクセスすることができる。</p>
+<code class="docutils literal notranslate"><span class="pre">/user</span></code>配下のパス(「ROLE_USER」権限を持つユーザーがアクセスできるパス)にアクセスすることができる。</p>
 <ul class="simple">
 <li>spring-security.xmlの定義例</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
     <span class="nt">&lt;sec:intercept-url</span> <span class="na">pattern=</span><span class="s">&quot;/user/**&quot;</span> <span class="na">access=</span><span class="s">&quot;hasAnyRole(&#39;USER&#39;)&quot;</span> <span class="nt">/&gt;</span>
     <span class="c">&lt;!-- omitted --&gt;</span>
 <span class="nt">&lt;/sec:http&gt;</span>
@@ -1937,11 +1929,11 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 </div>
 <div class="section" id="id29">
 <h4><a class="toc-backref" href="#id79">9.3.3.3.1. 階層関係の設定</a><a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h4>
-<p>ロールの階層関係は、<code class="docutils literal"><span class="pre">org.springframework.security.access.hierarchicalroles.RoleHierarchy</span></code>インタフェースの実装クラスで解決する。</p>
+<p>ロールの階層関係は、<code class="docutils literal notranslate"><span class="pre">org.springframework.security.access.hierarchicalroles.RoleHierarchy</span></code>インタフェースの実装クラスで解決する。</p>
 <ul class="simple">
 <li>spring-security.xmlの定義例</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;roleHierarchy&quot;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;roleHierarchy&quot;</span>
     <span class="na">class=</span><span class="s">&quot;org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;hierarchy&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
         <span class="nt">&lt;value&gt;</span>
@@ -1968,8 +1960,8 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl</span></code> クラスを指定する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">RoleHierarchyImpl</span></code>は、Spring Securityが提供するデフォルトの実装クラスである。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl</span></code> クラスを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">RoleHierarchyImpl</span></code>は、Spring Securityが提供するデフォルトの実装クラスである。</div>
 </div>
 </td>
 </tr>
@@ -1978,7 +1970,7 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">hierarchy</span></code>プロパティに階層関係を定義する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">hierarchy</span></code>プロパティに階層関係を定義する。</div>
 <div class="line"><br /></div>
 <div class="line">書式: [上位ロール] &gt; [下位ロール]</div>
 <div class="line"><br /></div>
@@ -2000,7 +1992,7 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 <ul class="simple">
 <li>spring-security.xmlの定義例</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- (1) --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- (1) --&gt;</span>
 <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;webExpressionHandler&quot;</span>
     <span class="na">class=</span><span class="s">&quot;org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;roleHierarchy&quot;</span> <span class="na">ref=</span><span class="s">&quot;roleHierarchy&quot;</span><span class="nt">/&gt;</span>  <span class="c">&lt;!-- (2) --&gt;</span>
@@ -2034,7 +2026,7 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler</span></code>のBeanを定義する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler</span></code>のBeanを定義する。</div>
 </div>
 </td>
 </tr>
@@ -2043,7 +2035,7 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">roleHierarchy</span></code>プロパティに<code class="docutils literal"><span class="pre">RoleHierarchy</span></code>インタフェースの実装クラスのBeanを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">roleHierarchy</span></code>プロパティに<code class="docutils literal notranslate"><span class="pre">RoleHierarchy</span></code>インタフェースの実装クラスのBeanを指定する。</div>
 </div>
 </td>
 </tr>
@@ -2052,7 +2044,7 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;sec:expression-handler&gt;</span></code>タグの<code class="docutils literal"><span class="pre">ref</span></code>属性に、<code class="docutils literal"><span class="pre">org.springframework.security.access.expression.SecurityExpressionHandler</span></code>インタフェースの実装クラスのBeanを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;sec:expression-handler&gt;</span></code>タグの<code class="docutils literal notranslate"><span class="pre">ref</span></code>属性に、<code class="docutils literal notranslate"><span class="pre">org.springframework.security.access.expression.SecurityExpressionHandler</span></code>インタフェースの実装クラスのBeanを指定する。</div>
 </div>
 </td>
 </tr>
@@ -2068,7 +2060,7 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 <ul class="simple">
 <li>spring-security.xmlの定義例</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;methodExpressionHandler&quot;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;methodExpressionHandler&quot;</span>
     <span class="na">class=</span><span class="s">&quot;org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;roleHierarchy&quot;</span> <span class="na">ref=</span><span class="s">&quot;roleHierarchy&quot;</span><span class="nt">/&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
 <span class="nt">&lt;/bean&gt;</span>
@@ -2094,7 +2086,7 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler</span></code>のBeanを定義する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler</span></code>のBeanを定義する。</div>
 </div>
 </td>
 </tr>
@@ -2103,7 +2095,7 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">roleHierarchy</span></code>プロパティに<code class="docutils literal"><span class="pre">RoleHierarchy</span></code>インタフェースの実装クラスのBeanを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">roleHierarchy</span></code>プロパティに<code class="docutils literal notranslate"><span class="pre">RoleHierarchy</span></code>インタフェースの実装クラスのBeanを指定する。</div>
 </div>
 </td>
 </tr>
@@ -2112,7 +2104,7 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;sec:expression-handler&gt;</span></code>タグの<code class="docutils literal"><span class="pre">ref</span></code>属性に、<code class="docutils literal"><span class="pre">org.springframework.security.access.expression.SecurityExpressionHandler</span></code>インタフェースの実装クラスのBeanを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;sec:expression-handler&gt;</span></code>タグの<code class="docutils literal notranslate"><span class="pre">ref</span></code>属性に、<code class="docutils literal notranslate"><span class="pre">org.springframework.security.access.expression.SecurityExpressionHandler</span></code>インタフェースの実装クラスのBeanを指定する。</div>
 </div>
 </td>
 </tr>
@@ -2147,7 +2139,7 @@ Spring Securityは、<code class="docutils literal"><span class="pre">Authentica
     </div>
     <div class="footer">
       © Copyright 2013-2018, NTT DATA Corporation. © Copyright 2013-2018, NTT Corporation.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.3.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.1.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
     </div>
     
     <script>

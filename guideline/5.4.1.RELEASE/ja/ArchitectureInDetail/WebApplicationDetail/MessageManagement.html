@@ -2,23 +2,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>4.6. メッセージ管理 &#8212; TERASOLUNA Server Framework for Java (5.x) Development Guideline 5.4.1.RELEASE documentation</title>
     <link rel="stylesheet" href="../../_static/solar.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '5.4.1.RELEASE',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="4.7. 国際化" href="Internationalization.html" />
@@ -26,8 +19,7 @@
 <!-- <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'> -->
 <link href="../../_static/solarized-dark.css" rel="stylesheet">
 <link href="../../_static/jquery.treeview.css" rel="stylesheet">
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -46,8 +38,7 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper"><label><input id="scroll" type="checkbox" checked> scroll sidebar</label>
-
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">4.6. メッセージ管理</a><ul>
 <li><a class="reference internal" href="#overview">4.6.1. Overview</a><ul>
@@ -94,7 +85,6 @@
 </li>
 </ul>
 
-
   <h4>Previous topic</h4>
   <p class="topless"><a href="DoubleSubmitProtection.html"
                         title="previous chapter">4.5. 二重送信防止</a></p>
@@ -110,12 +100,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -605,7 +597,7 @@
 </li>
 <li><p class="first">定義例</p>
 <blockquote>
-<div><div class="highlight-properties"><div class="highlight"><pre><span></span><span class="c"># &quot;/WEB-INF/views/admin/top.jsp&quot;の場合</span>
+<div><div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="c"># &quot;/WEB-INF/views/admin/top.jsp&quot;の場合</span>
 <span class="na">title.admin.top</span><span class="o">=</span><span class="s">Admin Top</span>
 <span class="c"># &quot;/WEB-INF/views/staff/createForm.jsp&quot;の場合</span>
 <span class="na">title.staff.createForm</span><span class="o">=</span><span class="s">Staff Register Input</span>
@@ -777,7 +769,7 @@ Tilesを利用しない場合は、次に説明する<a class="reference interna
 <li>フォームのモデル名 + “.” + フィールド名</li>
 </ul>
 <blockquote>
-<div><div class="highlight-properties"><div class="highlight"><pre><span></span><span class="na">staffForm.staffName</span> <span class="o">=</span> <span class="s">Staff name</span>
+<div><div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="na">staffForm.staffName</span> <span class="o">=</span> <span class="s">Staff name</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -785,7 +777,7 @@ Tilesを利用しない場合は、次に説明する<a class="reference interna
 <li>フィールド名</li>
 </ul>
 <blockquote>
-<div><div class="highlight-properties"><div class="highlight"><pre><span></span><span class="na">staffName</span> <span class="o">=</span> <span class="s">Staff name</span>
+<div><div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="na">staffName</span> <span class="o">=</span> <span class="s">Staff name</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -795,7 +787,7 @@ Tilesを利用しない場合は、次に説明する<a class="reference interna
 </li>
 <li><p class="first">使用例</p>
 <blockquote>
-<div><div class="highlight-properties"><div class="highlight"><pre><span></span><span class="c"># スタッフ登録画面のフォームの項目名</span>
+<div><div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="c"># スタッフ登録画面のフォームの項目名</span>
 <span class="c"># プロジェクト区分=em (Event Management System)</span>
 <span class="na">label.em.staff.staffName</span><span class="o">=</span><span class="s">Staff name</span>
 <span class="c"># ツアー検索画面に表示する説明文の場合</span>
@@ -994,7 +986,7 @@ Tilesを利用しない場合は、次に説明する<a class="reference interna
 </li>
 <li><p class="first">使用例</p>
 <blockquote>
-<div><div class="highlight-properties"><div class="highlight"><pre><span></span><span class="c"># 登録が成功した場合（正常メッセージ）</span>
+<div><div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="c"># 登録が成功した場合（正常メッセージ）</span>
 <span class="na">i.ex.fw.0001</span><span class="o">=</span><span class="s">Registered successfully.</span>
 <span class="c"># サーバリソース不足</span>
 <span class="na">w.ex.fw.9002</span><span class="o">=</span><span class="s">Server busy. Please, try again.</span>
@@ -1186,7 +1178,7 @@ Tilesを利用しない場合は、次に説明する<a class="reference interna
 </li>
 <li><p class="first">使用例</p>
 <blockquote>
-<div><div class="highlight-properties"><div class="highlight"><pre><span></span><span class="c"># ファイルのアップロードが成功した場合</span>
+<div><div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="c"># ファイルのアップロードが成功した場合</span>
 <span class="na">i.ex.an.0001</span><span class="o">=</span><span class="s">{0} upload completed.</span>
 <span class="c"># パスワードの推奨変更期間が過ぎている場合</span>
 <span class="na">w.ex.an.2001</span><span class="o">=</span><span class="s">The recommended change interval of password has passed. Please change your password.</span>
@@ -1240,11 +1232,11 @@ Tilesを利用しない場合は、次に説明する<a class="reference interna
 <h3><a class="toc-backref" href="#id34">4.6.2.1. プロパティファイルに設定したメッセージの表示</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id12">
 <h4><a class="toc-backref" href="#id35">4.6.2.1.1. プロパティを使用する際の設定</a><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
-<p>メッセージ管理を行う<code class="docutils literal"><span class="pre">org.springframework.context.MessageSource</span></code>の実装クラスの定義を行う。</p>
+<p>メッセージ管理を行う<code class="docutils literal notranslate"><span class="pre">org.springframework.context.MessageSource</span></code>の実装クラスの定義を行う。</p>
 <ul>
 <li><p class="first">applicationContext.xml</p>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Message --&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Message --&gt;</span>
 <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;messageSource&quot;</span>
     <span class="na">class=</span><span class="s">&quot;org.springframework.context.support.ResourceBundleMessageSource&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;basenames&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
@@ -1271,7 +1263,7 @@ Tilesを利用しない場合は、次に説明する<a class="reference interna
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">MessageSource</span></code>の定義。ここでは<code class="docutils literal"><span class="pre">ResourceBundleMessageSource</span></code>を使用する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">MessageSource</span></code>の定義。ここでは<code class="docutils literal notranslate"><span class="pre">ResourceBundleMessageSource</span></code>を使用する。</div>
 </div>
 </td>
 </tr>
@@ -1296,21 +1288,21 @@ Tilesを利用しない場合は、次に説明する<a class="reference interna
 <ul>
 <li><p class="first">application-messages.properties</p>
 <blockquote>
-<div><p>ここでは、<code class="file docutils literal"><span class="pre">application-messages.properties</span></code>にメッセージを定義する例を示す。</p>
-<div class="highlight-properties"><div class="highlight"><pre><span></span><span class="na">label.aa.bb.year</span><span class="o">=</span><span class="s">Year</span>
+<div><p>ここでは、<code class="file docutils literal notranslate"><span class="pre">application-messages.properties</span></code>にメッセージを定義する例を示す。</p>
+<div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="na">label.aa.bb.year</span><span class="o">=</span><span class="s">Year</span>
 <span class="na">label.aa.bb.month</span><span class="o">=</span><span class="s">Month</span>
 <span class="na">label.aa.bb.day</span><span class="o">=</span><span class="s">Day</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>文字コード「ISO-8859-1」では表現できない文字(日本語など)は<code class="docutils literal"><span class="pre">native2ascii</span></code>コマンドで
+<p>文字コード「ISO-8859-1」では表現できない文字(日本語など)は<code class="docutils literal notranslate"><span class="pre">native2ascii</span></code>コマンドで
 ISO-8859-1に変換して使用することが多かった。しかし、JDK 6からは文字コードを指定できるようになったため、
 変換する必要はない。文字コードUTF-8にすることで、propertiesファイルに直接日本語等を使用できる。</p>
 <ul>
 <li><p class="first">application-messages.properties</p>
 <blockquote>
-<div><div class="highlight-properties"><div class="highlight"><pre><span></span><span class="na">label.aa.bb.year</span><span class="o">=</span><span class="s">年</span>
+<div><div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="na">label.aa.bb.year</span><span class="o">=</span><span class="s">年</span>
 <span class="na">label.aa.bb.month</span><span class="o">=</span><span class="s">月</span>
 <span class="na">label.aa.bb.day</span><span class="o">=</span><span class="s">日</span>
 </pre></div>
@@ -1318,11 +1310,11 @@ ISO-8859-1に変換して使用することが多かった。しかし、JDK 6�
 </div></blockquote>
 </li>
 </ul>
-<p>この場合、以下のように、<code class="docutils literal"><span class="pre">ResourceBundleMessageSource</span></code>にも読み込む文字コードを指定する必要がある。</p>
+<p>この場合、以下のように、<code class="docutils literal notranslate"><span class="pre">ResourceBundleMessageSource</span></code>にも読み込む文字コードを指定する必要がある。</p>
 <ul>
 <li><p class="first">applicationContext.xml</p>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">bean</span> <span class="n">id</span><span class="o">=</span><span class="s">&quot;messageSource&quot;</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">bean</span> <span class="n">id</span><span class="o">=</span><span class="s">&quot;messageSource&quot;</span>
     <span class="n">class</span><span class="o">=</span><span class="s">&quot;org.springframework.context.support.ResourceBundleMessageSource&quot;</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">property</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;basenames&quot;</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="n">list</span><span class="o">&gt;</span>
@@ -1337,21 +1329,21 @@ ISO-8859-1に変換して使用することが多かった。しかし、JDK 6�
 </li>
 </ul>
 <p class="last">デフォルトではISO-8859-1が使用されるため、日本語等をpropertiesファイルに直接記述したい場合は、
-必ず<code class="docutils literal"><span class="pre">defaultEncoding</span></code>を設定すること。</p>
+必ず<code class="docutils literal notranslate"><span class="pre">defaultEncoding</span></code>を設定すること。</p>
 </div>
 </div></blockquote>
 </li>
 <li><p class="first">JSP</p>
 <blockquote>
-<div><p>上記で設定したメッセージをJSPからは、<code class="docutils literal"><span class="pre">&lt;spring:message&gt;</span></code>タグを用いて表示できる。
+<div><p>上記で設定したメッセージをJSPからは、<code class="docutils literal notranslate"><span class="pre">&lt;spring:message&gt;</span></code>タグを用いて表示できる。
 <a class="reference internal" href="../../ImplementationAtEachLayer/ApplicationLayer.html#view-jsp-include-label"><span class="std std-ref">インクルード用の共通JSPの作成</span></a>の設定が必要である。</p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;spring:message</span> <span class="na">code=</span><span class="s">&quot;label.aa.bb.year&quot;</span> <span class="nt">/&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;spring:message</span> <span class="na">code=</span><span class="s">&quot;label.aa.bb.year&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;spring:message</span> <span class="na">code=</span><span class="s">&quot;label.aa.bb.month&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;spring:message</span> <span class="na">code=</span><span class="s">&quot;label.aa.bb.day&quot;</span> <span class="nt">/&gt;</span>
 </pre></div>
 </div>
 <p>フォームのラベルと使用する場合は、以下のように使用すれば良い。</p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;form:form</span> <span class="na">modelAttribute=</span><span class="s">&quot;sampleForm&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;form:form</span> <span class="na">modelAttribute=</span><span class="s">&quot;sampleForm&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;form:label</span> <span class="na">path=</span><span class="s">&quot;year&quot;</span><span class="nt">&gt;</span>
 <span class="hll">        <span class="nt">&lt;spring:message</span> <span class="na">code=</span><span class="s">&quot;label.aa.bb.year&quot;</span> <span class="nt">/&gt;</span>
 </span>    <span class="nt">&lt;/form:label&gt;</span>: <span class="nt">&lt;form:input</span> <span class="na">path=</span><span class="s">&quot;year&quot;</span> <span class="nt">/&gt;</span>
@@ -1373,7 +1365,7 @@ ISO-8859-1に変換して使用することが多かった。しかし、JDK 6�
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p>国際化に対応する場合は、</p>
-<div class="highlight-text"><div class="highlight"><pre><span></span>src/main/resources/i18n
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>src/main/resources/i18n
                     ├ application-messages.properties (英語メッセージ)
                     ├ application-messages_fr.properties (フランス語メッセージ)
                     ├ ...
@@ -1392,7 +1384,7 @@ ISO-8859-1に変換して使用することが多かった。しかし、JDK 6�
 <span id="id14"></span><h3><a class="toc-backref" href="#id37">4.6.2.2. 結果メッセージの表示</a><a class="headerlink" href="#message-display" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line">サーバサイドでの処理の成功や、失敗を示す結果メッセージを格納するクラスとして、</div>
-<div class="line">共通ライブラリでは、<code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.message.ResultMessages</span></code>、および<code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.message.ResultMessage</span></code>を提供している。</div>
+<div class="line">共通ライブラリでは、<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.message.ResultMessages</span></code>、および<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.message.ResultMessage</span></code>を提供している。</div>
 </div>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
@@ -1406,17 +1398,17 @@ ISO-8859-1に変換して使用することが多かった。しかし、JDK 6�
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ResultMessages</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
 <div class="line">結果メッセージの一覧とメッセージタイプを持つクラス。</div>
-<div class="line">結果メッセージの一覧は<code class="docutils literal"><span class="pre">List&lt;ResultMessage&gt;</span></code>、メッセージタイプは<code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.message.ResultMessageType</span></code>インタフェースで表現される。</div>
+<div class="line">結果メッセージの一覧は<code class="docutils literal notranslate"><span class="pre">List&lt;ResultMessage&gt;</span></code>、メッセージタイプは<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.message.ResultMessageType</span></code>インタフェースで表現される。</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ResultMessage</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ResultMessage</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -1427,18 +1419,18 @@ ISO-8859-1に変換して使用することが多かった。しかし、JDK 6�
 </tbody>
 </table>
 <div class="line-block">
-<div class="line">この結果メッセージをJSPで表示するためのJSPタグライブラリとして、<code class="docutils literal"><span class="pre">&lt;t:messagesPanel&gt;</span></code>タグも提供される。</div>
+<div class="line">この結果メッセージをJSPで表示するためのJSPタグライブラリとして、<code class="docutils literal notranslate"><span class="pre">&lt;t:messagesPanel&gt;</span></code>タグも提供される。</div>
 </div>
 <div class="section" id="id15">
 <h4><a class="toc-backref" href="#id38">4.6.2.2.1. 基本的な結果メッセージの使用方法</a><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
-<p>Controllerで<code class="docutils literal"><span class="pre">ResultMessages</span></code>を生成して画面に渡し、JSPで<code class="docutils literal"><span class="pre">&lt;t:messagesPanel&gt;</span></code>タグを使用して、
+<p>Controllerで<code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>を生成して画面に渡し、JSPで<code class="docutils literal notranslate"><span class="pre">&lt;t:messagesPanel&gt;</span></code>タグを使用して、
 結果メッセージを表示する方法を説明する。</p>
 <ul>
 <li><p class="first">Controllerクラス</p>
 <blockquote>
-<div><p><code class="docutils literal"><span class="pre">ResultMessages</span></code>オブジェクトの生成方法、および画面へメッセージを渡す方法を示す。
+<div><p><code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>オブジェクトの生成方法、および画面へメッセージを渡す方法を示す。
 application-messages.proertiesには、<a class="reference internal" href="#message-properties-example"><span class="std std-ref">各業務で個別に使用するメッセージ</span></a>の例が定義されていることとする。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.sample.app.message</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.sample.app.message</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">org.springframework.stereotype.Controller</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.springframework.ui.Model</span><span class="o">;</span>
@@ -1475,11 +1467,11 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">メッセージタイプが”error”である<code class="docutils literal"><span class="pre">ResultMessages</span></code>を作成し、</div>
+<div class="line">メッセージタイプが”error”である<code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>を作成し、</div>
 <div class="line">メッセージIDが”e.ex.an.9001”である結果メッセージを設定する。</div>
 <div class="line">この処理は次と同義である。</div>
-<div class="line"><code class="docutils literal"><span class="pre">ResultMessages.error().add(ResultMessage.fromCode(&quot;e.ex.an.9001&quot;));</span></code></div>
-<div class="line">メッセージIDを指定する場合は、<code class="docutils literal"><span class="pre">ResultMessage</span></code>オブジェクトの生成を省略できるため、省略することを推奨する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ResultMessages.error().add(ResultMessage.fromCode(&quot;e.ex.an.9001&quot;));</span></code></div>
+<div class="line">メッセージIDを指定する場合は、<code class="docutils literal notranslate"><span class="pre">ResultMessage</span></code>オブジェクトの生成を省略できるため、省略することを推奨する。</div>
 </div>
 </td>
 </tr>
@@ -1488,7 +1480,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ResultMessages</span></code>をModelに追加する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>をModelに追加する。</div>
 <div class="line">属性は指定しなくてよい。(属性名は”resultMessages”になる)</div>
 </div>
 </td>
@@ -1500,7 +1492,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 <li><p class="first">JSP</p>
 <blockquote>
 <div><p>WEB-INF/views/message/index.jspを、以下のように記述する。</p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
@@ -1529,9 +1521,9 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;t:messagesPanel&gt;</span></code> タグをデフォルト設定で使用する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;t:messagesPanel&gt;</span></code> タグをデフォルト設定で使用する。</div>
 <div class="line">デフォルトでは、属性名が”resultMessages”のオブジェクトを表示する。</div>
-<div class="line">そのため、デフォルトではControllerからModelに<code class="docutils literal"><span class="pre">ResultMessages</span></code>を設定する際に、属性名を設定する必要がない。</div>
+<div class="line">そのため、デフォルトではControllerからModelに<code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>を設定する際に、属性名を設定する必要がない。</div>
 </div>
 </td>
 </tr>
@@ -1541,8 +1533,8 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 <div class="figure">
 <a class="reference internal image-reference" href="../../_images/message-management-resultmessage-basic.png"><img alt="../../_images/message-management-resultmessage-basic.png" src="../../_images/message-management-resultmessage-basic.png" style="width: 40%;" /></a>
 </div>
-<p><code class="docutils literal"><span class="pre">&lt;t:messagesPanel&gt;</span></code> によって出力されるHTMLを、以下に示す(説明しやすくするために整形している)。</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-error&quot;</span><span class="p">&gt;</span><span class="c">&lt;!-- (1) --&gt;</span>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;t:messagesPanel&gt;</span></code> によって出力されるHTMLを、以下に示す(説明しやすくするために整形している)。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-error&quot;</span><span class="p">&gt;</span><span class="c">&lt;!-- (1) --&gt;</span>
   <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span><span class="c">&lt;!-- (2) --&gt;</span>
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>There are inconsistencies in the data.<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span><span class="c">&lt;!-- (3) --&gt;</span>
   <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
@@ -1565,7 +1557,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">メッセージタイプに対応して”alert-error”クラスが付与されている。デフォルトでは<code class="docutils literal"><span class="pre">&lt;div&gt;</span></code>タグのclassに”error error-[メッセージタイプ]”が付与される。</div>
+<div class="line">メッセージタイプに対応して”alert-error”クラスが付与されている。デフォルトでは<code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code>タグのclassに”error error-[メッセージタイプ]”が付与される。</div>
 </div>
 </td>
 </tr>
@@ -1574,7 +1566,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">結果メッセージのリストが<code class="docutils literal"><span class="pre">&lt;ul&gt;</span></code>タグで出力される。</div>
+<div class="line">結果メッセージのリストが<code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code>タグで出力される。</div>
 </div>
 </td>
 </tr>
@@ -1583,17 +1575,17 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">メッセージIDに対応するメッセージが<code class="docutils literal"><span class="pre">MessageSource</span></code>から解決される。</div>
+<div class="line">メッセージIDに対応するメッセージが<code class="docutils literal notranslate"><span class="pre">MessageSource</span></code>から解決される。</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal"><span class="pre">&lt;t:messagesPanel&gt;</span></code>はclassを付けたHTMLを出力するだけであるため、見栄えは出力されたclassに合わせてCSSでカスタマイズする必要がある(後述する)。</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;t:messagesPanel&gt;</span></code>はclassを付けたHTMLを出力するだけであるため、見栄えは出力されたclassに合わせてCSSでカスタマイズする必要がある(後述する)。</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal"><span class="pre">ResultMessages.error().add(ResultMessage.fromText(&quot;There</span> <span class="pre">are</span> <span class="pre">inconsistencies</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">data.&quot;));</span></code>というように、
-メッセージの本文をハードコードすることもできるが、保守性を高めるため、メッセージキーを使用して<code class="docutils literal"><span class="pre">ResultMessage</span></code>オブジェクトを作成し、
+<p class="last"><code class="docutils literal notranslate"><span class="pre">ResultMessages.error().add(ResultMessage.fromText(&quot;There</span> <span class="pre">are</span> <span class="pre">inconsistencies</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">data.&quot;));</span></code>というように、
+メッセージの本文をハードコードすることもできるが、保守性を高めるため、メッセージキーを使用して<code class="docutils literal notranslate"><span class="pre">ResultMessage</span></code>オブジェクトを作成し、
 メッセージ本文はプロパティファイルから取得することを推奨する。</p>
 </div>
 </div></blockquote>
@@ -1602,13 +1594,13 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>メッセージのプレースホルダに値を埋める場合は、次のように<code class="docutils literal"><span class="pre">add</span></code>メソッドの第二引数以降に設定すればよい。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">ResultMessages</span> <span class="n">messages</span> <span class="o">=</span> <span class="n">ResultMessages</span><span class="o">.</span><span class="na">error</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;e.ex.an.8001&quot;</span><span class="o">,</span> <span class="mi">1024</span><span class="o">);</span>
+<p>メッセージのプレースホルダに値を埋める場合は、次のように<code class="docutils literal notranslate"><span class="pre">add</span></code>メソッドの第二引数以降に設定すればよい。</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ResultMessages</span> <span class="n">messages</span> <span class="o">=</span> <span class="n">ResultMessages</span><span class="o">.</span><span class="na">error</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;e.ex.an.8001&quot;</span><span class="o">,</span> <span class="mi">1024</span><span class="o">);</span>
 <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="n">messages</span><span class="o">);</span>
 </pre></div>
 </div>
-<p>この場合、<code class="docutils literal"><span class="pre">&lt;t:messagesPanel</span> <span class="pre">/&gt;</span></code>タグにより、以下のようなHTMLが出力される。</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-error&quot;</span><span class="p">&gt;</span>
+<p>この場合、<code class="docutils literal notranslate"><span class="pre">&lt;t:messagesPanel</span> <span class="pre">/&gt;</span></code>タグにより、以下のようなHTMLが出力される。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-error&quot;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Cannot upload, Because the file size must be less than 1,024MB.<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
@@ -1625,10 +1617,10 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p><code class="docutils literal"><span class="pre">ResourceBundleMessageSource</span></code>はメッセージを生成する際に<code class="docutils literal"><span class="pre">java.text.MessageFormat</span></code>を使用するため、<code class="docutils literal"><span class="pre">1024</span></code>は
-カンマ区切りで<code class="docutils literal"><span class="pre">1,024</span></code>と表示される。カンマが不要な場合は、プロパティファイルには以下のように設定する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">ResourceBundleMessageSource</span></code>はメッセージを生成する際に<code class="docutils literal notranslate"><span class="pre">java.text.MessageFormat</span></code>を使用するため、<code class="docutils literal notranslate"><span class="pre">1024</span></code>は
+カンマ区切りで<code class="docutils literal notranslate"><span class="pre">1,024</span></code>と表示される。カンマが不要な場合は、プロパティファイルには以下のように設定する。</p>
 <blockquote>
-<div><div class="highlight-properties"><div class="highlight"><pre><span></span><span class="na">e.ex.an.8001</span><span class="o">=</span><span class="s">Cannot upload, Because the file size must be less than {0,number,#}MB.</span>
+<div><div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="na">e.ex.an.8001</span><span class="o">=</span><span class="s">Cannot upload, Because the file size must be less than {0,number,#}MB.</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -1639,14 +1631,14 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 <div class="line"><br /></div>
 </div>
 <p>以下のように、複数の結果メッセージを設定することもできる。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">ResultMessages</span> <span class="n">messages</span> <span class="o">=</span> <span class="n">ResultMessages</span><span class="o">.</span><span class="na">error</span><span class="o">()</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ResultMessages</span> <span class="n">messages</span> <span class="o">=</span> <span class="n">ResultMessages</span><span class="o">.</span><span class="na">error</span><span class="o">()</span>
     <span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;e.ex.an.9001&quot;</span><span class="o">)</span>
     <span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;e.ex.an.8001&quot;</span><span class="o">,</span> <span class="mi">1024</span><span class="o">);</span>
 <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="n">messages</span><span class="o">);</span>
 </pre></div>
 </div>
 <p>この場合は、次のようなHTMLが出力される(JSPの変更は、不要である)。</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-error&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-error&quot;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>There are inconsistencies in the data.<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Cannot upload, Because the file size must be less than 1,024MB.<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
@@ -1654,13 +1646,13 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>infoメッセージを表示したい場合は、次のように<code class="docutils literal"><span class="pre">ResultMessages.info()</span></code>メソッドで<code class="docutils literal"><span class="pre">ResultMessages</span></code>オブジェクトを作成すればよい。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">ResultMessages</span> <span class="n">messages</span> <span class="o">=</span> <span class="n">ResultMessages</span><span class="o">.</span><span class="na">info</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;i.ex.an.0001&quot;</span><span class="o">,</span> <span class="s">&quot;XXXX&quot;</span><span class="o">);</span>
+<p>infoメッセージを表示したい場合は、次のように<code class="docutils literal notranslate"><span class="pre">ResultMessages.info()</span></code>メソッドで<code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>オブジェクトを作成すればよい。</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ResultMessages</span> <span class="n">messages</span> <span class="o">=</span> <span class="n">ResultMessages</span><span class="o">.</span><span class="na">info</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;i.ex.an.0001&quot;</span><span class="o">,</span> <span class="s">&quot;XXXX&quot;</span><span class="o">);</span>
 <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="n">messages</span><span class="o">);</span>
 </pre></div>
 </div>
 <p>以下のようなHTMLが、出力される。</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-info&quot;</span><span class="p">&gt;</span><span class="c">&lt;!-- (1) --&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-info&quot;</span><span class="p">&gt;</span><span class="c">&lt;!-- (1) --&gt;</span>
   <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>XXXX upload completed.<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
@@ -1699,7 +1691,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">メッセージタイプ</th>
-<th class="head"><code class="docutils literal"><span class="pre">ResultMessages</span></code>オブジェクトの作成</th>
+<th class="head"><code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>オブジェクトの作成</th>
 <th class="head">デフォルトで出力されるclass名</th>
 <th class="head">備考</th>
 </tr>
@@ -1710,7 +1702,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ResultMessages.success()</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ResultMessages.success()</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -1727,7 +1719,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ResultMessages.info()</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ResultMessages.info()</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -1744,7 +1736,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ResultMessages.warn()</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ResultMessages.warn()</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -1762,7 +1754,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ResultMessages.warning()</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ResultMessages.warning()</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -1779,7 +1771,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ResultMessages.error()</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ResultMessages.error()</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -1796,7 +1788,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ResultMessages.danger()</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ResultMessages.danger()</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -1811,7 +1803,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </tbody>
 </table>
 <p>メッセージタイプに応じてCSSを定義されたい。以下に、CSSを適用した場合の例を示す。</p>
-<div class="highlight-css"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">alert</span> <span class="p">{</span>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">alert</span> <span class="p">{</span>
   <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
   <span class="k">padding</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
   <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span><span class="p">;</span>
@@ -1836,21 +1828,21 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </pre></div>
 </div>
 <ul>
-<li><p class="first"><code class="docutils literal"><span class="pre">ResultMessages.error().add(&quot;e.ex.an.9001&quot;)</span></code>を<code class="docutils literal"><span class="pre">&lt;t:messagesPanel</span> <span class="pre">/&gt;</span></code>で出力した例</p>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">ResultMessages.error().add(&quot;e.ex.an.9001&quot;)</span></code>を<code class="docutils literal notranslate"><span class="pre">&lt;t:messagesPanel</span> <span class="pre">/&gt;</span></code>で出力した例</p>
 <blockquote>
 <div><div class="figure">
 <a class="reference internal image-reference" href="../../_images/message-management-resultmessage-error.jpg"><img alt="../../_images/message-management-resultmessage-error.jpg" src="../../_images/message-management-resultmessage-error.jpg" style="width: 100%;" /></a>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">ResultMessages.warning().add(&quot;w.ex.an.2001&quot;)</span></code>を<code class="docutils literal"><span class="pre">&lt;t:messagesPanel</span> <span class="pre">/&gt;</span></code>で出力した例</p>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">ResultMessages.warning().add(&quot;w.ex.an.2001&quot;)</span></code>を<code class="docutils literal notranslate"><span class="pre">&lt;t:messagesPanel</span> <span class="pre">/&gt;</span></code>で出力した例</p>
 <blockquote>
 <div><div class="figure">
 <a class="reference internal image-reference" href="../../_images/message-management-resultmessage-warn.jpg"><img alt="../../_images/message-management-resultmessage-warn.jpg" src="../../_images/message-management-resultmessage-warn.jpg" style="width: 100%;" /></a>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">ResultMessages.info().add(&quot;i.ex.an.0001&quot;,</span> <span class="pre">&quot;XXXX&quot;)</span></code>を<code class="docutils literal"><span class="pre">&lt;t:messagesPanel</span> <span class="pre">/&gt;</span></code>で出力した例</p>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">ResultMessages.info().add(&quot;i.ex.an.0001&quot;,</span> <span class="pre">&quot;XXXX&quot;)</span></code>を<code class="docutils literal notranslate"><span class="pre">&lt;t:messagesPanel</span> <span class="pre">/&gt;</span></code>で出力した例</p>
 <blockquote>
 <div><div class="figure">
 <a class="reference internal image-reference" href="../../_images/message-management-resultmessage-info.jpg"><img alt="../../_images/message-management-resultmessage-info.jpg" src="../../_images/message-management-resultmessage-info.jpg" style="width: 100%;" /></a>
@@ -1861,7 +1853,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">CSSフレームワークである<a class="reference external" href="http://getbootstrap.com/">Bootstrap</a> の<a class="reference external" href="https://getbootstrap.com/docs/3.3/components/#alerts">Alertsコンポーネント</a>は、<code class="docutils literal"><span class="pre">&lt;t:messagesPanel</span> <span class="pre">/&gt;</span></code>のデフォルト設定で利用できる。</p>
+<p class="last">CSSフレームワークである<a class="reference external" href="http://getbootstrap.com/">Bootstrap</a> の<a class="reference external" href="https://getbootstrap.com/docs/3.3/components/#alerts">Alertsコンポーネント</a>は、<code class="docutils literal notranslate"><span class="pre">&lt;t:messagesPanel</span> <span class="pre">/&gt;</span></code>のデフォルト設定で利用できる。</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -1875,14 +1867,14 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 <div class="section" id="id18">
 <h4><a class="toc-backref" href="#id39">4.6.2.2.2. 結果メッセージの属性名指定</a><a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ResultMessages</span></code>をModelに追加する場合、基本的には属性名を省略できる。</div>
-<div class="line">ただし、<code class="docutils literal"><span class="pre">ResultMessages</span></code>は一つのメッセージタイプしか表現できない。</div>
-<div class="line">1画面に異なるメッセージタイプの<code class="docutils literal"><span class="pre">ResultMessages</span></code>を<strong>同時に</strong>表示したい場合は、明示的に属性名を指定してModelに設定する必要がある。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>をModelに追加する場合、基本的には属性名を省略できる。</div>
+<div class="line">ただし、<code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>は一つのメッセージタイプしか表現できない。</div>
+<div class="line">1画面に異なるメッセージタイプの<code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>を<strong>同時に</strong>表示したい場合は、明示的に属性名を指定してModelに設定する必要がある。</div>
 </div>
 <ul>
 <li><p class="first">Controller (MessageControllerに追加)</p>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;showMessages&quot;</span><span class="o">,</span> <span class="n">method</span> <span class="o">=</span> <span class="n">RequestMethod</span><span class="o">.</span><span class="na">GET</span><span class="o">)</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;showMessages&quot;</span><span class="o">,</span> <span class="n">method</span> <span class="o">=</span> <span class="n">RequestMethod</span><span class="o">.</span><span class="na">GET</span><span class="o">)</span>
 <span class="kd">public</span> <span class="n">String</span> <span class="nf">showMessages</span><span class="o">(</span><span class="n">Model</span> <span class="n">model</span><span class="o">)</span> <span class="o">{</span>
 
     <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">&quot;messages1&quot;</span><span class="o">,</span>
@@ -1910,7 +1902,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">メッセージタイプが”warning”である、<code class="docutils literal"><span class="pre">ResultMessages</span></code>を属性名”messages1”でModelに追加する。</div>
+<div class="line">メッセージタイプが”warning”である、<code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>を属性名”messages1”でModelに追加する。</div>
 </div>
 </td>
 </tr>
@@ -1919,7 +1911,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">メッセージタイプが”info”である、<code class="docutils literal"><span class="pre">ResultMessages</span></code>を属性名”messages2”でModelに追加する。</div>
+<div class="line">メッセージタイプが”info”である、<code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>を属性名”messages2”でModelに追加する。</div>
 </div>
 </td>
 </tr>
@@ -1929,7 +1921,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </li>
 <li><p class="first">JSP (WEB-INF/views/message/showMessages.jsp)</p>
 <blockquote>
-<div><div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+<div><div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
@@ -1988,7 +1980,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">属性名が”messages1”である<code class="docutils literal"><span class="pre">ResultMessages</span></code>を表示する。</div>
+<div class="line">属性名が”messages1”である<code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>を表示する。</div>
 </div>
 </td>
 </tr>
@@ -1997,7 +1989,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">属性名が”messages2”である<code class="docutils literal"><span class="pre">ResultMessages</span></code>を表示する。</div>
+<div class="line">属性名が”messages2”である<code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>を表示する。</div>
 </div>
 </td>
 </tr>
@@ -2014,17 +2006,17 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 <div class="section" id="id19">
 <h4><a class="toc-backref" href="#id40">4.6.2.2.3. 業務例外メッセージの表示</a><a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.exception.BusinessException</span></code>と<code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.exception.ResourceNotFoundException</span></code>は</div>
-<div class="line">内部で<code class="docutils literal"><span class="pre">ResultMessages</span></code>を保持している。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.exception.BusinessException</span></code>と<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.exception.ResourceNotFoundException</span></code>は</div>
+<div class="line">内部で<code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>を保持している。</div>
 </div>
 <div class="line-block">
-<div class="line">業務例外メッセージを表示する場合は、Serviceクラスで<code class="docutils literal"><span class="pre">ResultMessages</span></code>を設定した<code class="docutils literal"><span class="pre">BusinessException</span></code>をスローすること。</div>
-<div class="line">Controllerクラスでは<code class="docutils literal"><span class="pre">BusinessException</span></code>をキャッチし、例外中の結果メッセージをModelに追加する。</div>
+<div class="line">業務例外メッセージを表示する場合は、Serviceクラスで<code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>を設定した<code class="docutils literal notranslate"><span class="pre">BusinessException</span></code>をスローすること。</div>
+<div class="line">Controllerクラスでは<code class="docutils literal notranslate"><span class="pre">BusinessException</span></code>をキャッチし、例外中の結果メッセージをModelに追加する。</div>
 </div>
 <ul>
 <li><p class="first">Serviceクラス</p>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@Service</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Service</span>
 <span class="nd">@Transactional</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserServiceImpl</span> <span class="kd">implements</span> <span class="n">UserService</span> <span class="o">{</span>
     <span class="c1">// omitted</span>
@@ -2060,7 +2052,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">エラーメッセージを<code class="docutils literal"><span class="pre">ResultMessages</span></code>で作成し、<code class="docutils literal"><span class="pre">BusinessException</span></code>に設定する。</div>
+<div class="line">エラーメッセージを<code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>で作成し、<code class="docutils literal notranslate"><span class="pre">BusinessException</span></code>に設定する。</div>
 </div>
 </td>
 </tr>
@@ -2070,7 +2062,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </li>
 <li><p class="first">Controllerクラス</p>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;create&quot;</span><span class="o">,</span> <span class="n">method</span> <span class="o">=</span> <span class="n">RequestMethod</span><span class="o">.</span><span class="na">POST</span><span class="o">)</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;create&quot;</span><span class="o">,</span> <span class="n">method</span> <span class="o">=</span> <span class="n">RequestMethod</span><span class="o">.</span><span class="na">POST</span><span class="o">)</span>
 <span class="kd">public</span> <span class="n">String</span> <span class="nf">create</span><span class="o">(</span><span class="nd">@Validated</span> <span class="n">UserForm</span> <span class="n">form</span><span class="o">,</span> <span class="n">BindingResult</span> <span class="n">result</span><span class="o">,</span> <span class="n">Model</span> <span class="n">model</span><span class="o">)</span> <span class="o">{</span>
     <span class="c1">// omitted</span>
 
@@ -2103,7 +2095,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">BusinessException</span></code>が保持する<code class="docutils literal"><span class="pre">ResultMessages</span></code>を取得し、Modelに追加する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">BusinessException</span></code>が保持する<code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>を取得し、Modelに追加する。</div>
 </div>
 </td>
 </tr>
@@ -2112,7 +2104,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div></blockquote>
 </li>
 </ul>
-<p>通常、エラーメッセージ表示する場合は、Controllerで<code class="docutils literal"><span class="pre">ResultMessages</span></code>オブジェクトを作成するのではなく、
+<p>通常、エラーメッセージ表示する場合は、Controllerで<code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>オブジェクトを作成するのではなく、
 こちらの方法を使用する。</p>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -2130,10 +2122,10 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 <div class="line">メッセージタイプを追加したい場合がある。例えば”notice”というメッセージタイプを追加する場合を説明する。</div>
 </div>
 <div class="line-block">
-<div class="line">まず、以下のように<code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.message.ResultMessageType</span></code>インタフェースを実装した</div>
+<div class="line">まず、以下のように<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.message.ResultMessageType</span></code>インタフェースを実装した</div>
 <div class="line">独自メッセージタイプクラスを作成する。</div>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">org.terasoluna.gfw.common.message.ResultMessageType</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">org.terasoluna.gfw.common.message.ResultMessageType</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">enum</span> <span class="n">ResultMessageTypes</span> <span class="kd">implements</span> <span class="n">ResultMessageType</span> <span class="o">{</span> <span class="c1">// (1)</span>
     <span class="n">NOTICE</span><span class="o">(</span><span class="s">&quot;notice&quot;</span><span class="o">);</span>
@@ -2172,7 +2164,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ResultMessageType</span></code>インタフェースを実装したEnumを定義する。定数オブジェクトで作成してもよいが、Enumで作成することを推奨する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ResultMessageType</span></code>インタフェースを実装したEnumを定義する。定数オブジェクトで作成してもよいが、Enumで作成することを推奨する。</div>
 </div>
 </td>
 </tr>
@@ -2181,16 +2173,16 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">getType</span></code>の返り値が出力されるCSSのclass名に対応する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">getType</span></code>の返り値が出力されるCSSのclass名に対応する。</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
 <div class="line-block">
-<div class="line">このメッセージタイプを使用して以下のように<code class="docutils literal"><span class="pre">ResultMessages</span></code>を作成する。</div>
+<div class="line">このメッセージタイプを使用して以下のように<code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>を作成する。</div>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">ResultMessages</span> <span class="n">messages</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ResultMessages</span><span class="o">(</span><span class="n">ResultMessageTypes</span><span class="o">.</span><span class="na">NOTICE</span><span class="o">)</span> <span class="c1">// (1)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ResultMessages</span> <span class="n">messages</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ResultMessages</span><span class="o">(</span><span class="n">ResultMessageTypes</span><span class="o">.</span><span class="na">NOTICE</span><span class="o">)</span> <span class="c1">// (1)</span>
         <span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;w.ex.an.2001&quot;</span><span class="o">);</span>
 <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="n">messages</span><span class="o">);</span>
 </pre></div>
@@ -2211,14 +2203,14 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ResultMessages</span></code>のコンストラクタに対象の<code class="docutils literal"><span class="pre">ResultMessageType</span></code>を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>のコンストラクタに対象の<code class="docutils literal notranslate"><span class="pre">ResultMessageType</span></code>を指定する。</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
-<p>この場合、<code class="docutils literal"><span class="pre">&lt;t:messagesPanel</span> <span class="pre">/&gt;</span></code> で以下のようなHTMLが出力される。</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-notice&quot;</span><span class="p">&gt;</span>
+<p>この場合、<code class="docutils literal notranslate"><span class="pre">&lt;t:messagesPanel</span> <span class="pre">/&gt;</span></code> で以下のようなHTMLが出力される。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-notice&quot;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>The recommended change interval has passed password. Please change your password.<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
@@ -2229,7 +2221,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 <blockquote>
 <div><div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">拡張方法は、<code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.message.StandardResultMessageType</span></code>が参考になる。</p>
+<p class="last">拡張方法は、<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.message.StandardResultMessageType</span></code>が参考になる。</p>
 </div>
 </div></blockquote>
 <div class="line-block">
@@ -2241,9 +2233,9 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 <h2><a class="toc-backref" href="#id43">4.6.4. Appendix</a><a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="t-messagespanel">
 <span id="message-management-messagepanel-attribute"></span><h3><a class="toc-backref" href="#id44">4.6.4.1. &lt;t:messagesPanel&gt;タグの属性変更</a><a class="headerlink" href="#t-messagespanel" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">&lt;t:messagesPanel&gt;</span></code>タグには、表示形式を変更する属性がいくつか用意されている。</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;t:messagesPanel&gt;</span></code>タグには、表示形式を変更する属性がいくつか用意されている。</p>
 <table border="1" class="colwidths-given docutils" id="id22">
-<caption><span class="caption-text"><code class="docutils literal"><span class="pre">&lt;t:messagesPanel&gt;</span></code>タグ 属性一覧</span><a class="headerlink" href="#id22" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">&lt;t:messagesPanel&gt;</span></code>タグ 属性一覧</span><a class="headerlink" href="#id22" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="25%" />
 <col width="55%" />
@@ -2269,7 +2261,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 <td>alert-</td>
 </tr>
 <tr class="row-odd"><td>messagesType</td>
-<td>メッセージタイプ。この属性が設定された場合。設定されたメッセージタイプが<code class="docutils literal"><span class="pre">ResultMessages</span></code>がもつメッセージタイプより優先されて使用される。</td>
+<td>メッセージタイプ。この属性が設定された場合。設定されたメッセージタイプが<code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>がもつメッセージタイプより優先されて使用される。</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-even"><td>outerElement</td>
@@ -2283,19 +2275,19 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 <tr class="row-even"><td>disableHtmlEscape</td>
 <td><div class="first last line-block">
 <div class="line">HTMLエスケープ処理を無効化するためのフラグ。</div>
-<div class="line"><code class="docutils literal"><span class="pre">true</span></code>を指定する事で、出力するメッセージに対してHTMLエスケープ処理が行われなくなる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">true</span></code>を指定する事で、出力するメッセージに対してHTMLエスケープ処理が行われなくなる。</div>
 <div class="line">この属性は、出力するメッセージにHTMLを埋め込むことで、メッセージの装飾などができるようにするために用意している。</div>
 <div class="line"><strong>trueを指定する場合は、XSS対策が必要な文字がメッセージ内に含まれない事が保証されていること。</strong></div>
 <div class="line"><br /></div>
 <div class="line">terasoluna-gfw-web 1.0.1.RELEASE以上で利用可能な属性である。</div>
 </div>
 </td>
-<td><code class="docutils literal"><span class="pre">false</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">false</span></code></td>
 </tr>
 </tbody>
 </table>
 <p>例えば、CSSフレームワーク”<a class="reference external" href="http://www.bluetrip.org/">BlueTrip</a>”では以下のようなCSSが用意されている。</p>
-<div class="highlight-css"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">error</span><span class="o">,</span><span class="p">.</span><span class="nc">notice</span><span class="o">,</span><span class="p">.</span><span class="nc">success</span> <span class="p">{</span>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">error</span><span class="o">,</span><span class="p">.</span><span class="nc">notice</span><span class="o">,</span><span class="p">.</span><span class="nc">success</span> <span class="p">{</span>
     <span class="k">padding</span><span class="p">:</span> <span class="mf">.8</span><span class="kt">em</span><span class="p">;</span>
     <span class="k">margin-bottom</span><span class="p">:</span> <span class="mf">1.6</span><span class="kt">em</span><span class="p">;</span>
     <span class="k">border</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#ddd</span><span class="p">;</span>
@@ -2321,14 +2313,14 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </pre></div>
 </div>
 <div class="line-block">
-<div class="line">このCSSを使用したい場合、<code class="docutils literal"><span class="pre">&lt;div</span> <span class="pre">class=&quot;error&quot;&gt;...&lt;/div&gt;</span></code>というようにメッセージが出力されてほしい。</div>
-<div class="line">この場合、<code class="docutils literal"><span class="pre">&lt;t:messagesPanel&gt;</span></code>タグを以下のように使用すればよい(Controllerは修正不要である)。</div>
+<div class="line">このCSSを使用したい場合、<code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class=&quot;error&quot;&gt;...&lt;/div&gt;</span></code>というようにメッセージが出力されてほしい。</div>
+<div class="line">この場合、<code class="docutils literal notranslate"><span class="pre">&lt;t:messagesPanel&gt;</span></code>タグを以下のように使用すればよい(Controllerは修正不要である)。</div>
 </div>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;t:messagesPanel</span> <span class="na">panelClassName=</span><span class="s">&quot;&quot;</span> <span class="na">panelTypeClassPrefix=</span><span class="s">&quot;&quot;</span> <span class="nt">/&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;t:messagesPanel</span> <span class="na">panelClassName=</span><span class="s">&quot;&quot;</span> <span class="na">panelTypeClassPrefix=</span><span class="s">&quot;&quot;</span> <span class="nt">/&gt;</span>
 </pre></div>
 </div>
 <p>出力されるHTMLは以下のようになる。</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;error&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;error&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>There are inconsistencies in the data.<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
@@ -2339,21 +2331,21 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 <div class="figure">
 <a class="reference internal image-reference" href="../../_images/message-management-bluetrip-error.jpg"><img alt="../../_images/message-management-bluetrip-error.jpg" src="../../_images/message-management-bluetrip-error.jpg" style="width: 80%;" /></a>
 </div>
-<p>メッセージ一覧を表示するために<code class="docutils literal"><span class="pre">&lt;ul&gt;</span></code>タグを使用したくない場合は、
-<code class="docutils literal"><span class="pre">outerElement</span></code>属性と<code class="docutils literal"><span class="pre">innerElement</span></code>属性を使用することでカスタマイズできる。</p>
+<p>メッセージ一覧を表示するために<code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code>タグを使用したくない場合は、
+<code class="docutils literal notranslate"><span class="pre">outerElement</span></code>属性と<code class="docutils literal notranslate"><span class="pre">innerElement</span></code>属性を使用することでカスタマイズできる。</p>
 <p>以下のように属性を設定した場合は、</p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;t:messagesPanel</span> <span class="na">outerElement=</span><span class="s">&quot;&quot;</span> <span class="na">innerElement=</span><span class="s">&quot;span&quot;</span> <span class="nt">/&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;t:messagesPanel</span> <span class="na">outerElement=</span><span class="s">&quot;&quot;</span> <span class="na">innerElement=</span><span class="s">&quot;span&quot;</span> <span class="nt">/&gt;</span>
 </pre></div>
 </div>
 <p>次のようにHTMLが出力される。</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-error&quot;</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-error&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>There are inconsistencies in the data.<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>Cannot upload, Because the file size must be less than 1,024MB.<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>以下のようCSSを設定することで、</p>
-<div class="highlight-css"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">alert</span> <span class="o">&gt;</span> <span class="nt">span</span> <span class="p">{</span>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">alert</span> <span class="o">&gt;</span> <span class="nt">span</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span> <span class="c">/* (1) */</span>
 <span class="p">}</span>
 </pre></div>
@@ -2374,7 +2366,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">“alert”クラスの要素の子となる<code class="docutils literal"><span class="pre">&lt;span&gt;</span></code>タグをブロックレベル要素にする。</div>
+<div class="line">“alert”クラスの要素の子となる<code class="docutils literal notranslate"><span class="pre">&lt;span&gt;</span></code>タグをブロックレベル要素にする。</div>
 </div>
 </td>
 </tr>
@@ -2385,14 +2377,14 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 <a class="reference internal image-reference" href="../../_images/message-management-messagespanel-span.jpg"><img alt="../../_images/message-management-messagespanel-span.jpg" src="../../_images/message-management-messagespanel-span.jpg" style="width: 60%;" /></a>
 </div>
 <div class="line-block">
-<div class="line">disableHtmlEscape属性を<code class="docutils literal"><span class="pre">true</span></code>にした場合、以下のような出力イメージにする事ができる。</div>
+<div class="line">disableHtmlEscape属性を<code class="docutils literal notranslate"><span class="pre">true</span></code>にした場合、以下のような出力イメージにする事ができる。</div>
 <div class="line">下記の例では、メッセージの一部のフォントを「16pxの赤字」に装飾している。</div>
 </div>
 <ul class="simple">
 <li>jsp</li>
 </ul>
 <blockquote>
-<div><div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;spring:message</span> <span class="na">var=</span><span class="s">&quot;informationMessage&quot;</span> <span class="na">code=</span><span class="s">&quot;i.ex.od.0001&quot;</span> <span class="nt">/&gt;</span>
+<div><div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;spring:message</span> <span class="na">var=</span><span class="s">&quot;informationMessage&quot;</span> <span class="na">code=</span><span class="s">&quot;i.ex.od.0001&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;t:messagesPanel</span> <span class="na">messagesAttributeName=</span><span class="s">&quot;informationMessage&quot;</span>
     <span class="na">messagesType=</span><span class="s">&quot;alert alert-info&quot;</span>
 <span class="hll">    <span class="na">disableHtmlEscape=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
@@ -2403,7 +2395,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 <li>properties</li>
 </ul>
 <blockquote>
-<div><div class="highlight-properties"><div class="highlight"><pre><span></span><span class="na">i.ex.od.0001</span> <span class="o">=</span> <span class="s">Please confirm order content. &lt;font style=&quot;color: red; font-size: 16px;&quot;&gt;If this orders submitted, cannot cancel.&lt;/font&gt;</span>
+<div><div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="na">i.ex.od.0001</span> <span class="o">=</span> <span class="s">Please confirm order content. &lt;font style=&quot;color: red; font-size: 16px;&quot;&gt;If this orders submitted, cannot cancel.&lt;/font&gt;</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -2414,7 +2406,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 <div><div class="figure">
 <a class="reference internal image-reference" href="../../_images/message-management-disableHtmlEscape-true.png"><img alt="../../_images/message-management-disableHtmlEscape-true.png" src="../../_images/message-management-disableHtmlEscape-true.png" style="width: 100%;" /></a>
 </div>
-<p>disableHtmlEscape属性が<code class="docutils literal"><span class="pre">false</span></code>(デフォルト)の場合は、HTMLエスケープされて以下のような出力となる。</p>
+<p>disableHtmlEscape属性が<code class="docutils literal notranslate"><span class="pre">false</span></code>(デフォルト)の場合は、HTMLエスケープされて以下のような出力となる。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../../_images/message-management-disableHtmlEscape-false.png"><img alt="../../_images/message-management-disableHtmlEscape-false.png" src="../../_images/message-management-disableHtmlEscape-false.png" style="width: 100%;" /></a>
 </div>
@@ -2422,15 +2414,15 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 <div class="section" id="resultmessages">
 <h3><a class="toc-backref" href="#id45">4.6.4.2. ResultMessagesを使用しない結果メッセージの表示</a><a class="headerlink" href="#resultmessages" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">&lt;t:messagesPanel&gt;</span></code>タグは<code class="docutils literal"><span class="pre">ResultMessages</span></code>オブジェクト以外にも</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;t:messagesPanel&gt;</span></code>タグは<code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>オブジェクト以外にも</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">java.lang.String</span></code></li>
-<li><code class="docutils literal"><span class="pre">java.lang.Exception</span></code></li>
-<li><code class="docutils literal"><span class="pre">java.util.List</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">java.lang.String</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">java.lang.Exception</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">java.util.List</span></code></li>
 </ul>
 <p>オブジェクトも出力できる。</p>
 <div class="line-block">
-<div class="line">通常は<code class="docutils literal"><span class="pre">&lt;t:messagesPanel&gt;</span></code>タグは<code class="docutils literal"><span class="pre">ResultMessages</span></code>オブジェクトの出力用に使用するが、</div>
+<div class="line">通常は<code class="docutils literal notranslate"><span class="pre">&lt;t:messagesPanel&gt;</span></code>タグは<code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>オブジェクトの出力用に使用するが、</div>
 <div class="line">フレームワークがリクエストスコープに設定した文字列(エラーメッセージなど)を表示する場合にも使用できる。</div>
 </div>
 <div class="line-block">
@@ -2438,9 +2430,9 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 <div class="line">リクエストスコープに設定する。</div>
 </div>
 <div class="line-block">
-<div class="line">この例外メッセージを、結果メッセージ同様に<code class="docutils literal"><span class="pre">&lt;t:messagesPanel&gt;</span></code>タグで出力したい場合は、以下のように設定すればよい。</div>
+<div class="line">この例外メッセージを、結果メッセージ同様に<code class="docutils literal notranslate"><span class="pre">&lt;t:messagesPanel&gt;</span></code>タグで出力したい場合は、以下のように設定すればよい。</div>
 </div>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
@@ -2514,16 +2506,16 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">Exception</span></code>オブジェクトが格納されている属性名を<code class="docutils literal"><span class="pre">messagesAttributeName</span></code>属性で指定する。</div>
-<div class="line">また、<code class="docutils literal"><span class="pre">ResultMessages</span></code>オブジェクトとは異なり、メッセージタイプの情報をもたないため、</div>
-<div class="line"><code class="docutils literal"><span class="pre">messagesType</span></code>属性で、明示的に、メッセージタイプを指定する必要がある。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Exception</span></code>オブジェクトが格納されている属性名を<code class="docutils literal notranslate"><span class="pre">messagesAttributeName</span></code>属性で指定する。</div>
+<div class="line">また、<code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>オブジェクトとは異なり、メッセージタイプの情報をもたないため、</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">messagesType</span></code>属性で、明示的に、メッセージタイプを指定する必要がある。</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
 <p>認証エラー時に出力されるHTMLは</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-error&quot;</span><span class="p">&gt;&lt;</span><span class="nt">ul</span><span class="p">&gt;&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Bad credentials<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;&lt;/</span><span class="nt">ul</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-error&quot;</span><span class="p">&gt;&lt;</span><span class="nt">ul</span><span class="p">&gt;&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Bad credentials<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;&lt;/</span><span class="nt">ul</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>であり、ブラウザでは以下のように出力される。</p>
@@ -2551,8 +2543,8 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 <ol class="arabic">
 <li><p class="first">メッセージキー定数クラスの作成</p>
 <blockquote>
-<div><p>まず空のメッセージキー定数クラスを作成する。ここでは<code class="docutils literal"><span class="pre">com.example.common.message.MessageKeys</span></code>とする。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.common.message</span><span class="o">;</span>
+<div><p>まず空のメッセージキー定数クラスを作成する。ここでは<code class="docutils literal notranslate"><span class="pre">com.example.common.message.MessageKeys</span></code>とする。</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.common.message</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MessageKeys</span> <span class="o">{</span>
 
@@ -2563,8 +2555,8 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 </li>
 <li><p class="first">自動生成クラスの作成</p>
 <blockquote>
-<div><p>次に<code class="docutils literal"><span class="pre">MessageKeys</span></code>クラスと同じパッケージに<code class="docutils literal"><span class="pre">MessageKeysGen</span></code>クラスを作成し、以下のように記述する。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.common.message</span><span class="o">;</span>
+<div><p>次に<code class="docutils literal notranslate"><span class="pre">MessageKeys</span></code>クラスと同じパッケージに<code class="docutils literal notranslate"><span class="pre">MessageKeysGen</span></code>クラスを作成し、以下のように記述する。</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.common.message</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
@@ -2625,7 +2617,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 <li><p class="first">メッセージプロパティファイルの用意</p>
 <blockquote>
 <div><p>src/main/resource/i18m/application-messages.propertiesにメッセージを定義する。ここでは例として、以下のように設定する。</p>
-<div class="highlight-properties"><div class="highlight"><pre><span></span><span class="na">i.ex.an.0001</span><span class="o">=</span><span class="s">{0} upload completed.</span>
+<div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="na">i.ex.an.0001</span><span class="o">=</span><span class="s">{0} upload completed.</span>
 <span class="na">w.ex.an.2001</span><span class="o">=</span><span class="s">The recommended change interval has passed password. Please change your password.</span>
 <span class="na">e.ex.an.8001</span><span class="o">=</span><span class="s">Cannot upload, Because the file size must be less than {0}MB.</span>
 <span class="na">e.ex.an.9001</span><span class="o">=</span><span class="s">There are inconsistencies in the data.</span>
@@ -2638,8 +2630,8 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
 <div><div class="figure">
 <a class="reference internal image-reference" href="../../_images/message-management-messagekeysgen.png"><img alt="../../_images/message-management-messagekeysgen.png" src="../../_images/message-management-messagekeysgen.png" style="width: 60%;" /></a>
 </div>
-<p><code class="docutils literal"><span class="pre">MessageKeys</span></code>クラスが、以下のように上書きされる。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.common.message</span><span class="o">;</span>
+<p><code class="docutils literal notranslate"><span class="pre">MessageKeys</span></code>クラスが、以下のように上書きされる。</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.common.message</span><span class="o">;</span>
 <span class="cm">/**</span>
 <span class="cm"> * Message Id</span>
 <span class="cm"> */</span>
@@ -2687,7 +2679,7 @@ application-messages.proertiesには、<a class="reference internal" href="#mess
     </div>
     <div class="footer">
       © Copyright 2013-2018, NTT DATA Corporation. © Copyright 2013-2018, NTT Corporation.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.3.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.1.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
     </div>
     
     <script>

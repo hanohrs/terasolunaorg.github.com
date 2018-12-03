@@ -2,23 +2,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>11.2. チュートリアル(Todoアプリケーション REST編) &#8212; TERASOLUNA Server Framework for Java (5.x) Development Guideline 5.4.1.RELEASE documentation</title>
     <link rel="stylesheet" href="../_static/solar.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '5.4.1.RELEASE',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="11.3. セッションチュートリアル" href="TutorialSession.html" />
@@ -26,8 +19,7 @@
 <!-- <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'> -->
 <link href="../_static/solarized-dark.css" rel="stylesheet">
 <link href="../_static/jquery.treeview.css" rel="stylesheet">
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -46,8 +38,7 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper"><label><input id="scroll" type="checkbox" checked> scroll sidebar</label>
-
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">11.2. チュートリアル(Todoアプリケーション REST編)</a><ul>
 <li><a class="reference internal" href="#id2">11.2.1. はじめに</a><ul>
@@ -107,7 +98,6 @@
 </li>
 </ul>
 
-
   <h4>Previous topic</h4>
   <p class="topless"><a href="TutorialTodo.html"
                         title="previous chapter">11.1. チュートリアル(Todoアプリケーション)</a></p>
@@ -123,12 +113,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -365,7 +357,7 @@ RESTful Webサービスを追加する手順となっている。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">/api/v1/todos</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/api/v1/todos</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -387,7 +379,7 @@ RESTful Webサービスを追加する手順となっている。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">/api/v1/todos</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/api/v1/todos</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -409,7 +401,7 @@ RESTful Webサービスを追加する手順となっている。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">/api/v1/todos/{todoId}</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/api/v1/todos/{todoId}</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -431,7 +423,7 @@ RESTful Webサービスを追加する手順となっている。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">/api/v1/todos/{todoId}</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/api/v1/todos/{todoId}</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -453,7 +445,7 @@ RESTful Webサービスを追加する手順となっている。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">/api/v1/todos/{todoId}</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/api/v1/todos/{todoId}</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -470,8 +462,8 @@ RESTful Webサービスを追加する手順となっている。</p>
 </table>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p>パス内に含まれている<code class="docutils literal"><span class="pre">{todoId}</span></code>は、パス変数と呼ばれ、任意の可変値を扱う事ができる。
-パス変数を使用する事で、<code class="docutils literal"><span class="pre">GET</span> <span class="pre">/api/v1/todos/123</span></code>と<code class="docutils literal"><span class="pre">GET</span> <span class="pre">/api/v1/todos/456</span></code>を同じAPIで扱う事ができる。</p>
+<p>パス内に含まれている<code class="docutils literal notranslate"><span class="pre">{todoId}</span></code>は、パス変数と呼ばれ、任意の可変値を扱う事ができる。
+パス変数を使用する事で、<code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/api/v1/todos/123</span></code>と<code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/api/v1/todos/456</span></code>を同じAPIで扱う事ができる。</p>
 <p class="last">本チュートリアルでは、Todoを一意に識別するためのID(Todo ID)をパス変数として扱っている。</p>
 </div>
 <div class="line-block">
@@ -486,12 +478,12 @@ RESTful Webサービスを追加する手順となっている。</p>
 <div class="section" id="get-todos">
 <h4><a class="toc-backref" href="#id34">11.2.3.1.1. GET Todos</a><a class="headerlink" href="#get-todos" title="Permalink to this headline">¶</a></h4>
 <p><strong>[リクエスト]</strong></p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>&gt; GET /todo/api/v1/todos HTTP/1.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; GET /todo/api/v1/todos HTTP/1.1
 </pre></div>
 </div>
 <p><strong>[レスポンス]</strong></p>
 <p>作成済みのTodoリソースのリストをJSON形式で返却する。</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>&lt; HTTP/1.1 <span class="m">200</span> OK
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt; HTTP/1.1 <span class="m">200</span> OK
 &lt; Content-Type: application/json<span class="p">;</span><span class="nv">charset</span><span class="o">=</span>UTF-8
 &lt;
 <span class="o">[{</span><span class="s2">&quot;todoId&quot;</span>:<span class="s2">&quot;9aef3ee3-30d4-4a7c-be4a-bc184ca1d558&quot;</span>,<span class="s2">&quot;todoTitle&quot;</span>:<span class="s2">&quot;Hello World!&quot;</span>,<span class="s2">&quot;finished&quot;</span>:false,<span class="s2">&quot;createdAt&quot;</span>:<span class="s2">&quot;2014-02-25T02:21:48.493+0000&quot;</span><span class="o">}]</span>
@@ -505,7 +497,7 @@ RESTful Webサービスを追加する手順となっている。</p>
 <h4><a class="toc-backref" href="#id35">11.2.3.1.2. POST Todos</a><a class="headerlink" href="#post-todos" title="Permalink to this headline">¶</a></h4>
 <p><strong>[リクエスト]</strong></p>
 <p>新規作成するTodoリソースの内容(タイトル)をJSON形式で指定する。</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>&gt; POST /todo/api/v1/todos HTTP/1.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; POST /todo/api/v1/todos HTTP/1.1
 &gt; Content-Type: application/json
 &gt; Content-Length: <span class="m">29</span>
 &gt;
@@ -514,7 +506,7 @@ RESTful Webサービスを追加する手順となっている。</p>
 </div>
 <p><strong>[レスポンス]</strong></p>
 <p>作成したTodoリソースをJSON形式で返却する。</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>&lt; HTTP/1.1 <span class="m">201</span> Created
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt; HTTP/1.1 <span class="m">201</span> Created
 &lt; Content-Type: application/json<span class="p">;</span><span class="nv">charset</span><span class="o">=</span>UTF-8
 &lt;
 <span class="o">{</span><span class="s2">&quot;todoId&quot;</span>:<span class="s2">&quot;d6101d61-b22c-48ee-9110-e106af6a1404&quot;</span>,<span class="s2">&quot;todoTitle&quot;</span>:<span class="s2">&quot;Study Spring&quot;</span>,<span class="s2">&quot;finished&quot;</span>:false,<span class="s2">&quot;createdAt&quot;</span>:<span class="s2">&quot;2014-02-25T04:05:58.752+0000&quot;</span><span class="o">}</span>
@@ -528,15 +520,15 @@ RESTful Webサービスを追加する手順となっている。</p>
 <h4><a class="toc-backref" href="#id36">11.2.3.1.3. GET Todo</a><a class="headerlink" href="#get-todo" title="Permalink to this headline">¶</a></h4>
 <p><strong>[リクエスト]</strong></p>
 <div class="line-block">
-<div class="line">パス変数「<code class="docutils literal"><span class="pre">todoId</span></code>」に、取得対象のTodoリソースのIDを指定する。</div>
-<div class="line">下記例では、パス変数「<code class="docutils literal"><span class="pre">todoId</span></code>」に<code class="docutils literal"><span class="pre">9aef3ee3-30d4-4a7c-be4a-bc184ca1d558</span></code>を指定している。</div>
+<div class="line">パス変数「<code class="docutils literal notranslate"><span class="pre">todoId</span></code>」に、取得対象のTodoリソースのIDを指定する。</div>
+<div class="line">下記例では、パス変数「<code class="docutils literal notranslate"><span class="pre">todoId</span></code>」に<code class="docutils literal notranslate"><span class="pre">9aef3ee3-30d4-4a7c-be4a-bc184ca1d558</span></code>を指定している。</div>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>&gt; GET /todo/api/v1/todos/9aef3ee3-30d4-4a7c-be4a-bc184ca1d558 HTTP/1.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; GET /todo/api/v1/todos/9aef3ee3-30d4-4a7c-be4a-bc184ca1d558 HTTP/1.1
 </pre></div>
 </div>
 <p><strong>[レスポンス]</strong></p>
-<p>パス変数「<code class="docutils literal"><span class="pre">todoId</span></code>」に一致するTodoリソースをJSON形式で返却する。</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>&lt; HTTP/1.1 <span class="m">200</span> OK
+<p>パス変数「<code class="docutils literal notranslate"><span class="pre">todoId</span></code>」に一致するTodoリソースをJSON形式で返却する。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt; HTTP/1.1 <span class="m">200</span> OK
 &lt; Content-Type: application/json<span class="p">;</span><span class="nv">charset</span><span class="o">=</span>UTF-8
 &lt;
 <span class="o">{</span><span class="s2">&quot;todoId&quot;</span>:<span class="s2">&quot;9aef3ee3-30d4-4a7c-be4a-bc184ca1d558&quot;</span>,<span class="s2">&quot;todoTitle&quot;</span>:<span class="s2">&quot;Hello World!&quot;</span>,<span class="s2">&quot;finished&quot;</span>:false,<span class="s2">&quot;createdAt&quot;</span>:<span class="s2">&quot;2014-02-25T02:21:48.493+0000&quot;</span><span class="o">}</span>
@@ -550,15 +542,15 @@ RESTful Webサービスを追加する手順となっている。</p>
 <h4><a class="toc-backref" href="#id37">11.2.3.1.4. PUT Todo</a><a class="headerlink" href="#put-todo" title="Permalink to this headline">¶</a></h4>
 <p><strong>[リクエスト]</strong></p>
 <div class="line-block">
-<div class="line">パス変数「<code class="docutils literal"><span class="pre">todoId</span></code>」に、更新対象のTodoのIDを指定する。</div>
+<div class="line">パス変数「<code class="docutils literal notranslate"><span class="pre">todoId</span></code>」に、更新対象のTodoのIDを指定する。</div>
 <div class="line">PUT Todoでは、Todoリソースを完了状態に更新するだけなので、リクエストBODYを受け取らないインタフェース仕様にしている。</div>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>&gt; PUT /todo/api/v1/todos/9aef3ee3-30d4-4a7c-be4a-bc184ca1d558 HTTP/1.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; PUT /todo/api/v1/todos/9aef3ee3-30d4-4a7c-be4a-bc184ca1d558 HTTP/1.1
 </pre></div>
 </div>
 <p><strong>[レスポンス]</strong></p>
-<p>パス変数「<code class="docutils literal"><span class="pre">todoId</span></code>」に一致するTodoリソースを完了状態(<code class="docutils literal"><span class="pre">finished</span></code>フィールドを<code class="docutils literal"><span class="pre">true</span></code>)に更新し、JSON形式で返却する。</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>&lt; HTTP/1.1 <span class="m">200</span> OK
+<p>パス変数「<code class="docutils literal notranslate"><span class="pre">todoId</span></code>」に一致するTodoリソースを完了状態(<code class="docutils literal notranslate"><span class="pre">finished</span></code>フィールドを<code class="docutils literal notranslate"><span class="pre">true</span></code>)に更新し、JSON形式で返却する。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt; HTTP/1.1 <span class="m">200</span> OK
 &lt; Content-Type: application/json<span class="p">;</span><span class="nv">charset</span><span class="o">=</span>UTF-8
 &lt;
 <span class="o">{</span><span class="s2">&quot;todoId&quot;</span>:<span class="s2">&quot;9aef3ee3-30d4-4a7c-be4a-bc184ca1d558&quot;</span>,<span class="s2">&quot;todoTitle&quot;</span>:<span class="s2">&quot;Hello World!&quot;</span>,<span class="s2">&quot;finished&quot;</span>:true,<span class="s2">&quot;createdAt&quot;</span>:<span class="s2">&quot;2014-02-25T02:21:48.493+0000&quot;</span><span class="o">}</span>
@@ -571,13 +563,13 @@ RESTful Webサービスを追加する手順となっている。</p>
 <div class="section" id="delete-todo">
 <h4><a class="toc-backref" href="#id38">11.2.3.1.5. DELETE Todo</a><a class="headerlink" href="#delete-todo" title="Permalink to this headline">¶</a></h4>
 <p><strong>[リクエスト]</strong></p>
-<p>パス変数「<code class="docutils literal"><span class="pre">todoId</span></code>」に、削除対象のTodoリソースのIDを指定する。</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>&gt; DELETE /todo/api/v1/todos/9aef3ee3-30d4-4a7c-be4a-bc184ca1d558 HTTP/1.1
+<p>パス変数「<code class="docutils literal notranslate"><span class="pre">todoId</span></code>」に、削除対象のTodoリソースのIDを指定する。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; DELETE /todo/api/v1/todos/9aef3ee3-30d4-4a7c-be4a-bc184ca1d558 HTTP/1.1
 </pre></div>
 </div>
 <p><strong>[レスポンス]</strong></p>
 <p>DELETE Todoでは、Todoリソースの削除が完了した事で返却するリソースが存在しなくなった事を示すために、レスポンスBODYを返却しないインタフェース仕様にしている。</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>&lt; HTTP/1.1 <span class="m">204</span> No Content
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt; HTTP/1.1 <span class="m">204</span> No Content
 </pre></div>
 </div>
 <div class="line-block">
@@ -593,28 +585,28 @@ RESTful Webサービスを追加する手順となっている。</p>
 </div>
 <p>﻿<a class="reference internal" href="TutorialTodo.html"><span class="doc">チュートリアル(Todoアプリケーション)</span></a>では、エラーメッセージはプログラムの中でハードコーディングしていたが、本チュートリアルでは、エラーメッセージはエラーコードをキーにプロパティファイルから取得するように修正する。</p>
 <p><strong>[入力チェックエラー発生時のレスポンス仕様]</strong></p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>&lt; HTTP/1.1 <span class="m">400</span> Bad Request
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt; HTTP/1.1 <span class="m">400</span> Bad Request
 &lt; Content-Type: application/json<span class="p">;</span><span class="nv">charset</span><span class="o">=</span>UTF-8
 &lt;
 <span class="o">{</span><span class="s2">&quot;code&quot;</span>:<span class="s2">&quot;E400&quot;</span>,<span class="s2">&quot;message&quot;</span>:<span class="s2">&quot;[E400] The requested Todo contains invalid values.&quot;</span>,<span class="s2">&quot;details&quot;</span>:<span class="o">[{</span><span class="s2">&quot;code&quot;</span>:<span class="s2">&quot;NotNull&quot;</span>,<span class="s2">&quot;message&quot;</span>:<span class="s2">&quot;todoTitle may not be null.&quot;</span>,target:<span class="s2">&quot;todoTitle&quot;</span><span class="o">}]}</span>
 </pre></div>
 </div>
 <p><strong>[業務エラー発生時のレスポンス仕様]</strong></p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>&lt; HTTP/1.1 <span class="m">409</span> Conflict
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt; HTTP/1.1 <span class="m">409</span> Conflict
 &lt; Content-Type: application/json<span class="p">;</span><span class="nv">charset</span><span class="o">=</span>UTF-8
 &lt;
 <span class="o">{</span><span class="s2">&quot;code&quot;</span>:<span class="s2">&quot;E002&quot;</span>,<span class="s2">&quot;message&quot;</span>:<span class="s2">&quot;[E002] The requested Todo is already finished. (id=353fb5db-151a-4696-9b4a-b958358a5ab3)&quot;</span><span class="o">}</span>
 </pre></div>
 </div>
 <p><strong>[リソース未検出時のレスポンス仕様]</strong></p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>&lt; HTTP/1.1 <span class="m">404</span> Not Found
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt; HTTP/1.1 <span class="m">404</span> Not Found
 &lt; Content-Type: application/json<span class="p">;</span><span class="nv">charset</span><span class="o">=</span>UTF-8
 &lt;
 <span class="o">{</span><span class="s2">&quot;code&quot;</span>:<span class="s2">&quot;E404&quot;</span>,<span class="s2">&quot;message&quot;</span>:<span class="s2">&quot;[E404] The requested Todo is not found. (id=353fb5db-151a-4696-9b4a-b958358a5ab2)&quot;</span><span class="o">}</span>
 </pre></div>
 </div>
 <p><strong>[システムエラー発生時のレスポンス仕様]</strong></p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>&lt; HTTP/1.1 <span class="m">500</span> Internal Server Error
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt; HTTP/1.1 <span class="m">500</span> Internal Server Error
 &lt; Content-Type: application/json<span class="p">;</span><span class="nv">charset</span><span class="o">=</span>UTF-8
 &lt;
 <span class="o">{</span><span class="s2">&quot;code&quot;</span>:<span class="s2">&quot;E500&quot;</span>,<span class="s2">&quot;message&quot;</span>:<span class="s2">&quot;[E500] System error occurred.&quot;</span><span class="o">}</span>
@@ -627,14 +619,14 @@ RESTful Webサービスを追加する手順となっている。</p>
 </div>
 <div class="section" id="rest-apidispatcherservlet">
 <h3><a class="toc-backref" href="#id40">11.2.3.2. REST API用のDispatcherServletを用意</a><a class="headerlink" href="#rest-apidispatcherservlet" title="Permalink to this headline">¶</a></h3>
-<p>まず、REST API用のリクエストを処理するための<code class="docutils literal"><span class="pre">DispatcherServlet</span></code>の定義を追加する。</p>
+<p>まず、REST API用のリクエストを処理するための<code class="docutils literal notranslate"><span class="pre">DispatcherServlet</span></code>の定義を追加する。</p>
 <div class="section" id="web-xml">
 <h4><a class="toc-backref" href="#id41">11.2.3.2.1. web.xmlの修正</a><a class="headerlink" href="#web-xml" title="Permalink to this headline">¶</a></h4>
 <div class="line-block">
 <div class="line">REST API用の設定を追加する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">src/main/webapp/WEB-INF/web.xml</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">src/main/webapp/WEB-INF/web.xml</span></code></div>
 </div>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;web-app</span> <span class="na">xmlns=</span><span class="s">&quot;http://java.sun.com/xml/ns/javaee&quot;</span>
     <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
     <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd&quot;</span>
@@ -796,8 +788,8 @@ RESTful Webサービスを追加する手順となっている。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">初期化パラメータ「<code class="docutils literal"><span class="pre">contextConfigLocation</span></code>」に、REST用のSpringMVC設定ファイルを指定する。</div>
-<div class="line">本チュートリアルでは、クラスパス上にある「<code class="file docutils literal"><span class="pre">META-INF/spring/spring-mvc-rest.xml</span></code>」を指定している。</div>
+<div class="line">初期化パラメータ「<code class="docutils literal notranslate"><span class="pre">contextConfigLocation</span></code>」に、REST用のSpringMVC設定ファイルを指定する。</div>
+<div class="line">本チュートリアルでは、クラスパス上にある「<code class="file docutils literal notranslate"><span class="pre">META-INF/spring/spring-mvc-rest.xml</span></code>」を指定している。</div>
 </div>
 </td>
 </tr>
@@ -806,8 +798,8 @@ RESTful Webサービスを追加する手順となっている。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;url-pattern&gt;</span></code>要素に、REST API用の<code class="docutils literal"><span class="pre">DispatcherServlet</span></code>にマッピングするURLのパターンを指定する。</div>
-<div class="line">本チュートリアルでは、<code class="docutils literal"><span class="pre">/api/v1/</span></code>から始まる場合はリクエストをREST APIへのリクエストとしてREST API用の<code class="docutils literal"><span class="pre">DispatcherServlet</span></code>へマッピングしている。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;url-pattern&gt;</span></code>要素に、REST API用の<code class="docutils literal notranslate"><span class="pre">DispatcherServlet</span></code>にマッピングするURLのパターンを指定する。</div>
+<div class="line">本チュートリアルでは、<code class="docutils literal notranslate"><span class="pre">/api/v1/</span></code>から始まる場合はリクエストをREST APIへのリクエストとしてREST API用の<code class="docutils literal notranslate"><span class="pre">DispatcherServlet</span></code>へマッピングしている。</div>
 </div>
 </td>
 </tr>
@@ -820,14 +812,14 @@ RESTful Webサービスを追加する手順となっている。</p>
 <div class="section" id="spring-mvc-rest-xml">
 <h4><a class="toc-backref" href="#id42">11.2.3.2.2. spring-mvc-rest.xmlの作成</a><a class="headerlink" href="#spring-mvc-rest-xml" title="Permalink to this headline">¶</a></h4>
 <div class="line-block">
-<div class="line"><code class="file docutils literal"><span class="pre">src/main/resources/META-INF/spring/spring-mvc.xml</span></code>をコピーして、REST用のSpring MVC設定ファイルを作成する。</div>
+<div class="line"><code class="file docutils literal notranslate"><span class="pre">src/main/resources/META-INF/spring/spring-mvc.xml</span></code>をコピーして、REST用のSpring MVC設定ファイルを作成する。</div>
 <div class="line">REST用のSpringMVC設定ファイルは以下のような定義となる。</div>
 </div>
 <div class="figure">
 <img alt="../_images/add-spring-mvc-rest.png" src="../_images/add-spring-mvc-rest.png" />
 </div>
-<p><code class="docutils literal"><span class="pre">src/main/resources/META-INF/spring/spring-mvc-rest.xml</span></code></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<p><code class="docutils literal notranslate"><span class="pre">src/main/resources/META-INF/spring/spring-mvc-rest.xml</span></code></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span>
     <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
     <span class="na">xmlns:context=</span><span class="s">&quot;http://www.springframework.org/schema/context&quot;</span>
@@ -977,26 +969,26 @@ RESTful Webサービスを追加する手順となっている。</p>
 <div class="line">(1)</div>
 </div>
 </td>
-<td><p class="first"><code class="docutils literal"><span class="pre">&lt;mvc:message-converters&gt;</span></code>に、Controllerの引数と返り値で扱うJavaBeanをシリアライズ/デシリアライズするためのクラス(<code class="docutils literal"><span class="pre">org.springframework.http.converter.HttpMessageConverter</span></code>)を設定する。</p>
-<p class="last"><code class="docutils literal"><span class="pre">HttpMessageConverter</span></code>は複数設定する事ができるが、本チュートリアルではJSONしか使用しないため、<code class="docutils literal"><span class="pre">MappingJackson2HttpMessageConverter</span></code>のみ指定している。</p>
+<td><p class="first"><code class="docutils literal notranslate"><span class="pre">&lt;mvc:message-converters&gt;</span></code>に、Controllerの引数と返り値で扱うJavaBeanをシリアライズ/デシリアライズするためのクラス(<code class="docutils literal notranslate"><span class="pre">org.springframework.http.converter.HttpMessageConverter</span></code>)を設定する。</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">HttpMessageConverter</span></code>は複数設定する事ができるが、本チュートリアルではJSONしか使用しないため、<code class="docutils literal notranslate"><span class="pre">MappingJackson2HttpMessageConverter</span></code>のみ指定している。</p>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
 <div class="line">(2)</div>
 </div>
 </td>
-<td><p class="first"><code class="docutils literal"><span class="pre">MappingJackson2HttpMessageConverter</span></code>の<code class="docutils literal"><span class="pre">objectMapper</span></code>プロパティに、Jacksonより提供されている<code class="docutils literal"><span class="pre">ObjectMapper</span></code>(「JSON &lt;-&gt; JavaBean」の変換を行うためのコンポーネント)を指定する。</p>
-<p class="last">本チュートリアルでは、日時型のフォーマットをカスタマイズした<code class="docutils literal"><span class="pre">ObjectMapper</span></code>を指定している。
-カスタマイズする必要がない場合は<code class="docutils literal"><span class="pre">objectMapper</span></code>プロパティは省略可能である。</p>
+<td><p class="first"><code class="docutils literal notranslate"><span class="pre">MappingJackson2HttpMessageConverter</span></code>の<code class="docutils literal notranslate"><span class="pre">objectMapper</span></code>プロパティに、Jacksonより提供されている<code class="docutils literal notranslate"><span class="pre">ObjectMapper</span></code>(「JSON &lt;-&gt; JavaBean」の変換を行うためのコンポーネント)を指定する。</p>
+<p class="last">本チュートリアルでは、日時型のフォーマットをカスタマイズした<code class="docutils literal notranslate"><span class="pre">ObjectMapper</span></code>を指定している。
+カスタマイズする必要がない場合は<code class="docutils literal notranslate"><span class="pre">objectMapper</span></code>プロパティは省略可能である。</p>
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
 <div class="line">(3)</div>
 </div>
 </td>
-<td><p class="first"><code class="docutils literal"><span class="pre">ObjectMapper</span></code>の<code class="docutils literal"><span class="pre">dateFormat</span></code>プロパティに、日時型フィールドの形式を指定する。</p>
-<p class="last">本チュートリアルでは、<code class="docutils literal"><span class="pre">java.util.Date</span></code>オブジェクトをシリアライズする際にISO-8601形式とする。
-<code class="docutils literal"><span class="pre">Date</span></code>オブジェクトをシリアライズする際にISO-8601形式にする場合は、<code class="docutils literal"><span class="pre">com.fasterxml.jackson.databind.util.StdDateFormat</span></code>を設定する事で実現する事ができる。</p>
+<td><p class="first"><code class="docutils literal notranslate"><span class="pre">ObjectMapper</span></code>の<code class="docutils literal notranslate"><span class="pre">dateFormat</span></code>プロパティに、日時型フィールドの形式を指定する。</p>
+<p class="last">本チュートリアルでは、<code class="docutils literal notranslate"><span class="pre">java.util.Date</span></code>オブジェクトをシリアライズする際にISO-8601形式とする。
+<code class="docutils literal notranslate"><span class="pre">Date</span></code>オブジェクトをシリアライズする際にISO-8601形式にする場合は、<code class="docutils literal notranslate"><span class="pre">com.fasterxml.jackson.databind.util.StdDateFormat</span></code>を設定する事で実現する事ができる。</p>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
@@ -1004,8 +996,8 @@ RESTful Webサービスを追加する手順となっている。</p>
 </div>
 </td>
 <td><p class="first">REST API用のパッケージ配下のコンポーネントをスキャンする。</p>
-<p class="last">本チュートリアルでは、REST API用のパッケージを<code class="docutils literal"><span class="pre">todo.api</span></code>にしている。
-画面遷移用のControllerは、<code class="docutils literal"><span class="pre">app</span></code>パッケージ配下に格納していたが、REST API用のControllerは、<code class="docutils literal"><span class="pre">api</span></code>パッケージ配下に格納する事を推奨する。</p>
+<p class="last">本チュートリアルでは、REST API用のパッケージを<code class="docutils literal notranslate"><span class="pre">todo.api</span></code>にしている。
+画面遷移用のControllerは、<code class="docutils literal notranslate"><span class="pre">app</span></code>パッケージ配下に格納していたが、REST API用のControllerは、<code class="docutils literal notranslate"><span class="pre">api</span></code>パッケージ配下に格納する事を推奨する。</p>
 </td>
 </tr>
 </tbody>
@@ -1024,9 +1016,9 @@ RESTful Webサービスを追加する手順となっている。</p>
 </div>
 <div class="line-block">
 <div class="line">以下の設定を追加する事で、Spring Securityのセキュリティ対策機能を無効化することができる。</div>
-<div class="line"><code class="docutils literal"><span class="pre">src/main/resources/META-INF/spring/spring-security.xml</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">src/main/resources/META-INF/spring/spring-security.xml</span></code></div>
 </div>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span>
     <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
     <span class="na">xmlns:sec=</span><span class="s">&quot;http://www.springframework.org/schema/security&quot;</span>
@@ -1106,8 +1098,8 @@ RESTful Webサービスを追加する手順となっている。</p>
 </td>
 <td><div class="first last line-block">
 <div class="line">REST API用のSpring Securityのセキュリティ機能を無効にする定義を追加する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">&lt;sec:http&gt;</span></code>要素の<code class="docutils literal"><span class="pre">pattern</span></code>属性に、REST API用のリクエストパスのURLパターンを指定している。</div>
-<div class="line">本チュートリアルでは<code class="docutils literal"><span class="pre">/api/v1/</span></code>で始まるリクエストパスをREST API用のリクエストパスとして扱う。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;sec:http&gt;</span></code>要素の<code class="docutils literal notranslate"><span class="pre">pattern</span></code>属性に、REST API用のリクエストパスのURLパターンを指定している。</div>
+<div class="line">本チュートリアルでは<code class="docutils literal notranslate"><span class="pre">/api/v1/</span></code>で始まるリクエストパスをREST API用のリクエストパスとして扱う。</div>
 </div>
 </td>
 </tr>
@@ -1121,8 +1113,8 @@ RESTful Webサービスを追加する手順となっている。</p>
 <h3><a class="toc-backref" href="#id44">11.2.3.4. REST API用パッケージの作成</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>REST API用のクラスを格納するパッケージを作成する。</p>
 <div class="line-block">
-<div class="line">REST API用のクラスを格納するルートパッケージのパッケージ名は<code class="docutils literal"><span class="pre">api</span></code>として、配下にリソース毎のパッケージ(リソース名の小文字)を作成する事を推奨する。</div>
-<div class="line">本チュートリアルで扱うリソースのリソース名はTodoなので、<code class="docutils literal"><span class="pre">todo.api.todo</span></code>パッケージを作成する。</div>
+<div class="line">REST API用のクラスを格納するルートパッケージのパッケージ名は<code class="docutils literal notranslate"><span class="pre">api</span></code>として、配下にリソース毎のパッケージ(リソース名の小文字)を作成する事を推奨する。</div>
+<div class="line">本チュートリアルで扱うリソースのリソース名はTodoなので、<code class="docutils literal notranslate"><span class="pre">todo.api.todo</span></code>パッケージを作成する。</div>
 </div>
 <div class="figure">
 <img alt="../_images/make-package-for-rest.png" src="../_images/make-package-for-rest.png" />
@@ -1132,17 +1124,17 @@ RESTful Webサービスを追加する手順となっている。</p>
 <p>作成したパッケージに格納するクラスは、通常以下の３種類となる。
 作成するクラスのクラス名は、以下のネーミングルールとする事を推奨する。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">[リソース名]Resource</span></code></li>
-<li><code class="docutils literal"><span class="pre">[リソース名]RestController</span></code></li>
-<li><code class="docutils literal"><span class="pre">[リソース名]Helper</span></code> (必要に応じて)</li>
+<li><code class="docutils literal notranslate"><span class="pre">[リソース名]Resource</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">[リソース名]RestController</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">[リソース名]Helper</span></code> (必要に応じて)</li>
 </ul>
 <p>本チュートリアルで扱うリソースのリソース名がTodoなので、</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">TodoResource</span></code></li>
-<li><code class="docutils literal"><span class="pre">TodoRestController</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">TodoResource</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">TodoRestController</span></code></li>
 </ul>
 <p>を作成する。</p>
-<p class="last">本チュートリアルでは、<code class="docutils literal"><span class="pre">TodoRestHelper</span></code>は作成しない。</p>
+<p class="last">本チュートリアルでは、<code class="docutils literal notranslate"><span class="pre">TodoRestHelper</span></code>は作成しない。</p>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -1151,11 +1143,11 @@ RESTful Webサービスを追加する手順となっている。</p>
 <div class="section" id="resource">
 <h3><a class="toc-backref" href="#id45">11.2.3.5. Resourceクラスの作成</a><a class="headerlink" href="#resource" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
-<div class="line">Todoリソースを表現する<code class="docutils literal"><span class="pre">TodoResource</span></code>クラスを作成する。</div>
+<div class="line">Todoリソースを表現する<code class="docutils literal notranslate"><span class="pre">TodoResource</span></code>クラスを作成する。</div>
 <div class="line">本ガイドラインでは、REST APIの入出力となるJSON(またはXML)を表現するJava Beanを<strong>Resourceクラス</strong>と呼ぶ。</div>
 </div>
-<p><code class="docutils literal"><span class="pre">src/main/java/todo/api/todo/TodoResource.java</span></code></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.todo</span><span class="o">;</span>
+<p><code class="docutils literal notranslate"><span class="pre">src/main/java/todo/api/todo/TodoResource.java</span></code></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.Serializable</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
@@ -1213,11 +1205,11 @@ RESTful Webサービスを追加する手順となっている。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>DomainObjectクラス(本チュートリアルでは<code class="docutils literal"><span class="pre">Todo</span></code>クラス)があるにも関わらず、Resourceクラスを作成する理由は、
+<p>DomainObjectクラス(本チュートリアルでは<code class="docutils literal notranslate"><span class="pre">Todo</span></code>クラス)があるにも関わらず、Resourceクラスを作成する理由は、
 クライアントとの入出力で使用するインタフェース上の情報と、業務処理で扱う情報は必ずしも一致しないためである。</p>
 <p>これらを混同して使用すると、アプリケーション層の影響がドメイン層におよび、保守性を低下させる。
 DomainObjectとResourceクラスは別々に作成し、Dozer等のBeanMapperを利用してデータ変換を行うことを推奨する。</p>
-<p>ResourceクラスはFormクラスと役割が似ているが、FormクラスはHTMLの<code class="docutils literal"><span class="pre">&lt;form&gt;</span></code> タグをJavaBeanで表現したもの、
+<p>ResourceクラスはFormクラスと役割が似ているが、FormクラスはHTMLの<code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> タグをJavaBeanで表現したもの、
 ResourceクラスはREST APIの入出力をJavaBeanで表現したものであり、本質的には異なるものである。</p>
 <p class="last">ただし、実体としてはBean Validationのアノテーションを付与したJavaBeanであり、Controllerクラスと同じパッケージに格納することから、
 Formクラスとほぼ同じである。</p>
@@ -1228,9 +1220,9 @@ Formクラスとほぼ同じである。</p>
 </div>
 <div class="section" id="controller">
 <h3><a class="toc-backref" href="#id46">11.2.3.6. Controllerクラスの作成</a><a class="headerlink" href="#controller" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">TodoResource</span></code>のREST APIを提供する<code class="docutils literal"><span class="pre">TodoRestController</span></code>クラスを作成する。</p>
-<p><code class="docutils literal"><span class="pre">src/main/java/todo/api/todo/TodoRestController.java</span></code></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.todo</span><span class="o">;</span>
+<p><code class="docutils literal notranslate"><span class="pre">TodoResource</span></code>のREST APIを提供する<code class="docutils literal notranslate"><span class="pre">TodoRestController</span></code>クラスを作成する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">src/main/java/todo/api/todo/TodoRestController.java</span></code></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestMapping</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RestController</span><span class="o">;</span>
@@ -1258,8 +1250,8 @@ Formクラスとほぼ同じである。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;RestController</span></code>を指定する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">&#64;RestController</span></code>の詳細については、 <a class="reference internal" href="../ArchitectureInDetail/WebServiceDetail/REST.html#resthowtousecontrollerclass"><span class="std std-ref">RestControllerクラスの作成</span></a> を参照されたい。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;RestController</span></code>を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;RestController</span></code>の詳細については、 <a class="reference internal" href="../ArchitectureInDetail/WebServiceDetail/REST.html#resthowtousecontrollerclass"><span class="std std-ref">RestControllerクラスの作成</span></a> を参照されたい。</div>
 </div>
 </td>
 </tr>
@@ -1269,7 +1261,7 @@ Formクラスとほぼ同じである。</p>
 </td>
 <td><div class="first last line-block">
 <div class="line">リソースのパスを指定する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">/api/v1/</span></code>の部分はweb.xmlに定義しているため、この設定を行うことで<code class="docutils literal"><span class="pre">/&lt;contextPath&gt;/api/v1/todos</span></code>というパスにマッピングされる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/api/v1/</span></code>の部分はweb.xmlに定義しているため、この設定を行うことで<code class="docutils literal notranslate"><span class="pre">/&lt;contextPath&gt;/api/v1/todos</span></code>というパスにマッピングされる。</div>
 </div>
 </td>
 </tr>
@@ -1280,9 +1272,9 @@ Formクラスとほぼ同じである。</p>
 </div>
 <div class="section" id="id10">
 <h4><a class="toc-backref" href="#id47">11.2.3.6.1. GET Todosの実装</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
-<p>作成済みのTodoリソースを全件取得するAPI(GET Todos)の処理を、<code class="docutils literal"><span class="pre">TodoRestController</span></code>の<code class="docutils literal"><span class="pre">getTodos</span></code>メソッドに実装する。</p>
-<p><code class="docutils literal"><span class="pre">src/main/java/todo/api/todo/TodoRestController.java</span></code></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.todo</span><span class="o">;</span>
+<p>作成済みのTodoリソースを全件取得するAPI(GET Todos)の処理を、<code class="docutils literal notranslate"><span class="pre">TodoRestController</span></code>の<code class="docutils literal notranslate"><span class="pre">getTodos</span></code>メソッドに実装する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">src/main/java/todo/api/todo/TodoRestController.java</span></code></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Collection</span><span class="o">;</span>
@@ -1339,7 +1331,7 @@ Formクラスとほぼ同じである。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">メソッドがGETのリクエストを処理するために、<code class="docutils literal"><span class="pre">method</span></code>属性に<code class="docutils literal"><span class="pre">RequestMethod.GET</span></code>を設定する。</div>
+<div class="line">メソッドがGETのリクエストを処理するために、<code class="docutils literal notranslate"><span class="pre">method</span></code>属性に<code class="docutils literal notranslate"><span class="pre">RequestMethod.GET</span></code>を設定する。</div>
 </div>
 </td>
 </tr>
@@ -1348,8 +1340,8 @@ Formクラスとほぼ同じである。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">応答するHTTPステータスコードを<code class="docutils literal"><span class="pre">&#64;ResponseStatus</span></code>アノテーションに指定する。</div>
-<div class="line">HTTPステータスとして、”200 OK”を設定するため、<code class="docutils literal"><span class="pre">value</span></code>属性には<code class="docutils literal"><span class="pre">HttpStatus.OK</span></code>を設定する。</div>
+<div class="line">応答するHTTPステータスコードを<code class="docutils literal notranslate"><span class="pre">&#64;ResponseStatus</span></code>アノテーションに指定する。</div>
+<div class="line">HTTPステータスとして、”200 OK”を設定するため、<code class="docutils literal notranslate"><span class="pre">value</span></code>属性には<code class="docutils literal notranslate"><span class="pre">HttpStatus.OK</span></code>を設定する。</div>
 </div>
 </td>
 </tr>
@@ -1358,8 +1350,8 @@ Formクラスとほぼ同じである。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">TodoService</span></code>の<code class="docutils literal"><span class="pre">findAll</span></code>メソッドから返却された<code class="docutils literal"><span class="pre">Todo</span></code>オブジェクトを、応答するJSONを表現する<code class="docutils literal"><span class="pre">TodoResource</span></code>型のオブジェクトに変換する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">Todo</span></code>と<code class="docutils literal"><span class="pre">TodoResource</span></code>の変換処理は、Dozerの<code class="docutils literal"><span class="pre">org.dozer.Mapper</span></code>インタフェースを使うと便利である。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">TodoService</span></code>の<code class="docutils literal notranslate"><span class="pre">findAll</span></code>メソッドから返却された<code class="docutils literal notranslate"><span class="pre">Todo</span></code>オブジェクトを、応答するJSONを表現する<code class="docutils literal notranslate"><span class="pre">TodoResource</span></code>型のオブジェクトに変換する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Todo</span></code>と<code class="docutils literal notranslate"><span class="pre">TodoResource</span></code>の変換処理は、Dozerの<code class="docutils literal notranslate"><span class="pre">org.dozer.Mapper</span></code>インタフェースを使うと便利である。</div>
 </div>
 </td>
 </tr>
@@ -1368,7 +1360,7 @@ Formクラスとほぼ同じである。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">List&lt;TodoResource&gt;</span></code>オブジェクトを返却することで、<code class="docutils literal"><span class="pre">spring-mvc-rest.xml</span></code>に定義した<code class="docutils literal"><span class="pre">MappingJackson2HttpMessageConverter</span></code>によってJSONにシリアライズされる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">List&lt;TodoResource&gt;</span></code>オブジェクトを返却することで、<code class="docutils literal notranslate"><span class="pre">spring-mvc-rest.xml</span></code>に定義した<code class="docutils literal notranslate"><span class="pre">MappingJackson2HttpMessageConverter</span></code>によってJSONにシリアライズされる。</div>
 </div>
 </td>
 </tr>
@@ -1380,7 +1372,7 @@ Formクラスとほぼ同じである。</p>
 <p>Application Serverを起動し、実装したAPIの動作確認を行う。</p>
 <div class="line-block">
 <div class="line">REST API(Get Todos)にアクセスする。</div>
-<div class="line">DHCを開いてURLに<code class="docutils literal"><span class="pre">localhost:8080/todo/api/v1/todos</span></code>を入力し、メソッドにGETを指定して、”Send”ボタンをクリックする。</div>
+<div class="line">DHCを開いてURLに<code class="docutils literal notranslate"><span class="pre">localhost:8080/todo/api/v1/todos</span></code>を入力し、メソッドにGETを指定して、”Send”ボタンをクリックする。</div>
 </div>
 <div class="figure">
 <a class="reference internal image-reference" href="../_images/get-todos1.png"><img alt="../_images/get-todos1.png" src="../_images/get-todos1.png" style="width: 100%;" /></a>
@@ -1390,7 +1382,7 @@ Formクラスとほぼ同じである。</p>
 </div>
 <div class="line-block">
 <div class="line">以下のように「RESPONSE」の「BODY」に実行結果のJSONが表示される。</div>
-<div class="line">現時点ではデータが何も登録されていないため、空配列である<code class="docutils literal"><span class="pre">[]</span></code>が返却される。</div>
+<div class="line">現時点ではデータが何も登録されていないため、空配列である<code class="docutils literal notranslate"><span class="pre">[]</span></code>が返却される。</div>
 </div>
 <div class="figure">
 <a class="reference internal image-reference" href="../_images/get-todos2.png"><img alt="../_images/get-todos2.png" src="../_images/get-todos2.png" style="width: 100%;" /></a>
@@ -1401,9 +1393,9 @@ Formクラスとほぼ同じである。</p>
 </div>
 <div class="section" id="id11">
 <h4><a class="toc-backref" href="#id48">11.2.3.6.2. POST Todosの実装</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
-<p>Todoリソースを新規作成するAPI(POST Todos)の処理を、<code class="docutils literal"><span class="pre">TodoRestController</span></code>の<code class="docutils literal"><span class="pre">postTodos</span></code>メソッドに実装する。</p>
-<p><code class="docutils literal"><span class="pre">src/main/java/todo/api/todo/TodoRestController.java</span></code></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.todo</span><span class="o">;</span>
+<p>Todoリソースを新規作成するAPI(POST Todos)の処理を、<code class="docutils literal notranslate"><span class="pre">TodoRestController</span></code>の<code class="docutils literal notranslate"><span class="pre">postTodos</span></code>メソッドに実装する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">src/main/java/todo/api/todo/TodoRestController.java</span></code></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Collection</span><span class="o">;</span>
@@ -1470,7 +1462,7 @@ Formクラスとほぼ同じである。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">メソッドがPOSTのリクエストを処理するために、<code class="docutils literal"><span class="pre">method</span></code>属性に<code class="docutils literal"><span class="pre">RequestMethod.POST</span></code>を設定する。</div>
+<div class="line">メソッドがPOSTのリクエストを処理するために、<code class="docutils literal notranslate"><span class="pre">method</span></code>属性に<code class="docutils literal notranslate"><span class="pre">RequestMethod.POST</span></code>を設定する。</div>
 </div>
 </td>
 </tr>
@@ -1479,8 +1471,8 @@ Formクラスとほぼ同じである。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">応答するHTTPステータスコードを<code class="docutils literal"><span class="pre">&#64;ResponseStatus</span></code>アノテーションに指定する。</div>
-<div class="line">HTTPステータスとして、”201 Created”を設定するため、<code class="docutils literal"><span class="pre">value</span></code>属性には<code class="docutils literal"><span class="pre">HttpStatus.CREATED</span></code>を設定する。</div>
+<div class="line">応答するHTTPステータスコードを<code class="docutils literal notranslate"><span class="pre">&#64;ResponseStatus</span></code>アノテーションに指定する。</div>
+<div class="line">HTTPステータスとして、”201 Created”を設定するため、<code class="docutils literal notranslate"><span class="pre">value</span></code>属性には<code class="docutils literal notranslate"><span class="pre">HttpStatus.CREATED</span></code>を設定する。</div>
 </div>
 </td>
 </tr>
@@ -1489,8 +1481,8 @@ Formクラスとほぼ同じである。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">HTTPリクエストのBody(JSON)をJavaBeanにマッピングするために、<code class="docutils literal"><span class="pre">&#64;RequestBody</span></code>アノテーションをマッピング対象の<code class="docutils literal"><span class="pre">TodoResource</span></code>クラスに付与する。</div>
-<div class="line">また、入力チェックするために<code class="docutils literal"><span class="pre">&#64;Validated</span></code>も付与する。例外ハンドリングは別途行う必要がある。</div>
+<div class="line">HTTPリクエストのBody(JSON)をJavaBeanにマッピングするために、<code class="docutils literal notranslate"><span class="pre">&#64;RequestBody</span></code>アノテーションをマッピング対象の<code class="docutils literal notranslate"><span class="pre">TodoResource</span></code>クラスに付与する。</div>
+<div class="line">また、入力チェックするために<code class="docutils literal notranslate"><span class="pre">&#64;Validated</span></code>も付与する。例外ハンドリングは別途行う必要がある。</div>
 </div>
 </td>
 </tr>
@@ -1499,7 +1491,7 @@ Formクラスとほぼ同じである。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">TodoResource</span></code>を<code class="docutils literal"><span class="pre">Todo</span></code>クラスに変換後、<code class="docutils literal"><span class="pre">TodoService</span></code>の<code class="docutils literal"><span class="pre">create</span></code>メソッドを実行し、Todoリソースを新規作成する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">TodoResource</span></code>を<code class="docutils literal notranslate"><span class="pre">Todo</span></code>クラスに変換後、<code class="docutils literal notranslate"><span class="pre">TodoService</span></code>の<code class="docutils literal notranslate"><span class="pre">create</span></code>メソッドを実行し、Todoリソースを新規作成する。</div>
 </div>
 </td>
 </tr>
@@ -1508,7 +1500,7 @@ Formクラスとほぼ同じである。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">TodoService</span></code>の<code class="docutils literal"><span class="pre">create</span></code>メソッドによって新規作成された<code class="docutils literal"><span class="pre">Todo</span></code>オブジェクトを、応答するJSONを表現する<code class="docutils literal"><span class="pre">TodoResource</span></code>型に変換する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">TodoService</span></code>の<code class="docutils literal notranslate"><span class="pre">create</span></code>メソッドによって新規作成された<code class="docutils literal notranslate"><span class="pre">Todo</span></code>オブジェクトを、応答するJSONを表現する<code class="docutils literal notranslate"><span class="pre">TodoResource</span></code>型に変換する。</div>
 </div>
 </td>
 </tr>
@@ -1517,7 +1509,7 @@ Formクラスとほぼ同じである。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">TodoResource</span></code>オブジェクトを返却することで、<code class="docutils literal"><span class="pre">spring-mvc-rest.xml</span></code>に定義した<code class="docutils literal"><span class="pre">MappingJackson2HttpMessageConverter</span></code>によってJSONにシリアライズされる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">TodoResource</span></code>オブジェクトを返却することで、<code class="docutils literal notranslate"><span class="pre">spring-mvc-rest.xml</span></code>に定義した<code class="docutils literal notranslate"><span class="pre">MappingJackson2HttpMessageConverter</span></code>によってJSONにシリアライズされる。</div>
 </div>
 </td>
 </tr>
@@ -1528,15 +1520,15 @@ Formクラスとほぼ同じである。</p>
 </div>
 <div class="line-block">
 <div class="line">DHCを使用して、実装したAPIの動作確認を行う。</div>
-<div class="line">DHCを開いてURLに<code class="docutils literal"><span class="pre">localhost:8080/todo/api/v1/todos</span></code>を入力し、メソッドにPOSTを指定する。</div>
+<div class="line">DHCを開いてURLに<code class="docutils literal notranslate"><span class="pre">localhost:8080/todo/api/v1/todos</span></code>を入力し、メソッドにPOSTを指定する。</div>
 <div class="line">「REQUEST」の「BODY」に以下のJSONを入力する。</div>
 </div>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;todoTitle&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello World!&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>また、「REQUEST」の「HEADERS」の「+」ボタンでHTTPヘッダーを追加し、「<code class="docutils literal"><span class="pre">Content-Type</span></code>」に「<code class="docutils literal"><span class="pre">application/json</span></code>」を設定後、”Send”ボタンをクリックする。</p>
+<p>また、「REQUEST」の「HEADERS」の「+」ボタンでHTTPヘッダーを追加し、「<code class="docutils literal notranslate"><span class="pre">Content-Type</span></code>」に「<code class="docutils literal notranslate"><span class="pre">application/json</span></code>」を設定後、”Send”ボタンをクリックする。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../_images/post-todos1.png"><img alt="../_images/post-todos1.png" src="../_images/post-todos1.png" style="width: 100%;" /></a>
 </div>
@@ -1560,13 +1552,13 @@ Formクラスとほぼ同じである。</p>
 </div>
 <div class="section" id="id12">
 <h4><a class="toc-backref" href="#id49">11.2.3.6.3. GET Todoの実装</a><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
-<p>﻿<a class="reference internal" href="TutorialTodo.html"><span class="doc">チュートリアル(Todoアプリケーション)</span></a>では、<code class="docutils literal"><span class="pre">TodoService</span></code>に一件取得用のメソッド(<code class="docutils literal"><span class="pre">findOne</span></code>)を作成しなかったため、
-<code class="docutils literal"><span class="pre">TodoService</span></code>と<code class="docutils literal"><span class="pre">TodoServiceImpl</span></code>に以下のハイライト部を追加する。</p>
+<p>﻿<a class="reference internal" href="TutorialTodo.html"><span class="doc">チュートリアル(Todoアプリケーション)</span></a>では、<code class="docutils literal notranslate"><span class="pre">TodoService</span></code>に一件取得用のメソッド(<code class="docutils literal notranslate"><span class="pre">findOne</span></code>)を作成しなかったため、
+<code class="docutils literal notranslate"><span class="pre">TodoService</span></code>と<code class="docutils literal notranslate"><span class="pre">TodoServiceImpl</span></code>に以下のハイライト部を追加する。</p>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">findOne</span></code>メソッドの定義を追加する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">src/main/java/todo/domain/service/todo/TodoService.java</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">findOne</span></code>メソッドの定義を追加する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">src/main/java/todo/domain/service/todo/TodoService.java</span></code></div>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.domain.service.todo</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.domain.service.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.Collection</span><span class="o">;</span>
 
@@ -1589,10 +1581,10 @@ Formクラスとほぼ同じである。</p>
 <div class="line"><br /></div>
 </div>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">findOne</span></code>メソッド呼び出し時に開始されるトランザクションを読み取り専用に設定する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">src/main/java/todo/domain/service/todo/TodoServiceImpl.java</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">findOne</span></code>メソッド呼び出し時に開始されるトランザクションを読み取り専用に設定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">src/main/java/todo/domain/service/todo/TodoServiceImpl.java</span></code></div>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.domain.service.todo</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.domain.service.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.Collection</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
@@ -1695,10 +1687,10 @@ Formクラスとほぼ同じである。</p>
 <div class="line"><br /></div>
 </div>
 <div class="line-block">
-<div class="line">Todoリソースを一件取得するAPI(GET Todo)の処理を、<code class="docutils literal"><span class="pre">TodoRestController</span></code>の<code class="docutils literal"><span class="pre">getTodo</span></code>メソッドに実装する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">src/main/java/todo/api/todo/TodoRestController.java</span></code></div>
+<div class="line">Todoリソースを一件取得するAPI(GET Todo)の処理を、<code class="docutils literal notranslate"><span class="pre">TodoRestController</span></code>の<code class="docutils literal notranslate"><span class="pre">getTodo</span></code>メソッドに実装する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">src/main/java/todo/api/todo/TodoRestController.java</span></code></div>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.todo</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Collection</span><span class="o">;</span>
@@ -1774,8 +1766,8 @@ Formクラスとほぼ同じである。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">パスから<code class="docutils literal"><span class="pre">todoId</span></code>を取得するために、<code class="docutils literal"><span class="pre">&#64;RequestMapping</span></code>アノテーションの<code class="docutils literal"><span class="pre">value</span></code>属性にパス変数を指定する。</div>
-<div class="line">メソッドがGETのリクエストを処理するために、<code class="docutils literal"><span class="pre">method</span></code>属性に<code class="docutils literal"><span class="pre">RequestMethod.GET</span></code>を設定する。</div>
+<div class="line">パスから<code class="docutils literal notranslate"><span class="pre">todoId</span></code>を取得するために、<code class="docutils literal notranslate"><span class="pre">&#64;RequestMapping</span></code>アノテーションの<code class="docutils literal notranslate"><span class="pre">value</span></code>属性にパス変数を指定する。</div>
+<div class="line">メソッドがGETのリクエストを処理するために、<code class="docutils literal notranslate"><span class="pre">method</span></code>属性に<code class="docutils literal notranslate"><span class="pre">RequestMethod.GET</span></code>を設定する。</div>
 </div>
 </td>
 </tr>
@@ -1784,7 +1776,7 @@ Formクラスとほぼ同じである。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;PathVariable</span></code>アノテーションの<code class="docutils literal"><span class="pre">value</span></code>属性に、<code class="docutils literal"><span class="pre">todoId</span></code>を取得するためのパス変数名を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;PathVariable</span></code>アノテーションの<code class="docutils literal notranslate"><span class="pre">value</span></code>属性に、<code class="docutils literal notranslate"><span class="pre">todoId</span></code>を取得するためのパス変数名を指定する。</div>
 </div>
 </td>
 </tr>
@@ -1793,7 +1785,7 @@ Formクラスとほぼ同じである。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">パス変数から取得した<code class="docutils literal"><span class="pre">todoId</span></code>を使用して、Todoリソースを一件取得する。</div>
+<div class="line">パス変数から取得した<code class="docutils literal notranslate"><span class="pre">todoId</span></code>を使用して、Todoリソースを一件取得する。</div>
 </div>
 </td>
 </tr>
@@ -1804,8 +1796,8 @@ Formクラスとほぼ同じである。</p>
 </div>
 <div class="line-block">
 <div class="line">DHCを使用して、実装したAPIの動作確認を行う。</div>
-<div class="line">DHCを開いてURLに<code class="docutils literal"><span class="pre">localhost:8080/todo/api/v1/todos/{todoId}</span></code>を入力し、メソッドにGETを指定する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">{todoId}</span></code>の部分は実際のIDを入れる必要があるので、POST TodosまたはGET Todosを実行してResponse中の<code class="docutils literal"><span class="pre">todoId</span></code>をコピーして貼り付けてから、”Send”ボタンをクリックする。</div>
+<div class="line">DHCを開いてURLに<code class="docutils literal notranslate"><span class="pre">localhost:8080/todo/api/v1/todos/{todoId}</span></code>を入力し、メソッドにGETを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">{todoId}</span></code>の部分は実際のIDを入れる必要があるので、POST TodosまたはGET Todosを実行してResponse中の<code class="docutils literal notranslate"><span class="pre">todoId</span></code>をコピーして貼り付けてから、”Send”ボタンをクリックする。</div>
 </div>
 <p>“200 OK”のHTTPステータスが返却され、「RESPONSE」の「Body」に指定したTodoリソースのJSONが表示される。</p>
 <div class="figure">
@@ -1817,9 +1809,9 @@ Formクラスとほぼ同じである。</p>
 </div>
 <div class="section" id="id13">
 <h4><a class="toc-backref" href="#id50">11.2.3.6.4. PUT Todoの実装</a><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
-<p>Todoリソースを一件更新(完了状態へ更新)するAPI(PUT Todo)の処理を、<code class="docutils literal"><span class="pre">TodoRestController</span></code>の<code class="docutils literal"><span class="pre">putTodo</span></code>メソッドに実装する。</p>
-<p><code class="docutils literal"><span class="pre">src/main/java/todo/api/todo/TodoRestController.java</span></code></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.todo</span><span class="o">;</span>
+<p>Todoリソースを一件更新(完了状態へ更新)するAPI(PUT Todo)の処理を、<code class="docutils literal notranslate"><span class="pre">TodoRestController</span></code>の<code class="docutils literal notranslate"><span class="pre">putTodo</span></code>メソッドに実装する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">src/main/java/todo/api/todo/TodoRestController.java</span></code></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Collection</span><span class="o">;</span>
@@ -1903,8 +1895,8 @@ Formクラスとほぼ同じである。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">パスから<code class="docutils literal"><span class="pre">todoId</span></code>を取得するために、<code class="docutils literal"><span class="pre">&#64;RequestMapping</span></code>アノテーションの<code class="docutils literal"><span class="pre">value</span></code>属性にパス変数を指定する。</div>
-<div class="line">メソッドがPUTのリクエストを処理するために、<code class="docutils literal"><span class="pre">method</span></code>属性に<code class="docutils literal"><span class="pre">RequestMethod.PUT</span></code>を設定する。</div>
+<div class="line">パスから<code class="docutils literal notranslate"><span class="pre">todoId</span></code>を取得するために、<code class="docutils literal notranslate"><span class="pre">&#64;RequestMapping</span></code>アノテーションの<code class="docutils literal notranslate"><span class="pre">value</span></code>属性にパス変数を指定する。</div>
+<div class="line">メソッドがPUTのリクエストを処理するために、<code class="docutils literal notranslate"><span class="pre">method</span></code>属性に<code class="docutils literal notranslate"><span class="pre">RequestMethod.PUT</span></code>を設定する。</div>
 </div>
 </td>
 </tr>
@@ -1913,7 +1905,7 @@ Formクラスとほぼ同じである。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;PathVariable</span></code>アノテーションの<code class="docutils literal"><span class="pre">value</span></code>属性に、<code class="docutils literal"><span class="pre">todoId</span></code>を取得するためのパス変数名を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;PathVariable</span></code>アノテーションの<code class="docutils literal notranslate"><span class="pre">value</span></code>属性に、<code class="docutils literal notranslate"><span class="pre">todoId</span></code>を取得するためのパス変数名を指定する。</div>
 </div>
 </td>
 </tr>
@@ -1922,7 +1914,7 @@ Formクラスとほぼ同じである。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">パス変数から取得した<code class="docutils literal"><span class="pre">todoId</span></code>を使用して、Todoリソースを完了状態へ更新する。</div>
+<div class="line">パス変数から取得した<code class="docutils literal notranslate"><span class="pre">todoId</span></code>を使用して、Todoリソースを完了状態へ更新する。</div>
 </div>
 </td>
 </tr>
@@ -1933,8 +1925,8 @@ Formクラスとほぼ同じである。</p>
 </div>
 <div class="line-block">
 <div class="line">DHCを使用して、実装したAPIの動作確認を行う。</div>
-<div class="line">DHCを開いてURLに<code class="docutils literal"><span class="pre">localhost:8080/todo/api/v1/todos/{todoId}</span></code>を入力し、メソッドにPUTを指定する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">{todoId}</span></code>の部分は実際のIDを入れる必要があるので、POST TodosまたはGET Todosを実行してResponse中の<code class="docutils literal"><span class="pre">todoId</span></code>をコピーして貼り付けてから、”Send”ボタンをクリックする。</div>
+<div class="line">DHCを開いてURLに<code class="docutils literal notranslate"><span class="pre">localhost:8080/todo/api/v1/todos/{todoId}</span></code>を入力し、メソッドにPUTを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">{todoId}</span></code>の部分は実際のIDを入れる必要があるので、POST TodosまたはGET Todosを実行してResponse中の<code class="docutils literal notranslate"><span class="pre">todoId</span></code>をコピーして貼り付けてから、”Send”ボタンをクリックする。</div>
 </div>
 <div class="figure">
 <a class="reference internal image-reference" href="../_images/put-todo1.png"><img alt="../_images/put-todo1.png" src="../_images/put-todo1.png" style="width: 100%;" /></a>
@@ -1944,7 +1936,7 @@ Formクラスとほぼ同じである。</p>
 </div>
 <div class="line-block">
 <div class="line">“200 OK”のHTTPステータスが返却され、「RESPONSE」の「Body」に更新されたTodoリソースのJSONが表示される。</div>
-<div class="line"><code class="docutils literal"><span class="pre">finished</span></code>が<code class="docutils literal"><span class="pre">true</span></code>に更新されている。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">finished</span></code>が<code class="docutils literal notranslate"><span class="pre">true</span></code>に更新されている。</div>
 </div>
 <div class="figure">
 <a class="reference internal image-reference" href="../_images/put-todo2.png"><img alt="../_images/put-todo2.png" src="../_images/put-todo2.png" style="width: 100%;" /></a>
@@ -1955,9 +1947,9 @@ Formクラスとほぼ同じである。</p>
 </div>
 <div class="section" id="id14">
 <h4><a class="toc-backref" href="#id51">11.2.3.6.5. DELETE Todoの実装</a><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
-<p>最後に、Todoリソースを一件削除するAPI(DELETE Todo)の処理を、<code class="docutils literal"><span class="pre">TodoRestController</span></code>の<code class="docutils literal"><span class="pre">deleteTodo</span></code>メソッドに実装する。</p>
-<p><code class="docutils literal"><span class="pre">src/main/java/todo/api/todo/TodoRestController.java</span></code></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.todo</span><span class="o">;</span>
+<p>最後に、Todoリソースを一件削除するAPI(DELETE Todo)の処理を、<code class="docutils literal notranslate"><span class="pre">TodoRestController</span></code>の<code class="docutils literal notranslate"><span class="pre">deleteTodo</span></code>メソッドに実装する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">src/main/java/todo/api/todo/TodoRestController.java</span></code></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Collection</span><span class="o">;</span>
@@ -2047,8 +2039,8 @@ Formクラスとほぼ同じである。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">パスから<code class="docutils literal"><span class="pre">todoId</span></code>を取得するために、<code class="docutils literal"><span class="pre">&#64;RequestMapping</span></code>アノテーションの<code class="docutils literal"><span class="pre">value</span></code>属性にパス変数を指定する。</div>
-<div class="line">メソッドがDELETEのリクエストを処理するために、<code class="docutils literal"><span class="pre">method</span></code>属性に<code class="docutils literal"><span class="pre">RequestMethod.DELETE</span></code>を設定する。</div>
+<div class="line">パスから<code class="docutils literal notranslate"><span class="pre">todoId</span></code>を取得するために、<code class="docutils literal notranslate"><span class="pre">&#64;RequestMapping</span></code>アノテーションの<code class="docutils literal notranslate"><span class="pre">value</span></code>属性にパス変数を指定する。</div>
+<div class="line">メソッドがDELETEのリクエストを処理するために、<code class="docutils literal notranslate"><span class="pre">method</span></code>属性に<code class="docutils literal notranslate"><span class="pre">RequestMethod.DELETE</span></code>を設定する。</div>
 </div>
 </td>
 </tr>
@@ -2057,8 +2049,8 @@ Formクラスとほぼ同じである。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">応答するHTTPステータスコードを<code class="docutils literal"><span class="pre">&#64;ResponseStatus</span></code>アノテーションに指定する。</div>
-<div class="line">HTTPステータスとして、”204 No Content”を設定するため、<code class="docutils literal"><span class="pre">value</span></code>属性には<code class="docutils literal"><span class="pre">HttpStatus.NO_CONTENT</span></code>を設定する。</div>
+<div class="line">応答するHTTPステータスコードを<code class="docutils literal notranslate"><span class="pre">&#64;ResponseStatus</span></code>アノテーションに指定する。</div>
+<div class="line">HTTPステータスとして、”204 No Content”を設定するため、<code class="docutils literal notranslate"><span class="pre">value</span></code>属性には<code class="docutils literal notranslate"><span class="pre">HttpStatus.NO_CONTENT</span></code>を設定する。</div>
 </div>
 </td>
 </tr>
@@ -2067,7 +2059,7 @@ Formクラスとほぼ同じである。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">DELETEの場合は返却するコンテンツがないため、返り値の型を<code class="docutils literal"><span class="pre">void</span></code>とする。</div>
+<div class="line">DELETEの場合は返却するコンテンツがないため、返り値の型を<code class="docutils literal notranslate"><span class="pre">void</span></code>とする。</div>
 </div>
 </td>
 </tr>
@@ -2076,7 +2068,7 @@ Formクラスとほぼ同じである。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">パス変数から取得した<code class="docutils literal"><span class="pre">todoId</span></code>を使用して、Todoリソースを削除する。</div>
+<div class="line">パス変数から取得した<code class="docutils literal notranslate"><span class="pre">todoId</span></code>を使用して、Todoリソースを削除する。</div>
 </div>
 </td>
 </tr>
@@ -2087,8 +2079,8 @@ Formクラスとほぼ同じである。</p>
 </div>
 <div class="line-block">
 <div class="line">DHCを使用して、実装したAPIの動作確認を行う。</div>
-<div class="line">DHCを開いてURLに<code class="docutils literal"><span class="pre">localhost:8080/todo/api/v1/todos/{todoId}</span></code>を入力し、メソッドにDELETEを指定する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">{todoId}</span></code>の部分は実際のIDを入れる必要があるので、POST TodosまたはGET Todosを実行してResponse中の<code class="docutils literal"><span class="pre">todoId</span></code>をコピーして貼り付けてから、”Send”ボタンをクリックする。</div>
+<div class="line">DHCを開いてURLに<code class="docutils literal notranslate"><span class="pre">localhost:8080/todo/api/v1/todos/{todoId}</span></code>を入力し、メソッドにDELETEを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">{todoId}</span></code>の部分は実際のIDを入れる必要があるので、POST TodosまたはGET Todosを実行してResponse中の<code class="docutils literal notranslate"><span class="pre">todoId</span></code>をコピーして貼り付けてから、”Send”ボタンをクリックする。</div>
 </div>
 <div class="figure">
 <a class="reference internal image-reference" href="../_images/delete-todo1.png"><img alt="../_images/delete-todo1.png" src="../_images/delete-todo1.png" style="width: 100%;" /></a>
@@ -2104,7 +2096,7 @@ Formクラスとほぼ同じである。</p>
 <div class="line"><br /></div>
 </div>
 <div class="line-block">
-<div class="line">DHCのURLに<code class="docutils literal"><span class="pre">localhost:8080/todo/api/v1/todos</span></code>を入力し、メソッドにGETを指定してから”Send”ボタンをクリックする。</div>
+<div class="line">DHCのURLに<code class="docutils literal notranslate"><span class="pre">localhost:8080/todo/api/v1/todos</span></code>を入力し、メソッドにGETを指定してから”Send”ボタンをクリックする。</div>
 <div class="line">Todoリソースが削除されている事が確認できる。</div>
 </div>
 <div class="figure">
@@ -2129,9 +2121,9 @@ Formクラスとほぼ同じである。</p>
 </div>
 <div class="line-block">
 <div class="line">ハードコーディングされていたエラーメッセージの代わりに、エラーコードを指定するように変更する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">src/main/java/todo/domain/service/todo/TodoServiceImpl.java</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">src/main/java/todo/domain/service/todo/TodoServiceImpl.java</span></code></div>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.domain.service.todo</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.domain.service.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.Collection</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
@@ -2237,8 +2229,8 @@ Formクラスとほぼ同じである。</p>
 <div class="figure">
 <img alt="../_images/application-messages.png" src="../_images/application-messages.png" />
 </div>
-<p><code class="docutils literal"><span class="pre">src/main/resources/i18n/application-messages.properties</span></code></p>
-<div class="highlight-properties"><div class="highlight"><pre><span></span><span class="na">e.xx.fw.5001</span> <span class="o">=</span> <span class="s">Resource not found.</span>
+<p><code class="docutils literal notranslate"><span class="pre">src/main/resources/i18n/application-messages.properties</span></code></p>
+<div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="na">e.xx.fw.5001</span> <span class="o">=</span> <span class="s">Resource not found.</span>
 
 <span class="na">e.xx.fw.7001</span> <span class="o">=</span> <span class="s">Illegal screen flow detected!</span>
 <span class="na">e.xx.fw.7002</span> <span class="o">=</span> <span class="s">CSRF attack detected!</span>
@@ -2284,13 +2276,13 @@ Formクラスとほぼ同じである。</p>
 </div>
 <div class="line-block">
 <div class="line">デフォルトのメッセージは、メッセージの中に項目名が含まれないため、デフォルトのメッセージ定義を変更する。</div>
-<div class="line">本チュートリアルでは、<code class="docutils literal"><span class="pre">TodoResource</span></code>クラスで使用しているルール(<code class="docutils literal"><span class="pre">&#64;NotNull</span></code>と<code class="docutils literal"><span class="pre">&#64;Size</span></code>)に対応するメッセージのみ定義する。</div>
+<div class="line">本チュートリアルでは、<code class="docutils literal notranslate"><span class="pre">TodoResource</span></code>クラスで使用しているルール(<code class="docutils literal notranslate"><span class="pre">&#64;NotNull</span></code>と<code class="docutils literal notranslate"><span class="pre">&#64;Size</span></code>)に対応するメッセージのみ定義する。</div>
 </div>
 <div class="figure">
 <img alt="../_images/validation-messages.png" src="../_images/validation-messages.png" />
 </div>
-<p><code class="docutils literal"><span class="pre">src/main/resources/ValidationMessages.properties</span></code></p>
-<div class="highlight-properties"><div class="highlight"><pre><span></span><span class="na">javax.validation.constraints.NotNull.message</span> <span class="o">=</span> <span class="s">{0} may not be null.</span>
+<p><code class="docutils literal notranslate"><span class="pre">src/main/resources/ValidationMessages.properties</span></code></p>
+<div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="na">javax.validation.constraints.NotNull.message</span> <span class="o">=</span> <span class="s">{0} may not be null.</span>
 <span class="na">javax.validation.constraints.Size.message</span>    <span class="o">=</span> <span class="s">{0} size must be between {min} and {max}.</span>
 </pre></div>
 </div>
@@ -2302,7 +2294,7 @@ Formクラスとほぼ同じである。</p>
 <h4><a class="toc-backref" href="#id55">11.2.3.7.3. エラーハンドリング用のクラスを格納するパッケージの作成</a><a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
 <div class="line-block">
 <div class="line">エラーハンドリング用のクラスを格納するためのパッケージを作成する。</div>
-<div class="line">本チュートリアルでは、<code class="docutils literal"><span class="pre">todo.api.common.error</span></code>をエラーハンドリング用のクラスを格納するためのパッケージとする。</div>
+<div class="line">本チュートリアルでは、<code class="docutils literal notranslate"><span class="pre">todo.api.common.error</span></code>をエラーハンドリング用のクラスを格納するためのパッケージとする。</div>
 </div>
 <div class="figure">
 <img alt="../_images/exception-package.png" src="../_images/exception-package.png" />
@@ -2314,14 +2306,14 @@ Formクラスとほぼ同じである。</p>
 <div class="section" id="id19">
 <h4><a class="toc-backref" href="#id56">11.2.3.7.4. REST APIのエラーハンドリングを行うクラスの作成</a><a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
 <div class="line-block">
-<div class="line">REST APIのエラーハンドリングは、Spring MVCから提供されている<code class="docutils literal"><span class="pre">org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler</span></code>を継承したクラスを作成し、<code class="docutils literal"><span class="pre">&#64;ControllerAdvice</span></code>アノテーションを付与する方法でハンドリングする。</div>
-<div class="line">以下に、<code class="docutils literal"><span class="pre">ResponseEntityExceptionHandler</span></code>を継承した<code class="docutils literal"><span class="pre">todo.api.common.error.RestGlobalExceptionHandler</span></code>クラスを作成する。</div>
+<div class="line">REST APIのエラーハンドリングは、Spring MVCから提供されている<code class="docutils literal notranslate"><span class="pre">org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler</span></code>を継承したクラスを作成し、<code class="docutils literal notranslate"><span class="pre">&#64;ControllerAdvice</span></code>アノテーションを付与する方法でハンドリングする。</div>
+<div class="line">以下に、<code class="docutils literal notranslate"><span class="pre">ResponseEntityExceptionHandler</span></code>を継承した<code class="docutils literal notranslate"><span class="pre">todo.api.common.error.RestGlobalExceptionHandler</span></code>クラスを作成する。</div>
 </div>
 <div class="figure">
 <img alt="../_images/exception-handlingclass.png" src="../_images/exception-handlingclass.png" />
 </div>
-<p><code class="docutils literal"><span class="pre">src/main/java/todo/api/common/error/RestGlobalExceptionHandler.java</span></code></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.common.error</span><span class="o">;</span>
+<p><code class="docutils literal notranslate"><span class="pre">src/main/java/todo/api/common/error/RestGlobalExceptionHandler.java</span></code></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.common.error</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.ControllerAdvice</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler</span><span class="o">;</span>
@@ -2339,14 +2331,14 @@ Formクラスとほぼ同じである。</p>
 <div class="section" id="rest-apijavabean">
 <h4><a class="toc-backref" href="#id57">11.2.3.7.5. REST APIのエラー情報を保持するJavaBeanの作成</a><a class="headerlink" href="#rest-apijavabean" title="Permalink to this headline">¶</a></h4>
 <div class="line-block">
-<div class="line">REST APIで発生したエラー情報を保持するクラスとして、<code class="docutils literal"><span class="pre">ApiError</span></code>クラスを<code class="docutils literal"><span class="pre">todo.api.common.error</span></code>パッケージに作成する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">ApiError</span></code>クラスがJSONに変換されて、クライアントに応答される。</div>
+<div class="line">REST APIで発生したエラー情報を保持するクラスとして、<code class="docutils literal notranslate"><span class="pre">ApiError</span></code>クラスを<code class="docutils literal notranslate"><span class="pre">todo.api.common.error</span></code>パッケージに作成する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ApiError</span></code>クラスがJSONに変換されて、クライアントに応答される。</div>
 </div>
 <div class="figure">
 <img alt="../_images/exception-apierror.png" src="../_images/exception-apierror.png" />
 </div>
-<p><code class="docutils literal"><span class="pre">src/main/java/todo/api/common/error/ApiError.java</span></code></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.common.error</span><span class="o">;</span>
+<p><code class="docutils literal notranslate"><span class="pre">src/main/java/todo/api/common/error/ApiError.java</span></code></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.common.error</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.Serializable</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
@@ -2407,10 +2399,10 @@ Formクラスとほぼ同じである。</p>
 </div>
 <div class="section" id="httpbody">
 <h4><a class="toc-backref" href="#id58">11.2.3.7.6. HTTPレスポンスBODYにエラー情報を出力するための実装</a><a class="headerlink" href="#httpbody" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">ResponseEntityExceptionHandler</span></code>はデフォルトではHTTPステータス(400や500など)の設定のみを行い、HTTPレスポンスのBODYは設定しない。
-そのため、<code class="docutils literal"><span class="pre">handleExceptionInternal</span></code>メソッドを以下のようにオーバーライドして、BODYを出力するように実装する。</p>
-<p><code class="docutils literal"><span class="pre">src/main/java/todo/api/common/error/RestGlobalExceptionHandler.java</span></code></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.common.error</span><span class="o">;</span>
+<p><code class="docutils literal notranslate"><span class="pre">ResponseEntityExceptionHandler</span></code>はデフォルトではHTTPステータス(400や500など)の設定のみを行い、HTTPレスポンスのBODYは設定しない。
+そのため、<code class="docutils literal notranslate"><span class="pre">handleExceptionInternal</span></code>メソッドを以下のようにオーバーライドして、BODYを出力するように実装する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">src/main/java/todo/api/common/error/RestGlobalExceptionHandler.java</span></code></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.common.error</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">javax.inject.Inject</span><span class="o">;</span>
 
@@ -2449,15 +2441,15 @@ Formクラスとほぼ同じである。</p>
 </pre></div>
 </div>
 <div class="line-block">
-<div class="line">上記実装を行う事で、<code class="docutils literal"><span class="pre">ResponseEntityExceptionHandler</span></code>でハンドリングされる例外については、HTTPレスポンスBODYにエラー情報が出力される。</div>
-<div class="line"><code class="docutils literal"><span class="pre">ResponseEntityExceptionHandler</span></code>でハンドリングされる例外については、<a class="reference internal" href="../ArchitectureInDetail/WebApplicationDetail/ExceptionHandling.html#exception-handling-appendix-defaulthandlerexceptionresolver-label"><span class="std std-ref">DefaultHandlerExceptionResolverで設定されるHTTPレスポンスコードについて</span></a>を参照されたい。</div>
+<div class="line">上記実装を行う事で、<code class="docutils literal notranslate"><span class="pre">ResponseEntityExceptionHandler</span></code>でハンドリングされる例外については、HTTPレスポンスBODYにエラー情報が出力される。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ResponseEntityExceptionHandler</span></code>でハンドリングされる例外については、<a class="reference internal" href="../ArchitectureInDetail/WebApplicationDetail/ExceptionHandling.html#exception-handling-appendix-defaulthandlerexceptionresolver-label"><span class="std std-ref">DefaultHandlerExceptionResolverで設定されるHTTPレスポンスコードについて</span></a>を参照されたい。</div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <div class="line-block">
 <div class="line">DHCを使用して、実装したエラーハンドリングの動作確認を行う。</div>
-<div class="line">DHCを開いてURLに<code class="docutils literal"><span class="pre">localhost:8080/todo/api/v1/todos</span></code>を入力し、メソッドにPUTを指定してから、”Send”ボタンをクリックする。</div>
+<div class="line">DHCを開いてURLに<code class="docutils literal notranslate"><span class="pre">localhost:8080/todo/api/v1/todos</span></code>を入力し、メソッドにPUTを指定してから、”Send”ボタンをクリックする。</div>
 </div>
 <p>“405 Method Not Allowed”のHTTPステータスが返却され、「RESPONSE」の「Body」には、エラー情報のJSONが表示される。</p>
 <div class="figure">
@@ -2471,18 +2463,18 @@ Formクラスとほぼ同じである。</p>
 <h4><a class="toc-backref" href="#id59">11.2.3.7.7. 入力エラーのエラーハンドリングの実装</a><a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
 <p>入力エラーの種類は、</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">org.springframework.web.bind.MethodArgumentNotValidException</span></code></li>
-<li><code class="docutils literal"><span class="pre">org.springframework.validation.BindException</span></code></li>
-<li><code class="docutils literal"><span class="pre">org.springframework.http.converter.HttpMessageNotReadableException</span></code></li>
-<li><code class="docutils literal"><span class="pre">org.springframework.beans.TypeMismatchException</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">org.springframework.web.bind.MethodArgumentNotValidException</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">org.springframework.validation.BindException</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">org.springframework.http.converter.HttpMessageNotReadableException</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">org.springframework.beans.TypeMismatchException</span></code></li>
 </ul>
 <p>となる。</p>
 <div class="line-block">
-<div class="line">本チュートリアルでは、<code class="docutils literal"><span class="pre">MethodArgumentNotValidException</span></code>のエラーハンドリングの実装を行う。</div>
-<div class="line"><code class="docutils literal"><span class="pre">MethodArgumentNotValidException</span></code>は、HTTPリクエストBODYに格納されているデータに入力エラーがあった場合に発生する例外である。</div>
+<div class="line">本チュートリアルでは、<code class="docutils literal notranslate"><span class="pre">MethodArgumentNotValidException</span></code>のエラーハンドリングの実装を行う。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">MethodArgumentNotValidException</span></code>は、HTTPリクエストBODYに格納されているデータに入力エラーがあった場合に発生する例外である。</div>
 </div>
-<p><code class="docutils literal"><span class="pre">src/main/java/todo/api/common/error/RestGlobalExceptionHandler.java</span></code></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.common.error</span><span class="o">;</span>
+<p><code class="docutils literal notranslate"><span class="pre">src/main/java/todo/api/common/error/RestGlobalExceptionHandler.java</span></code></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.common.error</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">javax.inject.Inject</span><span class="o">;</span>
 
@@ -2552,18 +2544,18 @@ Formクラスとほぼ同じである。</p>
 </div>
 <div class="line-block">
 <div class="line">DHCを使用して、実装したエラーハンドリングの動作確認を行う。</div>
-<div class="line">DHCを開いてURLに<code class="docutils literal"><span class="pre">localhost:8080/todo/api/v1/todos</span></code>を入力し、メソッドにPOSTを指定する。</div>
+<div class="line">DHCを開いてURLに<code class="docutils literal notranslate"><span class="pre">localhost:8080/todo/api/v1/todos</span></code>を入力し、メソッドにPOSTを指定する。</div>
 <div class="line">「REQUEST」の「BODY」に以下のJSONを入力する。</div>
 </div>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;todoTitle&quot;</span><span class="p">:</span> <span class="kc">null</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>また、「REQUEST」の「HEADERS」の「+」ボタンでHTTPヘッダーを追加し、「<code class="docutils literal"><span class="pre">Content-Type</span></code>」に「<code class="docutils literal"><span class="pre">application/json</span></code>」を設定後、”Send”ボタンをクリックする。</p>
+<p>また、「REQUEST」の「HEADERS」の「+」ボタンでHTTPヘッダーを追加し、「<code class="docutils literal notranslate"><span class="pre">Content-Type</span></code>」に「<code class="docutils literal notranslate"><span class="pre">application/json</span></code>」を設定後、”Send”ボタンをクリックする。</p>
 <div class="line-block">
 <div class="line">“400 Bad Request”のHTTPステータスが返却され、「RESPONSE」の「Body」には、エラー情報のJSONが表示される。</div>
-<div class="line"><code class="docutils literal"><span class="pre">todoTitle</span></code>は必須項目なので、必須エラーが発生している。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">todoTitle</span></code>は必須項目なので、必須エラーが発生している。</div>
 </div>
 <div class="figure">
 <a class="reference internal image-reference" href="../_images/exception-inputerror.png"><img alt="../_images/exception-inputerror.png" src="../_images/exception-inputerror.png" style="width: 100%;" /></a>
@@ -2574,10 +2566,10 @@ Formクラスとほぼ同じである。</p>
 </div>
 <div class="section" id="id21">
 <h4><a class="toc-backref" href="#id60">11.2.3.7.8. 業務例外のエラーハンドリングの実装</a><a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">RestGlobalExceptionHandler</span></code>に<code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.exception.BusinessException</span></code>をハンドリングするメソッドを追加して、業務例外をハンドリングする。</p>
+<p><code class="docutils literal notranslate"><span class="pre">RestGlobalExceptionHandler</span></code>に<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.exception.BusinessException</span></code>をハンドリングするメソッドを追加して、業務例外をハンドリングする。</p>
 <p>業務例外が発生した場合は、”409 Conflict”のHTTPステータスを設定する。</p>
-<p><code class="docutils literal"><span class="pre">src/main/java/todo/api/common/error/RestGlobalExceptionHandler.java</span></code></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.common.error</span><span class="o">;</span>
+<p><code class="docutils literal notranslate"><span class="pre">src/main/java/todo/api/common/error/RestGlobalExceptionHandler.java</span></code></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.common.error</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">javax.inject.Inject</span><span class="o">;</span>
 
@@ -2667,9 +2659,9 @@ Formクラスとほぼ同じである。</p>
 </div>
 <div class="line-block">
 <div class="line">DHCを使用して、実装したエラーハンドリングの動作確認を行う。</div>
-<div class="line">DHCを開いてURLに<code class="docutils literal"><span class="pre">localhost:8080/todo/api/v1/todos/{todoId}</span></code>を入力し、メソッドにPUTを指定する。</div>
-<div class="line">{todoId}の部分は実際のIDを入れる必要があるので、POST TodosまたはGET Todosを実行してResponse中の<code class="docutils literal"><span class="pre">todoId</span></code>をコピーして貼り付けてから、”Send”ボタンを2回クリックする。</div>
-<div class="line">未完了状態のTodoの<code class="docutils literal"><span class="pre">todoId</span></code>を指定すること。</div>
+<div class="line">DHCを開いてURLに<code class="docutils literal notranslate"><span class="pre">localhost:8080/todo/api/v1/todos/{todoId}</span></code>を入力し、メソッドにPUTを指定する。</div>
+<div class="line">{todoId}の部分は実際のIDを入れる必要があるので、POST TodosまたはGET Todosを実行してResponse中の<code class="docutils literal notranslate"><span class="pre">todoId</span></code>をコピーして貼り付けてから、”Send”ボタンを2回クリックする。</div>
+<div class="line">未完了状態のTodoの<code class="docutils literal notranslate"><span class="pre">todoId</span></code>を指定すること。</div>
 </div>
 <p>2回目のリクエストに対するレスポンスとして、”409 Conflict”のHTTPステータスが返却され、「RESPONSE」の「Body」には、エラー情報のJSONが表示される。</p>
 <div class="figure">
@@ -2681,10 +2673,10 @@ Formクラスとほぼ同じである。</p>
 </div>
 <div class="section" id="id22">
 <h4><a class="toc-backref" href="#id61">11.2.3.7.9. リソース未検出例外のエラーハンドリングの実装</a><a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">RestGlobalExceptionHandler</span></code>に<code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.exception.ResourceNotFoundException</span></code>をハンドリングするメソッドを追加して、リソース未検出例外をハンドリングする。</p>
+<p><code class="docutils literal notranslate"><span class="pre">RestGlobalExceptionHandler</span></code>に<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.exception.ResourceNotFoundException</span></code>をハンドリングするメソッドを追加して、リソース未検出例外をハンドリングする。</p>
 <p>リソース未検出例外が発生した場合、”404 NotFound”のHTTPステータスを設定する。</p>
-<p><code class="docutils literal"><span class="pre">src/main/java/todo/api/common/error/RestGlobalExceptionHandler.java</span></code></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.common.error</span><span class="o">;</span>
+<p><code class="docutils literal notranslate"><span class="pre">src/main/java/todo/api/common/error/RestGlobalExceptionHandler.java</span></code></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.common.error</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">javax.inject.Inject</span><span class="o">;</span>
 
@@ -2782,7 +2774,7 @@ Formクラスとほぼ同じである。</p>
 </div>
 <div class="line-block">
 <div class="line">DHCを使用して、実装したエラーハンドリングの動作確認を行う。</div>
-<div class="line">DHCを開いてURLに<code class="docutils literal"><span class="pre">localhost:8080/todo/api/v1/todos/{todoId}</span></code>を入力し、メソッドにGETを指定する。</div>
+<div class="line">DHCを開いてURLに<code class="docutils literal notranslate"><span class="pre">localhost:8080/todo/api/v1/todos/{todoId}</span></code>を入力し、メソッドにGETを指定する。</div>
 <div class="line">{todoId}の部分には存在しないIDを指定して、”Send”ボタンをクリックする。</div>
 </div>
 <p>“404 Not Found”のHTTPステータスが返却され、「RESPONSE」の「Body」には、エラー情報のJSONが表示される。</p>
@@ -2795,10 +2787,10 @@ Formクラスとほぼ同じである。</p>
 </div>
 <div class="section" id="id23">
 <h4><a class="toc-backref" href="#id62">11.2.3.7.10. システム例外のエラーハンドリングの実装</a><a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
-<p>最後に、<code class="docutils literal"><span class="pre">RestGlobalExceptionHandler</span></code>に<code class="docutils literal"><span class="pre">java.lang.Exception</span></code>をハンドリングするメソッドを追加して、システム例外をハンドリングする。</p>
+<p>最後に、<code class="docutils literal notranslate"><span class="pre">RestGlobalExceptionHandler</span></code>に<code class="docutils literal notranslate"><span class="pre">java.lang.Exception</span></code>をハンドリングするメソッドを追加して、システム例外をハンドリングする。</p>
 <p>システム例外が発生した場合、”500 InternalServerError”のHTTPステータスを設定する。</p>
-<p><code class="docutils literal"><span class="pre">src/main/java/todo/api/common/error/RestGlobalExceptionHandler.java</span></code></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.common.error</span><span class="o">;</span>
+<p><code class="docutils literal notranslate"><span class="pre">src/main/java/todo/api/common/error/RestGlobalExceptionHandler.java</span></code></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.api.common.error</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">javax.inject.Inject</span><span class="o">;</span>
 
@@ -2906,8 +2898,8 @@ Formクラスとほぼ同じである。</p>
 <div class="line">DHCを使用して、実装したエラーハンドリングの動作確認を行う。</div>
 <div class="line">システムエラーを発生させるために、テーブルを未作成の状態でアプリケーションを起動させる。</div>
 </div>
-<p><code class="docutils literal"><span class="pre">src/main/resources/META-INF/spring/todo-infra.properties</span></code></p>
-<div class="highlight-properties"><div class="highlight"><pre><span></span><span class="na">database</span><span class="o">=</span><span class="s">H2</span>
+<p><code class="docutils literal notranslate"><span class="pre">src/main/resources/META-INF/spring/todo-infra.properties</span></code></p>
+<div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="na">database</span><span class="o">=</span><span class="s">H2</span>
 <span class="c">#database.url=jdbc:h2:mem:todo;DB_CLOSE_DELAY=-1;INIT=create table if not exists todo(todo_id varchar(36) primary key, todo_title varchar(30), finished boolean, created_at timestamp)</span>
 <span class="hll"><span class="na">database.url</span><span class="o">=</span><span class="s">jdbc:h2:mem:todo;DB_CLOSE_DELAY=-1</span>
 </span><span class="na">database.username</span><span class="o">=</span><span class="s">sa</span>
@@ -2923,7 +2915,7 @@ Formクラスとほぼ同じである。</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>DHCを開いてURLに<code class="docutils literal"><span class="pre">localhost:8080/todo/api/v1/todos</span></code>を入力し、メソッドにGETを指定して、”Send”ボタンをクリックする。</p>
+<p>DHCを開いてURLに<code class="docutils literal notranslate"><span class="pre">localhost:8080/todo/api/v1/todos</span></code>を入力し、メソッドにGETを指定して、”Send”ボタンをクリックする。</p>
 <p>“500 Internal Server Error”のHTTPステータスが返却され、「RESPONSE」の「Body」には、エラー情報のJSONが表示される。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../_images/exception-systemerror.png"><img alt="../_images/exception-systemerror.png" src="../_images/exception-systemerror.png" style="width: 100%;" /></a>
@@ -2933,11 +2925,11 @@ Formクラスとほぼ同じである。</p>
 <p>システムエラーが発生した場合、クライアントへ返却するメッセージは、エラー原因が特定されないシンプルなエラーメッセージを設定することを推奨する。
 エラー原因が特定できるメッセージを設定してしまうと、システムの脆弱性をクライアントに公開する可能性があり、セキュリティー上問題がある。</p>
 <p>エラー原因は、エラー解析用にログに出力すればよい。
-Blankプロジェクトのデフォルトの設定では、共通ライブラリから提供している<code class="docutils literal"><span class="pre">ExceptionLogger</span></code>によってログが出力されるようなっているため、ログを出力するための設定や実装は不要である。</p>
-<p><code class="docutils literal"><span class="pre">ExceptionLogger</span></code>によって出力されるログは以下の通りである。
+Blankプロジェクトのデフォルトの設定では、共通ライブラリから提供している<code class="docutils literal notranslate"><span class="pre">ExceptionLogger</span></code>によってログが出力されるようなっているため、ログを出力するための設定や実装は不要である。</p>
+<p><code class="docutils literal notranslate"><span class="pre">ExceptionLogger</span></code>によって出力されるログは以下の通りである。
 Todoテーブルが存在しない事が原因でシステムエラーが発生している事がわかる。</p>
 <blockquote class="last">
-<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">date:2015-01-19 02:08:47        thread:tomcat-http--4   X-Track:aadf5822205d423c95a6531f2f76036f        level:ERROR     logger:o.t.gfw.common.exception.ExceptionLogger         message:[e.xx.fw.9002]</span>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">date:2015-01-19 02:08:47        thread:tomcat-http--4   X-Track:aadf5822205d423c95a6531f2f76036f        level:ERROR     logger:o.t.gfw.common.exception.ExceptionLogger         message:[e.xx.fw.9002]</span>
 <span class="hll"><span class="gp">#</span><span class="c1">## Error querying database.  Cause: org.h2.jdbc.JdbcSQLException: Table &quot;TODO&quot; not found; SQL statement:</span>
 </span><span class="go">SELECT</span>
 <span class="go">            todo_id,</span>
@@ -3000,7 +2992,7 @@ Todoテーブルが存在しない事が原因でシステムエラーが発生�
     </div>
     <div class="footer">
       © Copyright 2013-2018, NTT DATA Corporation. © Copyright 2013-2018, NTT Corporation.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.3.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.1.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
     </div>
     
     <script>

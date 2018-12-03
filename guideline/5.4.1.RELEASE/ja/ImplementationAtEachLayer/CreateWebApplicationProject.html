@@ -2,23 +2,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>3.1. Webアプリケーション向け開発プロジェクトの作成 &#8212; TERASOLUNA Server Framework for Java (5.x) Development Guideline 5.4.1.RELEASE documentation</title>
     <link rel="stylesheet" href="../_static/solar.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '5.4.1.RELEASE',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="3.2. ドメイン層の実装" href="DomainLayer.html" />
@@ -26,8 +19,7 @@
 <!-- <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'> -->
 <link href="../_static/solarized-dark.css" rel="stylesheet">
 <link href="../_static/jquery.treeview.css" rel="stylesheet">
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -46,8 +38,7 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper"><label><input id="scroll" type="checkbox" checked> scroll sidebar</label>
-
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">3.1. Webアプリケーション向け開発プロジェクトの作成</a><ul>
 <li><a class="reference internal" href="#createprojectfromblanktypes">3.1.1. ブランクプロジェクトの種類</a></li>
@@ -82,7 +73,6 @@
 </li>
 </ul>
 
-
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
                         title="previous chapter">3. アプリケーション開発</a></p>
@@ -98,12 +88,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -206,7 +198,7 @@
 <p><strong>前提条件</strong></p>
 <p>以降の説明では、</p>
 <ul class="simple">
-<li><a class="reference external" href="http://maven.apache.org/">Maven</a> (<code class="docutils literal"><span class="pre">mvn</span></code>コマンド)が使用可能であること</li>
+<li><a class="reference external" href="http://maven.apache.org/">Maven</a> (<code class="docutils literal notranslate"><span class="pre">mvn</span></code>コマンド)が使用可能であること</li>
 <li>インターネットに繋がっていること</li>
 <li>インターネットにプロキシ経由で繋ぐ場合は、<a class="reference external" href="http://maven.apache.org/guides/mini/guide-proxies.html">Mavenのプロキシ設定</a>  が行われていること</li>
 </ul>
@@ -250,14 +242,14 @@
 <div class="line"><br /></div>
 </div>
 <p>プロジェクトを作成するフォルダに移動する。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd C:\work</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd C:\work</span>
 </pre></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <p><a class="reference external" href="http://maven.apache.org/archetype/maven-archetype-plugin/">Maven Archetype Plugin</a> の <a class="reference external" href="http://maven.apache.org/archetype/maven-archetype-plugin/generate-mojo.html">archetype:generate</a> を使用して、プロジェクトを作成する。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">mvn archetype:generate -B^</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mvn archetype:generate -B^</span>
 <span class="go"> -DarchetypeGroupId=org.terasoluna.gfw.blank^</span>
 <span class="go"> -DarchetypeArtifactId=terasoluna-gfw-multi-web-blank-mybatis3-archetype^</span>
 <span class="go"> -DarchetypeVersion=5.4.1.RELEASE^</span>
@@ -296,10 +288,10 @@
 <td><p class="first">ブランクプロジェクトのarchetypeId(雛形を特定するためのID)を指定する。<strong>(カスタマイズが必要)</strong></p>
 <p>以下の何れかのarchetypeIdを指定する。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">terasoluna-gfw-multi-web-blank-mybatis3-archetype</span></code></li>
-<li><code class="docutils literal"><span class="pre">terasoluna-gfw-multi-web-blank-jpa-archetype</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">terasoluna-gfw-multi-web-blank-mybatis3-archetype</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">terasoluna-gfw-multi-web-blank-jpa-archetype</span></code></li>
 </ul>
-<p class="last">上記例では、<code class="docutils literal"><span class="pre">terasoluna-gfw-multi-web-blank-mybatis3-archetype</span></code>を指定している。</p>
+<p class="last">上記例では、<code class="docutils literal notranslate"><span class="pre">terasoluna-gfw-multi-web-blank-mybatis3-archetype</span></code>を指定している。</p>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
@@ -313,7 +305,7 @@
 </div>
 </td>
 <td><p class="first">作成するプロジェクトのgroupIdを指定する。<strong>(カスタマイズが必要)</strong></p>
-<p class="last">上記例では、<code class="docutils literal"><span class="pre">com.example.todo</span></code>を指定している。</p>
+<p class="last">上記例では、<code class="docutils literal notranslate"><span class="pre">com.example.todo</span></code>を指定している。</p>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
@@ -321,7 +313,7 @@
 </div>
 </td>
 <td><p class="first">作成するプロジェクトのartifactIdを指定する。<strong>(カスタマイズが必要)</strong></p>
-<p class="last">上記例では、<code class="docutils literal"><span class="pre">todo</span></code>を指定している。</p>
+<p class="last">上記例では、<code class="docutils literal notranslate"><span class="pre">todo</span></code>を指定している。</p>
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
@@ -329,7 +321,7 @@
 </div>
 </td>
 <td><p class="first">作成するプロジェクトのバージョンを指定する。<strong>(カスタマイズが必要)</strong></p>
-<p class="last">上記例では、<code class="docutils literal"><span class="pre">1.0.0-SNAPSHOT</span></code>を指定している。</p>
+<p class="last">上記例では、<code class="docutils literal notranslate"><span class="pre">1.0.0-SNAPSHOT</span></code>を指定している。</p>
 </td>
 </tr>
 </tbody>
@@ -339,7 +331,7 @@
 </div>
 <p>プロジェクトの作成が成功した場合、以下のようなログが出力される。
 (以下は、MyBatis3用のArchetypeを使用して作成した場合の出力例)</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">(... omit)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">(... omit)</span>
 <span class="go">[INFO] ----------------------------------------------------------------------------</span>
 <span class="go">[INFO] Using following parameters for creating project from Archetype: terasoluna-gfw-multi-web-blank-mybatis3-archetype:5.4.1.RELEASE</span>
 <span class="go">[INFO] ----------------------------------------------------------------------------</span>
@@ -372,7 +364,7 @@
 </div>
 <p>プロジェクトの作成が成功した場合、Mavenのマルチプロジェクトが作成される。
 Maven Archetypeで作成したプロジェクトの詳細な説明については、「<a class="reference internal" href="#createwebapplicationprojectconfiguration"><span class="std std-ref">開発プロジェクトの構成</span></a>」を参照されたい。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">todo</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">todo</span>
 <span class="go">├── pom.xml</span>
 <span class="go">├── todo-domain</span>
 <span class="go">├── todo-env</span>
@@ -414,8 +406,8 @@ Maven Archetypeで作成したプロジェクトの詳細な説明について�
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">以降の説明で<code class="docutils literal"><span class="pre">artifactId</span></code>と表現している部分は、
-プロジェクト作成時に指定した<code class="docutils literal"><span class="pre">artifactId</span></code>に置き換えて読み進めてほしい。</p>
+<p class="last">以降の説明で<code class="docutils literal notranslate"><span class="pre">artifactId</span></code>と表現している部分は、
+プロジェクト作成時に指定した<code class="docutils literal notranslate"><span class="pre">artifactId</span></code>に置き換えて読み進めてほしい。</p>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -424,16 +416,16 @@ Maven Archetypeで作成したプロジェクトの詳細な説明について�
 <span id="createwebapplicationprojectcustomizeprojectinformation"></span><h3><a class="toc-backref" href="#id31">3.1.3.1. POMファイルのプロジェクト情報</a><a class="headerlink" href="#pom" title="Permalink to this headline">¶</a></h3>
 <p>Maven Archetypeで作成したプロジェクトのPOMファイルでは、</p>
 <ul class="simple">
-<li>プロジェクト名(<code class="docutils literal"><span class="pre">name</span></code>要素)</li>
-<li>プロジェクト説明(<code class="docutils literal"><span class="pre">description</span></code>要素)</li>
-<li>プロジェクトURL(<code class="docutils literal"><span class="pre">url</span></code>要素)</li>
-<li>プロジェクト創設年(<code class="docutils literal"><span class="pre">inceptionYear</span></code>要素)</li>
-<li>プロジェクトライセンス(<code class="docutils literal"><span class="pre">licenses</span></code>要素)</li>
-<li>プロジェクト組織(<code class="docutils literal"><span class="pre">organization</span></code>要素)</li>
+<li>プロジェクト名(<code class="docutils literal notranslate"><span class="pre">name</span></code>要素)</li>
+<li>プロジェクト説明(<code class="docutils literal notranslate"><span class="pre">description</span></code>要素)</li>
+<li>プロジェクトURL(<code class="docutils literal notranslate"><span class="pre">url</span></code>要素)</li>
+<li>プロジェクト創設年(<code class="docutils literal notranslate"><span class="pre">inceptionYear</span></code>要素)</li>
+<li>プロジェクトライセンス(<code class="docutils literal notranslate"><span class="pre">licenses</span></code>要素)</li>
+<li>プロジェクト組織(<code class="docutils literal notranslate"><span class="pre">organization</span></code>要素)</li>
 </ul>
 <p>といったプロジェクト情報が、Archetype自身のプロジェクト情報が設定されている状態となっている。
 実際の設定内容を以下に示す。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- ... --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- ... --&gt;</span>
 
 <span class="nt">&lt;name&gt;</span>TERASOLUNA Server Framework for Java (5.x) Web Blank Multi Project<span class="nt">&lt;/name&gt;</span>
 <span class="nt">&lt;description&gt;</span>Web Blank Multi Project using TERASOLUNA Server Framework for Java (5.x)<span class="nt">&lt;/description&gt;</span>
@@ -480,7 +472,7 @@ Maven Archetypeで作成したプロジェクトの詳細な説明について�
 </ol>
 </td>
 <td><p class="first">マルチプロジェクト全体の構成を定義するPOM(Project Object Model)ファイル</p>
-<p class="last"><code class="docutils literal"><span class="pre">artifactId/pom.xml</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">artifactId/pom.xml</span></code></p>
 </td>
 <td>プロジェクト情報に適切な値を指定する。</td>
 </tr>
@@ -492,25 +484,25 @@ Maven Archetypeで作成したプロジェクトの詳細な説明について�
 </div>
 <div class="section" id="x-xx-fw-9999id">
 <span id="createwebapplicationprojectcustomizemessageid"></span><h3><a class="toc-backref" href="#id32">3.1.3.2. x.xx.fw.9999形式のメッセージID</a><a class="headerlink" href="#x-xx-fw-9999id" title="Permalink to this headline">¶</a></h3>
-<p>Maven Archetypeで作成したプロジェクトでは、<code class="docutils literal"><span class="pre">x.xx.fw.9999</span></code>形式のメッセージIDを、</p>
+<p>Maven Archetypeで作成したプロジェクトでは、<code class="docutils literal notranslate"><span class="pre">x.xx.fw.9999</span></code>形式のメッセージIDを、</p>
 <ul class="simple">
 <li>エラー画面に表示するメッセージ</li>
 <li>例外発生時に出力するエラーログ</li>
 </ul>
 <p>を生成する際に使用している。実際の使用箇所(サンプリング)を以下に示す。</p>
 <p><strong>[application-messages.properties]</strong></p>
-<div class="highlight-properties"><div class="highlight"><pre><span></span><span class="na">e.xx.fw.5001</span> <span class="o">=</span> <span class="s">Resource not found.</span>
+<div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="na">e.xx.fw.5001</span> <span class="o">=</span> <span class="s">Resource not found.</span>
 </pre></div>
 </div>
 <p><strong>[JSP]</strong></p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;error&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;error&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;c:if</span> <span class="na">test=</span><span class="s">&quot;${!empty exceptionCode}&quot;</span><span class="nt">&gt;</span>[${f:h(exceptionCode)}]<span class="nt">&lt;/c:if&gt;</span>
     <span class="nt">&lt;spring:message</span> <span class="na">code=</span><span class="s">&quot;e.xx.fw.5001&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
 </div>
 <p><strong>[applicationContext.xml]</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;exceptionCodeResolver&quot;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;exceptionCodeResolver&quot;</span>
     <span class="na">class=</span><span class="s">&quot;org.terasoluna.gfw.common.exception.SimpleMappingExceptionCodeResolver&quot;</span><span class="nt">&gt;</span>
     <span class="c">&lt;!-- ... --&gt;</span>
             <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&quot;ResourceNotFoundException&quot;</span> <span class="na">value=</span><span class="s">&quot;e.xx.fw.5001&quot;</span> <span class="nt">/&gt;</span>
@@ -521,9 +513,9 @@ Maven Archetypeで作成したプロジェクトの詳細な説明について�
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p><code class="docutils literal"><span class="pre">x.xx.fw.9999</span></code>形式のメッセージIDは、
+<p><code class="docutils literal notranslate"><span class="pre">x.xx.fw.9999</span></code>形式のメッセージIDは、
 本ガイドラインの「<a class="reference internal" href="../ArchitectureInDetail/WebApplicationDetail/MessageManagement.html"><span class="doc">メッセージ管理</span></a>」で紹介しているメッセージID体系であるが、
-プロジェクト区分の値が暫定値「<code class="docutils literal"><span class="pre">xx</span></code>」の状態になっている。</p>
+プロジェクト区分の値が暫定値「<code class="docutils literal notranslate"><span class="pre">xx</span></code>」の状態になっている。</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <ul class="last simple">
@@ -553,27 +545,27 @@ Maven Archetypeで作成したプロジェクトの詳細な説明について�
 </ol>
 </td>
 <td><p class="first">メッセージ定義ファイル</p>
-<p class="last"><code class="docutils literal"><span class="pre">artifactId/artifactId-web/src/main/resources/i18n/application-messages.properties</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">artifactId/artifactId-web/src/main/resources/i18n/application-messages.properties</span></code></p>
 </td>
-<td>プロパティキーに指定しているメッセージIDのプロジェクト区分の暫定値「<code class="docutils literal"><span class="pre">xx</span></code>」を、適切な値に修正する。</td>
+<td>プロパティキーに指定しているメッセージIDのプロジェクト区分の暫定値「<code class="docutils literal notranslate"><span class="pre">xx</span></code>」を、適切な値に修正する。</td>
 </tr>
 <tr class="row-odd"><td><ol class="first last arabic simple" start="2">
 <li></li>
 </ol>
 </td>
 <td><p class="first">エラー画面用のJSP</p>
-<p class="last"><code class="docutils literal"><span class="pre">artifactId/artifactId-web/src/main/webapp/WEB-INF/views/common/error/*.jsp</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">artifactId/artifactId-web/src/main/webapp/WEB-INF/views/common/error/*.jsp</span></code></p>
 </td>
-<td><code class="docutils literal"><span class="pre">&lt;spring:message&gt;</span></code>要素の<code class="docutils literal"><span class="pre">code</span></code>属性に指定しているメッセージIDのプロジェクト区分の暫定値「<code class="docutils literal"><span class="pre">xx</span></code>」を、適切な値に修正する。</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;spring:message&gt;</span></code>要素の<code class="docutils literal notranslate"><span class="pre">code</span></code>属性に指定しているメッセージIDのプロジェクト区分の暫定値「<code class="docutils literal notranslate"><span class="pre">xx</span></code>」を、適切な値に修正する。</td>
 </tr>
 <tr class="row-even"><td><ol class="first last arabic simple" start="3">
 <li></li>
 </ol>
 </td>
 <td><p class="first">Webアプリケーション用のアプリケーションコンテキストを作成するためのBean定義ファイル</p>
-<p class="last"><code class="docutils literal"><span class="pre">artifactId/artifactId-web/src/main/resources/META-INF/spring/applicationContext.xml</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">artifactId/artifactId-web/src/main/resources/META-INF/spring/applicationContext.xml</span></code></p>
 </td>
-<td>BeanIDが<code class="docutils literal"><span class="pre">exceptionCodeResolver</span></code>のBean定義内で指定している例外コード(メッセージID)のプロジェクト区分の暫定値「<code class="docutils literal"><span class="pre">xx</span></code>」を、適切な値に修正する。</td>
+<td>BeanIDが<code class="docutils literal notranslate"><span class="pre">exceptionCodeResolver</span></code>のBean定義内で指定している例外コード(メッセージID)のプロジェクト区分の暫定値「<code class="docutils literal notranslate"><span class="pre">xx</span></code>」を、適切な値に修正する。</td>
 </tr>
 </tbody>
 </table>
@@ -587,7 +579,7 @@ Maven Archetypeで作成したプロジェクトの詳細な説明について�
 メッセージ文言は簡易的なメッセージになっている。
 実際のメッセージ(サンプリング)を以下に示す。</p>
 <p><strong>[application-messages.properties]</strong></p>
-<div class="highlight-properties"><div class="highlight"><pre><span></span><span class="na">e.xx.fw.5001</span> <span class="o">=</span> <span class="s">Resource not found.</span>
+<div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="na">e.xx.fw.5001</span> <span class="o">=</span> <span class="s">Resource not found.</span>
 
 <span class="c"># ...</span>
 
@@ -623,7 +615,7 @@ Maven Archetypeで作成したプロジェクトの詳細な説明について�
 </ol>
 </td>
 <td><p class="first">メッセージ定義ファイル</p>
-<p class="last"><code class="docutils literal"><span class="pre">artifactId/artifactId-web/src/main/resources/i18n/application-messages.properties</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">artifactId/artifactId-web/src/main/resources/i18n/application-messages.properties</span></code></p>
 </td>
 <td><p class="first">アプリケーション要件に応じたメッセージに修正する。</p>
 <p class="last">入力チェックでエラーとなった際に表示するメッセージ(Bean Validationのメッセージ)についても、
@@ -647,7 +639,7 @@ Maven Archetypeで作成したプロジェクトの詳細な説明について�
 </ul>
 <p>などが簡易的な実装になっている。実際のJSPの実装(サンプリング)を以下に示す。</p>
 <p><strong>[JSP]</strong></p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
@@ -696,7 +688,7 @@ Maven Archetypeで作成したプロジェクトの詳細な説明について�
 </ol>
 </td>
 <td><p class="first">エラー画面用のJSP</p>
-<p class="last"><code class="docutils literal"><span class="pre">artifactId/artifactId-web/src/main/webapp/WEB-INF/views/common/error/*.jsp</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">artifactId/artifactId-web/src/main/webapp/WEB-INF/views/common/error/*.jsp</span></code></p>
 </td>
 <td><p class="first">アプリケーション要件(UI規約など)に合わせて修正する。</p>
 <p class="last">エラー画面を表示するJSPをカスタマイズする際は、「<a class="reference internal" href="../ArchitectureInDetail/WebApplicationDetail/ExceptionHandling.html"><span class="doc">例外ハンドリング</span></a> の <a class="reference internal" href="../ArchitectureInDetail/WebApplicationDetail/ExceptionHandling.html#exception-handling-how-to-use-codingpoint-jsp-label"><span class="std std-ref">コーディングポイント（JSP編）</span></a>」を参照されたい。</p>
@@ -707,7 +699,7 @@ Maven Archetypeで作成したプロジェクトの詳細な説明について�
 </ol>
 </td>
 <td><p class="first">エラー画面用のHTML</p>
-<p class="last"><code class="docutils literal"><span class="pre">artifactId/artifactId-web/src/main/webapp/WEB-INF/views/common/error/unhandledSystemError.html</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">artifactId/artifactId-web/src/main/webapp/WEB-INF/views/common/error/unhandledSystemError.html</span></code></p>
 </td>
 <td>アプリケーション要件(UI規約など)に合わせて修正する。</td>
 </tr>
@@ -720,10 +712,10 @@ Maven Archetypeで作成したプロジェクトの詳細な説明について�
 <div class="section" id="createwebapplicationprojectcustomizecopyrightonscreenfooter">
 <span id="id12"></span><h3><a class="toc-backref" href="#id35">3.1.3.5. 画面フッターの著作権</a><a class="headerlink" href="#createwebapplicationprojectcustomizecopyrightonscreenfooter" title="Permalink to this headline">¶</a></h3>
 <p>Maven Archetypeで作成したプロジェクトでは、Tilesを使用して画面レイアウトを構成しているが、
-画面フッター部の著作権が暫定値「<code class="docutils literal"><span class="pre">Copyright</span> <span class="pre">&amp;copy;</span> <span class="pre">20XX</span> <span class="pre">CompanyName</span></code>」の状態になっている。
+画面フッター部の著作権が暫定値「<code class="docutils literal notranslate"><span class="pre">Copyright</span> <span class="pre">&amp;copy;</span> <span class="pre">20XX</span> <span class="pre">CompanyName</span></code>」の状態になっている。
 実際のJSPの実装(サンプリング)を以下に示す。</p>
 <p><strong>[template.jsp]</strong></p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;tiles:insertAttribute</span> <span class="na">name=</span><span class="s">&quot;header&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;tiles:insertAttribute</span> <span class="na">name=</span><span class="s">&quot;body&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;hr&gt;</span>
@@ -757,9 +749,9 @@ Maven Archetypeで作成したプロジェクトの詳細な説明について�
 </ol>
 </td>
 <td><p class="first">Tiles用のテンプレートJSP</p>
-<p class="last"><code class="docutils literal"><span class="pre">artifactId/artifactId-web/src/main/webapp/WEB-INF/views/layout/template.jsp</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">artifactId/artifactId-web/src/main/webapp/WEB-INF/views/layout/template.jsp</span></code></p>
 </td>
-<td>著作権の暫定値「<code class="docutils literal"><span class="pre">Copyright</span> <span class="pre">&amp;copy;</span> <span class="pre">20XX</span> <span class="pre">CompanyName</span></code>」を適切な値に修正する。</td>
+<td>著作権の暫定値「<code class="docutils literal notranslate"><span class="pre">Copyright</span> <span class="pre">&amp;copy;</span> <span class="pre">20XX</span> <span class="pre">CompanyName</span></code>」を適切な値に修正する。</td>
 </tr>
 </tbody>
 </table>
@@ -773,14 +765,14 @@ Maven Archetypeで作成したプロジェクトの詳細な説明について�
 これはちょっとした動作検証(プロトタイプ作成やPOC(Proof Of Concept))を行うための設定である。
 そのため、本格的なアプリケーション開発を行う場合は、不要な設定になる。</p>
 <p><strong>[artifactId-env.xml]</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;jdbc:initialize-database</span> <span class="na">data-source=</span><span class="s">&quot;dataSource&quot;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;jdbc:initialize-database</span> <span class="na">data-source=</span><span class="s">&quot;dataSource&quot;</span>
     <span class="na">ignore-failures=</span><span class="s">&quot;ALL&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;jdbc:script</span> <span class="na">location=</span><span class="s">&quot;classpath:/database/${database}-schema.sql&quot;</span> <span class="na">encoding=</span><span class="s">&quot;UTF-8&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;jdbc:script</span> <span class="na">location=</span><span class="s">&quot;classpath:/database/${database}-dataload.sql&quot;</span> <span class="na">encoding=</span><span class="s">&quot;UTF-8&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/jdbc:initialize-database&gt;</span>
 </pre></div>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">└── src</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">└── src</span>
 <span class="go">    └── main</span>
 <span class="go">        └── resources</span>
 <span class="go">            ├── META-INF</span>
@@ -816,16 +808,16 @@ Maven Archetypeで作成したプロジェクトの詳細な説明について�
 </ol>
 </td>
 <td><p class="first">環境依存するコンポーネントを定義するBean定義ファイル</p>
-<p class="last"><code class="docutils literal"><span class="pre">artifactId-env/src/main/resources/META-INF/spring/artifactId-env.xml</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">artifactId-env/src/main/resources/META-INF/spring/artifactId-env.xml</span></code></p>
 </td>
-<td><code class="docutils literal"><span class="pre">&lt;jdbc:initialize-database&gt;</span></code>要素を削除する。</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;jdbc:initialize-database&gt;</span></code>要素を削除する。</td>
 </tr>
 <tr class="row-odd"><td><ol class="first last arabic simple" start="2">
 <li></li>
 </ol>
 </td>
 <td><p class="first">インメモリデータベース(H2 Database)をセットアップするためのSQLを格納するディレクトリ</p>
-<p class="last"><code class="docutils literal"><span class="pre">artifactId/artifactId-env/src/main/resources/database/</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">artifactId/artifactId-env/src/main/resources/database/</span></code></p>
 </td>
 <td>ディレクトリを削除する。</td>
 </tr>
@@ -842,7 +834,7 @@ Maven Archetypeで作成したプロジェクトの詳細な説明について�
 そのため、本格的なアプリケーション開発を行う場合は、
 アプリケーション稼働時に利用するデータベースにアクセスするためのデータソース設定に変更する必要がある。</p>
 <p><strong>[artifactId/artifactId-domain/pom.xml]</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>com.h2database<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>h2<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;scope&gt;</span>runtime<span class="nt">&lt;/scope&gt;</span>
@@ -855,7 +847,7 @@ Maven Archetypeで作成したプロジェクトの詳細な説明について�
 上記の依存ライブラリはterasoluna-gfw-parentが利用している<a class="reference external" href="http://platform.spring.io/platform/">Spring IO Platform</a>で定義済みである。</p>
 </div>
 <p><strong>[artifactId-infra.properties]</strong></p>
-<div class="highlight-properties"><div class="highlight"><pre><span></span><span class="na">database</span><span class="o">=</span><span class="s">H2</span>
+<div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="na">database</span><span class="o">=</span><span class="s">H2</span>
 <span class="na">database.url</span><span class="o">=</span><span class="s">jdbc:h2:mem:todo;DB_CLOSE_DELAY=-1</span>
 <span class="na">database.username</span><span class="o">=</span><span class="s">sa</span>
 <span class="na">database.password</span><span class="o">=</span>
@@ -868,7 +860,7 @@ Maven Archetypeで作成したプロジェクトの詳細な説明について�
 </pre></div>
 </div>
 <p><strong>[artifactId-env.xml]</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;realDataSource&quot;</span> <span class="na">class=</span><span class="s">&quot;org.apache.commons.dbcp2.BasicDataSource&quot;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;realDataSource&quot;</span> <span class="na">class=</span><span class="s">&quot;org.apache.commons.dbcp2.BasicDataSource&quot;</span>
     <span class="na">destroy-method=</span><span class="s">&quot;close&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;driverClassName&quot;</span> <span class="na">value=</span><span class="s">&quot;${database.driverClassName}&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;url&quot;</span> <span class="na">value=</span><span class="s">&quot;${database.url}&quot;</span> <span class="nt">/&gt;</span>
@@ -915,8 +907,8 @@ JNDI(Java Naming and Directory Interface)経由でデータソースにアクセ
 </td>
 <td><p class="first">POMファイル</p>
 <ul class="last simple">
-<li><code class="docutils literal"><span class="pre">artifactId/pom.xml</span></code></li>
-<li><code class="docutils literal"><span class="pre">artifactId/artifactId-web/pom.xml</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">artifactId/pom.xml</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">artifactId/artifactId-web/pom.xml</span></code></li>
 </ul>
 </td>
 <td><p class="first">インメモリデータベース(H2 Database)のJDBCドライバを依存ライブラリから削除する。</p>
@@ -928,19 +920,19 @@ JNDI(Java Naming and Directory Interface)経由でデータソースにアクセ
 </ol>
 </td>
 <td><p class="first">環境依存する設定値を定義するプロパティファイル</p>
-<p class="last"><code class="docutils literal"><span class="pre">artifactId/artifactId-env/src/main/resources/META-INF/spring/artifactId-infra.properties</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">artifactId/artifactId-env/src/main/resources/META-INF/spring/artifactId-infra.properties</span></code></p>
 </td>
 <td><p class="first">データソースとしてApache Commons DBCPを使用する場合は、以下のプロパティにアプリケーション稼働時に利用するデータベースにアクセスするための接続情報を指定する。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">database</span></code></li>
-<li><code class="docutils literal"><span class="pre">database.url</span></code></li>
-<li><code class="docutils literal"><span class="pre">database.username</span></code></li>
-<li><code class="docutils literal"><span class="pre">database.password</span></code></li>
-<li><code class="docutils literal"><span class="pre">database.driverClassName</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">database</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">database.url</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">database.username</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">database.password</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">database.driverClassName</span></code></li>
 </ul>
 <p>アプリケーションサーバから提供されているデータソースを使用する場合は、以下のプロパティ以外は不要なプロパティになるので削除する。</p>
 <ul class="last simple">
-<li><code class="docutils literal"><span class="pre">database</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">database</span></code></li>
 </ul>
 </td>
 </tr>
@@ -949,7 +941,7 @@ JNDI(Java Naming and Directory Interface)経由でデータソースにアクセ
 </ol>
 </td>
 <td><p class="first">環境依存するコンポーネントを定義するBean定義ファイル</p>
-<p class="last"><code class="docutils literal"><span class="pre">artifactId/artifactId-env/src/main/resources/META-INF/spring/artifactId-env.xml</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">artifactId/artifactId-env/src/main/resources/META-INF/spring/artifactId-env.xml</span></code></p>
 </td>
 <td><p class="first">アプリケーションサーバから提供されているデータソースを使用する場合は、JNDI経由で取得したデータソースを使用するように設定を変更する。</p>
 <p class="last">データソースの設定方法については、「<a class="reference internal" href="../ArchitectureInDetail/DataAccessDetail/DataAccessCommon.html"><span class="doc">データベースアクセス（共通編）</span></a> の <a class="reference internal" href="../ArchitectureInDetail/DataAccessDetail/DataAccessCommon.html#data-access-common-howtouse-datasource"><span class="std std-ref">データソースの設定</span></a>」を参照されたい。</p>
@@ -960,7 +952,7 @@ JNDI(Java Naming and Directory Interface)経由でデータソースにアクセ
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>環境依存する設定値を定義するプロパティファイルのdatabaseプロパティについて</strong></p>
-<p class="last">O/R MapperとしてMyBatisを使用する場合は、<code class="docutils literal"><span class="pre">database</span></code>プロパティは不要なプロパティである。
+<p class="last">O/R MapperとしてMyBatisを使用する場合は、<code class="docutils literal notranslate"><span class="pre">database</span></code>プロパティは不要なプロパティである。
 削除してもよいが、使用しているデータベースを明示するために設定を残しておいてもよい。</p>
 </div>
 <div class="admonition tip">
@@ -973,10 +965,10 @@ JDBCドライバのバージョンについては、使用するデータベー�
 MavenのローカルリポジトリにOracleのJDBCドライバをインストールしておく必要がある。</p>
 <p>以下は、PostgreSQLを使用する場合の設定例である。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">artifactId/pom.xml</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">artifactId/pom.xml</span></code></li>
 </ul>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span>                 <span class="nt">&lt;dependency&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>                 <span class="nt">&lt;dependency&gt;</span>
                      <span class="nt">&lt;groupId&gt;</span>org.postgresql<span class="nt">&lt;/groupId&gt;</span>
                      <span class="nt">&lt;artifactId&gt;</span>postgresql<span class="nt">&lt;/artifactId&gt;</span>
                      <span class="nt">&lt;version&gt;</span>${postgresql.version}<span class="nt">&lt;/version&gt;</span>
@@ -995,10 +987,10 @@ MavenのローカルリポジトリにOracleのJDBCドライバをインスト�
 </div>
 </div></blockquote>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">artifactId/artifactId-web/pom.xml</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">artifactId/artifactId-web/pom.xml</span></code></li>
 </ul>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span>             <span class="nt">&lt;dependency&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>             <span class="nt">&lt;dependency&gt;</span>
                  <span class="nt">&lt;groupId&gt;</span>org.postgresql<span class="nt">&lt;/groupId&gt;</span>
                  <span class="nt">&lt;artifactId&gt;</span>postgresql<span class="nt">&lt;/artifactId&gt;</span>
                  <span class="nt">&lt;scope&gt;</span>runtime<span class="nt">&lt;/scope&gt;</span><span class="c">&lt;!-- (1) --&gt;</span>
@@ -1027,7 +1019,7 @@ MavenのローカルリポジトリにOracleのJDBCドライバをインスト�
 <div class="line">(1)</div>
 </div>
 </td>
-<td><p class="first">JDBCドライバはコンパイルには使用せず、アプリケーション実行時のみ使用するため、<code class="docutils literal"><span class="pre">runtime</span></code>スコープを指定している。</p>
+<td><p class="first">JDBCドライバはコンパイルには使用せず、アプリケーション実行時のみ使用するため、<code class="docutils literal notranslate"><span class="pre">runtime</span></code>スコープを指定している。</p>
 <p class="last">単体テストで使用する場合などは、適切なスコープに変更して使用されたい。</p>
 </td>
 </tr>
@@ -1087,8 +1079,8 @@ REST API向けの設定を適用してほしい。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">以降の説明で<code class="docutils literal"><span class="pre">artifactId</span></code>と表現している部分は、
-プロジェクト作成時に指定した<code class="docutils literal"><span class="pre">artifactId</span></code>に置き換えて読み進めてほしい。</p>
+<p class="last">以降の説明で<code class="docutils literal notranslate"><span class="pre">artifactId</span></code>と表現している部分は、
+プロジェクト作成時に指定した<code class="docutils literal notranslate"><span class="pre">artifactId</span></code>に置き換えて読み進めてほしい。</p>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -1096,7 +1088,7 @@ REST API向けの設定を適用してほしい。</p>
 <div class="section" id="createwebapplicationprojectconfigurationmulti">
 <span id="id15"></span><h3><a class="toc-backref" href="#id39">3.1.4.1. マルチプロジェクトの構成</a><a class="headerlink" href="#createwebapplicationprojectconfigurationmulti" title="Permalink to this headline">¶</a></h3>
 <p>まず、マルチプロジェクト全体の構成について説明する。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">artifactId</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">artifactId</span>
 <span class="go">    ├── pom.xml  ... (1)</span>
 <span class="go">    ├── artifactId-web  ... (2)</span>
 <span class="go">    ├── artifactId-domain  ... (3)</span>
@@ -1282,7 +1274,7 @@ bar-web-aは、bar-commonとbar-envへの依存性を持つ。</p>
 <div class="section" id="createwebapplicationprojectconfigurationweb">
 <span id="id17"></span><h3><a class="toc-backref" href="#id40">3.1.4.2. webモジュールの構成</a><a class="headerlink" href="#createwebapplicationprojectconfigurationweb" title="Permalink to this headline">¶</a></h3>
 <p>アプリケーション層(Web層)のコンポーネントを管理するモジュールの構成について説明する。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">artifactId-web</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">artifactId-web</span>
 <span class="go">    ├── pom.xml  ... (1)</span>
 </pre></div>
 </div>
@@ -1320,13 +1312,13 @@ bar-web-aは、bar-commonとbar-envへの依存性を持つ。</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>REST API用のプロジェクトを作成する際のwebモジュールのモジュール名について</strong></p>
-<p class="last">REST APIを構築する場合は、モジュール名を<code class="docutils literal"><span class="pre">artifactId-api</span></code>といった感じの名前にしておくと、
+<p class="last">REST APIを構築する場合は、モジュール名を<code class="docutils literal notranslate"><span class="pre">artifactId-api</span></code>といった感じの名前にしておくと、
 アプリケーションの種類が識別しやすくなる。</p>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">└── src</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">└── src</span>
 <span class="go">    ├── main</span>
 <span class="go">    │   ├── java</span>
 <span class="go">    │   │   └── com</span>
@@ -1369,7 +1361,7 @@ bar-web-aは、bar-commonとbar-envへの依存性を持つ。</p>
 </div>
 </td>
 <td><p class="first">アプリケーション層のクラスを格納するためのパッケージ。</p>
-<p class="last">REST APIを構築する場合は、パッケージ名を<code class="docutils literal"><span class="pre">api</span></code>といった感じの名前にしておくと、
+<p class="last">REST APIを構築する場合は、パッケージ名を<code class="docutils literal notranslate"><span class="pre">api</span></code>といった感じの名前にしておくと、
 コンポーネントの種類が識別しやすくなる。</p>
 </td>
 </tr>
@@ -1429,13 +1421,13 @@ Dozerについては、「<a class="reference internal" href="../ArchitectureInD
 <div class="line">(8)</div>
 </div>
 </td>
-<td><p class="first"><code class="docutils literal"><span class="pre">DispatcherServlet</span></code>用のアプリケーションコンテキストを作成するためのBean定義ファイル。</p>
+<td><p class="first"><code class="docutils literal notranslate"><span class="pre">DispatcherServlet</span></code>用のアプリケーションコンテキストを作成するためのBean定義ファイル。</p>
 <p>このファイルには、以下のBeanを定義する。</p>
 <ul class="simple">
 <li>Spring MVCのコンポーネント</li>
 <li>アプリケーション層のコンポーネント</li>
 </ul>
-<p class="last">REST APIを構築する場合は、ファイル名を<code class="docutils literal"><span class="pre">spring-mvc-api.xml</span></code>といった感じの名前にしておくと、 アプリケーションの種類が識別しやすくなる。</p>
+<p class="last">REST APIを構築する場合は、ファイル名を<code class="docutils literal notranslate"><span class="pre">spring-mvc-api.xml</span></code>といった感じの名前にしておくと、 アプリケーションの種類が識別しやすくなる。</p>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
@@ -1475,7 +1467,7 @@ Dozerについては、「<a class="reference internal" href="../ArchitectureInD
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">│   └── webapp</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">│   └── webapp</span>
 <span class="go">│       ├── WEB-INF</span>
 <span class="go">│       │   ├── tiles  ... (12)</span>
 <span class="go">│       │   │   └── tiles-definitions.xml</span>
@@ -1609,7 +1601,7 @@ Tilesのレイアウト用のJSPファイルについては、「<a class="refer
 <div class="section" id="domain">
 <span id="createwebapplicationprojectconfigurationdomain"></span><h3><a class="toc-backref" href="#id41">3.1.4.3. domainモジュールの構成</a><a class="headerlink" href="#domain" title="Permalink to this headline">¶</a></h3>
 <p>ドメイン層のコンポーネントを管理するモジュールの構成について説明する。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">artifactId-domain</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">artifactId-domain</span>
 <span class="go">    ├── pom.xml  ... (1)</span>
 </pre></div>
 </div>
@@ -1647,7 +1639,7 @@ Tilesのレイアウト用のJSPファイルについては、「<a class="refer
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">└── src</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">└── src</span>
 <span class="go">    ├── main</span>
 <span class="go">    │   ├── java</span>
 <span class="go">    │   │   └── com</span>
@@ -1745,7 +1737,7 @@ Dozerについては、「<a class="reference internal" href="../ArchitectureInD
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">└── test</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">└── test</span>
 <span class="go">    ├── java</span>
 <span class="go">    │   └── com</span>
 <span class="go">    │       └── example</span>
@@ -1786,7 +1778,7 @@ Dozerについては、「<a class="reference internal" href="../ArchitectureInD
 <div class="line"><br /></div>
 </div>
 <p><strong>MyBatis3用のプロジェクトを作成した場合</strong></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">└── src</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">└── src</span>
 <span class="go">    ├── main</span>
 <span class="go">    │   ├── java</span>
 <span class="go">   (...)</span>
@@ -1861,7 +1853,7 @@ Dozerについては、「<a class="reference internal" href="../ArchitectureInD
 <div class="section" id="env">
 <span id="createwebapplicationprojectconfigurationenv"></span><h3><a class="toc-backref" href="#id42">3.1.4.4. envモジュールの構成</a><a class="headerlink" href="#env" title="Permalink to this headline">¶</a></h3>
 <p>環境依存性をもつ設定ファイルを管理するモジュールの構成について説明する。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">artifactId-env</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">artifactId-env</span>
 <span class="go">    ├── configs  ... (1)</span>
 <span class="go">    │   ├── production-server  ... (2)</span>
 <span class="go">    │   │   └── resources</span>
@@ -1924,7 +1916,7 @@ Dozerについては、「<a class="reference internal" href="../ArchitectureInD
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">└── src</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">└── src</span>
 <span class="go">    └── main</span>
 <span class="go">        └── resources  ... (4)</span>
 <span class="go">            ├── META-INF</span>
@@ -1970,7 +1962,7 @@ Dozerについては、「<a class="reference internal" href="../ArchitectureInD
 <p>このファイルには、以下のBeanを定義する。</p>
 <ul class="last simple">
 <li>データソース</li>
-<li>共通ライブラリから提供している<code class="docutils literal"><span class="pre">JodaTimeDateFactory</span></code>(環境によって異なる実装を使用する場合)</li>
+<li>共通ライブラリから提供している<code class="docutils literal notranslate"><span class="pre">JodaTimeDateFactory</span></code>(環境によって異なる実装を使用する場合)</li>
 <li>Spring Frameworkから提供されているトランザクション管理用のコンポーネント (環境によって異なる実装を使用する場合)</li>
 </ul>
 </td>
@@ -2026,7 +2018,7 @@ Log4jdbc-remixについては、「<a class="reference internal" href="../Archit
 <div class="section" id="initdb">
 <span id="createwebapplicationprojectconfigurationinitdb"></span><h3><a class="toc-backref" href="#id43">3.1.4.5. initdbモジュールの構成</a><a class="headerlink" href="#initdb" title="Permalink to this headline">¶</a></h3>
 <p>データベースを初期化するためのSQLファイルを管理するモジュールの構成について説明する。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">artifactId-initdb</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">artifactId-initdb</span>
 <span class="go">    ├── pom.xml  ... (1)</span>
 <span class="go">    └── src</span>
 <span class="go">        └── main</span>
@@ -2077,7 +2069,7 @@ Log4jdbc-remixについては、「<a class="reference internal" href="../Archit
 <p class="first admonition-title">Note</p>
 <p><a class="reference external" href="http://www.mojohaus.org/sql-maven-plugin/">SQL Maven Plugin</a> の <a class="reference external" href="http://www.mojohaus.org/sql-maven-plugin/execute-mojo.html">sql:execute</a> を使用して、SQLを実行できる。</p>
 <blockquote class="last">
-<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">mvn sql:execute</span>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mvn sql:execute</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -2089,7 +2081,7 @@ Log4jdbc-remixについては、「<a class="reference internal" href="../Archit
 <div class="section" id="selenium">
 <span id="createwebapplicationprojectconfigurationselenium"></span><h3><a class="toc-backref" href="#id44">3.1.4.6. seleniumモジュールの構成</a><a class="headerlink" href="#selenium" title="Permalink to this headline">¶</a></h3>
 <p>Seleniumを使用したE2E(End To End)テスト用のコンポーネントを管理するモジュールの構成について説明する。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">artifactId-selenium</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">artifactId-selenium</span>
 <span class="go">    ├── pom.xml  ... (1)</span>
 <span class="go">    └── src</span>
 <span class="go">        └── test  ... (2)</span>
@@ -2157,7 +2149,7 @@ Log4jdbc-remixについては、「<a class="reference internal" href="../Archit
 </div>
 </td>
 <td><p class="first">テストで使用する設定値を定義するプロパティファイル。</p>
-<p class="last">作成時点では、アプリケーションサーバのURLは<code class="docutils literal"><span class="pre">http://localhost:8080/</span></code>である。</p>
+<p class="last">作成時点では、アプリケーションサーバのURLは<code class="docutils literal notranslate"><span class="pre">http://localhost:8080/</span></code>である。</p>
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
@@ -2223,7 +2215,7 @@ Log4jdbc-remixについては、「<a class="reference internal" href="../Archit
 <li>Spring IO Platformで管理されていない推奨ライブラリのバージョン管理</li>
 </ul>
 <p>を行っている。</p>
-<p>なお、Spring IO Platform経由で依存ライブラリのバージョンを管理するために、本プロジェクトの<code class="docutils literal"><span class="pre">&lt;dependencyManagement&gt;</span></code>に「Spring IO Platform」をインポートしている。</p>
+<p>なお、Spring IO Platform経由で依存ライブラリのバージョンを管理するために、本プロジェクトの<code class="docutils literal notranslate"><span class="pre">&lt;dependencyManagement&gt;</span></code>に「Spring IO Platform」をインポートしている。</p>
 <p class="last">利用しているSpring IO Platformのバージョンは<a class="reference internal" href="../Overview/FrameworkStack.html#frameworkstack-using-oss-version"><span class="std std-ref">利用するOSSのバージョン</span></a>参照のこと。</p>
 </td>
 </tr>
@@ -2232,7 +2224,7 @@ Log4jdbc-remixについては、「<a class="reference internal" href="../Archit
 </div>
 </td>
 <td><p class="first">Spring IO Platformプロジェクト。</p>
-<p class="last">親プロジェクトとして「org.springframework.boot:spring-boot-starter-parent:1.2.5.RELEASE」が指定されているため、spring-boot-starter-parentのpomファイルに定義されている<code class="docutils literal"><span class="pre">&lt;dependencyManagement&gt;</span></code>の定義も、terasoluna-gfw-parentのpomファイルにインポートされる。</p>
+<p class="last">親プロジェクトとして「org.springframework.boot:spring-boot-starter-parent:1.2.5.RELEASE」が指定されているため、spring-boot-starter-parentのpomファイルに定義されている<code class="docutils literal notranslate"><span class="pre">&lt;dependencyManagement&gt;</span></code>の定義も、terasoluna-gfw-parentのpomファイルにインポートされる。</p>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
@@ -2240,7 +2232,7 @@ Log4jdbc-remixについては、「<a class="reference internal" href="../Archit
 </div>
 </td>
 <td><p class="first">Spring Boot Starter Parentプロジェクト。</p>
-<p class="last">親プロジェクトとして「org.springframework.boot:spring-boot-dependencies:1.2.5.RELEASE」が指定されているため、spring-boot-dependenciesのpomファイルに定義されている<code class="docutils literal"><span class="pre">&lt;dependencyManagement&gt;</span></code>の定義も、terasoluna-gfw-parentのpomファイルにインポートされる。</p>
+<p class="last">親プロジェクトとして「org.springframework.boot:spring-boot-dependencies:1.2.5.RELEASE」が指定されているため、spring-boot-dependenciesのpomファイルに定義されている<code class="docutils literal notranslate"><span class="pre">&lt;dependencyManagement&gt;</span></code>の定義も、terasoluna-gfw-parentのpomファイルにインポートされる。</p>
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
@@ -2253,12 +2245,12 @@ Log4jdbc-remixについては、「<a class="reference internal" href="../Archit
 </table>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">version 5.0.0.RELEASEより、Spring IO Platformの<code class="docutils literal"><span class="pre">&lt;dependencyManagement&gt;</span></code>をインポートする構成に変更しており、
+<p class="last">version 5.0.0.RELEASEより、Spring IO Platformの<code class="docutils literal notranslate"><span class="pre">&lt;dependencyManagement&gt;</span></code>をインポートする構成に変更しており、
 推奨ライブラリのバージョン管理をSpring IO Platformに委譲するスタイルを採用している。</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p>version 5.0.0.RELEASEより、Spring IO Platformの<code class="docutils literal"><span class="pre">&lt;dependencyManagement&gt;</span></code>をインポートする構成に変更したため、
+<p>version 5.0.0.RELEASEより、Spring IO Platformの<code class="docutils literal notranslate"><span class="pre">&lt;dependencyManagement&gt;</span></code>をインポートする構成に変更したため、
 子プロジェクトからライブラリのバージョンを管理するためのプロパティにアクセスする事が出来なくなっている。</p>
 <p>そのため、子プロジェクト側でプロパティ値を参照又は上書きしている場合は、version 1.0.xからバージョンアップする際にpomファイルの修正が必要になる。</p>
 <p class="last">なお、Spring IO Platformで管理していない推奨ライブラリ(TERASOLUNA Server Framework for Java (5.x)独自の推奨ライブラリ)については、
@@ -2307,20 +2299,20 @@ Log4jdbc-remixについては、「<a class="reference internal" href="../Archit
 </ul>
 <p>で定義したコンポーネントがWebアプリケーション用のアプリケーションコンテキスト(DIコンテナ)に登録される。</p>
 <p class="last">Webアプリケーション用のアプリケーションコンテキストに登録されているコンポーネントは、
-各<code class="docutils literal"><span class="pre">DispatcherServlet</span></code>用のアプリケーションコンテキストから参照する事ができる仕組みとなっている。</p>
+各<code class="docutils literal notranslate"><span class="pre">DispatcherServlet</span></code>用のアプリケーションコンテキストから参照する事ができる仕組みとなっている。</p>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
 <div class="line">(2)</div>
 </div>
 </td>
-<td><p class="first"><code class="docutils literal"><span class="pre">DispatcherServlet</span></code>用のアプリケーションコンテキスト。</p>
+<td><p class="first"><code class="docutils literal notranslate"><span class="pre">DispatcherServlet</span></code>用のアプリケーションコンテキスト。</p>
 <p>上記図で示す通り、</p>
 <ul class="simple">
 <li>artifactId-web/src/main/resource/META-INF/spring/spring-mvc.xml</li>
 </ul>
-<p>で定義したコンポーネントが<code class="docutils literal"><span class="pre">DispatcherServlet</span></code>用のアプリケーションコンテキスト(DIコンテナ)に登録される。</p>
-<p class="last"><code class="docutils literal"><span class="pre">DispatcherServlet</span></code>用のアプリケーションコンテキストに存在しないコンポーネントは、
+<p>で定義したコンポーネントが<code class="docutils literal notranslate"><span class="pre">DispatcherServlet</span></code>用のアプリケーションコンテキスト(DIコンテナ)に登録される。</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">DispatcherServlet</span></code>用のアプリケーションコンテキストに存在しないコンポーネントは、
 Webアプリケーション用のアプリケーションコンテキスト(親コンテキスト)を参照して取得する仕組みになっているため、
 ドメイン層のコンポーネントをアプリケーション層のコンポーネントに対してインジェクションする事ができる。</p>
 </td>
@@ -2330,10 +2322,10 @@ Webアプリケーション用のアプリケーションコンテキスト(親�
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>同じコンポーネントを両方のアプリケーションコンテキストに登録した時の動作について</strong></p>
-<p>Webアプリケーション用のアプリケーションコンテキストと<code class="docutils literal"><span class="pre">DispatcherServlet</span></code>用のアプリケーションコンテキストの両方に同じコンポーネントが登録されている場合は、
-同じアプリケーションコンテキスト(<code class="docutils literal"><span class="pre">DispatcherServlet</span></code>用のアプリケーションコンテキスト)内に登録されているコンポーネントがインジェクションされる点を補足しておく。</p>
-<p>特に、ドメイン層のコンポーネント(ServiceやRepositoryなど)を<code class="docutils literal"><span class="pre">DispatcherServlet</span></code>用のアプリケーションコンテキストに登録しないように注意する必要である。</p>
-<p>ドメイン層のコンポーネントを<code class="docutils literal"><span class="pre">DispatcherServlet</span></code>用のアプリケーションコンテキストに登録してしまうと、
+<p>Webアプリケーション用のアプリケーションコンテキストと<code class="docutils literal notranslate"><span class="pre">DispatcherServlet</span></code>用のアプリケーションコンテキストの両方に同じコンポーネントが登録されている場合は、
+同じアプリケーションコンテキスト(<code class="docutils literal notranslate"><span class="pre">DispatcherServlet</span></code>用のアプリケーションコンテキスト)内に登録されているコンポーネントがインジェクションされる点を補足しておく。</p>
+<p>特に、ドメイン層のコンポーネント(ServiceやRepositoryなど)を<code class="docutils literal notranslate"><span class="pre">DispatcherServlet</span></code>用のアプリケーションコンテキストに登録しないように注意する必要である。</p>
+<p>ドメイン層のコンポーネントを<code class="docutils literal notranslate"><span class="pre">DispatcherServlet</span></code>用のアプリケーションコンテキストに登録してしまうと、
 トランザクション制御を行うコンポーネント(AOP)が有効にならないため、データベースへの操作がコミットされない不具合が発生してしまう。</p>
 <p class="last">なお、Maven Archetypeで作成したプロジェクトでは、上記のような現象は発生しないように設定が行われている。
 設定の追加又は変更を行う場合は、注意してほしい。</p>
@@ -2373,7 +2365,7 @@ Mavenはオンライン環境での動作が前提であるが、
 </div>
 <p>開発プロジェクトのルートディレクトリへ移動する。
 ここでは「<a class="reference internal" href="#createwebapplicationproject"><span class="std std-ref">開発プロジェクトの作成</span></a>」で作成したプロジェクトを例に説明をする。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd C:\work\todo</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd C:\work\todo</span>
 </pre></div>
 </div>
 <div class="line-block">
@@ -2382,7 +2374,7 @@ Mavenはオンライン環境での動作が前提であるが、
 <p>プロジェクト開発に必要であるライブラリやプラグイン等のファイルをコピーする。
 <a class="reference external" href="http://maven.apache.org/archetype/maven-archetype-plugin/">Maven Archetype Plugin</a> の
 <a class="reference external" href="https://maven.apache.org/plugins/maven-dependency-plugin/go-offline-mojo.html">dependency:go-offline</a> を実行することでコピーする。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">mvn dependency:go-offline -Dmaven.repo.local=repository</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mvn dependency:go-offline -Dmaven.repo.local=repository</span>
 </pre></div>
 </div>
 <table border="1" class="colwidths-given docutils">
@@ -2411,14 +2403,14 @@ Mavenはオンライン環境での動作が前提であるが、
 </div>
 <p>成果物を配布しやすくするために、warファイルまたはjarファイルを作成する。
 この時、ビルドに必要となるライブラリやプラグイン等のファイルがコピーされる。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">mvn package -Dmaven.repo.local=repository</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mvn package -Dmaven.repo.local=repository</span>
 </pre></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <p>ビルドが成功した場合、以下のようなログが出力される。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">(... omit)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">(... omit)</span>
 <span class="go">[INFO] ------------------------------------------------------------------------</span>
 <span class="go">[INFO] Reactor Summary:</span>
 <span class="go">[INFO]</span>
@@ -2481,7 +2473,7 @@ POMファイルに編集を加える場合は、再度オンライン環境へ�
     </div>
     <div class="footer">
       © Copyright 2013-2018, NTT DATA Corporation. © Copyright 2013-2018, NTT Corporation.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.3.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.1.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
     </div>
     
     <script>

@@ -2,23 +2,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>9.4. セッション管理 &#8212; TERASOLUNA Server Framework for Java (5.x) Development Guideline 5.4.1.RELEASE documentation</title>
     <link rel="stylesheet" href="../_static/solar.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '5.4.1.RELEASE',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="9.5. CSRF対策" href="CSRF.html" />
@@ -26,8 +19,7 @@
 <!-- <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'> -->
 <link href="../_static/solarized-dark.css" rel="stylesheet">
 <link href="../_static/jquery.treeview.css" rel="stylesheet">
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -46,8 +38,7 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper"><label><input id="scroll" type="checkbox" checked> scroll sidebar</label>
-
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">9.4. セッション管理</a><ul>
 <li><a class="reference internal" href="#overview">9.4.1. Overview</a><ul>
@@ -90,7 +81,6 @@
 </li>
 </ul>
 
-
   <h4>Previous topic</h4>
   <p class="topless"><a href="Authorization.html"
                         title="previous chapter">9.3. 認可</a></p>
@@ -106,12 +96,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -250,20 +242,20 @@
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line">Cookieの<code class="docutils literal"><span class="pre">HttpOnly</span></code>属性を指定する</div>
+<div class="line">Cookieの<code class="docutils literal notranslate"><span class="pre">HttpOnly</span></code>属性を指定する</div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Cookieの<code class="docutils literal"><span class="pre">HttpOnly</span></code>属性を指定すると、JavaScriptからCookieにアクセスすることができなくため、クロスサイトスクリプティングを使ってセッションIDを盗むことができなくなる。</div>
+<div class="line">Cookieの<code class="docutils literal notranslate"><span class="pre">HttpOnly</span></code>属性を指定すると、JavaScriptからCookieにアクセスすることができなくため、クロスサイトスクリプティングを使ってセッションIDを盗むことができなくなる。</div>
 </div>
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line">Cookieに<code class="docutils literal"><span class="pre">Secure</span></code>属性を指定する</div>
+<div class="line">Cookieに<code class="docutils literal notranslate"><span class="pre">Secure</span></code>属性を指定する</div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Cookieに<code class="docutils literal"><span class="pre">Secure</span></code>属性を指定すると、HTTPS通信の時だけCookieをサーバーに送信するため、誤ってHTTP通信を使ってしまった時にセッションIDが盗み取られるリスクを減らすことができる。</div>
+<div class="line">Cookieに<code class="docutils literal notranslate"><span class="pre">Secure</span></code>属性を指定すると、HTTPS通信の時だけCookieをサーバーに送信するため、誤ってHTTP通信を使ってしまった時にセッションIDが盗み取られるリスクを減らすことができる。</div>
 </div>
 </td>
 </tr>
@@ -277,17 +269,17 @@
 <ul>
 <li><p class="first">URL Rewritingが行われたURL例</p>
 <blockquote>
-<div><div class="highlight-text"><div class="highlight"><pre><span></span>http://localhost:8080/;jsessionid=7E6EDE4D3317FC5F14FD912BEAC96646
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>http://localhost:8080/;jsessionid=7E6EDE4D3317FC5F14FD912BEAC96646
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 </ul>
-<p><code class="docutils literal"><span class="pre">jsessionid=7E6EDE4D3317FC5F14FD912BEAC96646</span></code>の部分がURL RewritingされたセッションIDになる。
+<p><code class="docutils literal notranslate"><span class="pre">jsessionid=7E6EDE4D3317FC5F14FD912BEAC96646</span></code>の部分がURL RewritingされたセッションIDになる。
 ServletのAPI仕様では、以下のメソッドを呼び出すとURL Rewritingが行われる可能性があり、JSTLやSpringが提供しているJSPタグライブラリの中でもこれらのメソッドを呼び出している。</p>
 <ul class="last simple">
-<li><code class="docutils literal"><span class="pre">HttpServletResponse#encodeURL(String)</span></code></li>
-<li><code class="docutils literal"><span class="pre">HttpServletResponse#encodeRedirectURL(String)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">HttpServletResponse#encodeURL(String)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">HttpServletResponse#encodeRedirectURL(String)</span></code></li>
 </ul>
 </div>
 <p>URL Rewritingが行われるとURL内にセッションIDが露出してしまうため、セッションIDを盗まれるリスクが高くなる。
@@ -403,7 +395,7 @@ Cookieを使えないクライアントをサポートする必要がある場�
 <ul class="simple">
 <li>spring-security.xmlの定義例</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http</span> <span class="na">disable-url-rewriting=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- falseを指定してURL Rewritingを有効化 --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http</span> <span class="na">disable-url-rewriting=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- falseを指定してURL Rewritingを有効化 --&gt;</span>
 </pre></div>
 </div>
 <table border="1" class="colwidths-given docutils">
@@ -422,8 +414,8 @@ Cookieを使えないクライアントをサポートする必要がある場�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Spring Securityのデフォルトでは、<code class="docutils literal"><span class="pre">disable-url-rewriting</span></code>の値は <code class="docutils literal"><span class="pre">true</span></code>であるため、URL Rewritingは行われない。</div>
-<div class="line">URL Rewritingを有効にする際は、<code class="docutils literal"><span class="pre">&lt;sec:http&gt;</span></code>要素の <code class="docutils literal"><span class="pre">disable-url-rewriting</span></code>属性に<code class="docutils literal"><span class="pre">false</span></code>を設定する。</div>
+<div class="line">Spring Securityのデフォルトでは、<code class="docutils literal notranslate"><span class="pre">disable-url-rewriting</span></code>の値は <code class="docutils literal notranslate"><span class="pre">true</span></code>であるため、URL Rewritingは行われない。</div>
+<div class="line">URL Rewritingを有効にする際は、<code class="docutils literal notranslate"><span class="pre">&lt;sec:http&gt;</span></code>要素の <code class="docutils literal notranslate"><span class="pre">disable-url-rewriting</span></code>属性に<code class="docutils literal notranslate"><span class="pre">false</span></code>を設定する。</div>
 </div>
 </td>
 </tr>
@@ -436,7 +428,7 @@ Cookieを使えないクライアントをサポートする必要がある場�
 <ul class="simple">
 <li>web.xmlの定義例</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;session-config&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;session-config&gt;</span>
     <span class="nt">&lt;cookie-config&gt;</span>
         <span class="nt">&lt;http-only&gt;</span>true<span class="nt">&lt;/http-only&gt;</span> <span class="c">&lt;!-- (1)  --&gt;</span>
     <span class="nt">&lt;/cookie-config&gt;</span>
@@ -460,8 +452,8 @@ Cookieを使えないクライアントをサポートする必要がある場�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Cookieに<code class="docutils literal"><span class="pre">HttpOnly</span></code>属性を付与する場合は、<code class="docutils literal"><span class="pre">&lt;http-only&gt;</span></code>要素に<code class="docutils literal"><span class="pre">true</span></code>を指定する。</div>
-<div class="line">使用するアプリケーションサーバによっては、デフォルト値が<code class="docutils literal"><span class="pre">true</span></code>になっている。</div>
+<div class="line">Cookieに<code class="docutils literal notranslate"><span class="pre">HttpOnly</span></code>属性を付与する場合は、<code class="docutils literal notranslate"><span class="pre">&lt;http-only&gt;</span></code>要素に<code class="docutils literal notranslate"><span class="pre">true</span></code>を指定する。</div>
+<div class="line">使用するアプリケーションサーバによっては、デフォルト値が<code class="docutils literal notranslate"><span class="pre">true</span></code>になっている。</div>
 </div>
 </td>
 </tr>
@@ -470,17 +462,17 @@ Cookieを使えないクライアントをサポートする必要がある場�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">URL Rewriting機能を無効化する場合は、<code class="docutils literal"><span class="pre">&lt;tracking-mode&gt;</span></code>要素に<code class="docutils literal"><span class="pre">COOKIE</span></code>を指定する。</div>
+<div class="line">URL Rewriting機能を無効化する場合は、<code class="docutils literal notranslate"><span class="pre">&lt;tracking-mode&gt;</span></code>要素に<code class="docutils literal notranslate"><span class="pre">COOKIE</span></code>を指定する。</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
-<p>上記の定義例からは省略しているが、<code class="docutils literal"><span class="pre">&lt;cookie-config&gt;</span></code>に <code class="docutils literal"><span class="pre">&lt;secure&gt;true&lt;/secure&gt;</span></code>を追加することで、 Cookieに<code class="docutils literal"><span class="pre">Secure</span></code>属性を付与することができる。
-ただし、cookieのsecure化は、<code class="docutils literal"><span class="pre">web.xml</span></code>で指定するのではなく、クライアントとHTTPS通信を行うミドルウェア(SSLアクセラレータやWebサーバーなど)で付与する方法を検討されたい。</p>
+<p>上記の定義例からは省略しているが、<code class="docutils literal notranslate"><span class="pre">&lt;cookie-config&gt;</span></code>に <code class="docutils literal notranslate"><span class="pre">&lt;secure&gt;true&lt;/secure&gt;</span></code>を追加することで、 Cookieに<code class="docutils literal notranslate"><span class="pre">Secure</span></code>属性を付与することができる。
+ただし、cookieのsecure化は、<code class="docutils literal notranslate"><span class="pre">web.xml</span></code>で指定するのではなく、クライアントとHTTPS通信を行うミドルウェア(SSLアクセラレータやWebサーバーなど)で付与する方法を検討されたい。</p>
 <p>実際のシステム開発の現場において、ローカルの開発環境でHTTPSを使うケースはほとんどない。
 また、本番環境においても、HTTPSを使うのはSSLアクセラレータやWebサーバーとの通信までで、アプリケーションサーバへの通信はHTTPで行うケースも少なくない。
-このような環境下で<code class="docutils literal"><span class="pre">Secure</span></code>属性の指定を<code class="docutils literal"><span class="pre">web.xml</span></code>で行ってしまうと、実行環境毎に<code class="docutils literal"><span class="pre">web.xml</span></code>や<code class="docutils literal"><span class="pre">web-fragment.xml</span></code>を用意することになり、ファイルの管理が煩雑になるため推奨されない。</p>
+このような環境下で<code class="docutils literal notranslate"><span class="pre">Secure</span></code>属性の指定を<code class="docutils literal notranslate"><span class="pre">web.xml</span></code>で行ってしまうと、実行環境毎に<code class="docutils literal notranslate"><span class="pre">web.xml</span></code>や<code class="docutils literal notranslate"><span class="pre">web-fragment.xml</span></code>を用意することになり、ファイルの管理が煩雑になるため推奨されない。</p>
 </div>
 </div>
 <div class="section" id="springsecuritysessionmanagementsetup">
@@ -490,7 +482,7 @@ Spring Securityのセッション管理機能の処理を使用する場合は�
 <ul class="simple">
 <li>spring-security.xmlの定義例</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http&gt;</span>
     <span class="c">&lt;!-- ommited --&gt;</span>
     <span class="nt">&lt;sec:session-management</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
     <span class="c">&lt;!-- ommited --&gt;</span>
@@ -513,8 +505,8 @@ Spring Securityのセッション管理機能の処理を使用する場合は�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;sec:http&gt;</span></code>要素の子要素として<code class="docutils literal"><span class="pre">&lt;sec:session-management&gt;</span></code>要素を指定する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">&lt;sec:session-management&gt;</span></code>要素を指定すると、セッション管理機能が適用される。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;sec:http&gt;</span></code>要素の子要素として<code class="docutils literal notranslate"><span class="pre">&lt;sec:session-management&gt;</span></code>要素を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;sec:session-management&gt;</span></code>要素を指定すると、セッション管理機能が適用される。</div>
 </div>
 </td>
 </tr>
@@ -540,17 +532,17 @@ Spring Securityのセッション管理機能の処理を使用する場合は�
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">changeSessionId</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">changeSessionId</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Servlet 3.1で追加された<code class="docutils literal"><span class="pre">HttpServletRequest#changeSessionId()</span></code>を使用してセッションIDを変更する。</div>
+<div class="line">Servlet 3.1で追加された<code class="docutils literal notranslate"><span class="pre">HttpServletRequest#changeSessionId()</span></code>を使用してセッションIDを変更する。</div>
 <div class="line">(これはServlet 3.1以上のコンテナ上でのデフォルトの動作である)</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">migrateSession</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">migrateSession</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -561,16 +553,16 @@ Spring Securityのセッション管理機能の処理を使用する場合は�
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">newSession</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">newSession</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">このオプションは<code class="docutils literal"><span class="pre">migrateSession</span></code>と同じ方法でセッションIDを変更するが、ログイン前に格納されていたオブジェクトは新しいセッションに引き継がれない。</div>
+<div class="line">このオプションは<code class="docutils literal notranslate"><span class="pre">migrateSession</span></code>と同じ方法でセッションIDを変更するが、ログイン前に格納されていたオブジェクトは新しいセッションに引き継がれない。</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">none</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">none</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -584,7 +576,7 @@ Spring Securityのセッション管理機能の処理を使用する場合は�
 <ul class="simple">
 <li>spring-security.xmlの定義例</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:session-management</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:session-management</span>
         <span class="na">session-fixation-protection=</span><span class="s">&quot;newSession&quot;</span><span class="nt">/&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
 </pre></div>
 </div>
@@ -604,7 +596,7 @@ Spring Securityのセッション管理機能の処理を使用する場合は�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;sec:session-management&gt;</span></code>要素の<code class="docutils literal"><span class="pre">session-fixation-protection</span></code>属性にセッション固定攻撃の対策方法を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;sec:session-management&gt;</span></code>要素の<code class="docutils literal notranslate"><span class="pre">session-fixation-protection</span></code>属性にセッション固定攻撃の対策方法を指定する。</div>
 </div>
 </td>
 </tr>
@@ -635,7 +627,7 @@ Spring Securityのセッション管理機能の処理を使用する場合は�
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">always</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">always</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -645,7 +637,7 @@ Spring Securityのセッション管理機能の処理を使用する場合は�
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ifRequired</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ifRequired</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -654,7 +646,7 @@ Spring Securityのセッション管理機能の処理を使用する場合は�
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">never</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">never</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -664,7 +656,7 @@ Spring Securityのセッション管理機能の処理を使用する場合は�
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">stateless</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">stateless</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -678,7 +670,7 @@ Spring Securityのセッション管理機能の処理を使用する場合は�
 <ul class="simple">
 <li>spring-security.xmlの定義例</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http</span> <span class="na">create-session=</span><span class="s">&quot;stateless&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:http</span> <span class="na">create-session=</span><span class="s">&quot;stateless&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
     <span class="c">&lt;!-- ommited --&gt;</span>
 <span class="nt">&lt;/sec:http&gt;</span>
 </pre></div>
@@ -699,7 +691,7 @@ Spring Securityのセッション管理機能の処理を使用する場合は�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;sec:http&gt;</span></code>要素の<code class="docutils literal"><span class="pre">create-session</span></code>属性に、変更したいセッションの作成方針を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;sec:http&gt;</span></code>要素の<code class="docutils literal notranslate"><span class="pre">create-session</span></code>属性に、変更したいセッションの作成方針を指定する。</div>
 </div>
 </td>
 </tr>
@@ -711,7 +703,7 @@ Spring Securityのセッション管理機能の処理を使用する場合は�
 <p>Spring Securityは、以下のタイミングでセッションを破棄する。</p>
 <ul class="simple">
 <li>ログアウト処理が実行されたタイミング</li>
-<li>認証処理が成功したタイミング (セッション固定攻撃対策として<code class="docutils literal"><span class="pre">migrateSession</span></code>又は<code class="docutils literal"><span class="pre">newSession</span></code>が適用されるとセッションが破棄される)</li>
+<li>認証処理が成功したタイミング (セッション固定攻撃対策として<code class="docutils literal notranslate"><span class="pre">migrateSession</span></code>又は<code class="docutils literal notranslate"><span class="pre">newSession</span></code>が適用されるとセッションが破棄される)</li>
 </ul>
 </div>
 </div>
@@ -725,7 +717,7 @@ Spring Securityのセッション管理機能の処理を使用する場合は�
 <ul class="simple">
 <li>web.xmlの定義例</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;session-config&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;session-config&gt;</span>
     <span class="nt">&lt;session-timeout&gt;</span>60<span class="nt">&lt;/session-timeout&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
     <span class="c">&lt;!-- ommited --&gt;</span>
 <span class="nt">&lt;/session-config&gt;</span>
@@ -747,7 +739,7 @@ Spring Securityのセッション管理機能の処理を使用する場合は�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;session-timeout&gt;</span></code>要素に適切なタイムアウト値(分単位)を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;session-timeout&gt;</span></code>要素に適切なタイムアウト値(分単位)を指定する。</div>
 <div class="line-block">
 <div class="line">タイムアウト値を指定しない場合は、サーブレットコンテナが用意しているデフォルト値が適用される。</div>
 </div>
@@ -766,7 +758,7 @@ Spring Securityのセッション管理機能の処理を使用する場合は�
 <ul class="simple">
 <li>spring-security.xmlの定義例</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:session-management</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:session-management</span>
         <span class="na">invalid-session-url=</span><span class="s">&quot;/error/invalidSession&quot;</span><span class="nt">/&gt;</span>
 </pre></div>
 </div>
@@ -786,7 +778,7 @@ Spring Securityのセッション管理機能の処理を使用する場合は�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;sec:session-management&gt;</span></code>要素の<code class="docutils literal"><span class="pre">invalid-session-url</span></code>属性に、無効なセッションを使ったリクエストを検知した際のリダイレクト先のパスを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;sec:session-management&gt;</span></code>要素の<code class="docutils literal notranslate"><span class="pre">invalid-session-url</span></code>属性に、無効なセッションを使ったリクエストを検知した際のリダイレクト先のパスを指定する。</div>
 </div>
 </td>
 </tr>
@@ -798,11 +790,11 @@ Spring Securityのセッション管理機能の処理を使用する場合は�
 <p>無効なセッションを使ったリクエストを検知する機能を有効にすると、Spring Securityのサーブレットフィルタを通過するすべてのリクエストに対してチェックが行われる。
 そのため、セッションが無効な状態でアクセスしても問題がないページにアクセスした場合もチェックが行われる。</p>
 <p>この動作を変更したい場合は、チェック対象から除外したいパスに対して個別にbean定義を行うことで実現することが可能である。
-例として、トップページを開くためのパス(“<code class="docutils literal"><span class="pre">/</span></code>” )を除外パスに指定したい場合は、以下のようなbean定義を行う。</p>
+例として、トップページを開くためのパス(“<code class="docutils literal notranslate"><span class="pre">/</span></code>” )を除外パスに指定したい場合は、以下のようなbean定義を行う。</p>
 <ul class="simple">
 <li>spring-security.xmlの定義例</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- (1) --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- (1) --&gt;</span>
 <span class="nt">&lt;sec:http</span> <span class="na">pattern=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
     <span class="nt">&lt;sec:session-management</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/sec:http&gt;</span>
@@ -832,7 +824,7 @@ Spring Securityのセッション管理機能の処理を使用する場合は�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">トップページを開くためのパス(“<code class="docutils literal"><span class="pre">/</span></code>” )に適用する<code class="docutils literal"><span class="pre">SecurityFilterChain</span></code>を作成するための<code class="docutils literal"><span class="pre">&lt;sec:http&gt;</span></code>要素を新たに追加する。</div>
+<div class="line">トップページを開くためのパス(“<code class="docutils literal notranslate"><span class="pre">/</span></code>” )に適用する<code class="docutils literal notranslate"><span class="pre">SecurityFilterChain</span></code>を作成するための<code class="docutils literal notranslate"><span class="pre">&lt;sec:http&gt;</span></code>要素を新たに追加する。</div>
 </div>
 </td>
 </tr>
@@ -841,9 +833,9 @@ Spring Securityのセッション管理機能の処理を使用する場合は�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">(1)の<code class="docutils literal"><span class="pre">&lt;sec:http&gt;</span></code>要素を使って生成した<code class="docutils literal"><span class="pre">SecurityFilterChain</span></code>を適用するパスパターンを指定する。</div>
+<div class="line">(1)の<code class="docutils literal notranslate"><span class="pre">&lt;sec:http&gt;</span></code>要素を使って生成した<code class="docutils literal notranslate"><span class="pre">SecurityFilterChain</span></code>を適用するパスパターンを指定する。</div>
 <div class="line">指定可能なパスパターンはAnt形式のパス表記と正規表現の２つの形式であり、デフォルトではAnt形式のパスとして扱われる。</div>
-<div class="line">また、パスパターンではなく<code class="docutils literal"><span class="pre">RequestMatcher</span></code>オブジェクトを直接指定することも可能である。</div>
+<div class="line">また、パスパターンではなく<code class="docutils literal notranslate"><span class="pre">RequestMatcher</span></code>オブジェクトを直接指定することも可能である。</div>
 </div>
 </td>
 </tr>
@@ -852,9 +844,9 @@ Spring Securityのセッション管理機能の処理を使用する場合は�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">個別定義していないパスに適用する<code class="docutils literal"><span class="pre">SecurityFilterChain</span></code>を作成するための<code class="docutils literal"><span class="pre">&lt;sec:http&gt;</span></code>要素を定義する。</div>
-<div class="line">この定義は、個別定義用の<code class="docutils literal"><span class="pre">&lt;sec:http&gt;</span></code>要素より下に定義すること。</div>
-<div class="line">これは<code class="docutils literal"><span class="pre">&lt;sec:http&gt;</span></code>要素の定義順番が<code class="docutils literal"><span class="pre">SecurityFilterChain</span></code>の優先順位となるためである。</div>
+<div class="line">個別定義していないパスに適用する<code class="docutils literal notranslate"><span class="pre">SecurityFilterChain</span></code>を作成するための<code class="docutils literal notranslate"><span class="pre">&lt;sec:http&gt;</span></code>要素を定義する。</div>
+<div class="line">この定義は、個別定義用の<code class="docutils literal notranslate"><span class="pre">&lt;sec:http&gt;</span></code>要素より下に定義すること。</div>
+<div class="line">これは<code class="docutils literal notranslate"><span class="pre">&lt;sec:http&gt;</span></code>要素の定義順番が<code class="docutils literal notranslate"><span class="pre">SecurityFilterChain</span></code>の優先順位となるためである。</div>
 </div>
 </td>
 </tr>
@@ -894,11 +886,11 @@ Spring Securityが用意しているデフォルト実装ではHTTPセッショ�
 <div class="section" id="springsecurityhowtousesessionmanagementconcurrency">
 <span id="id17"></span><h4><a class="toc-backref" href="#id44">9.4.2.6.1. セッションのライフサイクル検知の有効化</a><a class="headerlink" href="#springsecurityhowtousesessionmanagementconcurrency" title="Permalink to this headline">¶</a></h4>
 <p>多重ログインを制御する機能は、<a class="reference internal" href="#springsecuritysessionmanagementlifecycle"><span class="std std-ref">セッションのライフサイクル(セッションの生成と破棄)を検知する仕組み</span></a> を利用してユーザー毎のセッション状態を管理している。
-このため、多重ログインの制御機能を使用する際は、Spring Securityから提供されている<code class="docutils literal"><span class="pre">HttpSessionEventPublisher</span></code>クラスをサーブレットコンテナに登録する必要がある。</p>
+このため、多重ログインの制御機能を使用する際は、Spring Securityから提供されている<code class="docutils literal notranslate"><span class="pre">HttpSessionEventPublisher</span></code>クラスをサーブレットコンテナに登録する必要がある。</p>
 <ul class="simple">
 <li>web.xmlの定義例</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;listener&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;listener&gt;</span>
     <span class="c">&lt;!-- (1) --&gt;</span>
     <span class="nt">&lt;listener-class&gt;</span>
         org.springframework.security.web.session.HttpSessionEventPublisher
@@ -922,7 +914,7 @@ Spring Securityが用意しているデフォルト実装ではHTTPセッショ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">サーブレットリスナとして<code class="docutils literal"><span class="pre">HttpSessionEventPublisher</span></code>を登録する。</div>
+<div class="line">サーブレットリスナとして<code class="docutils literal notranslate"><span class="pre">HttpSessionEventPublisher</span></code>を登録する。</div>
 </div>
 </td>
 </tr>
@@ -935,7 +927,7 @@ Spring Securityが用意しているデフォルト実装ではHTTPセッショ�
 <ul class="simple">
 <li>bean定義ファイルの定義例</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:session-management&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:session-management&gt;</span>
     <span class="nt">&lt;sec:concurrency-control</span>
             <span class="na">max-sessions=</span><span class="s">&quot;1&quot;</span>
             <span class="na">error-if-maximum-exceeded=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span> <span class="c">&lt;!-- (1) (2) --&gt;</span>
@@ -954,14 +946,14 @@ Spring Securityが用意しているデフォルト実装ではHTTPセッショ�
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>(1)</td>
-<td><code class="docutils literal"><span class="pre">&lt;sec:concurrency-control&gt;</span></code>要素の<code class="docutils literal"><span class="pre">max-sessions</span></code>属性に、同時にログイン
+<td><code class="docutils literal notranslate"><span class="pre">&lt;sec:concurrency-control&gt;</span></code>要素の<code class="docutils literal notranslate"><span class="pre">max-sessions</span></code>属性に、同時にログイン
 を許可するセッション数を指定する。
-多重ログインを防ぎたい場合は、通常”<code class="docutils literal"><span class="pre">1</span></code>” を指定する。</td>
+多重ログインを防ぎたい場合は、通常”<code class="docutils literal notranslate"><span class="pre">1</span></code>” を指定する。</td>
 </tr>
 <tr class="row-odd"><td>(2)</td>
-<td><code class="docutils literal"><span class="pre">&lt;sec:concurrency-control&gt;</span></code>要素の<code class="docutils literal"><span class="pre">error-if-maximum-exceeded</span></code>属性に、
+<td><code class="docutils literal notranslate"><span class="pre">&lt;sec:concurrency-control&gt;</span></code>要素の<code class="docutils literal notranslate"><span class="pre">error-if-maximum-exceeded</span></code>属性に、
 同時にログインできるセッション数を超えた時の動作を指定する。
-既にログインしているユーザーを有効なユーザーとして扱う場合は、<code class="docutils literal"><span class="pre">true</span></code>を指定する。</td>
+既にログインしているユーザーを有効なユーザーとして扱う場合は、<code class="docutils literal notranslate"><span class="pre">true</span></code>を指定する。</td>
 </tr>
 </tbody>
 </table>
@@ -974,7 +966,7 @@ Spring Securityが用意しているデフォルト実装ではHTTPセッショ�
 <ul class="simple">
 <li>spring-security.xmlの定義例</li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:session-management&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:session-management&gt;</span>
     <span class="nt">&lt;sec:concurrency-control</span>
             <span class="na">max-sessions=</span><span class="s">&quot;1&quot;</span>
             <span class="na">error-if-maximum-exceeded=</span><span class="s">&quot;false&quot;</span>
@@ -998,8 +990,8 @@ Spring Securityが用意しているデフォルト実装ではHTTPセッショ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;sec:concurrency-control&gt;</span></code>要素の<code class="docutils literal"><span class="pre">error-if-maximum-exceeded</span></code>属性に、同時にログインできるセッション数を超えた時の動作を指定する。</div>
-<div class="line">新たにログインしたユーザーを有効なユーザーとして扱う場合は、<code class="docutils literal"><span class="pre">false</span></code>を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;sec:concurrency-control&gt;</span></code>要素の<code class="docutils literal notranslate"><span class="pre">error-if-maximum-exceeded</span></code>属性に、同時にログインできるセッション数を超えた時の動作を指定する。</div>
+<div class="line">新たにログインしたユーザーを有効なユーザーとして扱う場合は、<code class="docutils literal notranslate"><span class="pre">false</span></code>を指定する。</div>
 </div>
 </td>
 </tr>
@@ -1008,8 +1000,8 @@ Spring Securityが用意しているデフォルト実装ではHTTPセッショ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;sec:concurrency-control&gt;</span></code>要素の<code class="docutils literal"><span class="pre">expired-url</span></code>属性に、無効化されたユーザーからのリクエストを検知した際のリダイレクト先のパスを指定する。</div>
-<div class="line">これは<code class="docutils literal"><span class="pre">&lt;sec:http&gt;</span></code>要素の定義順番が<code class="docutils literal"><span class="pre">SecurityFilterChain</span></code>の優先順位となるためである。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;sec:concurrency-control&gt;</span></code>要素の<code class="docutils literal notranslate"><span class="pre">expired-url</span></code>属性に、無効化されたユーザーからのリクエストを検知した際のリダイレクト先のパスを指定する。</div>
+<div class="line">これは<code class="docutils literal notranslate"><span class="pre">&lt;sec:http&gt;</span></code>要素の定義順番が<code class="docutils literal notranslate"><span class="pre">SecurityFilterChain</span></code>の優先順位となるためである。</div>
 </div>
 </td>
 </tr>
@@ -1044,7 +1036,7 @@ Spring Securityが用意しているデフォルト実装ではHTTPセッショ�
     </div>
     <div class="footer">
       © Copyright 2013-2018, NTT DATA Corporation. © Copyright 2013-2018, NTT Corporation.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.3.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.1.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
     </div>
     
     <script>

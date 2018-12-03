@@ -2,23 +2,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>11.1. チュートリアル(Todoアプリケーション) &#8212; TERASOLUNA Server Framework for Java (5.x) Development Guideline 5.4.1.RELEASE documentation</title>
     <link rel="stylesheet" href="../_static/solar.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '5.4.1.RELEASE',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="11.2. チュートリアル(Todoアプリケーション REST編)" href="TutorialREST.html" />
@@ -26,8 +19,7 @@
 <!-- <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'> -->
 <link href="../_static/solarized-dark.css" rel="stylesheet">
 <link href="../_static/jquery.treeview.css" rel="stylesheet">
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -46,8 +38,7 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper"><label><input id="scroll" type="checkbox" checked> scroll sidebar</label>
-
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">11.1. チュートリアル(Todoアプリケーション)</a><ul>
 <li><a class="reference internal" href="#id2">11.1.1. はじめに</a><ul>
@@ -172,7 +163,6 @@
 </li>
 </ul>
 
-
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
                         title="previous chapter">11. チュートリアル</a></p>
@@ -188,12 +178,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -460,7 +452,7 @@
 <div class="section" id="finish-todo">
 <h4><a class="toc-backref" href="#id56">11.1.2.3.3. Finish TODO</a><a class="headerlink" href="#finish-todo" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>フォームから送信された<code class="docutils literal"><span class="pre">todoId</span></code>に対応するTODOを完了済みにする</li>
+<li>フォームから送信された<code class="docutils literal notranslate"><span class="pre">todoId</span></code>に対応するTODOを完了済みにする</li>
 <li>該当するTODOが存在しない場合はエラーコードE404でリソース未検出例外をスローする</li>
 <li><a class="reference internal" href="#app-requirement"><span class="std std-ref">アプリケーションの業務要件</span></a> のB02を満たさない場合はエラーコードE002でビジネス例外をスローする</li>
 <li>処理が成功した場合は、遷移先の画面で「Finished successfully!」を表示する</li>
@@ -469,7 +461,7 @@
 <div class="section" id="delete-todo">
 <h4><a class="toc-backref" href="#id57">11.1.2.3.4. Delete TODO</a><a class="headerlink" href="#delete-todo" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>フォームから送信された<code class="docutils literal"><span class="pre">todoId</span></code>に対応するTODOを削除する</li>
+<li>フォームから送信された<code class="docutils literal notranslate"><span class="pre">todoId</span></code>に対応するTODOを削除する</li>
 <li>該当するTODOが存在しない場合はエラーコードE404でリソース未検出例外をスローする</li>
 <li>処理が成功した場合は、遷移先の画面で「Deleted successfully!」を表示する</li>
 </ul>
@@ -517,7 +509,7 @@
 <h2><a class="toc-backref" href="#id59">11.1.3. 環境構築</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
 <p>本チュートリアルでは、インフラストラクチャ層のRepositoryImplの実装として、</p>
 <ul class="simple">
-<li>データベースを使用せず<code class="docutils literal"><span class="pre">java.util.Map</span></code>を使ったインメモリ実装のRepositoryImpl</li>
+<li>データベースを使用せず<code class="docutils literal notranslate"><span class="pre">java.util.Map</span></code>を使ったインメモリ実装のRepositoryImpl</li>
 <li>MyBatis3を使用してデータベースにアクセスするRepositoryImpl</li>
 <li>Spring Data JPAを使用してデータベースにアクセスするRepositoryImpl</li>
 </ul>
@@ -525,7 +517,7 @@
 <p>チュートリアルの進行上、まずはインメモリ実装を試し、その後MyBatis3またはSpring Data JPAを選ぶのが円滑である。</p>
 <div class="section" id="id12">
 <h3><a class="toc-backref" href="#id60">11.1.3.1. プロジェクトの作成</a><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
-<p>まず、<code class="docutils literal"><span class="pre">mvn</span> <span class="pre">archetype:generate</span></code>を利用して、実装するインフラストラクチャ層向けのブランクプロジェクトを作成する。
+<p>まず、<code class="docutils literal notranslate"><span class="pre">mvn</span> <span class="pre">archetype:generate</span></code>を利用して、実装するインフラストラクチャ層向けのブランクプロジェクトを作成する。
 ここでは、Windowsのコマンドプロンプトを使用してブランクプロジェクトを作成する手順となっている。</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -534,9 +526,9 @@
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p>Bash上で<code class="docutils literal"><span class="pre">mvn</span> <span class="pre">archetype:generate</span></code>を実行する場合は、以下のように”<code class="docutils literal"><span class="pre">^</span></code>” を”<code class="docutils literal"><span class="pre">\</span></code>” に置き換えて実行すればよい。</p>
+<p>Bash上で<code class="docutils literal notranslate"><span class="pre">mvn</span> <span class="pre">archetype:generate</span></code>を実行する場合は、以下のように”<code class="docutils literal notranslate"><span class="pre">^</span></code>” を”<code class="docutils literal notranslate"><span class="pre">\</span></code>” に置き換えて実行すればよい。</p>
 <blockquote class="last">
-<div><div class="highlight-bash"><div class="highlight"><pre><span></span>mvn archetype:generate -B<span class="se">\</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mvn archetype:generate -B<span class="se">\</span>
  -DarchetypeGroupId<span class="o">=</span>org.terasoluna.gfw.blank<span class="se">\</span>
  -DarchetypeArtifactId<span class="o">=</span>terasoluna-gfw-web-blank-archetype<span class="se">\</span>
  -DarchetypeVersion<span class="o">=</span><span class="m">5</span>.4.1.RELEASE<span class="se">\</span>
@@ -552,9 +544,9 @@
 </div>
 <div class="section" id="o-r-mapper">
 <span id="tutorialcreateplainblankproject"></span><h4><a class="toc-backref" href="#id61">11.1.3.1.1. O/R Mapperに依存しないブランクプロジェクトの作成</a><a class="headerlink" href="#o-r-mapper" title="Permalink to this headline">¶</a></h4>
-<p>データベースを使用せず<code class="docutils literal"><span class="pre">java.util.Map</span></code>を使ったインメモリ実装のRepositoryImpl用のプロジェクトを作成する場合は、
+<p>データベースを使用せず<code class="docutils literal notranslate"><span class="pre">java.util.Map</span></code>を使ったインメモリ実装のRepositoryImpl用のプロジェクトを作成する場合は、
 以下のコマンドを実行してO/R Mapperに依存しないブランクプロジェクトを作成する。<strong>本チュートリアルを順序通り読み進める場合は、まずはこの方法でプロジェクトを作成すること</strong>。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">mvn archetype:generate -B^</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mvn archetype:generate -B^</span>
 <span class="go"> -DarchetypeGroupId=org.terasoluna.gfw.blank^</span>
 <span class="go"> -DarchetypeArtifactId=terasoluna-gfw-web-blank-archetype^</span>
 <span class="go"> -DarchetypeVersion=5.4.1.RELEASE^</span>
@@ -568,7 +560,7 @@
 <span id="tutorialcreatemybatis3blankproject"></span><h4><a class="toc-backref" href="#id62">11.1.3.1.2. MyBatis3用のブランクプロジェクトの作成</a><a class="headerlink" href="#mybatis3" title="Permalink to this headline">¶</a></h4>
 <p>MyBatis3を使用してデータベースにアクセスするRepositoryImpl用のプロジェクトを作成する場合は、
 以下のコマンドを実行してMyBatis3用のブランクプロジェクトを作成する。このプロジェクト作成方法は<a class="reference internal" href="#using-mybatis3"><span class="std std-ref">MyBatis3を使用したインフラストラクチャ層の作成</span></a>で使用する。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">mvn archetype:generate -B^</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mvn archetype:generate -B^</span>
 <span class="go"> -DarchetypeGroupId=org.terasoluna.gfw.blank^</span>
 <span class="go"> -DarchetypeArtifactId=terasoluna-gfw-web-blank-mybatis3-archetype^</span>
 <span class="go"> -DarchetypeVersion=5.4.1.RELEASE^</span>
@@ -582,7 +574,7 @@
 <span id="tutorialcreatejpablankproject"></span><h4><a class="toc-backref" href="#id63">11.1.3.1.3. JPA用のブランクプロジェクトの作成</a><a class="headerlink" href="#jpa" title="Permalink to this headline">¶</a></h4>
 <p>Spring Data JPAを使用してデータベースへアクセスするRepositoryImpl用のプロジェクトを作成する場合は、
 以下のコマンドを実行してJPA用のブランクプロジェクトを作成する。このプロジェクト作成方法は<a class="reference internal" href="#using-springdatajpa"><span class="std std-ref">Spring Data JPAを使用したインフラストラクチャ層の作成</span></a>で使用する。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">mvn archetype:generate -B^</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mvn archetype:generate -B^</span>
 <span class="go"> -DarchetypeGroupId=org.terasoluna.gfw.blank^</span>
 <span class="go"> -DarchetypeArtifactId=terasoluna-gfw-web-blank-jpa-archetype^</span>
 <span class="go"> -DarchetypeVersion=5.4.1.RELEASE^</span>
@@ -606,7 +598,7 @@
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>Root Directoryに <code class="docutils literal"><span class="pre">C:\work\todo</span></code>を設定し、Projectsにtodoのpom.xmlが選択された状態で、 [Finish] を押下する。</p>
+<p>Root Directoryに <code class="docutils literal notranslate"><span class="pre">C:\work\todo</span></code>を設定し、Projectsにtodoのpom.xmlが選択された状態で、 [Finish] を押下する。</p>
 <div class="figure">
 <a class="reference internal image-reference" href="../_images/NewMVCProjectCreate1.png"><img alt="New MVC Project Import" src="../_images/NewMVCProjectCreate1.png" style="width: 60%;" /></a>
 </div>
@@ -649,7 +641,7 @@
 この設定は簡易的なアプリケーションを簡単に作成するためのものであり、実際のアプリケーション開発で使用されることは想定していない。</p>
 <p>以下の定義は、実際のアプリケーション開発を行う際は削除すること。</p>
 <blockquote class="last">
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>com.h2database<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>h2<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;scope&gt;</span>runtime<span class="nt">&lt;/scope&gt;</span>
@@ -681,7 +673,7 @@
 <div class="line"><br /></div>
 </div>
 <p><strong>[O/R Mapperに依存しないブランクプロジェクト、JPA用のブランクプロジェクト用を作成した場合の構成]</strong></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">src</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">src</span>
 <span class="go">  └main</span>
 <span class="go">      ├java</span>
 <span class="go">      │  └todo</span>
@@ -766,7 +758,7 @@
 <div class="line"><br /></div>
 </div>
 <p><strong>[MyBatis3用のブランクプロジェクトを作成した場合の構成]</strong></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">src</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">src</span>
 <span class="go">  └main</span>
 <span class="go">      ├java</span>
 <span class="go">      │  └todo</span>
@@ -842,9 +834,9 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <p>Todoアプリケーションの開発を始める前に、プロジェクトの動作確認を行う。</p>
 <p>ブランクプロジェクトでは、トップページを表示するためのControllerとJSPの実装が用意されているため、
 トップページを表示する事で動作確認を行う事ができる。</p>
-<p>ブランクプロジェクトから提供されているController(<code class="file docutils literal"><span class="pre">src/main/java/todo/app/welcome/HelloController.java</span></code>)は、
+<p>ブランクプロジェクトから提供されているController(<code class="file docutils literal notranslate"><span class="pre">src/main/java/todo/app/welcome/HelloController.java</span></code>)は、
 以下のような実装となっている。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.app.welcome</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.app.welcome</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.text.DateFormat</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
@@ -909,7 +901,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Controllerとしてcomponent-scanの対象とするため、クラスレベルに<code class="docutils literal"><span class="pre">&#64;Controller</span></code>アノテーションが付与している。</div>
+<div class="line">Controllerとしてcomponent-scanの対象とするため、クラスレベルに<code class="docutils literal notranslate"><span class="pre">&#64;Controller</span></code>アノテーションが付与している。</div>
 </div>
 </td>
 </tr>
@@ -919,7 +911,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </td>
 <td><div class="first last line-block">
 <div class="line">(4)でログ出力するためのロガーを生成している。</div>
-<div class="line">ロガーの実装はlogbackのものであるが、APIはSLF4Jの<code class="docutils literal"><span class="pre">org.slf4j.Logger</span></code>を使用している。</div>
+<div class="line">ロガーの実装はlogbackのものであるが、APIはSLF4Jの<code class="docutils literal notranslate"><span class="pre">org.slf4j.Logger</span></code>を使用している。</div>
 </div>
 </td>
 </tr>
@@ -928,7 +920,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;RequestMapping</span></code> アノテーションを使用して、”<code class="docutils literal"><span class="pre">/</span></code>” (ルート)へのアクセスに対するメソッドとしてマッピングを行っている。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;RequestMapping</span></code> アノテーションを使用して、”<code class="docutils literal notranslate"><span class="pre">/</span></code>” (ルート)へのアクセスに対するメソッドとしてマッピングを行っている。</div>
 </div>
 </td>
 </tr>
@@ -946,7 +938,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">画面に表示するための日付文字列を、<code class="docutils literal"><span class="pre">serverTime</span></code>という属性名でModelに設定している。</div>
+<div class="line">画面に表示するための日付文字列を、<code class="docutils literal notranslate"><span class="pre">serverTime</span></code>という属性名でModelに設定している。</div>
 </div>
 </td>
 </tr>
@@ -955,7 +947,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">view名として<code class="docutils literal"><span class="pre">welcome/home</span></code>を返す。<code class="docutils literal"><span class="pre">ViewResolver</span></code>の設定により、<code class="docutils literal"><span class="pre">WEB-INF/views/welcome/home.jsp</span></code>が呼び出される。</div>
+<div class="line">view名として<code class="docutils literal notranslate"><span class="pre">welcome/home</span></code>を返す。<code class="docutils literal notranslate"><span class="pre">ViewResolver</span></code>の設定により、<code class="docutils literal notranslate"><span class="pre">WEB-INF/views/welcome/home.jsp</span></code>が呼び出される。</div>
 </div>
 </td>
 </tr>
@@ -964,9 +956,9 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>ブランクプロジェクトから提供されているJSP(<code class="file docutils literal"><span class="pre">src/main/webapp/WEB-INF/views/welcome/home.jsp</span></code>)は、
+<p>ブランクプロジェクトから提供されているJSP(<code class="file docutils literal notranslate"><span class="pre">src/main/webapp/WEB-INF/views/welcome/home.jsp</span></code>)は、
 以下のような実装となっている。</p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
@@ -999,8 +991,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">ControllerでModelに設定した<code class="docutils literal"><span class="pre">serverTime</span></code>を表示する。</div>
-<div class="line">ここでは、XSS対策を行っていないが、ユーザの入力値を表示する場合は、<code class="docutils literal"><span class="pre">f:h()</span></code>関数を用いて、必ずXSS対策を行うこと。</div>
+<div class="line">ControllerでModelに設定した<code class="docutils literal notranslate"><span class="pre">serverTime</span></code>を表示する。</div>
+<div class="line">ここでは、XSS対策を行っていないが、ユーザの入力値を表示する場合は、<code class="docutils literal notranslate"><span class="pre">f:h()</span></code>関数を用いて、必ずXSS対策を行うこと。</div>
 </div>
 </td>
 </tr>
@@ -1031,8 +1023,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <div class="line"><br /></div>
 </div>
 <p>起動すると以下のようなログが出力される。
-<code class="docutils literal"><span class="pre">/</span></code>というパスに対して<code class="docutils literal"><span class="pre">todo.app.welcome.HelloController</span></code>のhelloメソッドがマッピングされていることが分かる。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go"> date:2016-02-17 11:25:30    thread:localhost-startStop-1    X-Track:        level:INFO      logger:o.springframework.web.servlet.DispatcherServlet  message:FrameworkServlet &#39;appServlet&#39;: initialization started</span>
+<code class="docutils literal notranslate"><span class="pre">/</span></code>というパスに対して<code class="docutils literal notranslate"><span class="pre">todo.app.welcome.HelloController</span></code>のhelloメソッドがマッピングされていることが分かる。</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go"> date:2016-02-17 11:25:30    thread:localhost-startStop-1    X-Track:        level:INFO      logger:o.springframework.web.servlet.DispatcherServlet  message:FrameworkServlet &#39;appServlet&#39;: initialization started</span>
 <span class="go"> date:2016-02-17 11:25:31    thread:localhost-startStop-1    X-Track:        level:DEBUG     logger:o.t.gfw.web.codelist.CodeListInterceptor         message:registered codeList : []</span>
 <span class="hll"><span class="go"> date:2016-02-17 11:25:31    thread:localhost-startStop-1    X-Track:        level:INFO      logger:o.s.w.s.m.m.a.RequestMappingHandlerMapping       message:Mapped &quot;{[/],methods=[GET || POST],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public java.lang.String todo.app.welcome.HelloController.home(java.util.Locale,org.springframework.ui.Model)</span>
 </span><span class="go"> date:2016-02-17 11:25:31    thread:localhost-startStop-1    X-Track:        level:INFO      logger:o.s.w.s.m.m.a.RequestMappingHandlerAdapter       message:Looking for @ControllerAdvice: WebApplicationContext for namespace &#39;appServlet-servlet&#39;: startup date [Wed Feb 17 11:25:30 JST 2016]; parent: Root WebApplicationContext</span>
@@ -1051,11 +1043,11 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 <p>コンソールを見ると、</p>
 <ul class="simple">
-<li>共通ライブラリから提供している<code class="docutils literal"><span class="pre">TraceLoggingInterceptor</span></code>のTRACEログ</li>
+<li>共通ライブラリから提供している<code class="docutils literal notranslate"><span class="pre">TraceLoggingInterceptor</span></code>のTRACEログ</li>
 <li>Controllerで実装したINFOログ</li>
 </ul>
 <p>が出力されていることがわかる。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="hll"><span class="go"> date:2016-02-17 11:25:35    thread:tomcat-http--11  X-Track:b49b630274974bffbcd9e8d13261f6a7        level:TRACE     logger:o.t.gfw.web.logging.TraceLoggingInterceptor      message:[START CONTROLLER] HelloController.home(Locale,Model)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="go"> date:2016-02-17 11:25:35    thread:tomcat-http--11  X-Track:b49b630274974bffbcd9e8d13261f6a7        level:TRACE     logger:o.t.gfw.web.logging.TraceLoggingInterceptor      message:[START CONTROLLER] HelloController.home(Locale,Model)</span>
 </span><span class="hll"><span class="go"> date:2016-02-17 11:25:35    thread:tomcat-http--11  X-Track:b49b630274974bffbcd9e8d13261f6a7        level:INFO      logger:todo.app.welcome.HelloController                         message:Welcome home! The client locale is ja_JP.</span>
 </span><span class="hll"><span class="go"> date:2016-02-17 11:25:35    thread:tomcat-http--11  X-Track:b49b630274974bffbcd9e8d13261f6a7        level:TRACE     logger:o.t.gfw.web.logging.TraceLoggingInterceptor      message:[END CONTROLLER  ] HelloController.home(Locale,Model)-&gt; view=welcome/home, model={serverTime=2016/02/17 11:25:35 JST}</span>
 </span><span class="hll"><span class="go"> date:2016-02-17 11:25:35    thread:tomcat-http--11  X-Track:b49b630274974bffbcd9e8d13261f6a7        level:TRACE     logger:o.t.gfw.web.logging.TraceLoggingInterceptor      message:[HANDLING TIME   ] HelloController.home(Locale,Model)-&gt; 97,346,576 ns</span>
@@ -1063,7 +1055,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal"><span class="pre">TraceLoggingInterceptor</span></code>はControllerの開始、終了でログを出力する。終了時には<code class="docutils literal"><span class="pre">View</span></code>と<code class="docutils literal"><span class="pre">Model</span></code>の情報および処理時間が出力される。</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">TraceLoggingInterceptor</span></code>はControllerの開始、終了でログを出力する。終了時には<code class="docutils literal notranslate"><span class="pre">View</span></code>と<code class="docutils literal notranslate"><span class="pre">Model</span></code>の情報および処理時間が出力される。</p>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -1100,7 +1092,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <div class="line"><br /></div>
 </div>
 <p>RepositoryImplの作成は、選択したインフラストラクチャ層の種類に応じて実装方法が異なる。</p>
-<p>ここでは、データベースを使用せず<code class="docutils literal"><span class="pre">java.util.Map</span></code>を使ったインメモリ実装のRepositoryImplを作成する方法について説明を行う。
+<p>ここでは、データベースを使用せず<code class="docutils literal notranslate"><span class="pre">java.util.Map</span></code>を使ったインメモリ実装のRepositoryImplを作成する方法について説明を行う。
 データベースを使用する場合は、「<a class="reference internal" href="#tutorial-todo-infra"><span class="std std-ref">データベースアクセスを伴うインフラストラクチャ層の作成</span></a>」に記載されている内容で読み替えて、Todoアプリケーションを作成して頂きたい。</p>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -1127,15 +1119,15 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <tbody valign="top">
 <tr class="row-even"><td>1</td>
 <td>Package</td>
-<td><code class="docutils literal"><span class="pre">todo.domain.model</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">todo.domain.model</span></code></td>
 </tr>
 <tr class="row-odd"><td>2</td>
 <td>Name</td>
-<td><code class="docutils literal"><span class="pre">Todo</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">Todo</span></code></td>
 </tr>
 <tr class="row-even"><td>3</td>
 <td>Interfaces</td>
-<td><code class="docutils literal"><span class="pre">java.io.Serializable</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">java.io.Serializable</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -1158,7 +1150,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <li>完了フラグ → finished</li>
 <li>作成日 → createdAt</li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.domain.model</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.domain.model</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.Serializable</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
@@ -1231,7 +1223,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 <div class="section" id="repository">
 <span id="tutorialtodocreaterepository"></span><h4><a class="toc-backref" href="#id71">11.1.4.1.2. Repositoryの作成</a><a class="headerlink" href="#repository" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">TodoRepository</span></code>インタフェースを作成する。
+<p><code class="docutils literal notranslate"><span class="pre">TodoRepository</span></code>インタフェースを作成する。
 データベースを使用する場合は、「<a class="reference internal" href="#tutorial-todo-infra"><span class="std std-ref">データベースアクセスを伴うインフラストラクチャ層の作成</span></a>」に記載されている内容で読み替えて、Repositoryを作成する。</p>
 <p>Package Explorer上で右クリック -&gt; New -&gt; Interface を選択し、「New Java Interface」ダイアログを表示し、</p>
 <blockquote>
@@ -1250,11 +1242,11 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <tbody valign="top">
 <tr class="row-even"><td>1</td>
 <td>Package</td>
-<td><code class="docutils literal"><span class="pre">todo.domain.repository.todo</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">todo.domain.repository.todo</span></code></td>
 </tr>
 <tr class="row-odd"><td>2</td>
 <td>Name</td>
-<td><code class="docutils literal"><span class="pre">TodoRepository</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">TodoRepository</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -1273,7 +1265,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <li>TODOの1件削除 → delete</li>
 <li>完了済みTODO件数の取得 → countByFinished</li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.domain.repository.todo</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.domain.repository.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.Collection</span><span class="o">;</span>
 
@@ -1296,10 +1288,10 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>ここでは、<code class="docutils literal"><span class="pre">TodoRepository</span></code>の汎用性を上げるため、「完了済み件数を取得する」メソッド(<code class="docutils literal"><span class="pre">long</span> <span class="pre">countFinished()</span></code>)ではなく、
-「完了状態がxxである件数を取得する」メソッド(<code class="docutils literal"><span class="pre">long</span> <span class="pre">countByFinished(boolean)</span></code>)として定義している。</p>
-<p class="last"><code class="docutils literal"><span class="pre">long</span> <span class="pre">countByFinished(boolean)</span></code>の引数として<code class="docutils literal"><span class="pre">true</span></code>を渡すと「完了済みの件数」、
-<code class="docutils literal"><span class="pre">false</span></code>を渡すと「未完了の件数」が取得できる仕様としている。</p>
+<p>ここでは、<code class="docutils literal notranslate"><span class="pre">TodoRepository</span></code>の汎用性を上げるため、「完了済み件数を取得する」メソッド(<code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">countFinished()</span></code>)ではなく、
+「完了状態がxxである件数を取得する」メソッド(<code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">countByFinished(boolean)</span></code>)として定義している。</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">countByFinished(boolean)</span></code>の引数として<code class="docutils literal notranslate"><span class="pre">true</span></code>を渡すと「完了済みの件数」、
+<code class="docutils literal notranslate"><span class="pre">false</span></code>を渡すと「未完了の件数」が取得できる仕様としている。</p>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -1307,7 +1299,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 <div class="section" id="repositoryimpl">
 <h4><a class="toc-backref" href="#id72">11.1.4.1.3. RepositoryImplの作成(インフラストラクチャ層)</a><a class="headerlink" href="#repositoryimpl" title="Permalink to this headline">¶</a></h4>
-<p>ここでは、説明を単純化するため、<code class="docutils literal"><span class="pre">java.util.Map</span></code>を使ったインメモリ実装のRepositoryImplを作成する。
+<p>ここでは、説明を単純化するため、<code class="docutils literal notranslate"><span class="pre">java.util.Map</span></code>を使ったインメモリ実装のRepositoryImplを作成する。
 データベースを使用する場合は、「<a class="reference internal" href="#tutorial-todo-infra"><span class="std std-ref">データベースアクセスを伴うインフラストラクチャ層の作成</span></a>」に記載されている内容で読み替えて、RepositoryImplを作成する。</p>
 <p>Package Explorer上で右クリック -&gt; New -&gt; Class を選択し、「New Java Class」ダイアログを表示し、</p>
 <blockquote>
@@ -1326,15 +1318,15 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <tbody valign="top">
 <tr class="row-even"><td>1</td>
 <td>Package</td>
-<td><code class="docutils literal"><span class="pre">todo.domain.repository.todo</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">todo.domain.repository.todo</span></code></td>
 </tr>
 <tr class="row-odd"><td>2</td>
 <td>Name</td>
-<td><code class="docutils literal"><span class="pre">TodoRepositoryImpl</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">TodoRepositoryImpl</span></code></td>
 </tr>
 <tr class="row-even"><td>3</td>
 <td>Interfaces</td>
-<td><code class="docutils literal"><span class="pre">todo.domain.repository.todo.TodoRepository</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">todo.domain.repository.todo.TodoRepository</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -1349,7 +1341,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <p class="first admonition-title">Note</p>
 <p class="last">RepositoryImplには、業務ロジックは含めず、Domainオブジェクトの保存先への出し入れ(CRUD操作)に終始することが実装ポイントである。</p>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.domain.repository.todo</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.domain.repository.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.Collection</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
@@ -1418,7 +1410,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Repositoryとしてcomponent-scan対象とするため、クラスレベルに<code class="docutils literal"><span class="pre">&#64;Repository</span></code>アノテーションをつける。</div>
+<div class="line">Repositoryとしてcomponent-scan対象とするため、クラスレベルに<code class="docutils literal notranslate"><span class="pre">&#64;Repository</span></code>アノテーションをつける。</div>
 </div>
 </td>
 </tr>
@@ -1426,8 +1418,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>本チュートリアルでは、インフラストラクチャ層に属するクラス(RepositoryImpl)をドメイン層のパッケージ(<code class="docutils literal"><span class="pre">todo.domain</span></code>)に格納しているが、
-完全に層別にパッケージを分けるのであれば、インフラストラクチャ層のクラスは、<code class="docutils literal"><span class="pre">todo.infra</span></code>以下に作成した方が良い。</p>
+<p>本チュートリアルでは、インフラストラクチャ層に属するクラス(RepositoryImpl)をドメイン層のパッケージ(<code class="docutils literal notranslate"><span class="pre">todo.domain</span></code>)に格納しているが、
+完全に層別にパッケージを分けるのであれば、インフラストラクチャ層のクラスは、<code class="docutils literal notranslate"><span class="pre">todo.infra</span></code>以下に作成した方が良い。</p>
 <p class="last">ただし、通常のプロジェクトでは、インフラストラクチャ層が変更されることを前提としていない(そのような前提で進めるプロジェクトは、少ない)。
 そこで、作業効率向上のために、ドメイン層のRepositoryインタフェースと同じ階層に、RepositoryImplを作成しても良い。</p>
 </div>
@@ -1437,7 +1429,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 <div class="section" id="service">
 <h4><a class="toc-backref" href="#id73">11.1.4.1.4. Serviceの作成</a><a class="headerlink" href="#service" title="Permalink to this headline">¶</a></h4>
-<p>まず、<code class="docutils literal"><span class="pre">TodoService</span></code>インタフェースを作成する。</p>
+<p>まず、<code class="docutils literal notranslate"><span class="pre">TodoService</span></code>インタフェースを作成する。</p>
 <p>Package Explorer上で右クリック -&gt; New -&gt; Interface を選択し、「New Java Interface」ダイアログを表示し、</p>
 <blockquote>
 <div><table border="1" class="colwidths-given docutils">
@@ -1455,11 +1447,11 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <tbody valign="top">
 <tr class="row-even"><td>1</td>
 <td>Package</td>
-<td><code class="docutils literal"><span class="pre">todo.domain.service.todo</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">todo.domain.service.todo</span></code></td>
 </tr>
 <tr class="row-odd"><td>2</td>
 <td>Name</td>
-<td><code class="docutils literal"><span class="pre">TodoService</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">TodoService</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -1476,7 +1468,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <li>Todoの完了 → finish</li>
 <li>Todoの削除 → delete</li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.domain.service.todo</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.domain.service.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.Collection</span><span class="o">;</span>
 
@@ -1496,7 +1488,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>次に、<code class="docutils literal"><span class="pre">TodoService</span></code>インタフェースに定義したメソッドを実装する<code class="docutils literal"><span class="pre">TodoServiceImpl</span></code>クラスを作成する。</p>
+<p>次に、<code class="docutils literal notranslate"><span class="pre">TodoService</span></code>インタフェースに定義したメソッドを実装する<code class="docutils literal notranslate"><span class="pre">TodoServiceImpl</span></code>クラスを作成する。</p>
 <p>Package Explorer上で右クリック -&gt; New -&gt; Class を選択し、「New Java Class」ダイアログを表示し、</p>
 <blockquote>
 <div><table border="1" class="colwidths-given docutils">
@@ -1514,15 +1506,15 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <tbody valign="top">
 <tr class="row-even"><td>1</td>
 <td>Package</td>
-<td><code class="docutils literal"><span class="pre">todo.domain.service.todo</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">todo.domain.service.todo</span></code></td>
 </tr>
 <tr class="row-odd"><td>2</td>
 <td>Name</td>
-<td><code class="docutils literal"><span class="pre">TodoServiceImpl</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">TodoServiceImpl</span></code></td>
 </tr>
 <tr class="row-even"><td>3</td>
 <td>Interfaces</td>
-<td><code class="docutils literal"><span class="pre">todo.domain.service.todo.TodoService</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">todo.domain.service.todo.TodoService</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -1532,7 +1524,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <div class="figure">
 <img alt="../_images/image064.png" src="../_images/image064.png" />
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.domain.service.todo</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.domain.service.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.Collection</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
@@ -1650,7 +1642,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Serviceとしてcomponent-scanの対象とするため、クラスレベルに<code class="docutils literal"><span class="pre">&#64;Service</span></code>アノテーションをつける。</div>
+<div class="line">Serviceとしてcomponent-scanの対象とするため、クラスレベルに<code class="docutils literal notranslate"><span class="pre">&#64;Service</span></code>アノテーションをつける。</div>
 </div>
 </td>
 </tr>
@@ -1659,11 +1651,11 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">クラスレベルに、<code class="docutils literal"><span class="pre">&#64;Transactional</span></code>アノテーションをつけることで、公開メソッドをすべてトランザクション管理する。</div>
+<div class="line">クラスレベルに、<code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>アノテーションをつけることで、公開メソッドをすべてトランザクション管理する。</div>
 <div class="line">アノテーションを付与することで、メソッド開始時にトランザクションを開始、メソッド正常終了時にトランザクションのコミットが行われる。</div>
 <div class="line">また、途中で非検査例外が発生した場合は、トランザクションがロールバックされる。</div>
 <div class="line"><br /></div>
-<div class="line">データベースを使用しない場合は、<code class="docutils literal"><span class="pre">&#64;Transactional</span></code>アノテーションは不要である。</div>
+<div class="line">データベースを使用しない場合は、<code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>アノテーションは不要である。</div>
 </div>
 </td>
 </tr>
@@ -1672,7 +1664,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;Inject</span></code>アノテーションで、<code class="docutils literal"><span class="pre">TodoRepository</span></code>の実装をインジェクションする。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;Inject</span></code>アノテーションで、<code class="docutils literal notranslate"><span class="pre">TodoRepository</span></code>の実装をインジェクションする。</div>
 </div>
 </td>
 </tr>
@@ -1681,7 +1673,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">1件取得は、<code class="docutils literal"><span class="pre">finish</span></code>メソッドでも<code class="docutils literal"><span class="pre">delete</span></code>メソッドでも使用するため、メソッドとして用意しておく(interfaceに公開しても良い)。</div>
+<div class="line">1件取得は、<code class="docutils literal notranslate"><span class="pre">finish</span></code>メソッドでも<code class="docutils literal notranslate"><span class="pre">delete</span></code>メソッドでも使用するため、メソッドとして用意しておく(interfaceに公開しても良い)。</div>
 </div>
 </td>
 </tr>
@@ -1690,8 +1682,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">結果メッセージを格納するクラスとして、共通ライブラリで用意されている<code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.message.ResultMessage</span></code>を用いる。</div>
-<div class="line">今回は、エラーメッセージを例外に追加する際に、<code class="docutils literal"><span class="pre">ResultMessages.error()</span></code>でメッセージ種別を指定して、<code class="docutils literal"><span class="pre">ResultMessage</span></code>を追加している。</div>
+<div class="line">結果メッセージを格納するクラスとして、共通ライブラリで用意されている<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.message.ResultMessage</span></code>を用いる。</div>
+<div class="line">今回は、エラーメッセージを例外に追加する際に、<code class="docutils literal notranslate"><span class="pre">ResultMessages.error()</span></code>でメッセージ種別を指定して、<code class="docutils literal notranslate"><span class="pre">ResultMessage</span></code>を追加している。</div>
 </div>
 </td>
 </tr>
@@ -1700,7 +1692,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">対象のデータが存在しない場合、共通ライブラリで用意されている<code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.exception.ResourceNotFoundException</span></code>をスローする。</div>
+<div class="line">対象のデータが存在しない場合、共通ライブラリで用意されている<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.exception.ResourceNotFoundException</span></code>をスローする。</div>
 </div>
 </td>
 </tr>
@@ -1709,10 +1701,10 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">参照のみ行う処理に関しては、<code class="docutils literal"><span class="pre">readOnly=true</span></code>をつける。</div>
+<div class="line">参照のみ行う処理に関しては、<code class="docutils literal notranslate"><span class="pre">readOnly=true</span></code>をつける。</div>
 <div class="line">O/R Mapperによっては、この設定により、参照時のトランザクション制御の最適化が行われる(JPAを使用する場合、効果はない)。</div>
 <div class="line"><br /></div>
-<div class="line">データベースを使用しない場合は、<code class="docutils literal"><span class="pre">&#64;Transactional</span></code>アノテーションは不要である。</div>
+<div class="line">データベースを使用しない場合は、<code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>アノテーションは不要である。</div>
 </div>
 </td>
 </tr>
@@ -1721,7 +1713,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">業務エラーが発生した場合、共通ライブラリで用意されている<code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.exception.BusinessException</span></code>をスローする。</div>
+<div class="line">業務エラーが発生した場合、共通ライブラリで用意されている<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.exception.BusinessException</span></code>をスローする。</div>
 </div>
 </td>
 </tr>
@@ -1739,7 +1731,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Spring Data JPAを使用してデータベースにアクセスする場合は、<code class="docutils literal"><span class="pre">create</span></code>メソッドではなく、<code class="docutils literal"><span class="pre">save</span></code>メソッドを呼び出す。</div>
+<div class="line">Spring Data JPAを使用してデータベースにアクセスする場合は、<code class="docutils literal notranslate"><span class="pre">create</span></code>メソッドではなく、<code class="docutils literal notranslate"><span class="pre">save</span></code>メソッドを呼び出す。</div>
 </div>
 </td>
 </tr>
@@ -1748,7 +1740,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Spring Data JPAを使用してデータベースにアクセスする場合は、<code class="docutils literal"><span class="pre">update</span></code>メソッドではなく、<code class="docutils literal"><span class="pre">save</span></code>メソッドを呼び出す。</div>
+<div class="line">Spring Data JPAを使用してデータベースにアクセスする場合は、<code class="docutils literal notranslate"><span class="pre">update</span></code>メソッドではなく、<code class="docutils literal notranslate"><span class="pre">save</span></code>メソッドを呼び出す。</div>
 </div>
 </td>
 </tr>
@@ -1799,11 +1791,11 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <tbody valign="top">
 <tr class="row-even"><td>1</td>
 <td>Package</td>
-<td><code class="docutils literal"><span class="pre">todo.app.todo</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">todo.app.todo</span></code></td>
 </tr>
 <tr class="row-odd"><td>2</td>
 <td>Name</td>
-<td><code class="docutils literal"><span class="pre">TodoController</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">TodoController</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -1817,7 +1809,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <div class="figure">
 <img alt="../_images/image065.png" src="../_images/image065.png" />
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.app.todo</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.app.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">org.springframework.stereotype.Controller</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestMapping</span><span class="o">;</span>
@@ -1845,7 +1837,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Controllerとしてcomponent-scanの対象とするため、クラスレベルに、<code class="docutils literal"><span class="pre">&#64;Controller</span></code>アノテーションをつける。</div>
+<div class="line">Controllerとしてcomponent-scanの対象とするため、クラスレベルに、<code class="docutils literal notranslate"><span class="pre">&#64;Controller</span></code>アノテーションをつける。</div>
 </div>
 </td>
 </tr>
@@ -1854,7 +1846,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">TodoController</span></code>が扱う画面遷移のパスを、すべて<code class="docutils literal"><span class="pre">&lt;contextPath&gt;/todo</span></code>配下にするため、クラスレベルに<code class="docutils literal"><span class="pre">&#64;RequestMapping(“todo”)</span></code>を設定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">TodoController</span></code>が扱う画面遷移のパスを、すべて<code class="docutils literal notranslate"><span class="pre">&lt;contextPath&gt;/todo</span></code>配下にするため、クラスレベルに<code class="docutils literal notranslate"><span class="pre">&#64;RequestMapping(“todo”)</span></code>を設定する。</div>
 </div>
 </td>
 </tr>
@@ -1892,15 +1884,15 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <tbody valign="top">
 <tr class="row-even"><td>1</td>
 <td>Package</td>
-<td><code class="docutils literal"><span class="pre">todo.app.todo</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">todo.app.todo</span></code></td>
 </tr>
 <tr class="row-odd"><td>2</td>
 <td>Name</td>
-<td><code class="docutils literal"><span class="pre">TodoForm</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">TodoForm</span></code></td>
 </tr>
 <tr class="row-even"><td>3</td>
 <td>Interfaces</td>
-<td><code class="docutils literal"><span class="pre">java.io.Serializable</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">java.io.Serializable</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -1914,7 +1906,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <ul class="simple">
 <li>タイトル → todoTitle</li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.app.todo</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.app.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.Serializable</span><span class="o">;</span>
 
@@ -1937,8 +1929,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 <div class="section" id="id21">
 <h5>11.1.4.2.2.2. Controllerの実装<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h5>
-<p>一覧画面表示処理を<code class="docutils literal"><span class="pre">TodoController</span></code>に追加する。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.app.todo</span><span class="o">;</span>
+<p>一覧画面表示処理を<code class="docutils literal notranslate"><span class="pre">TodoController</span></code>に追加する。</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.app.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.Collection</span><span class="o">;</span>
 
@@ -1989,9 +1981,9 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">TodoService</span></code>を、DIコンテナによってインジェクションさせるために、<code class="docutils literal"><span class="pre">&#64;Inject</span></code>アノテーションをつける。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">TodoService</span></code>を、DIコンテナによってインジェクションさせるために、<code class="docutils literal notranslate"><span class="pre">&#64;Inject</span></code>アノテーションをつける。</div>
 <div class="line"><br /></div>
-<div class="line">DIコンテナの管理する<code class="docutils literal"><span class="pre">TodoService</span></code>型のインスタンス(<code class="docutils literal"><span class="pre">TodoServiceImpl</span></code>のインスタンス)がインジェクションされる。</div>
+<div class="line">DIコンテナの管理する<code class="docutils literal notranslate"><span class="pre">TodoService</span></code>型のインスタンス(<code class="docutils literal notranslate"><span class="pre">TodoServiceImpl</span></code>のインスタンス)がインジェクションされる。</div>
 </div>
 </td>
 </tr>
@@ -2002,8 +1994,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <td><div class="first last line-block">
 <div class="line">Formを初期化する。</div>
 <div class="line"><br /></div>
-<div class="line"><code class="docutils literal"><span class="pre">&#64;ModelAttribute</span></code>アノテーションをつけることで、このメソッドの返り値のformオブジェクトが、<code class="docutils literal"><span class="pre">todoForm</span></code>という名前で<code class="docutils literal"><span class="pre">Model</span></code>に追加される。</div>
-<div class="line">これは、<code class="docutils literal"><span class="pre">TodoController</span></code>の各処理で、<code class="docutils literal"><span class="pre">model.addAttribute(&quot;todoForm&quot;,</span> <span class="pre">form)</span></code>を実装するのと同義である。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;ModelAttribute</span></code>アノテーションをつけることで、このメソッドの返り値のformオブジェクトが、<code class="docutils literal notranslate"><span class="pre">todoForm</span></code>という名前で<code class="docutils literal notranslate"><span class="pre">Model</span></code>に追加される。</div>
+<div class="line">これは、<code class="docutils literal notranslate"><span class="pre">TodoController</span></code>の各処理で、<code class="docutils literal notranslate"><span class="pre">model.addAttribute(&quot;todoForm&quot;,</span> <span class="pre">form)</span></code>を実装するのと同義である。</div>
 </div>
 </td>
 </tr>
@@ -2012,9 +2004,9 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">/todo/list</span></code>というパスにリクエストされた際に、一覧画面表示処理用のメソッド(<code class="docutils literal"><span class="pre">list</span></code>メソッド)が実行されるように<code class="docutils literal"><span class="pre">&#64;RequestMapping</span></code>アノテーションを設定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/todo/list</span></code>というパスにリクエストされた際に、一覧画面表示処理用のメソッド(<code class="docutils literal notranslate"><span class="pre">list</span></code>メソッド)が実行されるように<code class="docutils literal notranslate"><span class="pre">&#64;RequestMapping</span></code>アノテーションを設定する。</div>
 <div class="line"><br /></div>
-<div class="line">クラスレベルに<code class="docutils literal"><span class="pre">&#64;RequestMapping(“todo”)</span></code>が設定されているため、ここでは<code class="docutils literal"><span class="pre">&#64;RequestMapping(&quot;list&quot;)</span></code>のみで良い。</div>
+<div class="line">クラスレベルに<code class="docutils literal notranslate"><span class="pre">&#64;RequestMapping(“todo”)</span></code>が設定されているため、ここでは<code class="docutils literal notranslate"><span class="pre">&#64;RequestMapping(&quot;list&quot;)</span></code>のみで良い。</div>
 </div>
 </td>
 </tr>
@@ -2023,7 +2015,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">Model</span></code>にTodoのリストを追加して、Viewに渡す。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Model</span></code>にTodoのリストを追加して、Viewに渡す。</div>
 </div>
 </td>
 </tr>
@@ -2032,7 +2024,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">View名として<code class="docutils literal"><span class="pre">todo/list</span></code>を返すと、spring-mvc.xmlに定義した<code class="docutils literal"><span class="pre">ViewResolver</span></code>によって、<code class="file docutils literal"><span class="pre">WEB-INF/views/todo/list.jsp</span></code>がレンダリングされることになる。</div>
+<div class="line">View名として<code class="docutils literal notranslate"><span class="pre">todo/list</span></code>を返すと、spring-mvc.xmlに定義した<code class="docutils literal notranslate"><span class="pre">ViewResolver</span></code>によって、<code class="file docutils literal notranslate"><span class="pre">WEB-INF/views/todo/list.jsp</span></code>がレンダリングされることになる。</div>
 </div>
 </td>
 </tr>
@@ -2059,11 +2051,11 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <tbody valign="top">
 <tr class="row-even"><td>1</td>
 <td>Enter or select the parent folder</td>
-<td><code class="docutils literal"><span class="pre">todo/src/main/webapp/WEB-INF/views/todo</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">todo/src/main/webapp/WEB-INF/views/todo</span></code></td>
 </tr>
 <tr class="row-odd"><td>2</td>
 <td>File name</td>
-<td><code class="docutils literal"><span class="pre">list.jsp</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">list.jsp</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -2079,7 +2071,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <li>「Create Todo」ボタン</li>
 <li>TODOの一覧表示エリア</li>
 </ul>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span><span class="nt">&gt;</span>
@@ -2142,12 +2134,12 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </td>
 <td><div class="first last line-block">
 <div class="line">新規作成処理用のformを表示する。</div>
-<div class="line">formを表示するために、<code class="docutils literal"><span class="pre">&lt;form:form&gt;</span></code>タグを使用する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">modelAttribute</span></code>属性には、Controllerで<code class="docutils literal"><span class="pre">Model</span></code>に追加したFormの名前を指定する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">action</span></code>属性には新規作成処理を実行するためのURL(<code class="docutils literal"><span class="pre">&lt;contextPath&gt;/todo/create</span></code>)を指定する。</div>
-<div class="line">新規作成処理は更新系の処理なので、<code class="docutils literal"><span class="pre">method</span></code>属性には<code class="docutils literal"><span class="pre">POST</span></code>メソッドを指定する。</div>
+<div class="line">formを表示するために、<code class="docutils literal notranslate"><span class="pre">&lt;form:form&gt;</span></code>タグを使用する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">modelAttribute</span></code>属性には、Controllerで<code class="docutils literal notranslate"><span class="pre">Model</span></code>に追加したFormの名前を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">action</span></code>属性には新規作成処理を実行するためのURL(<code class="docutils literal notranslate"><span class="pre">&lt;contextPath&gt;/todo/create</span></code>)を指定する。</div>
+<div class="line">新規作成処理は更新系の処理なので、<code class="docutils literal notranslate"><span class="pre">method</span></code>属性には<code class="docutils literal notranslate"><span class="pre">POST</span></code>メソッドを指定する。</div>
 <div class="line"><br /></div>
-<div class="line"><code class="docutils literal"><span class="pre">action</span></code>属性に指定する&lt;contextPath&gt;は、<code class="docutils literal"><span class="pre">${pageContext.request.contextPath}</span></code>で取得することができる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">action</span></code>属性に指定する&lt;contextPath&gt;は、<code class="docutils literal notranslate"><span class="pre">${pageContext.request.contextPath}</span></code>で取得することができる。</div>
 </div>
 </td>
 </tr>
@@ -2156,8 +2148,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;form:input&gt;</span></code>タグでフォームのプロパティをバインドする。</div>
-<div class="line"><code class="docutils literal"><span class="pre">modelAttribute</span></code>属性に指定したFormのプロパティ名と、<code class="docutils literal"><span class="pre">path</span></code>属性の値が一致している必要がある。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;form:input&gt;</span></code>タグでフォームのプロパティをバインドする。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">modelAttribute</span></code>属性に指定したFormのプロパティ名と、<code class="docutils literal notranslate"><span class="pre">path</span></code>属性の値が一致している必要がある。</div>
 </div>
 </td>
 </tr>
@@ -2166,7 +2158,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;c:forEach&gt;</span></code>タグを用いて、Todoのリストを全て表示する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;c:forEach&gt;</span></code>タグを用いて、Todoのリストを全て表示する。</div>
 </div>
 </td>
 </tr>
@@ -2175,7 +2167,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">完了かどうか(<code class="docutils literal"><span class="pre">finished</span></code>)で、打ち消し線(<code class="docutils literal"><span class="pre">text-decoration:</span> <span class="pre">line-through;</span></code>)を装飾するかどうかを判断する。</div>
+<div class="line">完了かどうか(<code class="docutils literal notranslate"><span class="pre">finished</span></code>)で、打ち消し線(<code class="docutils literal notranslate"><span class="pre">text-decoration:</span> <span class="pre">line-through;</span></code>)を装飾するかどうかを判断する。</div>
 </div>
 </td>
 </tr>
@@ -2209,8 +2201,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <p>次に、一覧表示画面から「Create TODO」ボタンを押した後の、新規作成処理を実装する。</p>
 <div class="section" id="id23">
 <h5>11.1.4.2.3.1. Controllerの修正<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h5>
-<p>新規作成処理を<code class="docutils literal"><span class="pre">TodoController</span></code>に追加する。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.app.todo</span><span class="o">;</span>
+<p>新規作成処理を<code class="docutils literal notranslate"><span class="pre">TodoController</span></code>に追加する。</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.app.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.Collection</span><span class="o">;</span>
 
@@ -2300,7 +2292,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">FormオブジェクトをDomainObjectに変換するために、Dozerの<code class="docutils literal"><span class="pre">Mapper</span></code>インタフェースをインジェクションする。</div>
+<div class="line">FormオブジェクトをDomainObjectに変換するために、Dozerの<code class="docutils literal notranslate"><span class="pre">Mapper</span></code>インタフェースをインジェクションする。</div>
 </div>
 </td>
 </tr>
@@ -2309,7 +2301,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">/todo/create</span></code>というパスに<code class="docutils literal"><span class="pre">POST</span></code>メソッドを使用してリクエストされた際に、新規作成処理用のメソッド(<code class="docutils literal"><span class="pre">create</span></code>メソッド)が実行されるように<code class="docutils literal"><span class="pre">&#64;RequestMapping</span></code>アノテーションを設定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/todo/create</span></code>というパスに<code class="docutils literal notranslate"><span class="pre">POST</span></code>メソッドを使用してリクエストされた際に、新規作成処理用のメソッド(<code class="docutils literal notranslate"><span class="pre">create</span></code>メソッド)が実行されるように<code class="docutils literal notranslate"><span class="pre">&#64;RequestMapping</span></code>アノテーションを設定する。</div>
 </div>
 </td>
 </tr>
@@ -2318,7 +2310,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">フォームの入力チェックを行うため、Formの引数に<code class="docutils literal"><span class="pre">&#64;Valid</span></code>アノテーションをつける。入力チェック結果は、その直後の引数<code class="docutils literal"><span class="pre">BindingResult</span></code>に格納される。</div>
+<div class="line">フォームの入力チェックを行うため、Formの引数に<code class="docutils literal notranslate"><span class="pre">&#64;Valid</span></code>アノテーションをつける。入力チェック結果は、その直後の引数<code class="docutils literal notranslate"><span class="pre">BindingResult</span></code>に格納される。</div>
 </div>
 </td>
 </tr>
@@ -2328,7 +2320,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </td>
 <td><div class="first last line-block">
 <div class="line">正常に作成が完了した後にリダイレクトし、一覧画面を表示する。</div>
-<div class="line">リダイレクト先への情報を格納するために、引数に<code class="docutils literal"><span class="pre">RedirectAttributes</span></code>を加える。</div>
+<div class="line">リダイレクト先への情報を格納するために、引数に<code class="docutils literal notranslate"><span class="pre">RedirectAttributes</span></code>を加える。</div>
 </div>
 </td>
 </tr>
@@ -2338,7 +2330,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </td>
 <td><div class="first last line-block">
 <div class="line">入力エラーがあった場合、一覧画面に戻る。</div>
-<div class="line">Todo全件取得を再度行う必要があるので、<code class="docutils literal"><span class="pre">list</span></code>メソッドを再実行する。</div>
+<div class="line">Todo全件取得を再度行う必要があるので、<code class="docutils literal notranslate"><span class="pre">list</span></code>メソッドを再実行する。</div>
 </div>
 </td>
 </tr>
@@ -2347,9 +2339,9 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Dozerの<code class="docutils literal"><span class="pre">Mapper</span></code>インタフェースを用いて、<code class="docutils literal"><span class="pre">TodoForm</span></code>オブジェクトから<code class="docutils literal"><span class="pre">Todo</span></code>オブジェクトを作成する。</div>
+<div class="line">Dozerの<code class="docutils literal notranslate"><span class="pre">Mapper</span></code>インタフェースを用いて、<code class="docutils literal notranslate"><span class="pre">TodoForm</span></code>オブジェクトから<code class="docutils literal notranslate"><span class="pre">Todo</span></code>オブジェクトを作成する。</div>
 <div class="line">変換元と変換先のプロパティ名が同じ場合は、設定不要である。</div>
-<div class="line">今回は、<code class="docutils literal"><span class="pre">todoTitle</span></code>プロパティのみ変換するため、Dozerの<code class="docutils literal"><span class="pre">Mapper</span></code>インタフェースを使用するメリットはほとんどない。プロパティの数が多い場合には、非常に便利である。</div>
+<div class="line">今回は、<code class="docutils literal notranslate"><span class="pre">todoTitle</span></code>プロパティのみ変換するため、Dozerの<code class="docutils literal notranslate"><span class="pre">Mapper</span></code>インタフェースを使用するメリットはほとんどない。プロパティの数が多い場合には、非常に便利である。</div>
 </div>
 </td>
 </tr>
@@ -2358,7 +2350,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">業務処理を実行して、<code class="docutils literal"><span class="pre">BusinessException</span></code>が発生した場合、結果メッセージを<code class="docutils literal"><span class="pre">Model</span></code>に追加して、一覧画面に戻る。</div>
+<div class="line">業務処理を実行して、<code class="docutils literal notranslate"><span class="pre">BusinessException</span></code>が発生した場合、結果メッセージを<code class="docutils literal notranslate"><span class="pre">Model</span></code>に追加して、一覧画面に戻る。</div>
 </div>
 </td>
 </tr>
@@ -2368,8 +2360,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </td>
 <td><div class="first last line-block">
 <div class="line">正常に作成が完了したので、結果メッセージをflashスコープに追加して、一覧画面でリダイレクトする。</div>
-<div class="line">リダイレクトすることにより、ブラウザを再読み込みして、再び新規登録処理が<code class="docutils literal"><span class="pre">POST</span></code>されることがなくなる。（詳しくは、「<a class="reference internal" href="../ArchitectureInDetail/WebApplicationDetail/DoubleSubmitProtection.html#doublesubmitprotectionaboutprg"><span class="std std-ref">PRG(Post-Redirect-Get)パターンについて</span></a>」を参照されたい）</div>
-<div class="line">なお、今回は成功メッセージであるため、<code class="docutils literal"><span class="pre">ResultMessages.success()</span></code>を使用している。</div>
+<div class="line">リダイレクトすることにより、ブラウザを再読み込みして、再び新規登録処理が<code class="docutils literal notranslate"><span class="pre">POST</span></code>されることがなくなる。（詳しくは、「<a class="reference internal" href="../ArchitectureInDetail/WebApplicationDetail/DoubleSubmitProtection.html#doublesubmitprotectionaboutprg"><span class="std std-ref">PRG(Post-Redirect-Get)パターンについて</span></a>」を参照されたい）</div>
+<div class="line">なお、今回は成功メッセージであるため、<code class="docutils literal notranslate"><span class="pre">ResultMessages.success()</span></code>を使用している。</div>
 </div>
 </td>
 </tr>
@@ -2379,7 +2371,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <div class="section" id="id24">
 <h5>11.1.4.2.3.2. Formの修正<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h5>
 <p>入力チェックのルールを定義するため、Formオブジェクトにアノテーションを追加する。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.app.todo</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.app.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.Serializable</span><span class="o">;</span>
 
@@ -2419,7 +2411,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;NotNull</span></code>アノテーションを使用して必須チェックを有効化する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;NotNull</span></code>アノテーションを使用して必須チェックを有効化する。</div>
 </div>
 </td>
 </tr>
@@ -2428,7 +2420,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;Size</span></code>アノテーションを使用して文字数チェックを有効化する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;Size</span></code>アノテーションを使用して文字数チェックを有効化する。</div>
 </div>
 </td>
 </tr>
@@ -2438,7 +2430,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <div class="section" id="id25">
 <h5>11.1.4.2.3.3. JSPの修正<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h5>
 <p>結果メッセージと入力チェックエラーを表示するエリアを追加する。</p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span><span class="nt">&gt;</span>
@@ -2500,7 +2492,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;t:messagesPanel&gt;</span></code>タグで、結果メッセージを表示する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;t:messagesPanel&gt;</span></code>タグで、結果メッセージを表示する。</div>
 </div>
 </td>
 </tr>
@@ -2509,7 +2501,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;form:errors&gt;</span></code>タグで、入力エラーがあった場合に表示する。<code class="docutils literal"><span class="pre">path</span></code>属性の値は、<code class="docutils literal"><span class="pre">&lt;form:input&gt;</span></code>タグと合わせる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;form:errors&gt;</span></code>タグで、入力エラーがあった場合に表示する。<code class="docutils literal notranslate"><span class="pre">path</span></code>属性の値は、<code class="docutils literal notranslate"><span class="pre">&lt;form:input&gt;</span></code>タグと合わせる。</div>
 </div>
 </td>
 </tr>
@@ -2536,12 +2528,12 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 <div class="section" id="id26">
 <h5>11.1.4.2.3.4. メッセージ表示のカスタマイズ<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h5>
-<p><code class="docutils literal"><span class="pre">&lt;t:messagesPanel&gt;</span></code>を使用した場合、以下のようなHTMLが出力される。</p>
-<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-success&quot;</span><span class="p">&gt;&lt;</span><span class="nt">ul</span><span class="p">&gt;&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Created successfully!<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;&lt;/</span><span class="nt">ul</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;t:messagesPanel&gt;</span></code>を使用した場合、以下のようなHTMLが出力される。</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-success&quot;</span><span class="p">&gt;&lt;</span><span class="nt">ul</span><span class="p">&gt;&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Created successfully!<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;&lt;/</span><span class="nt">ul</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>スタイルシート(<code class="docutils literal"><span class="pre">list.jsp</span></code>の<code class="docutils literal"><span class="pre">&lt;style&gt;</span></code>タグ内)に、以下の修正を加えて、結果メッセージの見た目をカスタマイズする。</p>
-<div class="highlight-css"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">alert</span> <span class="p">{</span>
+<p>スタイルシート(<code class="docutils literal notranslate"><span class="pre">list.jsp</span></code>の<code class="docutils literal notranslate"><span class="pre">&lt;style&gt;</span></code>タグ内)に、以下の修正を加えて、結果メッセージの見た目をカスタマイズする。</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">alert</span> <span class="p">{</span>
     <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -2571,13 +2563,13 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>また、<code class="docutils literal"><span class="pre">&lt;form:errors&gt;</span></code>タグの<code class="docutils literal"><span class="pre">cssClass</span></code>属性で、入力エラーメッセージのclassを指定できる。</p>
+<p>また、<code class="docutils literal notranslate"><span class="pre">&lt;form:errors&gt;</span></code>タグの<code class="docutils literal notranslate"><span class="pre">cssClass</span></code>属性で、入力エラーメッセージのclassを指定できる。</p>
 <p>JSPを次のように修正し、</p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;form:errors</span> <span class="na">path=</span><span class="s">&quot;todoTitle&quot;</span> <span class="na">cssClass=</span><span class="s">&quot;text-error&quot;</span> <span class="nt">/&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;form:errors</span> <span class="na">path=</span><span class="s">&quot;todoTitle&quot;</span> <span class="na">cssClass=</span><span class="s">&quot;text-error&quot;</span> <span class="nt">/&gt;</span>
 </pre></div>
 </div>
 <p>スタイルシートに、以下を追加する。</p>
-<div class="highlight-css"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">text-error</span> <span class="p">{</span>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">text-error</span> <span class="p">{</span>
     <span class="k">color</span><span class="p">:</span> <span class="mh">#c60f13</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
@@ -2596,14 +2588,14 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <p>一覧画面に「Finish」ボタンを追加し、TODOを完了させるための処理を追加する。</p>
 <div class="section" id="id28">
 <h5>11.1.4.2.4.1. Formの修正<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h5>
-<p>完了処理用のFormについても、<code class="docutils literal"><span class="pre">TodoForm</span></code>を使用する。</p>
-<p><code class="docutils literal"><span class="pre">TodoForm</span></code>に<code class="docutils literal"><span class="pre">todoId</span></code>プロパティを追加する必要があるが、単純に追加してしまうと、新規作成処理でも<code class="docutils literal"><span class="pre">todoId</span></code>プロパティのチェックが実行されてしまう。
-一つのFormクラスを使用して複数のformから送信されるリクエストパラメータをバインドする場合は、<code class="docutils literal"><span class="pre">groups</span></code>属性を使用して、入力チェックルールをグループ化する。</p>
+<p>完了処理用のFormについても、<code class="docutils literal notranslate"><span class="pre">TodoForm</span></code>を使用する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">TodoForm</span></code>に<code class="docutils literal notranslate"><span class="pre">todoId</span></code>プロパティを追加する必要があるが、単純に追加してしまうと、新規作成処理でも<code class="docutils literal notranslate"><span class="pre">todoId</span></code>プロパティのチェックが実行されてしまう。
+一つのFormクラスを使用して複数のformから送信されるリクエストパラメータをバインドする場合は、<code class="docutils literal notranslate"><span class="pre">groups</span></code>属性を使用して、入力チェックルールをグループ化する。</p>
 <p>Formクラスに以下のプロパティを追加する。</p>
 <ul class="simple">
 <li>ID → todoId</li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.app.todo</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.app.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.Serializable</span><span class="o">;</span>
 
@@ -2667,7 +2659,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <div class="line">入力チェックルールをグループ化するためのインタフェースを作成する。</div>
 <div class="line">入力チェックルールのグループ化については、<a class="reference internal" href="../ArchitectureInDetail/WebApplicationDetail/Validation.html"><span class="doc">入力チェック</span></a>を参照されたい。</div>
 <div class="line"><br /></div>
-<div class="line">ここでは、新規作成処理用のインタフェースとして<code class="docutils literal"><span class="pre">TodoCreate</span></code>を、完了処理用のインタフェースとして<code class="docutils literal"><span class="pre">TodoFinish</span></code>を作成している。</div>
+<div class="line">ここでは、新規作成処理用のインタフェースとして<code class="docutils literal notranslate"><span class="pre">TodoCreate</span></code>を、完了処理用のインタフェースとして<code class="docutils literal notranslate"><span class="pre">TodoFinish</span></code>を作成している。</div>
 </div>
 </td>
 </tr>
@@ -2676,8 +2668,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">todoId</span></code>は完了処理で使用するプロパティである。</div>
-<div class="line">そのため、<code class="docutils literal"><span class="pre">&#64;NotNull</span></code>アノテーションの<code class="docutils literal"><span class="pre">groups</span></code>属性には、完了処理用の入力チェックルールである事を示す<code class="docutils literal"><span class="pre">TodoFinish</span></code>インタフェースを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">todoId</span></code>は完了処理で使用するプロパティである。</div>
+<div class="line">そのため、<code class="docutils literal notranslate"><span class="pre">&#64;NotNull</span></code>アノテーションの<code class="docutils literal notranslate"><span class="pre">groups</span></code>属性には、完了処理用の入力チェックルールである事を示す<code class="docutils literal notranslate"><span class="pre">TodoFinish</span></code>インタフェースを指定する。</div>
 </div>
 </td>
 </tr>
@@ -2686,8 +2678,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">todoTitle</span></code>は新規作成処理で使用するプロパティである。</div>
-<div class="line">そのため、<code class="docutils literal"><span class="pre">&#64;NotNull</span></code>アノテーションと<code class="docutils literal"><span class="pre">&#64;Size</span></code>アノテーションの<code class="docutils literal"><span class="pre">groups</span></code>属性には、新規作成処理用の入力チェックルールである事を示す<code class="docutils literal"><span class="pre">TodoCreate</span></code>インタフェースを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">todoTitle</span></code>は新規作成処理で使用するプロパティである。</div>
+<div class="line">そのため、<code class="docutils literal notranslate"><span class="pre">&#64;NotNull</span></code>アノテーションと<code class="docutils literal notranslate"><span class="pre">&#64;Size</span></code>アノテーションの<code class="docutils literal notranslate"><span class="pre">groups</span></code>属性には、新規作成処理用の入力チェックルールである事を示す<code class="docutils literal notranslate"><span class="pre">TodoCreate</span></code>インタフェースを指定する。</div>
 </div>
 </td>
 </tr>
@@ -2696,9 +2688,9 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 <div class="section" id="id29">
 <h5>11.1.4.2.4.2. Controllerの修正<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h5>
-<p>完了処理を<code class="docutils literal"><span class="pre">TodoController</span></code>に追加する。</p>
+<p>完了処理を<code class="docutils literal notranslate"><span class="pre">TodoController</span></code>に追加する。</p>
 <p>グループ化した入力チェックルールを適用するためには、<strong>&#64;Valid アノテーションの代わりに、&#64;Validated アノテーションを使用すること</strong>に注意する。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.app.todo</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.app.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.Collection</span><span class="o">;</span>
 
@@ -2811,11 +2803,11 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first line-block">
-<div class="line">グループ化した入力チェックルールを適用するために、<code class="docutils literal"><span class="pre">&#64;Valid</span></code>アノテーションを<code class="docutils literal"><span class="pre">&#64;Validated</span></code>アノテーションに変更する。</div>
+<div class="line">グループ化した入力チェックルールを適用するために、<code class="docutils literal notranslate"><span class="pre">&#64;Valid</span></code>アノテーションを<code class="docutils literal notranslate"><span class="pre">&#64;Validated</span></code>アノテーションに変更する。</div>
 </div>
 <div class="last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">value</span></code>属性には、適用する入力チェックルールのグループ(グループインタフェース)を指定する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">Default.class</span></code>は、グループ化されていない入力チェックルールを適用するために用意されているグループインタフェースである。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">value</span></code>属性には、適用する入力チェックルールのグループ(グループインタフェース)を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Default.class</span></code>は、グループ化されていない入力チェックルールを適用するために用意されているグループインタフェースである。</div>
 </div>
 </td>
 </tr>
@@ -2824,7 +2816,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">/todo/finish</span></code>というパスに<code class="docutils literal"><span class="pre">POST</span></code>メソッドを使用してリクエストされた際に、完了処理用のメソッド(<code class="docutils literal"><span class="pre">finish</span></code>メソッド)が実行されるように<code class="docutils literal"><span class="pre">&#64;RequestMapping</span></code>アノテーションを設定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/todo/finish</span></code>というパスに<code class="docutils literal notranslate"><span class="pre">POST</span></code>メソッドを使用してリクエストされた際に、完了処理用のメソッド(<code class="docutils literal notranslate"><span class="pre">finish</span></code>メソッド)が実行されるように<code class="docutils literal notranslate"><span class="pre">&#64;RequestMapping</span></code>アノテーションを設定する。</div>
 </div>
 </td>
 </tr>
@@ -2833,7 +2825,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">適用する入力チェックのグループとして、完了処理用のグループインタフェース(<code class="docutils literal"><span class="pre">TodoFinish</span></code>インタフェース)を指定する。</div>
+<div class="line">適用する入力チェックのグループとして、完了処理用のグループインタフェース(<code class="docutils literal notranslate"><span class="pre">TodoFinish</span></code>インタフェース)を指定する。</div>
 </div>
 </td>
 </tr>
@@ -2851,7 +2843,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">業務処理を実行して、<code class="docutils literal"><span class="pre">BusinessException</span></code>が発生した場合は、結果メッセージを<code class="docutils literal"><span class="pre">Model</span></code>に追加して、一覧画面に戻る。</div>
+<div class="line">業務処理を実行して、<code class="docutils literal notranslate"><span class="pre">BusinessException</span></code>が発生した場合は、結果メッセージを<code class="docutils literal notranslate"><span class="pre">Model</span></code>に追加して、一覧画面に戻る。</div>
 </div>
 </td>
 </tr>
@@ -2876,14 +2868,14 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <li>プロパティが重複するため入力チェックルールを一元管理できない</li>
 </ul>
 <p>ため、仕様変更が発生した場合に修正コストが高くなる可能性があるという点に注意してほしい。</p>
-<p class="last">また、<code class="docutils literal"><span class="pre">&#64;ModelAttribute</span></code>メソッドを使用して複数のFormを初期化した場合、
+<p class="last">また、<code class="docutils literal notranslate"><span class="pre">&#64;ModelAttribute</span></code>メソッドを使用して複数のFormを初期化した場合、
 毎回すべてのFormが初期化されるため、不要なインスタンスが生成されることになる。</p>
 </div>
 </div>
 <div class="section" id="id30">
 <h5>11.1.4.2.4.3. JSPの修正<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h5>
 <p>完了処理用のformを追加する。</p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span><span class="nt">&gt;</span>
@@ -2975,8 +2967,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </td>
 <td><div class="first last line-block">
 <div class="line">TODOが未完了の場合は、TODOを完了させるためのリクエストを送信するformを表示する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">action</span></code>属性には完了処理を実行するためのURL(<code class="docutils literal"><span class="pre">&lt;contextPath&gt;/todo/finish</span></code>)を指定する。</div>
-<div class="line">完了処理は更新系の処理なので、<code class="docutils literal"><span class="pre">method</span></code>属性には<code class="docutils literal"><span class="pre">POST</span></code>メソッドを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">action</span></code>属性には完了処理を実行するためのURL(<code class="docutils literal notranslate"><span class="pre">&lt;contextPath&gt;/todo/finish</span></code>)を指定する。</div>
+<div class="line">完了処理は更新系の処理なので、<code class="docutils literal notranslate"><span class="pre">method</span></code>属性には<code class="docutils literal notranslate"><span class="pre">POST</span></code>メソッドを指定する。</div>
 </div>
 </td>
 </tr>
@@ -2985,8 +2977,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;form:hidden&gt;</span></code>タグを使用して、リクエストパラメータとして<code class="docutils literal"><span class="pre">todoId</span></code>を送信する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">value</span></code>属性に値を設定する場合も、 <strong>必ずf:h()関数でHTMLエスケープすること。</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;form:hidden&gt;</span></code>タグを使用して、リクエストパラメータとして<code class="docutils literal notranslate"><span class="pre">todoId</span></code>を送信する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">value</span></code>属性に値を設定する場合も、 <strong>必ずf:h()関数でHTMLエスケープすること。</strong></div>
 </div>
 </td>
 </tr>
@@ -3009,8 +3001,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <p>一覧表示画面に「Delete」ボタンを追加して、TODOを削除するための処理を追加する。</p>
 <div class="section" id="id32">
 <h5>11.1.4.2.5.1. Formの修正<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h5>
-<p>削除処理用のFormについても、<code class="docutils literal"><span class="pre">TodoForm</span></code>を使用する。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.app.todo</span><span class="o">;</span>
+<p>削除処理用のFormについても、<code class="docutils literal notranslate"><span class="pre">TodoForm</span></code>を使用する。</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.app.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.Serializable</span><span class="o">;</span>
 
@@ -3073,7 +3065,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">削除処理用の入力チェックルールをグループ化するためのインタフェースとして<code class="docutils literal"><span class="pre">TodoDelete</span></code>を作成する。</div>
+<div class="line">削除処理用の入力チェックルールをグループ化するためのインタフェースとして<code class="docutils literal notranslate"><span class="pre">TodoDelete</span></code>を作成する。</div>
 </div>
 </td>
 </tr>
@@ -3082,8 +3074,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">削除処理では<code class="docutils literal"><span class="pre">todoId</span></code>プロパティを使用する。</div>
-<div class="line">そのため、<code class="docutils literal"><span class="pre">todoId</span></code>の<code class="docutils literal"><span class="pre">&#64;NotNull</span></code>アノテーションの<code class="docutils literal"><span class="pre">groups</span></code>属性には、削除処理用の入力チェックルールである事を示す<code class="docutils literal"><span class="pre">TodoDelete</span></code>インタフェースを指定する。</div>
+<div class="line">削除処理では<code class="docutils literal notranslate"><span class="pre">todoId</span></code>プロパティを使用する。</div>
+<div class="line">そのため、<code class="docutils literal notranslate"><span class="pre">todoId</span></code>の<code class="docutils literal notranslate"><span class="pre">&#64;NotNull</span></code>アノテーションの<code class="docutils literal notranslate"><span class="pre">groups</span></code>属性には、削除処理用の入力チェックルールである事を示す<code class="docutils literal notranslate"><span class="pre">TodoDelete</span></code>インタフェースを指定する。</div>
 </div>
 </td>
 </tr>
@@ -3092,8 +3084,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 <div class="section" id="id33">
 <h5>11.1.4.2.5.2. Controllerの修正<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h5>
-<p>削除処理を<code class="docutils literal"><span class="pre">TodoController</span></code>に追加する。完了処理とほぼ同じである。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.app.todo</span><span class="o">;</span>
+<p>削除処理を<code class="docutils literal notranslate"><span class="pre">TodoController</span></code>に追加する。完了処理とほぼ同じである。</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.app.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.Collection</span><span class="o">;</span>
 
@@ -3226,8 +3218,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <div class="line">(1)</div>
 </div>
 </td>
-<td><code class="docutils literal"><span class="pre">/todo/delete</span></code>というパスに<code class="docutils literal"><span class="pre">POST</span></code>メソッドを使用してリクエストされた際に、
-削除処理用のメソッド(<code class="docutils literal"><span class="pre">delete</span></code>メソッド)が実行されるように<code class="docutils literal"><span class="pre">&#64;RequestMapping</span></code>アノテーションを設定する。</td>
+<td><code class="docutils literal notranslate"><span class="pre">/todo/delete</span></code>というパスに<code class="docutils literal notranslate"><span class="pre">POST</span></code>メソッドを使用してリクエストされた際に、
+削除処理用のメソッド(<code class="docutils literal notranslate"><span class="pre">delete</span></code>メソッド)が実行されるように<code class="docutils literal notranslate"><span class="pre">&#64;RequestMapping</span></code>アノテーションを設定する。</td>
 </tr>
 </tbody>
 </table>
@@ -3235,7 +3227,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <div class="section" id="id34">
 <h5>11.1.4.2.5.3. JSPの修正<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h5>
 <p>削除処理用のformを追加する。</p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span><span class="nt">&gt;</span>
@@ -3336,8 +3328,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </td>
 <td><div class="first last line-block">
 <div class="line">削除処理用のformを表示する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">action</span></code>属性には削除処理を実行するためのURL(<code class="docutils literal"><span class="pre">&lt;contextPath&gt;/todo/delete</span></code>)を指定する。</div>
-<div class="line">削除処理は更新系の処理なので、<code class="docutils literal"><span class="pre">method</span></code>属性には<code class="docutils literal"><span class="pre">POST</span></code>メソッドを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">action</span></code>属性には削除処理を実行するためのURL(<code class="docutils literal notranslate"><span class="pre">&lt;contextPath&gt;/todo/delete</span></code>)を指定する。</div>
+<div class="line">削除処理は更新系の処理なので、<code class="docutils literal notranslate"><span class="pre">method</span></code>属性には<code class="docutils literal notranslate"><span class="pre">POST</span></code>メソッドを指定する。</div>
 </div>
 </td>
 </tr>
@@ -3346,8 +3338,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;form:hidden&gt;</span></code>タグを使用して、リクエストパラメータとして<code class="docutils literal"><span class="pre">todoId</span></code>を送信する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">value</span></code>属性に値を設定する場合も、<strong>必ずf:h()関数でHTMLエスケープすること。</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;form:hidden&gt;</span></code>タグを使用して、リクエストパラメータとして<code class="docutils literal notranslate"><span class="pre">todoId</span></code>を送信する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">value</span></code>属性に値を設定する場合も、<strong>必ずf:h()関数でHTMLエスケープすること。</strong></div>
 </div>
 </td>
 </tr>
@@ -3370,8 +3362,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <p>これまでスタイルシートをJSPファイルの中で直接定義していたが、
 実際のアプリケーションを開発する場合は、CSSファイルに定義するのが一般的である。</p>
 <p>ここでは、スタイルシートをCSSファイルに定義する方法について説明する。</p>
-<p>ブランクプロジェクトから提供しているCSSファイル(<code class="docutils literal"><span class="pre">src/main/webapp/resources/app/css/styles.css</span></code>)にスタイルシートの定義を追加する。</p>
-<div class="highlight-css"><div class="highlight"><pre><span></span><span class="c">/* ... */</span>
+<p>ブランクプロジェクトから提供しているCSSファイル(<code class="docutils literal notranslate"><span class="pre">src/main/webapp/resources/app/css/styles.css</span></code>)にスタイルシートの定義を追加する。</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/* ... */</span>
 
 <span class="p">.</span><span class="nc">strike</span> <span class="p">{</span>
     <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">line-through</span><span class="p">;</span>
@@ -3411,7 +3403,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <div class="line"><br /></div>
 </div>
 <p>JSPからCSSファイルを読み込む。</p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span><span class="nt">&gt;</span>
@@ -3524,7 +3516,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <li><a class="reference internal" href="#tutorialcreatemybatis3blankproject"><span class="std std-ref">MyBatis3用のブランクプロジェクトの作成</span></a></li>
 <li><a class="reference internal" href="#tutorialcreatejpablankproject"><span class="std std-ref">JPA用のブランクプロジェクトの作成</span></a></li>
 </ul>
-<p>次に、<a class="reference internal" href="#tutorial-todo-infra"><span class="std std-ref">データベースアクセスを伴うインフラストラクチャ層の作成</span></a>までで作成した<code class="file docutils literal"><span class="pre">src</span></code>フォルダ以下のうち、
+<p>次に、<a class="reference internal" href="#tutorial-todo-infra"><span class="std std-ref">データベースアクセスを伴うインフラストラクチャ層の作成</span></a>までで作成した<code class="file docutils literal notranslate"><span class="pre">src</span></code>フォルダ以下のうち、
 <strong>TodoRepositoryImplクラス以外のファイルを新規作成したプロジェクトにコピーする</strong>。</p>
 <p><strong>ただし、コピーするファイルは新規作成したファイル・変更を加えたファイルに限り、修正を加えていないファイルはコピーしないこと</strong>。</p>
 <div class="line-block">
@@ -3538,8 +3530,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <div class="section" id="todo-infra-properties">
 <h4><a class="toc-backref" href="#id85">11.1.5.2.1. todo-infra.propertiesの修正</a><a class="headerlink" href="#todo-infra-properties" title="Permalink to this headline">¶</a></h4>
 <p>APサーバ起動時にH2 Database上にテーブルが作成されるようにするために、
-<code class="file docutils literal"><span class="pre">src/main/resources/META-INF/spring/todo-infra.properties</span></code>の設定を変更する。</p>
-<div class="highlight-properties"><div class="highlight"><pre><span></span><span class="na">database</span><span class="o">=</span><span class="s">H2</span>
+<code class="file docutils literal notranslate"><span class="pre">src/main/resources/META-INF/spring/todo-infra.properties</span></code>の設定を変更する。</p>
+<div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="na">database</span><span class="o">=</span><span class="s">H2</span>
 <span class="hll"><span class="c"># (1)</span>
 </span><span class="hll"><span class="na">database.url</span><span class="o">=</span><span class="s">jdbc:h2:mem:todo;DB_CLOSE_DELAY=-1;INIT=create table if not exists todo(todo_id varchar(36) primary key, todo_title varchar(30), finished boolean, created_at timestamp)</span>
 </span><span class="na">database.username</span><span class="o">=</span><span class="s">sa</span>
@@ -3578,7 +3570,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <p class="first admonition-title">Note</p>
 <p>INITパラメータに設定しているDDL文をフォーマットすると、以下の様なSQLとなる。</p>
 <blockquote class="last">
-<div><div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">create</span> <span class="k">table</span> <span class="k">if</span> <span class="k">not</span> <span class="k">exists</span> <span class="n">todo</span> <span class="p">(</span>
+<div><div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">create</span> <span class="k">table</span> <span class="k">if</span> <span class="k">not</span> <span class="k">exists</span> <span class="n">todo</span> <span class="p">(</span>
     <span class="n">todo_id</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">36</span><span class="p">)</span> <span class="k">primary</span> <span class="k">key</span><span class="p">,</span>
     <span class="n">todo_title</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
     <span class="n">finished</span> <span class="nb">boolean</span><span class="p">,</span>
@@ -3599,17 +3591,17 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <p>Spring Data JPAを使用する場合は、本節を読み飛ばして、<a class="reference internal" href="#using-springdatajpa"><span class="std std-ref">Spring Data JPAを使用したインフラストラクチャ層の作成</span></a>に進んでよい。</p>
 <div class="section" id="todorepository">
 <h4><a class="toc-backref" href="#id87">11.1.5.3.1. TodoRepositoryの作成</a><a class="headerlink" href="#todorepository" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">TodoRepository</span></code>は、O/R Mapperを使用しない場合と同じ方法で作成する。
+<p><code class="docutils literal notranslate"><span class="pre">TodoRepository</span></code>は、O/R Mapperを使用しない場合と同じ方法で作成する。
 作成方法は、「<a class="reference internal" href="#tutorialtodocreaterepository"><span class="std std-ref">Repositoryの作成</span></a>」を参照されたい。</p>
 </div>
 <div class="section" id="todorepositoryimpl">
 <h4><a class="toc-backref" href="#id88">11.1.5.3.2. TodoRepositoryImplの作成</a><a class="headerlink" href="#todorepositoryimpl" title="Permalink to this headline">¶</a></h4>
 <p>MyBatis3を使用する場合、RepositoryImplはRepositoryインタフェース(Mapperインタフェース)から自動生成される。
-そのため、<code class="docutils literal"><span class="pre">TodoRepositoryImpl</span></code>の作成は不要である。作成した場合は削除すること。</p>
+そのため、<code class="docutils literal notranslate"><span class="pre">TodoRepositoryImpl</span></code>の作成は不要である。作成した場合は削除すること。</p>
 </div>
 <div class="section" id="mapper">
 <h4><a class="toc-backref" href="#id89">11.1.5.3.3. Mapperファイルの作成</a><a class="headerlink" href="#mapper" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">TodoRepository</span></code>インタフェースのメソッドが呼び出された際に実行するSQLを定義するためのMapperファイルを作成する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">TodoRepository</span></code>インタフェースのメソッドが呼び出された際に実行するSQLを定義するためのMapperファイルを作成する。</p>
 <p>Package Explorer上で右クリック -&gt; New -&gt; File を選択し、「New File」ダイアログを表示し、</p>
 <blockquote>
 <div><table border="1" class="colwidths-given docutils">
@@ -3627,11 +3619,11 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <tbody valign="top">
 <tr class="row-even"><td>1</td>
 <td>Enter or select the parent folder</td>
-<td><code class="docutils literal"><span class="pre">todo/src/main/resources/todo/domain/repository/todo</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">todo/src/main/resources/todo/domain/repository/todo</span></code></td>
 </tr>
 <tr class="row-odd"><td>2</td>
 <td>File name</td>
-<td><code class="docutils literal"><span class="pre">TodoRepository.xml</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">TodoRepository.xml</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -3641,8 +3633,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <div class="figure">
 <img alt="../_images/create-mapper-for-mybatis3.png" src="../_images/create-mapper-for-mybatis3.png" />
 </div>
-<p><code class="docutils literal"><span class="pre">TodoRepository</span></code>インタフェースに定義したメソッドが呼び出された際に実行するSQLを記述する。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<p><code class="docutils literal notranslate"><span class="pre">TodoRepository</span></code>インタフェースに定義したメソッドが呼び出された際に実行するSQLを記述する。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="cp">&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span>
 <span class="cp">    &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span>
 
@@ -3760,7 +3752,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">mapper</span></code>要素の<code class="docutils literal"><span class="pre">namespace</span></code>属性に、Repositoryインタフェースの完全修飾クラス名(FQCN)を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">mapper</span></code>要素の<code class="docutils literal notranslate"><span class="pre">namespace</span></code>属性に、Repositoryインタフェースの完全修飾クラス名(FQCN)を指定する。</div>
 </div>
 </td>
 </tr>
@@ -3769,7 +3761,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;resultMap&gt;</span></code>要素に、検索結果(<code class="docutils literal"><span class="pre">ResultSet</span></code>)とJavaBeanのマッピング定義を行う。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;resultMap&gt;</span></code>要素に、検索結果(<code class="docutils literal notranslate"><span class="pre">ResultSet</span></code>)とJavaBeanのマッピング定義を行う。</div>
 <div class="line">マッピングファイルの詳細は<a class="reference internal" href="../ArchitectureInDetail/DataAccessDetail/DataAccessMyBatis3.html"><span class="doc">データベースアクセス（MyBatis3編）</span></a>を参照されたい。</div>
 </div>
 </td>
@@ -3779,8 +3771,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">todoId</span></code>(PK)が一致するレコードを1件取得するSQLを実装する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">&lt;select&gt;</span></code>要素の<code class="docutils literal"><span class="pre">resultMap</span></code>属性には、適用するマッピング定義のIDを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">todoId</span></code>(PK)が一致するレコードを1件取得するSQLを実装する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;select&gt;</span></code>要素の<code class="docutils literal notranslate"><span class="pre">resultMap</span></code>属性には、適用するマッピング定義のIDを指定する。</div>
 </div>
 </td>
 </tr>
@@ -3790,7 +3782,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </td>
 <td><div class="first last line-block">
 <div class="line">全レコードを取得するSQLを実装している。</div>
-<div class="line"><code class="docutils literal"><span class="pre">&lt;select&gt;</span></code>要素の<code class="docutils literal"><span class="pre">resultMap</span></code>属性に、適用するマッピング定義のIDを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;select&gt;</span></code>要素の<code class="docutils literal notranslate"><span class="pre">resultMap</span></code>属性に、適用するマッピング定義のIDを指定する。</div>
 <div class="line">アプリケーションの要件には記載がないが、最新のTODOが先頭に表示されるようにレコードを並び替えている。</div>
 </div>
 </td>
@@ -3801,7 +3793,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </td>
 <td><div class="first last line-block">
 <div class="line">引数に指定されたTodoオブジェクトを挿入するSQLを実装する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">&lt;insert&gt;</span></code>要素の<code class="docutils literal"><span class="pre">parameterType</span></code>属性に、パラメータのクラス名(FQCN又はエイリアス名)を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;insert&gt;</span></code>要素の<code class="docutils literal notranslate"><span class="pre">parameterType</span></code>属性に、パラメータのクラス名(FQCN又はエイリアス名)を指定する。</div>
 </div>
 </td>
 </tr>
@@ -3811,7 +3803,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </td>
 <td><div class="first last line-block">
 <div class="line">引数に指定されたTodoオブジェクトを更新するSQLを実装する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">&lt;update&gt;</span></code>要素の<code class="docutils literal"><span class="pre">parameterType</span></code>属性に、パラメータのクラス名(FQCN又はエイリアス名)を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;update&gt;</span></code>要素の<code class="docutils literal notranslate"><span class="pre">parameterType</span></code>属性に、パラメータのクラス名(FQCN又はエイリアス名)を指定する。</div>
 </div>
 </td>
 </tr>
@@ -3821,7 +3813,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </td>
 <td><div class="first last line-block">
 <div class="line">引数に指定されたTodoオブジェクトを削除するSQLを実装する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">&lt;delete&gt;</span></code>要素の<code class="docutils literal"><span class="pre">parameterType</span></code>属性に、パラメータのクラス名(FQCN又はエイリアス名)を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;delete&gt;</span></code>要素の<code class="docutils literal notranslate"><span class="pre">parameterType</span></code>属性に、パラメータのクラス名(FQCN又はエイリアス名)を指定する。</div>
 </div>
 </td>
 </tr>
@@ -3830,7 +3822,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">引数に指定された<code class="docutils literal"><span class="pre">finished</span></code>に一致するTodoの件数を取得するSQLを実装する。</div>
+<div class="line">引数に指定された<code class="docutils literal notranslate"><span class="pre">finished</span></code>に一致するTodoの件数を取得するSQLを実装する。</div>
 </div>
 </td>
 </tr>
@@ -3841,7 +3833,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 <p>以上で、MyBatis3を使用したインフラストラクチャ層の作成が完了したので、Service及びアプリケーション層の作成を行う。</p>
 <p>Service及びアプリケーション層を作成後にAPサーバーを起動し、Todoの表示を行うと、以下のようなSQLログやトランザクションログが出力される。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go"> date:2016-02-17 13:18:54    thread:tomcat-http--5   X-Track:390066c43aa94b6588e5bac6a54812b2        level:TRACE     logger:o.t.gfw.web.logging.TraceLoggingInterceptor      message:[START CONTROLLER] TodoController.list(Model)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go"> date:2016-02-17 13:18:54    thread:tomcat-http--5   X-Track:390066c43aa94b6588e5bac6a54812b2        level:TRACE     logger:o.t.gfw.web.logging.TraceLoggingInterceptor      message:[START CONTROLLER] TodoController.list(Model)</span>
 <span class="hll"><span class="go"> date:2016-02-17 13:18:54    thread:tomcat-http--5   X-Track:390066c43aa94b6588e5bac6a54812b2        level:DEBUG     logger:o.s.jdbc.datasource.DataSourceTransactionManager message:Creating new transaction with name [todo.domain.service.todo.TodoServiceImpl.findAll]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly; &#39;&#39;</span>
 </span><span class="hll"><span class="go"> date:2016-02-17 13:18:55    thread:tomcat-http--5   X-Track:390066c43aa94b6588e5bac6a54812b2        level:DEBUG     logger:o.s.jdbc.datasource.DataSourceTransactionManager message:Acquired Connection [net.sf.log4jdbc.ConnectionSpy@4e53de7c] for JDBC transaction</span>
 </span><span class="go"> date:2016-02-17 13:18:55    thread:tomcat-http--5   X-Track:390066c43aa94b6588e5bac6a54812b2        level:DEBUG     logger:t.domain.repository.todo.TodoRepository.findAll  message:==&gt;  Preparing: SELECT todo_id, todo_title, finished, created_at FROM todo</span>
@@ -3877,7 +3869,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <div class="section" id="entity">
 <h4><a class="toc-backref" href="#id91">11.1.5.4.1. Entityの修正</a><a class="headerlink" href="#entity" title="Permalink to this headline">¶</a></h4>
 <p>TodoクラスとデータベースのTODOテーブルをマッピングするために、JPAのアノテーションを設定する。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.domain.model</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.domain.model</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.Serializable</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
@@ -3961,7 +3953,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">JPAのエンティティであることを示す<code class="docutils literal"><span class="pre">&#64;Entity</span></code>アノテーションを付け、対応するテーブル名を<code class="docutils literal"><span class="pre">&#64;Table</span></code>アノテーションで設定する。</div>
+<div class="line">JPAのエンティティであることを示す<code class="docutils literal notranslate"><span class="pre">&#64;Entity</span></code>アノテーションを付け、対応するテーブル名を<code class="docutils literal notranslate"><span class="pre">&#64;Table</span></code>アノテーションで設定する。</div>
 </div>
 </td>
 </tr>
@@ -3970,7 +3962,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">主キーとなるカラムに対応するフィールドに、<code class="docutils literal"><span class="pre">&#64;Id</span></code>アノテーションをつける。</div>
+<div class="line">主キーとなるカラムに対応するフィールドに、<code class="docutils literal notranslate"><span class="pre">&#64;Id</span></code>アノテーションをつける。</div>
 </div>
 </td>
 </tr>
@@ -3979,8 +3971,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">java.util.Date</span></code>型は、<code class="docutils literal"><span class="pre">java.sql.Date</span></code>, <code class="docutils literal"><span class="pre">java.sql.Time</span></code>, <code class="docutils literal"><span class="pre">java.sql.Timestamp</span></code>のインスタンスを格納できるため、明示的にどの型のインスタンスを設定するか指定する必要がある。</div>
-<div class="line"><code class="docutils literal"><span class="pre">createdAt</span></code>プロパティには、<code class="docutils literal"><span class="pre">Timestamp</span></code>を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">java.util.Date</span></code>型は、<code class="docutils literal notranslate"><span class="pre">java.sql.Date</span></code>, <code class="docutils literal notranslate"><span class="pre">java.sql.Time</span></code>, <code class="docutils literal notranslate"><span class="pre">java.sql.Timestamp</span></code>のインスタンスを格納できるため、明示的にどの型のインスタンスを設定するか指定する必要がある。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">createdAt</span></code>プロパティには、<code class="docutils literal notranslate"><span class="pre">Timestamp</span></code>を指定する。</div>
 </div>
 </td>
 </tr>
@@ -3989,7 +3981,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 <div class="section" id="id40">
 <h4><a class="toc-backref" href="#id92">11.1.5.4.2. TodoRepositoryの作成</a><a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h4>
-<p>Spring Data JPAのRepository機能を使用して<code class="docutils literal"><span class="pre">TodoRepository</span></code>の作成を行う。</p>
+<p>Spring Data JPAのRepository機能を使用して<code class="docutils literal notranslate"><span class="pre">TodoRepository</span></code>の作成を行う。</p>
 <p>Package Explorer上で右クリック -&gt; New -&gt; Interface を選択し、「New Java Interface」ダイアログを表示し、</p>
 <blockquote>
 <div><table border="1" class="colwidths-given docutils">
@@ -4007,21 +3999,21 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <tbody valign="top">
 <tr class="row-even"><td>1</td>
 <td>Package</td>
-<td><code class="docutils literal"><span class="pre">todo.domain.repository.todo</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">todo.domain.repository.todo</span></code></td>
 </tr>
 <tr class="row-odd"><td>2</td>
 <td>Name</td>
-<td><code class="docutils literal"><span class="pre">TodoRepository</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">TodoRepository</span></code></td>
 </tr>
 <tr class="row-even"><td>3</td>
 <td>Extended interfaces</td>
-<td><code class="docutils literal"><span class="pre">org.springframework.data.jpa.repository.JpaRepository&lt;T,</span> <span class="pre">ID&gt;</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">org.springframework.data.jpa.repository.JpaRepository&lt;T,</span> <span class="pre">ID&gt;</span></code></td>
 </tr>
 </tbody>
 </table>
 </div></blockquote>
 <p>を入力して「Finish」する。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.domain.repository.todo</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">todo.domain.repository.todo</span><span class="o">;</span>
 
 <span class="hll"><span class="kn">import</span> <span class="nn">org.springframework.data.jpa.repository.JpaRepository</span><span class="o">;</span>
 </span><span class="hll"><span class="kn">import</span> <span class="nn">org.springframework.data.jpa.repository.Query</span><span class="o">;</span>
@@ -4054,9 +4046,9 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">JpaRepository</span></code>のGenericsのパラメータを指定する。</div>
-<div class="line">左から順に、Entityのクラス(<code class="docutils literal"><span class="pre">Todo</span></code>)、主キーのクラス(<code class="docutils literal"><span class="pre">String</span></code>)を指定する。</div>
-<div class="line">基本的なCRUD操作(<code class="docutils literal"><span class="pre">findOne</span></code>, <code class="docutils literal"><span class="pre">findAll</span></code>, <code class="docutils literal"><span class="pre">save</span></code>, <code class="docutils literal"><span class="pre">delete</span></code>など)は、<code class="docutils literal"><span class="pre">JpaRepository</span></code>インタフェースに定義済みであるため、<code class="docutils literal"><span class="pre">TodoRepository</span></code>には<code class="docutils literal"><span class="pre">countByFinished</span></code>メソッドのみ定義すればよい。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">JpaRepository</span></code>のGenericsのパラメータを指定する。</div>
+<div class="line">左から順に、Entityのクラス(<code class="docutils literal notranslate"><span class="pre">Todo</span></code>)、主キーのクラス(<code class="docutils literal notranslate"><span class="pre">String</span></code>)を指定する。</div>
+<div class="line">基本的なCRUD操作(<code class="docutils literal notranslate"><span class="pre">findOne</span></code>, <code class="docutils literal notranslate"><span class="pre">findAll</span></code>, <code class="docutils literal notranslate"><span class="pre">save</span></code>, <code class="docutils literal notranslate"><span class="pre">delete</span></code>など)は、<code class="docutils literal notranslate"><span class="pre">JpaRepository</span></code>インタフェースに定義済みであるため、<code class="docutils literal notranslate"><span class="pre">TodoRepository</span></code>には<code class="docutils literal notranslate"><span class="pre">countByFinished</span></code>メソッドのみ定義すればよい。</div>
 </div>
 </td>
 </tr>
@@ -4065,7 +4057,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">countByFinished</span></code>メソッドを呼び出した際に実行するJPQLを、<code class="docutils literal"><span class="pre">&#64;Query</span></code>アノテーションで指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">countByFinished</span></code>メソッドを呼び出した際に実行するJPQLを、<code class="docutils literal notranslate"><span class="pre">&#64;Query</span></code>アノテーションで指定する。</div>
 </div>
 </td>
 </tr>
@@ -4074,8 +4066,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">(2)で指定したJPQL内のバインド変数に対応するメソッド引数に、<code class="docutils literal"><span class="pre">&#64;Param</span></code>アノテーションを指定する。</div>
-<div class="line">ここでは、JPQL中の<code class="docutils literal"><span class="pre">”:finished”</span></code>に値を埋め込むために、メソッド引数の<code class="docutils literal"><span class="pre">finished</span></code>に<code class="docutils literal"><span class="pre">&#64;Param(“finished”)</span></code>を付けている。</div>
+<div class="line">(2)で指定したJPQL内のバインド変数に対応するメソッド引数に、<code class="docutils literal notranslate"><span class="pre">&#64;Param</span></code>アノテーションを指定する。</div>
+<div class="line">ここでは、JPQL中の<code class="docutils literal notranslate"><span class="pre">”:finished”</span></code>に値を埋め込むために、メソッド引数の<code class="docutils literal notranslate"><span class="pre">finished</span></code>に<code class="docutils literal notranslate"><span class="pre">&#64;Param(“finished”)</span></code>を付けている。</div>
 </div>
 </td>
 </tr>
@@ -4085,13 +4077,13 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <div class="section" id="id41">
 <h4><a class="toc-backref" href="#id93">11.1.5.4.3. TodoRepositoryImplの作成</a><a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h4>
 <p>Spring Data JPAを使用する場合、RepositoryImplはRepositoryインタフェースから自動生成される。
-そのため、<code class="docutils literal"><span class="pre">TodoRepositoryImpl</span></code>の作成は不要である。作成した場合は削除すること。</p>
+そのため、<code class="docutils literal notranslate"><span class="pre">TodoRepositoryImpl</span></code>の作成は不要である。作成した場合は削除すること。</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <p>以上で、Spring Data JPAを使用したインフラストラクチャ層の作成が完了したので、Service及びアプリケーション層の作成を行う。</p>
 <p>Service及びアプリケーション層を作成後にAPサーバーを起動し、Todoの表示を行うと、以下のようなSQLログや、トランザクションログが出力される。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go"> date:2016-02-17 13:32:44    thread:tomcat-http--5   X-Track:7c34263e0a2143639f3ffd191b35c135        level:TRACE     logger:o.t.gfw.web.logging.TraceLoggingInterceptor      message:[START CONTROLLER] TodoController.list(Model)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go"> date:2016-02-17 13:32:44    thread:tomcat-http--5   X-Track:7c34263e0a2143639f3ffd191b35c135        level:TRACE     logger:o.t.gfw.web.logging.TraceLoggingInterceptor      message:[START CONTROLLER] TodoController.list(Model)</span>
 <span class="hll"><span class="go"> date:2016-02-17 13:32:44    thread:tomcat-http--5   X-Track:7c34263e0a2143639f3ffd191b35c135        level:DEBUG     logger:o.h.e.transaction.spi.AbstractTransactionImpl    message:begin</span>
 </span><span class="hll"><span class="go"> date:2016-02-17 13:32:44    thread:tomcat-http--5   X-Track:7c34263e0a2143639f3ffd191b35c135        level:DEBUG     logger:o.h.e.transaction.internal.jdbc.JdbcTransaction  message:initial autocommit status: false</span>
 </span><span class="hll"><span class="go"> date:2016-02-17 13:32:45    thread:tomcat-http--5   X-Track:7c34263e0a2143639f3ffd191b35c135        level:DEBUG     logger:jdbc.sqltiming                                   message: org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:82)</span>
@@ -4151,9 +4143,9 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 ここでは、チュートリアルで作成するTodoアプリケーションで使用しない設定については、解説を割愛している箇所がある。</p>
 <div class="section" id="web-xml">
 <h4><a class="toc-backref" href="#id97">11.1.7.1.1. web.xml</a><a class="headerlink" href="#web-xml" title="Permalink to this headline">¶</a></h4>
-<p><code class="file docutils literal"><span class="pre">web.xml</span></code>には、WebアプリケーションとしてTodoアプリをデプロイするための設定を行う。</p>
-<p>作成したブランクプロジェクトの<code class="file docutils literal"><span class="pre">src/main/webapp/WEB-INF/web.xml</span></code>は、以下のような設定となっている。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<p><code class="file docutils literal notranslate"><span class="pre">web.xml</span></code>には、WebアプリケーションとしてTodoアプリをデプロイするための設定を行う。</p>
+<p>作成したブランクプロジェクトの<code class="file docutils literal notranslate"><span class="pre">src/main/webapp/WEB-INF/web.xml</span></code>は、以下のような設定となっている。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="hll"><span class="c">&lt;!-- (1) --&gt;</span>
 </span><span class="nt">&lt;web-app</span> <span class="na">xmlns=</span><span class="s">&quot;http://java.sun.com/xml/ns/javaee&quot;</span>
     <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
@@ -4317,8 +4309,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 <p>ブランクプロジェクトでは、</p>
 <ul class="simple">
-<li>アプリケーション全体で使用される<code class="docutils literal"><span class="pre">ApplicationContext</span></code>を作成するための<code class="docutils literal"><span class="pre">ContextLoaderListener</span></code></li>
-<li>HttpSessionに対する操作をログ出力するための <code class="docutils literal"><span class="pre">HttpSessionEventLoggingListener</span></code></li>
+<li>アプリケーション全体で使用される<code class="docutils literal notranslate"><span class="pre">ApplicationContext</span></code>を作成するための<code class="docutils literal notranslate"><span class="pre">ContextLoaderListener</span></code></li>
+<li>HttpSessionに対する操作をログ出力するための <code class="docutils literal notranslate"><span class="pre">HttpSessionEventLoggingListener</span></code></li>
 </ul>
 <p class="last">が設定済みである。</p>
 </td>
@@ -4333,7 +4325,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <p>ブランクプロジェクトでは、</p>
 <ul class="simple">
 <li>共通ライブラリから提供しているサーブレットフィルタ</li>
-<li>Spring Frameworkから提供されている文字エンコーディングを指定するための<code class="docutils literal"><span class="pre">CharacterEncodingFilter</span></code></li>
+<li>Spring Frameworkから提供されている文字エンコーディングを指定するための<code class="docutils literal notranslate"><span class="pre">CharacterEncodingFilter</span></code></li>
 <li>Spring Securityから提供されている認証・認可用のサーブレットフィルタ</li>
 </ul>
 <p class="last">が設定済みである。</p>
@@ -4346,8 +4338,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <td><div class="first last line-block">
 <div class="line">Spring MVCのエントリポイントとなるDispatcherServletの定義。</div>
 <div class="line"><br /></div>
-<div class="line">DispatcherServletの中で使用する<code class="docutils literal"><span class="pre">ApplicationContext</span></code>を、(2)で作成した<code class="docutils literal"><span class="pre">ApplicationContext</span></code>の子として作成する。</div>
-<div class="line">(2)で作成した<code class="docutils literal"><span class="pre">ApplicationContext</span></code>を親にすることで、(2)で読み込まれたコンポーネントも使用することができる。</div>
+<div class="line">DispatcherServletの中で使用する<code class="docutils literal notranslate"><span class="pre">ApplicationContext</span></code>を、(2)で作成した<code class="docutils literal notranslate"><span class="pre">ApplicationContext</span></code>の子として作成する。</div>
+<div class="line">(2)で作成した<code class="docutils literal notranslate"><span class="pre">ApplicationContext</span></code>を親にすることで、(2)で読み込まれたコンポーネントも使用することができる。</div>
 </div>
 </td>
 </tr>
@@ -4363,7 +4355,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <li>JSP内でEL式が使用可能な状態</li>
 <li>JSPのページエンコーディングとしてUTF-8</li>
 <li>JSP内でスクリプティングが使用可能な状態</li>
-<li>各JSPの先頭でインクルードするJSPとして、<code class="file docutils literal"><span class="pre">/WEB-INF/views/common/include.jsp</span></code></li>
+<li>各JSPの先頭でインクルードするJSPとして、<code class="file docutils literal notranslate"><span class="pre">/WEB-INF/views/common/include.jsp</span></code></li>
 </ul>
 <p class="last">が設定済みである。</p>
 </td>
@@ -4377,7 +4369,7 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 <p>ブランクプロジェクトでは、</p>
 <ul class="simple">
-<li>サーブレットコンテナにHTTPステータスコードとして、<code class="docutils literal"><span class="pre">404</span></code>又は<code class="docutils literal"><span class="pre">500</span></code>が応答</li>
+<li>サーブレットコンテナにHTTPステータスコードとして、<code class="docutils literal notranslate"><span class="pre">404</span></code>又は<code class="docutils literal notranslate"><span class="pre">500</span></code>が応答</li>
 <li>サーブレットコンテナに例外が通知</li>
 </ul>
 <p class="last">された際の遷移先が定義済みである。</p>
@@ -4406,8 +4398,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <div class="section" id="id44">
 <h4><a class="toc-backref" href="#id98">11.1.7.1.2. インクルードJSP</a><a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h4>
 <p>インクルードJSPには、全てのJSPに適用するJSPの設定や、タグライブラリの設定を行う。</p>
-<p>作成したブランクプロジェクトの<code class="file docutils literal"><span class="pre">src/main/webapp/WEB-INF/views/common/include.jsp</span></code>は、以下のような設定となっている。</p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="hll"><span class="c">&lt;!-- (1) --&gt;</span>
+<p>作成したブランクプロジェクトの<code class="file docutils literal notranslate"><span class="pre">src/main/webapp/WEB-INF/views/common/include.jsp</span></code>は、以下のような設定となっている。</p>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="c">&lt;!-- (1) --&gt;</span>
 </span><span class="k">&lt;%@</span> <span class="n">page</span> <span class="n">session</span><span class="o">=</span><span class="s">&quot;false&quot;</span><span class="k">%&gt;</span>
 <span class="hll"><span class="c">&lt;!-- (2) --&gt;</span>
 </span><span class="k">&lt;%@</span> <span class="n">taglib</span> <span class="n">uri</span><span class="o">=</span><span class="s">&quot;http://java.sun.com/jsp/jstl/core&quot;</span> <span class="n">prefix</span><span class="o">=</span><span class="s">&quot;c&quot;</span><span class="k">%&gt;</span>
@@ -4488,17 +4480,17 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 <h4><a class="toc-backref" href="#id99">11.1.7.1.3. Bean定義ファイル</a><a class="headerlink" href="#bean" title="Permalink to this headline">¶</a></h4>
 <p>作成したブランクプロジェクトには、以下のBean定義ファイルとプロパティファイルが作成される。</p>
 <ul class="simple">
-<li><code class="file docutils literal"><span class="pre">src/main/resources/META-INF/spring/applicationContext.xml</span></code></li>
-<li><code class="file docutils literal"><span class="pre">src/main/resources/META-INF/spring/todo-domain.xml</span></code></li>
-<li><code class="file docutils literal"><span class="pre">src/main/resources/META-INF/spring/todo-infra.xml</span></code></li>
-<li><code class="file docutils literal"><span class="pre">src/main/resources/META-INF/spring/todo-infra.properties</span></code></li>
-<li><code class="file docutils literal"><span class="pre">src/main/resources/META-INF/spring/todo-env.xml</span></code></li>
-<li><code class="file docutils literal"><span class="pre">src/main/resources/META-INF/spring/spring-mvc.xml</span></code></li>
-<li><code class="file docutils literal"><span class="pre">src/main/resources/META-INF/spring/spring-security.xml</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">src/main/resources/META-INF/spring/applicationContext.xml</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">src/main/resources/META-INF/spring/todo-domain.xml</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">src/main/resources/META-INF/spring/todo-infra.xml</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">src/main/resources/META-INF/spring/todo-infra.properties</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">src/main/resources/META-INF/spring/todo-env.xml</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">src/main/resources/META-INF/spring/spring-mvc.xml</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">src/main/resources/META-INF/spring/spring-security.xml</span></code></li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">O/R Mapperに依存しないブランクプロジェクトを作成した場合は、<code class="docutils literal"><span class="pre">todo-infra.properties</span></code>と<code class="docutils literal"><span class="pre">todo-env.xml</span></code>は作成されない。</p>
+<p class="last">O/R Mapperに依存しないブランクプロジェクトを作成した場合は、<code class="docutils literal notranslate"><span class="pre">todo-infra.properties</span></code>と<code class="docutils literal notranslate"><span class="pre">todo-env.xml</span></code>は作成されない。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -4511,12 +4503,12 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </div>
 <div class="section" id="applicationcontext-xml">
 <h5>11.1.7.1.3.1. applicationContext.xml<a class="headerlink" href="#applicationcontext-xml" title="Permalink to this headline">¶</a></h5>
-<p><code class="file docutils literal"><span class="pre">applicationContext.xml</span></code>には、Todoアプリ全体に関わる設定を行う。</p>
+<p><code class="file docutils literal notranslate"><span class="pre">applicationContext.xml</span></code>には、Todoアプリ全体に関わる設定を行う。</p>
 <div class="line-block">
-<div class="line">作成したブランクプロジェクトの<code class="file docutils literal"><span class="pre">src/main/resources/META-INF/spring/applicationContext.xml</span></code> は、以下のような設定となっている。</div>
+<div class="line">作成したブランクプロジェクトの<code class="file docutils literal notranslate"><span class="pre">src/main/resources/META-INF/spring/applicationContext.xml</span></code> は、以下のような設定となっている。</div>
 <div class="line">なお、チュートリアルで使用しないコンポーネントについての説明は割愛する。</div>
 </div>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span>
     <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
     <span class="na">xmlns:context=</span><span class="s">&quot;http://www.springframework.org/schema/context&quot;</span>
@@ -4606,8 +4598,8 @@ Todoアプリケーションを作成した後に一読して頂きたい。</p>
 </td>
 <td><div class="first last line-block">
 <div class="line">プロパティファイルの読み込み設定を行う。</div>
-<div class="line"><code class="docutils literal"><span class="pre">src/main/resources/META-INF/spring</span></code>直下の任意のプロパティファイルを読み込む。</div>
-<div class="line">この設定により、プロパティファイルの値をBean定義ファイル内で<code class="docutils literal"><span class="pre">${propertyName}</span></code>形式で埋め込んだり、Javaクラスに<code class="docutils literal"><span class="pre">&#64;Value(&quot;${propertyName}&quot;)</span></code>でインジェクションすることができる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">src/main/resources/META-INF/spring</span></code>直下の任意のプロパティファイルを読み込む。</div>
+<div class="line">この設定により、プロパティファイルの値をBean定義ファイル内で<code class="docutils literal notranslate"><span class="pre">${propertyName}</span></code>形式で埋め込んだり、Javaクラスに<code class="docutils literal notranslate"><span class="pre">&#64;Value(&quot;${propertyName}&quot;)</span></code>でインジェクションすることができる。</div>
 </div>
 </td>
 </tr>
@@ -4645,12 +4637,12 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 </div>
 <div class="section" id="todo-domain-xml">
 <h5>11.1.7.1.3.2. todo-domain.xml<a class="headerlink" href="#todo-domain-xml" title="Permalink to this headline">¶</a></h5>
-<p><code class="file docutils literal"><span class="pre">todo-domain.xml</span></code>には、Todoアプリのドメイン層に関わる設定を行う。</p>
+<p><code class="file docutils literal notranslate"><span class="pre">todo-domain.xml</span></code>には、Todoアプリのドメイン層に関わる設定を行う。</p>
 <div class="line-block">
-<div class="line">作成したブランクプロジェクトの<code class="file docutils literal"><span class="pre">src/main/resources/META-INF/spring/todo-domain.xml</span></code>は、以下のような設定となっている。</div>
+<div class="line">作成したブランクプロジェクトの<code class="file docutils literal notranslate"><span class="pre">src/main/resources/META-INF/spring/todo-domain.xml</span></code>は、以下のような設定となっている。</div>
 <div class="line">なお、チュートリアルで使用しないコンポーネントについての説明は割愛する。</div>
 </div>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span>
     <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
     <span class="na">xmlns:context=</span><span class="s">&quot;http://www.springframework.org/schema/context&quot;</span>
@@ -4707,7 +4699,7 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 </td>
 <td><div class="first last line-block">
 <div class="line">ドメイン層のクラスを管理するtodo.domainパッケージ配下をcomponent-scan対象とする。</div>
-<div class="line">これにより、todo.domainパッケージ配下のクラスに <code class="docutils literal"><span class="pre">&#64;Repository</span></code> , <code class="docutils literal"><span class="pre">&#64;Service</span></code> などのアノテーションを付けることで、Spring Framerowkが管理するBeanとして登録される。</div>
+<div class="line">これにより、todo.domainパッケージ配下のクラスに <code class="docutils literal notranslate"><span class="pre">&#64;Repository</span></code> , <code class="docutils literal notranslate"><span class="pre">&#64;Service</span></code> などのアノテーションを付けることで、Spring Framerowkが管理するBeanとして登録される。</div>
 <div class="line">登録されたクラス(Bean)は、ControllerやServiceクラスにDIする事で、利用する事が出来る。</div>
 </div>
 </td>
@@ -4716,10 +4708,10 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>O/R Mapperに依存するブランクプロジェクトを作成した場合は、<code class="docutils literal"><span class="pre">&#64;Transactional</span></code>アノテーションによるトランザクション管理を有効にするために、
-<code class="docutils literal"><span class="pre">&lt;tx:annotation-driven&gt;</span></code>タグが設定されている。</p>
+<p>O/R Mapperに依存するブランクプロジェクトを作成した場合は、<code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>アノテーションによるトランザクション管理を有効にするために、
+<code class="docutils literal notranslate"><span class="pre">&lt;tx:annotation-driven&gt;</span></code>タグが設定されている。</p>
 <blockquote class="last">
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;tx:annotation-driven</span> <span class="nt">/&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;tx:annotation-driven</span> <span class="nt">/&gt;</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -4730,16 +4722,16 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 </div>
 <div class="section" id="todo-infra-xml">
 <h5>11.1.7.1.3.3. todo-infra.xml<a class="headerlink" href="#todo-infra-xml" title="Permalink to this headline">¶</a></h5>
-<p><code class="file docutils literal"><span class="pre">todo-infra.xml</span></code>には、Todoアプリのインフラストラクチャ層に関わる設定を行う。</p>
-<p>作成したブランクプロジェクトの<code class="file docutils literal"><span class="pre">src/main/resources/META-INF/spring/todo-infra.xml</span></code>は、
+<p><code class="file docutils literal notranslate"><span class="pre">todo-infra.xml</span></code>には、Todoアプリのインフラストラクチャ層に関わる設定を行う。</p>
+<p>作成したブランクプロジェクトの<code class="file docutils literal notranslate"><span class="pre">src/main/resources/META-INF/spring/todo-infra.xml</span></code>は、
 以下のような設定となっている。</p>
-<p><code class="file docutils literal"><span class="pre">todo-infra.xml</span></code>は、インフラストラクチャ層によって設定が大きく異なるため、
+<p><code class="file docutils literal notranslate"><span class="pre">todo-infra.xml</span></code>は、インフラストラクチャ層によって設定が大きく異なるため、
 ブランクプロジェクト毎に説明を行う。
 作成したブランクプロジェクト以外の説明は読み飛ばしてもよい。</p>
 <div class="section" id="o-r-mappertodo-infra-xml">
 <h6>11.1.7.1.3.3.1. O/R Mapperに依存しないブランクプロジェクトを作成した場合のtodo-infra.xml<a class="headerlink" href="#o-r-mappertodo-infra-xml" title="Permalink to this headline">¶</a></h6>
 <p>O/R Mapperに依存しないブランクプロジェクトを作成した場合、以下のように空定義のファイルが作成される。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span>
     <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
     <span class="na">xsi:schemaLocation=</span><span class="s">&quot;</span>
@@ -4753,7 +4745,7 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 <div class="section" id="mybatis3todo-infra-xml">
 <h6>11.1.7.1.3.3.2. MyBatis3用のブランクプロジェクトを作成した場合のtodo-infra.xml<a class="headerlink" href="#mybatis3todo-infra-xml" title="Permalink to this headline">¶</a></h6>
 <p>MyBatis3用のブランクプロジェクトを作成した場合、以下のような設定となっている。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span> <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span> <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
  <span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span>
      <span class="na">xmlns:mybatis=</span><span class="s">&quot;http://mybatis.org/schema/mybatis-spring&quot;</span>
      <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
@@ -4806,7 +4798,7 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">SqlSessionFactory</span></code>を生成するためのコンポーネントとして、<code class="docutils literal"><span class="pre">SqlSessionFactoryBean</span></code>をbean定義する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">SqlSessionFactory</span></code>を生成するためのコンポーネントとして、<code class="docutils literal notranslate"><span class="pre">SqlSessionFactoryBean</span></code>をbean定義する。</div>
 </div>
 </td>
 </tr>
@@ -4815,7 +4807,7 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">dataSource</span></code>プロパティに、設定済みのデータソースのbeanを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">dataSource</span></code>プロパティに、設定済みのデータソースのbeanを指定する。</div>
 <div class="line"><br /></div>
 <div class="line">MyBatis3の処理の中でSQLを発行する際は、ここで指定したデータソースからコネクションが取得される。</div>
 </div>
@@ -4826,9 +4818,9 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">configLocation</span></code>プロパティに、MyBatis設定ファイルのパスを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">configLocation</span></code>プロパティに、MyBatis設定ファイルのパスを指定する。</div>
 <div class="line"><br /></div>
-<div class="line">ここで指定したファイルは<code class="docutils literal"><span class="pre">SqlSessionFactory</span></code>を生成する時に読み込まれる。</div>
+<div class="line">ここで指定したファイルは<code class="docutils literal notranslate"><span class="pre">SqlSessionFactory</span></code>を生成する時に読み込まれる。</div>
 </div>
 </td>
 </tr>
@@ -4837,7 +4829,7 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Mapperインタフェースをスキャンするために<code class="docutils literal"><span class="pre">&lt;mybatis:scan&gt;</span></code>を定義し、<code class="docutils literal"><span class="pre">base-package</span></code>属性には、</div>
+<div class="line">Mapperインタフェースをスキャンするために<code class="docutils literal notranslate"><span class="pre">&lt;mybatis:scan&gt;</span></code>を定義し、<code class="docutils literal notranslate"><span class="pre">base-package</span></code>属性には、</div>
 <div class="line">Mapperインタフェースが格納されている基底パッケージを指定する。</div>
 <div class="line"><br /></div>
 <div class="line">指定されたパッケージ配下に格納されている Mapperインタフェースがスキャンされ、</div>
@@ -4849,10 +4841,10 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p><code class="file docutils literal"><span class="pre">mybatis-config.xml</span></code>は、MyBatis3自体の動作設定を行う設定ファイルである。</p>
+<p><code class="file docutils literal notranslate"><span class="pre">mybatis-config.xml</span></code>は、MyBatis3自体の動作設定を行う設定ファイルである。</p>
 <p>ブランクプロジェクトでは、デフォルトで以下の設定が行われている。</p>
 <blockquote class="last">
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span>
 <span class="cp">&lt;!DOCTYPE configuration</span>
 <span class="cp">    PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span>
 <span class="cp">    &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;</span>
@@ -4893,7 +4885,7 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 <div class="section" id="jpatodo-infra-xml">
 <h6>11.1.7.1.3.3.3. JPA用のブランクプロジェクトを作成した場合のtodo-infra.xml<a class="headerlink" href="#jpatodo-infra-xml" title="Permalink to this headline">¶</a></h6>
 <p>JPA用のブランクプロジェクトを作成した場合、以下のような設定となっている。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span>
     <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
     <span class="na">xmlns:jpa=</span><span class="s">&quot;http://www.springframework.org/schema/data/jpa&quot;</span>
@@ -4969,7 +4961,7 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 </td>
 <td><div class="first last line-block">
 <div class="line">Spring Data JPAを使用して、Repositoryインタフェースから実装クラスを自動生成する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">&lt;jpa:repository&gt;</span></code>タグの<code class="docutils literal"><span class="pre">base-package</span></code>属性に、Repositoryを格納するパッケージを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;jpa:repository&gt;</span></code>タグの<code class="docutils literal notranslate"><span class="pre">base-package</span></code>属性に、Repositoryを格納するパッケージを指定する。</div>
 </div>
 </td>
 </tr>
@@ -4979,7 +4971,7 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 </td>
 <td><div class="first last line-block">
 <div class="line">JPAの実装ベンダの設定を行う。</div>
-<div class="line">JPA実装として、Hibernateを使うため、<code class="docutils literal"><span class="pre">HibernateJpaVendorAdapter</span></code>を定義している。</div>
+<div class="line">JPA実装として、Hibernateを使うため、<code class="docutils literal notranslate"><span class="pre">HibernateJpaVendorAdapter</span></code>を定義している。</div>
 </div>
 </td>
 </tr>
@@ -4988,7 +4980,7 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">EntityManager</span></code>の定義を行う。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">EntityManager</span></code>の定義を行う。</div>
 </div>
 </td>
 </tr>
@@ -5019,11 +5011,11 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 </div>
 <div class="section" id="id45">
 <h5>11.1.7.1.3.4. todo-infra.properties<a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h5>
-<p><code class="file docutils literal"><span class="pre">todo-infra.properties</span></code>には、Todoアプリのインフラストラクチャ層における環境依存値の設定を行う。</p>
-<p>O/R Mapperに依存しないブランクプロジェクトを作成した際は、<code class="file docutils literal"><span class="pre">todo-infra.properties</span></code>は作成されない。</p>
-<p>作成したブランクプロジェクトの<code class="file docutils literal"><span class="pre">src/main/resources/META-INF/spring/todo-infra.properties</span></code>は、
+<p><code class="file docutils literal notranslate"><span class="pre">todo-infra.properties</span></code>には、Todoアプリのインフラストラクチャ層における環境依存値の設定を行う。</p>
+<p>O/R Mapperに依存しないブランクプロジェクトを作成した際は、<code class="file docutils literal notranslate"><span class="pre">todo-infra.properties</span></code>は作成されない。</p>
+<p>作成したブランクプロジェクトの<code class="file docutils literal notranslate"><span class="pre">src/main/resources/META-INF/spring/todo-infra.properties</span></code>は、
 以下のような設定となっている。</p>
-<div class="highlight-properties"><div class="highlight"><pre><span></span><span class="hll"><span class="c"># (1)</span>
+<div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="c"># (1)</span>
 </span><span class="na">database</span><span class="o">=</span><span class="s">H2</span>
 <span class="na">database.url</span><span class="o">=</span><span class="s">jdbc:h2:mem:todo;DB_CLOSE_DELAY=-1</span>
 <span class="na">database.username</span><span class="o">=</span><span class="s">sa</span>
@@ -5071,7 +5063,7 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">これらの設定値は、<code class="file docutils literal"><span class="pre">todo-env.xml</span></code>から参照されている。</p>
+<p class="last">これらの設定値は、<code class="file docutils literal notranslate"><span class="pre">todo-env.xml</span></code>から参照されている。</p>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -5079,11 +5071,11 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 </div>
 <div class="section" id="todo-env-xml">
 <h5>11.1.7.1.3.5. todo-env.xml<a class="headerlink" href="#todo-env-xml" title="Permalink to this headline">¶</a></h5>
-<p><code class="file docutils literal"><span class="pre">todo-env.xml</span></code>には、デプロイする環境によって設定が異なるコンポーネントの設定を行う。</p>
-<p>作成したブランクプロジェクトの<code class="docutils literal"><span class="pre">src/main/resources/META-INF/spring/todo-env.xml</span></code>は、以下のような設定となっている。</p>
+<p><code class="file docutils literal notranslate"><span class="pre">todo-env.xml</span></code>には、デプロイする環境によって設定が異なるコンポーネントの設定を行う。</p>
+<p>作成したブランクプロジェクトの<code class="docutils literal notranslate"><span class="pre">src/main/resources/META-INF/spring/todo-env.xml</span></code>は、以下のような設定となっている。</p>
 <p>ここでは、MyBatis3用のブランクプロジェクトに格納されるファイルを例に説明する。
-なお、データベースにアクセスしないブランクプロジェクトを作成した際は、<code class="file docutils literal"><span class="pre">todo-env.xml</span></code>は作成されない。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+なお、データベースにアクセスしないブランクプロジェクトを作成した際は、<code class="file docutils literal notranslate"><span class="pre">todo-env.xml</span></code>は作成されない。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span>
     <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
     <span class="na">xmlns:jdbc=</span><span class="s">&quot;http://www.springframework.org/schema/jdbc&quot;</span>
@@ -5164,7 +5156,7 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 <td><div class="first last line-block">
 <div class="line">データソースの設定。</div>
 <div class="line">JDBC関連のログを出力する機能をもったデータソースを指定している。</div>
-<div class="line"><code class="docutils literal"><span class="pre">net.sf.log4jdbc.Log4jdbcProxyDataSource</span></code>を使用すると、SQLなどのJDBC関連のログを出力できるため、デバッグに役立つ情報を出力することができる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">net.sf.log4jdbc.Log4jdbcProxyDataSource</span></code>を使用すると、SQLなどのJDBC関連のログを出力できるため、デバッグに役立つ情報を出力することができる。</div>
 </div>
 </td>
 </tr>
@@ -5176,7 +5168,7 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 <div class="line">データベース初期化の設定。</div>
 <div class="line">データベースを初期化するSQLファイルを実行するための設定を行っている。</div>
 <div class="line"><br /></div>
-<div class="line">この設定は通常、開発中のみでしか使用しない(環境に依存する設定)ため、<code class="docutils literal"><span class="pre">todo-env.xml</span></code> に定義されている。</div>
+<div class="line">この設定は通常、開発中のみでしか使用しない(環境に依存する設定)ため、<code class="docutils literal notranslate"><span class="pre">todo-env.xml</span></code> に定義されている。</div>
 </div>
 </td>
 </tr>
@@ -5188,7 +5180,7 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 <div class="line">データベースを初期化するSQLファイルの設定。</div>
 <div class="line">データベースを初期化するための、DDL文が記載されているSQLファイルとDML文が記載されているSQLファイルを指定している。</div>
 <div class="line"><br /></div>
-<div class="line">ブランクプロジェクトの設定では<code class="docutils literal"><span class="pre">todo-infra.properties</span></code> に<code class="docutils literal"><span class="pre">database=H2</span></code> と定義されているため、<code class="docutils literal"><span class="pre">H2-schema.sql</span></code> 及び<code class="docutils literal"><span class="pre">H2-dataload.sql</span></code> が実行される。</div>
+<div class="line">ブランクプロジェクトの設定では<code class="docutils literal notranslate"><span class="pre">todo-infra.properties</span></code> に<code class="docutils literal notranslate"><span class="pre">database=H2</span></code> と定義されているため、<code class="docutils literal notranslate"><span class="pre">H2-schema.sql</span></code> 及び<code class="docutils literal notranslate"><span class="pre">H2-dataload.sql</span></code> が実行される。</div>
 </div>
 </td>
 </tr>
@@ -5198,10 +5190,10 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 </td>
 <td><div class="first last line-block">
 <div class="line">トランザクションマネージャの設定。</div>
-<div class="line">id属性には、<code class="docutils literal"><span class="pre">transactionManager</span></code>を指定する。</div>
-<div class="line">別の名前を指定する場合は、<code class="docutils literal"><span class="pre">&lt;tx:annotation-driven&gt;</span></code>タグにもトランザクションマネージャ名を指定する必要がある。</div>
+<div class="line">id属性には、<code class="docutils literal notranslate"><span class="pre">transactionManager</span></code>を指定する。</div>
+<div class="line">別の名前を指定する場合は、<code class="docutils literal notranslate"><span class="pre">&lt;tx:annotation-driven&gt;</span></code>タグにもトランザクションマネージャ名を指定する必要がある。</div>
 <div class="line"><br /></div>
-<div class="line">ブランクプロジェクトでは、JDBCのAPIを使用してトランザクションを制御するクラス(<code class="docutils literal"><span class="pre">org.springframework.jdbc.datasource.DataSourceTransactionManager</span></code>)が設定されている。</div>
+<div class="line">ブランクプロジェクトでは、JDBCのAPIを使用してトランザクションを制御するクラス(<code class="docutils literal notranslate"><span class="pre">org.springframework.jdbc.datasource.DataSourceTransactionManager</span></code>)が設定されている。</div>
 </div>
 </td>
 </tr>
@@ -5210,9 +5202,9 @@ Springのバージョンアップを意識する必要がなくなる。</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>JPA用のブランクプロジェクトを作成した場合は、トランザクションマネージャには、
-JPAのAPIを使用してトランザクションを制御するクラス(<code class="docutils literal"><span class="pre">org.springframework.orm.jpa.JpaTransactionManager</span></code>)が設定されている。</p>
+JPAのAPIを使用してトランザクションを制御するクラス(<code class="docutils literal notranslate"><span class="pre">org.springframework.orm.jpa.JpaTransactionManager</span></code>)が設定されている。</p>
 <blockquote class="last">
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;transactionManager&quot;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;transactionManager&quot;</span>
     <span class="na">class=</span><span class="s">&quot;org.springframework.orm.jpa.JpaTransactionManager&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;entityManagerFactory&quot;</span> <span class="na">ref=</span><span class="s">&quot;entityManagerFactory&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/bean&gt;</span>
@@ -5226,12 +5218,12 @@ JPAのAPIを使用してトランザクションを制御するクラス(<code c
 </div>
 <div class="section" id="spring-mvc-xml">
 <h5>11.1.7.1.3.6. spring-mvc.xml<a class="headerlink" href="#spring-mvc-xml" title="Permalink to this headline">¶</a></h5>
-<p><code class="file docutils literal"><span class="pre">spring-mvc.xml</span></code>には、Spring MVCに関する定義を行う。</p>
+<p><code class="file docutils literal notranslate"><span class="pre">spring-mvc.xml</span></code>には、Spring MVCに関する定義を行う。</p>
 <div class="line-block">
-<div class="line">作成したブランクプロジェクトの<code class="file docutils literal"><span class="pre">src/main/resources/META-INF/spring/spring-mvc.xml</span></code>は、以下のような設定となっている。</div>
+<div class="line">作成したブランクプロジェクトの<code class="file docutils literal notranslate"><span class="pre">src/main/resources/META-INF/spring/spring-mvc.xml</span></code>は、以下のような設定となっている。</div>
 <div class="line">なお、チュートリアルで使用しないコンポーネントについての説明は割愛する。</div>
 </div>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span>
     <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
     <span class="na">xmlns:context=</span><span class="s">&quot;http://www.springframework.org/schema/context&quot;</span>
@@ -5381,7 +5373,7 @@ JPAのAPIを使用してトランザクションを制御するクラス(<code c
 </div>
 <div class="last line-block">
 <div class="line">src/main/resources/META-INF/spring直下の任意のプロパティファイルを読み込む。</div>
-<div class="line">この設定により、プロパティファイルの値をBean定義ファイル内で<code class="docutils literal"><span class="pre">${propertyName}</span></code>形式で埋め込んだり、Javaクラスに<code class="docutils literal"><span class="pre">&#64;Value(&quot;${propertyName}&quot;)</span></code>でインジェクションすることができる。</div>
+<div class="line">この設定により、プロパティファイルの値をBean定義ファイル内で<code class="docutils literal notranslate"><span class="pre">${propertyName}</span></code>形式で埋め込んだり、Javaクラスに<code class="docutils literal notranslate"><span class="pre">&#64;Value(&quot;${propertyName}&quot;)</span></code>でインジェクションすることができる。</div>
 </div>
 </td>
 </tr>
@@ -5411,13 +5403,13 @@ JPAのAPIを使用してトランザクションを制御するクラス(<code c
 <div class="line">静的リソース(css, images, jsなど)アクセスのための設定を行う。</div>
 </div>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">mapping</span></code>属性にURLのパスを、<code class="docutils literal"><span class="pre">location</span></code>属性に物理的なパスの設定を行う。</div>
-<div class="line">この設定の場合<code class="docutils literal"><span class="pre">&lt;contextPath&gt;/resources/app/css/styles.css</span></code>に対してリクエストが来た場合、<code class="docutils literal"><span class="pre">WEB-INF/resources/app/css/styles.css</span></code>を探し、見つからなければクラスパス上(<code class="docutils literal"><span class="pre">src/main/resources</span></code>やjar内)の<code class="docutils literal"><span class="pre">META-INF/resources/app/css/styles.css</span></code>を探す。</div>
-<div class="line">どこにも<code class="docutils literal"><span class="pre">styles.css</span></code>が格納されていない場合は、404エラーを返す。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">mapping</span></code>属性にURLのパスを、<code class="docutils literal notranslate"><span class="pre">location</span></code>属性に物理的なパスの設定を行う。</div>
+<div class="line">この設定の場合<code class="docutils literal notranslate"><span class="pre">&lt;contextPath&gt;/resources/app/css/styles.css</span></code>に対してリクエストが来た場合、<code class="docutils literal notranslate"><span class="pre">WEB-INF/resources/app/css/styles.css</span></code>を探し、見つからなければクラスパス上(<code class="docutils literal notranslate"><span class="pre">src/main/resources</span></code>やjar内)の<code class="docutils literal notranslate"><span class="pre">META-INF/resources/app/css/styles.css</span></code>を探す。</div>
+<div class="line">どこにも<code class="docutils literal notranslate"><span class="pre">styles.css</span></code>が格納されていない場合は、404エラーを返す。</div>
 </div>
 <div class="last line-block">
-<div class="line">ここでは<code class="docutils literal"><span class="pre">cache-period</span></code>属性で静的リソースのキャッシュ時間(3600秒=60分)も設定している。</div>
-<div class="line"><code class="docutils literal"><span class="pre">cache-period=&quot;3600&quot;</span></code>と設定しても良いが、60分であることを明示するために <a class="reference external" href="http://docs.spring.io/spring/docs/4.3.14.RELEASE/spring-framework-reference/html/expressions.html#expressions-beandef-xml-based">SpEL</a> を使用して <code class="docutils literal"><span class="pre">cache-period=&quot;#{60</span> <span class="pre">*</span> <span class="pre">60}&quot;</span></code> と書く方が分かりやすい。</div>
+<div class="line">ここでは<code class="docutils literal notranslate"><span class="pre">cache-period</span></code>属性で静的リソースのキャッシュ時間(3600秒=60分)も設定している。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cache-period=&quot;3600&quot;</span></code>と設定しても良いが、60分であることを明示するために <a class="reference external" href="http://docs.spring.io/spring/docs/4.3.14.RELEASE/spring-framework-reference/html/expressions.html#expressions-beandef-xml-based">SpEL</a> を使用して <code class="docutils literal notranslate"><span class="pre">cache-period=&quot;#{60</span> <span class="pre">*</span> <span class="pre">60}&quot;</span></code> と書く方が分かりやすい。</div>
 </div>
 </td>
 </tr>
@@ -5427,7 +5419,7 @@ JPAのAPIを使用してトランザクションを制御するクラス(<code c
 </td>
 <td><div class="first last line-block">
 <div class="line">コントローラ処理のTraceログを出力するインターセプタを設定する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">/resources</span></code>配下を除く任意のパスに適用されるように設定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/resources</span></code>配下を除く任意のパスに適用されるように設定する。</div>
 </div>
 </td>
 </tr>
@@ -5436,16 +5428,16 @@ JPAのAPIを使用してトランザクションを制御するクラス(<code c
 </div>
 </td>
 <td><div class="first line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ViewResolver</span></code>の設定を行う。</div>
-<div class="line">この設定により、例えばコントローラからview名として<code class="docutils literal"><span class="pre">hello</span></code>が返却された場合には<code class="docutils literal"><span class="pre">/WEB-INF/views/hello.jsp</span></code>が実行される。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ViewResolver</span></code>の設定を行う。</div>
+<div class="line">この設定により、例えばコントローラからview名として<code class="docutils literal notranslate"><span class="pre">hello</span></code>が返却された場合には<code class="docutils literal notranslate"><span class="pre">/WEB-INF/views/hello.jsp</span></code>が実行される。</div>
 </div>
 <div class="last admonition tip">
 <p class="first admonition-title">Tip</p>
-<p><code class="docutils literal"><span class="pre">&lt;mvc:view-resolvers&gt;</span></code>要素はSpring Framework 4.1から追加されたXML要素である。
-<code class="docutils literal"><span class="pre">&lt;mvc:view-resolvers&gt;</span></code>要素を使用すると、<code class="docutils literal"><span class="pre">ViewResolver</span></code>をシンプルに定義することが出来る。</p>
-<p>従来通り<code class="docutils literal"><span class="pre">&lt;bean&gt;</span></code>要素を使用した場合の定義例を以下に示す。</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;mvc:view-resolvers&gt;</span></code>要素はSpring Framework 4.1から追加されたXML要素である。
+<code class="docutils literal notranslate"><span class="pre">&lt;mvc:view-resolvers&gt;</span></code>要素を使用すると、<code class="docutils literal notranslate"><span class="pre">ViewResolver</span></code>をシンプルに定義することが出来る。</p>
+<p>従来通り<code class="docutils literal notranslate"><span class="pre">&lt;bean&gt;</span></code>要素を使用した場合の定義例を以下に示す。</p>
 <blockquote class="last">
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;viewResolver&quot;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;viewResolver&quot;</span>
     <span class="na">class=</span><span class="s">&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;prefix&quot;</span> <span class="na">value=</span><span class="s">&quot;/WEB-INF/views/&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;suffix&quot;</span> <span class="na">value=</span><span class="s">&quot;.jsp&quot;</span> <span class="nt">/&gt;</span>
@@ -5460,10 +5452,10 @@ JPAのAPIを使用してトランザクションを制御するクラス(<code c
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>JPA用のブランクプロジェクトを作成した場合は、<code class="docutils literal"><span class="pre">&lt;mvc:interceptors&gt;</span></code>の定義として、
-<code class="docutils literal"><span class="pre">OpenEntityManagerInViewInterceptor</span></code>の定義が有効な状態となっている。</p>
+<p>JPA用のブランクプロジェクトを作成した場合は、<code class="docutils literal notranslate"><span class="pre">&lt;mvc:interceptors&gt;</span></code>の定義として、
+<code class="docutils literal notranslate"><span class="pre">OpenEntityManagerInViewInterceptor</span></code>の定義が有効な状態となっている。</p>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;mvc:interceptor&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;mvc:interceptor&gt;</span>
     <span class="nt">&lt;mvc:mapping</span> <span class="na">path=</span><span class="s">&quot;/**&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;mvc:exclude-mapping</span> <span class="na">path=</span><span class="s">&quot;/resources/**&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;mvc:exclude-mapping</span> <span class="na">path=</span><span class="s">&quot;/**/*.html&quot;</span> <span class="nt">/&gt;</span>
@@ -5473,7 +5465,7 @@ JPAのAPIを使用してトランザクションを制御するクラス(<code c
 </pre></div>
 </div>
 </div></blockquote>
-<p class="last"><code class="docutils literal"><span class="pre">OpenEntityManagerInViewInterceptor</span></code>は、<code class="docutils literal"><span class="pre">EntityManager</span></code>のライフサイクルの開始と終了を行う<code class="docutils literal"><span class="pre">Interceptor</span></code>である。
+<p class="last"><code class="docutils literal notranslate"><span class="pre">OpenEntityManagerInViewInterceptor</span></code>は、<code class="docutils literal notranslate"><span class="pre">EntityManager</span></code>のライフサイクルの開始と終了を行う<code class="docutils literal notranslate"><span class="pre">Interceptor</span></code>である。
 この設定を追加することで、アプリケーション層(Controllerや、Viewクラス)でのLazy Loadが、サポートされる。</p>
 </div>
 <div class="line-block">
@@ -5482,12 +5474,12 @@ JPAのAPIを使用してトランザクションを制御するクラス(<code c
 </div>
 <div class="section" id="spring-security-xml">
 <h5>11.1.7.1.3.7. spring-security.xml<a class="headerlink" href="#spring-security-xml" title="Permalink to this headline">¶</a></h5>
-<p><code class="file docutils literal"><span class="pre">spring-security.xml</span></code>には、Spring Securityに関する定義を行う。</p>
+<p><code class="file docutils literal notranslate"><span class="pre">spring-security.xml</span></code>には、Spring Securityに関する定義を行う。</p>
 <div class="line-block">
-<div class="line">作成したブランクプロジェクトの<code class="file docutils literal"><span class="pre">src/main/resources/META-INF/spring/spring-security.xml</span></code>は、以下のような設定となっている。</div>
+<div class="line">作成したブランクプロジェクトの<code class="file docutils literal notranslate"><span class="pre">src/main/resources/META-INF/spring/spring-security.xml</span></code>は、以下のような設定となっている。</div>
 <div class="line">なお、本チュートリアルではSpring Securityの設定ファイルの説明は割愛する。Spring Securityの設定ファイルについては、「<a class="reference internal" href="TutorialSecurity.html"><span class="doc">Spring Securityチュートリアル</span></a>」を参照されたい。</div>
 </div>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span>
     <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
     <span class="na">xmlns:sec=</span><span class="s">&quot;http://www.springframework.org/schema/security&quot;</span>
@@ -5553,12 +5545,12 @@ JPAのAPIを使用してトランザクションを制御するクラス(<code c
 </div>
 <div class="section" id="logback-xml">
 <h4><a class="toc-backref" href="#id100">11.1.7.1.4. logback.xml</a><a class="headerlink" href="#logback-xml" title="Permalink to this headline">¶</a></h4>
-<p><code class="file docutils literal"><span class="pre">logback.xml</span></code>には、ログ出力に関する定義を行う。</p>
+<p><code class="file docutils literal notranslate"><span class="pre">logback.xml</span></code>には、ログ出力に関する定義を行う。</p>
 <div class="line-block">
-<div class="line">作成したブランクプロジェクトの<code class="file docutils literal"><span class="pre">src/main/resources/logback.xml</span></code>は、以下のような設定となっている。</div>
+<div class="line">作成したブランクプロジェクトの<code class="file docutils literal notranslate"><span class="pre">src/main/resources/logback.xml</span></code>は、以下のような設定となっている。</div>
 <div class="line">なお、チュートリアルで使用しないログ設定についての説明は割愛する。</div>
 </div>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;configuration&gt;</span>
 
 <span class="hll">    <span class="c">&lt;!-- (1) --&gt;</span>
@@ -5685,7 +5677,7 @@ JPAのAPIを使用してトランザクションを制御するクラス(<code c
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">spring-mvc.xmlに設定した<code class="docutils literal"><span class="pre">TraceLoggingInterceptor</span></code>に出力されるようにtraceレベルで設定。</div>
+<div class="line">spring-mvc.xmlに設定した<code class="docutils literal notranslate"><span class="pre">TraceLoggingInterceptor</span></code>に出力されるようにtraceレベルで設定。</div>
 </div>
 </td>
 </tr>
@@ -5698,7 +5690,7 @@ JPAのAPIを使用してトランザクションを制御するクラス(<code c
 <li>JPA用のブランクプロジェクト</li>
 </ul>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;org.hibernate.engine.transaction&quot;</span><span class="nt">&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;org.hibernate.engine.transaction&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;level</span> <span class="na">value=</span><span class="s">&quot;debug&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/logger&gt;</span>
 </pre></div>
@@ -5708,7 +5700,7 @@ JPAのAPIを使用してトランザクションを制御するクラス(<code c
 <li>MyBatis3用のブランクプロジェクト</li>
 </ul>
 <blockquote class="last">
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;</span><span class="nt">&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;logger</span> <span class="na">name=</span><span class="s">&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;level</span> <span class="na">value=</span><span class="s">&quot;debug&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/logger&gt;</span>
 </pre></div>
@@ -5744,7 +5736,7 @@ JPAのAPIを使用してトランザクションを制御するクラス(<code c
     </div>
     <div class="footer">
       © Copyright 2013-2018, NTT DATA Corporation. © Copyright 2013-2018, NTT Corporation.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.3.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.1.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
     </div>
     
     <script>

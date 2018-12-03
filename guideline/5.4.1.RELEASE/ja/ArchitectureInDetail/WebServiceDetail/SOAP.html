@@ -2,23 +2,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>5.3. SOAP Web Service（サーバ/クライアント） &#8212; TERASOLUNA Server Framework for Java (5.x) Development Guideline 5.4.1.RELEASE documentation</title>
     <link rel="stylesheet" href="../../_static/solar.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '5.4.1.RELEASE',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="6. データアクセス" href="../DataAccessDetail/index.html" />
@@ -26,8 +19,7 @@
 <!-- <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'> -->
 <link href="../../_static/solarized-dark.css" rel="stylesheet">
 <link href="../../_static/jquery.treeview.css" rel="stylesheet">
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -46,8 +38,7 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper"><label><input id="scroll" type="checkbox" checked> scroll sidebar</label>
-
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">5.3. SOAP Web Service（サーバ/クライアント）</a><ul>
 <li><a class="reference internal" href="#overview">5.3.1. Overview</a><ul>
@@ -120,7 +111,6 @@
 </li>
 </ul>
 
-
   <h4>Previous topic</h4>
   <p class="topless"><a href="RestClient.html"
                         title="previous chapter">5.2. RESTクライアント（HTTPクライアント）</a></p>
@@ -136,12 +126,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -378,7 +370,7 @@
 </td>
 <td><div class="first last line-block">
 <div class="line">[クライアント] WebServiceインターフェースが呼び出されると実体として「動的プロキシ(Dynamic Proxy)」(以下「プロキシ」)が呼び出される。</div>
-<div class="line">このプロキシは<code class="docutils literal"><span class="pre">org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean</span></code>が生成したWebServiceインターフェースの実装クラスである。</div>
+<div class="line">このプロキシは<code class="docutils literal notranslate"><span class="pre">org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean</span></code>が生成したWebServiceインターフェースの実装クラスである。</div>
 <div class="line">この実装クラスがServiceにインジェクションされ、ServiceはWebServiceインターフェースのメソッドを呼び出すだけで、SOAP Web Serviceを利用した処理を行うことができる。</div>
 </div>
 </td>
@@ -405,18 +397,18 @@
 <td><div class="first line-block">
 <div class="line">[サーバ] WebServiceインターフェースが呼び出されると実体としてWebService実装クラスが呼び出される。</div>
 <div class="line">SOAPサーバでは、WebServiceインターフェースの実装クラスとしてWebService実装クラスを用意する。</div>
-<div class="line">このWebService実装クラスは、<code class="docutils literal"><span class="pre">org.springframework.web.context.support.SpringBeanAutowiringSupport</span></code>を継承することで、SpringのDIコンテナ上のBeanを<code class="docutils literal"><span class="pre">&#64;Autowired</span></code>などでインジェクションすることができる。</div>
+<div class="line">このWebService実装クラスは、<code class="docutils literal notranslate"><span class="pre">org.springframework.web.context.support.SpringBeanAutowiringSupport</span></code>を継承することで、SpringのDIコンテナ上のBeanを<code class="docutils literal notranslate"><span class="pre">&#64;Autowired</span></code>などでインジェクションすることができる。</div>
 </div>
 <div class="last admonition note">
 <p class="first admonition-title">Note</p>
 <p>WebService実装クラスは、Spring Frameworkが提供するDispatcherServlet上ではなく、APサーバのJAX-WSエンジンが実装するサーブレットとして動作する。このためガイドラインのアプリケーション層の実装に記載している実装方法とは以下のような違いがあることに注意されたい。</p>
 <ul class="simple">
 <li>WebService実装クラスがSpringのDIコンテナ上で管理されないため、例えばSpringのAOPによる横断的な処理をかけることができない。（ただし、JAX-WS実装としてApache CXFを利用する場合にはSpringのDIコンテナ上で管理される）</li>
-<li>SpringのControllerクラスではないため、 <code class="docutils literal"><span class="pre">&#64;ControllerAdvice</span></code>や <code class="docutils literal"><span class="pre">&#64;ExceptionHandler</span></code> などが適用されない。</li>
+<li>SpringのControllerクラスではないため、 <code class="docutils literal notranslate"><span class="pre">&#64;ControllerAdvice</span></code>や <code class="docutils literal notranslate"><span class="pre">&#64;ExceptionHandler</span></code> などが適用されない。</li>
 </ul>
-<p>また、SOAPサーバは、<code class="docutils literal"><span class="pre">&#64;Inject</span></code>ではなく、<code class="docutils literal"><span class="pre">&#64;Autowired</span></code>でインジェクションすることを推奨する。</p>
-<p><code class="docutils literal"><span class="pre">&#64;Inject</span></code>の場合、JavaEEサーバが提供するDI機能で使用されるため、JavaEEサーバのDIコンテナに存在しないとエラーになってしまう。</p>
-<p class="last">上記に対して、<code class="docutils literal"><span class="pre">&#64;Autowired</span></code>であればSpringのDI機能のみで使用されるため、意図せずJavaEEサーバのDI機能でエラーになるのを防止することができる。</p>
+<p>また、SOAPサーバは、<code class="docutils literal notranslate"><span class="pre">&#64;Inject</span></code>ではなく、<code class="docutils literal notranslate"><span class="pre">&#64;Autowired</span></code>でインジェクションすることを推奨する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">&#64;Inject</span></code>の場合、JavaEEサーバが提供するDI機能で使用されるため、JavaEEサーバのDIコンテナに存在しないとエラーになってしまう。</p>
+<p class="last">上記に対して、<code class="docutils literal notranslate"><span class="pre">&#64;Autowired</span></code>であればSpringのDI機能のみで使用されるため、意図せずJavaEEサーバのDI機能でエラーになるのを防止することができる。</p>
 </div>
 </td>
 </tr>
@@ -740,9 +732,9 @@
 <div class="line"><br /></div>
 </div>
 <p><strong>パッケージのコンポーネントスキャン設定</strong></p>
-<p>Webサービスで使用するコンポーネントをスキャンするため、<code class="docutils literal"><span class="pre">[server</span> <span class="pre">projectName]-ws.xml</span></code>を作成し、コンポーネントスキャンの定義を行い、Webサービスにインジェクションできるようにする。</p>
+<p>Webサービスで使用するコンポーネントをスキャンするため、<code class="docutils literal notranslate"><span class="pre">[server</span> <span class="pre">projectName]-ws.xml</span></code>を作成し、コンポーネントスキャンの定義を行い、Webサービスにインジェクションできるようにする。</p>
 <p><em>[server projectName]-web/src/main/resources/META-INF/spring/[server projectName]-ws.xml</em></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
     <span class="na">xmlns:context=</span><span class="s">&quot;http://www.springframework.org/schema/context&quot;</span>
     <span class="na">xsi:schemaLocation=</span><span class="s">&quot;</span>
@@ -781,7 +773,7 @@
 <div class="line"><br /></div>
 </div>
 <p><em>[server projectName]-web/src/main/webapp/WEB-INF/web.xml</em></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;context-param&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;context-param&gt;</span>
     <span class="nt">&lt;param-name&gt;</span>contextConfigLocation<span class="nt">&lt;/param-name&gt;</span>
     <span class="c">&lt;!-- Root ApplicationContext --&gt;</span>
     <span class="c">&lt;!-- (1) --&gt;</span>
@@ -809,7 +801,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">[server</span> <span class="pre">projectName]-ws.xml</span></code>をルート<code class="docutils literal"><span class="pre">ApplicationContext</span></code>生成時の読み込み対象に加える。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">[server</span> <span class="pre">projectName]-ws.xml</span></code>をルート<code class="docutils literal notranslate"><span class="pre">ApplicationContext</span></code>生成時の読み込み対象に加える。</div>
 </div>
 </td>
 </tr>
@@ -824,7 +816,7 @@
 <div class="line">入力チェックの詳細は <a class="reference internal" href="#soaphowtouseservervalidation"><span class="std std-ref">入力チェックの実装</span></a>を参照されたい。</div>
 </div>
 <p><em>[server projectName]-web/src/main/resources/META-INF/spring/applicationContext.xml</em></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">&quot;org.springframework.validation.beanvalidation.MethodValidationPostProcessor&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">&quot;org.springframework.validation.beanvalidation.MethodValidationPostProcessor&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;validator&quot;</span> <span class="na">ref=</span><span class="s">&quot;validator&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/bean&gt;</span>
 
@@ -852,10 +844,10 @@
 <p><strong>Domain Objectの作成</strong></p>
 <div class="line-block">
 <div class="line">modelプロジェクト内に、Webサービスの引数や返り値に使用するDomain Objectを作成する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">java.io.Serializable</span></code>インターフェースを実装した一般のJavaBeanと特に変わりはない。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">java.io.Serializable</span></code>インターフェースを実装した一般のJavaBeanと特に変わりはない。</div>
 </div>
 <p><em>[server projectName]-model/src/main/java/com/example/domain/model/Todo.java</em></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.domain.model</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.domain.model</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.Serializable</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
@@ -883,7 +875,7 @@
 <p><strong>WebServiceインターフェイスの作成</strong></p>
 <p>webserviceプロジェクト内にWebサービスを呼び出すインターフェースを作成する。</p>
 <p><em>[server projectName]-webservice/src/main/java/com/example/ws/todo/TodoWebService.java</em></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.todo</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
@@ -921,16 +913,16 @@
 </div>
 </td>
 <td><div class="first line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;WebService</span></code>を付けることで、WebServiceインターフェースであることを宣言する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">targetNamespace</span></code>属性には、名前空間を定義するが、これは作成するWebサービスのパッケージ名と合わせることを推奨する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;WebService</span></code>を付けることで、WebServiceインターフェースであることを宣言する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">targetNamespace</span></code>属性には、名前空間を定義するが、これは作成するWebサービスのパッケージ名と合わせることを推奨する。</div>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last"><code class="docutils literal"><span class="pre">targetNamespace</span></code>属性の値は一意にする必要がある。そのため、ガイドライン上のソースを流用する場合は必ず変更すること。</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">targetNamespace</span></code>属性の値は一意にする必要がある。そのため、ガイドライン上のソースを流用する場合は必ず変更すること。</p>
 </div>
 <div class="last admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal"><span class="pre">targetNamespace</span></code>属性の値はWSDL上に定義され、このWebサービスの名前空間を決定し、一意に特定するために使用される。</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">targetNamespace</span></code>属性の値はWSDL上に定義され、このWebサービスの名前空間を決定し、一意に特定するために使用される。</p>
 </div>
 </td>
 </tr>
@@ -939,7 +931,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Webサービスのメソッドとして公開するメソッドに<code class="docutils literal"><span class="pre">&#64;WebMethod</span></code>を付ける。</div>
+<div class="line">Webサービスのメソッドとして公開するメソッドに<code class="docutils literal notranslate"><span class="pre">&#64;WebMethod</span></code>を付ける。</div>
 <div class="line">このアノテーションを付けることにより、WSDL上にメソッドが公開され、外部から使用することが可能になる。</div>
 </div>
 </td>
@@ -949,7 +941,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">返り値に<code class="docutils literal"><span class="pre">&#64;WebResult</span></code>を付け、名前を<code class="docutils literal"><span class="pre">name</span></code>属性に指定する。返り値がない場合は不要。</div>
+<div class="line">返り値に<code class="docutils literal notranslate"><span class="pre">&#64;WebResult</span></code>を付け、名前を<code class="docutils literal notranslate"><span class="pre">name</span></code>属性に指定する。返り値がない場合は不要。</div>
 <div class="line">このアノテーションを付けることにより、WSDL上に返り値として公開される。</div>
 </div>
 </td>
@@ -959,9 +951,9 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">引数に<code class="docutils literal"><span class="pre">&#64;WebParam</span></code>を付け、名前を<code class="docutils literal"><span class="pre">name</span></code>属性に指定する。</div>
+<div class="line">引数に<code class="docutils literal notranslate"><span class="pre">&#64;WebParam</span></code>を付け、名前を<code class="docutils literal notranslate"><span class="pre">name</span></code>属性に指定する。</div>
 <div class="line">このアノテーションを付けることにより、WSDL上に引数が公開され、外部から呼び出すときの必要なパラメータとして定義される。</div>
-<div class="line"><code class="docutils literal"><span class="pre">WebFaultException</span></code>の詳細は「<a class="reference internal" href="#soaphowtouseexceptionhandler"><span class="std std-ref">例外ハンドリングの実装</span></a>」を参照されたい。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">WebFaultException</span></code>の詳細は「<a class="reference internal" href="#soaphowtouseexceptionhandler"><span class="std std-ref">例外ハンドリングの実装</span></a>」を参照されたい。</div>
 </div>
 </td>
 </tr>
@@ -998,7 +990,7 @@
 <p><strong>WebService実装クラスの作成</strong></p>
 <p>webプロジェクト内にWebServiceインターフェースの実装クラスを作成する。</p>
 <p><em>[server projectName]-web/src/main/java/com/example/ws/todo/TodoWebServiceImpl.java</em></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.todo</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
@@ -1052,15 +1044,15 @@
 </div>
 </td>
 <td><div class="first line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;WebService</span></code>を付けることで、WebServiceの実装クラスであることを宣言する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">portName</span></code>属性は、WSDL上のポート名として公開される。</div>
-<div class="line"><code class="docutils literal"><span class="pre">serviceName</span></code>属性は、WSDL上のサービス名として公開される。</div>
-<div class="line"><code class="docutils literal"><span class="pre">targetNamespace</span></code>属性は、WSDL上で使用されるネームスペース。</div>
-<div class="line"><code class="docutils literal"><span class="pre">endpointInterface</span></code>属性は、このクラスが実装しているWebサービスのインターフェース名を定義する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;WebService</span></code>を付けることで、WebServiceの実装クラスであることを宣言する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">portName</span></code>属性は、WSDL上のポート名として公開される。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">serviceName</span></code>属性は、WSDL上のサービス名として公開される。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">targetNamespace</span></code>属性は、WSDL上で使用されるネームスペース。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">endpointInterface</span></code>属性は、このクラスが実装しているWebサービスのインターフェース名を定義する。</div>
 </div>
 <div class="last admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal"><span class="pre">TodoWebService</span></code>インターフェースでは、<code class="docutils literal"><span class="pre">&#64;WebService</span></code>の属性として<code class="docutils literal"><span class="pre">portName</span></code>属性, <code class="docutils literal"><span class="pre">serviceName</span></code>属性, <code class="docutils literal"><span class="pre">endpointInterface</span></code>属性を設定してはいけない。これは、このインターフェースはWSDL上の<code class="docutils literal"><span class="pre">portType</span></code>要素に対応しており、Webサービスの内容を記述する要素ではないためである。</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">TodoWebService</span></code>インターフェースでは、<code class="docutils literal notranslate"><span class="pre">&#64;WebService</span></code>の属性として<code class="docutils literal notranslate"><span class="pre">portName</span></code>属性, <code class="docutils literal notranslate"><span class="pre">serviceName</span></code>属性, <code class="docutils literal notranslate"><span class="pre">endpointInterface</span></code>属性を設定してはいけない。これは、このインターフェースはWSDL上の<code class="docutils literal notranslate"><span class="pre">portType</span></code>要素に対応しており、Webサービスの内容を記述する要素ではないためである。</p>
 </div>
 </td>
 </tr>
@@ -1069,8 +1061,8 @@
 </div>
 </td>
 <td><div class="first line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;BindingType</span></code>を付けることで、バインディングの方式を設定する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">SOAPBinding.SOAP12HTTP_BINDING</span></code>を定義するとSOAP1.2でのバインディングとなる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;BindingType</span></code>を付けることで、バインディングの方式を設定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">SOAPBinding.SOAP12HTTP_BINDING</span></code>を定義するとSOAP1.2でのバインディングとなる。</div>
 <div class="line">何もつけない場合は、SOAP1.1でのバインディングとなる。</div>
 </div>
 <div class="last admonition note">
@@ -1085,8 +1077,8 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">先ほど作成した<code class="docutils literal"><span class="pre">TodoWebService</span></code>インターフェースを実装する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">org.springframework.web.context.support.SpringBeanAutowiringSupport</span></code>を継承することで、SpringのBeanをDIできるようにする。</div>
+<div class="line">先ほど作成した<code class="docutils literal notranslate"><span class="pre">TodoWebService</span></code>インターフェースを実装する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">org.springframework.web.context.support.SpringBeanAutowiringSupport</span></code>を継承することで、SpringのBeanをDIできるようにする。</div>
 </div>
 </td>
 </tr>
@@ -1128,7 +1120,7 @@
 <div class="line">以下のように、Serviceのインターフェースに入力チェック内容を定義する。</div>
 </div>
 <p><em>[server projectName]-domain/src/main/java/com/example/domain/service/todo/TodoService.java</em></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.domain.service.todo</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.domain.service.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
@@ -1169,7 +1161,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;Validated</span></code>を付けることで、このインターフェースの実装クラスが入力チェック対象であることを宣言する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;Validated</span></code>を付けることで、このインターフェースの実装クラスが入力チェック対象であることを宣言する。</div>
 </div>
 </td>
 </tr>
@@ -1187,7 +1179,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">JavaBeanの入力チェックを行う場合も、引数に<code class="docutils literal"><span class="pre">&#64;Valid</span></code>を付ける。</div>
+<div class="line">JavaBeanの入力チェックを行う場合も、引数に<code class="docutils literal notranslate"><span class="pre">&#64;Valid</span></code>を付ける。</div>
 </div>
 </td>
 </tr>
@@ -1196,7 +1188,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;Validated</span></code>にグループを指定し、特定の条件を絞って入力チェックすることも可能である。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;Validated</span></code>にグループを指定し、特定の条件を絞って入力チェックすることも可能である。</div>
 <div class="line">グループの詳細は次のJavaBeanの説明で記述する。</div>
 </div>
 </td>
@@ -1207,7 +1199,7 @@
 <div class="line"><br /></div>
 </div>
 <p><em>[server projectName]-model/src/main/java/com/example/domain/model/Todo.java</em></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.domain.model</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.domain.model</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">javax.validation.constraints.NotNull</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">javax.validation.constraints.Null</span><span class="o">;</span>
@@ -1288,7 +1280,7 @@
 </div>
 <p>以下にSOAP Web Serviceに対して、Basic認証を行うSpring Securityの設定例を示す。</p>
 <p><em>[server projectName]-web/src/main/resources/META-INF/spring/spring-security.xml</em></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- (1) --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- (1) --&gt;</span>
 <span class="nt">&lt;sec:http</span> <span class="na">pattern=</span><span class="s">&quot;/ws/**&quot;</span>
           <span class="na">create-session=</span><span class="s">&quot;stateless&quot;</span><span class="nt">&gt;</span>
    <span class="nt">&lt;sec:csrf</span> <span class="na">disabled=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
@@ -1320,8 +1312,8 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">sec:http-basic</span></code>タグを記述するとBasic認証を行うことができる。</div>
-<div class="line"><code class="docutils literal"><span class="pre">pattern</span></code>属性を使用して、Webサービスを実行する部分のみ認証を行う。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sec:http-basic</span></code>タグを記述するとBasic認証を行うことができる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">pattern</span></code>属性を使用して、Webサービスを実行する部分のみ認証を行う。</div>
 </div>
 </td>
 </tr>
@@ -1330,8 +1322,8 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">authentication-provider</span></code>を利用して、認証方式を定義する。</div>
-<div class="line">実際の認証およびユーザ情報取得は<code class="docutils literal"><span class="pre">UserDetailsService</span></code>を作成して実施する必要がある。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">authentication-provider</span></code>を利用して、認証方式を定義する。</div>
+<div class="line">実際の認証およびユーザ情報取得は<code class="docutils literal notranslate"><span class="pre">UserDetailsService</span></code>を作成して実施する必要がある。</div>
 <div class="line">詳細は「<a class="reference internal" href="../../Security/Authentication.html"><span class="doc">認証</span></a>」を参照されたい。</div>
 </div>
 </td>
@@ -1347,7 +1339,7 @@
 <div class="line">詳細は「<a class="reference internal" href="../../Security/Authorization.html"><span class="doc">認可</span></a>」のアクセス認可(Method)を参照されたい。</div>
 </div>
 <p><em>[server projectName]-web/src/main/resources/META-INF/spring/spring-security.xml</em></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:global-method-security</span> <span class="na">pre-post-annotations=</span><span class="s">&quot;enabled&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;sec:global-method-security</span> <span class="na">pre-post-annotations=</span><span class="s">&quot;enabled&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
 </pre></div>
 </div>
 <table border="1" class="colwidths-given docutils">
@@ -1366,7 +1358,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;sec:global-method-security&gt;</span></code>要素の<code class="docutils literal"><span class="pre">pre-post-annotations</span></code>属性を<code class="docutils literal"><span class="pre">enabled</span></code>に指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;sec:global-method-security&gt;</span></code>要素の<code class="docutils literal notranslate"><span class="pre">pre-post-annotations</span></code>属性を<code class="docutils literal notranslate"><span class="pre">enabled</span></code>に指定する。</div>
 </div>
 </td>
 </tr>
@@ -1376,7 +1368,7 @@
 <div class="line"><br /></div>
 </div>
 <p><em>[server projectName]-domain/src/main/java/com/example/domain/service/todo/TodoServiceImpl.java</em></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TodoServiceImpl</span> <span class="kd">implements</span> <span class="n">TodoService</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TodoServiceImpl</span> <span class="kd">implements</span> <span class="n">TodoService</span> <span class="o">{</span>
 
     <span class="c1">// omitted</span>
 
@@ -1410,7 +1402,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">認可処理を行うメソッドに<code class="docutils literal"><span class="pre">org.springframework.security.access.prepost.PreAuthorize</span></code>アノテーションを設定する。</div>
+<div class="line">認可処理を行うメソッドに<code class="docutils literal notranslate"><span class="pre">org.springframework.security.access.prepost.PreAuthorize</span></code>アノテーションを設定する。</div>
 </div>
 </td>
 </tr>
@@ -1428,7 +1420,7 @@
 <div class="line">そのため、以下の設定を追加し、SOAP Web Serviceのリクエストに対して、CSRF対策の処理が行われないようにする。</div>
 </div>
 <p><em>[server projectName]-web/src/main/resources/META-INF/spring/spring-security.xml</em></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- (1) --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- (1) --&gt;</span>
 <span class="nt">&lt;sec:http</span> <span class="na">pattern=</span><span class="s">&quot;/ws/**&quot;</span>
     <span class="na">create-session=</span><span class="s">&quot;stateless&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;sec:http-basic</span> <span class="nt">/&gt;</span>
@@ -1453,11 +1445,11 @@
 </td>
 <td><div class="first last line-block">
 <div class="line">SOAP Web Service用のSpring Securityの定義を追加する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">&lt;sec:http&gt;</span></code>要素の<code class="docutils literal"><span class="pre">pattern</span></code>属性にSOAP Web Service用のリクエストパスのURLパターンを指定する。</div>
-<div class="line">このコード例では、<code class="docutils literal"><span class="pre">/ws/</span></code>で始まるリクエストパスをSOAP Web Service用のリクエストパスとしている。</div>
-<div class="line">また、<code class="docutils literal"><span class="pre">create-session</span></code>属性を<code class="docutils literal"><span class="pre">stateless</span></code>とする事で、Spring Securityの処理でセッションが使用されなくなる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;sec:http&gt;</span></code>要素の<code class="docutils literal notranslate"><span class="pre">pattern</span></code>属性にSOAP Web Service用のリクエストパスのURLパターンを指定する。</div>
+<div class="line">このコード例では、<code class="docutils literal notranslate"><span class="pre">/ws/</span></code>で始まるリクエストパスをSOAP Web Service用のリクエストパスとしている。</div>
+<div class="line">また、<code class="docutils literal notranslate"><span class="pre">create-session</span></code>属性を<code class="docutils literal notranslate"><span class="pre">stateless</span></code>とする事で、Spring Securityの処理でセッションが使用されなくなる。</div>
 <div class="line"><br /></div>
-<div class="line">CSRF対策を無効化するために、<code class="docutils literal"><span class="pre">&lt;sec:csrf&gt;</span></code>要素の<code class="docutils literal"><span class="pre">disabled</span></code>属性を<code class="docutils literal"><span class="pre">true</span></code>に指定する。</div>
+<div class="line">CSRF対策を無効化するために、<code class="docutils literal notranslate"><span class="pre">&lt;sec:csrf&gt;</span></code>要素の<code class="docutils literal notranslate"><span class="pre">disabled</span></code>属性を<code class="docutils literal notranslate"><span class="pre">true</span></code>に指定する。</div>
 </div>
 </td>
 </tr>
@@ -1494,7 +1486,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ErrorBean</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ErrorBean</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -1507,7 +1499,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">WebFaultType</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">WebFaultType</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -1520,11 +1512,11 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">WebFaultBean</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">WebFaultBean</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ErrorBean</span></code>と<code class="docutils literal"><span class="pre">WebFaultType</span></code>を保持するクラス。<code class="docutils literal"><span class="pre">ErrorBean</span></code>を<code class="docutils literal"><span class="pre">List</span></code>で保持して例外情報を複数保持できる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ErrorBean</span></code>と<code class="docutils literal notranslate"><span class="pre">WebFaultType</span></code>を保持するクラス。<code class="docutils literal notranslate"><span class="pre">ErrorBean</span></code>を<code class="docutils literal notranslate"><span class="pre">List</span></code>で保持して例外情報を複数保持できる。</div>
 </div>
 </td>
 </tr>
@@ -1533,11 +1525,11 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">WebFaultException</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">WebFaultException</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">WebFaultBean</span></code>を保持する例外クラス。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">WebFaultBean</span></code>を保持する例外クラス。</div>
 </div>
 </td>
 </tr>
@@ -1548,7 +1540,7 @@
 <div class="line"><br /></div>
 </div>
 <p><em>[server projectName]-webservice/src/main/java/com/example/ws/webfault/ErrorBean.java</em></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.webfault</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.webfault</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ErrorBean</span> <span class="o">{</span> <span class="c1">// (1)</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">code</span><span class="o">;</span>
@@ -1585,7 +1577,7 @@
 <div class="line"><br /></div>
 </div>
 <p><em>[server projectName]-webservice/src/main/java/com/example/ws/webfault/WebFaultType.java</em></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.webfault</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.webfault</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">enum</span> <span class="n">WebFaultType</span> <span class="o">{</span> <span class="c1">// (2)</span>
     <span class="n">AccessDeniedFault</span><span class="o">,</span>
@@ -1621,7 +1613,7 @@
 <div class="line"><br /></div>
 </div>
 <p><em>[server projectName]-webservice/src/main/java/com/example/ws/webfault/WebFaultBean.java</em></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.webfault</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.webfault</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
@@ -1664,7 +1656,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ErrorBean</span></code>と<code class="docutils literal"><span class="pre">WebFaultType</span></code>を保持するクラスを作成する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ErrorBean</span></code>と<code class="docutils literal notranslate"><span class="pre">WebFaultType</span></code>を保持するクラスを作成する。</div>
 </div>
 </td>
 </tr>
@@ -1674,7 +1666,7 @@
 <div class="line"><br /></div>
 </div>
 <p><em>[server projectName]-webservice/src/main/java/com/example/ws/webfault/WebFaultException.java</em></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.webfault</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.webfault</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
@@ -1724,9 +1716,9 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Exception継承クラスに<code class="docutils literal"><span class="pre">&#64;WebFault</span></code>を付けて、SOAPFaultであることを宣言する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">name</span></code>属性には、クライアントに送信するSOAPFaultの<code class="docutils literal"><span class="pre">name</span></code>属性を設定する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">targetNamespace</span></code>属性には、使用するネームスペースを設定する。Webサービスと同じにする必要がある。</div>
+<div class="line">Exception継承クラスに<code class="docutils literal notranslate"><span class="pre">&#64;WebFault</span></code>を付けて、SOAPFaultであることを宣言する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">name</span></code>属性には、クライアントに送信するSOAPFaultの<code class="docutils literal notranslate"><span class="pre">name</span></code>属性を設定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">targetNamespace</span></code>属性には、使用するネームスペースを設定する。Webサービスと同じにする必要がある。</div>
 </div>
 </td>
 </tr>
@@ -1749,18 +1741,18 @@
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>WebFaultExceptionにRuntimeExceptionではなく、Exceptionを継承させている理由</strong></p>
-<p class="last"><code class="docutils literal"><span class="pre">WebFaultException</span></code>の親クラスを<code class="docutils literal"><span class="pre">RuntimeException</span></code>にすれば、例外の処理をもっと簡略化することができそうに見える。しかし、親クラスを<code class="docutils literal"><span class="pre">RuntimeException</span></code>にしてはいけない。<a class="reference external" href="https://jcp.org/en/jsr/detail?id=224">JSR 224: JavaTM API for XML-Based Web Services</a>でも明確にしてはいけないと宣言されている。実際に試してみても、APサーバのJAX-WS実装次第ではあるが、クライアントで<code class="docutils literal"><span class="pre">&#64;WebFault</span></code>を付けた例外クラス（<code class="docutils literal"><span class="pre">WebFaultException</span></code>）を取得することができず、エラーの種類やメッセージを取得することができなくなる。AOPを使用して例外処理を実施していないのも<code class="docutils literal"><span class="pre">Exception</span></code>を継承しているためである。</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">WebFaultException</span></code>の親クラスを<code class="docutils literal notranslate"><span class="pre">RuntimeException</span></code>にすれば、例外の処理をもっと簡略化することができそうに見える。しかし、親クラスを<code class="docutils literal notranslate"><span class="pre">RuntimeException</span></code>にしてはいけない。<a class="reference external" href="https://jcp.org/en/jsr/detail?id=224">JSR 224: JavaTM API for XML-Based Web Services</a>でも明確にしてはいけないと宣言されている。実際に試してみても、APサーバのJAX-WS実装次第ではあるが、クライアントで<code class="docutils literal notranslate"><span class="pre">&#64;WebFault</span></code>を付けた例外クラス（<code class="docutils literal notranslate"><span class="pre">WebFaultException</span></code>）を取得することができず、エラーの種類やメッセージを取得することができなくなる。AOPを使用して例外処理を実施していないのも<code class="docutils literal notranslate"><span class="pre">Exception</span></code>を継承しているためである。</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p><strong>WebFaultExceptionのコンストラクタとフィールドについて</strong></p>
-<p class="last"><code class="docutils literal"><span class="pre">WebFaultException</span></code>には、デフォルトコンストラクタと各フィールドに対応するsetterが必須となる。これは、クライアントの内部処理で、<code class="docutils literal"><span class="pre">WebFaultException</span></code>を作成する際に使用するためである。そのため、各フィールドをfinalにすることも不可能である。</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">WebFaultException</span></code>には、デフォルトコンストラクタと各フィールドに対応するsetterが必須となる。これは、クライアントの内部処理で、<code class="docutils literal notranslate"><span class="pre">WebFaultException</span></code>を作成する際に使用するためである。そのため、各フィールドをfinalにすることも不可能である。</p>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <div class="line-block">
-<div class="line">この<code class="docutils literal"><span class="pre">WebFaultException</span></code>を継承し、クライアントへ伝えたい種類分、子クラスを作成する。</div>
+<div class="line">この<code class="docutils literal notranslate"><span class="pre">WebFaultException</span></code>を継承し、クライアントへ伝えたい種類分、子クラスを作成する。</div>
 <div class="line">たとえば以下のような子クラスを作成する。</div>
 </div>
 <ul class="simple">
@@ -1773,7 +1765,7 @@
 </ul>
 <p>下記は、業務エラー例外の例である。</p>
 <p><em>[server projectName]-webservice/src/main/java/com/example/ws/webfault/BusinessFaultException.java</em></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.webfault</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.webfault</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">javax.xml.ws.WebFault</span><span class="o">;</span>
 
@@ -1807,7 +1799,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">WebFaultException</span></code>を継承し、コンストラクタのみ作成する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">WebFaultException</span></code>を継承し、コンストラクタのみ作成する。</div>
 <div class="line">フィールドやその他メソッドは親クラスのメソッドを使用するため記述不要である。</div>
 </div>
 </td>
@@ -1833,7 +1825,7 @@
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">org.springframework.security.access.AccessDeniedException</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">org.springframework.security.access.AccessDeniedException</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -1842,7 +1834,7 @@
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">javax.validation.ConstraintViolationException</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">javax.validation.ConstraintViolationException</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -1851,7 +1843,7 @@
 </td>
 </tr>
 <tr class="row-even"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.exception.ResourceNotFoundException</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.exception.ResourceNotFoundException</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -1860,7 +1852,7 @@
 </td>
 </tr>
 <tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.exception.BusinessException</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.exception.BusinessException</span></code></div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -1871,7 +1863,7 @@
 </tbody>
 </table>
 <p><em>[server projectName]-web/src/main/java/com/example/ws/exception/WsExceptionHandler.java</em></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.exception</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.exception</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.Iterator</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Locale</span><span class="o">;</span>
@@ -1979,7 +1971,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">本クラスをDIコンテナに管理をさせるため、<code class="docutils literal"><span class="pre">&#64;Component</span></code>を付ける。</div>
+<div class="line">本クラスをDIコンテナに管理をさせるため、<code class="docutils literal notranslate"><span class="pre">&#64;Component</span></code>を付ける。</div>
 </div>
 </td>
 </tr>
@@ -1988,7 +1980,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">出力するメッセージを取得するために<code class="docutils literal"><span class="pre">MessageSource</span></code>を使用する。</div>
+<div class="line">出力するメッセージを取得するために<code class="docutils literal notranslate"><span class="pre">MessageSource</span></code>を使用する。</div>
 </div>
 </td>
 </tr>
@@ -1997,7 +1989,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">共通ライブラリが提供する<code class="docutils literal"><span class="pre">ExceptionCodeResolverMessageSource</span></code>を使用して例外の種類と例外コードをマッピングする。</div>
+<div class="line">共通ライブラリが提供する<code class="docutils literal notranslate"><span class="pre">ExceptionCodeResolverMessageSource</span></code>を使用して例外の種類と例外コードをマッピングする。</div>
 <div class="line">詳細は、「<a class="reference internal" href="../WebApplicationDetail/ExceptionHandling.html"><span class="doc">例外ハンドリング</span></a>」を参照されたい。</div>
 </div>
 </td>
@@ -2007,7 +1999,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">共通ライブラリが提供する<code class="docutils literal"><span class="pre">ExceptionLogger</span></code>を使用して例外情報を例外に出力する。</div>
+<div class="line">共通ライブラリが提供する<code class="docutils literal notranslate"><span class="pre">ExceptionLogger</span></code>を使用して例外情報を例外に出力する。</div>
 <div class="line">詳細は、「<a class="reference internal" href="../WebApplicationDetail/ExceptionHandling.html"><span class="doc">例外ハンドリング</span></a>」を参照されたい。</div>
 </div>
 </td>
@@ -2017,7 +2009,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Serviceから発生しうる各例外について、<code class="docutils literal"><span class="pre">SOAPFault</span></code>へのラップを行う。</div>
+<div class="line">Serviceから発生しうる各例外について、<code class="docutils literal notranslate"><span class="pre">SOAPFault</span></code>へのラップを行う。</div>
 <div class="line">例外のマッピングは冒頭の表を参考されたい。</div>
 </div>
 </td>
@@ -2027,7 +2019,7 @@
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>その他の例外の扱いについて</strong></p>
-<p class="last">その他の例外発生時（上記の<code class="docutils literal"><span class="pre">translateException</span></code>メソッドのelse部分）では、クライアントでは詳細な例外の内容は通知されず、<code class="docutils literal"><span class="pre">com.sun.xml.internal.ws.fault.ServerSOAPFaultException</span></code>が発生するのみとなる。他の例外同様にラップしてクライアント側に通知することも可能である。</p>
+<p class="last">その他の例外発生時（上記の<code class="docutils literal notranslate"><span class="pre">translateException</span></code>メソッドのelse部分）では、クライアントでは詳細な例外の内容は通知されず、<code class="docutils literal notranslate"><span class="pre">com.sun.xml.internal.ws.fault.ServerSOAPFaultException</span></code>が発生するのみとなる。他の例外同様にラップしてクライアント側に通知することも可能である。</p>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -2035,7 +2027,7 @@
 <p><strong>Serviceで発生した例外をWebサービス内から例外ハンドラーを呼び出し、ラップする</strong></p>
 <p>Webサービスクラスにて、例外ハンドラーを呼び出す。以下はその例である。</p>
 <p><em>[server projectName]-web/src/main/java/com/example/ws/todo/TodoWebServiceImpl.java</em></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@WebService</span><span class="o">(</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@WebService</span><span class="o">(</span>
         <span class="n">portName</span> <span class="o">=</span> <span class="s">&quot;TodoWebPort&quot;</span><span class="o">,</span>
         <span class="n">serviceName</span> <span class="o">=</span> <span class="s">&quot;TodoWebService&quot;</span><span class="o">,</span>
         <span class="n">targetNamespace</span> <span class="o">=</span> <span class="s">&quot;http://example.com/todo&quot;</span><span class="o">,</span>
@@ -2083,7 +2075,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">WebFaultException</span></code>にラップしてスローするため、throws句を付ける。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">WebFaultException</span></code>にラップしてスローするため、throws句を付ける。</div>
 </div>
 </td>
 </tr>
@@ -2112,7 +2104,7 @@
 <div class="line">以下にその方法を記述する。</div>
 </div>
 <p><em>[server projectName]-webservice/src/main/java/com/example/ws/todo/TodoWebService.java</em></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.todo</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
@@ -2153,7 +2145,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">バイナリデータを処理する<code class="docutils literal"><span class="pre">javax.activation.DataHandler</span></code>に対して<code class="docutils literal"><span class="pre">&#64;XmlMimeType</span></code>を付ける。</div>
+<div class="line">バイナリデータを処理する<code class="docutils literal notranslate"><span class="pre">javax.activation.DataHandler</span></code>に対して<code class="docutils literal notranslate"><span class="pre">&#64;XmlMimeType</span></code>を付ける。</div>
 </div>
 </td>
 </tr>
@@ -2163,7 +2155,7 @@
 <div class="line"><br /></div>
 </div>
 <p><em>[server projectName]-web/src/main/java/com/example/ws/todo/TodoWebServiceImpl.java</em></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.todo</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="o">;</span>
@@ -2229,7 +2221,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;MTOM</span></code>を付けて、MTOMに準拠した実装を使用することを宣言する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;MTOM</span></code>を付けて、MTOMに準拠した実装を使用することを宣言する。</div>
 </div>
 </td>
 </tr>
@@ -2238,7 +2230,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">javax.activation.DataHandler</span></code>から<code class="docutils literal"><span class="pre">java.io.InputStream</span></code>を取得してファイルを扱う。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">javax.activation.DataHandler</span></code>から<code class="docutils literal notranslate"><span class="pre">java.io.InputStream</span></code>を取得してファイルを扱う。</div>
 </div>
 </td>
 </tr>
@@ -2363,9 +2355,9 @@
 <a class="reference internal image-reference" href="../../_images/SOAPClientClass.png"><img alt="Server Projects for SOAP" src="../../_images/SOAPClientClass.png" style="width: 80%;" /></a>
 </div>
 <p><strong>WebServiceインターフェースを実装したプロキシの作成</strong></p>
-<p>WebServiceインターフェースを実装したプロキシを生成する<code class="docutils literal"><span class="pre">org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean</span></code>の定義を行う。</p>
+<p>WebServiceインターフェースを実装したプロキシを生成する<code class="docutils literal notranslate"><span class="pre">org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean</span></code>の定義を行う。</p>
 <p><em>[client projectName]-domain/src/main/resources/META-INF/spring/[client projectName]-domain.xml</em></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;todoWebService&quot;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;todoWebService&quot;</span>
     <span class="na">class=</span><span class="s">&quot;org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean&quot;</span><span class="nt">&gt;</span><span class="c">&lt;!-- (1) --&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;serviceInterface&quot;</span> <span class="na">value=</span><span class="s">&quot;com.example.ws.todo.TodoWebService&quot;</span> <span class="nt">/&gt;</span><span class="c">&lt;!-- (2) --&gt;</span>
     <span class="c">&lt;!-- (3) --&gt;</span>
@@ -2378,7 +2370,7 @@
 </pre></div>
 </div>
 <p><em>[client projectName]-env/src/main/resources/META-INF/spring/[client projectName]-infra.properties</em></p>
-<div class="highlight-properties"><div class="highlight"><pre><span></span><span class="c"># (6)</span>
+<div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="c"># (6)</span>
 <span class="na">webservice.todoWebService.wsdlDocumentResource</span><span class="o">=</span><span class="s">http://AAA.BBB.CCC.DDD:XXXX/[server projectName]-web/ws/TodoWebService?wsdl</span>
 </pre></div>
 </div>
@@ -2398,7 +2390,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean</span></code>を定義する。このクラスが生成するプロキシを経由してSOAPサーバにアクセスできる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean</span></code>を定義する。このクラスが生成するプロキシを経由してSOAPサーバにアクセスできる。</div>
 </div>
 </td>
 </tr>
@@ -2407,7 +2399,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">serviceInterface</span></code>プロパティに本来このWebサービスが実装すべきインターフェースを定義する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">serviceInterface</span></code>プロパティに本来このWebサービスが実装すべきインターフェースを定義する。</div>
 </div>
 </td>
 </tr>
@@ -2416,7 +2408,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">serviceName</span></code>、<code class="docutils literal"><span class="pre">portName</span></code>、<code class="docutils literal"><span class="pre">namespaceUri</span></code>プロパティにそれぞれSOAPサーバ側で定義している同じ内容を定義する必要がある。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">serviceName</span></code>、<code class="docutils literal notranslate"><span class="pre">portName</span></code>、<code class="docutils literal notranslate"><span class="pre">namespaceUri</span></code>プロパティにそれぞれSOAPサーバ側で定義している同じ内容を定義する必要がある。</div>
 </div>
 </td>
 </tr>
@@ -2425,7 +2417,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">wsdlDocumentResource</span></code>プロパティに公開されているWDSLのURLを設定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">wsdlDocumentResource</span></code>プロパティに公開されているWDSLのURLを設定する。</div>
 <div class="line">ここでは後述するプロパティファイルにURLを記述するため、プロパティのキーを指定している。</div>
 </div>
 </td>
@@ -2435,8 +2427,8 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">lookupServiceOnStartup</span></code>プロパティにBean生成する時、SOAPサーバからWSDLファイルを取得するかどうかを設定する。falseの場合はBeanが初めて使用されるタイミングでWSDLファイルの取得が行われる。</div>
-<div class="line">SOAPサーバからWSDLファイルの取得が不可能な場合でもWebサービス クライアントを起動させるために、<code class="docutils literal"><span class="pre">lookupServiceOnStartup</span></code>プロパティに<code class="docutils literal"><span class="pre">false</span></code>を指定することを推奨する。ただし、WSDLファイルをWebサービス クライアントで保持している場合は設定不要である。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">lookupServiceOnStartup</span></code>プロパティにBean生成する時、SOAPサーバからWSDLファイルを取得するかどうかを設定する。falseの場合はBeanが初めて使用されるタイミングでWSDLファイルの取得が行われる。</div>
+<div class="line">SOAPサーバからWSDLファイルの取得が不可能な場合でもWebサービス クライアントを起動させるために、<code class="docutils literal notranslate"><span class="pre">lookupServiceOnStartup</span></code>プロパティに<code class="docutils literal notranslate"><span class="pre">false</span></code>を指定することを推奨する。ただし、WSDLファイルをWebサービス クライアントで保持している場合は設定不要である。</div>
 </div>
 </td>
 </tr>
@@ -2445,12 +2437,12 @@
 </div>
 </td>
 <td><div class="first line-block">
-<div class="line"><code class="docutils literal"><span class="pre">[client</span> <span class="pre">projectName]-domain.xml</span></code>で定義したプロパティのキーの値を設定する。WSDLのURLを記述する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">[client</span> <span class="pre">projectName]-domain.xml</span></code>で定義したプロパティのキーの値を設定する。WSDLのURLを記述する。</div>
 </div>
 <div class="last admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>wsdlDocumentResourceへのWSDLファイルのURL以外の指定</strong></p>
-<p class="last">上記の例では、SOAPサーバがWSDLファイルを公開している前提である。<code class="docutils literal"><span class="pre">classpath:</span></code>や<code class="docutils literal"><span class="pre">file:</span></code>プレフィックスを使用して指定することで静的ファイルを指定することもできる。指定できる文字列は、<a class="reference external" href="http://docs.spring.io/spring/docs/4.3.14.RELEASE/spring-framework-reference/html/resources.html#resources-resourceloader">Spring Framework Reference Documentation -Resources(The ResourceLoader)-</a>を参照されたい。</p>
+<p class="last">上記の例では、SOAPサーバがWSDLファイルを公開している前提である。<code class="docutils literal notranslate"><span class="pre">classpath:</span></code>や<code class="docutils literal notranslate"><span class="pre">file:</span></code>プレフィックスを使用して指定することで静的ファイルを指定することもできる。指定できる文字列は、<a class="reference external" href="http://docs.spring.io/spring/docs/4.3.14.RELEASE/spring-framework-reference/html/resources.html#resources-resourceloader">Spring Framework Reference Documentation -Resources(The ResourceLoader)-</a>を参照されたい。</p>
 </div>
 </td>
 </tr>
@@ -2460,12 +2452,12 @@
 <p class="first admonition-title">Note</p>
 <p><strong>エンドポイントアドレスの上書き指定</strong></p>
 <p>WSDLファイルには、Webサービス実行時のアクセスURL（エンドポイントアドレス）が記述されているため、クライアントではアクセスURLの設定は不要である。
-ただし、WSDLファイルに記述されているURLではないURLにアクセスする場合、<code class="docutils literal"><span class="pre">org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean</span></code>の<code class="docutils literal"><span class="pre">endpointAddress</span></code>プロパティを設定することで上書きすることができる。
+ただし、WSDLファイルに記述されているURLではないURLにアクセスする場合、<code class="docutils literal notranslate"><span class="pre">org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean</span></code>の<code class="docutils literal notranslate"><span class="pre">endpointAddress</span></code>プロパティを設定することで上書きすることができる。
 テストなどで、環境を切り替える場合に使用するとよい。
 以下はその設定例である。</p>
 <p><em>[client projectName]-domain/src/main/resources/META-INF/spring/[client projectName]-domain.xml</em></p>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;todoWebService&quot;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;todoWebService&quot;</span>
     <span class="na">class=</span><span class="s">&quot;org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;serviceInterface&quot;</span> <span class="na">value=</span><span class="s">&quot;com.example.ws.todo.TodoWebService&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;serviceName&quot;</span> <span class="na">value=</span><span class="s">&quot;TodoWebService&quot;</span> <span class="nt">/&gt;</span>
@@ -2480,7 +2472,7 @@
 </div></blockquote>
 <p><em>[client projectName]-env/src/main/resources/META-INF/spring/[client projectName]-infra.properties</em></p>
 <blockquote class="last">
-<div><div class="highlight-properties"><div class="highlight"><pre><span></span><span class="c"># (2)</span>
+<div><div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="c"># (2)</span>
 <span class="na">webservice.todoWebService.endpointAddress</span><span class="o">=</span><span class="s">http://AAA.BBB.CCC.DDD:XXXX/[server projectName]-web/ws/TodoWebService</span>
 </pre></div>
 </div>
@@ -2510,7 +2502,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">[client</span> <span class="pre">projectName]-domain.xml</span></code>で定義したプロパティのキーの値を設定する。エンドポイントアドレスを記述する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">[client</span> <span class="pre">projectName]-domain.xml</span></code>で定義したプロパティのキーの値を設定する。エンドポイントアドレスを記述する。</div>
 </div>
 </td>
 </tr>
@@ -2524,7 +2516,7 @@
 <p><strong>ServiceからWebサービスを呼び出す</strong></p>
 <p>上記で作成したWebサービスをServiceでインジェクションして実行する。</p>
 <p><em>[client projectName]-domain/src/main/java/com/example/domain/service/todo/TodoServiceImpl.java</em></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.soap.domain.service.todo</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.soap.domain.service.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
@@ -2570,7 +2562,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">TodoWebService</span></code>をインジェクションして、実行対象のServiceを呼び出す。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">TodoWebService</span></code>をインジェクションして、実行対象のServiceを呼び出す。</div>
 </div>
 </td>
 </tr>
@@ -2579,7 +2571,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">サーバ側で、例外が発生した場合は、<code class="docutils literal"><span class="pre">WebFaultException</span></code>にラップされて送信される。</div>
+<div class="line">サーバ側で、例外が発生した場合は、<code class="docutils literal notranslate"><span class="pre">WebFaultException</span></code>にラップされて送信される。</div>
 <div class="line">内容に応じて処理を行う。</div>
 <div class="line">例外処理の詳細は「<a class="reference internal" href="#soaphowtouseexceptionhandler"><span class="std std-ref">例外ハンドリングの実装</span></a>」を参照されたい。</div>
 </div>
@@ -2590,14 +2582,14 @@
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>レスポンスの情報取得</strong></p>
-<p>リトライを考慮するなど、レスポンスの情報をクライアントで取得したい場合、以下のように<code class="docutils literal"><span class="pre">javax.xml.ws.BindingProvider</span></code>クラスにキャストすることで取得できる。</p>
+<p>リトライを考慮するなど、レスポンスの情報をクライアントで取得したい場合、以下のように<code class="docutils literal notranslate"><span class="pre">javax.xml.ws.BindingProvider</span></code>クラスにキャストすることで取得できる。</p>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">BindingProvider</span> <span class="n">provider</span> <span class="o">=</span> <span class="o">(</span><span class="n">BindingProvider</span><span class="o">)</span> <span class="n">todoWebService</span><span class="o">;</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">BindingProvider</span> <span class="n">provider</span> <span class="o">=</span> <span class="o">(</span><span class="n">BindingProvider</span><span class="o">)</span> <span class="n">todoWebService</span><span class="o">;</span>
 <span class="kt">int</span> <span class="n">status</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">provider</span><span class="o">.</span><span class="na">getResponseContext</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="n">MessageContext</span><span class="o">.</span><span class="na">HTTP_RESPONSE_CODE</span><span class="o">);</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">BindingProvider</span></code>の詳細については <a class="reference external" href="http://download.oracle.com/otn-pub/jcp/jaxws-2.2-mrel3-evalu-oth-JSpec/jaxws-2_2-mrel3-spec.pdf">The Java API for XML-Based Web Services(JAX-WS) 2.2 -4.2 javax.xml.ws.BindingProvider-</a>を参照されたい。</p>
+<p><code class="docutils literal notranslate"><span class="pre">BindingProvider</span></code>の詳細については <a class="reference external" href="http://download.oracle.com/otn-pub/jcp/jaxws-2.2-mrel3-evalu-oth-JSpec/jaxws-2_2-mrel3-spec.pdf">The Java API for XML-Based Web Services(JAX-WS) 2.2 -4.2 javax.xml.ws.BindingProvider-</a>を参照されたい。</p>
 <p>ただし、クライアントの依存関係にApatch CXFライブラリが含まれる場合、通信エラー時に上記の方法でレスポンスの情報を取得することができない。
 これは、依存関係にApatch CXFライブラリが含まれる場合は自動的にApatch CXFのプロキシが使用されるため、およびApache CXFのプロキシは通信エラーが発生した場合にレスポンスの情報をレスポンスコンテキストに保持しないためである。
 Apache CXFのエラー処理については<a class="reference external" href="http://cxf.apache.org/docs/cxf-architecture.html#CXFArchitecture-FaultHandling">Apache CXF Software Architecture Guide -Fault Handling-</a>を参照されたい。</p>
@@ -2610,9 +2602,9 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 <div class="section" id="id12">
 <h4><a class="toc-backref" href="#id40">5.3.2.2.3. セキュリティ対策</a><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
 <p><strong>認証処理</strong></p>
-<p><code class="docutils literal"><span class="pre">org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean</span></code>を使用している場合でBasic認証を使用しているSOAPサーバと通信をする場合には、bean定義にユーザ名とパスワードを追加するだけで認証を行うことができる。</p>
+<p><code class="docutils literal notranslate"><span class="pre">org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean</span></code>を使用している場合でBasic認証を使用しているSOAPサーバと通信をする場合には、bean定義にユーザ名とパスワードを追加するだけで認証を行うことができる。</p>
 <p><em>[client projectName]-domain/src/main/resources/META-INF/spring/[client projectName]-domain.xml</em></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;todoWebService&quot;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;todoWebService&quot;</span>
     <span class="na">class=</span><span class="s">&quot;org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;serviceInterface&quot;</span> <span class="na">value=</span><span class="s">&quot;com.example.ws.todo.TodoWebService&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;serviceName&quot;</span> <span class="na">value=</span><span class="s">&quot;TodoWebService&quot;</span> <span class="nt">/&gt;</span>
@@ -2626,7 +2618,7 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 </pre></div>
 </div>
 <p><em>[client projectName]-env/src/main/resources/META-INF/spring/[client projectName]-infra.properties</em></p>
-<div class="highlight-properties"><div class="highlight"><pre><span></span><span class="c"># (2)</span>
+<div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="c"># (2)</span>
 <span class="na">webservice.todoWebService.username</span><span class="o">=</span><span class="s">testuser</span>
 <span class="na">webservice.todoWebService.password</span><span class="o">=</span><span class="s">password</span>
 </pre></div>
@@ -2647,7 +2639,7 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean</span></code>のbean定義にusernameとpasswordを加えることでBasic認証における、認証情報を送信することができる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean</span></code>のbean定義にusernameとpasswordを加えることでBasic認証における、認証情報を送信することができる。</div>
 <div class="line">ユーザ名とパスワードをプロパティファイルに切り出した場合のサンプルである。</div>
 </div>
 </td>
@@ -2657,7 +2649,7 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">[client</span> <span class="pre">projectName]-domain.xml</span></code>で定義したプロパティのキーの値を設定する。認証に使用するユーザ名とパスワードを記述する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">[client</span> <span class="pre">projectName]-domain.xml</span></code>で定義したプロパティのキーの値を設定する。認証に使用するユーザ名とパスワードを記述する。</div>
 </div>
 </td>
 </tr>
@@ -2670,10 +2662,10 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 <div class="section" id="soaphowtouseexceptionhandler">
 <span id="id13"></span><h4><a class="toc-backref" href="#id41">5.3.2.2.4. 例外ハンドリングの実装</a><a class="headerlink" href="#soaphowtouseexceptionhandler" title="Permalink to this headline">¶</a></h4>
 <div class="line-block">
-<div class="line">SOAPサーバでは、<code class="docutils literal"><span class="pre">WebFaultException</span></code>に例外をラップして、スローすることを推奨している。</div>
-<div class="line">クライアントは<code class="docutils literal"><span class="pre">WebFaultException</span></code>をキャッチして、その原因例外を判定してそれぞれの処理を行う。</div>
+<div class="line">SOAPサーバでは、<code class="docutils literal notranslate"><span class="pre">WebFaultException</span></code>に例外をラップして、スローすることを推奨している。</div>
+<div class="line">クライアントは<code class="docutils literal notranslate"><span class="pre">WebFaultException</span></code>をキャッチして、その原因例外を判定してそれぞれの処理を行う。</div>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@Override</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Override</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">createTodo</span><span class="o">(</span><span class="n">Todo</span> <span class="n">todo</span><span class="o">)</span> <span class="o">{</span>
 
     <span class="k">try</span> <span class="o">{</span>
@@ -2713,7 +2705,7 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Webサービスを呼び出す。throwsがついているため、<code class="docutils literal"><span class="pre">WebFaultException</span></code>をキャッチする必要がある。</div>
+<div class="line">Webサービスを呼び出す。throwsがついているため、<code class="docutils literal notranslate"><span class="pre">WebFaultException</span></code>をキャッチする必要がある。</div>
 </div>
 </td>
 </tr>
@@ -2722,7 +2714,7 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">faultInfo</span></code>の種別で例外を判定し、それぞれの処理を記述する（画面にメッセージを出す、例外をスローするなど）</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">faultInfo</span></code>の種別で例外を判定し、それぞれの処理を記述する（画面にメッセージを出す、例外をスローするなど）</div>
 </div>
 </td>
 </tr>
@@ -2740,11 +2732,11 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 <li>SOAPサーバへのリクエストタイムアウト</li>
 </ul>
 <div class="line-block">
-<div class="line">どちらの設定も、<code class="docutils literal"><span class="pre">org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean</span></code>のカスタムプロパティに指定する必要がある。</div>
+<div class="line">どちらの設定も、<code class="docutils literal notranslate"><span class="pre">org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean</span></code>のカスタムプロパティに指定する必要がある。</div>
 <div class="line">設定の方法は以下の通りである。</div>
 </div>
 <p><em>[client projectName]-domain/src/main/resources/META-INF/spring/[client projectName]-domain.xml</em></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;todoWebService&quot;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;todoWebService&quot;</span>
     <span class="na">class=</span><span class="s">&quot;org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;serviceInterface&quot;</span> <span class="na">value=</span><span class="s">&quot;com.example.ws.todo.TodoWebService&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;serviceName&quot;</span> <span class="na">value=</span><span class="s">&quot;TodoWebService&quot;</span> <span class="nt">/&gt;</span>
@@ -2763,7 +2755,7 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 </span></pre></div>
 </div>
 <p><em>[client projectName]-env/src/main/resources/META-INF/spring/[client projectName]-infra.properties</em></p>
-<div class="highlight-properties"><div class="highlight"><pre><span></span><span class="c"># (3)</span>
+<div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="c"># (3)</span>
 <span class="na">webservice.request.timeout</span><span class="o">=</span><span class="s">3000</span>
 <span class="na">webservice.connect.timeout</span><span class="o">=</span><span class="s">3000</span>
 </pre></div>
@@ -2784,7 +2776,7 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">customProperties</span></code>プロパティにMapを指定することでカスタムプロパティを定義する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">customProperties</span></code>プロパティにMapを指定することでカスタムプロパティを定義する。</div>
 </div>
 </td>
 </tr>
@@ -2804,12 +2796,12 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 </div>
 <div class="last admonition note">
 <p class="first admonition-title">Note</p>
-<p>WebLogicで該当キーを指定する場合は、<code class="docutils literal"><span class="pre">value-type</span></code>属性で<code class="docutils literal"><span class="pre">Integer</span></code>型を指定する必要がある。</p>
+<p>WebLogicで該当キーを指定する場合は、<code class="docutils literal notranslate"><span class="pre">value-type</span></code>属性で<code class="docutils literal notranslate"><span class="pre">Integer</span></code>型を指定する必要がある。</p>
 <p>指定をしない場合、WebLogicのJAX-WS実装ライブラリが
-<code class="docutils literal"><span class="pre">String</span></code>型から<code class="docutils literal"><span class="pre">Integer</span></code>型へのキャストを試みて失敗し、結果的に<code class="docutils literal"><span class="pre">ClassCastException</span></code>が原因の<code class="docutils literal"><span class="pre">org.springframework.remoting.RemoteAccessException</span></code>例外が発生する。</p>
+<code class="docutils literal notranslate"><span class="pre">String</span></code>型から<code class="docutils literal notranslate"><span class="pre">Integer</span></code>型へのキャストを試みて失敗し、結果的に<code class="docutils literal notranslate"><span class="pre">ClassCastException</span></code>が原因の<code class="docutils literal notranslate"><span class="pre">org.springframework.remoting.RemoteAccessException</span></code>例外が発生する。</p>
 <p>設定の方法は以下のとおりである。</p>
 <blockquote class="last">
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;customProperties&quot;</span><span class="nt">&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;customProperties&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;map&gt;</span>
         <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&quot;com.sun.xml.internal.ws.connect.timeout&quot;</span> <span class="na">value-type=</span><span class="s">&quot;java.lang.Integer&quot;</span> <span class="na">value=</span><span class="s">&quot;${webservice.connect.timeout}&quot;</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&quot;com.sun.xml.internal.ws.request.timeout&quot;</span> <span class="na">value-type=</span><span class="s">&quot;java.lang.Integer&quot;</span> <span class="na">value=</span><span class="s">&quot;${webservice.request.timeout}&quot;</span><span class="nt">/&gt;</span>
@@ -2826,7 +2818,7 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">[client</span> <span class="pre">projectName]-domain.xml</span></code>で定義したプロパティのキーの値を設定する。コネクションタイムアウトとリクエストタイムアウトを記述する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">[client</span> <span class="pre">projectName]-domain.xml</span></code>で定義したプロパティのキーの値を設定する。コネクションタイムアウトとリクエストタイムアウトを記述する。</div>
 </div>
 </td>
 </tr>
@@ -2850,7 +2842,7 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 <div class="line">ブランクプロジェクトの初期状態は以下の構成になっている。</div>
 <div class="line">なお、artifactIdにはブランクプロジェクト作成時に指定したartifactIdが設定される。</div>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">artifactId</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">artifactId</span>
 <span class="go">├── pom.xml</span>
 <span class="go">├── artifactId-domain</span>
 <span class="go">├── artifactId-env</span>
@@ -2860,7 +2852,7 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 </pre></div>
 </div>
 <p>以下のようなプロジェクト構成にする。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">artifactId</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">artifactId</span>
 <span class="go">├── pom.xml</span>
 <span class="go">├── artifactId-domain</span>
 <span class="go">├── artifactId-env</span>
@@ -2888,7 +2880,7 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 <div class="section" id="model">
 <h4><a class="toc-backref" href="#id46">5.3.3.1.2. modelプロジェクトの作成</a><a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h4>
 <p>modelプロジェクトの構成について説明する。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">artifactId-model</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">artifactId-model</span>
 <span class="go">    ├── pom.xml  ... (1)</span>
 </pre></div>
 </div>
@@ -2924,10 +2916,10 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 </tbody>
 </table>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">pom.xml</span></code>は以下のようなイメージになる。必要に応じて編集する必要がある。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">pom.xml</span></code>は以下のようなイメージになる。必要に応じて編集する必要がある。</div>
 <div class="line">実際には、「artifactId」と「groupId」はブランクプロジェクト作成時に指定した値を設定する必要がある。</div>
 </div>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;</span><span class="nt">&gt;</span>
 
     <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
@@ -2974,7 +2966,7 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 <div class="section" id="webservice">
 <h4><a class="toc-backref" href="#id47">5.3.3.1.3. webserviceプロジェクトの作成</a><a class="headerlink" href="#webservice" title="Permalink to this headline">¶</a></h4>
 <p>webserviceプロジェクトの構成について説明する。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">artifactId-webservice</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">artifactId-webservice</span>
 <span class="go">    ├── pom.xml  ... (1)</span>
 </pre></div>
 </div>
@@ -3010,10 +3002,10 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 </tbody>
 </table>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">pom.xml</span></code>は以下のようなイメージになる。必要に応じて編集する必要がある。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">pom.xml</span></code>は以下のようなイメージになる。必要に応じて編集する必要がある。</div>
 <div class="line">実際には、「artifactId」と「groupId」はブランクプロジェクト作成時に指定した値を設定する必要がある。</div>
 </div>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;</span><span class="nt">&gt;</span>
 
     <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
@@ -3131,8 +3123,8 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 </div>
 <div class="section" id="server-projectname-domain">
 <h4><a class="toc-backref" href="#id49">5.3.3.2.1. [server projectName]-domain</a><a class="headerlink" href="#server-projectname-domain" title="Permalink to this headline">¶</a></h4>
-<p>[server projectName]-modelの依存関係を追加するため、<code class="docutils literal"><span class="pre">pom.xml</span></code>に以下を追加する。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
+<p>[server projectName]-modelの依存関係を追加するため、<code class="docutils literal notranslate"><span class="pre">pom.xml</span></code>に以下を追加する。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>${project.groupId}<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>artifactId-model<span class="nt">&lt;/artifactId&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
@@ -3145,8 +3137,8 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 </div>
 <div class="section" id="server-projectname-web">
 <h4><a class="toc-backref" href="#id50">5.3.3.2.2. [server projectName]-web</a><a class="headerlink" href="#server-projectname-web" title="Permalink to this headline">¶</a></h4>
-<p>[server projectName]-webserviceの依存関係を追加するため、<code class="docutils literal"><span class="pre">pom.xml</span></code>に以下を追加する。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
+<p>[server projectName]-webserviceの依存関係を追加するため、<code class="docutils literal notranslate"><span class="pre">pom.xml</span></code>に以下を追加する。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>${project.groupId}<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>artifactId-webservice<span class="nt">&lt;/artifactId&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
@@ -3161,7 +3153,7 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 <div class="line"><br /></div>
 </div>
 <p>[server projectName]-webのプロジェクト推奨構成を、以下に示す。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[server projectName]-web</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[server projectName]-web</span>
 <span class="go">  └src</span>
 <span class="go">      └main</span>
 <span class="go">          ├java</span>
@@ -3336,7 +3328,7 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 <div class="section" id="server-projectname-model">
 <h4><a class="toc-backref" href="#id52">5.3.3.2.4. [server projectName]-model</a><a class="headerlink" href="#server-projectname-model" title="Permalink to this headline">¶</a></h4>
 <p>[server projectName]-modelのプロジェクト推奨構成を、以下に示す。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[server projectName]-model</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[server projectName]-model</span>
 <span class="go">  └src</span>
 <span class="go">      └main</span>
 <span class="go">          └java</span>
@@ -3387,7 +3379,7 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 <div class="section" id="server-projectname-webservice">
 <h4><a class="toc-backref" href="#id53">5.3.3.2.5. [server projectName]-webservice</a><a class="headerlink" href="#server-projectname-webservice" title="Permalink to this headline">¶</a></h4>
 <p>[server projectName]-webserviceのプロジェクト推奨構成を、以下に示す。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[server projectName]-webservice</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[server projectName]-webservice</span>
 <span class="go">  └src</span>
 <span class="go">      └main</span>
 <span class="go">          └java</span>
@@ -3492,8 +3484,8 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 </div>
 <div class="section" id="client-projectname-domain">
 <h4><a class="toc-backref" href="#id55">5.3.3.3.1. [client projectName]-domain</a><a class="headerlink" href="#client-projectname-domain" title="Permalink to this headline">¶</a></h4>
-<p>SOAPサーバから提供される[server projectName]-webserviceの依存関係を追加するため、<code class="docutils literal"><span class="pre">pom.xml</span></code>に以下を追加する。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
+<p>SOAPサーバから提供される[server projectName]-webserviceの依存関係を追加するため、<code class="docutils literal notranslate"><span class="pre">pom.xml</span></code>に以下を追加する。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>${project.groupId}<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>artifactId-webservice<span class="nt">&lt;/artifactId&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
@@ -3502,7 +3494,7 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>依存性の解決について</strong></p>
-<p class="last">[server projectName]-webと同様に、この<code class="docutils literal"><span class="pre">pom.xml</span></code>には、[server projectName]-modelの依存関係の定義は不要である。これは[server projectName]-webserviceから[server projectName]-modelへの依存関係が定義されているため、推移的に依存関係が追加されるためである。</p>
+<p class="last">[server projectName]-webと同様に、この<code class="docutils literal notranslate"><span class="pre">pom.xml</span></code>には、[server projectName]-modelの依存関係の定義は不要である。これは[server projectName]-webserviceから[server projectName]-modelへの依存関係が定義されているため、推移的に依存関係が追加されるためである。</p>
 </div>
 <p>その他のパッケージ構成は、通常のdomainプロジェクトと変わらないため、「<a class="reference internal" href="../../Overview/ApplicationLayering.html"><span class="doc">アプリケーションのレイヤ化</span></a> の <a class="reference internal" href="../../Overview/ApplicationLayering.html#application-layering-project-structure"><span class="std std-ref">プロジェクト構成</span></a>」を参照されたい。</p>
 <div class="line-block">
@@ -3516,7 +3508,7 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 <div class="section" id="client-projectname-env">
 <h4><a class="toc-backref" href="#id57">5.3.3.3.3. [client projectName]-env</a><a class="headerlink" href="#client-projectname-env" title="Permalink to this headline">¶</a></h4>
 <p>[client projectName]-envのプロジェクト推奨構成を、以下に示す。</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[projectName]-env</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[projectName]-env</span>
 <span class="go">  ├configs ...(1)</span>
 <span class="go">  │   └[envName] ...(2)</span>
 <span class="go">  │       └resources ...(3)</span>
@@ -3641,7 +3633,7 @@ Apache CXFのエラー処理については<a class="reference external" href="h
 <div class="line">JDKのbinフォルダに格納されており、パスを通すだけで使用可能になる。</div>
 <div class="line">コマンドライン上で以下のようにコマンドを実行すると、ソースファイルがカレントディレクトリに作成される。</div>
 </div>
-<div class="highlight-bat"><div class="highlight"><pre><span></span># (1)
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span># (1)
 wsimport -keep -p [出力するソースのパッケージ名] -s [出力するソースを格納する場所] [wsdlのURL]
 </pre></div>
 </div>
@@ -3686,13 +3678,13 @@ wsimport -keep -p [出力するソースのパッケージ名] -s [出力する�
 <div class="line"><br /></div>
 </div>
 <p>例えば、以下のようなコマンドとなる。</p>
-<div class="highlight-bat"><div class="highlight"><pre><span></span>wsimport -keep -p com.example.ws.todo -s c:/tmp http://AAA.BBB.CCC.DDD:XXXX/soap-web/ws/TodoWebService?wsdl
+<div class="highlight-bat notranslate"><div class="highlight"><pre><span></span>wsimport -keep -p com.example.ws.todo -s c:/tmp http://AAA.BBB.CCC.DDD:XXXX/soap-web/ws/TodoWebService?wsdl
 </pre></div>
 </div>
 <p>作成されるソースは公開されているWebサービスに依存するが、本ガイドラインで使用している以下のJavaクラスが出力される。</p>
 <ul class="simple">
-<li>Webサービスインターフェース（ソース例では<code class="docutils literal"><span class="pre">TodoWebService.java</span></code>）</li>
-<li>Domain Object（ソース例では<code class="docutils literal"><span class="pre">Todo.java</span></code>）</li>
+<li>Webサービスインターフェース（ソース例では<code class="docutils literal notranslate"><span class="pre">TodoWebService.java</span></code>）</li>
+<li>Domain Object（ソース例では<code class="docutils literal notranslate"><span class="pre">Todo.java</span></code>）</li>
 </ul>
 <div class="line-block">
 <div class="line">wsimportで生成したクラスを1つのクライアントプロジェクトのみでしか使用しない場合は、これらをdomainプロジェクトへ配置すればよい。</div>
@@ -3701,7 +3693,7 @@ wsimport -keep -p [出力するソースのパッケージ名] -s [出力する�
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">出力されるJavaクラスは上記以外にも出力される。出力されたソースのみでクライアントを作成可能なソースである。ただし、本ガイドラインではクライアントは、<code class="docutils literal"><span class="pre">org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean</span></code>を使用する方針であるため、その他のJavaクラスは使用しないことを推奨する。</p>
+<p class="last">出力されるJavaクラスは上記以外にも出力される。出力されたソースのみでクライアントを作成可能なソースである。ただし、本ガイドラインではクライアントは、<code class="docutils literal notranslate"><span class="pre">org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean</span></code>を使用する方針であるため、その他のJavaクラスは使用しないことを推奨する。</p>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -3712,12 +3704,12 @@ wsimport -keep -p [出力するソースのパッケージ名] -s [出力する�
 <span id="soapappendixtomcatwebservice"></span><h3><a class="toc-backref" href="#id61">5.3.3.5. Tomcat上でのWebサービス開発</a><a class="headerlink" href="#tomcatweb" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line">本ガイドラインでは、Java EEサーバ上のJAX-WSを使う前提で記述されているが、Tomcatの場合、JAX-WS実装が存在しない。</div>
-<div class="line">そのため、ここではSOAPサーバがTomcatの場合、JAX-WSの実装プロダクトとして<a class="reference external" href="https://cxf.apache.org/">Apache CXF</a>を使用する。設定を変更して<code class="docutils literal"><span class="pre">CXFServlet</span></code>を使用する必要がある。</div>
+<div class="line">そのため、ここではSOAPサーバがTomcatの場合、JAX-WSの実装プロダクトとして<a class="reference external" href="https://cxf.apache.org/">Apache CXF</a>を使用する。設定を変更して<code class="docutils literal notranslate"><span class="pre">CXFServlet</span></code>を使用する必要がある。</div>
 <div class="line">Apache CXFを使用する場合は、WebServiceクラスの実装方式は以下の2つが存在する。</div>
 </div>
 <ol class="arabic simple">
 <li>POJOでWebサービス実装クラスを記述する方式</li>
-<li><code class="docutils literal"><span class="pre">SpringBeanAutowiringSupport</span></code>を継承してWebサービス実装クラスを作成する方式 (これまで説明してきた方法)</li>
+<li><code class="docutils literal notranslate"><span class="pre">SpringBeanAutowiringSupport</span></code>を継承してWebサービス実装クラスを作成する方式 (これまで説明してきた方法)</li>
 </ol>
 <div class="line-block">
 <div class="line">1の場合、Webサービス実装クラスがPOJOになるため、単体試験などをしやすくなる。ただし、この方式はTomcat以外のAPサーバでは、うまく動作しないことがある。そのため、ガイドライン本体では、この方式ではなく2の方式での実現を記述しているが、Tomcatのみを使用する場合、この1の方式を使用したほうがメリットが多いのでこちらを推奨する。</div>
@@ -3728,8 +3720,8 @@ wsimport -keep -p [出力するソースのパッケージ名] -s [出力する�
 </div>
 <div class="section" id="cxfservlet">
 <h4><a class="toc-backref" href="#id62">5.3.3.5.1. CXFServletを使用する場合の設定</a><a class="headerlink" href="#cxfservlet" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">CXFServlet</span></code>を使用するため、<code class="docutils literal"><span class="pre">pom.xml</span></code>にライブラリの設定を記述する。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- (1) --&gt;</span>
+<p><code class="docutils literal notranslate"><span class="pre">CXFServlet</span></code>を使用するため、<code class="docutils literal notranslate"><span class="pre">pom.xml</span></code>にライブラリの設定を記述する。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- (1) --&gt;</span>
 <span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.apache.cxf<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>cxf-rt-frontend-jaxws<span class="nt">&lt;/artifactId&gt;</span>
@@ -3758,7 +3750,7 @@ wsimport -keep -p [出力するソースのパッケージ名] -s [出力する�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">CXFServlet</span></code>を使用するため、Apache CXFライブラリへの依存関係を追加する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">CXFServlet</span></code>を使用するため、Apache CXFライブラリへの依存関係を追加する。</div>
 </div>
 </td>
 </tr>
@@ -3767,8 +3759,8 @@ wsimport -keep -p [出力するソースのパッケージ名] -s [出力する�
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>次に<code class="docutils literal"><span class="pre">web.xml</span></code>にSOAP Web Serviceを受け付ける<code class="docutils literal"><span class="pre">CXFServlet</span></code>を定義する。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- (1) --&gt;</span>
+<p>次に<code class="docutils literal notranslate"><span class="pre">web.xml</span></code>にSOAP Web Serviceを受け付ける<code class="docutils literal notranslate"><span class="pre">CXFServlet</span></code>を定義する。</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- (1) --&gt;</span>
 <span class="nt">&lt;servlet&gt;</span>
     <span class="nt">&lt;servlet-name&gt;</span>cxfServlet<span class="nt">&lt;/servlet-name&gt;</span>
     <span class="nt">&lt;servlet-class&gt;</span>org.apache.cxf.transport.servlet.CXFServlet<span class="nt">&lt;/servlet-class&gt;</span>
@@ -3801,8 +3793,8 @@ wsimport -keep -p [出力するソースのパッケージ名] -s [出力する�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">org.apache.cxf.transport.servlet.CXFServlet</span></code>のサーブレット定義を行う。</div>
-<div class="line"><code class="docutils literal"><span class="pre">config-location</span></code>には、後述する<code class="docutils literal"><span class="pre">cxf-servlet.xml</span></code>のパスを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">org.apache.cxf.transport.servlet.CXFServlet</span></code>のサーブレット定義を行う。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">config-location</span></code>には、後述する<code class="docutils literal notranslate"><span class="pre">cxf-servlet.xml</span></code>のパスを指定する。</div>
 </div>
 </td>
 </tr>
@@ -3825,7 +3817,7 @@ wsimport -keep -p [出力するソースのパッケージ名] -s [出力する�
 <h4><a class="toc-backref" href="#id63">5.3.3.5.2. POJO方式で必要な設定</a><a class="headerlink" href="#pojo" title="Permalink to this headline">¶</a></h4>
 <p>Webサービス実装クラスをエンドポイントとして設定する。</p>
 <p><em>[server projectName]-web/src/main/resources/META-INF/spring/cxf-servlet.xml</em></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
     <span class="na">xmlns:context=</span><span class="s">&quot;http://www.springframework.org/schema/context&quot;</span>
     <span class="na">xmlns:jaxws=</span><span class="s">&quot;http://cxf.apache.org/jaxws&quot;</span> <span class="na">xmlns:soap=</span><span class="s">&quot;http://cxf.apache.org/bindings/soap&quot;</span>
     <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.springframework.org/schema/beans</span>
@@ -3861,8 +3853,8 @@ wsimport -keep -p [出力するソースのパッケージ名] -s [出力する�
 </td>
 <td><div class="first last line-block">
 <div class="line">公開するエンドポイントを定義する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">implementor</span></code>属性に、DIコンテナに登録済みのWebサービスクラスのbean名(「#bean名」形式)を指定する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">address</span></code>属性にWebサービスを公開するアドレスを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">implementor</span></code>属性に、DIコンテナに登録済みのWebサービスクラスのbean名(「#bean名」形式)を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">address</span></code>属性にWebサービスを公開するアドレスを指定する。</div>
 <div class="line">アドレスは、公開するエンドポイントのパス部分のみ記述する。</div>
 <div class="line">属性の詳細については<a class="reference external" href="https://cwiki.apache.org/confluence/display/CXF20DOC/JAX-WS+Configuration">Apache CXF JAX-WS Configuration</a>を参照されたい。</div>
 </div>
@@ -3873,9 +3865,9 @@ wsimport -keep -p [出力するソースのパッケージ名] -s [出力する�
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p><code class="docutils literal"><span class="pre">TodoWebServiceImpl</span></code>をPOJOとして作成する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">TodoWebServiceImpl</span></code>をPOJOとして作成する。</p>
 <p><em>[server projectName]-web/src/main/java/com/example/ws/todo/TodoWebServiceImpl.java</em></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.todo</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.ws.todo</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 
@@ -3927,7 +3919,7 @@ wsimport -keep -p [出力するソースのパッケージ名] -s [出力する�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;Component</span></code> を付けて、DIコンテナへの登録を行う。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;Component</span></code> を付けて、DIコンテナへの登録を行う。</div>
 <div class="line"><br /></div>
 </div>
 </td>
@@ -3937,7 +3929,7 @@ wsimport -keep -p [出力するソースのパッケージ名] -s [出力する�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">コンポーネントスキャンにてDIコンテナへの登録が可能であるため、POJOとして作成する。つまり、<code class="docutils literal"><span class="pre">org.springframework.web.context.support.SpringBeanAutowiringSupport</span></code>を継承する必要がなくなる。</div>
+<div class="line">コンポーネントスキャンにてDIコンテナへの登録が可能であるため、POJOとして作成する。つまり、<code class="docutils literal notranslate"><span class="pre">org.springframework.web.context.support.SpringBeanAutowiringSupport</span></code>を継承する必要がなくなる。</div>
 <div class="line"><br /></div>
 </div>
 </td>
@@ -3952,7 +3944,7 @@ wsimport -keep -p [出力するソースのパッケージ名] -s [出力する�
 <h4><a class="toc-backref" href="#id64">5.3.3.5.3. SpringBeanAutowiringSupportを継承する方式で必要な設定</a><a class="headerlink" href="#springbeanautowiringsupport" title="Permalink to this headline">¶</a></h4>
 <p>CXFServlet用のBean定義ファイルに、SOAPのエンドポイントとなるクラス名およびアドレスを定義する。</p>
 <p><em>[server projectName]-web/src/main/resources/META-INF/spring/cxf-servlet.xml</em></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
     <span class="na">xmlns:context=</span><span class="s">&quot;http://www.springframework.org/schema/context&quot;</span>
     <span class="na">xmlns:jaxws=</span><span class="s">&quot;http://cxf.apache.org/jaxws&quot;</span> <span class="na">xmlns:soap=</span><span class="s">&quot;http://cxf.apache.org/bindings/soap&quot;</span>
     <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.springframework.org/schema/beans</span>
@@ -3987,8 +3979,8 @@ wsimport -keep -p [出力するソースのパッケージ名] -s [出力する�
 </td>
 <td><div class="first last line-block">
 <div class="line">公開するエンドポイントを定義する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">implementor</span></code>属性に公開するWebサービスの実装クラスを指定する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">address</span></code>属性にWebサービスを公開するアドレスを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">implementor</span></code>属性に公開するWebサービスの実装クラスを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">address</span></code>属性にWebサービスを公開するアドレスを指定する。</div>
 <div class="line">アドレスは、公開するエンドポイントのパス部分のみ記述する。</div>
 <div class="line">属性の詳細については<a class="reference external" href="https://cwiki.apache.org/confluence/display/CXF20DOC/JAX-WS+Configuration">Apache CXF JAX-WS Configuration</a>を参照されたい。</div>
 </div>
@@ -4025,7 +4017,7 @@ wsimport -keep -p [出力するソースのパッケージ名] -s [出力する�
     </div>
     <div class="footer">
       © Copyright 2013-2018, NTT DATA Corporation. © Copyright 2013-2018, NTT Corporation.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.3.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.1.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
     </div>
     
     <script>

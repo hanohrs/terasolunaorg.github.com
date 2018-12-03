@@ -2,23 +2,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>3.2. ドメイン層の実装 &#8212; TERASOLUNA Server Framework for Java (5.x) Development Guideline 5.4.1.RELEASE documentation</title>
     <link rel="stylesheet" href="../_static/solar.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '5.4.1.RELEASE',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="3.3. インフラストラクチャ層の実装" href="InfrastructureLayer.html" />
@@ -26,8 +19,7 @@
 <!-- <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'> -->
 <link href="../_static/solarized-dark.css" rel="stylesheet">
 <link href="../_static/jquery.treeview.css" rel="stylesheet">
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -46,8 +38,7 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper"><label><input id="scroll" type="checkbox" checked> scroll sidebar</label>
-
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">3.2. ドメイン層の実装</a><ul>
 <li><a class="reference internal" href="#id3">3.2.1. ドメイン層の役割</a></li>
@@ -137,7 +128,6 @@
 </li>
 </ul>
 
-
   <h4>Previous topic</h4>
   <p class="topless"><a href="CreateWebApplicationProject.html"
                         title="previous chapter">3.1. Webアプリケーション向け開発プロジェクトの作成</a></p>
@@ -153,12 +143,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -480,7 +472,7 @@ ServiceからO/R Mapper(MyBatisなど)を直接呼び出して、業務データ
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">FK先のテーブルとの関係が、1:Nになる場合は、<code class="docutils literal"><span class="pre">java.util.List&lt;E&gt;</span></code>または<code class="docutils literal"><span class="pre">java.util.Set&lt;E&gt;</span></code>のどちらかを使用する。</div>
+<div class="line">FK先のテーブルとの関係が、1:Nになる場合は、<code class="docutils literal notranslate"><span class="pre">java.util.List&lt;E&gt;</span></code>または<code class="docutils literal notranslate"><span class="pre">java.util.Set&lt;E&gt;</span></code>のどちらかを使用する。</div>
 <div class="line">FK先のテーブルに対応するEntityのことを、本ガイドライン上では、関連Entityと呼ぶ。</div>
 </div>
 </td>
@@ -490,7 +482,7 @@ ServiceからO/R Mapper(MyBatisなど)を直接呼び出して、業務データ
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">コード系テーブルは、Entityとして扱うのではなく、<code class="docutils literal"><span class="pre">java.lang.String</span></code>などの基本型で扱う。</div>
+<div class="line">コード系テーブルは、Entityとして扱うのではなく、<code class="docutils literal notranslate"><span class="pre">java.lang.String</span></code>などの基本型で扱う。</div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -733,7 +725,7 @@ SQLの実装次第で、テーブル構成に依存しないオブジェクト�
 </td>
 <td><div class="first last line-block">
 <div class="line">t_orderテーブルの1レコードを表現するEntityクラス。</div>
-<div class="line">関連Entityとして、<code class="docutils literal"><span class="pre">OrderItem</span></code>および<code class="docutils literal"><span class="pre">OrderCoupon</span></code>を複数保持する。</div>
+<div class="line">関連Entityとして、<code class="docutils literal notranslate"><span class="pre">OrderItem</span></code>および<code class="docutils literal notranslate"><span class="pre">OrderCoupon</span></code>を複数保持する。</div>
 </div>
 </td>
 </tr>
@@ -747,7 +739,7 @@ SQLの実装次第で、テーブル構成に依存しないオブジェクト�
 </td>
 <td><div class="first last line-block">
 <div class="line">t_order_itemテーブルの1レコードを表現するEntityクラス。</div>
-<div class="line">関連Entityとして、 <code class="docutils literal"><span class="pre">Item</span></code> を保持する。</div>
+<div class="line">関連Entityとして、 <code class="docutils literal notranslate"><span class="pre">Item</span></code> を保持する。</div>
 </div>
 </td>
 </tr>
@@ -761,7 +753,7 @@ SQLの実装次第で、テーブル構成に依存しないオブジェクト�
 </td>
 <td><div class="first last line-block">
 <div class="line">t_order_couponテーブルの1コードを表現するEntityクラス。</div>
-<div class="line">関連Entityとして、<code class="docutils literal"><span class="pre">Coupon</span></code>を保持する。</div>
+<div class="line">関連Entityとして、<code class="docutils literal notranslate"><span class="pre">Coupon</span></code>を保持する。</div>
 </div>
 </td>
 </tr>
@@ -775,7 +767,7 @@ SQLの実装次第で、テーブル構成に依存しないオブジェクト�
 </td>
 <td><div class="first last line-block">
 <div class="line">m_itemテーブルの1コードを表現するEntityクラス。</div>
-<div class="line">関連Entityとして、所属している<code class="docutils literal"><span class="pre">Category</span></code>を複数保持する。<code class="docutils literal"><span class="pre">Item</span></code>と<code class="docutils literal"><span class="pre">Category</span></code>の紐づけは、m_item_categoryテーブルによって行われる。</div>
+<div class="line">関連Entityとして、所属している<code class="docutils literal notranslate"><span class="pre">Category</span></code>を複数保持する。<code class="docutils literal notranslate"><span class="pre">Item</span></code>と<code class="docutils literal notranslate"><span class="pre">Category</span></code>の紐づけは、m_item_categoryテーブルによって行われる。</div>
 </div>
 </td>
 </tr>
@@ -1078,7 +1070,7 @@ Orderクラスのみと思ってしまうかもしれないが、主体となる
 可能な限り、永続先に依存するロジックは、Serviceではなく、RepositoryImplで実装することを推奨するが、
 永続先に依存するロジックを排除するのが難しい場合や、排除することで得られるメリットが少ない場合は、
 無理に排除せず、業務ロジック(Service)の処理として、永続先に依存するロジックを実装してもよい。</p>
-<p class="last">排除できない具体例として、Spring Data JPAから提供されている<code class="docutils literal"><span class="pre">org.springframework.data.jpa.repository.JpaRepository</span></code>インタフェース
+<p class="last">排除できない具体例として、Spring Data JPAから提供されている<code class="docutils literal notranslate"><span class="pre">org.springframework.data.jpa.repository.JpaRepository</span></code>インタフェース
 のsaveメソッドの呼び出し時に、一意制約エラーをハンドリングしたい場合である。
 JPAではEntityへの操作はキャッシュされ、トランザクションコミット時にSQLを発行する仕組みになっている。
 そのため、JpaRepositoryのsaveメソッドを呼び出しても、SQLは発行されないので、一意制約違反をロジックでハンドリングすることができない。
@@ -1183,14 +1175,14 @@ JPA依存のメソッド（saveAndFlushや、flush）を呼び出す必要があ
 <h4><a class="toc-backref" href="#id59">3.2.4.5.1. Repositoryインタフェースの作成</a><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
 <p>以下にRepositoryインタフェースの作成例を紹介する。</p>
 <ul class="simple">
-<li><code class="file docutils literal"><span class="pre">SimpleCrudRepository.java</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">SimpleCrudRepository.java</span></code></li>
 </ul>
 <blockquote>
 <div><div class="line-block">
 <div class="line">このインタフェースは、シンプルなCRUD操作のみを提供している。</div>
-<div class="line">メソッドのシグネチャは、Spring Dataから提供されている<code class="docutils literal"><span class="pre">CrudRepository</span></code>インタフェースや、 <code class="docutils literal"><span class="pre">PagingAndSortingRepository</span></code>インタフェースを参考に作成している。</div>
+<div class="line">メソッドのシグネチャは、Spring Dataから提供されている<code class="docutils literal notranslate"><span class="pre">CrudRepository</span></code>インタフェースや、 <code class="docutils literal notranslate"><span class="pre">PagingAndSortingRepository</span></code>インタフェースを参考に作成している。</div>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">SimpleCrudRepository</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">ID</span> <span class="kd">extends</span> <span class="n">Serializable</span><span class="o">&gt;</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">SimpleCrudRepository</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">ID</span> <span class="kd">extends</span> <span class="n">Serializable</span><span class="o">&gt;</span> <span class="o">{</span>
     <span class="c1">// (1)</span>
     <span class="n">T</span> <span class="nf">findOne</span><span class="o">(</span><span class="n">ID</span> <span class="n">id</span><span class="o">);</span>
     <span class="c1">// (2)</span>
@@ -1242,7 +1234,7 @@ JPA依存のメソッド（saveAndFlushや、flush）を呼び出す必要があ
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">全てのEntityを取得するためのメソッド。 Spring Dataでは、<code class="docutils literal"><span class="pre">java.util.Iterable</span></code>であったが、サンプルとしては、<code class="docutils literal"><span class="pre">java.util.List</span></code>にしている。</div>
+<div class="line">全てのEntityを取得するためのメソッド。 Spring Dataでは、<code class="docutils literal notranslate"><span class="pre">java.util.Iterable</span></code>であったが、サンプルとしては、<code class="docutils literal notranslate"><span class="pre">java.util.List</span></code>にしている。</div>
 </div>
 </td>
 </tr>
@@ -1252,7 +1244,7 @@ JPA依存のメソッド（saveAndFlushや、flush）を呼び出す必要があ
 </td>
 <td><div class="first last line-block">
 <div class="line">指定したページネーション情報（取得開始位置、取得件数、ソート情報）に該当するEntityのコレクションを取得するためのメソッド。</div>
-<div class="line"><code class="docutils literal"><span class="pre">Pageable</span></code> インタフェースおよび<code class="docutils literal"><span class="pre">Page</span></code>インタフェースはSpring Dataより提供されているクラス（インターフェース）である。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Pageable</span></code> インタフェースおよび<code class="docutils literal notranslate"><span class="pre">Page</span></code>インタフェースはSpring Dataより提供されているクラス（インターフェース）である。</div>
 </div>
 </td>
 </tr>
@@ -1287,11 +1279,11 @@ JPA依存のメソッド（saveAndFlushや、flush）を呼び出す必要があ
 </table>
 </div></blockquote>
 <ul class="simple">
-<li><code class="file docutils literal"><span class="pre">TodoRepository.java</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">TodoRepository.java</span></code></li>
 </ul>
 <blockquote>
-<div><p>下記は、チュートリアルで作成したTodoエンティティのRepositoryを、上で作成した<code class="docutils literal"><span class="pre">SimpleCrudRepository</span></code>インタフェースベースに作成した場合の例である。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// (1)</span>
+<div><p>下記は、チュートリアルで作成したTodoエンティティのRepositoryを、上で作成した<code class="docutils literal notranslate"><span class="pre">SimpleCrudRepository</span></code>インタフェースベースに作成した場合の例である。</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// (1)</span>
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">TodoRepository</span> <span class="kd">extends</span> <span class="n">SimpleCrudRepository</span><span class="o">&lt;</span><span class="n">Todo</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="o">{</span>
     <span class="c1">// (2)</span>
     <span class="kt">long</span> <span class="nf">countByFinished</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">finished</span><span class="o">);</span>
@@ -1324,7 +1316,7 @@ JPA依存のメソッド（saveAndFlushや、flush）を呼び出す必要があ
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">SimpleCrudRepository</span></code>インタフェースから提供されていないメソッドを追加している。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">SimpleCrudRepository</span></code>インタフェースから提供されていないメソッドを追加している。</div>
 <div class="line">ここでは、「指定したタスクの終了状態に一致するTodoエンティティの件数を取得するメソッド」を追加している。</div>
 </div>
 </td>
@@ -1336,8 +1328,8 @@ JPA依存のメソッド（saveAndFlushや、flush）を呼び出す必要があ
 <div class="section" id="id16">
 <h4><a class="toc-backref" href="#id60">3.2.4.5.2. Repositoryインタフェースのメソッド定義</a><a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
 <div class="line-block">
-<div class="line">汎用的なCRUD操作を行うメソッドについては、Spring Dataから提供されている<code class="docutils literal"><span class="pre">CrudRepository</span></code>や、<code class="docutils literal"><span class="pre">PagingAndSortingRepository</span></code>と同じシグネチャにすることを推奨する。</div>
-<div class="line">ただし、コレクションを返却する場合は、<code class="docutils literal"><span class="pre">java.lang.Iterable</span></code>ではなく、ロジックで扱いやすいインタフェース（<code class="docutils literal"><span class="pre">java.util.Collection</span></code>や、<code class="docutils literal"><span class="pre">java.util.List</span></code>）でもよい。</div>
+<div class="line">汎用的なCRUD操作を行うメソッドについては、Spring Dataから提供されている<code class="docutils literal notranslate"><span class="pre">CrudRepository</span></code>や、<code class="docutils literal notranslate"><span class="pre">PagingAndSortingRepository</span></code>と同じシグネチャにすることを推奨する。</div>
+<div class="line">ただし、コレクションを返却する場合は、<code class="docutils literal notranslate"><span class="pre">java.lang.Iterable</span></code>ではなく、ロジックで扱いやすいインタフェース（<code class="docutils literal notranslate"><span class="pre">java.util.Collection</span></code>や、<code class="docutils literal notranslate"><span class="pre">java.util.List</span></code>）でもよい。</div>
 <div class="line">実際のアプリケーション開発では、汎用的なCRUD操作のみで開発できることは稀で、かならずメソッドの追加が必要になる。</div>
 <div class="line">追加するメソッドは、以下のルールに則り追加することを推奨する。</div>
 </div>
@@ -1389,8 +1381,8 @@ JPA依存のメソッド（saveAndFlushや、flush）を呼び出す必要があ
 <td><ol class="first last arabic simple">
 <li>メソッド名は、条件に一致するEntityの該当ページ部分を取得するためのメソッドである事を明示するために、 <strong>findPageBy</strong> で始める。</li>
 <li>メソッド名のfindPageBy以降は、検索条件となるフィールドの物理名または論理的な条件名を指定し、どのような状態のEntityが取得されるのか推測できる名前とする。</li>
-<li>引数は、条件となるフィールド毎に用意する。ただし、条件が多い場合は、条件をまとめたDTOを用意してもよい。ページネーション情報（取得開始位置、取得件数、ソート情報）は、Spring Dataより提供されている <code class="docutils literal"><span class="pre">Pageable</span></code> インタフェースとすることを推奨する。</li>
-<li>返り値は、Spring Dataより提供されている <code class="docutils literal"><span class="pre">Page</span></code> インタフェースとすることを推奨する。</li>
+<li>引数は、条件となるフィールド毎に用意する。ただし、条件が多い場合は、条件をまとめたDTOを用意してもよい。ページネーション情報（取得開始位置、取得件数、ソート情報）は、Spring Dataより提供されている <code class="docutils literal notranslate"><span class="pre">Pageable</span></code> インタフェースとすることを推奨する。</li>
+<li>返り値は、Spring Dataより提供されている <code class="docutils literal notranslate"><span class="pre">Page</span></code> インタフェースとすることを推奨する。</li>
 </ol>
 </td>
 </tr>
@@ -1429,10 +1421,10 @@ findの部分が、updateまたはdeleteとなる。</p>
 </div>
 </div></blockquote>
 <ul class="simple">
-<li><code class="file docutils literal"><span class="pre">Todo.java</span></code> (Entity)</li>
+<li><code class="file docutils literal notranslate"><span class="pre">Todo.java</span></code> (Entity)</li>
 </ul>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Todo</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Todo</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">todoId</span><span class="o">;</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">todoTitle</span><span class="o">;</span>
     <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">finished</span><span class="o">;</span>
@@ -1446,10 +1438,10 @@ findの部分が、updateまたはdeleteとなる。</p>
 <div class="line"><br /></div>
 </div>
 <ul class="simple">
-<li><code class="file docutils literal"><span class="pre">TodoRepository.java</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">TodoRepository.java</span></code></li>
 </ul>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">TodoRepository</span> <span class="kd">extends</span> <span class="n">SimpleCrudRepository</span><span class="o">&lt;</span><span class="n">Todo</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="o">{</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">TodoRepository</span> <span class="kd">extends</span> <span class="n">SimpleCrudRepository</span><span class="o">&lt;</span><span class="n">Todo</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="o">{</span>
     <span class="c1">// (1)</span>
     <span class="n">Todo</span> <span class="nf">findOneByTodoTitle</span><span class="o">(</span><span class="n">String</span> <span class="n">todoTitle</span><span class="o">);</span>
     <span class="c1">// (2)</span>
@@ -1583,7 +1575,7 @@ findの部分が、updateまたはdeleteとなる。</p>
 <span id="id18"></span><h3><a class="toc-backref" href="#id64">3.2.5.2. Serviceのクラス構成</a><a class="headerlink" href="#service-constitution-role-label" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line">Serviceは、ServiceクラスとSharedServiceクラスで構成され、それぞれ以下の役割を担う。</div>
-<div class="line">本ガイドラインでは、<code class="docutils literal"><span class="pre">&#64;Service</span></code>アノテーションが付与されたPOJO(Plain Old Java Object)のことを、ServiceクラスおよびSharedServiceクラスと定義しているが、メソッドのシグネチャを限定するようなインタフェースや、基底クラスを作成することを、禁止しているわけではない。</div>
+<div class="line">本ガイドラインでは、<code class="docutils literal notranslate"><span class="pre">&#64;Service</span></code>アノテーションが付与されたPOJO(Plain Old Java Object)のことを、ServiceクラスおよびSharedServiceクラスと定義しているが、メソッドのシグネチャを限定するようなインタフェースや、基底クラスを作成することを、禁止しているわけではない。</div>
 </div>
 <blockquote>
 <div><table border="1" class="colwidths-given docutils">
@@ -1714,7 +1706,7 @@ findの部分が、updateまたはdeleteとなる。</p>
 <p><strong>シグネチャを制限するインタフェースおよび基底クラスの実装サンプル</strong>
 - シグネチャを限定するようなインタフェース</p>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// (1)</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// (1)</span>
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">BLogic</span><span class="o">&lt;</span><span class="n">I</span><span class="o">,</span> <span class="n">O</span><span class="o">&gt;</span> <span class="o">{</span>
   <span class="n">O</span> <span class="nf">execute</span><span class="o">(</span><span class="n">I</span> <span class="n">input</span><span class="o">);</span>
 <span class="o">}</span>
@@ -1750,7 +1742,7 @@ findの部分が、updateまたはdeleteとなる。</p>
 <li>シグネチャを限定するような基底クラス</li>
 </ul>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// (2)</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// (2)</span>
 <span class="nd">@Service</span>
 <span class="nd">@Transactional</span>
 <span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">AbstractBLogic</span><span class="o">&lt;</span><span class="n">I</span><span class="o">,</span> <span class="n">O</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">BLogic</span><span class="o">&lt;</span><span class="n">I</span><span class="o">,</span> <span class="n">O</span><span class="o">&gt;</span> <span class="o">{</span>
@@ -1830,7 +1822,7 @@ findの部分が、updateまたはdeleteとなる。</p>
 <li>BLogicクラス(Service)</li>
 </ul>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// (5)</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// (5)</span>
 <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">XxxBLogic</span> <span class="kd">extends</span> <span class="n">BLogic</span><span class="o">&lt;</span><span class="n">XxxInput</span><span class="o">,</span> <span class="n">XxxOutput</span><span class="o">&gt;</span> <span class="o">{</span>
 
 <span class="o">}</span>
@@ -1859,7 +1851,7 @@ findの部分が、updateまたはdeleteとなる。</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@Service</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Service</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">XxxBLogicImpl</span> <span class="kd">extends</span> <span class="n">AbstractBLogic</span><span class="o">&lt;</span><span class="n">XxxInput</span><span class="o">,</span> <span class="n">XxxOutput</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">XxxBLogic</span> <span class="o">{</span>
 
     <span class="c1">// (6)</span>
@@ -1931,7 +1923,7 @@ findの部分が、updateまたはdeleteとなる。</p>
 <li>Controller</li>
 </ul>
 <blockquote class="last">
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// (8)</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// (8)</span>
 <span class="nd">@Inject</span>
 <span class="n">XxxBLogic</span> <span class="n">xxxBLogic</span><span class="o">;</span>
 
@@ -2352,7 +2344,7 @@ HTTP上に公開するリソースは、業務データ(Entity)または業務�
 <li>Serviceインタフェースの作成</li>
 </ul>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">CartService</span> <span class="o">{</span> <span class="c1">// (1)</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">CartService</span> <span class="o">{</span> <span class="c1">// (1)</span>
     <span class="c1">// omitted</span>
 <span class="o">}</span>
 </pre></div>
@@ -2400,14 +2392,14 @@ HTTP上に公開するリソースは、業務データ(Entity)または業務�
 <li>Serviceクラスの作成</li>
 </ul>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@Service</span> <span class="c1">// (1)</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Service</span> <span class="c1">// (1)</span>
 <span class="nd">@Transactional</span> <span class="c1">// (2)</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">CartServiceImpl</span> <span class="kd">implements</span> <span class="n">CartService</span> <span class="o">{</span> <span class="c1">// (3) (4)</span>
     <span class="c1">// omitted</span>
 <span class="o">}</span>
 </pre></div>
 </div>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;context:component-scan</span> <span class="na">base-package=</span><span class="s">&quot;xxx.yyy.zzz.domain&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;context:component-scan</span> <span class="na">base-package=</span><span class="s">&quot;xxx.yyy.zzz.domain&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
 </pre></div>
 </div>
 <table border="1" class="colwidths-given docutils">
@@ -2444,7 +2436,7 @@ HTTP上に公開するリソースは、業務データ(Entity)または業務�
 <div class="line">詳細は、<a class="reference internal" href="#transaction-management-declare-transaction-info-label"><span class="std std-ref">「宣言型トランザクション管理」で必要となる情報</span></a>を参照されたい。</div>
 </div>
 <div class="last line-block">
-<div class="line">また、<code class="docutils literal"><span class="pre">&#64;Transactional</span></code>アノテーションを使用する際の注意点を理解するために、「<a class="reference internal" href="#domainlayerappendixtransactionmanagement"><span class="std std-ref">トランザクション管理を使うための設定について</span></a>」を合わせて確認するとよい。</div>
+<div class="line">また、<code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>アノテーションを使用する際の注意点を理解するために、「<a class="reference internal" href="#domainlayerappendixtransactionmanagement"><span class="std std-ref">トランザクション管理を使うための設定について</span></a>」を合わせて確認するとよい。</div>
 </div>
 </td>
 </tr>
@@ -2465,7 +2457,7 @@ HTTP上に公開するリソースは、業務データ(Entity)または業務�
 <td><div class="first last line-block">
 <div class="line"><strong>Serviceクラスでは状態は保持せず、singletonスコープのbeanとしてコンテナに登録する 。</strong></div>
 <div class="line">フィールド変数には、スレッド毎に状態が変わるオブジェクト(Entity/DTO/VOなどのPOJO)や、値(プリミティブ型、プリミティブラッパークラスなど)を保持してはいけない。</div>
-<div class="line">また、<code class="docutils literal"><span class="pre">&#64;Scope</span></code>アノテーションを使ってsingleton以外のスコープ(prototype, request, session)にしてはいけない。</div>
+<div class="line">また、<code class="docutils literal notranslate"><span class="pre">&#64;Scope</span></code>アノテーションを使ってsingleton以外のスコープ(prototype, request, session)にしてはいけない。</div>
 </div>
 </td>
 </tr>
@@ -2478,7 +2470,7 @@ HTTP上に公開するリソースは、業務データ(Entity)または業務�
 <p class="first admonition-title">Note</p>
 <p><strong>クラスに &#64;Transactional アノテーションを付加する理由</strong></p>
 <p class="last">トランザクション境界の設定が必須なのは更新処理を含む業務ロジックのみだが、設定漏れによるバグを防ぐ事を目的として、クラスレベルにアノテーションを付与することを推奨している。
-もちろん必要な箇所（更新処理を行うメソッド）のみに、<code class="docutils literal"><span class="pre">&#64;Transactional</span></code>アノテーションを定義する方法を採用してもよい。</p>
+もちろん必要な箇所（更新処理を行うメソッド）のみに、<code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>アノテーションを定義する方法を採用してもよい。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -2498,7 +2490,7 @@ HTTP上に公開するリソースは、業務データ(Entity)または業務�
 <li>Serviceインタフェースのメソッド作成</li>
 </ul>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">CartService</span> <span class="o">{</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">CartService</span> <span class="o">{</span>
     <span class="n">Cart</span> <span class="nf">createCart</span><span class="o">();</span> <span class="c1">// (1) (2)</span>
     <span class="n">Cart</span> <span class="nf">findCart</span><span class="o">(</span><span class="n">String</span> <span class="n">cartId</span><span class="o">);</span> <span class="c1">// (1) (2)</span>
 <span class="o">}</span>
@@ -2509,7 +2501,7 @@ HTTP上に公開するリソースは、業務データ(Entity)または業務�
 <li>Serviceクラスのメソッドの作成</li>
 </ul>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@Service</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Service</span>
 <span class="nd">@Transactional</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">CartServiceImpl</span> <span class="kd">implements</span> <span class="n">CartService</span> <span class="o">{</span>
 
@@ -2572,7 +2564,7 @@ HTTP上に公開するリソースは、業務データ(Entity)または業務�
 <div class="line">詳細は、<a class="reference internal" href="#transaction-management-declare-transaction-info-label"><span class="std std-ref">「宣言型トランザクション管理」で必要となる情報</span></a> を参照されたい。</div>
 </div>
 <div class="last line-block">
-<div class="line">また、<code class="docutils literal"><span class="pre">&#64;Transactional</span></code>アノテーションを使用する際の注意点を理解するために、「<a class="reference internal" href="#domainlayerappendixtransactionmanagement"><span class="std std-ref">トランザクション管理を使うための設定について</span></a>」を合わせて確認するとよい。</div>
+<div class="line">また、<code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>アノテーションを使用する際の注意点を理解するために、「<a class="reference internal" href="#domainlayerappendixtransactionmanagement"><span class="std std-ref">トランザクション管理を使うための設定について</span></a>」を合わせて確認するとよい。</div>
 </div>
 </td>
 </tr>
@@ -2584,7 +2576,7 @@ HTTP上に公開するリソースは、業務データ(Entity)または業務�
 <div><div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p><strong>参照系の業務ロジックのトランザクション定義について</strong></p>
-<p>参照系の業務ロジックを実装する場合は、<code class="docutils literal"><span class="pre">&#64;Transactional(readOnly</span> <span class="pre">=</span> <span class="pre">true)</span></code>を指定することで、
+<p>参照系の業務ロジックを実装する場合は、<code class="docutils literal notranslate"><span class="pre">&#64;Transactional(readOnly</span> <span class="pre">=</span> <span class="pre">true)</span></code>を指定することで、
 JDBCドライバに対して「読み取り専用のトランザクション」のもとでSQLを実行するように指示することができる。</p>
 <p class="last">読み取り専用のトランザクションの扱い方は、JDBCドライバの実装に依存するため、使用するJDBCドライバの仕様を確認されたい。</p>
 </div>
@@ -2598,7 +2590,7 @@ JDBCドライバに対して「読み取り専用のトランザクション」�
 <p class="first admonition-title">Note</p>
 <p><strong>新しいトランザクションを開始する必要がある場合のトランザクション定義について</strong></p>
 <p class="last">呼び出し元のメソッドが参加しているトランザクションには参加せず、
-新しいトランザクションを開始する必要がある場合は、<code class="docutils literal"><span class="pre">&#64;Transactional(propagation</span> <span class="pre">=</span> <span class="pre">Propagation.REQUIRES_NEW)</span></code>を設定する。</p>
+新しいトランザクションを開始する必要がある場合は、<code class="docutils literal notranslate"><span class="pre">&#64;Transactional(propagation</span> <span class="pre">=</span> <span class="pre">Propagation.REQUIRES_NEW)</span></code>を設定する。</p>
 </div>
 </div></blockquote>
 </div>
@@ -2606,18 +2598,18 @@ JDBCドライバに対して「読み取り専用のトランザクション」�
 <span id="id26"></span><h4><a class="toc-backref" href="#id75">3.2.5.4.3. Serviceクラスのメソッド引数と返り値について</a><a class="headerlink" href="#service-class-method-args-return-label" title="Permalink to this headline">¶</a></h4>
 <p>Serviceクラスのメソッド引数と返り値は、以下の点を考慮すること。</p>
 <div class="line-block">
-<div class="line">Serviceクラスの引数と返り値は、Serialize可能なクラス(<code class="docutils literal"><span class="pre">java.io.Serializable</span></code>を実装しているクラス)とする。</div>
+<div class="line">Serviceクラスの引数と返り値は、Serialize可能なクラス(<code class="docutils literal notranslate"><span class="pre">java.io.Serializable</span></code>を実装しているクラス)とする。</div>
 <div class="line">Serviceクラスは、分散アプリケーションとしてデプロイされる可能性もあるので、引数と返り値は、Serialize可能なクラスのみ、許可することを推奨する。</div>
 </div>
 <p><strong>メソッド引数/返り値となる代表的な型を以下に示す。</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li>プリミティブ型(<code class="docutils literal"><span class="pre">int</span></code>, <code class="docutils literal"><span class="pre">long</span></code>など)</li>
-<li>プリミティブラッパークラス(<code class="docutils literal"><span class="pre">java.lang.Integer</span></code>, <code class="docutils literal"><span class="pre">java.lang.Long</span></code>など)</li>
-<li>java標準クラス(<code class="docutils literal"><span class="pre">java.lang.String</span></code>, <code class="docutils literal"><span class="pre">java.util.Date</span></code>など)</li>
+<li>プリミティブ型(<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code>など)</li>
+<li>プリミティブラッパークラス(<code class="docutils literal notranslate"><span class="pre">java.lang.Integer</span></code>, <code class="docutils literal notranslate"><span class="pre">java.lang.Long</span></code>など)</li>
+<li>java標準クラス(<code class="docutils literal notranslate"><span class="pre">java.lang.String</span></code>, <code class="docutils literal notranslate"><span class="pre">java.util.Date</span></code>など)</li>
 <li>ドメインオブジェクト(Entity、DTOなど)</li>
 <li>入出力オブジェクト(DTO)</li>
-<li>上記型のコレクション(<code class="docutils literal"><span class="pre">java.util.Collection</span></code>の実装クラス)</li>
+<li>上記型のコレクション(<code class="docutils literal notranslate"><span class="pre">java.util.Collection</span></code>の実装クラス)</li>
 <li>void</li>
 <li>etc …</li>
 </ul>
@@ -2638,16 +2630,16 @@ JDBCドライバに対して「読み取り専用のトランザクション」�
 <p><strong>メソッド引数/返り値として禁止するものを以下に示す。</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li>アプリケーション層の実装アーキテクチャ(Servlet APIやSpringのweb層のAPIなど)に依存するオブジェクト(<code class="docutils literal"><span class="pre">javax.servlet.http.HttpServletRequest</span></code> 、 <code class="docutils literal"><span class="pre">javax.servlet.http.HttpServletResponse</span></code> 、 <code class="docutils literal"><span class="pre">javax.servlet.http.HttpSession</span></code> 、 <code class="docutils literal"><span class="pre">org.springframework.http.server.ServletServerHttpRequest</span></code> など)</li>
+<li>アプリケーション層の実装アーキテクチャ(Servlet APIやSpringのweb層のAPIなど)に依存するオブジェクト(<code class="docutils literal notranslate"><span class="pre">javax.servlet.http.HttpServletRequest</span></code> 、 <code class="docutils literal notranslate"><span class="pre">javax.servlet.http.HttpServletResponse</span></code> 、 <code class="docutils literal notranslate"><span class="pre">javax.servlet.http.HttpSession</span></code> 、 <code class="docutils literal notranslate"><span class="pre">org.springframework.http.server.ServletServerHttpRequest</span></code> など)</li>
 <li>アプリケーション層のモデル(Form,DTOなど)</li>
-<li><code class="docutils literal"><span class="pre">java.util.Map</span></code> の実装クラス</li>
+<li><code class="docutils literal notranslate"><span class="pre">java.util.Map</span></code> の実装クラス</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>禁止する理由</strong></p>
 <ol class="arabic simple">
 <li>アプリケーション層の実装アーキテクチャに依存するオブジェクトを許可してしまうと、アプリケーション層とドメイン層が密結合になってしまう。</li>
-<li><code class="docutils literal"><span class="pre">java.util.Map</span></code>は、インタフェースとして汎用性が高すぎるため、メソッドの引数や返り値に使うと、
+<li><code class="docutils literal notranslate"><span class="pre">java.util.Map</span></code>は、インタフェースとして汎用性が高すぎるため、メソッドの引数や返り値に使うと、
 どのようなオブジェクトが格納されているかわかりづらい。 また、値の管理がキー名で行われるため、以下の問題が発生しやすくなる。</li>
 </ol>
 <blockquote class="last">
@@ -2682,7 +2674,7 @@ JDBCドライバに対して「読み取り専用のトランザクション」�
 <ol class="arabic">
 <li><div class="first line-block">
 <div class="line"><strong>必要に応じて、クラスに &#64;Transactional アノテーションを付加する。</strong></div>
-<div class="line">データアクセスを伴わない場合は、<code class="docutils literal"><span class="pre">&#64;Transactional</span></code>アノテーションは不要である。</div>
+<div class="line">データアクセスを伴わない場合は、<code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>アノテーションは不要である。</div>
 </div>
 </li>
 <li><div class="first line-block">
@@ -2761,14 +2753,14 @@ JDBCドライバに対して「読み取り専用のトランザクション」�
 <div class="line">Entityなどのドメイン層のオブジェクトと一緒に返却する必要がある場合は、出力オブジェクト(DTO)にメッセージオブジェクトとドメインオブジェクトを詰めて返却する。</div>
 </div>
 <div class="line-block">
-<div class="line">共通ライブラリとしてメッセージオブジェクト(<code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.message.ResultMessages</span></code>)を用意している。</div>
+<div class="line">共通ライブラリとしてメッセージオブジェクト(<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.message.ResultMessages</span></code>)を用意している。</div>
 <div class="line">共通ライブラリで用意しているクラスだと要件を満たせない場合は、プロジェクト毎にメッセージオブジェクトを作成すること。</div>
 </div>
 <ul class="simple">
 <li>DTOの作成</li>
 </ul>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderResult</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderResult</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
     <span class="kd">private</span> <span class="n">ResultMessages</span> <span class="n">warnMessages</span><span class="o">;</span>
     <span class="kd">private</span> <span class="n">Order</span> <span class="n">order</span><span class="o">;</span>
 
@@ -2786,7 +2778,7 @@ JDBCドライバに対して「読み取り専用のトランザクション」�
 </ul>
 <blockquote>
 <div><p>下記の例では、注文した商品の中に取り寄せ商品が含まれているため、分割配達となる可能性がある旨を警告メッセージとして表示する場合の実装例である。</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">OrderResult</span> <span class="nf">submitOrder</span><span class="o">(</span><span class="n">Order</span> <span class="n">order</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">OrderResult</span> <span class="nf">submitOrder</span><span class="o">(</span><span class="n">Order</span> <span class="n">order</span><span class="o">)</span> <span class="o">{</span>
 
     <span class="c1">// omitted</span>
 
@@ -2827,7 +2819,7 @@ JDBCドライバに対して「読み取り専用のトランザクション」�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">取り寄せ商品が含まれる場合は、<code class="docutils literal"><span class="pre">hasOrderProduct</span></code>に<code class="docutils literal"><span class="pre">true</span></code>が設定される。</div>
+<div class="line">取り寄せ商品が含まれる場合は、<code class="docutils literal notranslate"><span class="pre">hasOrderProduct</span></code>に<code class="docutils literal notranslate"><span class="pre">true</span></code>が設定される。</div>
 </div>
 </td>
 </tr>
@@ -2845,7 +2837,7 @@ JDBCドライバに対して「読み取り専用のトランザクション」�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">上記例では、登録した<code class="docutils literal"><span class="pre">Order</span></code>オブジェクトと警告メッセージを一緒に返却するために、<code class="docutils literal"><span class="pre">OrderResult</span></code>というDTOにオブジェクトを格納して返却している。</div>
+<div class="line">上記例では、登録した<code class="docutils literal notranslate"><span class="pre">Order</span></code>オブジェクトと警告メッセージを一緒に返却するために、<code class="docutils literal notranslate"><span class="pre">OrderResult</span></code>というDTOにオブジェクトを格納して返却している。</div>
 </div>
 </td>
 </tr>
@@ -2865,7 +2857,7 @@ JDBCドライバに対して「読み取り専用のトランザクション」�
 <li>etc …</li>
 </ul>
 <div class="line-block">
-<div class="line">共通ライブラリとしてビジネス例外(<code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.exception.BusinessException</span></code>)を用意している。</div>
+<div class="line">共通ライブラリとしてビジネス例外(<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.exception.BusinessException</span></code>)を用意している。</div>
 <div class="line">共通ライブラリで用意しているビジネス例外クラスだと要件を満たせない場合は、プロジェクト毎にビジネス例外クラスを作成すること。</div>
 <div class="line"><strong>ビジネス例外クラスは、java.lang.RuntimeException のサブクラスとして作成することを推奨する</strong> 。</div>
 </div>
@@ -2884,7 +2876,7 @@ JDBCドライバに対して「読み取り専用のトランザクション」�
 <div class="line">下記の例では、予約期限日が過ぎていることを業務エラーとして通知する際の実装例である。</div>
 </div>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// omitted</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// omitted</span>
 
 <span class="k">if</span><span class="o">(</span><span class="n">currentDate</span><span class="o">.</span><span class="na">after</span><span class="o">(</span><span class="n">reservationLimitDate</span><span class="o">))</span> <span class="o">{</span> <span class="c1">// (1)</span>
     <span class="k">throw</span> <span class="k">new</span> <span class="n">BusinessException</span><span class="o">(</span><span class="n">ResultMessages</span><span class="o">.</span><span class="na">error</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;e.xx.xx.0001&quot;</span><span class="o">));</span>
@@ -2927,17 +2919,17 @@ JDBCドライバに対して「読み取り専用のトランザクション」�
 <li>etc …</li>
 </ul>
 <div class="line-block">
-<div class="line">共通ライブラリとしてシステム例外(<code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.exception.SystemException</span></code>)を用意している。</div>
+<div class="line">共通ライブラリとしてシステム例外(<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.exception.SystemException</span></code>)を用意している。</div>
 <div class="line">共通ライブラリで用意しているシステム例外クラスだと要件を満たせない場合は、プロジェクト毎にシステム例外クラスを作成すること。</div>
 <div class="line"><strong>システム例外クラスは、java.lang.RuntimeException のサブクラスとして作成することを推奨する</strong> 。</div>
-<div class="line">理由は、システム例外は、アプリケーションのコード上でハンドリングする必要がないという点と、<code class="docutils literal"><span class="pre">&#64;Transactinal</span></code>アノテーションのデフォルトのロールバック対象が、<code class="docutils literal"><span class="pre">java.lang.RuntimeException</span></code>のためである。</div>
+<div class="line">理由は、システム例外は、アプリケーションのコード上でハンドリングする必要がないという点と、<code class="docutils literal notranslate"><span class="pre">&#64;Transactinal</span></code>アノテーションのデフォルトのロールバック対象が、<code class="docutils literal notranslate"><span class="pre">java.lang.RuntimeException</span></code>のためである。</div>
 </div>
 <div class="line-block">
 <div class="line">システム例外のスロー例を以下に示す。</div>
 <div class="line">下記の例では、指定された商品が、商品マスタに存在しないことを、システムエラーとして通知する際の実装例である。</div>
 </div>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">ItemMaster</span> <span class="n">itemMaster</span> <span class="o">=</span> <span class="n">itemMasterRepository</span><span class="o">.</span><span class="na">findOne</span><span class="o">(</span><span class="n">itemCode</span><span class="o">);</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ItemMaster</span> <span class="n">itemMaster</span> <span class="o">=</span> <span class="n">itemMasterRepository</span><span class="o">.</span><span class="na">findOne</span><span class="o">(</span><span class="n">itemCode</span><span class="o">);</span>
 <span class="k">if</span><span class="o">(</span><span class="n">itemMaster</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// (1)</span>
     <span class="k">throw</span> <span class="k">new</span> <span class="n">SystemException</span><span class="o">(</span><span class="s">&quot;e.xx.fw.0001&quot;</span><span class="o">,</span>
         <span class="s">&quot;Item master data is not found. item code is &quot;</span> <span class="o">+</span> <span class="n">itemCode</span> <span class="o">+</span> <span class="s">&quot;.&quot;</span><span class="o">);</span>
@@ -2966,7 +2958,7 @@ JDBCドライバに対して「読み取り専用のトランザクション」�
 </div></blockquote>
 <p>下記の例では、ファイルコピー時のIOエラーをシステムエラーとして通知する際の実装例である。</p>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// ...</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// ...</span>
 
 <span class="k">try</span> <span class="o">{</span>
     <span class="n">FileUtils</span><span class="o">.</span><span class="na">copy</span><span class="o">(</span><span class="n">srcFile</span><span class="o">,</span> <span class="n">destFile</span><span class="o">);</span>
@@ -3006,7 +2998,7 @@ JDBCドライバに対して「読み取り専用のトランザクション」�
 <div><div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>データアクセスエラーの扱いについて</strong></p>
-<p class="last">業務ロジック実行中に、RepositoryやO/R Mapperでデータアクセスエラーが発生した場合、<code class="docutils literal"><span class="pre">org.springframework.dao.DataAccessException</span></code>のサブクラスに変換されてスローされる。
+<p class="last">業務ロジック実行中に、RepositoryやO/R Mapperでデータアクセスエラーが発生した場合、<code class="docutils literal notranslate"><span class="pre">org.springframework.dao.DataAccessException</span></code>のサブクラスに変換されてスローされる。
 基本的には、業務ロジックではキャッチせず、アプリケーション層でエラーハンドリングすればよいが、
 一意制約違反などの一部のエラーについては、業務要件によっては、業務ロジックでハンドリングする必要がある。
 詳細は、<a class="reference internal" href="../ArchitectureInDetail/DataAccessDetail/DataAccessCommon.html"><span class="doc">データベースアクセス（共通編）</span></a>を参照されたい。</p>
@@ -3044,24 +3036,24 @@ JDBCドライバに対して「読み取り専用のトランザクション」�
 <div class="section" id="transaction-management-declare-transaction-info-label">
 <span id="id39"></span><h4><a class="toc-backref" href="#id89">3.2.6.1.2. 「宣言型トランザクション管理」で必要となる情報</a><a class="headerlink" href="#transaction-management-declare-transaction-info-label" title="Permalink to this headline">¶</a></h4>
 <div class="line-block">
-<div class="line">トランザクション管理対象とするクラスまたはクラスメソッドに対して<code class="docutils literal"><span class="pre">&#64;Transactional</span></code>アノテーションを指定する。</div>
-<div class="line">トランザクション制御に必要となる情報は、<code class="docutils literal"><span class="pre">&#64;Transactional</span></code>アノテーションの属性で指定する。</div>
+<div class="line">トランザクション管理対象とするクラスまたはクラスメソッドに対して<code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>アノテーションを指定する。</div>
+<div class="line">トランザクション制御に必要となる情報は、<code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>アノテーションの属性で指定する。</div>
 </div>
 <blockquote>
 <div><div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">本ガイドラインでは、Spring Frameworkから提供されている <code class="docutils literal"><span class="pre">&#64;org.springframework.transaction.annotation.Transactional</span></code>アノテーションを使用する前提である。</p>
+<p class="last">本ガイドラインでは、Spring Frameworkから提供されている <code class="docutils literal notranslate"><span class="pre">&#64;org.springframework.transaction.annotation.Transactional</span></code>アノテーションを使用する前提である。</p>
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p>Spring 4からは、JTA 1.2から追加された <code class="docutils literal"><span class="pre">&#64;javax.transaction.Transactional</span></code>アノテーションを使用する事ができる。</p>
+<p>Spring 4からは、JTA 1.2から追加された <code class="docutils literal notranslate"><span class="pre">&#64;javax.transaction.Transactional</span></code>アノテーションを使用する事ができる。</p>
 <p>ただし、本ガイドラインでは、「宣言型トランザクション管理」で必要となる情報をより細かく指定できるSpring Frameworkのアノテーションを使用することを推奨する。</p>
 <p>Spring Frameworkのアノテーションを使用すると、</p>
 <ul class="simple">
-<li>トランザクションの伝播方法(<code class="docutils literal"><span class="pre">propagation</span></code>属性)の属性値として<code class="docutils literal"><span class="pre">NESTED</span></code>(JDBCのセーブポイント)</li>
-<li>トランザクションの独立レベル(<code class="docutils literal"><span class="pre">isolation</span></code>属性)</li>
-<li>トランザクションのタイムアウト時間(<code class="docutils literal"><span class="pre">timeout</span></code>属性)</li>
-<li>トランザクションの読み取り専用フラグ(<code class="docutils literal"><span class="pre">readOnly</span></code>属性)</li>
+<li>トランザクションの伝播方法(<code class="docutils literal notranslate"><span class="pre">propagation</span></code>属性)の属性値として<code class="docutils literal notranslate"><span class="pre">NESTED</span></code>(JDBCのセーブポイント)</li>
+<li>トランザクションの独立レベル(<code class="docutils literal notranslate"><span class="pre">isolation</span></code>属性)</li>
+<li>トランザクションのタイムアウト時間(<code class="docutils literal notranslate"><span class="pre">timeout</span></code>属性)</li>
+<li>トランザクションの読み取り専用フラグ(<code class="docutils literal notranslate"><span class="pre">readOnly</span></code>属性)</li>
 </ul>
 <p class="last">の指定が可能となる。</p>
 </div>
@@ -3194,7 +3186,7 @@ JDBCドライバに対して「読み取り専用のトランザクション」�
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>&#64;Transactionalアノテーションのvalue属性について</strong></p>
-<p class="last"><code class="docutils literal"><span class="pre">&#64;Transactional</span></code>アノテーションにはvalue属性があるが、これは複数のTransaction Managerを宣言した際に、どのTransaction Managerを使うのかを指定する属性である。
+<p class="last"><code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>アノテーションにはvalue属性があるが、これは複数のTransaction Managerを宣言した際に、どのTransaction Managerを使うのかを指定する属性である。
 Transaction Managerが一つの場合、指定は不要である。
 複数のTransaction Managerを使う必要がある場合は、<a class="reference external" href="http://docs.spring.io/spring/docs/4.3.14.RELEASE/spring-framework-reference/html/transaction.html#tx-multiple-tx-mgrs-with-attransactional">Spring Reference Document -Transaction Management(Multiple Transaction Managers with &#64;Transactional)-</a>を参照されたい。</p>
 </div>
@@ -3213,9 +3205,9 @@ Transaction Managerが一つの場合、指定は不要である。
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>&#64;Transactionalアノテーションのtimeout属性について</strong></p>
-<p>クエリ発行時（Repositoryのメソッド実行時）に<code class="docutils literal"><span class="pre">timeout</span></code>属性に指定した時間に従って、トランザクションタイムアウトのチェックが行なわれるが、このときの挙動について以下の点に注意されたい。</p>
+<p>クエリ発行時（Repositoryのメソッド実行時）に<code class="docutils literal notranslate"><span class="pre">timeout</span></code>属性に指定した時間に従って、トランザクションタイムアウトのチェックが行なわれるが、このときの挙動について以下の点に注意されたい。</p>
 <ul class="simple">
-<li>タイムアウトチェック時に既にタイムアウトしていないかを確認するため、<code class="docutils literal"><span class="pre">timeout</span></code>属性に指定した時間が経過したタイミングで例外が発生するわけではない。</li>
+<li>タイムアウトチェック時に既にタイムアウトしていないかを確認するため、<code class="docutils literal notranslate"><span class="pre">timeout</span></code>属性に指定した時間が経過したタイミングで例外が発生するわけではない。</li>
 <li>タイムアウトチェック後に、関係ない業務処理にいくら時間がかかってもタイムアウトにはならない。</li>
 </ul>
 <p>また、トランザクションタイムアウトに関して以下の事象にも注意されたい。</p>
@@ -3229,21 +3221,21 @@ Transaction Managerが一つの場合、指定は不要である。
 <div><div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>「読み取り専用のトランザクション」が有効にならないケースについて</strong></p>
-<p><code class="docutils literal"><span class="pre">readOnly</span> <span class="pre">=</span> <span class="pre">true</span></code>を指定することで「読み取り専用のトランザクション」のもとでSQLを実行する仕組みが提供されているが、
+<p><code class="docutils literal notranslate"><span class="pre">readOnly</span> <span class="pre">=</span> <span class="pre">true</span></code>を指定することで「読み取り専用のトランザクション」のもとでSQLを実行する仕組みが提供されているが、
 以下の条件にすべて一致する場合、「読み取り専用のトランザクション」が有効にならないJDBCドライバが存在する。</p>
 <p><strong>[本事象の発生条件]</strong></p>
 <ul class="simple">
 <li>コネクションプールからコネクションを取得する際に、ヘルスチェックを行う。</li>
 <li>コネクションプールから取得したコネクションの自動コミットを無効にする。</li>
-<li><code class="docutils literal"><span class="pre">PlatformTransactionManager</span></code>として、<code class="docutils literal"><span class="pre">DataSourceTransactionManager</span></code>又は<code class="docutils literal"><span class="pre">JpaTransactionManager</span></code>を使用する。(<code class="docutils literal"><span class="pre">JtaTransactionManager</span></code>を使用する場合、本事象は発生しない)</li>
+<li><code class="docutils literal notranslate"><span class="pre">PlatformTransactionManager</span></code>として、<code class="docutils literal notranslate"><span class="pre">DataSourceTransactionManager</span></code>又は<code class="docutils literal notranslate"><span class="pre">JpaTransactionManager</span></code>を使用する。(<code class="docutils literal notranslate"><span class="pre">JtaTransactionManager</span></code>を使用する場合、本事象は発生しない)</li>
 </ul>
 <p><strong>[本事象の発生が確認されているJDBCドライバ]</strong></p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">org.postgresql:postgresql:9.3-1102-jdbc41</span></code> (PostgreSQL 9.3向けJDBC4.1互換のJDBCドライバ)</li>
+<li><code class="docutils literal notranslate"><span class="pre">org.postgresql:postgresql:9.3-1102-jdbc41</span></code> (PostgreSQL 9.3向けJDBC4.1互換のJDBCドライバ)</li>
 </ul>
 <p><strong>[本事象の回避方法]</strong></p>
 <p>「読み取り専用のトランザクション」が有効にならないケースに一致する場合は、
-<code class="docutils literal"><span class="pre">readOnly</span> <span class="pre">=</span> <span class="pre">true</span></code>を指定すると無駄な処理が行われる事になるため、
+<code class="docutils literal notranslate"><span class="pre">readOnly</span> <span class="pre">=</span> <span class="pre">true</span></code>を指定すると無駄な処理が行われる事になるため、
 参照系の処理についても「更新可能なトランザクション」のもとで実行することを推奨する。</p>
 <p>他の回避方法として、</p>
 <ul class="simple">
@@ -3254,15 +3246,15 @@ Transaction Managerが一つの場合、指定は不要である。
 <p><strong>[備考]</strong></p>
 <ul class="simple">
 <li>本事象の再現確認は、PostgreSQL 9.3及びOracle 12cで行っており、他のデータベース及びバージョンでは行っていない。</li>
-<li>PostgreSQL 9.3では、<code class="docutils literal"><span class="pre">java.sql.Connection#setReadOnly(boolean)</span></code> メソッドを呼び出した際に<code class="docutils literal"><span class="pre">SQLException</span></code>が発生する。</li>
-<li><a class="reference internal" href="../ArchitectureInDetail/DataAccessDetail/DataAccessCommon.html#dataaccesscommondatasourcedebug"><span class="std std-ref">log4jdbc</span></a>を使用してSQLやJDBCのAPIの呼び出しをロギングしている場合、JDBCドライバから発生した<code class="docutils literal"><span class="pre">SQLException</span></code>はERRORレベルでログに出力される。</li>
+<li>PostgreSQL 9.3では、<code class="docutils literal notranslate"><span class="pre">java.sql.Connection#setReadOnly(boolean)</span></code> メソッドを呼び出した際に<code class="docutils literal notranslate"><span class="pre">SQLException</span></code>が発生する。</li>
+<li><a class="reference internal" href="../ArchitectureInDetail/DataAccessDetail/DataAccessCommon.html#dataaccesscommondatasourcedebug"><span class="std std-ref">log4jdbc</span></a>を使用してSQLやJDBCのAPIの呼び出しをロギングしている場合、JDBCドライバから発生した<code class="docutils literal notranslate"><span class="pre">SQLException</span></code>はERRORレベルでログに出力される。</li>
 <li><strong>JDBCドライバから発生するSQLExceptionはSpring Frameworkが行う例外処理によって無視されるため、アプリケーションの動作としてはエラーにはならないが、「読み取り専用のトランザクション」は有効にならない。</strong></li>
 <li>Oracle 12cでは、本事象の発生は確認されていない。</li>
 </ul>
 <p><strong>[参考]</strong></p>
 <p><a class="reference internal" href="../ArchitectureInDetail/DataAccessDetail/DataAccessCommon.html#dataaccesscommondatasourcedebug"><span class="std std-ref">log4jdbc</span></a>を使用して以下のようなログが出力された場合は、本事象に該当するケースとなる。</p>
 <blockquote class="last">
-<div><div class="highlight-text"><div class="highlight"><pre><span></span>date:2015-02-20 16:11:56        thread:main     user:   X-Track:        level:ERROR     logger:jdbc.audit                                       message:3. Connection.setReadOnly(true)
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>date:2015-02-20 16:11:56        thread:main     user:   X-Track:        level:ERROR     logger:jdbc.audit                                       message:3. Connection.setReadOnly(true)
 org.postgresql.util.PSQLException: Cannot change transaction read-only property in the middle of a transaction.
     at org.postgresql.jdbc2.AbstractJdbc2Connection.setReadOnly(AbstractJdbc2Connection.java:741) ~[postgresql-9.3-1102-jdbc41.jar:na]
     ...
@@ -3290,22 +3282,22 @@ org.postgresql.util.PSQLException: Cannot change transaction read-only property 
 </div></blockquote>
 <ol class="arabic simple">
 <li>Controllerからトランザクション管理対象のServiceのメソッドを呼び出す。
-この時点で開始されているトランザクションは存在しないため、<code class="docutils literal"><span class="pre">TransactionInterceptor</span></code>によってトランザクションが開始される。</li>
-<li><code class="docutils literal"><span class="pre">TransactionInterceptor</span></code>は、トランザクション開始した後に、トランザクション管理対象のメソッドを呼び出す。</li>
-<li>Serviceからトランザクション管理対象の<code class="docutils literal"><span class="pre">SharedService</span></code>のメソッドを呼び出す。
-この時点で開始済みのトランザクションが存在しているため、<code class="docutils literal"><span class="pre">TransactionInterceptor</span></code>は、新たにトランザクションは開始せず、開始済みのトランザクションに参加する。</li>
-<li><code class="docutils literal"><span class="pre">TransactionInterceptor</span></code>は、開始済みのトランザクションに参加した後に、トランザクション管理対象のメソッドを呼び出す。</li>
-<li><code class="docutils literal"><span class="pre">TransactionInterceptor</span></code>は、処理結果に応じてコミットまたはロールバックを行い、トランザクションを終了する。</li>
+この時点で開始されているトランザクションは存在しないため、<code class="docutils literal notranslate"><span class="pre">TransactionInterceptor</span></code>によってトランザクションが開始される。</li>
+<li><code class="docutils literal notranslate"><span class="pre">TransactionInterceptor</span></code>は、トランザクション開始した後に、トランザクション管理対象のメソッドを呼び出す。</li>
+<li>Serviceからトランザクション管理対象の<code class="docutils literal notranslate"><span class="pre">SharedService</span></code>のメソッドを呼び出す。
+この時点で開始済みのトランザクションが存在しているため、<code class="docutils literal notranslate"><span class="pre">TransactionInterceptor</span></code>は、新たにトランザクションは開始せず、開始済みのトランザクションに参加する。</li>
+<li><code class="docutils literal notranslate"><span class="pre">TransactionInterceptor</span></code>は、開始済みのトランザクションに参加した後に、トランザクション管理対象のメソッドを呼び出す。</li>
+<li><code class="docutils literal notranslate"><span class="pre">TransactionInterceptor</span></code>は、処理結果に応じてコミットまたはロールバックを行い、トランザクションを終了する。</li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>org.springframework.transaction.UnexpectedRollbackExceptionが発生する理由</strong></p>
 <p class="last">トランザクションの伝播方法を「REQUIRED」にした場合、物理的なトランザクションは一つだが、Spring Frameworkでは内部的なトランザクション制御境界が設けられている。
-上記例だと、SharedServiceが呼び出された際に実行される<code class="docutils literal"><span class="pre">TransactionInterceptor</span></code>が、内部的なトランザクション制御を行っている。
-そのため、<code class="docutils literal"><span class="pre">SharedService</span></code>でロールバック対象の例外が発生した場合、<code class="docutils literal"><span class="pre">TransactionInterceptor</span></code>によって、
+上記例だと、SharedServiceが呼び出された際に実行される<code class="docutils literal notranslate"><span class="pre">TransactionInterceptor</span></code>が、内部的なトランザクション制御を行っている。
+そのため、<code class="docutils literal notranslate"><span class="pre">SharedService</span></code>でロールバック対象の例外が発生した場合、<code class="docutils literal notranslate"><span class="pre">TransactionInterceptor</span></code>によって、
 トランザクションはロールバック状態（rollback-only）に設定され、トランザクションをコミットすることはできなくなる。
-この状態でトランザクションのコミットを行おうとすると、Spring Frameworkは、<code class="docutils literal"><span class="pre">UnexpectedRollbackException</span></code>を発生させ、トランザクション制御に矛盾が発生している事を通知してくれる。
-<code class="docutils literal"><span class="pre">UnexpectedRollbackException</span></code>が発生した場合、rollbackForおよびnoRollbackForの定義に、矛盾がないか、確認すること。</p>
+この状態でトランザクションのコミットを行おうとすると、Spring Frameworkは、<code class="docutils literal notranslate"><span class="pre">UnexpectedRollbackException</span></code>を発生させ、トランザクション制御に矛盾が発生している事を通知してくれる。
+<code class="docutils literal notranslate"><span class="pre">UnexpectedRollbackException</span></code>が発生した場合、rollbackForおよびnoRollbackForの定義に、矛盾がないか、確認すること。</p>
 </div>
 <div class="line-block">
 <div class="line"><strong>トランザクションの伝播方法を「REQUIRES_NEW」にした場合のトランザクション管理フロー</strong></div>
@@ -3317,13 +3309,13 @@ org.postgresql.util.PSQLException: Cannot change transaction read-only property 
 </div>
 </div></blockquote>
 <ol class="arabic simple">
-<li>Controllerからトランザクション管理対象のServiceのメソッドを呼び出す。この時点で開始されているトランザクションは存在しないため、 <code class="docutils literal"><span class="pre">TransactionInterceptor</span></code> によってトランザクションが開始される(ここで開始したトランザクションを以降「Transaction A」と呼ぶ)。</li>
-<li><code class="docutils literal"><span class="pre">TransactionInterceptor</span></code> は、トランザクション（Transaction A）を開始した後に、トランザクション管理対象のメソッドを呼び出す。</li>
-<li>Serviceからトランザクション管理対象の <code class="docutils literal"><span class="pre">SharedService</span></code> のメソッドを呼び出す。この時点で開始済みのトランザクション（Transaction A）が存在しているが、トランザクションの伝播方法が「REQUIRES_NEW」なので <code class="docutils literal"><span class="pre">TransactionInterceptor</span></code> によって新しいトランザクションが開始される(ここで開始したトランザクションを以降「Transaction B」と呼ぶ)。この時点で「Transaction A」のトランザクションは、中断され再開待ちの状態となる。</li>
-<li><code class="docutils literal"><span class="pre">TransactionInterceptor</span></code>は、トランザクション（Transaction B）を開始した後に、トランザクション管理対象のメソッドを呼び出す。</li>
-<li><code class="docutils literal"><span class="pre">TransactionInterceptor</span></code>は、処理結果に応じてコミットまたはロールバックを行い、トランザクション（Transaction B）を終了する。
+<li>Controllerからトランザクション管理対象のServiceのメソッドを呼び出す。この時点で開始されているトランザクションは存在しないため、 <code class="docutils literal notranslate"><span class="pre">TransactionInterceptor</span></code> によってトランザクションが開始される(ここで開始したトランザクションを以降「Transaction A」と呼ぶ)。</li>
+<li><code class="docutils literal notranslate"><span class="pre">TransactionInterceptor</span></code> は、トランザクション（Transaction A）を開始した後に、トランザクション管理対象のメソッドを呼び出す。</li>
+<li>Serviceからトランザクション管理対象の <code class="docutils literal notranslate"><span class="pre">SharedService</span></code> のメソッドを呼び出す。この時点で開始済みのトランザクション（Transaction A）が存在しているが、トランザクションの伝播方法が「REQUIRES_NEW」なので <code class="docutils literal notranslate"><span class="pre">TransactionInterceptor</span></code> によって新しいトランザクションが開始される(ここで開始したトランザクションを以降「Transaction B」と呼ぶ)。この時点で「Transaction A」のトランザクションは、中断され再開待ちの状態となる。</li>
+<li><code class="docutils literal notranslate"><span class="pre">TransactionInterceptor</span></code>は、トランザクション（Transaction B）を開始した後に、トランザクション管理対象のメソッドを呼び出す。</li>
+<li><code class="docutils literal notranslate"><span class="pre">TransactionInterceptor</span></code>は、処理結果に応じてコミットまたはロールバックを行い、トランザクション（Transaction B）を終了する。
 この時点で、「Transaction A」のトランザクションが再開され、アクティブな状態になる。</li>
-<li><code class="docutils literal"><span class="pre">TransactionInterceptor</span></code>は、処理結果に応じてコミットまたはロールバックを行い、トランザクション（Transaction A）を終了する。</li>
+<li><code class="docutils literal notranslate"><span class="pre">TransactionInterceptor</span></code>は、処理結果に応じてコミットまたはロールバックを行い、トランザクション（Transaction A）を終了する。</li>
 </ol>
 </div>
 <div class="section" id="id41">
@@ -3351,9 +3343,9 @@ org.postgresql.util.PSQLException: Cannot change transaction read-only property 
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>内部呼び出しをトランザクション管理対象にしたい場合</strong></p>
-<p class="last">AOPモードを<code class="docutils literal"><span class="pre">aspectj</span></code>にすることで、内部呼び出しをトランザクション管理対象にすることができる。
+<p class="last">AOPモードを<code class="docutils literal notranslate"><span class="pre">aspectj</span></code>にすることで、内部呼び出しをトランザクション管理対象にすることができる。
 ただし、内部呼び出しもトランザクション管理対象にしてしまうと、トランザクション管理の経路が複雑になる可能性があるので、
-基本的にはAOPモードはデフォルトの<code class="docutils literal"><span class="pre">proxy</span></code>を使用することを推奨する。</p>
+基本的にはAOPモードはデフォルトの<code class="docutils literal notranslate"><span class="pre">proxy</span></code>を使用することを推奨する。</p>
 </div>
 </div></blockquote>
 </div>
@@ -3364,15 +3356,15 @@ org.postgresql.util.PSQLException: Cannot change transaction read-only property 
 <div class="section" id="platformtransactionmanager">
 <h4><a class="toc-backref" href="#id93">3.2.6.2.1. PlatformTransactionManagerの設定</a><a class="headerlink" href="#platformtransactionmanager" title="Permalink to this headline">¶</a></h4>
 <div class="line-block">
-<div class="line">トランザクション管理を行う場合、<code class="docutils literal"><span class="pre">PlatformTransactionManager</span></code>のbeanを設定する必要がある。</div>
+<div class="line">トランザクション管理を行う場合、<code class="docutils literal notranslate"><span class="pre">PlatformTransactionManager</span></code>のbeanを設定する必要がある。</div>
 <div class="line">Spring Frameworkより用途毎のクラスが提供されているので、使用するクラスを指定すればよい。</div>
 </div>
 <ul class="simple">
-<li><code class="file docutils literal"><span class="pre">xxx-env.xml</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">xxx-env.xml</span></code></li>
 </ul>
 <blockquote>
 <div><p>以下に、DataSourceから取得されるJDBCコネクションの機能を使って、トランザクションを管理する場合の設定例を示す。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- (1) --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- (1) --&gt;</span>
 <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;transactionManager&quot;</span>
       <span class="na">class=</span><span class="s">&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;dataSource&quot;</span> <span class="na">ref=</span><span class="s">&quot;dataSource&quot;</span> <span class="nt">/&gt;</span>
@@ -3396,7 +3388,7 @@ org.postgresql.util.PSQLException: Cannot change transaction read-only property 
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">用途にあった<code class="docutils literal"><span class="pre">PlatformTransactionManager</span></code>の実装クラスを指定する。</div>
+<div class="line">用途にあった<code class="docutils literal notranslate"><span class="pre">PlatformTransactionManager</span></code>の実装クラスを指定する。</div>
 <div class="line">idは「transactionManager」としておくことを推奨する。</div>
 </div>
 </td>
@@ -3410,9 +3402,9 @@ org.postgresql.util.PSQLException: Cannot change transaction read-only property 
 <p class="first admonition-title">Note</p>
 <p><strong>複数DB（複数リソース）に対するトランザクション管理（グローバルトランザクションの管理）が必要な場合</strong></p>
 <ul class="last simple">
-<li><code class="docutils literal"><span class="pre">org.springframework.transaction.jta.JtaTransactionManager</span></code>を利用し、アプリケーションサーバから提供されているJTAの機能を使って、トランザクション管理を行う必要がある。</li>
+<li><code class="docutils literal notranslate"><span class="pre">org.springframework.transaction.jta.JtaTransactionManager</span></code>を利用し、アプリケーションサーバから提供されているJTAの機能を使って、トランザクション管理を行う必要がある。</li>
 <li>WebSphere、Oracle WebLogic ServerでJTAを使う場合、&lt;tx:jta-transaction-manager/&gt; を指定することで、
-アプリケーションサーバ用に拡張された<code class="docutils literal"><span class="pre">JtaTransactionManager</span></code>が、自動的で設定される。</li>
+アプリケーションサーバ用に拡張された<code class="docutils literal notranslate"><span class="pre">JtaTransactionManager</span></code>が、自動的で設定される。</li>
 </ul>
 </div>
 <table border="1" class="colwidths-given docutils" id="id44">
@@ -3439,8 +3431,8 @@ org.postgresql.util.PSQLException: Cannot change transaction read-only property 
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">JDBC(<code class="docutils literal"><span class="pre">java.sql.Connection</span></code>)のAPIを呼び出して、トランザクションを管理するための実装クラス。</div>
-<div class="line">MyBatisや、<code class="docutils literal"><span class="pre">JdbcTemplate</span></code>を使う場合は、本クラスを使用する。</div>
+<div class="line">JDBC(<code class="docutils literal notranslate"><span class="pre">java.sql.Connection</span></code>)のAPIを呼び出して、トランザクションを管理するための実装クラス。</div>
+<div class="line">MyBatisや、<code class="docutils literal notranslate"><span class="pre">JdbcTemplate</span></code>を使う場合は、本クラスを使用する。</div>
 </div>
 </td>
 </tr>
@@ -3454,7 +3446,7 @@ org.postgresql.util.PSQLException: Cannot change transaction read-only property 
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">JPA(<code class="docutils literal"><span class="pre">javax.persistence.EntityTransaction</span></code>)のAPIを呼び出して、トランザクションを管理するための実装クラス。</div>
+<div class="line">JPA(<code class="docutils literal notranslate"><span class="pre">javax.persistence.EntityTransaction</span></code>)のAPIを呼び出して、トランザクションを管理するための実装クラス。</div>
 <div class="line">JPAを使う場合は、本クラスを使用する。</div>
 </div>
 </td>
@@ -3469,7 +3461,7 @@ org.postgresql.util.PSQLException: Cannot change transaction read-only property 
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">JTA(<code class="docutils literal"><span class="pre">javax.transaction.UserTransaction</span></code>)のAPIを呼び出してトランザクションを管理するための実装クラス。</div>
+<div class="line">JTA(<code class="docutils literal notranslate"><span class="pre">javax.transaction.UserTransaction</span></code>)のAPIを呼び出してトランザクションを管理するための実装クラス。</div>
 <div class="line">アプリケーションサーバから提供されているJTS(Java Transaction Service)を利用して、リソース(データベース/メッセージングサービス/汎用EIS(Enterprise Information System)など)とのトランザクションを管理する場合は、本クラスを使用する。</div>
 <div class="line">複数のリソースに対する操作を同一トランザクションで行う必要がある場合は、JTAを利用して、リソースとのトランザクションを管理する必要がある。</div>
 </div>
@@ -3482,14 +3474,14 @@ org.postgresql.util.PSQLException: Cannot change transaction read-only property 
 <div class="section" id="transactional">
 <h4><a class="toc-backref" href="#id94">3.2.6.2.2. &#64;Transactionalを有効化するための設定</a><a class="headerlink" href="#transactional" title="Permalink to this headline">¶</a></h4>
 <div class="line-block">
-<div class="line">本ガイドラインでは、<code class="docutils literal"><span class="pre">&#64;Transactional</span></code>アノテーションを使った「宣言型トランザクション管理」を使って、トランザクション管理することを推奨している。</div>
-<div class="line">ここでは、<code class="docutils literal"><span class="pre">&#64;Transactional</span></code>アノテーションを使うために、必要な設定について説明する。</div>
+<div class="line">本ガイドラインでは、<code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>アノテーションを使った「宣言型トランザクション管理」を使って、トランザクション管理することを推奨している。</div>
+<div class="line">ここでは、<code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>アノテーションを使うために、必要な設定について説明する。</div>
 </div>
 <ul class="simple">
-<li><code class="file docutils literal"><span class="pre">xxx-domain.xml</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">xxx-domain.xml</span></code></li>
 </ul>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;tx:annotation-driven</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;tx:annotation-driven</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
 </pre></div>
 </div>
 <table border="1" class="colwidths-given docutils">
@@ -3507,7 +3499,7 @@ org.postgresql.util.PSQLException: Cannot change transaction read-only property 
 <div class="line">(1)</div>
 </div>
 </td>
-<td>&lt;tx:annotation-driven&gt;要素をXML（bean定義ファイル）に追加することで、<code class="docutils literal"><span class="pre">&#64;Transactional</span></code>アノテーションを使ったトランザクション境界の指定が有効となる。</td>
+<td>&lt;tx:annotation-driven&gt;要素をXML（bean定義ファイル）に追加することで、<code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>アノテーションを使ったトランザクション境界の指定が有効となる。</td>
 </tr>
 </tbody>
 </table>
@@ -3535,10 +3527,10 @@ JDBCドライバに対して「読み取り専用のトランザクション」�
 <h4><a class="toc-backref" href="#id95">3.2.6.2.3. &lt;tx:annotation-driven&gt;要素の属性について</a><a class="headerlink" href="#tx-annotation-driven" title="Permalink to this headline">¶</a></h4>
 <p>&lt;tx:annotation-driven&gt;にはいくつかの属性が指定でき、デフォルトの振る舞いを拡張することができる。</p>
 <ul class="simple">
-<li><code class="file docutils literal"><span class="pre">xxx-domain.xml</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">xxx-domain.xml</span></code></li>
 </ul>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;tx:annotation-driven</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;tx:annotation-driven</span>
      <span class="na">transaction-manager=</span><span class="s">&quot;txManager&quot;</span>
      <span class="na">mode=</span><span class="s">&quot;aspectj&quot;</span>
      <span class="na">proxy-target-class=</span><span class="s">&quot;true&quot;</span>
@@ -3560,11 +3552,11 @@ JDBCドライバに対して「読み取り専用のトランザクション」�
 <tbody valign="top">
 <tr class="row-even"><td>1</td>
 <td>transaction-manager</td>
-<td><code class="docutils literal"><span class="pre">PlatformTransactionManager</span></code>のbeanを指定する。省略した場合「transactionManager」というbean名で登録されているbeanが使用される。</td>
+<td><code class="docutils literal notranslate"><span class="pre">PlatformTransactionManager</span></code>のbeanを指定する。省略した場合「transactionManager」というbean名で登録されているbeanが使用される。</td>
 </tr>
 <tr class="row-odd"><td>2</td>
 <td>mode</td>
-<td>AOPのモードを指定する。省略した場合、<code class="docutils literal"><span class="pre">proxy</span></code>となる。<code class="docutils literal"><span class="pre">aspectj</span></code>を指定できるが、原則デフォルトの<code class="docutils literal"><span class="pre">proxy</span></code>を使う。</td>
+<td>AOPのモードを指定する。省略した場合、<code class="docutils literal notranslate"><span class="pre">proxy</span></code>となる。<code class="docutils literal notranslate"><span class="pre">aspectj</span></code>を指定できるが、原則デフォルトの<code class="docutils literal notranslate"><span class="pre">proxy</span></code>を使う。</td>
 </tr>
 <tr class="row-even"><td>3</td>
 <td>proxy-target-class</td>
@@ -3626,7 +3618,7 @@ JDBCドライバに対して「読み取り専用のトランザクション」�
     </div>
     <div class="footer">
       © Copyright 2013-2018, NTT DATA Corporation. © Copyright 2013-2018, NTT Corporation.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.3.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.1.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
     </div>
     
     <script>

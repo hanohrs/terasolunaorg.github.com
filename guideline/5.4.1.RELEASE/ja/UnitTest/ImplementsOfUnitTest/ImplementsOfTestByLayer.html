@@ -2,23 +2,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>10.2.2. レイヤごとのテスト実装 &#8212; TERASOLUNA Server Framework for Java (5.x) Development Guideline 5.4.1.RELEASE documentation</title>
     <link rel="stylesheet" href="../../_static/solar.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '5.4.1.RELEASE',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="10.2.3. 機能ごとのテスト実装" href="ImplementsOfTestByFunction.html" />
@@ -26,8 +19,7 @@
 <!-- <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'> -->
 <link href="../../_static/solarized-dark.css" rel="stylesheet">
 <link href="../../_static/jquery.treeview.css" rel="stylesheet">
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -47,8 +39,7 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper"><label><input id="scroll" type="checkbox" checked> scroll sidebar</label>
-
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">10.2.2. レイヤごとのテスト実装</a><ul>
 <li><a class="reference internal" href="#id3">10.2.2.1. インフラストラクチャ層の単体テスト</a><ul>
@@ -82,7 +73,6 @@
 </li>
 </ul>
 
-
   <h4>Previous topic</h4>
   <p class="topless"><a href="PreparationForTest.html"
                         title="previous chapter">10.2.1. テストの事前準備</a></p>
@@ -98,12 +88,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -173,27 +165,27 @@
 </tr>
 <tr class="row-even"><td>ドメイン層</td>
 <td><a class="reference internal" href="#implementsoftestbylayertestingservicewithspringtest"><span class="std std-ref">依存クラスを利用したテスト</span></a></td>
-<td>Spring TestのDI機能を使用して<code class="docutils literal"><span class="pre">Service</span></code>をインジェクションし、インフラストラクチャ層と結合し<code class="docutils literal"><span class="pre">Service</span></code>のテストを行う。</td>
+<td>Spring TestのDI機能を使用して<code class="docutils literal notranslate"><span class="pre">Service</span></code>をインジェクションし、インフラストラクチャ層と結合し<code class="docutils literal notranslate"><span class="pre">Service</span></code>のテストを行う。</td>
 </tr>
 <tr class="row-odd"><td>ドメイン層</td>
 <td><a class="reference internal" href="#implementsoftestbylayertestingservicewithmockito"><span class="std std-ref">モックを利用したテスト</span></a></td>
-<td>Mockitoを使用して依存するクラスをモック化し<code class="docutils literal"><span class="pre">Service</span></code>のテストを行う。</td>
+<td>Mockitoを使用して依存するクラスをモック化し<code class="docutils literal notranslate"><span class="pre">Service</span></code>のテストを行う。</td>
 </tr>
 <tr class="row-even"><td>アプリケーション層</td>
 <td><a class="reference internal" href="#implementsoftestbylayertestingcontrollerwithstandalonesetup"><span class="std std-ref">StandaloneSetupを利用したテスト</span></a></td>
-<td>Spring TestのDI機能を使用して<code class="docutils literal"><span class="pre">Controller</span></code>をインジェクションし、ドメイン層、インフラストラクチャ層と結合した状態で<code class="docutils literal"><span class="pre">Controller</span></code>のテストを行う。</td>
+<td>Spring TestのDI機能を使用して<code class="docutils literal notranslate"><span class="pre">Controller</span></code>をインジェクションし、ドメイン層、インフラストラクチャ層と結合した状態で<code class="docutils literal notranslate"><span class="pre">Controller</span></code>のテストを行う。</td>
 </tr>
 <tr class="row-odd"><td>アプリケーション層</td>
 <td><a class="reference internal" href="#implementsoftestbylayertestingcontrollerwithwebappcontextsetup"><span class="std std-ref">WebAppContextSetupを利用したテスト</span></a></td>
-<td>Spring TestのMockMvcを使用して業務で作成した<code class="docutils literal"><span class="pre">spring-mvc.xml</span></code>と<code class="docutils literal"><span class="pre">applicationContext.xml</span></code>を適用し、<code class="docutils literal"><span class="pre">Controller</span></code>のテストを行う。</td>
+<td>Spring TestのMockMvcを使用して業務で作成した<code class="docutils literal notranslate"><span class="pre">spring-mvc.xml</span></code>と<code class="docutils literal notranslate"><span class="pre">applicationContext.xml</span></code>を適用し、<code class="docutils literal notranslate"><span class="pre">Controller</span></code>のテストを行う。</td>
 </tr>
 <tr class="row-even"><td>アプリケーション層</td>
 <td><a class="reference internal" href="#implementsoftestbylayertestingcontrollerwithmockito"><span class="std std-ref">モックを利用したテスト</span></a></td>
-<td>Mockitoを使用して依存するクラスをモック化し<code class="docutils literal"><span class="pre">Controller</span></code>のテストを行う。</td>
+<td>Mockitoを使用して依存するクラスをモック化し<code class="docutils literal notranslate"><span class="pre">Controller</span></code>のテストを行う。</td>
 </tr>
 <tr class="row-odd"><td>アプリケーション層</td>
 <td><a class="reference internal" href="#implementsoftestbylayerunittestofhelper"><span class="std std-ref">Helperの単体テスト</span></a></td>
-<td><code class="docutils literal"><span class="pre">Helper</span></code>のテストを行う。テスト方法の詳細は<code class="docutils literal"><span class="pre">Service</span></code>のテスト方法を参照。</td>
+<td><code class="docutils literal notranslate"><span class="pre">Helper</span></code>のテストを行う。テスト方法の詳細は<code class="docutils literal notranslate"><span class="pre">Service</span></code>のテスト方法を参照。</td>
 </tr>
 </tbody>
 </table>
@@ -205,8 +197,8 @@
 </div>
 <p>インフラストラクチャ層では、RepositoryからMyBatis（O/R Mapper）を利用したデータアクセスのテストを行う。
 MyBatis3の使用方法の詳細については、<a class="reference internal" href="../../ImplementationAtEachLayer/InfrastructureLayer.html#repository-mybatis3-label"><span class="std std-ref">MyBatis3を使ってRepositoryを実装</span></a>を参照されたい。</p>
-<p>MyBatisにより自動生成される<code class="docutils literal"><span class="pre">RepositoryImpl</span></code>はSpringのDIコンテナ上で実行されるため、テストには、
-本番同様のBean定義と、SpringのDI機能を提供するSpring Testの<code class="docutils literal"><span class="pre">SpringJUnit4ClassRunner</span></code>を使用する。
+<p>MyBatisにより自動生成される<code class="docutils literal notranslate"><span class="pre">RepositoryImpl</span></code>はSpringのDIコンテナ上で実行されるため、テストには、
+本番同様のBean定義と、SpringのDI機能を提供するSpring Testの<code class="docutils literal notranslate"><span class="pre">SpringJUnit4ClassRunner</span></code>を使用する。
 Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest.html#usageoflibraryfortestspringtestoverview"><span class="std std-ref">Spring Test</span></a>を参照されたい。</p>
 <p>テスト実行後のデータ検証方法には以下の2通りある。
 どちらを使用するかは別途業務要件に合わせて検討いただきたい。</p>
@@ -214,14 +206,14 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 <li>テスト実行後のデータベースの状態をSELECT文を使用して取得し検証する。</li>
 <li>DBUnitとSpring Test DBUnitを使用して検証する。</li>
 </ul>
-<p>本節では、SELECT文を使用した検証方法として<code class="docutils literal"><span class="pre">JdbcTemplate</span></code>を使用した場合を例に説明する。
-<code class="docutils literal"><span class="pre">JdbcTemplate</span></code>とはSpring JDBCサポートのコアクラスである。JDBC APIではデータソースからコネクションの取得、
-<code class="docutils literal"><span class="pre">PreparedStatement</span></code>の作成、<code class="docutils literal"><span class="pre">ResultSet</span></code>の解析、コネクションの解放などを行う必要があるが、
-<code class="docutils literal"><span class="pre">JdbcTemplate</span></code>を使用することでこれらの処理の多くが隠蔽され、より簡単にデータアクセスを行うことができる。</p>
+<p>本節では、SELECT文を使用した検証方法として<code class="docutils literal notranslate"><span class="pre">JdbcTemplate</span></code>を使用した場合を例に説明する。
+<code class="docutils literal notranslate"><span class="pre">JdbcTemplate</span></code>とはSpring JDBCサポートのコアクラスである。JDBC APIではデータソースからコネクションの取得、
+<code class="docutils literal notranslate"><span class="pre">PreparedStatement</span></code>の作成、<code class="docutils literal notranslate"><span class="pre">ResultSet</span></code>の解析、コネクションの解放などを行う必要があるが、
+<code class="docutils literal notranslate"><span class="pre">JdbcTemplate</span></code>を使用することでこれらの処理の多くが隠蔽され、より簡単にデータアクセスを行うことができる。</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><a class="reference internal" href="../../Overview/ApplicationLayering.html#applicationlayering"><span class="std std-ref">アプリケーションのレイヤ化</span></a>では、<code class="docutils literal"><span class="pre">Repository</span></code>インターフェイスはドメイン層の成果物であるが、
-インフラストラクチャ層の単体テスト対象として紹介している。<code class="docutils literal"><span class="pre">Service</span></code>とのインターフェイスが正しいことは、
+<p class="last"><a class="reference internal" href="../../Overview/ApplicationLayering.html#applicationlayering"><span class="std std-ref">アプリケーションのレイヤ化</span></a>では、<code class="docutils literal notranslate"><span class="pre">Repository</span></code>インターフェイスはドメイン層の成果物であるが、
+インフラストラクチャ層の単体テスト対象として紹介している。<code class="docutils literal notranslate"><span class="pre">Service</span></code>とのインターフェイスが正しいことは、
 ドメイン層の単体テストでも確認することを推奨する。</p>
 </div>
 <div class="line-block">
@@ -229,7 +221,7 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </div>
 <div class="section" id="repository">
 <span id="implementsoftestbylayerunittestofrepository"></span><h3><a class="toc-backref" href="#id11">10.2.2.1.1. Repositoryの単体テスト</a><a class="headerlink" href="#repository" title="Permalink to this headline">¶</a></h3>
-<p>本節では、以下の<code class="docutils literal"><span class="pre">Repository</span></code>の単体テスト実装方法を説明する。</p>
+<p>本節では、以下の<code class="docutils literal notranslate"><span class="pre">Repository</span></code>の単体テスト実装方法を説明する。</p>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="30%" />
@@ -242,7 +234,7 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><a class="reference internal" href="#implementsoftestbylayertestingrepositorywithspringtest"><span class="std std-ref">Spring Test標準機能のみを利用したテスト</span></a></td>
-<td><code class="docutils literal"><span class="pre">JdbcTemplate</span></code>を使用してテスト結果の検証を行う。</td>
+<td><code class="docutils literal notranslate"><span class="pre">JdbcTemplate</span></code>を使用してテスト結果の検証を行う。</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#implementsoftestbylayertestingrepositorywithspringtestdbunit"><span class="std std-ref">Spring Test DBUnitを利用したテスト</span></a></td>
 <td>DBUnit、Spring Test DBUnitの機能を使用してテスト結果の検証を行う。</td>
@@ -252,23 +244,23 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 <p>ここでは、以下の成果物に対するテストを例に説明する。
 なお、Repositoryの実装の詳細は、<a class="reference internal" href="../../ImplementationAtEachLayer/InfrastructureLayer.html#repository-mybatis3-label"><span class="std std-ref">MyBatis3を使ってRepositoryを実装</span></a>を参照されたい。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">Repository</span></code>インタフェース（<code class="docutils literal"><span class="pre">MemberRepository</span></code>）の更新処理（<code class="docutils literal"><span class="pre">updateMemberLogin</span></code>メソッド）</li>
-<li>マッピングファイル（<code class="docutils literal"><span class="pre">MemberRepository.xml</span></code>）</li>
+<li><code class="docutils literal notranslate"><span class="pre">Repository</span></code>インタフェース（<code class="docutils literal notranslate"><span class="pre">MemberRepository</span></code>）の更新処理（<code class="docutils literal notranslate"><span class="pre">updateMemberLogin</span></code>メソッド）</li>
+<li>マッピングファイル（<code class="docutils literal notranslate"><span class="pre">MemberRepository.xml</span></code>）</li>
 </ul>
 <p>以下に、テスト対象の実装例を示す。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">MemberRepository.java</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">MemberRepository.java</span></code></li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">MemberRepository</span> <span class="o">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">MemberRepository</span> <span class="o">{</span>
 
     <span class="kt">int</span> <span class="nf">updateMemberLogin</span><span class="o">(</span><span class="n">Member</span> <span class="n">member</span><span class="o">);</span>
 <span class="o">}</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">MemberRepository.xml</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">MemberRepository.xml</span></code></li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;mapper</span> <span class="na">namespace=</span><span class="s">&quot;com.example.domain.repository.member.MemberRepository&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;mapper</span> <span class="na">namespace=</span><span class="s">&quot;com.example.domain.repository.member.MemberRepository&quot;</span><span class="nt">&gt;</span>
 
   <span class="nt">&lt;update</span> <span class="na">id=</span><span class="s">&quot;updateMemberLogin&quot;</span> <span class="na">parameterType=</span><span class="s">&quot;Member&quot;</span><span class="nt">&gt;</span>
     UPDATE member_login SET
@@ -286,7 +278,7 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </div>
 <div class="section" id="spring-test">
 <span id="implementsoftestbylayertestingrepositorywithspringtest"></span><h4><a class="toc-backref" href="#id12">10.2.2.1.1.1. Spring Test標準機能のみを利用したテスト</a><a class="headerlink" href="#spring-test" title="Permalink to this headline">¶</a></h4>
-<p>Spring Testを使用した<code class="docutils literal"><span class="pre">Repository</span></code>の単体テストにおいて、作成するファイルを以下に示す。
+<p>Spring Testを使用した<code class="docutils literal notranslate"><span class="pre">Repository</span></code>の単体テストにおいて、作成するファイルを以下に示す。
 なお、データベースのセットアップ方法については<a class="reference internal" href="PreparationForTest.html#preparationfortestdatasetupwithspringtest"><span class="std std-ref">スキーマとテストデータのセットアップ（Spring Test標準機能のみを利用したテストの場合）</span></a> を参照されたい。
 また、Spring Testを使用して単体テストを行う際に使用する設定ファイルは<a class="reference internal" href="PreparationForTest.html#preparationfortestmakesettingfileforspringtest"><span class="std std-ref">テスト実装例で使用する設定ファイル</span></a>を参照されたい。</p>
 <div class="figure">
@@ -303,13 +295,13 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">MemberRepositoryTest.java</span></code></td>
-<td><code class="docutils literal"><span class="pre">MemberRepository.java</span></code>のテストクラス。</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">MemberRepositoryTest.java</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">MemberRepository.java</span></code>のテストクラス。</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">test-context.xml</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">test-context.xml</span></code></td>
 <td>Spring Testを使用して単体テストを行う際に必要な設定を補うための設定ファイル。</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">setupMemberLogin.sql</span></code></td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">setupMemberLogin.sql</span></code></td>
 <td>単体テストで利用するデータベースのデータをセットアップするためのSQLファイル。</td>
 </tr>
 </tbody>
@@ -319,18 +311,18 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 <p><strong>単体テストで利用するSQLファイルの作成単位</strong></p>
 <p class="last">ここでは、１テストメソッドに１つのSQLを作成している。実際の作成単位については、テスト方針や内容に応じて
 適宜検討されたい。
-なお、<code class="docutils literal"><span class="pre">&#64;Sql</span></code>にSQLファイルパスを省略した場合、<code class="docutils literal"><span class="pre">&#64;Sql</span></code>の指定場所に基づいてSQLファイルの検索が行われる。
+なお、<code class="docutils literal notranslate"><span class="pre">&#64;Sql</span></code>にSQLファイルパスを省略した場合、<code class="docutils literal notranslate"><span class="pre">&#64;Sql</span></code>の指定場所に基づいてSQLファイルの検索が行われる。
 詳細は、<a class="reference internal" href="PreparationForTest.html#preparationfortestnoteomittedsqlfilepath"><span class="std std-ref">&#64;SqlのSQLファイルパスの省略</span></a>を参照されたい。</p>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>Spring Testを使用する場合の<code class="docutils literal"><span class="pre">Repository</span></code>のテストクラス作成方法を説明する。</p>
+<p>Spring Testを使用する場合の<code class="docutils literal notranslate"><span class="pre">Repository</span></code>のテストクラス作成方法を説明する。</p>
 <p>以下に、データアクセスを利用してテストするために使用する設定ファイルを示す。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">sample-infra.xml</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">sample-infra.xml</span></code></li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;import</span> <span class="na">resource=</span><span class="s">&quot;classpath:/META-INF/spring/sample-env.xml&quot;</span> <span class="nt">/&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;import</span> <span class="na">resource=</span><span class="s">&quot;classpath:/META-INF/spring/sample-env.xml&quot;</span> <span class="nt">/&gt;</span>
 
 <span class="c">&lt;!-- define the SqlSessionFactory --&gt;</span>
 <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;sqlSessionFactory&quot;</span> <span class="na">class=</span><span class="s">&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;</span><span class="nt">&gt;</span>
@@ -343,9 +335,9 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </pre></div>
 </div>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">sample-env.xml</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">sample-env.xml</span></code></li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span>  <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;realDataSource&quot;</span> <span class="na">class=</span><span class="s">&quot;org.apache.commons.dbcp2.BasicDataSource&quot;</span> <span class="na">destroy-method=</span><span class="s">&quot;close&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>  <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;realDataSource&quot;</span> <span class="na">class=</span><span class="s">&quot;org.apache.commons.dbcp2.BasicDataSource&quot;</span> <span class="na">destroy-method=</span><span class="s">&quot;close&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;driverClassName&quot;</span> <span class="na">value=</span><span class="s">&quot;org.postgresql.Driver&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;url&quot;</span> <span class="na">value=</span><span class="s">&quot;jdbc:postgresql://localhost:5432/sample&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;username&quot;</span> <span class="na">value=</span><span class="s">&quot;sample&quot;</span> <span class="nt">/&gt;</span>
@@ -368,14 +360,14 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;dateFactory&quot;</span> <span class="na">class=</span><span class="s">&quot;org.terasoluna.gfw.common.date.jodatime.DefaultJodaTimeDateFactory&quot;</span> <span class="nt">/&gt;</span>
 </pre></div>
 </div>
-<p>以下に、Spring Testを使用した<code class="docutils literal"><span class="pre">Repository</span></code>のテスト作成方法について説明する。
-ここでは、テスト用のスキーマは作成済みであることを前提に、<code class="docutils literal"><span class="pre">&#64;Sql</span></code>アノテーションを使用して<code class="docutils literal"><span class="pre">MemberLogin</span></code>テーブル
-をセットアップし、<code class="docutils literal"><span class="pre">MemberLogin</span></code>のパスワード「ABCDE」が新しいパスワード「FGHIJ」に更新されることを更新後の
-<code class="docutils literal"><span class="pre">MemberLogin</span></code>テーブルを取得して確認している。</p>
+<p>以下に、Spring Testを使用した<code class="docutils literal notranslate"><span class="pre">Repository</span></code>のテスト作成方法について説明する。
+ここでは、テスト用のスキーマは作成済みであることを前提に、<code class="docutils literal notranslate"><span class="pre">&#64;Sql</span></code>アノテーションを使用して<code class="docutils literal notranslate"><span class="pre">MemberLogin</span></code>テーブル
+をセットアップし、<code class="docutils literal notranslate"><span class="pre">MemberLogin</span></code>のパスワード「ABCDE」が新しいパスワード「FGHIJ」に更新されることを更新後の
+<code class="docutils literal notranslate"><span class="pre">MemberLogin</span></code>テーブルを取得して確認している。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">MemberRepositoryTest.java</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">MemberRepositoryTest.java</span></code></li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">org.hamcrest.CoreMatchers.*</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">org.hamcrest.CoreMatchers.*</span><span class="o">;</span>
 <span class="kn">import static</span> <span class="nn">org.junit.Assert.*</span><span class="o">;</span>
 
 <span class="nd">@RunWith</span><span class="o">(</span><span class="n">SpringJUnit4ClassRunner</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
@@ -462,8 +454,8 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">MemberRepository</span></code>クラスを動作させるために必要なアプリケーションが保持する<code class="docutils literal"><span class="pre">sample-infra.xml</span></code>と
-<code class="docutils literal"><span class="pre">test-context.xml</span></code>を読み込む。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">MemberRepository</span></code>クラスを動作させるために必要なアプリケーションが保持する<code class="docutils literal notranslate"><span class="pre">sample-infra.xml</span></code>と
+<code class="docutils literal notranslate"><span class="pre">test-context.xml</span></code>を読み込む。</div>
 </div>
 </td>
 </tr>
@@ -472,9 +464,9 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;Transactional</span></code>アノテーションを付与すると、テスト実行開始から終了まで一トランザクションとなり、デフォルト
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>アノテーションを付与すると、テスト実行開始から終了まで一トランザクションとなり、デフォルト
 ではテスト終了後にロールバックされる。クラスレベルでアノテーションを定義すると、全テストメソッドに対して
-<code class="docutils literal"><span class="pre">&#64;Transactional</span></code>アノテーションが有効になる。</div>
+<code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>アノテーションが有効になる。</div>
 </div>
 </td>
 </tr>
@@ -483,7 +475,7 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">テスト対象である<code class="docutils literal"><span class="pre">MemberRepository</span></code>クラスをインジェクションする。</div>
+<div class="line">テスト対象である<code class="docutils literal notranslate"><span class="pre">MemberRepository</span></code>クラスをインジェクションする。</div>
 </div>
 </td>
 </tr>
@@ -492,7 +484,7 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">JdbcTemplate</span></code>クラスをインジェクションする。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">JdbcTemplate</span></code>クラスをインジェクションする。</div>
 </div>
 </td>
 </tr>
@@ -520,7 +512,7 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </td>
 <td><div class="first last line-block">
 <div class="line">更新後のデータベースの情報を取得する。
-<code class="docutils literal"><span class="pre">org.springframework.jdbc.core.RowMapper&lt;T&gt;</span></code>を使用することで、データベースから取得した<code class="docutils literal"><span class="pre">ResultSet</span></code>を
+<code class="docutils literal notranslate"><span class="pre">org.springframework.jdbc.core.RowMapper&lt;T&gt;</span></code>を使用することで、データベースから取得した<code class="docutils literal notranslate"><span class="pre">ResultSet</span></code>を
 特定のPOJOクラスにマッピングすることができる。</div>
 </div>
 </td>
@@ -539,16 +531,16 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>テスト時のトランザクションをロールバックさせない方法</strong></p>
-<p class="last"><code class="docutils literal"><span class="pre">&#64;Transactional</span></code>アノテーションをテストケースに指定した場合、デフォルトでテストメソッド実行後にロールバック
-される。後続のテストでテストデータを使用するなどの目的でロールバックをさせたくない場合は、<code class="docutils literal"><span class="pre">&#64;Transactional</span></code>アノテーションに加えて<code class="docutils literal"><span class="pre">&#64;Rollback(false)</span></code>アノテーションまたは<code class="docutils literal"><span class="pre">&#64;Commit</span></code>アノテーションを指定することで、
+<p class="last"><code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>アノテーションをテストケースに指定した場合、デフォルトでテストメソッド実行後にロールバック
+される。後続のテストでテストデータを使用するなどの目的でロールバックをさせたくない場合は、<code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>アノテーションに加えて<code class="docutils literal notranslate"><span class="pre">&#64;Rollback(false)</span></code>アノテーションまたは<code class="docutils literal notranslate"><span class="pre">&#64;Commit</span></code>アノテーションを指定することで、
 テスト時のトランザクションをコミットすることができる。</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p><strong>Spring Framework 4.2 以降の&#64;TransactionConfigurationについて</strong></p>
-<p class="last">Spring Framework 4.2 以降、クラスレベルで<code class="docutils literal"><span class="pre">&#64;Rollback</span></code>または<code class="docutils literal"><span class="pre">&#64;Commit</span></code>の設定が可能となった。
-これに伴い<code class="docutils literal"><span class="pre">&#64;TransactionConfiguration</span></code>が非推奨となった。但し、Spring Framework 4.2 より前のバージョンで
-クラスレベルでロールバックをする場合は<code class="docutils literal"><span class="pre">&#64;TransactionConfiguration(defaultRollback</span> <span class="pre">=</span> <span class="pre">true)</span></code>を設定すること。</p>
+<p class="last">Spring Framework 4.2 以降、クラスレベルで<code class="docutils literal notranslate"><span class="pre">&#64;Rollback</span></code>または<code class="docutils literal notranslate"><span class="pre">&#64;Commit</span></code>の設定が可能となった。
+これに伴い<code class="docutils literal notranslate"><span class="pre">&#64;TransactionConfiguration</span></code>が非推奨となった。但し、Spring Framework 4.2 より前のバージョンで
+クラスレベルでロールバックをする場合は<code class="docutils literal notranslate"><span class="pre">&#64;TransactionConfiguration(defaultRollback</span> <span class="pre">=</span> <span class="pre">true)</span></code>を設定すること。</p>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -556,13 +548,13 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </div>
 <div class="section" id="spring-test-dbunit">
 <span id="implementsoftestbylayertestingrepositorywithspringtestdbunit"></span><h4><a class="toc-backref" href="#id13">10.2.2.1.1.2. Spring Test DBUnitを利用したテスト</a><a class="headerlink" href="#spring-test-dbunit" title="Permalink to this headline">¶</a></h4>
-<p>データアクセスにDBUnitを使用する場合の<code class="docutils literal"><span class="pre">Repository</span></code>の単体テスト実装方法について説明する。
+<p>データアクセスにDBUnitを使用する場合の<code class="docutils literal notranslate"><span class="pre">Repository</span></code>の単体テスト実装方法について説明する。
 なお、ここではDBUnitのデータ定義ファイルにExcel形式（.xlsx）のファイルを使用した場合を例に説明する。
 データ定義ファイルとデータベースのセットアップ方法については、<a class="reference internal" href="PreparationForTest.html#preparationfortestdatasetupwithdbunit"><span class="std std-ref">テストデータのセットアップ（Spring Test DBUnitを利用したテスト場合）</span></a>を参照されたい。</p>
-<p>また、DBUnitにSpring Test DBUnitの機能を組み合わせて使用するには、<code class="docutils literal"><span class="pre">&#64;TestExecutionListeners</span></code>アノテーションを使って、
-<code class="docutils literal"><span class="pre">com.github.springtestdbunit.TransactionDbUnitTestExecutionListener</span></code>を登録する必要がある。
+<p>また、DBUnitにSpring Test DBUnitの機能を組み合わせて使用するには、<code class="docutils literal notranslate"><span class="pre">&#64;TestExecutionListeners</span></code>アノテーションを使って、
+<code class="docutils literal notranslate"><span class="pre">com.github.springtestdbunit.TransactionDbUnitTestExecutionListener</span></code>を登録する必要がある。
 登録方法ついては、<a class="reference internal" href="UsageOfLibraryForTest.html#usageoflibraryfortestregistrationoftestexecutionlistener"><span class="std std-ref">TestExecutionListenerの登録</span></a>を参照されたい。</p>
-<p>DBUnitを利用した<code class="docutils literal"><span class="pre">Repository</span></code>の単体テストにおいて、作成するファイルを以下に示す。</p>
+<p>DBUnitを利用した<code class="docutils literal notranslate"><span class="pre">Repository</span></code>の単体テストにおいて、作成するファイルを以下に示す。</p>
 <div class="figure">
 <img alt="../../_images/ImplementsOfTestByLayerRepositoryDbunitItems.png" src="../../_images/ImplementsOfTestByLayerRepositoryDbunitItems.png" />
 </div>
@@ -577,20 +569,20 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">MemberRepositoryDbunitTest.java</span></code></td>
-<td><code class="docutils literal"><span class="pre">MemberRepository.java</span></code>のテストクラス(DBUnitと連携する場合)</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">MemberRepositoryDbunitTest.java</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">MemberRepository.java</span></code>のテストクラス(DBUnitと連携する場合)</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">XlsDataSetLoader.java</span></code></td>
-<td>Excel形式に対応する<code class="docutils literal"><span class="pre">DataSetLoader</span></code>インタフェースの実装クラス。
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">XlsDataSetLoader.java</span></code></td>
+<td>Excel形式に対応する<code class="docutils literal notranslate"><span class="pre">DataSetLoader</span></code>インタフェースの実装クラス。
 実装方法については、<a class="reference internal" href="PreparationForTest.html#preparationfortestdatasetupwithdbunit"><span class="std std-ref">テストデータのセットアップ（Spring Test DBUnitを利用したテスト場合）</span></a>を参照されたい。</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">expected_testUpdateMemberLogin.xlsx</span></code></td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">expected_testUpdateMemberLogin.xlsx</span></code></td>
 <td>テストの期待結果検証用ファイル</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">setup_MemberLogin.xlsx</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">setup_MemberLogin.xlsx</span></code></td>
 <td>テストデータセットアップ用ファイル</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">test-context.xml</span></code></td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">test-context.xml</span></code></td>
 <td>Spring Testを使用して単体テストを行う際に使用する設定ファイル。<a class="reference internal" href="#implementsoftestbylayertestingrepositorywithspringtest"><span class="std std-ref">Spring Test標準機能のみを利用したテスト</span></a>で
 作成した設定ファイルと同じものを使用する。</td>
 </tr>
@@ -605,15 +597,15 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>DBUnitを使用する場合の<code class="docutils literal"><span class="pre">Repository</span></code>のテストクラス作成方法を説明する。</p>
-<p>ここでは、テスト用のスキーマは作成済みであることを前提に、<code class="docutils literal"><span class="pre">&#64;DatabaseSetup</span></code>アノテーションを使用して
-<code class="docutils literal"><span class="pre">MemberLogin</span></code>テーブルをセットアップし、<code class="docutils literal"><span class="pre">MemberLogin</span></code>のパスワード「ABCDE」が新しいパスワード「FGHIJ」
-に更新されることを<code class="docutils literal"><span class="pre">&#64;ExpectedDatabase</span></code>アノテーションを使用して確認している。</p>
-<p>以下に、Spring TestとDBUnitを使用した<code class="docutils literal"><span class="pre">Repository</span></code>のテスト作成方法を説明する。</p>
+<p>DBUnitを使用する場合の<code class="docutils literal notranslate"><span class="pre">Repository</span></code>のテストクラス作成方法を説明する。</p>
+<p>ここでは、テスト用のスキーマは作成済みであることを前提に、<code class="docutils literal notranslate"><span class="pre">&#64;DatabaseSetup</span></code>アノテーションを使用して
+<code class="docutils literal notranslate"><span class="pre">MemberLogin</span></code>テーブルをセットアップし、<code class="docutils literal notranslate"><span class="pre">MemberLogin</span></code>のパスワード「ABCDE」が新しいパスワード「FGHIJ」
+に更新されることを<code class="docutils literal notranslate"><span class="pre">&#64;ExpectedDatabase</span></code>アノテーションを使用して確認している。</p>
+<p>以下に、Spring TestとDBUnitを使用した<code class="docutils literal notranslate"><span class="pre">Repository</span></code>のテスト作成方法を説明する。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">MemberRepositoryDbunitTest.java</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">MemberRepositoryDbunitTest.java</span></code></li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">org.hamcrest.CoreMatchers.*</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">org.hamcrest.CoreMatchers.*</span><span class="o">;</span>
 <span class="kn">import static</span> <span class="nn">org.junit.Assert.*</span><span class="o">;</span>
 
 <span class="nd">@RunWith</span><span class="o">(</span><span class="n">SpringJUnit4ClassRunner</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
@@ -671,8 +663,8 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">MemberRepository</span></code>クラスを動作させるために必要な設定ファイル（アプリケーションが保持する
-<code class="docutils literal"><span class="pre">sample-infra.xml</span></code>とそれを補う<code class="docutils literal"><span class="pre">test-context.xml</span></code>）を読み込む。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">MemberRepository</span></code>クラスを動作させるために必要な設定ファイル（アプリケーションが保持する
+<code class="docutils literal notranslate"><span class="pre">sample-infra.xml</span></code>とそれを補う<code class="docutils literal notranslate"><span class="pre">test-context.xml</span></code>）を読み込む。</div>
 </div>
 </td>
 </tr>
@@ -681,16 +673,16 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </div>
 </td>
 <td><div class="first line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;ExpectedDatabase</span></code>アノテーションにテストの期待結果検証用ファイルを指定することでテストメソッド
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;ExpectedDatabase</span></code>アノテーションにテストの期待結果検証用ファイルを指定することでテストメソッド
 実行後にDBUnitによってテーブルと期待結果データファイルが自動で比較検証される。</div>
-<div class="line"><code class="docutils literal"><span class="pre">&#64;DatabaseSetup</span></code>アノテーション同様に、クラスレベルとメソッドレベルで付与できる。</div>
-<div class="line">ファイルフォーマットはテストセットアップ用データファイルと同じである。<code class="docutils literal"><span class="pre">assertionMode</span></code>属性には、
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;DatabaseSetup</span></code>アノテーション同様に、クラスレベルとメソッドレベルで付与できる。</div>
+<div class="line">ファイルフォーマットはテストセットアップ用データファイルと同じである。<code class="docutils literal notranslate"><span class="pre">assertionMode</span></code>属性には、
 以下の値が設定可能である。</div>
 </div>
 <ul class="last simple">
-<li><code class="docutils literal"><span class="pre">DEFAULT</span></code>（または指定なし）：全てのテーブルとカラムの一致を比較する。</li>
-<li><code class="docutils literal"><span class="pre">NON_STRICT</span></code>：期待結果データファイルに存在しないテーブル、カラムが実際のデータベースに存在しても無視する。</li>
-<li><code class="docutils literal"><span class="pre">NON_STRICT_UNORDERED</span></code>：<code class="docutils literal"><span class="pre">NON_STRICT</span></code>モードに加え、行の順序についても無視する。</li>
+<li><code class="docutils literal notranslate"><span class="pre">DEFAULT</span></code>（または指定なし）：全てのテーブルとカラムの一致を比較する。</li>
+<li><code class="docutils literal notranslate"><span class="pre">NON_STRICT</span></code>：期待結果データファイルに存在しないテーブル、カラムが実際のデータベースに存在しても無視する。</li>
+<li><code class="docutils literal notranslate"><span class="pre">NON_STRICT_UNORDERED</span></code>：<code class="docutils literal notranslate"><span class="pre">NON_STRICT</span></code>モードに加え、行の順序についても無視する。</li>
 </ul>
 </td>
 </tr>
@@ -725,16 +717,16 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 <div class="figure">
 <a class="reference internal image-reference" href="../../_images/ImplementsOfTestByLayerLayerOfTestTargetDomain.png"><img alt="../../_images/ImplementsOfTestByLayerLayerOfTestTargetDomain.png" src="../../_images/ImplementsOfTestByLayerLayerOfTestTargetDomain.png" style="width: 95%;" /></a>
 </div>
-<p>ドメイン層では、<code class="docutils literal"><span class="pre">Service</span></code>の業務ロジックと<code class="docutils literal"><span class="pre">&#64;Transactional</span></code>のテストを行う。
-<code class="docutils literal"><span class="pre">Service</span></code>をインジェクションし、インフラストラクチャ層を結合してテストを行う場合は、<code class="docutils literal"><span class="pre">Repository</span></code>の
-テスト実装方法と同様にBean定義と、Spring Testの<code class="docutils literal"><span class="pre">SpringJUnit4ClassRunner</span></code>を使用してテストを行う。
+<p>ドメイン層では、<code class="docutils literal notranslate"><span class="pre">Service</span></code>の業務ロジックと<code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>のテストを行う。
+<code class="docutils literal notranslate"><span class="pre">Service</span></code>をインジェクションし、インフラストラクチャ層を結合してテストを行う場合は、<code class="docutils literal notranslate"><span class="pre">Repository</span></code>の
+テスト実装方法と同様にBean定義と、Spring Testの<code class="docutils literal notranslate"><span class="pre">SpringJUnit4ClassRunner</span></code>を使用してテストを行う。
 Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest.html#usageoflibraryfortestspringtestoverview"><span class="std std-ref">Spring Test</span></a>を参照されたい。</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <div class="section" id="service">
 <span id="implementsoftestbylayerunittestofservice"></span><h3><a class="toc-backref" href="#id15">10.2.2.2.1. Serviceの単体テスト</a><a class="headerlink" href="#service" title="Permalink to this headline">¶</a></h3>
-<p>本節では、以下の<code class="docutils literal"><span class="pre">Service</span></code>のテスト実装方法を説明する。</p>
+<p>本節では、以下の<code class="docutils literal notranslate"><span class="pre">Service</span></code>のテスト実装方法を説明する。</p>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="30%" />
@@ -747,23 +739,23 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><a class="reference internal" href="#implementsoftestbylayertestingservicewithspringtest"><span class="std std-ref">依存クラスを利用したテスト</span></a></td>
-<td><code class="docutils literal"><span class="pre">Service</span></code>をインジェクションし、インフラストラクチャ層と結合してテストを行う。</td>
+<td><code class="docutils literal notranslate"><span class="pre">Service</span></code>をインジェクションし、インフラストラクチャ層と結合してテストを行う。</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#implementsoftestbylayertestingservicewithmockito"><span class="std std-ref">モックを利用したテスト</span></a></td>
-<td><code class="docutils literal"><span class="pre">Service</span></code>の実装クラスが依存するクラスをすべてモック化してテストを行う。</td>
+<td><code class="docutils literal notranslate"><span class="pre">Service</span></code>の実装クラスが依存するクラスをすべてモック化してテストを行う。</td>
 </tr>
 </tbody>
 </table>
 <p>ここでは、以下の成果物に対するテストを例に説明する。
 なお、Serviceの実装の詳細は、<a class="reference internal" href="../../ImplementationAtEachLayer/DomainLayer.html#service-label"><span class="std std-ref">Serviceの実装</span></a>を参照されたい。</p>
 <ul class="simple">
-<li>Serviceの実装クラス（<code class="docutils literal"><span class="pre">TicketReserveServiceImpl</span></code>）</li>
+<li>Serviceの実装クラス（<code class="docutils literal notranslate"><span class="pre">TicketReserveServiceImpl</span></code>）</li>
 </ul>
 <p>以下に、テスト対象の実装例を示す。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">TicketReserveServiceImpl.java</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">TicketReserveServiceImpl.java</span></code></li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@Service</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Service</span>
 <span class="nd">@Transactional</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">TicketReserveServiceImpl</span> <span class="kd">implements</span> <span class="n">TicketReserveService</span> <span class="o">{</span>
 
@@ -794,9 +786,9 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </div>
 <p>以下に、テスト対象が使用するマッピングファイルを示す。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">ReservationRepository.xml</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">ReservationRepository.xml</span></code></li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;mapper</span> <span class="na">namespace=</span><span class="s">&quot;com.example.domain.repository.reservation.ReservationRepository&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;mapper</span> <span class="na">namespace=</span><span class="s">&quot;com.example.domain.repository.reservation.ReservationRepository&quot;</span><span class="nt">&gt;</span>
 
   <span class="nt">&lt;insert</span> <span class="na">id=</span><span class="s">&quot;insert&quot;</span> <span class="na">parameterType=</span><span class="s">&quot;Reservation&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;selectKey</span> <span class="na">keyProperty=</span><span class="s">&quot;reserveNo&quot;</span> <span class="na">resultType=</span><span class="s">&quot;String&quot;</span> <span class="na">order=</span><span class="s">&quot;BEFORE&quot;</span><span class="nt">&gt;</span>
@@ -833,7 +825,7 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </div>
 <div class="section" id="implementsoftestbylayertestingservicewithspringtest">
 <span id="id5"></span><h4><a class="toc-backref" href="#id16">10.2.2.2.1.1. 依存クラスを利用したテスト</a><a class="headerlink" href="#implementsoftestbylayertestingservicewithspringtest" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">Service</span></code>をインジェクションし、インフラストラクチャ層を結合して行う。<code class="docutils literal"><span class="pre">Service</span></code>のテストにおいて、
+<p><code class="docutils literal notranslate"><span class="pre">Service</span></code>をインジェクションし、インフラストラクチャ層を結合して行う。<code class="docutils literal notranslate"><span class="pre">Service</span></code>のテストにおいて、
 作成するファイルを以下に示す。</p>
 <div class="figure">
 <img alt="../../_images/ImplementsOfTestByLayerServiceSpringTestItems.png" src="../../_images/ImplementsOfTestByLayerServiceSpringTestItems.png" />
@@ -849,10 +841,10 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">TicketReserveServiceImplTest.java</span></code></td>
-<td><code class="docutils literal"><span class="pre">TicketReserveServiceImpl.java</span></code>のテストクラス</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">TicketReserveServiceImplTest.java</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">TicketReserveServiceImpl.java</span></code>のテストクラス</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">test-context.xml</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">test-context.xml</span></code></td>
 <td><a class="reference internal" href="PreparationForTest.html#preparationfortestmakesettingfileforspringtest"><span class="std std-ref">テスト実装例で使用する設定ファイル</span></a>で定義した設定ファイルを使用する。</td>
 </tr>
 </tbody>
@@ -863,9 +855,9 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 <p>テスト対象のServiceの実装クラスをインジェクションしてインフラストラクチャ層と結合してテストを行う場合のテスト作成方法を説明する。</p>
 <p>以下に、テスト時に読み込む設定ファイルを示す。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">sample-domain.xml</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">sample-domain.xml</span></code></li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;context:component-scan</span> <span class="na">base-package=</span><span class="s">&quot;com.example.domain&quot;</span> <span class="nt">/&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;context:component-scan</span> <span class="na">base-package=</span><span class="s">&quot;com.example.domain&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;tx:annotation-driven</span> <span class="nt">/&gt;</span>
 
 <span class="nt">&lt;import</span> <span class="na">resource=</span><span class="s">&quot;classpath:META-INF/spring/sample-infra.xml&quot;</span> <span class="nt">/&gt;</span>
@@ -883,12 +875,12 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </pre></div>
 </div>
 <p>以下に、テスト実装例を示す。
-テスト対象の<code class="docutils literal"><span class="pre">TicketReserveServiceImpl#registerReservation()</span></code>メソッドを実行し、戻り値を確認している。
+テスト対象の<code class="docutils literal notranslate"><span class="pre">TicketReserveServiceImpl#registerReservation()</span></code>メソッドを実行し、戻り値を確認している。
 なお、データベースの状態の検証方法は<a class="reference internal" href="#implementsoftestbylayerunittestofrepository"><span class="std std-ref">Repositoryの単体テスト</span></a>を参照されたい。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">TicketReserveServiceImplTest.java</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">TicketReserveServiceImplTest.java</span></code></li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">org.hamcrest.CoreMatchers.*</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">org.hamcrest.CoreMatchers.*</span><span class="o">;</span>
 <span class="kn">import static</span> <span class="nn">org.junit.Assert.*</span><span class="o">;</span>
 
 <span class="nd">@RunWith</span><span class="o">(</span><span class="n">SpringJUnit4ClassRunner</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
@@ -941,8 +933,8 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">TicketReserveServiceImpl</span></code>クラスを動作させるために必要な設定ファイル（アプリケーションが保持する
-<code class="docutils literal"><span class="pre">sample-domain.xml</span></code>とそれを補う<code class="docutils literal"><span class="pre">test-domain.xml</span></code>）を読み込む。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">TicketReserveServiceImpl</span></code>クラスを動作させるために必要な設定ファイル（アプリケーションが保持する
+<code class="docutils literal notranslate"><span class="pre">sample-domain.xml</span></code>とそれを補う<code class="docutils literal notranslate"><span class="pre">test-domain.xml</span></code>）を読み込む。</div>
 </div>
 </td>
 </tr>
@@ -951,7 +943,7 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;Sql</span></code>の<code class="docutils literal"><span class="pre">statements</span></code>属性を使用することでSQL文を直接指定することもできる。
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;Sql</span></code>の<code class="docutils literal notranslate"><span class="pre">statements</span></code>属性を使用することでSQL文を直接指定することもできる。
 ここではテストメソッド実行前にシーケンスの初期化を行っている。</div>
 </div>
 </td>
@@ -961,17 +953,17 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p><strong>テスト時のトランザクション管理</strong></p>
-<p class="last">テストケースに<code class="docutils literal"><span class="pre">&#64;Transactional</span></code>アノテーションを付与すると、テスト実行開始から終了まで一トランザクションとなる。
-そのため、テストケースから<code class="docutils literal"><span class="pre">&#64;Transactional</span></code>アノテーションを付与した<code class="docutils literal"><span class="pre">Service</span></code>クラスを呼び出した場合、
+<p class="last">テストケースに<code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>アノテーションを付与すると、テスト実行開始から終了まで一トランザクションとなる。
+そのため、テストケースから<code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>アノテーションを付与した<code class="docutils literal notranslate"><span class="pre">Service</span></code>クラスを呼び出した場合、
 テストケースからトランザクションが引き継がれる点に注意すること。
-例えば、トランザクションの伝播方法がデフォルト（<code class="docutils literal"><span class="pre">REQUIRED</span></code>）の場合、テストケースで開始した
+例えば、トランザクションの伝播方法がデフォルト（<code class="docutils literal notranslate"><span class="pre">REQUIRED</span></code>）の場合、テストケースで開始した
 トランザクションでテスト対象の処理が行われ、コミット/ロールバックのタイミングもテスト終了時になる。
 トランザクションの伝播方法については<a class="reference internal" href="../../ImplementationAtEachLayer/DomainLayer.html#transaction-management-declare-transaction-info-label"><span class="std std-ref">「宣言型トランザクション管理」で必要となる情報</span></a>を参照されたい。</p>
 </div>
 </div>
 <div class="section" id="implementsoftestbylayertestingservicewithmockito">
 <span id="id6"></span><h4><a class="toc-backref" href="#id17">10.2.2.2.1.2. モックを利用したテスト</a><a class="headerlink" href="#implementsoftestbylayertestingservicewithmockito" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">Service</span></code>の依存クラスをすべてモック化して行う<code class="docutils literal"><span class="pre">Service</span></code>の単体テストにおいて、作成するファイルを以下に示す。</p>
+<p><code class="docutils literal notranslate"><span class="pre">Service</span></code>の依存クラスをすべてモック化して行う<code class="docutils literal notranslate"><span class="pre">Service</span></code>の単体テストにおいて、作成するファイルを以下に示す。</p>
 <div class="figure">
 <img alt="../../_images/ImplementsOfTestByLayerServiceMockItems.png" src="../../_images/ImplementsOfTestByLayerServiceMockItems.png" />
 </div>
@@ -986,22 +978,22 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">TicketReserveServiceImplMockTest.java</span></code></td>
-<td><code class="docutils literal"><span class="pre">TicketReserveServiceImpl.java</span></code>のテストクラス（モックを使用する場合）</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">TicketReserveServiceImplMockTest.java</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">TicketReserveServiceImpl.java</span></code>のテストクラス（モックを使用する場合）</td>
 </tr>
 </tbody>
 </table>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>テスト対象の<code class="docutils literal"><span class="pre">Service</span></code>の実装クラスが依存するクラスをモック化する場合のテスト作成方法を説明する。
-ここでは、<code class="docutils literal"><span class="pre">ReservationRepository#insert()</span></code>メソッドをモック化し、テスト対象の
-<code class="docutils literal"><span class="pre">TicketReserveServiceImpl#registerReservation()</span></code>メソッドでモック化したメソッドが呼び出されることとテスト対象の
+<p>テスト対象の<code class="docutils literal notranslate"><span class="pre">Service</span></code>の実装クラスが依存するクラスをモック化する場合のテスト作成方法を説明する。
+ここでは、<code class="docutils literal notranslate"><span class="pre">ReservationRepository#insert()</span></code>メソッドをモック化し、テスト対象の
+<code class="docutils literal notranslate"><span class="pre">TicketReserveServiceImpl#registerReservation()</span></code>メソッドでモック化したメソッドが呼び出されることとテスト対象の
 戻り値を確認している。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">TicketReserveServiceImplMockTest.java</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">TicketReserveServiceImplMockTest.java</span></code></li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">org.hamcrest.CoreMatchers.*</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">org.hamcrest.CoreMatchers.*</span><span class="o">;</span>
 <span class="kn">import static</span> <span class="nn">org.junit.Assert.*</span><span class="o">;</span>
 <span class="kn">import static</span> <span class="nn">org.mockito.Mockito.*</span><span class="o">;</span>
 
@@ -1064,8 +1056,8 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;Mock</span></code>アノテーションを付与することで、<code class="docutils literal"><span class="pre">TicketReserveServiceImpl</span></code>が依存している
-<code class="docutils literal"><span class="pre">MemberRepository</span></code>をモック化している。
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;Mock</span></code>アノテーションを付与することで、<code class="docutils literal notranslate"><span class="pre">TicketReserveServiceImpl</span></code>が依存している
+<code class="docutils literal notranslate"><span class="pre">MemberRepository</span></code>をモック化している。
 詳細は<a class="reference internal" href="UsageOfLibraryForTest.html#usageoflibraryfortestcreatemockobject"><span class="std std-ref">モックの生成</span></a>を参照されたい。</div>
 </div>
 </td>
@@ -1075,7 +1067,7 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;InjectMocks</span></code>アノテーションを付与することで、自動的にモックオブジェクトが代入される。
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;InjectMocks</span></code>アノテーションを付与することで、自動的にモックオブジェクトが代入される。
 詳細は<a class="reference internal" href="UsageOfLibraryForTest.html#usageoflibraryfortestcreatemockobject"><span class="std std-ref">モックの生成</span></a>を参照されたい。</div>
 </div>
 </td>
@@ -1085,8 +1077,8 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ReservationRepository</span></code>の<code class="docutils literal"><span class="pre">insert</span></code>メソッドについて、
-引数が<code class="docutils literal"><span class="pre">inputReservation</span></code>の場合、返り値として”<code class="docutils literal"><span class="pre">1</span></code>” を返すように設定する。
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ReservationRepository</span></code>の<code class="docutils literal notranslate"><span class="pre">insert</span></code>メソッドについて、
+引数が<code class="docutils literal notranslate"><span class="pre">inputReservation</span></code>の場合、返り値として”<code class="docutils literal notranslate"><span class="pre">1</span></code>” を返すように設定する。
 メソッドのモック化については、<a class="reference internal" href="UsageOfLibraryForTest.html#usageoflibraryfortestmockingmethods"><span class="std std-ref">メソッドのモック化</span></a>を参照されたい。</div>
 </div>
 </td>
@@ -1096,8 +1088,8 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ReservationRepository</span></code>の<code class="docutils literal"><span class="pre">insert</span></code>メソッドについて、
-引数に<code class="docutils literal"><span class="pre">inputReservation</span></code>が渡されて1回呼び出されたことを検証する。
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ReservationRepository</span></code>の<code class="docutils literal notranslate"><span class="pre">insert</span></code>メソッドについて、
+引数に<code class="docutils literal notranslate"><span class="pre">inputReservation</span></code>が渡されて1回呼び出されたことを検証する。
 モック化したメソッドの検証については、<a class="reference internal" href="UsageOfLibraryForTest.html#usageoflibraryfortestvalidationofmockmethod"><span class="std std-ref">モック化したメソッドの検証</span></a>を参照されたい。</div>
 </div>
 </td>
@@ -1118,24 +1110,24 @@ Spring Testの詳細は<a class="reference internal" href="UsageOfLibraryForTest
 <div class="figure">
 <a class="reference internal image-reference" href="../../_images/ImplementsOfTestByLayerLayerOfTestTargetApplication.png"><img alt="../../_images/ImplementsOfTestByLayerLayerOfTestTargetApplication.png" src="../../_images/ImplementsOfTestByLayerLayerOfTestTargetApplication.png" style="width: 95%;" /></a>
 </div>
-<p>アプリケーション層では、<code class="docutils literal"><span class="pre">Controller</span></code>と<code class="docutils literal"><span class="pre">Helper</span></code>のロジックを確認するためのテストを行う。
-<code class="docutils literal"><span class="pre">Controller</span></code>については以下の項目を確認する。</p>
+<p>アプリケーション層では、<code class="docutils literal notranslate"><span class="pre">Controller</span></code>と<code class="docutils literal notranslate"><span class="pre">Helper</span></code>のロジックを確認するためのテストを行う。
+<code class="docutils literal notranslate"><span class="pre">Controller</span></code>については以下の項目を確認する。</p>
 <ul class="simple">
 <li>&#64;RequestMapping(リクエストパス、HTTPメソッド、リクエストパラメータ)</li>
 <li>返却されるVIEW名</li>
 </ul>
-<p><code class="docutils literal"><span class="pre">View</span></code>については、本来アプリケーション層に含まれるが、本ガイドラインでは対象外とする。</p>
-<p>Spring Testは<code class="docutils literal"><span class="pre">Controller</span></code>クラスをテストするためのサポートクラス(<code class="docutils literal"><span class="pre">org.springframework.test.web.servlet.MockMvc</span></code>など)を用意している。
-<code class="docutils literal"><span class="pre">Controller</span></code>は<code class="docutils literal"><span class="pre">MockMVC</span></code>を使用して疑似リクエストを送信してテストをするため、<code class="docutils literal"><span class="pre">MockMVC</span></code>を提供する
-Spring Testの<code class="docutils literal"><span class="pre">SpringJUnit4ClassRunner</span></code>を使用する。
-<code class="docutils literal"><span class="pre">MockMvc</span></code>は<code class="docutils literal"><span class="pre">Controller</span></code>に疑似リクエストを送信する仕組みを持ち、デプロイしたアプリケーションを模したテストを
-行うことができる。<code class="docutils literal"><span class="pre">MockMVC</span></code>の詳細は<a class="reference internal" href="UsageOfLibraryForTest.html#usageoflibraryfortestmockmvcoverview"><span class="std std-ref">MockMvcとは</span></a>を参照されたい。</p>
+<p><code class="docutils literal notranslate"><span class="pre">View</span></code>については、本来アプリケーション層に含まれるが、本ガイドラインでは対象外とする。</p>
+<p>Spring Testは<code class="docutils literal notranslate"><span class="pre">Controller</span></code>クラスをテストするためのサポートクラス(<code class="docutils literal notranslate"><span class="pre">org.springframework.test.web.servlet.MockMvc</span></code>など)を用意している。
+<code class="docutils literal notranslate"><span class="pre">Controller</span></code>は<code class="docutils literal notranslate"><span class="pre">MockMVC</span></code>を使用して疑似リクエストを送信してテストをするため、<code class="docutils literal notranslate"><span class="pre">MockMVC</span></code>を提供する
+Spring Testの<code class="docutils literal notranslate"><span class="pre">SpringJUnit4ClassRunner</span></code>を使用する。
+<code class="docutils literal notranslate"><span class="pre">MockMvc</span></code>は<code class="docutils literal notranslate"><span class="pre">Controller</span></code>に疑似リクエストを送信する仕組みを持ち、デプロイしたアプリケーションを模したテストを
+行うことができる。<code class="docutils literal notranslate"><span class="pre">MockMVC</span></code>の詳細は<a class="reference internal" href="UsageOfLibraryForTest.html#usageoflibraryfortestmockmvcoverview"><span class="std std-ref">MockMvcとは</span></a>を参照されたい。</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>Formのバリデーションテスト</strong></p>
-<p class="last"><code class="docutils literal"><span class="pre">Form</span></code>のテストは、本来<code class="docutils literal"><span class="pre">Controller</span></code>と組み合わせて実際の動作に近い形で行う必要があるが、
-<code class="docutils literal"><span class="pre">Validation</span></code>の全パターンを<code class="docutils literal"><span class="pre">Controller</span></code>と組み合わせるとテストの負担が大きくなる。
-そのため、単純な<code class="docutils literal"><span class="pre">Validation</span></code>の確認であれば、<code class="docutils literal"><span class="pre">Controller</span></code>と切り離して <code class="docutils literal"><span class="pre">Form</span></code>単体で<code class="docutils literal"><span class="pre">Validation</span></code>の確認を行うこともできる。テスト方法はテスト対象のFormを使用して<a class="reference internal" href="ImplementsOfTestByFunction.html#implementsoftestbyfunctiontestingbeanvalidator"><span class="std std-ref">Bean Validationで実装したValidatorの単体テスト</span></a>を実施すればよい。</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">Form</span></code>のテストは、本来<code class="docutils literal notranslate"><span class="pre">Controller</span></code>と組み合わせて実際の動作に近い形で行う必要があるが、
+<code class="docutils literal notranslate"><span class="pre">Validation</span></code>の全パターンを<code class="docutils literal notranslate"><span class="pre">Controller</span></code>と組み合わせるとテストの負担が大きくなる。
+そのため、単純な<code class="docutils literal notranslate"><span class="pre">Validation</span></code>の確認であれば、<code class="docutils literal notranslate"><span class="pre">Controller</span></code>と切り離して <code class="docutils literal notranslate"><span class="pre">Form</span></code>単体で<code class="docutils literal notranslate"><span class="pre">Validation</span></code>の確認を行うこともできる。テスト方法はテスト対象のFormを使用して<a class="reference internal" href="ImplementsOfTestByFunction.html#implementsoftestbyfunctiontestingbeanvalidator"><span class="std std-ref">Bean Validationで実装したValidatorの単体テスト</span></a>を実施すればよい。</p>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -1143,7 +1135,7 @@ Spring Testの<code class="docutils literal"><span class="pre">SpringJUnit4Class
 </div>
 <div class="section" id="controller">
 <h3><a class="toc-backref" href="#id20">10.2.2.3.2. Controllerの単体テスト</a><a class="headerlink" href="#controller" title="Permalink to this headline">¶</a></h3>
-<p>ここでは、以下の<code class="docutils literal"><span class="pre">Controller</span></code>の単体テスト実装方法を説明する。</p>
+<p>ここでは、以下の<code class="docutils literal notranslate"><span class="pre">Controller</span></code>の単体テスト実装方法を説明する。</p>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="30%" />
@@ -1159,23 +1151,23 @@ Spring Testの<code class="docutils literal"><span class="pre">SpringJUnit4Class
 <td>Spring Testが提供するデフォルトのコンテキストを使用し指定した設定ファイルを読み込むことでテストを行う。</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="#implementsoftestbylayertestingcontrollerwithwebappcontextsetup"><span class="std std-ref">WebAppContextSetupを利用したテスト</span></a></td>
-<td>実際に使用する<code class="docutils literal"><span class="pre">applicationContext.xml</span></code>と<code class="docutils literal"><span class="pre">spring-mvc.xml</span></code>を使用してテストを行う。</td>
+<td>実際に使用する<code class="docutils literal notranslate"><span class="pre">applicationContext.xml</span></code>と<code class="docutils literal notranslate"><span class="pre">spring-mvc.xml</span></code>を使用してテストを行う。</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="#implementsoftestbylayertestingcontrollerwithmockito"><span class="std std-ref">モックを利用したテスト</span></a></td>
-<td><code class="docutils literal"><span class="pre">Controller</span></code>が依存するクラスをすべてモック化してテストを行う。</td>
+<td><code class="docutils literal notranslate"><span class="pre">Controller</span></code>が依存するクラスをすべてモック化してテストを行う。</td>
 </tr>
 </tbody>
 </table>
-<p>ここでは、以下の成果物に対するテストを例に説明する。<code class="docutils literal"><span class="pre">Controller</span></code>の実装の詳細は、<a class="reference internal" href="../../ImplementationAtEachLayer/ApplicationLayer.html#controller-label"><span class="std std-ref">Controllerの実装</span></a>を参照されたい。</p>
+<p>ここでは、以下の成果物に対するテストを例に説明する。<code class="docutils literal notranslate"><span class="pre">Controller</span></code>の実装の詳細は、<a class="reference internal" href="../../ImplementationAtEachLayer/ApplicationLayer.html#controller-label"><span class="std std-ref">Controllerの実装</span></a>を参照されたい。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">Controller</span></code>クラス（TicketSearchController）</li>
-<li><code class="docutils literal"><span class="pre">Controller</span></code>クラス（MemberRegisterController）</li>
+<li><code class="docutils literal notranslate"><span class="pre">Controller</span></code>クラス（TicketSearchController）</li>
+<li><code class="docutils literal notranslate"><span class="pre">Controller</span></code>クラス（MemberRegisterController）</li>
 </ul>
 <p>なお、インジェクションとモック化を組み合わせてテストを行いたい場合は、適宜以下に説明する実装方法を組み合わせて
 実装されたい。</p>
 <div class="section" id="standalonesetup">
 <span id="implementsoftestbylayertestingcontrollerwithstandalonesetup"></span><h4><a class="toc-backref" href="#id21">10.2.2.3.2.1. StandaloneSetupを利用したテスト</a><a class="headerlink" href="#standalonesetup" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">Controller</span></code>の依存クラスが利用できモック化する必要がない場合の<code class="docutils literal"><span class="pre">Controller</span></code>の単体テストにおいて、<code class="docutils literal"><span class="pre">StandaloneSetup</span></code>で作成するファイルを以下に示す。</p>
+<p><code class="docutils literal notranslate"><span class="pre">Controller</span></code>の依存クラスが利用できモック化する必要がない場合の<code class="docutils literal notranslate"><span class="pre">Controller</span></code>の単体テストにおいて、<code class="docutils literal notranslate"><span class="pre">StandaloneSetup</span></code>で作成するファイルを以下に示す。</p>
 <div class="figure">
 <img alt="../../_images/ImplementsOfTestByLayerControllerStandaloneSetupItems.png" src="../../_images/ImplementsOfTestByLayerControllerStandaloneSetupItems.png" />
 </div>
@@ -1190,39 +1182,39 @@ Spring Testの<code class="docutils literal"><span class="pre">SpringJUnit4Class
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">MemberRegisterControllerStandaloneTest.java</span></code></td>
-<td><code class="docutils literal"><span class="pre">MemberRegisterController.java</span></code>のテストクラス</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">MemberRegisterControllerStandaloneTest.java</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">MemberRegisterController.java</span></code>のテストクラス</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal"><span class="pre">spring-mvc-test.xml</span></code></td>
-<td>アプリケーション層に依存するコンポーネントを読み込むための<code class="docutils literal"><span class="pre">component-scan</span></code>をテスト用に抽出した設定ファイル。</td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">spring-mvc-test.xml</span></code></td>
+<td>アプリケーション層に依存するコンポーネントを読み込むための<code class="docutils literal notranslate"><span class="pre">component-scan</span></code>をテスト用に抽出した設定ファイル。</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">test-context.xml</span></code></td>
-<td><code class="docutils literal"><span class="pre">Controller</span></code>をドメイン層、インフラストラクチャ層と結合してテストを行う場合に使用する設定ファイル。</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">test-context.xml</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">Controller</span></code>をドメイン層、インフラストラクチャ層と結合してテストを行う場合に使用する設定ファイル。</td>
 </tr>
 </tbody>
 </table>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p><code class="docutils literal"><span class="pre">spring-mvc.xml</span></code>を使ってテストをすることが望ましいが、Spring Testが作成したコンテキストと
+<p><code class="docutils literal notranslate"><span class="pre">spring-mvc.xml</span></code>を使ってテストをすることが望ましいが、Spring Testが作成したコンテキストと
 Spring MVCが作成したコンテキストが衝突しテスト実行ができないことがある。
 そのため対応策として、テストに必要な設定のみ抽出し、テスト用の設定ファイルを用意する。</p>
 <p>以下に、必要な設定のみ抽出した設定ファイルを示す。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">spring-mvc-test.xml</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">spring-mvc-test.xml</span></code></li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;context:component-scan</span> <span class="na">base-package=</span><span class="s">&quot;com.example.app&quot;</span> <span class="nt">/&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;context:component-scan</span> <span class="na">base-package=</span><span class="s">&quot;com.example.app&quot;</span> <span class="nt">/&gt;</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">ServiceImpl</span></code>クラスなどテスト対象の<code class="docutils literal"><span class="pre">Controller</span></code>クラスが依存するクラスをインジェクションする場合の
+<p><code class="docutils literal notranslate"><span class="pre">ServiceImpl</span></code>クラスなどテスト対象の<code class="docutils literal notranslate"><span class="pre">Controller</span></code>クラスが依存するクラスをインジェクションする場合の
 テスト作成方法を説明する。
 なお、テストでデータアクセスする場合の検証方法は<a class="reference internal" href="#implementsoftestbylayerunittestofrepository"><span class="std std-ref">Repositoryの単体テスト</span></a>を、
 呼び出すドメイン層のロジックを確認する方法は<a class="reference internal" href="#implementsoftestbylayerunittestofservice"><span class="std std-ref">Serviceの単体テスト</span></a>を参照されたい。</p>
-<p>以下に、テスト対象となる<code class="docutils literal"><span class="pre">Controller</span></code>の実装例を示す。</p>
+<p>以下に、テスト対象となる<code class="docutils literal notranslate"><span class="pre">Controller</span></code>の実装例を示す。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">MemberRegisterController.java</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">MemberRegisterController.java</span></code></li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@Controller</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Controller</span>
 <span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">&quot;member/register&quot;</span><span class="o">)</span>
 <span class="nd">@TransactionTokenCheck</span><span class="o">(</span><span class="s">&quot;member/register&quot;</span><span class="o">)</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MemberRegisterController</span> <span class="o">{</span>
@@ -1243,15 +1235,15 @@ Spring MVCが作成したコンテキストが衝突しテスト実行ができ�
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>ここでは、テスト対象の<code class="docutils literal"><span class="pre">MemberRegisterController</span></code>クラスの<code class="docutils literal"><span class="pre">register</span></code>メソッドを呼び出し、
-リクエストマッピングと返却されるVIEWおよびリダイレクトされること（<code class="docutils literal"><span class="pre">testRegisterConfirm01</span></code>）、
-不正な入力値を送信したときに<code class="docutils literal"><span class="pre">BadRequestException</span></code>がthrowされていること（<code class="docutils literal"><span class="pre">testRegisterConfirm02</span></code>）の確認を行う。</p>
-<p>以下に、<code class="docutils literal"><span class="pre">ServiceImpl</span></code>クラスなどテスト対象の<code class="docutils literal"><span class="pre">Controller</span></code>クラスが依存するクラスをインジェクションする場合の
+<p>ここでは、テスト対象の<code class="docutils literal notranslate"><span class="pre">MemberRegisterController</span></code>クラスの<code class="docutils literal notranslate"><span class="pre">register</span></code>メソッドを呼び出し、
+リクエストマッピングと返却されるVIEWおよびリダイレクトされること（<code class="docutils literal notranslate"><span class="pre">testRegisterConfirm01</span></code>）、
+不正な入力値を送信したときに<code class="docutils literal notranslate"><span class="pre">BadRequestException</span></code>がthrowされていること（<code class="docutils literal notranslate"><span class="pre">testRegisterConfirm02</span></code>）の確認を行う。</p>
+<p>以下に、<code class="docutils literal notranslate"><span class="pre">ServiceImpl</span></code>クラスなどテスト対象の<code class="docutils literal notranslate"><span class="pre">Controller</span></code>クラスが依存するクラスをインジェクションする場合の
 テスト作成方法を説明する。なお、テストでデータアクセスする場合の検証方法は<a class="reference internal" href="#implementsoftestbylayerunittestofrepository"><span class="std std-ref">Repositoryの単体テスト</span></a>を参照されたい。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">MemberRegisterControllerStandaloneTest.java</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">MemberRegisterControllerStandaloneTest.java</span></code></li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">org.hamcrest.CoreMatchers.*</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">org.hamcrest.CoreMatchers.*</span><span class="o">;</span>
 <span class="kn">import static</span> <span class="nn">org.junit.Assert.*</span><span class="o">;</span>
 <span class="kn">import static</span> <span class="nn">org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*</span><span class="o">;</span>
 <span class="kn">import static</span> <span class="nn">org.springframework.test.web.servlet.result.MockMvcResultHandlers.*</span><span class="o">;</span>
@@ -1331,9 +1323,9 @@ Spring MVCが作成したコンテキストが衝突しテスト実行ができ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">MemberRegisterController</span></code>クラスが依存する<code class="docutils literal"><span class="pre">Service</span></code>、<code class="docutils literal"><span class="pre">Repository</span></code>を動作させるために必要な
-設定ファイル（アプリケーションが保持する<code class="docutils literal"><span class="pre">applicationContext.xml</span></code>とそれを補う<code class="docutils literal"><span class="pre">test-context.xml</span></code>、 <code class="docutils literal"><span class="pre">spring-mvc-test.xml</span></code>）
-を読み込む。<code class="docutils literal"><span class="pre">test-context.xml</span></code>は、<a class="reference internal" href="PreparationForTest.html#preparationfortestmakesettingfileforspringtest"><span class="std std-ref">テスト実装例で使用する設定ファイル</span></a>を使用している。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">MemberRegisterController</span></code>クラスが依存する<code class="docutils literal notranslate"><span class="pre">Service</span></code>、<code class="docutils literal notranslate"><span class="pre">Repository</span></code>を動作させるために必要な
+設定ファイル（アプリケーションが保持する<code class="docutils literal notranslate"><span class="pre">applicationContext.xml</span></code>とそれを補う<code class="docutils literal notranslate"><span class="pre">test-context.xml</span></code>、 <code class="docutils literal notranslate"><span class="pre">spring-mvc-test.xml</span></code>）
+を読み込む。<code class="docutils literal notranslate"><span class="pre">test-context.xml</span></code>は、<a class="reference internal" href="PreparationForTest.html#preparationfortestmakesettingfileforspringtest"><span class="std std-ref">テスト実装例で使用する設定ファイル</span></a>を使用している。</div>
 </div>
 </td>
 </tr>
@@ -1342,7 +1334,7 @@ Spring MVCが作成したコンテキストが衝突しテスト実行ができ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">読み込んだBean定義から生成した<code class="docutils literal"><span class="pre">Controller</span></code>を使用して、<code class="docutils literal"><span class="pre">MockMvc</span></code>をセットアップする。
+<div class="line">読み込んだBean定義から生成した<code class="docutils literal notranslate"><span class="pre">Controller</span></code>を使用して、<code class="docutils literal notranslate"><span class="pre">MockMvc</span></code>をセットアップする。
 セットアップの詳細については<a class="reference internal" href="UsageOfLibraryForTest.html#usageoflibraryfortestsettingmockmvc"><span class="std std-ref">MockMvcのセットアップ</span></a>を参照されたい。</div>
 </div>
 </td>
@@ -1352,8 +1344,8 @@ Spring MVCが作成したコンテキストが衝突しテスト実行ができ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">MemberRegisterController</span></code>クラスの<code class="docutils literal"><span class="pre">registerConfirm</span></code>メソッドを呼び出すため、
-<code class="docutils literal"><span class="pre">member/register</span></code>に対してPOSTメソッドでリクエストを送信する。リクエストパラメータには<code class="docutils literal"><span class="pre">Form</span></code>の情報を設定する。
+<div class="line"><code class="docutils literal notranslate"><span class="pre">MemberRegisterController</span></code>クラスの<code class="docutils literal notranslate"><span class="pre">registerConfirm</span></code>メソッドを呼び出すため、
+<code class="docutils literal notranslate"><span class="pre">member/register</span></code>に対してPOSTメソッドでリクエストを送信する。リクエストパラメータには<code class="docutils literal notranslate"><span class="pre">Form</span></code>の情報を設定する。
 リクエストデータの設定方法については<a class="reference internal" href="UsageOfLibraryForTest.html#usageoflibraryfortestsettingofrequestdata"><span class="std std-ref">リクエストデータの設定</span></a>を、リクエスト送信の実装方法については
 <a class="reference internal" href="UsageOfLibraryForTest.html#usageoflibraryfortestexecutionofrequest"><span class="std std-ref">リクエスト送信の実装</span></a>を参照されたい。</div>
 </div>
@@ -1364,7 +1356,7 @@ Spring MVCが作成したコンテキストが衝突しテスト実行ができ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">perform</span></code>メソッドから返却された<code class="docutils literal"><span class="pre">ResultActions</span></code>の<code class="docutils literal"><span class="pre">andExpect</span></code>メソッドで取得した<code class="docutils literal"><span class="pre">MvcResult</span></code>を使用して実行結果の妥当性を検証する。
+<div class="line"><code class="docutils literal notranslate"><span class="pre">perform</span></code>メソッドから返却された<code class="docutils literal notranslate"><span class="pre">ResultActions</span></code>の<code class="docutils literal notranslate"><span class="pre">andExpect</span></code>メソッドで取得した<code class="docutils literal notranslate"><span class="pre">MvcResult</span></code>を使用して実行結果の妥当性を検証する。
 検証方法の詳細については<a class="reference internal" href="UsageOfLibraryForTest.html#usageoflibraryfortestimplementationofexecutionresultverification"><span class="std std-ref">実行結果検証の実装</span></a>を参照されたい。</div>
 </div>
 </td>
@@ -1383,8 +1375,8 @@ Spring MVCが作成したコンテキストが衝突しテスト実行ができ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">SystemExceptionResolver</span></code>を有効にしていないため、例外ハンドリングされずに<code class="docutils literal"><span class="pre">NestedServletException</span></code>がサーブレットコンテナに通知される。
-<code class="docutils literal"><span class="pre">NestedServletException</span></code>の<code class="docutils literal"><span class="pre">getCause</span></code>メソッドにより取得された例外から、<code class="docutils literal"><span class="pre">Controller</span></code>で期待した例外がthrowされていることを検証する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">SystemExceptionResolver</span></code>を有効にしていないため、例外ハンドリングされずに<code class="docutils literal notranslate"><span class="pre">NestedServletException</span></code>がサーブレットコンテナに通知される。
+<code class="docutils literal notranslate"><span class="pre">NestedServletException</span></code>の<code class="docutils literal notranslate"><span class="pre">getCause</span></code>メソッドにより取得された例外から、<code class="docutils literal notranslate"><span class="pre">Controller</span></code>で期待した例外がthrowされていることを検証する。</div>
 </div>
 </td>
 </tr>
@@ -1396,7 +1388,7 @@ Spring MVCが作成したコンテキストが衝突しテスト実行ができ�
 </div>
 <div class="section" id="webappcontextsetup">
 <span id="implementsoftestbylayertestingcontrollerwithwebappcontextsetup"></span><h4><a class="toc-backref" href="#id22">10.2.2.3.2.2. WebAppContextSetupを利用したテスト</a><a class="headerlink" href="#webappcontextsetup" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">Controller</span></code>の依存クラスが利用できモック化する必要がない場合の<code class="docutils literal"><span class="pre">Controller</span></code>の単体テストにおいて、<code class="docutils literal"><span class="pre">WebAppContextSetup</span></code>で作成するファイルを以下に示す。</p>
+<p><code class="docutils literal notranslate"><span class="pre">Controller</span></code>の依存クラスが利用できモック化する必要がない場合の<code class="docutils literal notranslate"><span class="pre">Controller</span></code>の単体テストにおいて、<code class="docutils literal notranslate"><span class="pre">WebAppContextSetup</span></code>で作成するファイルを以下に示す。</p>
 <div class="figure">
 <img alt="../../_images/ImplementsOfTestByLayerControllerWebAppContextSetupItems.png" src="../../_images/ImplementsOfTestByLayerControllerWebAppContextSetupItems.png" />
 </div>
@@ -1411,23 +1403,23 @@ Spring MVCが作成したコンテキストが衝突しテスト実行ができ�
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">MemberRegisterControllerWebAppContextTest.java</span></code></td>
-<td><code class="docutils literal"><span class="pre">MemberRegisterController.java</span></code>のテストクラス</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">MemberRegisterControllerWebAppContextTest.java</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">MemberRegisterController.java</span></code>のテストクラス</td>
 </tr>
 </tbody>
 </table>
-<p><a class="reference internal" href="#implementsoftestbylayertestingcontrollerwithstandalonesetup"><span class="std std-ref">StandaloneSetupを利用したテスト</span></a>の例では、パスへのリクエストや<code class="docutils literal"><span class="pre">Controller</span></code>が返す<code class="docutils literal"><span class="pre">View</span></code>名などは確認できるが、
-<code class="docutils literal"><span class="pre">TransactionTokenInterceptor</span></code>や<code class="docutils literal"><span class="pre">SystemExceptionResolver</span></code>といったSpringに追加して利用する機能は適用されていないため、
+<p><a class="reference internal" href="#implementsoftestbylayertestingcontrollerwithstandalonesetup"><span class="std std-ref">StandaloneSetupを利用したテスト</span></a>の例では、パスへのリクエストや<code class="docutils literal notranslate"><span class="pre">Controller</span></code>が返す<code class="docutils literal notranslate"><span class="pre">View</span></code>名などは確認できるが、
+<code class="docutils literal notranslate"><span class="pre">TransactionTokenInterceptor</span></code>や<code class="docutils literal notranslate"><span class="pre">SystemExceptionResolver</span></code>といったSpringに追加して利用する機能は適用されていないため、
 トランザクショントークンチェックが正しく設定されているか、エラーページへの遷移が正しいかを判断することはできない。
-そのような場合は、<code class="docutils literal"><span class="pre">MockMvc</span></code>を<code class="docutils literal"><span class="pre">webAppContextSetup</span></code>でセットアップすることにより、
-Springに追加して利用する<code class="docutils literal"><span class="pre">Interceptor</span></code>や<code class="docutils literal"><span class="pre">ExceptionResolver</span></code>などをテスト時に自動で適用させることができる。</p>
+そのような場合は、<code class="docutils literal notranslate"><span class="pre">MockMvc</span></code>を<code class="docutils literal notranslate"><span class="pre">webAppContextSetup</span></code>でセットアップすることにより、
+Springに追加して利用する<code class="docutils literal notranslate"><span class="pre">Interceptor</span></code>や<code class="docutils literal notranslate"><span class="pre">ExceptionResolver</span></code>などをテスト時に自動で適用させることができる。</p>
 <p>ここでは、<a class="reference internal" href="#implementsoftestbylayertestingcontrollerwithstandalonesetup"><span class="std std-ref">StandaloneSetupを利用したテスト</span></a>で説明したテストと、
-<code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーション、<code class="docutils literal"><span class="pre">SystemExceptionResolver</span></code>が有効になった場合のテストとを比べた時の相違点について説明する。</p>
-<p>以下に、テスト対象となる<code class="docutils literal"><span class="pre">Controller</span></code>の実装例を示す。</p>
+<code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーション、<code class="docutils literal notranslate"><span class="pre">SystemExceptionResolver</span></code>が有効になった場合のテストとを比べた時の相違点について説明する。</p>
+<p>以下に、テスト対象となる<code class="docutils literal notranslate"><span class="pre">Controller</span></code>の実装例を示す。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">MemberRegisterController.java</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">MemberRegisterController.java</span></code></li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@Controller</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Controller</span>
 <span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">&quot;member/register&quot;</span><span class="o">)</span>
 <span class="nd">@TransactionTokenCheck</span><span class="o">(</span><span class="s">&quot;member/register&quot;</span><span class="o">)</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MemberRegisterController</span> <span class="o">{</span>
@@ -1474,7 +1466,7 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションを設定することで不正なリクエストを無効にする。
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションを設定することで不正なリクエストを無効にする。
 トランザクショントークンチェックについては、<a class="reference internal" href="../../ArchitectureInDetail/WebApplicationDetail/DoubleSubmitProtection.html#double-submit-transactiontokencheck"><span class="std std-ref">トランザクショントークンチェックについて</span></a>を参照されたい。</div>
 </div>
 </td>
@@ -1490,12 +1482,12 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 </tr>
 </tbody>
 </table>
-<p>初めに、<code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>を有効にした場合におけるテスト作成方法の相違点について説明する。
+<p>初めに、<code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>を有効にした場合におけるテスト作成方法の相違点について説明する。
 なお、テストでデータアクセスする場合の検証方法は<a class="reference internal" href="#implementsoftestbylayerunittestofrepository"><span class="std std-ref">Repositoryの単体テスト</span></a>を参照されたい。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">MemberRegisterControllerWebAppContextTest.java</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">MemberRegisterControllerWebAppContextTest.java</span></code></li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">org.hamcrest.CoreMatchers.*</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">org.hamcrest.CoreMatchers.*</span><span class="o">;</span>
 <span class="kn">import static</span> <span class="nn">org.junit.Assert.*</span><span class="o">;</span>
 <span class="kn">import static</span> <span class="nn">org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*</span><span class="o">;</span>
 <span class="kn">import static</span> <span class="nn">org.springframework.test.web.servlet.result.MockMvcResultHandlers.*</span><span class="o">;</span>
@@ -1571,7 +1563,7 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">業務でカスタムした<code class="docutils literal"><span class="pre">Interceptor</span></code>や<code class="docutils literal"><span class="pre">ExceptionResolver</span></code>などを動作させるために<code class="docutils literal"><span class="pre">spring-mvc.xml</span></code>を読み込む。</div>
+<div class="line">業務でカスタムした<code class="docutils literal notranslate"><span class="pre">Interceptor</span></code>や<code class="docutils literal notranslate"><span class="pre">ExceptionResolver</span></code>などを動作させるために<code class="docutils literal notranslate"><span class="pre">spring-mvc.xml</span></code>を読み込む。</div>
 </div>
 </td>
 </tr>
@@ -1580,7 +1572,7 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">読み込んだBean定義から生成したWebアプリケーションコンテキストを使用して、<code class="docutils literal"><span class="pre">MockMvc</span></code>をセットアップする。</div>
+<div class="line">読み込んだBean定義から生成したWebアプリケーションコンテキストを使用して、<code class="docutils literal notranslate"><span class="pre">MockMvc</span></code>をセットアップする。</div>
 </div>
 </td>
 </tr>
@@ -1589,7 +1581,7 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">トランザクショントークンを生成するために、<code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck(type</span> <span class="pre">=</span> <span class="pre">TransactionTokenType.BEGIN)</span></code>が設定された
+<div class="line">トランザクショントークンを生成するために、<code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck(type</span> <span class="pre">=</span> <span class="pre">TransactionTokenType.BEGIN)</span></code>が設定された
 メソッドに対してリクエストを送信する。</div>
 </div>
 </td>
@@ -1599,7 +1591,7 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">BEGINしたリクエスト（<code class="docutils literal"><span class="pre">registerConfirm</span></code>メソッド）からINのリクエスト（<code class="docutils literal"><span class="pre">register</span></code>メソッド）
+<div class="line">BEGINしたリクエスト（<code class="docutils literal notranslate"><span class="pre">registerConfirm</span></code>メソッド）からINのリクエスト（<code class="docutils literal notranslate"><span class="pre">register</span></code>メソッド）
 にトランザクショントークンを引き継ぐため、リクエスト属性からトランザクショントークンを取得する。</div>
 </div>
 </td>
@@ -1610,7 +1602,7 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 </td>
 <td><div class="first last line-block">
 <div class="line">サーバ側は発行したトランザクショントークンをセッションに保持するため、次のリクエストでも同じセッションを参照する必要があるが、
-<code class="docutils literal"><span class="pre">MockMvc</span></code>では１リクエストごとに新規セッションが使われてしまうため、明示的に同じセッションを使用するよう指定する。</div>
+<code class="docutils literal notranslate"><span class="pre">MockMvc</span></code>では１リクエストごとに新規セッションが使われてしまうため、明示的に同じセッションを使用するよう指定する。</div>
 </div>
 </td>
 </tr>
@@ -1619,8 +1611,8 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">再度、リクエストパス（<code class="docutils literal"><span class="pre">member/register</span></code>）に対してPOSTメソッドでリクエストを送信する。
-リクエストパラメータには<code class="docutils literal"><span class="pre">Form</span></code>の情報、(4)で取得したトランザクショントークンを設定し、
+<div class="line">再度、リクエストパス（<code class="docutils literal notranslate"><span class="pre">member/register</span></code>）に対してPOSTメソッドでリクエストを送信する。
+リクエストパラメータには<code class="docutils literal notranslate"><span class="pre">Form</span></code>の情報、(4)で取得したトランザクショントークンを設定し、
 セッションには(5)で取得したセッションを設定する。</div>
 </div>
 </td>
@@ -1639,12 +1631,12 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>次に、<code class="docutils literal"><span class="pre">SystemExceptionResolver</span></code>を有効にした場合におけるテスト作成方法の相違点を説明する。</p>
-<p>以下に、<code class="docutils literal"><span class="pre">SystemExceptionResolver</span></code>の定義例を示す。</p>
+<p>次に、<code class="docutils literal notranslate"><span class="pre">SystemExceptionResolver</span></code>を有効にした場合におけるテスト作成方法の相違点を説明する。</p>
+<p>以下に、<code class="docutils literal notranslate"><span class="pre">SystemExceptionResolver</span></code>の定義例を示す。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">spring-mvc.xml</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">spring-mvc.xml</span></code></li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">&quot;org.terasoluna.gfw.web.exception.SystemExceptionResolver&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">&quot;org.terasoluna.gfw.web.exception.SystemExceptionResolver&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;order&quot;</span> <span class="na">value=</span><span class="s">&quot;3&quot;</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;exceptionMappings&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;map&gt;</span>
@@ -1672,9 +1664,9 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 </div>
 <p>以下に、テスト作成方法の相違点について説明する。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">MemberRegisterControllerWebAppContextTest.java</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">MemberRegisterControllerWebAppContextTest.java</span></code></li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">org.hamcrest.CoreMatchers.*</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">org.hamcrest.CoreMatchers.*</span><span class="o">;</span>
 <span class="kn">import static</span> <span class="nn">org.junit.Assert.*</span><span class="o">;</span>
 <span class="kn">import static</span> <span class="nn">org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*</span><span class="o">;</span>
 <span class="kn">import static</span> <span class="nn">org.springframework.test.web.servlet.result.MockMvcResultHandlers.*</span><span class="o">;</span>
@@ -1741,7 +1733,7 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">Form</span></code>の情報を不正な値にすることで、<code class="docutils literal"><span class="pre">register</span></code>メソッドの内でエラーをthrowさせている。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Form</span></code>の情報を不正な値にすることで、<code class="docutils literal notranslate"><span class="pre">register</span></code>メソッドの内でエラーをthrowさせている。</div>
 </div>
 </td>
 </tr>
@@ -1759,7 +1751,7 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">ここでは<code class="docutils literal"><span class="pre">SystemExceptionResolver</span></code>が有効になっているため、
+<div class="line">ここでは<code class="docutils literal notranslate"><span class="pre">SystemExceptionResolver</span></code>が有効になっているため、
 定義したエラーのステータスコード、エラーページの遷移先が正しく設定されていることを検証する。</div>
 </div>
 </td>
@@ -1769,7 +1761,7 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">SystemExceptionResolver</span></code>で例外ハンドリングされたエラーから、
+<div class="line"><code class="docutils literal notranslate"><span class="pre">SystemExceptionResolver</span></code>で例外ハンドリングされたエラーから、
 期待したエラーがthrowされていることを検証する。</div>
 </div>
 </td>
@@ -1779,12 +1771,12 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>Sessionを利用する場合</strong></p>
-<p><code class="docutils literal"><span class="pre">Controller</span></code>クラスがSessionを利用している場合は<code class="docutils literal"><span class="pre">org.springframework.mock.web.MockHttpSession</span></code>を使ってテストを行う。</p>
+<p><code class="docutils literal notranslate"><span class="pre">Controller</span></code>クラスがSessionを利用している場合は<code class="docutils literal notranslate"><span class="pre">org.springframework.mock.web.MockHttpSession</span></code>を使ってテストを行う。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">MockHttpSession</span></code>を利用したテストメソッドの例</li>
+<li><code class="docutils literal notranslate"><span class="pre">MockHttpSession</span></code>を利用したテストメソッドの例</li>
 </ul>
 <blockquote class="last">
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SessionControllerTest</span> <span class="o">{</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SessionControllerTest</span> <span class="o">{</span>
 
     <span class="c1">// (1)</span>
     <span class="n">MockHttpSession</span> <span class="n">mockSession</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MockHttpSession</span><span class="o">();</span>
@@ -1861,8 +1853,8 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">MockMvcRequestBuilders</span></code>の<code class="docutils literal"><span class="pre">post</span></code>メソッドで
-リクエストのモックを生成し、生成したリクエストに<code class="docutils literal"><span class="pre">session</span></code>メソッドでセッションのモックを登録する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">MockMvcRequestBuilders</span></code>の<code class="docutils literal notranslate"><span class="pre">post</span></code>メソッドで
+リクエストのモックを生成し、生成したリクエストに<code class="docutils literal notranslate"><span class="pre">session</span></code>メソッドでセッションのモックを登録する。</div>
 </div>
 </td>
 </tr>
@@ -1894,7 +1886,7 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 </div>
 <div class="section" id="implementsoftestbylayertestingcontrollerwithmockito">
 <span id="id9"></span><h4><a class="toc-backref" href="#id23">10.2.2.3.2.3. モックを利用したテスト</a><a class="headerlink" href="#implementsoftestbylayertestingcontrollerwithmockito" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">Controller</span></code>の依存クラスをモック化する必要がある場合の<code class="docutils literal"><span class="pre">Controller</span></code>の単体テストにおいて、
+<p><code class="docutils literal notranslate"><span class="pre">Controller</span></code>の依存クラスをモック化する必要がある場合の<code class="docutils literal notranslate"><span class="pre">Controller</span></code>の単体テストにおいて、
 作成するファイルを以下に示す。</p>
 <div class="figure">
 <img alt="../../_images/ImplementsOfTestByLayerControllerMockTest.png" src="../../_images/ImplementsOfTestByLayerControllerMockTest.png" />
@@ -1910,20 +1902,20 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal"><span class="pre">TicketSearchControllerMockTest.java</span></code></td>
-<td><code class="docutils literal"><span class="pre">TicketSearchController.java</span></code>のテストクラス</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">TicketSearchControllerMockTest.java</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">TicketSearchController.java</span></code>のテストクラス</td>
 </tr>
 </tbody>
 </table>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>テスト対象の<code class="docutils literal"><span class="pre">Controller</span></code>クラスが依存するクラスを、モック化する場合のテスト作成方法を説明する。</p>
-<p>以下に、テスト対象となる<code class="docutils literal"><span class="pre">Controller</span></code>の実装例を示す。</p>
+<p>テスト対象の<code class="docutils literal notranslate"><span class="pre">Controller</span></code>クラスが依存するクラスを、モック化する場合のテスト作成方法を説明する。</p>
+<p>以下に、テスト対象となる<code class="docutils literal notranslate"><span class="pre">Controller</span></code>の実装例を示す。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">TicketSearchController.java</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">TicketSearchController.java</span></code></li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@Controller</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Controller</span>
 <span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">&quot;ticket/search&quot;</span><span class="o">)</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">TicketSearchController</span> <span class="o">{</span>
 
@@ -1944,11 +1936,11 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>以下に、<code class="docutils literal"><span class="pre">Controller</span></code>のテスト実装例を示す。</p>
+<p>以下に、<code class="docutils literal notranslate"><span class="pre">Controller</span></code>のテスト実装例を示す。</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">TicketSearchControllerMockTest.java</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">TicketSearchControllerMockTest.java</span></code></li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">org.hamcrest.CoreMatchers.*</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import static</span> <span class="nn">org.hamcrest.CoreMatchers.*</span><span class="o">;</span>
 <span class="kn">import static</span> <span class="nn">org.junit.Assert.*</span><span class="o">;</span>
 <span class="kn">import static</span> <span class="nn">org.mockito.Mockito.*</span><span class="o">;</span>
 <span class="kn">import static</span> <span class="nn">org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*</span><span class="o">;</span>
@@ -2026,8 +2018,8 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;Mock</span></code>アノテーションを付与することで、<code class="docutils literal"><span class="pre">TicketSearchController</span></code>が依存している
-<code class="docutils literal"><span class="pre">TicketSearchHelper</span></code>をモック化している。
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;Mock</span></code>アノテーションを付与することで、<code class="docutils literal notranslate"><span class="pre">TicketSearchController</span></code>が依存している
+<code class="docutils literal notranslate"><span class="pre">TicketSearchHelper</span></code>をモック化している。
 詳細は<a class="reference internal" href="UsageOfLibraryForTest.html#usageoflibraryfortestcreatemockobject"><span class="std std-ref">モックの生成</span></a>を参照されたい。</div>
 </div>
 </td>
@@ -2037,7 +2029,7 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;InjectMocks</span></code>アノテーションを付与することで、自動的にモックオブジェクトが代入される。
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;InjectMocks</span></code>アノテーションを付与することで、自動的にモックオブジェクトが代入される。
 詳細は<a class="reference internal" href="UsageOfLibraryForTest.html#usageoflibraryfortestcreatemockobject"><span class="std std-ref">モックの生成</span></a>を参照されたい。</div>
 </div>
 </td>
@@ -2048,8 +2040,8 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 </td>
 <td><div class="first last line-block">
 <div class="line">すべてのテストメソッドにおいて、
-<code class="docutils literal"><span class="pre">ticketSearchHelper</span></code>の<code class="docutils literal"><span class="pre">createDefaultTicketSearchForm</span></code>メソッドの返り値として
-<code class="docutils literal"><span class="pre">createMockForm</span></code>メソッドの返り値を設定する。メソッドのモック化については、<a class="reference internal" href="UsageOfLibraryForTest.html#usageoflibraryfortestmockingmethods"><span class="std std-ref">メソッドのモック化</span></a>を参照されたい。</div>
+<code class="docutils literal notranslate"><span class="pre">ticketSearchHelper</span></code>の<code class="docutils literal notranslate"><span class="pre">createDefaultTicketSearchForm</span></code>メソッドの返り値として
+<code class="docutils literal notranslate"><span class="pre">createMockForm</span></code>メソッドの返り値を設定する。メソッドのモック化については、<a class="reference internal" href="UsageOfLibraryForTest.html#usageoflibraryfortestmockingmethods"><span class="std std-ref">メソッドのモック化</span></a>を参照されたい。</div>
 </div>
 </td>
 </tr>
@@ -2058,7 +2050,7 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ticketSearchHelper</span></code>の<code class="docutils literal"><span class="pre">createDefaultTicketSearchForm</span></code>メソッドについて1回呼び出されたことを検証する。
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ticketSearchHelper</span></code>の<code class="docutils literal notranslate"><span class="pre">createDefaultTicketSearchForm</span></code>メソッドについて1回呼び出されたことを検証する。
 モック化したメソッドの検証については、<a class="reference internal" href="UsageOfLibraryForTest.html#usageoflibraryfortestvalidationofmockmethod"><span class="std std-ref">モック化したメソッドの検証</span></a>を参照されたい。</div>
 </div>
 </td>
@@ -2069,7 +2061,7 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
 </div>
 <div class="section" id="helper">
 <span id="implementsoftestbylayerunittestofhelper"></span><h3><a class="toc-backref" href="#id24">10.2.2.3.3. Helperの単体テスト</a><a class="headerlink" href="#helper" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">Helper</span></code>の単体テストは、<code class="docutils literal"><span class="pre">Service</span></code>と同様の実装でテストすることができる。
+<p><code class="docutils literal notranslate"><span class="pre">Helper</span></code>の単体テストは、<code class="docutils literal notranslate"><span class="pre">Service</span></code>と同様の実装でテストすることができる。
 実装方法については、<a class="reference internal" href="#implementsoftestbylayerunittestofservice"><span class="std std-ref">Serviceの単体テスト</span></a>を参照されたい。</p>
 </div>
 </div>
@@ -2100,7 +2092,7 @@ Springに追加して利用する<code class="docutils literal"><span class="pre
     </div>
     <div class="footer">
       © Copyright 2013-2018, NTT DATA Corporation. © Copyright 2013-2018, NTT Corporation.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.3.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.1.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
     </div>
     
     <script>

@@ -2,23 +2,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>4.5. 二重送信防止 &#8212; TERASOLUNA Server Framework for Java (5.x) Development Guideline 5.4.1.RELEASE documentation</title>
     <link rel="stylesheet" href="../../_static/solar.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '5.4.1.RELEASE',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="4.6. メッセージ管理" href="MessageManagement.html" />
@@ -26,8 +19,7 @@
 <!-- <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'> -->
 <link href="../../_static/solarized-dark.css" rel="stylesheet">
 <link href="../../_static/jquery.treeview.css" rel="stylesheet">
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -46,8 +38,7 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper"><label><input id="scroll" type="checkbox" checked> scroll sidebar</label>
-
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">4.5. 二重送信防止</a><ul>
 <li><a class="reference internal" href="#overview">4.5.1. Overview</a><ul>
@@ -75,7 +66,7 @@
 <li><a class="reference internal" href="#id12">4.5.2.2. PRG(Post-Redirect-Get)パターンの適用</a></li>
 <li><a class="reference internal" href="#doublesubmit-how-to-use-transaction-token-check">4.5.2.3. トランザクショントークンチェックの適用</a><ul>
 <li><a class="reference internal" href="#id14">4.5.2.3.1. 共通ライブラリから提供しているトランザクショントークンチェックについて</a></li>
-<li><a class="reference internal" href="#transactiontokencheck">4.5.2.3.2. <code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションの属性について</a></li>
+<li><a class="reference internal" href="#transactiontokencheck">4.5.2.3.2. <code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションの属性について</a></li>
 <li><a class="reference internal" href="#id15">4.5.2.3.3. トランザクショントークンの形式について</a></li>
 <li><a class="reference internal" href="#lifecycle">4.5.2.3.4. トランザクショントークンのライフサイクルについて</a></li>
 <li><a class="reference internal" href="#setting">4.5.2.3.5. トランザクショントークンチェックを使用するための設定</a></li>
@@ -108,7 +99,6 @@
 </li>
 </ul>
 
-
   <h4>Previous topic</h4>
   <p class="topless"><a href="Pagination.html"
                         title="previous chapter">4.4. ページネーション</a></p>
@@ -124,12 +114,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -170,7 +162,7 @@
 <li><a class="reference internal" href="#id12" id="id42">PRG(Post-Redirect-Get)パターンの適用</a></li>
 <li><a class="reference internal" href="#doublesubmit-how-to-use-transaction-token-check" id="id43">トランザクショントークンチェックの適用</a><ul>
 <li><a class="reference internal" href="#id14" id="id44">共通ライブラリから提供しているトランザクショントークンチェックについて</a></li>
-<li><a class="reference internal" href="#transactiontokencheck" id="id45"><code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションの属性について</a></li>
+<li><a class="reference internal" href="#transactiontokencheck" id="id45"><code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションの属性について</a></li>
 <li><a class="reference internal" href="#id15" id="id46">トランザクショントークンの形式について</a></li>
 <li><a class="reference internal" href="#lifecycle" id="id47">トランザクショントークンのライフサイクルについて</a></li>
 <li><a class="reference internal" href="#setting" id="id48">トランザクショントークンチェックを使用するための設定</a></li>
@@ -1278,7 +1270,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 <li>Controller</li>
 </ul>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@Controller</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Controller</span>
 <span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">&quot;prgExample&quot;</span><span class="o">)</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">PostRedirectGetExampleController</span> <span class="o">{</span>
 
@@ -1365,9 +1357,9 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </td>
 <td><div class="first last line-block">
 <div class="line"><strong>完了画面を表示するためのURLへリダイレクトする。</strong></div>
-<div class="line">上記例では、<code class="docutils literal"><span class="pre">prgExample/create?complete</span></code>というURLに対して<code class="docutils literal"><span class="pre">GET</span></code>メソッドで リクエストされる。</div>
-<div class="line">リダイレクト先にデータを引き渡す場合は、 <code class="docutils literal"><span class="pre">RedirectAttributes</span></code>のaddFlashAttributeメソッドを呼び出し、引き渡すデータを追加する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">Model</span></code>のaddAttributeメソッドは、リダイレクト先にデータを引き渡すことはできない。</div>
+<div class="line">上記例では、<code class="docutils literal notranslate"><span class="pre">prgExample/create?complete</span></code>というURLに対して<code class="docutils literal notranslate"><span class="pre">GET</span></code>メソッドで リクエストされる。</div>
+<div class="line">リダイレクト先にデータを引き渡す場合は、 <code class="docutils literal notranslate"><span class="pre">RedirectAttributes</span></code>のaddFlashAttributeメソッドを呼び出し、引き渡すデータを追加する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">Model</span></code>のaddAttributeメソッドは、リダイレクト先にデータを引き渡すことはできない。</div>
 </div>
 </td>
 </tr>
@@ -1387,7 +1379,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </td>
 <td><div class="first last line-block">
 <div class="line">完了画面を表示するView(JSP)を呼び出し、完了画面を応答する。</div>
-<div class="line">JSPの拡張子は <code class="file docutils literal"><span class="pre">spring-mvc.xml</span></code> に定義されている <code class="docutils literal"><span class="pre">ViewResolver</span></code>によって付与されるため、ハンドラメソッドの返却値からは省略している。</div>
+<div class="line">JSPの拡張子は <code class="file docutils literal notranslate"><span class="pre">spring-mvc.xml</span></code> に定義されている <code class="docutils literal notranslate"><span class="pre">ViewResolver</span></code>によって付与されるため、ハンドラメソッドの返却値からは省略している。</div>
 </div>
 </td>
 </tr>
@@ -1397,15 +1389,15 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 <p class="first admonition-title">Note</p>
 <ul class="last simple">
 <li>リダイレクトする際は、ハンドラメソッドの返り値として返却する遷移情報のプレフィックスとして「redirect:」を付与する。</li>
-<li>リダイレクト先の処理にデータを引き渡したい場合は、<code class="docutils literal"><span class="pre">RedirectAttributes</span></code>のaddFlashAttributeメソッドを呼び出し、引き渡すデータを追加する。</li>
+<li>リダイレクト先の処理にデータを引き渡したい場合は、<code class="docutils literal notranslate"><span class="pre">RedirectAttributes</span></code>のaddFlashAttributeメソッドを呼び出し、引き渡すデータを追加する。</li>
 </ul>
 </div>
 </div></blockquote>
 <ul class="simple">
-<li><code class="file docutils literal"><span class="pre">createForm.jsp</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">createForm.jsp</span></code></li>
 </ul>
 <blockquote>
-<div><div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;h1&gt;</span>Create User<span class="nt">&lt;/h1&gt;</span>
+<div><div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;h1&gt;</span>Create User<span class="nt">&lt;/h1&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;prgForm&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;form:form</span>
     <span class="na">action=</span><span class="s">&quot;${pageContext.request.contextPath}/prgExample/create&quot;</span>
@@ -1421,10 +1413,10 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 </div></blockquote>
 <ul class="simple">
-<li><code class="file docutils literal"><span class="pre">createConfirm.jsp</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">createConfirm.jsp</span></code></li>
 </ul>
 <blockquote>
-<div><div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;h1&gt;</span>Confirm Create User<span class="nt">&lt;/h1&gt;</span>
+<div><div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;h1&gt;</span>Confirm Create User<span class="nt">&lt;/h1&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;prgForm&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;form:form</span>
     <span class="na">action=</span><span class="s">&quot;${pageContext.request.contextPath}/prgExample/create&quot;</span>
@@ -1463,10 +1455,10 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </table>
 </div></blockquote>
 <ul class="simple">
-<li><code class="file docutils literal"><span class="pre">createComplete.jsp</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">createComplete.jsp</span></code></li>
 </ul>
 <blockquote>
-<div><div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;h1&gt;</span>Successful Create User Completion<span class="nt">&lt;/h1&gt;</span>
+<div><div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;h1&gt;</span>Successful Create User Completion<span class="nt">&lt;/h1&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;prgForm&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;form:form</span>
     <span class="na">action=</span><span class="s">&quot;${pageContext.request.contextPath}/prgExample/create&quot;</span>
@@ -1493,8 +1485,8 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">リダイレクト先にて、更新処理から引き渡したデータを参照する場合は、<code class="docutils literal"><span class="pre">RedirectAttributes</span></code>の <strong>addFlashAttributeメソッドで追加したデータの属性名を指定する。</strong></div>
-<div class="line">上記例では、 <code class="docutils literal"><span class="pre">output</span></code>が引き渡したデータを参照するための属性名となる。</div>
+<div class="line">リダイレクト先にて、更新処理から引き渡したデータを参照する場合は、<code class="docutils literal notranslate"><span class="pre">RedirectAttributes</span></code>の <strong>addFlashAttributeメソッドで追加したデータの属性名を指定する。</strong></div>
+<div class="line">上記例では、 <code class="docutils literal notranslate"><span class="pre">output</span></code>が引き渡したデータを参照するための属性名となる。</div>
 </div>
 </td>
 </tr>
@@ -1517,19 +1509,19 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 <li>トランザクション内のトークン値チェック</li>
 <li>トランザクションの終了</li>
 </ul>
-<p>を行うために、 <code class="docutils literal"><span class="pre">&#64;org.terasoluna.gfw.web.token.transaction.TransactionTokenCheck</span></code>アノテーションを提供している。</p>
-<p>トランザクショントークンチェックを行う場合は、Controllerクラス及びControllerクラスのハンドラメソッドに対して、 <code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションを付与することで、
+<p>を行うために、 <code class="docutils literal notranslate"><span class="pre">&#64;org.terasoluna.gfw.web.token.transaction.TransactionTokenCheck</span></code>アノテーションを提供している。</p>
+<p>トランザクショントークンチェックを行う場合は、Controllerクラス及びControllerクラスのハンドラメソッドに対して、 <code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションを付与することで、
 宣言的にトランザクショントークンチェックを行うことが出来る。</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 </div>
 <div class="section" id="transactiontokencheck">
-<span id="transaction-token-check-attribute"></span><h4><a class="toc-backref" href="#id45">4.5.2.3.2. <code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションの属性について</a><a class="headerlink" href="#transactiontokencheck" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションに指定できる属性について説明する。</p>
+<span id="transaction-token-check-attribute"></span><h4><a class="toc-backref" href="#id45">4.5.2.3.2. <code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションの属性について</a><a class="headerlink" href="#transactiontokencheck" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションに指定できる属性について説明する。</p>
 <blockquote>
 <div><table border="1" class="colwidths-given longtable docutils" id="id27">
-<caption><span class="caption-text"><code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションパラメタ一覧</span><a class="headerlink" href="#id27" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションパラメタ一覧</span><a class="headerlink" href="#id27" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="11%" />
 <col width="11%" />
@@ -1557,8 +1549,8 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </td>
 <td>無</td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">value</span> <span class="pre">=</span> <span class="pre">&quot;create&quot;</span></code></div>
-<div class="line">引数が1つのみの場合は、<code class="docutils literal"><span class="pre">value</span> <span class="pre">=</span></code>部分は省略できる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">=</span> <span class="pre">&quot;create&quot;</span></code></div>
+<div class="line">引数が1つのみの場合は、<code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">=</span></code>部分は省略できる。</div>
 </div>
 </td>
 </tr>
@@ -1574,8 +1566,8 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </td>
 <td>無</td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">namespace</span> <span class="pre">=</span> <span class="pre">&quot;create&quot;</span></code></div>
-<div class="line"><code class="docutils literal"><span class="pre">value</span> <span class="pre">=</span> <span class="pre">&quot;create&quot;</span></code>と同義である。<code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>をメタアノテーションとして利用する際には value属性が使用できないため、value属性の代わりとして利用する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">namespace</span> <span class="pre">=</span> <span class="pre">&quot;create&quot;</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">=</span> <span class="pre">&quot;create&quot;</span></code>と同義である。<code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>をメタアノテーションとして利用する際には value属性が使用できないため、value属性の代わりとして利用する。</div>
 </div>
 </td>
 </tr>
@@ -1601,11 +1593,11 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </td>
 <td>IN</td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">type</span> <span class="pre">=</span> <span class="pre">TransactionTokenType.BEGIN</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">=</span> <span class="pre">TransactionTokenType.BEGIN</span></code></div>
 <div class="line"><br /></div>
-<div class="line"><code class="docutils literal"><span class="pre">type</span> <span class="pre">=</span> <span class="pre">TransactionTokenType.IN</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">=</span> <span class="pre">TransactionTokenType.IN</span></code></div>
 <div class="line"><br /></div>
-<div class="line"><code class="docutils literal"><span class="pre">type</span> <span class="pre">=</span> <span class="pre">TransactionTokenType.CHECK</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">=</span> <span class="pre">TransactionTokenType.CHECK</span></code></div>
 <div class="line"><br /></div>
 </div>
 </td>
@@ -1614,7 +1606,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">value属性またはnamespace属性に設定する値は、<code class="docutils literal"><span class="pre">&#64;RequestMapping</span></code>アノテーションのvalue属性の設定値と、同じ値を設定することを推奨する。</p>
+<p class="last">value属性またはnamespace属性に設定する値は、<code class="docutils literal notranslate"><span class="pre">&#64;RequestMapping</span></code>アノテーションのvalue属性の設定値と、同じ値を設定することを推奨する。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -1661,8 +1653,8 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 <td><ul class="first last simple">
 <li>NameSpaceは、一連の画面遷移を識別するための論理的な名称を付与するための要素となる。</li>
 <li>NameSpaceを設けることで、異なるNameSpaceに属するリクエストが干渉しあう事を防ぐ事が出来るため、並行して操作を行うことができる画面遷移を増やすことが出来る。</li>
-<li>NameSpaceとして使用する値は、<code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのvalue属性で指定した値が使用される。</li>
-<li>クラスアノテーションのvalue属性とメソッドアノテーションのvalue属性の両方を指定した場合は、 両方の値を”<code class="docutils literal"><span class="pre">/</span></code>”で連結した値がNameSpaceとなる。複数のメソッドで同じ値を指定した場合は、同じNameSpaceに属するメソッドとなる。</li>
+<li>NameSpaceとして使用する値は、<code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのvalue属性で指定した値が使用される。</li>
+<li>クラスアノテーションのvalue属性とメソッドアノテーションのvalue属性の両方を指定した場合は、 両方の値を”<code class="docutils literal notranslate"><span class="pre">/</span></code>”で連結した値がNameSpaceとなる。複数のメソッドで同じ値を指定した場合は、同じNameSpaceに属するメソッドとなる。</li>
 <li>クラスアノテーションにのみvalue属性を指定した場合は、そのクラスで生成されるトランザクショントークンのNameSpaceは、全てクラスアノテーションで指定した値となる。</li>
 <li>メソッドアノテーションにのみvalue属性を指定した場合は、生成されるトランザクショントークンのNameSpaceはメソッドアノテーションで指定した値となる。複数のメソッドで同じ値を指定した場合は、同じNameSpaceに属するメソッドとなる。</li>
 <li>クラスアノテーションのvalue属性とメソッドアノテーションのvalue属性の両方を省略した場合は、グローバルトークンに属するメソッドとなる。グローバルトークンについては、<a class="reference internal" href="#doublesubmit-appendix-global-token"><span class="std std-ref">グローバルトークン</span></a>を参照されたい。</li>
@@ -1677,14 +1669,14 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 <td><ul class="first last">
 <li><p class="first">TokenKeyは、ネームスペース内で管理されているトランザクションを識別するための要素となる。</p>
 </li>
-<li><p class="first">TokenKeyは、<code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのtype属性に<code class="docutils literal"><span class="pre">TransactionTokenType.BEGIN</span></code>が宣言されているメソッドが実行されたタイミングで生成される。</p>
+<li><p class="first">TokenKeyは、<code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのtype属性に<code class="docutils literal notranslate"><span class="pre">TransactionTokenType.BEGIN</span></code>が宣言されているメソッドが実行されたタイミングで生成される。</p>
 </li>
 <li><div class="first line-block">
 <div class="line">複数のTokenKeyを同時に保持することが出来る数には上限数があり、デフォルト10である。TokenKeyの保持数はNameSpace毎に管理される。</div>
 </div>
 </li>
 <li><div class="first line-block">
-<div class="line"><code class="docutils literal"><span class="pre">TransactionTokenType.BEGIN</span></code>時にNameSpace毎に管理されている保持数が最大値に達している場合は、実行された日時が最も古いTokenKeyを破棄することで(Least Recently Used (LRU))、新しいトランザクションを有効なトランザクションとして管理する仕組みとなっている。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">TransactionTokenType.BEGIN</span></code>時にNameSpace毎に管理されている保持数が最大値に達している場合は、実行された日時が最も古いTokenKeyを破棄することで(Least Recently Used (LRU))、新しいトランザクションを有効なトランザクションとして管理する仕組みとなっている。</div>
 </div>
 </li>
 <li><div class="first line-block">
@@ -1701,7 +1693,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 <td>TokenValue</td>
 <td><ul class="first last simple">
 <li>TokenValueは、トランザクションのトークン値を保持するための要素となる。</li>
-<li>TokenValueは、<code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのtype属性に<code class="docutils literal"><span class="pre">TransactionTokenType.BEGIN</span></code>又は<code class="docutils literal"><span class="pre">TransactionTokenType.IN</span></code>が宣言されているメソッドが実行されたタイミングで生成される。</li>
+<li>TokenValueは、<code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのtype属性に<code class="docutils literal notranslate"><span class="pre">TransactionTokenType.BEGIN</span></code>又は<code class="docutils literal notranslate"><span class="pre">TransactionTokenType.IN</span></code>が宣言されているメソッドが実行されたタイミングで生成される。</li>
 </ul>
 </td>
 </tr>
@@ -1765,7 +1757,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのtype属性に<code class="docutils literal"><span class="pre">TransactionTokenType.BEGIN</span></code>が指定されたメソッドの処理が終了したタイミングで新たなトークンが生成され、トランザクションが開始される。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのtype属性に<code class="docutils literal notranslate"><span class="pre">TransactionTokenType.BEGIN</span></code>が指定されたメソッドの処理が終了したタイミングで新たなトークンが生成され、トランザクションが開始される。</div>
 </div>
 </td>
 </tr>
@@ -1778,7 +1770,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのtype属性に<code class="docutils literal"><span class="pre">TransactionTokenType.IN</span></code>が指定されたメソッドの処理が終了したタイミングでトークン(TokenValue)が更新され、トランザクションが継続される。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのtype属性に<code class="docutils literal notranslate"><span class="pre">TransactionTokenType.IN</span></code>が指定されたメソッドの処理が終了したタイミングでトークン(TokenValue)が更新され、トランザクションが継続される。</div>
 </div>
 </td>
 </tr>
@@ -1794,7 +1786,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 <div class="line">以下の何れかのタイミングで破棄され、トランザクションが終了される。</div>
 <div class="line"><br /></div>
 <div class="line">[1]</div>
-<div class="line"><code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのtype属性に<code class="docutils literal"><span class="pre">TransactionTokenType.BEGIN</span></code>が指定されたメソッドを呼び出すタイミングで、リクエストパラメータに指定されているトランザクショントークンが破棄され、不要なトランザクションが終了される。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのtype属性に<code class="docutils literal notranslate"><span class="pre">TransactionTokenType.BEGIN</span></code>が指定されたメソッドを呼び出すタイミングで、リクエストパラメータに指定されているトランザクショントークンが破棄され、不要なトランザクションが終了される。</div>
 <div class="line"><br /></div>
 <div class="line">[2]</div>
 <div class="line">NameSpace内で保持することが出来るトランザクショントークン(TokenKey)の数が上限数に達している状態で、新たにトランザクションが開始される場合、実行された日時が最も古いトランザクショントークンが破棄され、トランザクションが強制終了される。</div>
@@ -1813,7 +1805,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのtype属性に<code class="docutils literal"><span class="pre">TransactionTokenType.CHECK</span></code>が指定されたメソッドの処理が終了したタイミングでサーバ上のトークンが引継がれ、トランザクションが継続される。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのtype属性に<code class="docutils literal notranslate"><span class="pre">TransactionTokenType.CHECK</span></code>が指定されたメソッドの処理が終了したタイミングでサーバ上のトークンが引継がれ、トランザクションが継続される。</div>
 </div>
 </td>
 </tr>
@@ -1837,7 +1829,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 <ul class="simple">
 <li>NameSpace内で保持することが出来るトランザクショントークンの数には上限数は、デフォルト値(10)が指定されている。</li>
-<li>Controllerのクラスアノテーションとして、 <code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck(&quot;name&quot;)</span></code>が指定されている。</li>
+<li>Controllerのクラスアノテーションとして、 <code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck(&quot;name&quot;)</span></code>が指定されている。</li>
 <li>同じNameSpaceのトランザクショントークンが上限値に達している状態である。</li>
 </ul>
 <blockquote>
@@ -1904,10 +1896,10 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 <span id="id17"></span><h4><a class="toc-backref" href="#id48">4.5.2.3.5. トランザクショントークンチェックを使用するための設定</a><a class="headerlink" href="#setting" title="Permalink to this headline">¶</a></h4>
 <p>共通ライブラリから提供しているトランザクショントークンチェックを使用するための設定を、以下に示す。</p>
 <ul class="simple">
-<li><code class="file docutils literal"><span class="pre">spring-mvc.xml</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">spring-mvc.xml</span></code></li>
 </ul>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;mvc:interceptors&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;mvc:interceptors&gt;</span>
 <span class="hll">    <span class="nt">&lt;mvc:interceptor&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
 </span><span class="hll">        <span class="nt">&lt;mvc:mapping</span> <span class="na">path=</span><span class="s">&quot;/**&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
 </span><span class="hll">        <span class="nt">&lt;mvc:exclude-mapping</span> <span class="na">path=</span><span class="s">&quot;/resources/**&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
@@ -1946,7 +1938,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">トランザクショントークンの生成及びチェックを行うための <code class="docutils literal"><span class="pre">HandlerInterceptor</span></code>を設定する。</div>
+<div class="line">トランザクショントークンの生成及びチェックを行うための <code class="docutils literal notranslate"><span class="pre">HandlerInterceptor</span></code>を設定する。</div>
 </div>
 </td>
 </tr>
@@ -1955,7 +1947,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">HandlerInterceptor</span></code>を適用するリクエストパスを指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">HandlerInterceptor</span></code>を適用するリクエストパスを指定する。</div>
 <div class="line">上記例では、 /resources配下へのリクエストとHTMLへのリクエストを除く、全てのリクエストに対して適用している。</div>
 </div>
 </td>
@@ -1965,7 +1957,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションを使用して、トランザクショントークンの生成及びチェックを実施するためのクラス(<code class="docutils literal"><span class="pre">TransactionTokenInterceptor</span></code>)を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションを使用して、トランザクショントークンの生成及びチェックを実施するためのクラス(<code class="docutils literal notranslate"><span class="pre">TransactionTokenInterceptor</span></code>)を指定する。</div>
 </div>
 </td>
 </tr>
@@ -1974,7 +1966,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">トランザクショントークンを、Spring MVCの<code class="docutils literal"><span class="pre">&lt;form:form&gt;</span></code>タグを使用してHidden領域に自動的に埋め込むためのクラス(<code class="docutils literal"><span class="pre">TransactionTokenRequestDataValueProcessor</span></code>)を設定する。</div>
+<div class="line">トランザクショントークンを、Spring MVCの<code class="docutils literal notranslate"><span class="pre">&lt;form:form&gt;</span></code>タグを使用してHidden領域に自動的に埋め込むためのクラス(<code class="docutils literal notranslate"><span class="pre">TransactionTokenRequestDataValueProcessor</span></code>)を設定する。</div>
 </div>
 </td>
 </tr>
@@ -1985,16 +1977,16 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 <div class="section" id="id18">
 <h4><a class="toc-backref" href="#id49">4.5.2.3.6. トランザクショントークンエラーをハンドリングするための設定</a><a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
 <div class="line-block">
-<div class="line">トランザクショントークンエラーが発生した場合は、 <code class="docutils literal"><span class="pre">org.terasoluna.gfw.web.token.transaction.InvalidTransactionTokenException</span></code> が発生する。</div>
+<div class="line">トランザクショントークンエラーが発生した場合は、 <code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.web.token.transaction.InvalidTransactionTokenException</span></code> が発生する。</div>
 </div>
 <div class="line-block">
 <div class="line">そのため、トランザクショントークンエラーをハンドリングするためには、</div>
 </div>
 <ul class="simple">
-<li><code class="file docutils literal"><span class="pre">applicationContext.xml</span></code> に定義されている <code class="docutils literal"><span class="pre">ExceptionCodeResolver</span></code></li>
-<li><code class="file docutils literal"><span class="pre">spring-mvc.xml</span></code> に定義されている <code class="docutils literal"><span class="pre">SystemExceptionResolver</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">applicationContext.xml</span></code> に定義されている <code class="docutils literal notranslate"><span class="pre">ExceptionCodeResolver</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">spring-mvc.xml</span></code> に定義されている <code class="docutils literal notranslate"><span class="pre">SystemExceptionResolver</span></code></li>
 </ul>
-<p>の設定に対して、 <code class="docutils literal"><span class="pre">InvalidTransactionTokenException</span></code>のハンドリング定義を追加する必要がある。</p>
+<p>の設定に対して、 <code class="docutils literal notranslate"><span class="pre">InvalidTransactionTokenException</span></code>のハンドリング定義を追加する必要がある。</p>
 <p>設定の追加方法については、</p>
 <ul class="simple">
 <li><a class="reference internal" href="ExceptionHandling.html#exception-handling-how-to-use-application-configuration-common-label"><span class="std std-ref">共通設定</span></a></li>
@@ -2012,7 +2004,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 <li>Controller</li>
 </ul>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@Controller</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Controller</span>
 <span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">&quot;transactionTokenCheckExample&quot;</span><span class="o">)</span>
 <span class="hll"><span class="nd">@TransactionTokenCheck</span><span class="o">(</span><span class="s">&quot;transactionTokenCheckExample&quot;</span><span class="o">)</span> <span class="c1">// (1)</span>
 </span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TransactionTokenCheckExampleController</span> <span class="o">{</span>
@@ -2071,7 +2063,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </td>
 <td><div class="first last line-block">
 <div class="line">クラスアノテーションのvalue属性でNameSpaceを指定する。</div>
-<div class="line">上記例では、本ガイドラインの推奨パターンである <code class="docutils literal"><span class="pre">&#64;RequestMapping</span></code>のvalue属性と同じ値を指定している。</div>
+<div class="line">上記例では、本ガイドラインの推奨パターンである <code class="docutils literal notranslate"><span class="pre">&#64;RequestMapping</span></code>のvalue属性と同じ値を指定している。</div>
 </div>
 </td>
 </tr>
@@ -2091,7 +2083,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </td>
 <td><div class="first last line-block">
 <div class="line">トランザクショントークンをチェックし、トランザクショントークンのトークン値を更新する。</div>
-<div class="line">type属性を省略した場合は、<code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck(type</span> <span class="pre">=</span> <span class="pre">TransactionTokenType.IN)</span></code>を指定した時と同じ動作となる。</div>
+<div class="line">type属性を省略した場合は、<code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck(type</span> <span class="pre">=</span> <span class="pre">TransactionTokenType.IN)</span></code>を指定した時と同じ動作となる。</div>
 </div>
 </td>
 </tr>
@@ -2100,7 +2092,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">ユースケースの完了を通知する画面を表示するためのリクエストでは、トランザクショントークンチェックを行う必要はないため<code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションの指定は行っていない。</div>
+<div class="line">ユースケースの完了を通知する画面を表示するためのリクエストでは、トランザクショントークンチェックを行う必要はないため<code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションの指定は行っていない。</div>
 </div>
 </td>
 </tr>
@@ -2109,8 +2101,8 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <ul class="last simple">
-<li><code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのtype属性にBEGINを指定した場合は、新しくTokenKeyが生成されるため、トランザクショントークンのチェックは行われない。</li>
-<li><code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのtype属性にINが指定された場合は、リクエストで指定されたトークン値とサーバ上で保持しているトークン値が同一のものがあるかをチェックする。</li>
+<li><code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのtype属性にBEGINを指定した場合は、新しくTokenKeyが生成されるため、トランザクショントークンのチェックは行われない。</li>
+<li><code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのtype属性にINが指定された場合は、リクエストで指定されたトークン値とサーバ上で保持しているトークン値が同一のものがあるかをチェックする。</li>
 </ul>
 </div>
 </div></blockquote>
@@ -2119,13 +2111,13 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 <span id="doublesubmit-how-to-use-transaction-token-check-jsp"></span><h4><a class="toc-backref" href="#id51">4.5.2.3.8. トランザクショントークンチェックのView(JSP)での利用方法</a><a class="headerlink" href="#view-jsp" title="Permalink to this headline">¶</a></h4>
 <div class="line-block">
 <div class="line">トランザクショントークンチェックを行う場合、払い出されたトランザクショントークンが、リクエストパラメータとして送信されるようにView(JSP)を実装する必要がある。</div>
-<div class="line">リクエストパラメータとして送信されるようにする方法としては、<a class="reference internal" href="#setting"><span class="std std-ref">トランザクショントークンチェックを使用するための設定</span></a>を行った上で、<code class="docutils literal"><span class="pre">&lt;form:form&gt;</span></code>タグを使用して自動的にトランザクショントークンをhidden要素に埋め込む方法を推奨する。</div>
+<div class="line">リクエストパラメータとして送信されるようにする方法としては、<a class="reference internal" href="#setting"><span class="std std-ref">トランザクショントークンチェックを使用するための設定</span></a>を行った上で、<code class="docutils literal notranslate"><span class="pre">&lt;form:form&gt;</span></code>タグを使用して自動的にトランザクショントークンをhidden要素に埋め込む方法を推奨する。</div>
 </div>
 <ul class="simple">
-<li><code class="file docutils literal"><span class="pre">firstView.jsp</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">firstView.jsp</span></code></li>
 </ul>
 <blockquote>
-<div><div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;h1&gt;</span>First<span class="nt">&lt;/h1&gt;</span>
+<div><div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;h1&gt;</span>First<span class="nt">&lt;/h1&gt;</span>
 <span class="nt">&lt;form:form</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">action=</span><span class="s">&quot;transactionTokenCheckExample&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">name=</span><span class="s">&quot;second&quot;</span> <span class="na">value=</span><span class="s">&quot;second&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/form:form&gt;</span>
@@ -2133,10 +2125,10 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 </div></blockquote>
 <ul class="simple">
-<li><code class="file docutils literal"><span class="pre">secondView.jsp</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">secondView.jsp</span></code></li>
 </ul>
 <blockquote>
-<div><div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;h1&gt;</span>Second<span class="nt">&lt;/h1&gt;</span>
+<div><div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;h1&gt;</span>Second<span class="nt">&lt;/h1&gt;</span>
 <span class="hll"><span class="nt">&lt;form:form</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">action=</span><span class="s">&quot;transactionTokenCheckExample&quot;</span><span class="nt">&gt;</span><span class="c">&lt;!-- (1) --&gt;</span>
 </span>  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">name=</span><span class="s">&quot;third&quot;</span> <span class="na">value=</span><span class="s">&quot;third&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/form:form&gt;</span>
@@ -2144,10 +2136,10 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 </div></blockquote>
 <ul class="simple">
-<li><code class="file docutils literal"><span class="pre">thirdView.jsp</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">thirdView.jsp</span></code></li>
 </ul>
 <blockquote>
-<div><div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;h1&gt;</span>Third<span class="nt">&lt;/h1&gt;</span>
+<div><div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;h1&gt;</span>Third<span class="nt">&lt;/h1&gt;</span>
 <span class="hll"><span class="nt">&lt;form:form</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">action=</span><span class="s">&quot;transactionTokenCheckExample&quot;</span><span class="nt">&gt;</span><span class="c">&lt;!-- (1) --&gt;</span>
 </span>  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">name=</span><span class="s">&quot;fourth&quot;</span> <span class="na">value=</span><span class="s">&quot;fourth&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/form:form&gt;</span>
@@ -2155,11 +2147,11 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 </div></blockquote>
 <ul class="simple">
-<li><code class="file docutils literal"><span class="pre">fourthView.jsp</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">fourthView.jsp</span></code></li>
 </ul>
 <blockquote>
-<div><p><code class="docutils literal"><span class="pre">&lt;form:form&gt;</span></code>タグを使用する場合</p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;h1&gt;</span>Fourth<span class="nt">&lt;/h1&gt;</span>
+<div><p><code class="docutils literal notranslate"><span class="pre">&lt;form:form&gt;</span></code>タグを使用する場合</p>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;h1&gt;</span>Fourth<span class="nt">&lt;/h1&gt;</span>
 <span class="hll"><span class="nt">&lt;form:form</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">action=</span><span class="s">&quot;transactionTokenCheckExample&quot;</span><span class="nt">&gt;</span><span class="c">&lt;!-- (1) --&gt;</span>
 </span>  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">name=</span><span class="s">&quot;fifth&quot;</span> <span class="na">value=</span><span class="s">&quot;fifth&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/form:form&gt;</span>
@@ -2167,8 +2159,8 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 </div></blockquote>
 <blockquote id="fourthview">
-<div><p>HTMLの<code class="docutils literal"><span class="pre">&lt;form&gt;</span></code>タグを使用する場合</p>
-<div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;h1&gt;</span>Fourth<span class="nt">&lt;/h1&gt;</span>
+<div><p>HTMLの<code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code>タグを使用する場合</p>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;h1&gt;</span>Fourth<span class="nt">&lt;/h1&gt;</span>
 <span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">action=</span><span class="s">&quot;transactionTokenCheckExample&quot;</span><span class="nt">&gt;</span>
 <span class="hll">  <span class="nt">&lt;t:transaction</span> <span class="nt">/&gt;</span><span class="c">&lt;!-- (2) --&gt;</span>
 </span><span class="hll">  <span class="c">&lt;!-- (3) --&gt;</span>
@@ -2180,10 +2172,10 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 </div></blockquote>
 <ul class="simple">
-<li><code class="file docutils literal"><span class="pre">fifthView.jsp</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">fifthView.jsp</span></code></li>
 </ul>
 <blockquote>
-<div><div class="highlight-jsp"><div class="highlight"><pre><span></span><span class="nt">&lt;h1&gt;</span>Fifth<span class="nt">&lt;/h1&gt;</span>
+<div><div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;h1&gt;</span>Fifth<span class="nt">&lt;/h1&gt;</span>
 <span class="nt">&lt;form:form</span> <span class="na">method=</span><span class="s">&quot;get&quot;</span> <span class="na">action=</span><span class="s">&quot;transactionTokenCheckExample&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">name=</span><span class="s">&quot;first&quot;</span> <span class="na">value=</span><span class="s">&quot;first&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/form:form&gt;</span>
@@ -2205,7 +2197,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">JSPで、<code class="docutils literal"><span class="pre">&lt;form:form&gt;</span></code>タグを使用した場合は、<code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのtype属性にBEGINかINを指定すると、<code class="docutils literal"><span class="pre">name=&quot;_TRANSACTION_TOKEN&quot;</span></code>に対するValueが、hiddenタグとして自動的に埋め込まれる。</div>
+<div class="line">JSPで、<code class="docutils literal notranslate"><span class="pre">&lt;form:form&gt;</span></code>タグを使用した場合は、<code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのtype属性にBEGINかINを指定すると、<code class="docutils literal notranslate"><span class="pre">name=&quot;_TRANSACTION_TOKEN&quot;</span></code>に対するValueが、hiddenタグとして自動的に埋め込まれる。</div>
 </div>
 </td>
 </tr>
@@ -2214,7 +2206,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">HTMLの<code class="docutils literal"><span class="pre">&lt;form&gt;</span></code>タグを使用する場合は、<code class="docutils literal"><span class="pre">&lt;t:transaction</span> <span class="pre">/&gt;</span></code> を使用することで、(1)と同様のhiddenタグが埋め込まれる。</div>
+<div class="line">HTMLの<code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code>タグを使用する場合は、<code class="docutils literal notranslate"><span class="pre">&lt;t:transaction</span> <span class="pre">/&gt;</span></code> を使用することで、(1)と同様のhiddenタグが埋め込まれる。</div>
 </div>
 </td>
 </tr>
@@ -2223,7 +2215,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">HTMLの<code class="docutils literal"><span class="pre">&lt;form&gt;</span></code>タグを使用する場合は、Spring Securityから提供されているCSRFトークンチェックで必要となるCSRFトークンをhidden項目として埋め込む必要がある。</div>
+<div class="line">HTMLの<code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code>タグを使用する場合は、Spring Securityから提供されているCSRFトークンチェックで必要となるCSRFトークンをhidden項目として埋め込む必要がある。</div>
 <div class="line">CSRFトークンチェックで必要となるCSRFトークンについては、<a class="reference internal" href="../../Security/CSRF.html#csrf-formtag-use"><span class="std std-ref">Spring MVCを使用した連携</span></a>を参照されたい。</div>
 </div>
 </td>
@@ -2232,11 +2224,11 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal"><span class="pre">&lt;form:form&gt;</span></code>タグを使用すると、CSRFトークンチェックで必要となるパラメータも自動的に埋め込まれる。 CSRFトークンチェックで必要となるパラメータについては、<a class="reference internal" href="../../Security/CSRF.html#csrf-htmlformtag-use"><span class="std std-ref">HTMLフォーム使用時の連携</span></a>を参照されたい。</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">&lt;form:form&gt;</span></code>タグを使用すると、CSRFトークンチェックで必要となるパラメータも自動的に埋め込まれる。 CSRFトークンチェックで必要となるパラメータについては、<a class="reference internal" href="../../Security/CSRF.html#csrf-htmlformtag-use"><span class="std std-ref">HTMLフォーム使用時の連携</span></a>を参照されたい。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal"><span class="pre">&lt;t:transaction</span> <span class="pre">/&gt;</span></code>は、共通ライブラリから提供しているJSPタグライブラリである。
+<p class="last"><code class="docutils literal notranslate"><span class="pre">&lt;t:transaction</span> <span class="pre">/&gt;</span></code>は、共通ライブラリから提供しているJSPタグライブラリである。
 (2)で使用している「t:」については、<a class="reference internal" href="../../ImplementationAtEachLayer/ApplicationLayer.html#view-jsp-include-label"><span class="std std-ref">インクルード用の共通JSPの作成</span></a>を参照されたい。</p>
 </div>
 </div></blockquote>
@@ -2252,18 +2244,18 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 <ul>
 <li><div class="first line-block">
 <div class="line">NameSpaceは、クラスアノテーションのvalue属性で指定した値が設定される。</div>
-<div class="line">上記例だと、 <code class="docutils literal"><span class="pre">transactionTokenCheckExample</span></code>(橙色の下線)がNameSpaceとなる。</div>
+<div class="line">上記例だと、 <code class="docutils literal notranslate"><span class="pre">transactionTokenCheckExample</span></code>(橙色の下線)がNameSpaceとなる。</div>
 </div>
 </li>
 <li><div class="first line-block">
 <div class="line">TokenKeyは、トランザクション開始時に払い出された値が引き回されて設定される。</div>
-<div class="line">上記例だと、 <code class="docutils literal"><span class="pre">c0123252d531d7baf730cd49fe0422ef</span></code>(青色の下線)がTokenKeyとなる。</div>
+<div class="line">上記例だと、 <code class="docutils literal notranslate"><span class="pre">c0123252d531d7baf730cd49fe0422ef</span></code>(青色の下線)がTokenKeyとなる。</div>
 </div>
 </li>
 <li><div class="first line-block">
 <div class="line">TokenValueは、リクエスト毎に値が変化している。</div>
-<div class="line">上記例だと、 <code class="docutils literal"><span class="pre">3f610684e1cb546a13b79b9df30a7523</span></code>、<code class="docutils literal"><span class="pre">da770ed81dbca9a694b232e84247a13b</span></code>、</div>
-<div class="line"><code class="docutils literal"><span class="pre">bd5a2d88ec446b27c06f6d4f486d4428</span></code>(緑色の下線)がTokenValueとなる。</div>
+<div class="line">上記例だと、 <code class="docutils literal notranslate"><span class="pre">3f610684e1cb546a13b79b9df30a7523</span></code>、<code class="docutils literal notranslate"><span class="pre">da770ed81dbca9a694b232e84247a13b</span></code>、</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">bd5a2d88ec446b27c06f6d4f486d4428</span></code>(緑色の下線)がTokenValueとなる。</div>
 </div>
 </li>
 </ul>
@@ -2279,7 +2271,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 <li>Controller</li>
 </ul>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@Controller</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Controller</span>
 <span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">&quot;transactionTokenChecFlowkExample&quot;</span><span class="o">)</span>
 <span class="hll"><span class="nd">@TransactionTokenCheck</span><span class="o">(</span><span class="s">&quot;transactionTokenChecFlowkExample&quot;</span><span class="o">)</span> <span class="c1">// (1)</span>
 </span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TransactionTokenCheckFlowExampleController</span> <span class="o">{</span>
@@ -2379,7 +2371,7 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </td>
 <td><div class="first last line-block">
 <div class="line">クラスアノテーションのvalue属性でNameSpaceを指定する。</div>
-<div class="line">上記例では、本ガイドラインの推奨パターンである <code class="docutils literal"><span class="pre">&#64;RequestMapping</span></code>のvalue属性と同じ値を指定している。</div>
+<div class="line">上記例では、本ガイドラインの推奨パターンである <code class="docutils literal notranslate"><span class="pre">&#64;RequestMapping</span></code>のvalue属性と同じ値を指定している。</div>
 </div>
 </td>
 </tr>
@@ -2388,8 +2380,8 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">flowOne</span></code>という名前を持つユースケースの処理に対して、トランザクショントークンチェックを行う。</div>
-<div class="line">上記例では、本ガイドラインの推奨パターンである <code class="docutils literal"><span class="pre">&#64;RequestMapping</span></code>のvalue属性と同じ値を指定している。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">flowOne</span></code>という名前を持つユースケースの処理に対して、トランザクショントークンチェックを行う。</div>
+<div class="line">上記例では、本ガイドラインの推奨パターンである <code class="docutils literal notranslate"><span class="pre">&#64;RequestMapping</span></code>のvalue属性と同じ値を指定している。</div>
 </div>
 </td>
 </tr>
@@ -2398,8 +2390,8 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">flowTwo</span></code>という名前を持つユースケースの処理に対して、トランザクショントークンチェックを行う。</div>
-<div class="line">上記例では、本ガイドラインの推奨パターンである <code class="docutils literal"><span class="pre">&#64;RequestMapping</span></code>のvalue属性と同じ値を指定している。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">flowTwo</span></code>という名前を持つユースケースの処理に対して、トランザクショントークンチェックを行う。</div>
+<div class="line">上記例では、本ガイドラインの推奨パターンである <code class="docutils literal notranslate"><span class="pre">&#64;RequestMapping</span></code>のvalue属性と同じ値を指定している。</div>
 </div>
 </td>
 </tr>
@@ -2408,8 +2400,8 @@ Ajaxの場合は、JavaScriptによるボタンの2度押し防止のみで二�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">flowThree</span></code>という名前を持つユースケースの処理に対して、トランザクショントークンチェックを行う。</div>
-<div class="line">上記例では、本ガイドラインの推奨パターンである <code class="docutils literal"><span class="pre">&#64;RequestMapping</span></code>のvalue属性と同じ値を指定している。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">flowThree</span></code>という名前を持つユースケースの処理に対して、トランザクショントークンチェックを行う。</div>
+<div class="line">上記例では、本ガイドラインの推奨パターンである <code class="docutils literal notranslate"><span class="pre">&#64;RequestMapping</span></code>のvalue属性と同じ値を指定している。</div>
 </div>
 </td>
 </tr>
@@ -2492,7 +2484,7 @@ TransactionTokenTypeを正しく設定しない場合、通常のオペレーシ
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">TransactionTokenType</span></code>に<code class="docutils literal"><span class="pre">IN</span></code>を設定しているため、サーバは、次のリクエストで使用するトークン(token002)を生成し、サーバ上で管理している値を更新する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">TransactionTokenType</span></code>に<code class="docutils literal notranslate"><span class="pre">IN</span></code>を設定しているため、サーバは、次のリクエストで使用するトークン(token002)を生成し、サーバ上で管理している値を更新する。</div>
 <div class="line">この時点で、トークン(token001)は破棄される。</div>
 </div>
 </td>
@@ -2530,8 +2522,8 @@ TransactionTokenTypeを正しく設定しない場合、通常のオペレーシ
 </table>
 </div></blockquote>
 <p>上記のように、ファイルダウンロード処理を行うことができる画面（screen2）から次画面（screen3）への遷移の処理に対してトランザクショントークンを適用したい場合に
-ファイルダウンロード処理の<code class="docutils literal"><span class="pre">TransactionTokenType</span></code>に<code class="docutils literal"><span class="pre">IN</span></code>を使用すると通常オペレーションの範囲でトークンの不一致を引き起こす。
-このようなケースにおいては<code class="docutils literal"><span class="pre">TransactionTokenType</span></code>に<code class="docutils literal"><span class="pre">CHECK</span></code>を使用する。</p>
+ファイルダウンロード処理の<code class="docutils literal notranslate"><span class="pre">TransactionTokenType</span></code>に<code class="docutils literal notranslate"><span class="pre">IN</span></code>を使用すると通常オペレーションの範囲でトークンの不一致を引き起こす。
+このようなケースにおいては<code class="docutils literal notranslate"><span class="pre">TransactionTokenType</span></code>に<code class="docutils literal notranslate"><span class="pre">CHECK</span></code>を使用する。</p>
 <blockquote>
 <div><div class="figure">
 <a class="reference internal image-reference" href="../../_images/transaction-token-file-donwload-ok.png"><img alt="transaction token file download ok" src="../../_images/transaction-token-file-donwload-ok.png" style="width: 100%;" /></a>
@@ -2571,7 +2563,7 @@ TransactionTokenTypeを正しく設定しない場合、通常のオペレーシ
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">TransactionTokenType</span></code>に<code class="docutils literal"><span class="pre">CHECK</span></code>を設定しているため、サーバ上で管理しているトークンを更新しない。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">TransactionTokenType</span></code>に<code class="docutils literal notranslate"><span class="pre">CHECK</span></code>を設定しているため、サーバ上で管理しているトークンを更新しない。</div>
 </div>
 </td>
 </tr>
@@ -2627,11 +2619,11 @@ TransactionTokenTypeを正しく設定しない場合、通常のオペレーシ
 </div></blockquote>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p>サーバ側のトークンを更新させない方法として、<code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>を<code class="docutils literal"><span class="pre">Controller</span></code>のファイルダウンロードメソッドに付与しないという方法もある。
-しかしながら、<code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>を付与しない場合、クライアントにトークンが
+<p>サーバ側のトークンを更新させない方法として、<code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>を<code class="docutils literal notranslate"><span class="pre">Controller</span></code>のファイルダウンロードメソッドに付与しないという方法もある。
+しかしながら、<code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>を付与しない場合、クライアントにトークンが
 返却されないことを十分考慮して選択すること。</p>
 <p class="last">例えば、ファイルダウンロード処理中に再実行可能なエラーが発生した場合にエラーメッセージを画面に表示するなど、
-処理結果によって画面とファイルのいずれかを返却する可能性がある場合において、<code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>を付与しない方法を選択してしまうと、
+処理結果によって画面とファイルのいずれかを返却する可能性がある場合において、<code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>を付与しない方法を選択してしまうと、
 エラーメッセージを画面に返却した際に画面のトークンが失われてしまう。結果として通常のオペレーションにおいて
 トランザクショントークンエラーを発生させてしまうことになる。</p>
 </div>
@@ -2643,7 +2635,7 @@ TransactionTokenTypeを正しく設定しない場合、通常のオペレーシ
 <li>Controller</li>
 </ul>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@Controller</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Controller</span>
 <span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">&quot;user&quot;</span><span class="o">)</span>
 <span class="hll"><span class="nd">@TransactionTokenCheck</span><span class="o">(</span><span class="s">&quot;user&quot;</span><span class="o">)</span> <span class="c1">// (1)</span>
 </span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserController</span> <span class="o">{</span>
@@ -2704,8 +2696,8 @@ TransactionTokenTypeを正しく設定しない場合、通常のオペレーシ
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">クラスアノテーションとして、<code class="docutils literal"><span class="pre">user</span></code>というNameSpaceを設定している。</div>
-<div class="line">上記例では、推奨パターンの<code class="docutils literal"><span class="pre">&#64;RequestMapping</span></code>アノテーションのvalue属性と同じ値を指定している。</div>
+<div class="line">クラスアノテーションとして、<code class="docutils literal notranslate"><span class="pre">user</span></code>というNameSpaceを設定している。</div>
+<div class="line">上記例では、推奨パターンの<code class="docutils literal notranslate"><span class="pre">&#64;RequestMapping</span></code>アノテーションのvalue属性と同じ値を指定している。</div>
 </div>
 </td>
 </tr>
@@ -2716,7 +2708,7 @@ TransactionTokenTypeを正しく設定しない場合、通常のオペレーシ
 <td><div class="first last line-block">
 <div class="line">入力画面の表示するためのハンドラメソッド。</div>
 <div class="line"><strong>ユースケースを開始するための画面ではあるが、データの更新を伴わない表示のみの処理であるため、トランザクションを開始する必要はない。</strong></div>
-<div class="line">そのため、上記例では <code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションを指定していない。</div>
+<div class="line">そのため、上記例では <code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションを指定していない。</div>
 </div>
 </td>
 </tr>
@@ -2748,7 +2740,7 @@ TransactionTokenTypeを正しく設定しない場合、通常のオペレーシ
 <td><div class="first last line-block">
 <div class="line">完了画面を表示するためのハンドラメソッド。</div>
 <div class="line"><strong>完了画面を表示するだけなので、トランザクショントークンのチェックは不要である。</strong></div>
-<div class="line">そのため、上記例では <code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションを指定していない。</div>
+<div class="line">そのため、上記例では <code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションを指定していない。</div>
 </div>
 </td>
 </tr>
@@ -2756,22 +2748,22 @@ TransactionTokenTypeを正しく設定しない場合、通常のオペレーシ
 </table>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last"><code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションを定義したハンドラメソッドの遷移先は、View(JSP)を指定する必要がある。
+<p class="last"><code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションを定義したハンドラメソッドの遷移先は、View(JSP)を指定する必要がある。
 リダイレクト先などのView（JSP）以外を遷移先に指定すると、次の処理でTransactionTokenの値が変わっており、必ずTransactionTokenエラーが発生する。</p>
 </div>
 </div></blockquote>
 </div>
 <div class="section" id="id22">
 <h4><a class="toc-backref" href="#id55">4.5.2.3.12. セッション使用時の並行処理の排他制御について</a><a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
-<p><code class="docutils literal"><span class="pre">&#64;SessionAttributes</span></code>アノテーションを使用してフォームオブジェクトなどをセッションに格納した場合、
+<p><code class="docutils literal notranslate"><span class="pre">&#64;SessionAttributes</span></code>アノテーションを使用してフォームオブジェクトなどをセッションに格納した場合、
 同じ処理の画面遷移を複数並行して行うと、互いの画面操作が干渉しあい、画面に表示されている値とセッション上で保持している値が一致しなくなってしまう事がある。</p>
 <p>こうような不整合な状態になっている画面からのリクエストを不正なリクエストとして防ぐ方法として、トランザクショントークンチェック機能を使用することができる。</p>
 <p>NameSpaceごとに保持できるトランザクショントークンの上限数に1を設定する。</p>
 <ul class="simple">
-<li><code class="file docutils literal"><span class="pre">spring-mvc.xml</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">spring-mvc.xml</span></code></li>
 </ul>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;mvc:interceptor&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;mvc:interceptor&gt;</span>
     <span class="nt">&lt;mvc:mapping</span> <span class="na">path=</span><span class="s">&quot;/**&quot;</span> <span class="nt">/&gt;</span>
     <span class="c">&lt;!-- omitted --&gt;</span>
     <span class="nt">&lt;bean</span>
@@ -2805,7 +2797,7 @@ TransactionTokenTypeを正しく設定しない場合、通常のオペレーシ
 </table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal"><span class="pre">&#64;SessionAttributes</span></code>アノテーションを使用してフォームオブジェクトなどをセッションに格納した場合は、 NameSpaceごとのトランザクショントークンの保持数を”1”に設定するとこで、
+<p class="last"><code class="docutils literal notranslate"><span class="pre">&#64;SessionAttributes</span></code>アノテーションを使用してフォームオブジェクトなどをセッションに格納した場合は、 NameSpaceごとのトランザクショントークンの保持数を”1”に設定するとこで、
 古いデータを表示している画面からのリクエストを不正なリクエストとして防ぐことが可能となる。</p>
 </div>
 </div></blockquote>
@@ -2821,10 +2813,10 @@ TransactionTokenTypeを正しく設定しない場合、通常のオペレーシ
 <span id="id23"></span><h3><a class="toc-backref" href="#id57">4.5.3.1. トランザクショントークンの上限数の変更方法について</a><a class="headerlink" href="#doublesubmit-how-to-extend-change-max-count" title="Permalink to this headline">¶</a></h3>
 <p>以下の設定を行うことで、1つのNameSpace上で保持する事ができるトランザクショントークンの上限数を変更することができる。</p>
 <ul class="simple">
-<li><code class="file docutils literal"><span class="pre">spring-mvc.xml</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">spring-mvc.xml</span></code></li>
 </ul>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;mvc:interceptors&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;mvc:interceptors&gt;</span>
     <span class="nt">&lt;mvc:interceptor&gt;</span>
         <span class="nt">&lt;mvc:mapping</span> <span class="na">path=</span><span class="s">&quot;/**&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;mvc:exclude-mapping</span> <span class="na">path=</span><span class="s">&quot;/resources/**&quot;</span> <span class="nt">/&gt;</span>
@@ -2852,7 +2844,7 @@ TransactionTokenTypeを正しく設定しない場合、通常のオペレーシ
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">TransactionTokenInterceptor</span></code>のコンストラクタの値として、1つのNameSpace上で保持する事ができるトランザクショントークンの上限数を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">TransactionTokenInterceptor</span></code>のコンストラクタの値として、1つのNameSpace上で保持する事ができるトランザクショントークンの上限数を指定する。</div>
 <div class="line">デフォルト値(デフォルトコンストラクタ使用時に設定される値)は、10となっている。</div>
 <div class="line">上記例では、 デフォルト値(10)から5に変更している。</div>
 </div>
@@ -2867,7 +2859,7 @@ TransactionTokenTypeを正しく設定しない場合、通常のオペレーシ
 <h2><a class="toc-backref" href="#id58">4.5.4. Appendix</a><a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="double-submit-disable-cache">
 <span id="id24"></span><h3><a class="toc-backref" href="#id59">4.5.4.1. ブラウザキャッシュ無効時のトランザクショントークンチェック</a><a class="headerlink" href="#double-submit-disable-cache" title="Permalink to this headline">¶</a></h3>
-<p>HTTPレスポンスヘッダの<code class="docutils literal"><span class="pre">Cache-Control</span></code>の設定により、ブラウザキャッシュが無効になっている場合は、
+<p>HTTPレスポンスヘッダの<code class="docutils literal notranslate"><span class="pre">Cache-Control</span></code>の設定により、ブラウザキャッシュが無効になっている場合は、
 「<a class="reference internal" href="#double-submit-transactiontokencheck"><span class="std std-ref">トランザクショントークンチェックについて</span></a>」の想定外の操作を行った際に、
 トランザクショントークンエラーが発生する前にWebブラウザの有効期限切れメッセージが表示される。</p>
 <p>具体的には(8)のブラウザの戻るボタンをクリックすると以下の画面が表示される。図はInternet Explorer 11を使用した場合である。</p>
@@ -2880,13 +2872,13 @@ TransactionTokenTypeを正しく設定しない場合、通常のオペレーシ
 バージョン5.0.0.RELEASE以降の<a class="reference internal" href="../../ImplementationAtEachLayer/CreateWebApplicationProject.html"><span class="doc">雛形プロジェクト</span></a>では、
 <a class="reference internal" href="../../Security/LinkageWithBrowser.html#springsecuritylinkagewithbrowser"><span class="std std-ref">Spring Securityの機能</span></a>でキャッシュが無効になる設定が行われている。</p>
 <p>もしこの画面の表示が出る代わりにトランザクショントークンエラー画面を表示したい場合は、
-<code class="docutils literal"><span class="pre">&lt;sec:cache-control</span> <span class="pre">/&gt;</span></code>の設定を除外する必要があるが、セキュリティ観点では<code class="docutils literal"><span class="pre">&lt;sec:cache-control</span> <span class="pre">/&gt;</span></code>を設定しておくことを推奨する。</p>
+<code class="docutils literal notranslate"><span class="pre">&lt;sec:cache-control</span> <span class="pre">/&gt;</span></code>の設定を除外する必要があるが、セキュリティ観点では<code class="docutils literal notranslate"><span class="pre">&lt;sec:cache-control</span> <span class="pre">/&gt;</span></code>を設定しておくことを推奨する。</p>
 </div>
 <div class="section" id="doublesubmit-appendix-global-token">
 <span id="id25"></span><h3><a class="toc-backref" href="#id60">4.5.4.2. グローバルトークン</a><a class="headerlink" href="#doublesubmit-appendix-global-token" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのvalue属性の指定を省略すると、グローバルなトランザクショントークンとして扱われる。</div>
-<div class="line">グローバルなトランザクショントークンのNameSpaceには、<code class="docutils literal"><span class="pre">globalToken</span></code>(固定値)が使用される。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのvalue属性の指定を省略すると、グローバルなトランザクショントークンとして扱われる。</div>
+<div class="line">グローバルなトランザクショントークンのNameSpaceには、<code class="docutils literal notranslate"><span class="pre">globalToken</span></code>(固定値)が使用される。</div>
 </div>
 <blockquote>
 <div><div class="admonition note">
@@ -2899,10 +2891,10 @@ TransactionTokenTypeを正しく設定しない場合、通常のオペレーシ
 <h4><a class="toc-backref" href="#id61">4.5.4.2.1. NameSpaceごとに保持できるトランザクショントークンの上限数の変更</a><a class="headerlink" href="#namespace" title="Permalink to this headline">¶</a></h4>
 <p>NameSpaceごとに保持できるトランザクショントークンの上限数に1を設定する。</p>
 <ul class="simple">
-<li><code class="file docutils literal"><span class="pre">spring-mvc.xml</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">spring-mvc.xml</span></code></li>
 </ul>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;mvc:interceptor&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;mvc:interceptor&gt;</span>
     <span class="nt">&lt;mvc:mapping</span> <span class="na">path=</span><span class="s">&quot;/**&quot;</span> <span class="nt">/&gt;</span>
     <span class="c">&lt;!-- omitted --&gt;</span>
     <span class="nt">&lt;bean</span>
@@ -2938,12 +2930,12 @@ TransactionTokenTypeを正しく設定しない場合、通常のオペレーシ
 </div>
 <div class="section" id="id26">
 <h4><a class="toc-backref" href="#id62">4.5.4.2.2. Controllerの実装</a><a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
-<p>グルーバルトークン用のNameSpaceとなるようにするために、<code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのvalue属性には、値を指定しない。</p>
+<p>グルーバルトークン用のNameSpaceとなるようにするために、<code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのvalue属性には、値を指定しない。</p>
 <ul class="simple">
 <li>Controller</li>
 </ul>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@Controller</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Controller</span>
 <span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">&quot;globalTokenCheckExample&quot;</span><span class="o">)</span>
 <span class="hll"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GlobalTokenCheckExampleController</span> <span class="o">{</span> <span class="c1">// (1)</span>
 </span>
@@ -2994,7 +2986,7 @@ TransactionTokenTypeを正しく設定しない場合、通常のオペレーシ
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">クラスアノテーションとして、<code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションを指定しない。</div>
+<div class="line">クラスアノテーションとして、<code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションを指定しない。</div>
 </div>
 </td>
 </tr>
@@ -3003,7 +2995,7 @@ TransactionTokenTypeを正しく設定しない場合、通常のオペレーシ
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">メソッドアノテーションとして指定する <code class="docutils literal"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのvalue属性を指定しない。</div>
+<div class="line">メソッドアノテーションとして指定する <code class="docutils literal notranslate"><span class="pre">&#64;TransactionTokenCheck</span></code>アノテーションのvalue属性を指定しない。</div>
 </div>
 </td>
 </tr>
@@ -3016,7 +3008,7 @@ TransactionTokenTypeを正しく設定しない場合、通常のオペレーシ
 <blockquote>
 <div><div class="line-block">
 <div class="line">JSPは、<a class="reference internal" href="#doublesubmit-how-to-use-transaction-token-check-jsp"><span class="std std-ref">トランザクショントークンチェックのView(JSP)での利用方法</span></a>で用意したJSPと同等のものを用意する。</div>
-<div class="line">actionを、<code class="docutils literal"><span class="pre">transactionTokenCheckExample</span></code>から<code class="docutils literal"><span class="pre">globalTokenCheckExample</span></code>に変更したのみで、他は同じである。</div>
+<div class="line">actionを、<code class="docutils literal notranslate"><span class="pre">transactionTokenCheckExample</span></code>から<code class="docutils literal notranslate"><span class="pre">globalTokenCheckExample</span></code>に変更したのみで、他は同じである。</div>
 </div>
 <div class="figure">
 <a class="reference internal image-reference" href="../../_images/transaction-token-global-html.png"><img alt="transaction token global html" src="../../_images/transaction-token-global-html.png" style="width: 100%;" /></a>
@@ -3025,18 +3017,18 @@ TransactionTokenTypeを正しく設定しない場合、通常のオペレーシ
 <p>出力されたHTMLを確認すると、</p>
 <ul>
 <li><div class="first line-block">
-<div class="line">NameSpaceは、<code class="docutils literal"><span class="pre">globalToken</span></code>という固定値が設定される。</div>
+<div class="line">NameSpaceは、<code class="docutils literal notranslate"><span class="pre">globalToken</span></code>という固定値が設定される。</div>
 </div>
 </li>
 <li><div class="first line-block">
 <div class="line">TokenKeyは、トランザクション開始時に払い出された値が引き回されて設定される。</div>
-<div class="line">上記例だと、 <code class="docutils literal"><span class="pre">9d937be4adc2f5dd2032292d153f1133</span></code>(青色の下線)がTokenKeyとなる。</div>
+<div class="line">上記例だと、 <code class="docutils literal notranslate"><span class="pre">9d937be4adc2f5dd2032292d153f1133</span></code>(青色の下線)がTokenKeyとなる。</div>
 </div>
 </li>
 <li><div class="first line-block">
 <div class="line">TokenValueは、リクエスト毎に値が変化している。</div>
-<div class="line">上記例だと、 <code class="docutils literal"><span class="pre">9204d7705ce7a17f16ca6cec24cfd88b</span></code>、<code class="docutils literal"><span class="pre">69c809fefcad541dbd00bd1983af2148</span></code>、</div>
-<div class="line"><code class="docutils literal"><span class="pre">6b83f33b365f1270ee1c1b263f046719</span></code>(緑色の下線)がTokenValueとなる。</div>
+<div class="line">上記例だと、 <code class="docutils literal notranslate"><span class="pre">9204d7705ce7a17f16ca6cec24cfd88b</span></code>、<code class="docutils literal notranslate"><span class="pre">69c809fefcad541dbd00bd1983af2148</span></code>、</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">6b83f33b365f1270ee1c1b263f046719</span></code>(緑色の下線)がTokenValueとなる。</div>
 </div>
 </li>
 </ul>
@@ -3591,7 +3583,7 @@ TransactionTokenTypeを正しく設定しない場合、通常のオペレーシ
     </div>
     <div class="footer">
       © Copyright 2013-2018, NTT DATA Corporation. © Copyright 2013-2018, NTT Corporation.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.3.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.1.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
     </div>
     
     <script>

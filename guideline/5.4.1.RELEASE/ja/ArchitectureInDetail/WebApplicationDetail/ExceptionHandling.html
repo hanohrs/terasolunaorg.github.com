@@ -2,23 +2,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>4.2. 例外ハンドリング &#8212; TERASOLUNA Server Framework for Java (5.x) Development Guideline 5.4.1.RELEASE documentation</title>
     <link rel="stylesheet" href="../../_static/solar.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '5.4.1.RELEASE',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="4.3. セッション管理" href="SessionManagement.html" />
@@ -26,8 +19,7 @@
 <!-- <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'> -->
 <link href="../../_static/solarized-dark.css" rel="stylesheet">
 <link href="../../_static/jquery.treeview.css" rel="stylesheet">
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -46,8 +38,7 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper"><label><input id="scroll" type="checkbox" checked> scroll sidebar</label>
-
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">4.2. 例外ハンドリング</a><ul>
 <li><a class="reference internal" href="#overview">4.2.1. Overview</a><ul>
@@ -131,7 +122,6 @@
 </li>
 </ul>
 
-
   <h4>Previous topic</h4>
   <p class="topless"><a href="Validation.html"
                         title="previous chapter">4.1. 入力チェック</a></p>
@@ -147,12 +137,14 @@
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -370,7 +362,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">アプリケーションコードにて、<code class="docutils literal"><span class="pre">try-catch</span></code>を使い、例外ハンドリングを行う。</div>
+<div class="line">アプリケーションコードにて、<code class="docutils literal notranslate"><span class="pre">try-catch</span></code>を使い、例外ハンドリングを行う。</div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -388,7 +380,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;ExceptionHandler</span></code>アノテーションを使い、アプリケーションコードで例外ハンドリングを行う。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;ExceptionHandler</span></code>アノテーションを使い、アプリケーションコードで例外ハンドリングを行う。</div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -411,7 +403,7 @@
 </td>
 <td><div class="first last line-block">
 <div class="line">サーブレット単位に、例外をハンドリングする場合に使用する。</div>
-<div class="line">HandlerExceptionResolverは、<code class="docutils literal"><span class="pre">&lt;mvc:annotation-driven&gt;</span></code>を指定した際に、自動的に、<a class="reference internal" href="#exceptionhandling-annotation-driven"><span class="std std-ref">登録されるクラス</span></a>と、共通ライブラリから提供している<code class="docutils literal"><span class="pre">SystemExceptionResolver</span></code>を使用する。</div>
+<div class="line">HandlerExceptionResolverは、<code class="docutils literal notranslate"><span class="pre">&lt;mvc:annotation-driven&gt;</span></code>を指定した際に、自動的に、<a class="reference internal" href="#exceptionhandling-annotation-driven"><span class="std std-ref">登録されるクラス</span></a>と、共通ライブラリから提供している<code class="docutils literal notranslate"><span class="pre">SystemExceptionResolver</span></code>を使用する。</div>
 <div class="line">詳細は、<a class="reference internal" href="#exception-handling-basic-flow-resolver-label"><span class="std std-ref">サーブレット単位でフレームワークがハンドリングする場合の基本フロー</span></a>を参照されたい。</div>
 </div>
 </td>
@@ -485,7 +477,7 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;ExceptionHandler</span></code>アノテーションが付与されているControllerクラスのメソッドを呼び出し、例外ハンドリングを行うためのクラス。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;ExceptionHandler</span></code>アノテーションが付与されているControllerクラスのメソッドを呼び出し、例外ハンドリングを行うためのクラス。</div>
 <div class="line">No.2のハンドリング方法を実現するために必要なクラス。</div>
 </div>
 </td>
@@ -500,8 +492,8 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">クラスアノテーションとして、<code class="docutils literal"><span class="pre">&#64;ResponseStatus</span></code>が付与されている例外をハンドリングするためのクラス。</div>
-<div class="line"><code class="docutils literal"><span class="pre">&#64;ResponseStatus</span></code>に指定されている値で、<code class="docutils literal"><span class="pre">HttpServletResponse#sendError(int</span> <span class="pre">sc,</span> <span class="pre">String</span> <span class="pre">msg)</span></code>が呼び出される。</div>
+<div class="line">クラスアノテーションとして、<code class="docutils literal notranslate"><span class="pre">&#64;ResponseStatus</span></code>が付与されている例外をハンドリングするためのクラス。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;ResponseStatus</span></code>に指定されている値で、<code class="docutils literal notranslate"><span class="pre">HttpServletResponse#sendError(int</span> <span class="pre">sc,</span> <span class="pre">String</span> <span class="pre">msg)</span></code>が呼び出される。</div>
 </div>
 </td>
 </tr>
@@ -516,7 +508,7 @@
 </td>
 <td><div class="first last line-block">
 <div class="line">Spring MVC内で発生するフレームワーク例外を、ハンドリングするためのクラス。</div>
-<div class="line">フレームワーク例外に対応するHTTPレスポンスコードの値で、<code class="docutils literal"><span class="pre">HttpServletResponse#sendError(int</span> <span class="pre">sc)</span></code>が呼び出される。</div>
+<div class="line">フレームワーク例外に対応するHTTPレスポンスコードの値で、<code class="docutils literal notranslate"><span class="pre">HttpServletResponse#sendError(int</span> <span class="pre">sc)</span></code>が呼び出される。</div>
 <div class="line">設定されるHTTPレスポンスコードの詳細は、<a class="reference internal" href="#exception-handling-appendix-defaulthandlerexceptionresolver-label"><span class="std std-ref">DefaultHandlerExceptionResolverで設定されるHTTPレスポンスコードについて</span></a>を参照されたい。</div>
 </div>
 </td>
@@ -535,13 +527,13 @@
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>Spring Framework 3.2 より追加された&#64;ControllerAdviceアノテーションについて</strong></p>
-<p><code class="docutils literal"><span class="pre">&#64;ControllerAdvice</span></code>の登場により、サーブレット単位で、<code class="docutils literal"><span class="pre">&#64;ExceptionHandler</span></code>を使った例外ハンドリングを行えるようになった。
-<code class="docutils literal"><span class="pre">&#64;ControllerAdvice</span></code>アノテーションが付与されたクラスで、<code class="docutils literal"><span class="pre">&#64;ExceptionHandler</span></code>アノテーションを付与したメソッドを定義すると、サーブレット内のすべてのControllerに適用される。
-以前のバージョンで同じことを実現する場合、<code class="docutils literal"><span class="pre">&#64;ExceptionHandler</span></code>アノテーションが付与されたメソッドを、Controllerのベースクラスのメソッドとして定義し、
+<p><code class="docutils literal notranslate"><span class="pre">&#64;ControllerAdvice</span></code>の登場により、サーブレット単位で、<code class="docutils literal notranslate"><span class="pre">&#64;ExceptionHandler</span></code>を使った例外ハンドリングを行えるようになった。
+<code class="docutils literal notranslate"><span class="pre">&#64;ControllerAdvice</span></code>アノテーションが付与されたクラスで、<code class="docutils literal notranslate"><span class="pre">&#64;ExceptionHandler</span></code>アノテーションを付与したメソッドを定義すると、サーブレット内のすべてのControllerに適用される。
+以前のバージョンで同じことを実現する場合、<code class="docutils literal notranslate"><span class="pre">&#64;ExceptionHandler</span></code>アノテーションが付与されたメソッドを、Controllerのベースクラスのメソッドとして定義し、
 各Controllerでベースクラスを継承する必要があった。</p>
 <p><strong>Spring Framework 4.0 より追加された&#64;ControllerAdviceアノテーションの属性について</strong></p>
-<p class="last"><code class="docutils literal"><span class="pre">&#64;ControllerAdvice</span></code>アノテーションの属性を指定することで、
-<code class="docutils literal"><span class="pre">&#64;ControllerAdvice</span></code>が付与されたクラスで実装したメソッドを適用するControllerを柔軟に指定できるように改善されている。
+<p class="last"><code class="docutils literal notranslate"><span class="pre">&#64;ControllerAdvice</span></code>アノテーションの属性を指定することで、
+<code class="docutils literal notranslate"><span class="pre">&#64;ControllerAdvice</span></code>が付与されたクラスで実装したメソッドを適用するControllerを柔軟に指定できるように改善されている。
 属性の詳細については、<a class="reference internal" href="../../ImplementationAtEachLayer/ApplicationLayer.html#application-layer-controller-advice-attribute"><span class="std std-ref">&#64;ControllerAdviceの属性</span></a>を参照されたい。</p>
 </div>
 <div class="admonition note">
@@ -549,7 +541,7 @@
 <p><strong>&#64;ControllerAdviceアノテーションの使いどころ</strong></p>
 <ol class="last arabic simple">
 <li>サーブレット単位で行う例外ハンドリングに対して、View名と、HTTPレスポンスコードの解決以外の処理が必要な場合。
-（View名とHTTPレスポンスコードの解決のみでよい場合は、<code class="docutils literal"><span class="pre">SystemExceptionResolver</span></code>で対応できる ）</li>
+（View名とHTTPレスポンスコードの解決のみでよい場合は、<code class="docutils literal notranslate"><span class="pre">SystemExceptionResolver</span></code>で対応できる ）</li>
 <li>サーブレット単位で行う例外ハンドリングに対して、エラー応答用のレスポンスデータをJSPなどのテンプレートエンジンを使わずに、
 エラー用のモデル（JavaBeans）を、JSONやXML形式にシリアライズして生成したい場合
 （AJAXや、REST用のControllerを作成する際の、エラーハンドリングとして使用する）。</li>
@@ -680,7 +672,7 @@
 <p class="first admonition-title">Note</p>
 <p><strong>該当する例外クラス</strong></p>
 <ul class="last simple">
-<li><code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.exception.BusinessException</span></code> (共通ライブラリから提供しているクラス)。</li>
+<li><code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.exception.BusinessException</span></code> (共通ライブラリから提供しているクラス)。</li>
 <li>細かくハンドリングする必要がある場合は、BusinessExceptionを継承した例外クラスを作成すること。</li>
 <li>共通ライブラリで用意しているビジネス例外クラスで、要件を満たせない場合は、プロジェクト毎にビジネス例外クラスを作成すること。</li>
 </ul>
@@ -702,9 +694,9 @@
 <p class="first admonition-title">Note</p>
 <p><strong>該当する例外クラスの例</strong></p>
 <ul class="last simple">
-<li><code class="docutils literal"><span class="pre">org.springframework.dao.OptimisticLockingFailureException</span></code> (楽観排他でエラーが発生した場合に発生する例外)。</li>
-<li><code class="docutils literal"><span class="pre">org.springframework.dao.PessimisticLockingFailureException</span></code> (悲観排他でエラーが発生した場合に発生する例外)。</li>
-<li><code class="docutils literal"><span class="pre">org.springframework.dao.DuplicateKeyException</span></code> (一意制約違反となった場合に発生する例外)。</li>
+<li><code class="docutils literal notranslate"><span class="pre">org.springframework.dao.OptimisticLockingFailureException</span></code> (楽観排他でエラーが発生した場合に発生する例外)。</li>
+<li><code class="docutils literal notranslate"><span class="pre">org.springframework.dao.PessimisticLockingFailureException</span></code> (悲観排他でエラーが発生した場合に発生する例外)。</li>
+<li><code class="docutils literal notranslate"><span class="pre">org.springframework.dao.DuplicateKeyException</span></code> (一意制約違反となった場合に発生する例外)。</li>
 <li>etc …</li>
 </ul>
 </div>
@@ -712,7 +704,7 @@
 <p class="first admonition-title">Todo</p>
 <p><strong>JPA(Hibernate)を使用すると、現状意図しないエラーとなることが発覚している。</strong></p>
 <ul class="last simple">
-<li>一意制約違反が発生した場合、<code class="docutils literal"><span class="pre">DuplicateKeyException</span></code>ではなく、<code class="docutils literal"><span class="pre">org.springframework.dao.DataIntegrityViolationException</span></code>が発生する。</li>
+<li>一意制約違反が発生した場合、<code class="docutils literal notranslate"><span class="pre">DuplicateKeyException</span></code>ではなく、<code class="docutils literal notranslate"><span class="pre">org.springframework.dao.DataIntegrityViolationException</span></code>が発生する。</li>
 </ul>
 </div>
 </div>
@@ -732,7 +724,7 @@
 <p class="first admonition-title">Note</p>
 <p><strong>該当する例外クラス</strong></p>
 <ul class="last simple">
-<li><code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.exception.SystemException</span></code> (共通ライブラリから提供しているクラス)。</li>
+<li><code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.exception.SystemException</span></code> (共通ライブラリから提供しているクラス)。</li>
 <li>遷移先のエラー画面や、HTTPレスポンスコードを細かく分ける場合は、SystemExceptionを継承した例外クラスを作成すること。</li>
 <li>共通ライブラリで用意しているシステム例外クラスだと要件を満たせない場合は、プロジェクト毎にシステム例外クラスを作成すること。</li>
 </ul>
@@ -754,8 +746,8 @@
 <p class="first admonition-title">Note</p>
 <p><strong>該当する例外クラスの例</strong></p>
 <ul class="last simple">
-<li><code class="docutils literal"><span class="pre">java.lang.NullPointerException</span></code>(バグ起因で発生する例外)。</li>
-<li><code class="docutils literal"><span class="pre">org.springframework.dao.DataAccessResourceFailureException</span></code>(DBサーバがダウンしている場合に発生する例外)。</li>
+<li><code class="docutils literal notranslate"><span class="pre">java.lang.NullPointerException</span></code>(バグ起因で発生する例外)。</li>
+<li><code class="docutils literal notranslate"><span class="pre">org.springframework.dao.DataAccessResourceFailureException</span></code>(DBサーバがダウンしている場合に発生する例外)。</li>
 <li>etc …</li>
 </ul>
 </div>
@@ -775,7 +767,7 @@
 <p class="first admonition-title">Note</p>
 <p><strong>該当するエラークラスの例</strong></p>
 <ul class="last simple">
-<li><code class="docutils literal"><span class="pre">java.lang.OutOfMemoryError</span></code>(メモリ不足時に発生するエラー)。</li>
+<li><code class="docutils literal notranslate"><span class="pre">java.lang.OutOfMemoryError</span></code>(メモリ不足時に発生するエラー)。</li>
 <li>etc …</li>
 </ul>
 </div>
@@ -789,7 +781,7 @@
 </div>
 <ul class="simple">
 <li>POSTメソッドのみ許容しているリクエストパスに対して、GETメソッドでアクセスした場合に発生する例外。</li>
-<li><code class="docutils literal"><span class="pre">&#64;PathVariable</span></code>アノテーションを使って、URIから値を抽出する際に、URIに型変換できない値が、指定された場合に発生する例外。</li>
+<li><code class="docutils literal notranslate"><span class="pre">&#64;PathVariable</span></code>アノテーションを使って、URIから値を抽出する際に、URIに型変換できない値が、指定された場合に発生する例外。</li>
 <li>etc …</li>
 </ul>
 <div class="admonition note">
@@ -797,8 +789,8 @@
 <p><strong>該当する例外クラスの例</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal"><span class="pre">org.springframework.web.HttpRequestMethodNotSupportedException</span></code>(サポート外のメソッドでアクセスされた場合に発生する例外)。</li>
-<li><code class="docutils literal"><span class="pre">org.springframework.beans.TypeMismatchException</span></code>(URIに型変換できない値が指定された場合に発生する例外)。</li>
+<li><code class="docutils literal notranslate"><span class="pre">org.springframework.web.HttpRequestMethodNotSupportedException</span></code>(サポート外のメソッドでアクセスされた場合に発生する例外)。</li>
+<li><code class="docutils literal notranslate"><span class="pre">org.springframework.beans.TypeMismatchException</span></code>(URIに型変換できない値が指定された場合に発生する例外)。</li>
 <li>etc …</li>
 </ul>
 </div></blockquote>
@@ -890,7 +882,7 @@
 </td>
 <td><div class="first last line-block">
 <div class="line">フレームワーク</div>
-<div class="line">(ハンドリングルールを、<code class="docutils literal"><span class="pre">spring-mvc.xml</span></code>に指定する)</div>
+<div class="line">(ハンドリングルールを、<code class="docutils literal notranslate"><span class="pre">spring-mvc.xml</span></code>に指定する)</div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -933,7 +925,7 @@
 </td>
 <td><div class="first last line-block">
 <div class="line">サーブレットコンテナ</div>
-<div class="line">(ハンドリングルールを、<code class="docutils literal"><span class="pre">web.xml</span></code>に指定する)</div>
+<div class="line">(ハンドリングルールを、<code class="docutils literal notranslate"><span class="pre">web.xml</span></code>に指定する)</div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -955,7 +947,7 @@
 </td>
 <td><div class="first last line-block">
 <div class="line">サーブレットコンテナ</div>
-<div class="line">(ハンドリングルールを、<code class="docutils literal"><span class="pre">web.xml</span></code>に指定する)</div>
+<div class="line">(ハンドリングルールを、<code class="docutils literal notranslate"><span class="pre">web.xml</span></code>に指定する)</div>
 </div>
 </td>
 <td><div class="first last line-block">
@@ -988,7 +980,7 @@
 </div>
 <div class="section" id="exception-handling-class-from-first-label">
 <span id="id14"></span><h4><a class="toc-backref" href="#id72">4.2.2.2.2. ユースケースのやり直し(先頭からのやり直し)を促す場合</a><a class="headerlink" href="#exception-handling-class-from-first-label" title="Permalink to this headline">¶</a></h4>
-<p>ユースケースのやり直し(先頭からのやり直し)を促す場合は、<code class="docutils literal"><span class="pre">&#64;ExceptionHandler</span></code>を使って捕捉し、ユースケース単位で例外処理を行う。</p>
+<p>ユースケースのやり直し(先頭からのやり直し)を促す場合は、<code class="docutils literal notranslate"><span class="pre">&#64;ExceptionHandler</span></code>を使って捕捉し、ユースケース単位で例外処理を行う。</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p><strong>ユースケースのやり直し（先頭からのやり直し）を促す場合の例</strong></p>
@@ -1051,7 +1043,7 @@
 </div>
 </li>
 <li><div class="first line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;PathVariable</span></code> アノテーションを使ってURIから値を抽出する際に、URIから値を抽出できなかった場合。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;PathVariable</span></code> アノテーションを使ってURIから値を抽出する際に、URIから値を抽出できなかった場合。</div>
 <div class="line">このケースの場合、ブラウザのアドレスバーの値を書き換えて、直接アクセスしている事が考えられるため、エラー画面に遷移し、リクエスト内容が不正であることを通知する。</div>
 </div>
 </li>
@@ -1074,14 +1066,14 @@
 <div class="admonition warning" id="exception-handling-class-fatalerror-warning">
 <p class="first admonition-title">Warning</p>
 <p><strong>&#64;ExceptionHandlerとSystemExceptionResolverによる致命的なエラーのハンドリングついて</strong></p>
-<p>Spring Framework 4.3 より、致命的なエラー(<code class="docutils literal"><span class="pre">java.lang.Error</span></code>及びそのサブクラス)や<code class="docutils literal"><span class="pre">java.lang.Throwable</span></code>がラップされた<code class="docutils literal"><span class="pre">org.springframework.web.util.NestedServletException</span></code>を、
-Spring MVCの例外ハンドラ(<code class="docutils literal"><span class="pre">HandlerExceptionResolver</span></code>)を使用して捕捉できるようになった。
-この変更に伴い、致命的なエラーや<code class="docutils literal"><span class="pre">Throwable</span></code>を意図せず 共通ライブラリが提供する<code class="docutils literal"><span class="pre">SystemExceptionResolver</span></code>(<code class="docutils literal"><span class="pre">HandlerExceptionResolver</span></code>を継承)や<code class="docutils literal"><span class="pre">&#64;ExceptionHandler</span></code>を付与したメソッド(<code class="docutils literal"><span class="pre">HandlerExceptionResolver</span></code>の仕組み上で動作)によって捕捉してしまう可能性がある。</p>
-<p>致命的なエラーをサーブレットコンテナで捕捉するためには、<code class="docutils literal"><span class="pre">SystemExceptionResolver</span></code>と<code class="docutils literal"><span class="pre">&#64;ExceptionHandler</span></code>を付与したメソッドで<code class="docutils literal"><span class="pre">NestedServletException</span></code>をハンドリングせず、サーブレットコンテナに通知する必要がある。
-<code class="docutils literal"><span class="pre">NestedServletException</span></code>をハンドリングしない方法については、How to useで解説している。</p>
+<p>Spring Framework 4.3 より、致命的なエラー(<code class="docutils literal notranslate"><span class="pre">java.lang.Error</span></code>及びそのサブクラス)や<code class="docutils literal notranslate"><span class="pre">java.lang.Throwable</span></code>がラップされた<code class="docutils literal notranslate"><span class="pre">org.springframework.web.util.NestedServletException</span></code>を、
+Spring MVCの例外ハンドラ(<code class="docutils literal notranslate"><span class="pre">HandlerExceptionResolver</span></code>)を使用して捕捉できるようになった。
+この変更に伴い、致命的なエラーや<code class="docutils literal notranslate"><span class="pre">Throwable</span></code>を意図せず 共通ライブラリが提供する<code class="docutils literal notranslate"><span class="pre">SystemExceptionResolver</span></code>(<code class="docutils literal notranslate"><span class="pre">HandlerExceptionResolver</span></code>を継承)や<code class="docutils literal notranslate"><span class="pre">&#64;ExceptionHandler</span></code>を付与したメソッド(<code class="docutils literal notranslate"><span class="pre">HandlerExceptionResolver</span></code>の仕組み上で動作)によって捕捉してしまう可能性がある。</p>
+<p>致命的なエラーをサーブレットコンテナで捕捉するためには、<code class="docutils literal notranslate"><span class="pre">SystemExceptionResolver</span></code>と<code class="docutils literal notranslate"><span class="pre">&#64;ExceptionHandler</span></code>を付与したメソッドで<code class="docutils literal notranslate"><span class="pre">NestedServletException</span></code>をハンドリングせず、サーブレットコンテナに通知する必要がある。
+<code class="docutils literal notranslate"><span class="pre">NestedServletException</span></code>をハンドリングしない方法については、How to useで解説している。</p>
 <ul class="last simple">
-<li><code class="docutils literal"><span class="pre">SystemExceptionResolver</span></code>については、<a class="reference internal" href="#exception-handling-how-to-use-application-configuration-app-label"><span class="std std-ref">アプリケーション層の設定</span></a>を参照されたい。</li>
-<li><code class="docutils literal"><span class="pre">&#64;ExceptionHandler</span></code>については、<a class="reference internal" href="#exception-handling-how-to-use-codingpoint-controller-usecase-label"><span class="std std-ref">ユースケース単位で例外をハンドリングする方法</span></a>を参照されたい。</li>
+<li><code class="docutils literal notranslate"><span class="pre">SystemExceptionResolver</span></code>については、<a class="reference internal" href="#exception-handling-how-to-use-application-configuration-app-label"><span class="std std-ref">アプリケーション層の設定</span></a>を参照されたい。</li>
+<li><code class="docutils literal notranslate"><span class="pre">&#64;ExceptionHandler</span></code>については、<a class="reference internal" href="#exception-handling-how-to-use-codingpoint-controller-usecase-label"><span class="std std-ref">ユースケース単位で例外をハンドリングする方法</span></a>を参照されたい。</li>
 </ul>
 </div>
 </div>
@@ -1115,8 +1107,8 @@ Spring MVCの例外ハンドラ(<code class="docutils literal"><span class="pre"
 <div class="line-block">
 <div class="line">例外をリクエスト単位でハンドリングする場合、Controllerクラスのアプリケーションコードで捕捉(try-catch)し、例外処理を行う。</div>
 <div class="line">基本フローは、以下の通りである。</div>
-<div class="line">下記の図は、 共通ライブラリから提供しているビジネス例外(<code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.exception.BusinessException</span></code>)をハンドリングする場合の基本フローである。</div>
-<div class="line">ログは、結果メッセージを保持している例外が発生したことを記録するインタセプタ(<code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.exception.ResultMessagesLoggingInterceptor</span></code>)を使用して、出力する。</div>
+<div class="line">下記の図は、 共通ライブラリから提供しているビジネス例外(<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.exception.BusinessException</span></code>)をハンドリングする場合の基本フローである。</div>
+<div class="line">ログは、結果メッセージを保持している例外が発生したことを記録するインタセプタ(<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.exception.ResultMessagesLoggingInterceptor</span></code>)を使用して、出力する。</div>
 </div>
 <div class="figure align-center" id="id51">
 <a class="reference internal image-reference" href="../../_images/exception-handling-flow-catch.png"><img alt="flow of exception handling using catch" src="../../_images/exception-handling-flow-catch.png" style="width: 80%;" /></a>
@@ -1136,10 +1128,10 @@ ResultMessagesLoggingInterceptorはResultMessagesNotificationExceptionのサブ�
 <div class="section" id="exception-handling-basic-flow-annotation-label">
 <span id="id19"></span><h4><a class="toc-backref" href="#id79">4.2.2.3.2. ユースケース単位でControllerクラスがハンドリングする場合の基本フロー</a><a class="headerlink" href="#exception-handling-basic-flow-annotation-label" title="Permalink to this headline">¶</a></h4>
 <div class="line-block">
-<div class="line">例外をユースケース単位でハンドリングする場合、Controllerクラスの<code class="docutils literal"><span class="pre">&#64;ExceptionHandler</span></code>を使って捕捉し、例外処理を行う。</div>
+<div class="line">例外をユースケース単位でハンドリングする場合、Controllerクラスの<code class="docutils literal notranslate"><span class="pre">&#64;ExceptionHandler</span></code>を使って捕捉し、例外処理を行う。</div>
 <div class="line">基本フローは、以下の通りである。</div>
-<div class="line">下記の図は、 任意の例外(<code class="docutils literal"><span class="pre">XxxException</span></code>)をハンドリングする場合の、基本フローである。</div>
-<div class="line">ログは、HandlerExceptionResolverによって、例外ハンドリングすることを記録するインタセプタ(<code class="docutils literal"><span class="pre">org.terasoluna.gfw.web.exception.HandlerExceptionResolverLoggingInterceptor</span></code>)を使用して、出力する。</div>
+<div class="line">下記の図は、 任意の例外(<code class="docutils literal notranslate"><span class="pre">XxxException</span></code>)をハンドリングする場合の、基本フローである。</div>
+<div class="line">ログは、HandlerExceptionResolverによって、例外ハンドリングすることを記録するインタセプタ(<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.web.exception.HandlerExceptionResolverLoggingInterceptor</span></code>)を使用して、出力する。</div>
 </div>
 <div class="figure align-center" id="id52">
 <a class="reference internal image-reference" href="../../_images/exception-handling-flow-annotation.png"><img alt="flow of exception handling using annotation" src="../../_images/exception-handling-flow-annotation.png" style="width: 80%;" /></a>
@@ -1164,8 +1156,8 @@ ResultMessagesLoggingInterceptorはResultMessagesNotificationExceptionのサブ�
 <div class="line-block">
 <div class="line">例外をフレームワーク(サーブレット単位)でハンドリングする場合、SystemExceptionResolverで捕捉し例外処理を行う。</div>
 <div class="line">基本フローは、以下の通りである。</div>
-<div class="line">下記の図は、 共通ライブラリから提供しているシステム例外(<code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.exception.SystemException</span></code>)を、<code class="docutils literal"><span class="pre">org.terasoluna.gfw.web.exception.SystemExceptionResolver</span></code>を使ってハンドリングする場合の基本フローである。</div>
-<div class="line">ログは、例外ハンドリングメソッドの引数に指定された例外を記録するインタセプタ(<code class="docutils literal"><span class="pre">org.terasoluna.gfw.web.exception.HandlerExceptionResolverLoggingInterceptor</span></code>)を使用して、出力する。</div>
+<div class="line">下記の図は、 共通ライブラリから提供しているシステム例外(<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.exception.SystemException</span></code>)を、<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.web.exception.SystemExceptionResolver</span></code>を使ってハンドリングする場合の基本フローである。</div>
+<div class="line">ログは、例外ハンドリングメソッドの引数に指定された例外を記録するインタセプタ(<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.web.exception.HandlerExceptionResolverLoggingInterceptor</span></code>)を使用して、出力する。</div>
 </div>
 <div class="figure align-center" id="id53">
 <a class="reference internal image-reference" href="../../_images/exception-handling-flow-resolver.png"><img alt="flow of exception handling using resolver" src="../../_images/exception-handling-flow-resolver.png" style="width: 80%;" /></a>
@@ -1190,7 +1182,7 @@ ResultMessagesLoggingInterceptorはResultMessagesNotificationExceptionのサブ�
 <div class="line">致命的なエラー、フレームワークでハンドリング対象となっていない例外(JSP内で発生した例外など)、Filterで発生した例外をハンドリングする。</div>
 <div class="line">基本フローは以下の通りである。</div>
 <div class="line">下記フローは、java.lang.Exceptionを、”error page”でハンドリングする場合のフローである。</div>
-<div class="line">ログ出力は、ハンドリングされていない例外が発生したことを記録するサーブレットフィルタ(<code class="docutils literal"><span class="pre">org.terasoluna.gfw.web.exception.ExceptionLoggingFilter</span></code>)を使用して、出力する。</div>
+<div class="line">ログ出力は、ハンドリングされていない例外が発生したことを記録するサーブレットフィルタ(<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.web.exception.ExceptionLoggingFilter</span></code>)を使用して、出力する。</div>
 </div>
 <div class="figure align-center" id="id54">
 <a class="reference internal image-reference" href="../../_images/exception-handling-flow-container.png"><img alt="flow of exception handling using container" src="../../_images/exception-handling-flow-container.png" style="width: 80%;" /></a>
@@ -1200,7 +1192,7 @@ ResultMessagesLoggingInterceptorはResultMessagesNotificationExceptionのサブ�
 <li>DispatcherServletは、XxxErrorを捕捉し、ServletExceptionにラップしてスローする。</li>
 <li>ExceptionLoggingFilterは、ServletExceptionを捕捉し、ExceptionLoggerを呼び出す。ExceptionLoggerは、errorレベルのログ(監視ログとアプリケーションログ)を出力する。ExceptionLoggingFilterは、ServletExceptionを再スローする。</li>
 <li>ServletContainerは、ServletExceptionを捕捉し、サーバログにログを出力する。ログのレベルは、アプリケーションサーバによって異なる。</li>
-<li>ServletContainerは、<code class="docutils literal"><span class="pre">web.xml</span></code> に定義されている遷移先(HTMLなど)を呼び出す。</li>
+<li>ServletContainerは、<code class="docutils literal notranslate"><span class="pre">web.xml</span></code> に定義されている遷移先(HTMLなど)を呼び出す。</li>
 <li>呼び出された遷移先で生成されたレスポンスが表示される。</li>
 </ol>
 <div class="line-block">
@@ -1233,12 +1225,12 @@ ResultMessagesLoggingInterceptorはResultMessagesNotificationExceptionのサブ�
 </ol>
 <div class="section" id="exception-handling-how-to-use-application-configuration-common-label">
 <span id="id22"></span><h4><a class="toc-backref" href="#id84">4.2.3.1.1. 共通設定</a><a class="headerlink" href="#exception-handling-how-to-use-application-configuration-common-label" title="Permalink to this headline">¶</a></h4>
-<p>１． 例外のログ出力を行うロガークラス（<code class="docutils literal"><span class="pre">ExceptionLogger</span></code>）を、bean定義に追加する。</p>
+<p>１． 例外のログ出力を行うロガークラス（<code class="docutils literal notranslate"><span class="pre">ExceptionLogger</span></code>）を、bean定義に追加する。</p>
 <ul class="simple">
 <li><strong>applicationContext.xml</strong></li>
 </ul>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Exception Code Resolver. --&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Exception Code Resolver. --&gt;</span>
 <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;exceptionCodeResolver&quot;</span>
 <span class="hll">    <span class="na">class=</span><span class="s">&quot;org.terasoluna.gfw.common.exception.SimpleMappingExceptionCodeResolver&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
 </span>    <span class="c">&lt;!-- Setting and Customization by project. --&gt;</span>
@@ -1274,7 +1266,7 @@ ResultMessagesLoggingInterceptorはResultMessagesNotificationExceptionのサブ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ExceptionCodeResolver</span></code>を、bean定義に追加する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ExceptionCodeResolver</span></code>を、bean定義に追加する。</div>
 </div>
 </td>
 </tr>
@@ -1321,7 +1313,7 @@ ResultMessagesLoggingInterceptorはResultMessagesNotificationExceptionのサブ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ExceptionLogger</span></code>を、bean定義に追加する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ExceptionLogger</span></code>を、bean定義に追加する。</div>
 </div>
 </td>
 </tr>
@@ -1330,7 +1322,7 @@ ResultMessagesLoggingInterceptorはResultMessagesNotificationExceptionのサブ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ExceptionCodeResolver</span></code>をDIする。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ExceptionCodeResolver</span></code>をDIする。</div>
 </div>
 </td>
 </tr>
@@ -1343,7 +1335,7 @@ ResultMessagesLoggingInterceptorはResultMessagesNotificationExceptionのサブ�
 </ul>
 <blockquote>
 <div><p>監視ログ用のログ定義を追加する。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="hll"><span class="nt">&lt;appender</span> <span class="na">name=</span><span class="s">&quot;MONITORING_LOG_FILE&quot;</span> <span class="na">class=</span><span class="s">&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="nt">&lt;appender</span> <span class="na">name=</span><span class="s">&quot;MONITORING_LOG_FILE&quot;</span> <span class="na">class=</span><span class="s">&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
 </span>    <span class="nt">&lt;file&gt;</span>${app.log.dir:-log}/projectName-monitoring.log<span class="nt">&lt;/file&gt;</span>
     <span class="nt">&lt;rollingPolicy</span> <span class="na">class=</span><span class="s">&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;fileNamePattern&gt;</span>${app.log.dir:-log}/projectName-monitoring-%d{yyyyMMdd}.log<span class="nt">&lt;/fileNamePattern&gt;</span>
@@ -1392,7 +1384,7 @@ ResultMessagesLoggingInterceptorはResultMessagesNotificationExceptionのサブ�
 <div class="last admonition warning">
 <p class="first admonition-title">Warning</p>
 <p><strong>additivityの設定値について</strong></p>
-<p class="last"><code class="docutils literal"><span class="pre">false</span></code>を指定すること。<code class="docutils literal"><span class="pre">true</span></code>を指定すると、上位のロガー(例えば、root)によって、同じログが出力されてしまう。</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">false</span></code>を指定すること。<code class="docutils literal notranslate"><span class="pre">true</span></code>を指定すると、上位のロガー(例えば、root)によって、同じログが出力されてしまう。</p>
 </div>
 </td>
 </tr>
@@ -1419,7 +1411,7 @@ ResultMessagesLoggingInterceptorはResultMessagesNotificationExceptionのサブ�
 </tbody>
 </table>
 <p>アプリケーションログ用のログ定義を追加する。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="hll"><span class="nt">&lt;appender</span> <span class="na">name=</span><span class="s">&quot;APPLICATION_LOG_FILE&quot;</span> <span class="na">class=</span><span class="s">&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="nt">&lt;appender</span> <span class="na">name=</span><span class="s">&quot;APPLICATION_LOG_FILE&quot;</span> <span class="na">class=</span><span class="s">&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
 </span>    <span class="nt">&lt;file&gt;</span>${app.log.dir:-log}/projectName-application.log<span class="nt">&lt;/file&gt;</span>
     <span class="nt">&lt;rollingPolicy</span> <span class="na">class=</span><span class="s">&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;fileNamePattern&gt;</span>${app.log.dir:-log}/projectName-application-%d{yyyyMMdd}.log<span class="nt">&lt;/fileNamePattern&gt;</span>
@@ -1503,12 +1495,12 @@ ResultMessagesLoggingInterceptorはResultMessagesNotificationExceptionのサブ�
 </div>
 <div class="section" id="exception-handling-how-to-use-application-configuration-domain-label">
 <span id="id23"></span><h4><a class="toc-backref" href="#id85">4.2.3.1.2. ドメイン層の設定</a><a class="headerlink" href="#exception-handling-how-to-use-application-configuration-domain-label" title="Permalink to this headline">¶</a></h4>
-<p>ResultMessagesを保持する例外(BisinessException,ResourceNotFoundException)が発生した際に、ログを出力するためのインタセプタクラス（<code class="docutils literal"><span class="pre">ResultMessagesLoggingInterceptor</span></code>）と、AOPの設定を、bean定義に追加する。</p>
+<p>ResultMessagesを保持する例外(BisinessException,ResourceNotFoundException)が発生した際に、ログを出力するためのインタセプタクラス（<code class="docutils literal notranslate"><span class="pre">ResultMessagesLoggingInterceptor</span></code>）と、AOPの設定を、bean定義に追加する。</p>
 <ul class="simple">
 <li><strong>xxx-domain.xml</strong></li>
 </ul>
 <blockquote id="exception-handling-how-to-use-service-pointcut-aop-label">
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- interceptor bean. --&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- interceptor bean. --&gt;</span>
 <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;resultMessagesLoggingInterceptor&quot;</span>
 <span class="hll">      <span class="na">class=</span><span class="s">&quot;org.terasoluna.gfw.common.exception.ResultMessagesLoggingInterceptor&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
 </span><span class="hll">      <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;exceptionLogger&quot;</span> <span class="na">ref=</span><span class="s">&quot;exceptionLogger&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
@@ -1537,7 +1529,7 @@ ResultMessagesLoggingInterceptorはResultMessagesNotificationExceptionのサブ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ResultMessagesLoggingInterceptor</span></code>を、bean定義に追加する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ResultMessagesLoggingInterceptor</span></code>を、bean定義に追加する。</div>
 </div>
 </td>
 </tr>
@@ -1546,7 +1538,7 @@ ResultMessagesLoggingInterceptorはResultMessagesNotificationExceptionのサブ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">例外のログ出力を行うロガーオブジェクトをDIする。<code class="docutils literal"><span class="pre">applicationContext.xml</span></code>に定義している “exceptionLogger” を指定する。</div>
+<div class="line">例外のログ出力を行うロガーオブジェクトをDIする。<code class="docutils literal notranslate"><span class="pre">applicationContext.xml</span></code>に定義している “exceptionLogger” を指定する。</div>
 </div>
 </td>
 </tr>
@@ -1555,7 +1547,7 @@ ResultMessagesLoggingInterceptorはResultMessagesNotificationExceptionのサブ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">Serviceクラス(<code class="docutils literal"><span class="pre">&#64;Service</span></code>アノテーションが付いているクラス)のメソッドに対して、ResultMessagesLoggingInterceptorを適用する。</div>
+<div class="line">Serviceクラス(<code class="docutils literal notranslate"><span class="pre">&#64;Service</span></code>アノテーションが付いているクラス)のメソッドに対して、ResultMessagesLoggingInterceptorを適用する。</div>
 </div>
 </td>
 </tr>
@@ -1565,12 +1557,12 @@ ResultMessagesLoggingInterceptorはResultMessagesNotificationExceptionのサブ�
 </div>
 <div class="section" id="exception-handling-how-to-use-application-configuration-app-label">
 <span id="id24"></span><h4><a class="toc-backref" href="#id86">4.2.3.1.3. アプリケーション層の設定</a><a class="headerlink" href="#exception-handling-how-to-use-application-configuration-app-label" title="Permalink to this headline">¶</a></h4>
-<p>&lt;mvc:annotation-driven&gt; を指定した際に、自動的に登録されるHandlerExceptionResolverによって、ハンドリングされない例外をハンドリングするためのクラス（<code class="docutils literal"><span class="pre">SystemExceptionResolver</span></code>）を、bean定義に追加する。</p>
+<p>&lt;mvc:annotation-driven&gt; を指定した際に、自動的に登録されるHandlerExceptionResolverによって、ハンドリングされない例外をハンドリングするためのクラス（<code class="docutils literal notranslate"><span class="pre">SystemExceptionResolver</span></code>）を、bean定義に追加する。</p>
 <ul class="simple">
 <li><strong>spring-mvc.xml</strong></li>
 </ul>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Setting Exception Handling. --&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Setting Exception Handling. --&gt;</span>
 <span class="c">&lt;!-- Exception Resolver. --&gt;</span>
 <span class="hll"><span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">&quot;org.terasoluna.gfw.web.exception.SystemExceptionResolver&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
 </span><span class="hll">    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;exceptionCodeResolver&quot;</span> <span class="na">ref=</span><span class="s">&quot;exceptionCodeResolver&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
@@ -1623,7 +1615,7 @@ ResultMessagesLoggingInterceptorはResultMessagesNotificationExceptionのサブ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">SystemExceptionResolver</span></code>を、bean定義に追加する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">SystemExceptionResolver</span></code>を、bean定義に追加する。</div>
 </div>
 </td>
 </tr>
@@ -1632,7 +1624,7 @@ ResultMessagesLoggingInterceptorはResultMessagesNotificationExceptionのサブ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">例外コード(メッセージID)を解決するオブジェクトをDIする。<code class="docutils literal"><span class="pre">applicationContext.xml</span></code>に定義している、”exceptionCodeResolver”を指定する。</div>
+<div class="line">例外コード(メッセージID)を解決するオブジェクトをDIする。<code class="docutils literal notranslate"><span class="pre">applicationContext.xml</span></code>に定義している、”exceptionCodeResolver”を指定する。</div>
 </div>
 </td>
 </tr>
@@ -1641,14 +1633,14 @@ ResultMessagesLoggingInterceptorはResultMessagesNotificationExceptionのサブ�
 </div>
 </td>
 <td><div class="first line-block">
-<div class="line">ハンドリングの優先順位を指定する。値は、基本的に「3」で良い。<code class="docutils literal"><span class="pre">&lt;mvc:annotation-driven&gt;</span></code>を指定した際に、自動的に、<a class="reference internal" href="#exceptionhandling-annotation-driven"><span class="std std-ref">登録されるクラス</span></a>の方が、優先順位が上となる。</div>
+<div class="line">ハンドリングの優先順位を指定する。値は、基本的に「3」で良い。<code class="docutils literal notranslate"><span class="pre">&lt;mvc:annotation-driven&gt;</span></code>を指定した際に、自動的に、<a class="reference internal" href="#exceptionhandling-annotation-driven"><span class="std std-ref">登録されるクラス</span></a>の方が、優先順位が上となる。</div>
 </div>
 <div class="last admonition hint">
 <p class="first admonition-title">Hint</p>
 <p><strong>DefaultHandlerExceptionResolverで行われる例外ハンドリングを無効化する方法</strong></p>
-<p class="last"><code class="docutils literal"><span class="pre">DefaultHandlerExceptionResolver</span></code>で例外ハンドリングされた場合、HTTPレスポンスコードは設定されるが、Viewの解決がされないため、Viewの解決は、<code class="docutils literal"><span class="pre">web.xml</span></code>のError Pageで行う必要がある。
-Viewの解決を<code class="docutils literal"><span class="pre">web.xml</span></code>ではなく、<code class="docutils literal"><span class="pre">HandlerExceptionResolver</span></code>で行いたい場合は、<code class="docutils literal"><span class="pre">SystemExceptionResolver</span></code>の優先順位を「1」にすると、<code class="docutils literal"><span class="pre">DefaultHandlerExceptionResolver</span></code>より前にハンドリング処理を実行することができる。
-<code class="docutils literal"><span class="pre">DefaultHandlerExceptionResolver</span></code>でハンドリングされた場合の、HTTPレスポンスコードのマッピングについては、<a class="reference internal" href="#exception-handling-appendix-defaulthandlerexceptionresolver-label"><span class="std std-ref">DefaultHandlerExceptionResolverで設定されるHTTPレスポンスコードについて</span></a>を参照されたい。</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">DefaultHandlerExceptionResolver</span></code>で例外ハンドリングされた場合、HTTPレスポンスコードは設定されるが、Viewの解決がされないため、Viewの解決は、<code class="docutils literal notranslate"><span class="pre">web.xml</span></code>のError Pageで行う必要がある。
+Viewの解決を<code class="docutils literal notranslate"><span class="pre">web.xml</span></code>ではなく、<code class="docutils literal notranslate"><span class="pre">HandlerExceptionResolver</span></code>で行いたい場合は、<code class="docutils literal notranslate"><span class="pre">SystemExceptionResolver</span></code>の優先順位を「1」にすると、<code class="docutils literal notranslate"><span class="pre">DefaultHandlerExceptionResolver</span></code>より前にハンドリング処理を実行することができる。
+<code class="docutils literal notranslate"><span class="pre">DefaultHandlerExceptionResolver</span></code>でハンドリングされた場合の、HTTPレスポンスコードのマッピングについては、<a class="reference internal" href="#exception-handling-appendix-defaulthandlerexceptionresolver-label"><span class="std std-ref">DefaultHandlerExceptionResolverで設定されるHTTPレスポンスコードについて</span></a>を参照されたい。</p>
 </div>
 </td>
 </tr>
@@ -1681,7 +1673,7 @@ Viewの解決を<code class="docutils literal"><span class="pre">web.xml</span><
 </td>
 <td><div class="first last line-block">
 <div class="line">ハンドリング対象外とする例外クラスを指定する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">SystemExceptionResolver</span></code>で致命的なエラーをハンドリングせず、サーブレットコンテナに通知するため、<code class="docutils literal"><span class="pre">org.springframework.web.util.NestedServletException</span></code>をハンドリング対象外とする。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">SystemExceptionResolver</span></code>で致命的なエラーをハンドリングせず、サーブレットコンテナに通知するため、<code class="docutils literal notranslate"><span class="pre">org.springframework.web.util.NestedServletException</span></code>をハンドリング対象外とする。</div>
 <div class="line">ハンドリング対象外にする理由は、<a class="reference internal" href="#exception-handling-class-fatalerror-warning"><span class="std std-ref">「&#64;ExceptionHandlerとSystemExceptionResolverによる致命的なエラーのハンドリングついて」</span></a>を参照されたい。</div>
 </div>
 </td>
@@ -1715,23 +1707,23 @@ Viewの解決を<code class="docutils literal"><span class="pre">web.xml</span><
 <div class="line">(9)</div>
 </div>
 </td>
-<td><p class="first">実際に遷移する<code class="docutils literal"><span class="pre">View</span></code>は、<code class="docutils literal"><span class="pre">ViewResolver</span></code>の設定に依存する。</p>
+<td><p class="first">実際に遷移する<code class="docutils literal notranslate"><span class="pre">View</span></code>は、<code class="docutils literal notranslate"><span class="pre">ViewResolver</span></code>の設定に依存する。</p>
 <p>上記の設定では、</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">/WEB-INF/views/common/error/systemError.jsp</span></code></li>
-<li><code class="docutils literal"><span class="pre">/WEB-INF/views/common/error/resourceNotFoundError.jsp</span></code></li>
-<li><code class="docutils literal"><span class="pre">/WEB-INF/views/common/error/businessError.jsp</span></code></li>
-<li><code class="docutils literal"><span class="pre">/WEB-INF/views/common/error/transactionTokenError.jsp</span></code></li>
-<li><code class="docutils literal"><span class="pre">/WEB-INF/views/common/error/dataAccessError.jsp</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">/WEB-INF/views/common/error/systemError.jsp</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">/WEB-INF/views/common/error/resourceNotFoundError.jsp</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">/WEB-INF/views/common/error/businessError.jsp</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">/WEB-INF/views/common/error/transactionTokenError.jsp</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">/WEB-INF/views/common/error/dataAccessError.jsp</span></code></li>
 </ul>
 <p>が遷移先となる。</p>
 <div class="last admonition tip">
 <p class="first admonition-title">Tip</p>
-<p><code class="docutils literal"><span class="pre">&lt;mvc:view-resolvers&gt;</span></code>要素はSpring Framework 4.1から追加されたXML要素である。
-<code class="docutils literal"><span class="pre">&lt;mvc:view-resolvers&gt;</span></code>要素を使用すると、<code class="docutils literal"><span class="pre">ViewResolver</span></code>をシンプルに定義することが出来る。</p>
-<p>従来通り<code class="docutils literal"><span class="pre">&lt;bean&gt;</span></code>要素を使用した場合の定義例を以下に示す。</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;mvc:view-resolvers&gt;</span></code>要素はSpring Framework 4.1から追加されたXML要素である。
+<code class="docutils literal notranslate"><span class="pre">&lt;mvc:view-resolvers&gt;</span></code>要素を使用すると、<code class="docutils literal notranslate"><span class="pre">ViewResolver</span></code>をシンプルに定義することが出来る。</p>
+<p>従来通り<code class="docutils literal notranslate"><span class="pre">&lt;bean&gt;</span></code>要素を使用した場合の定義例を以下に示す。</p>
 <blockquote class="last">
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;viewResolver&quot;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;viewResolver&quot;</span>
     <span class="na">class=</span><span class="s">&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;prefix&quot;</span> <span class="na">value=</span><span class="s">&quot;/WEB-INF/views/&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;suffix&quot;</span> <span class="na">value=</span><span class="s">&quot;.jsp&quot;</span> <span class="nt">/&gt;</span>
@@ -1745,12 +1737,12 @@ Viewの解決を<code class="docutils literal"><span class="pre">web.xml</span><
 </tbody>
 </table>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">HandlerExceptionResolver</span></code>でハンドリングされた例外を、ログに出力するためのインタセプタクラス（<code class="docutils literal"><span class="pre">HandlerExceptionResolverLoggingInterceptor</span></code>）と、AOPの設定を、bean定義に追加する。</p>
+<p><code class="docutils literal notranslate"><span class="pre">HandlerExceptionResolver</span></code>でハンドリングされた例外を、ログに出力するためのインタセプタクラス（<code class="docutils literal notranslate"><span class="pre">HandlerExceptionResolverLoggingInterceptor</span></code>）と、AOPの設定を、bean定義に追加する。</p>
 <ul class="simple">
 <li><strong>spring-mvc.xml</strong></li>
 </ul>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Setting AOP. --&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Setting AOP. --&gt;</span>
 <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;handlerExceptionResolverLoggingInterceptor&quot;</span>
 <span class="hll">    <span class="na">class=</span><span class="s">&quot;org.terasoluna.gfw.web.exception.HandlerExceptionResolverLoggingInterceptor&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
 </span><span class="hll">    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;exceptionLogger&quot;</span> <span class="na">ref=</span><span class="s">&quot;exceptionLogger&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
@@ -1777,7 +1769,7 @@ Viewの解決を<code class="docutils literal"><span class="pre">web.xml</span><
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">HandlerExceptionResolverLoggingInterceptor</span></code>を、bean定義に追加する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">HandlerExceptionResolverLoggingInterceptor</span></code>を、bean定義に追加する。</div>
 </div>
 </td>
 </tr>
@@ -1786,7 +1778,7 @@ Viewの解決を<code class="docutils literal"><span class="pre">web.xml</span><
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">例外のログ出力を行うロガーオブジェクトを、DIする。<code class="docutils literal"><span class="pre">applicationContext.xml</span></code>に定義している”exceptionLogger”を指定する。</div>
+<div class="line">例外のログ出力を行うロガーオブジェクトを、DIする。<code class="docutils literal notranslate"><span class="pre">applicationContext.xml</span></code>に定義している”exceptionLogger”を指定する。</div>
 </div>
 </td>
 </tr>
@@ -1795,10 +1787,10 @@ Viewの解決を<code class="docutils literal"><span class="pre">web.xml</span><
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">HandlerExceptionResolver</span></code>インタフェースのresolveExceptionメソッドに対して、<code class="docutils literal"><span class="pre">HandlerExceptionResolverLoggingInterceptor</span></code>を適用する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">HandlerExceptionResolver</span></code>インタフェースのresolveExceptionメソッドに対して、<code class="docutils literal notranslate"><span class="pre">HandlerExceptionResolverLoggingInterceptor</span></code>を適用する。</div>
 <div class="line"><br /></div>
-<div class="line">デフォルトの設定では、共通ライブラリから提供している <code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.exception.ResultMessagesNotificationException</span></code> のサブクラスの例外は、このクラスで行われるログ出力の対象外となっている。</div>
-<div class="line"><code class="docutils literal"><span class="pre">ResultMessagesNotificationException</span></code> のサブクラスの例外をログ出力対象外としている理由は、 <code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.exception.ResultMessagesLoggingInterceptor</span></code> によってログ出力されるためである。</div>
+<div class="line">デフォルトの設定では、共通ライブラリから提供している <code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.exception.ResultMessagesNotificationException</span></code> のサブクラスの例外は、このクラスで行われるログ出力の対象外となっている。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ResultMessagesNotificationException</span></code> のサブクラスの例外をログ出力対象外としている理由は、 <code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.exception.ResultMessagesLoggingInterceptor</span></code> によってログ出力されるためである。</div>
 <div class="line">デフォルトの設定を変更する必要がある場合は、 <a class="reference internal" href="#exception-handling-about-handlerexceptionresolverlogginginterceptor"><span class="std std-ref">HandlerExceptionResolverLoggingInterceptorの設定項目について</span></a> を参照されたい。</div>
 </div>
 </td>
@@ -1806,12 +1798,12 @@ Viewの解決を<code class="docutils literal"><span class="pre">web.xml</span><
 </tbody>
 </table>
 </div></blockquote>
-<p>致命的なエラー、Spring MVC管理外で発生する例外を、ログに出力するためのFilterクラス（<code class="docutils literal"><span class="pre">ExceptionLoggingFilter</span></code>）を、bean定義と<code class="docutils literal"><span class="pre">web.xml</span></code>に追加する。</p>
+<p>致命的なエラー、Spring MVC管理外で発生する例外を、ログに出力するためのFilterクラス（<code class="docutils literal notranslate"><span class="pre">ExceptionLoggingFilter</span></code>）を、bean定義と<code class="docutils literal notranslate"><span class="pre">web.xml</span></code>に追加する。</p>
 <ul class="simple">
 <li><strong>applicationContext.xml</strong></li>
 </ul>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Filter. --&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Filter. --&gt;</span>
 <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;exceptionLoggingFilter&quot;</span>
 <span class="hll">    <span class="na">class=</span><span class="s">&quot;org.terasoluna.gfw.web.exception.ExceptionLoggingFilter&quot;</span> <span class="nt">&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
 </span><span class="hll">    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;exceptionLogger&quot;</span> <span class="na">ref=</span><span class="s">&quot;exceptionLogger&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
@@ -1834,7 +1826,7 @@ Viewの解決を<code class="docutils literal"><span class="pre">web.xml</span><
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ExceptionLoggingFilter</span></code>を、bean定義に追加する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ExceptionLoggingFilter</span></code>を、bean定義に追加する。</div>
 </div>
 </td>
 </tr>
@@ -1843,7 +1835,7 @@ Viewの解決を<code class="docutils literal"><span class="pre">web.xml</span><
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">例外のログ出力を行うロガーオブジェクトを、DIする。<code class="docutils literal"><span class="pre">applicationContext.xml</span></code>に定義している”exceptionLogger”を指定する。</div>
+<div class="line">例外のログ出力を行うロガーオブジェクトを、DIする。<code class="docutils literal notranslate"><span class="pre">applicationContext.xml</span></code>に定義している”exceptionLogger”を指定する。</div>
 </div>
 </td>
 </tr>
@@ -1854,7 +1846,7 @@ Viewの解決を<code class="docutils literal"><span class="pre">web.xml</span><
 <li><strong>web.xml</strong></li>
 </ul>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;filter&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;filter&gt;</span>
 <span class="hll">    <span class="nt">&lt;filter-name&gt;</span>exceptionLoggingFilter<span class="nt">&lt;/filter-name&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
 </span><span class="hll">    <span class="nt">&lt;filter-class&gt;</span>org.springframework.web.filter.DelegatingFilterProxy<span class="nt">&lt;/filter-class&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
 </span><span class="nt">&lt;/filter&gt;</span>
@@ -1880,7 +1872,7 @@ Viewの解決を<code class="docutils literal"><span class="pre">web.xml</span><
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">フィルター名を指定する。<code class="docutils literal"><span class="pre">applicationContext.xml</span></code>に定義した<code class="docutils literal"><span class="pre">ExceptionLoggingFilter</span></code>のbean名と、一致させる。</div>
+<div class="line">フィルター名を指定する。<code class="docutils literal notranslate"><span class="pre">applicationContext.xml</span></code>に定義した<code class="docutils literal notranslate"><span class="pre">ExceptionLoggingFilter</span></code>のbean名と、一致させる。</div>
 </div>
 </td>
 </tr>
@@ -1889,7 +1881,7 @@ Viewの解決を<code class="docutils literal"><span class="pre">web.xml</span><
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">フィルタークラスを指定する。<code class="docutils literal"><span class="pre">org.springframework.web.filter.DelegatingFilterProxy</span></code>固定。</div>
+<div class="line">フィルタークラスを指定する。<code class="docutils literal notranslate"><span class="pre">org.springframework.web.filter.DelegatingFilterProxy</span></code>固定。</div>
 </div>
 </td>
 </tr>
@@ -1907,7 +1899,7 @@ Viewの解決を<code class="docutils literal"><span class="pre">web.xml</span><
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">フィルターを適用するURLパターンを指定する。致命的なエラー、Spring MVC管理外をログ出力するため、<code class="docutils literal"><span class="pre">/*</span></code>を推奨する。</div>
+<div class="line">フィルターを適用するURLパターンを指定する。致命的なエラー、Spring MVC管理外をログ出力するため、<code class="docutils literal notranslate"><span class="pre">/*</span></code>を推奨する。</div>
 </div>
 </td>
 </tr>
@@ -1918,7 +1910,7 @@ Viewの解決を<code class="docutils literal"><span class="pre">web.xml</span><
 <li>出力ログ</li>
 </ul>
 <blockquote>
-<div><div class="highlight-text"><div class="highlight"><pre><span></span>date:2013-09-25 19:51:52    thread:tomcat-http--3   X-Track:f94de92148f1489b9ceeac3b2f17c969        level:ERROR     logger:o.t.gfw.common.exception.ExceptionLogger         message:[e.xx.fw.9001] An exception occurred processing JSP page /WEB-INF/views/exampleJSPException.jsp at line 13
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>date:2013-09-25 19:51:52    thread:tomcat-http--3   X-Track:f94de92148f1489b9ceeac3b2f17c969        level:ERROR     logger:o.t.gfw.common.exception.ExceptionLogger         message:[e.xx.fw.9001] An exception occurred processing JSP page /WEB-INF/views/exampleJSPException.jsp at line 13
 </pre></div>
 </div>
 </div></blockquote>
@@ -1931,7 +1923,7 @@ Viewの解決を<code class="docutils literal"><span class="pre">web.xml</span><
 </ul>
 <blockquote>
 <div><p>Spring MVCの、デフォルトの例外ハンドリング機能によって行われるエラー応答（HttpServletResponse#sendError）を、ハンドリングするための定義を追加する。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;error-page&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;error-page&gt;</span>
     <span class="c">&lt;!-- (1) --&gt;</span>
     <span class="nt">&lt;error-code&gt;</span>404<span class="nt">&lt;/error-code&gt;</span>
     <span class="c">&lt;!-- (2) --&gt;</span>
@@ -1974,7 +1966,7 @@ Viewの解決を<code class="docutils literal"><span class="pre">web.xml</span><
 </tbody>
 </table>
 <p>致命的なエラー、Spring MVC管理外で発生する例外をハンドリングするための定義を追加する。</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;error-page&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;error-page&gt;</span>
     <span class="c">&lt;!-- (3) --&gt;</span>
     <span class="nt">&lt;location&gt;</span>/WEB-INF/views/common/error/unhandledSystemError.html<span class="nt">&lt;/location&gt;</span>
 <span class="nt">&lt;/error-page&gt;</span>
@@ -2018,7 +2010,7 @@ locationには、JSPなどの動的コンテンツでなく、 <strong>HTMLな�
 上記設定をコメントアウトして動かすことで、発生したエラー応答(HTTPレスポンスコード)を、画面で確認することできる。</p>
 <p>Spring MVC管理外で発生する例外を、個別にハンドリングする必要がある場合は、例外毎の定義を追加する。</p>
 <blockquote class="last">
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;error-page&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;error-page&gt;</span>
     <span class="c">&lt;!-- (4) --&gt;</span>
     <span class="nt">&lt;exception-type&gt;</span>java.io.IOException<span class="nt">&lt;/exception-type&gt;</span>
     <span class="c">&lt;!-- (5) --&gt;</span>
@@ -2095,7 +2087,7 @@ locationには、JSPなどの動的コンテンツでなく、 <strong>HTMLな�
 <p class="first admonition-title">Warning</p>
 <ul class="last simple">
 <li>デフォルトでは、ビジネス例外は、Serviceで発生させることを想定している。<a class="reference internal" href="#exception-handling-how-to-use-service-pointcut-aop-label"><span class="std std-ref">AOPの設定</span></a>で、
-<code class="docutils literal"><span class="pre">&#64;Service</span></code>アノテーションを付与したクラスで発生したビジネス例外のログを出力としている。
+<code class="docutils literal notranslate"><span class="pre">&#64;Service</span></code>アノテーションを付与したクラスで発生したビジネス例外のログを出力としている。
 Controllerなどでビジネス例外は、ログを出力しない。プロジェクトでの考えがある場合は変更すること。</li>
 </ul>
 </div>
@@ -2103,7 +2095,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 <li>xxxService.java</li>
 </ul>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="o">...</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
 <span class="nd">@Service</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleExceptionServiceImpl</span> <span class="kd">implements</span> <span class="n">ExampleExceptionService</span> <span class="o">{</span>
     <span class="nd">@Override</span>
@@ -2173,9 +2165,9 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </table>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p>上記の <code class="docutils literal"><span class="pre">xxxService.java</span></code> は説明用に(2)-(4)に分けて処理をしているが、1ステップで実装することができる。</p>
+<p>上記の <code class="docutils literal notranslate"><span class="pre">xxxService.java</span></code> は説明用に(2)-(4)に分けて処理をしているが、1ステップで実装することができる。</p>
 <blockquote class="last">
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="n">BusinessException</span><span class="o">(</span><span class="n">ResultMessages</span><span class="o">.</span><span class="na">error</span><span class="o">().</span><span class="na">add</span><span class="o">(</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="n">BusinessException</span><span class="o">(</span><span class="n">ResultMessages</span><span class="o">.</span><span class="na">error</span><span class="o">().</span><span class="na">add</span><span class="o">(</span>
      <span class="s">&quot;e.ad.od.5001&quot;</span><span class="o">,</span> <span class="n">stockQuantity</span><span class="o">));</span>
 </pre></div>
 </div>
@@ -2185,14 +2177,14 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 <ul>
 <li><p class="first">xxx.properties</p>
 <p>参考としてプロパティの設定を記述する。</p>
-<div class="highlight-properties"><div class="highlight"><pre><span></span><span class="na">e.ad.od.5001</span> <span class="o">=</span> <span class="s">Order number is higher than the stock quantity={0}. Change the order number.</span>
+<div class="highlight-properties notranslate"><div class="highlight"><pre><span></span><span class="na">e.ad.od.5001</span> <span class="o">=</span> <span class="s">Order number is higher than the stock quantity={0}. Change the order number.</span>
 </pre></div>
 </div>
 </li>
 </ul>
 <p>下記のようなアプリケーションログが出力される。</p>
 <blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">date:2013-09-17 22:25:55    thread:tomcat-http--8   X-Track:6cfb0b378c124b918e40ac0c32a1fac7        level:WARN      logger:o.t.gfw.common.exception.ExceptionLogger         message:[e.xx.fw.8001] ResultMessages [type=error, list=[ResultMessage [code=e.ad.od.5001, args=[5], text=null]]]</span>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">date:2013-09-17 22:25:55    thread:tomcat-http--8   X-Track:6cfb0b378c124b918e40ac0c32a1fac7        level:WARN      logger:o.t.gfw.common.exception.ExceptionLogger         message:[e.xx.fw.8001] ResultMessages [type=error, list=[ResultMessage [code=e.ad.od.5001, args=[5], text=null]]]</span>
 <span class="go">org.terasoluna.gfw.common.exception.BusinessException: ResultMessages [type=error, list=[ResultMessage [code=e.ad.od.5001, args=[5], text=null]]]</span>
 
 <span class="go">// stackTarace omitted</span>
@@ -2218,7 +2210,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div></blockquote>
 <p>例外を捕捉して、ビジネス例外を発生させる</p>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="o">{</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="o">{</span>
     <span class="n">order</span><span class="o">(</span><span class="n">orderQuantity</span><span class="o">,</span> <span class="n">itemId</span> <span class="o">);</span>
 <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">StockNotEnoughException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>                  <span class="c1">// (1)</span>
     <span class="k">throw</span> <span class="k">new</span> <span class="n">BusinessException</span><span class="o">(</span><span class="n">ResultMessages</span><span class="o">.</span><span class="na">error</span><span class="o">().</span><span class="na">add</span><span class="o">(</span>
@@ -2264,7 +2256,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 <p>システム例外(SystemException)の発生方法を、以下に示す。</p>
 <p>ロジックで、システム異常を検知し、システム例外を発生させる。</p>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">itemEntity</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>                                      <span class="c1">// (1)</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">(</span><span class="n">itemEntity</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>                                      <span class="c1">// (1)</span>
     <span class="k">throw</span> <span class="k">new</span> <span class="n">SystemException</span><span class="o">(</span><span class="s">&quot;e.ad.od.9012&quot;</span><span class="o">,</span>
         <span class="s">&quot;not found item entity. item code [&quot;</span> <span class="o">+</span> <span class="n">itemId</span> <span class="o">+</span> <span class="s">&quot;].&quot;</span><span class="o">);</span> <span class="c1">// (2)</span>
 <span class="o">}</span>
@@ -2307,7 +2299,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div></blockquote>
 <p>下記のような、アプリケーションログが出力される。</p>
 <blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">date:2013-09-19 21:03:06      thread:tomcat-http--3   X-Track:c19eec546b054d54a13658f94292b24f        level:DEBUG     logger:o.t.gfw.web.exception.SystemExceptionResolver    message:Resolving exception from handler [public java.lang.String org.terasoluna.exception.app.example.ExampleExceptionController.home(java.util.Locale,org.springframework.ui.Model)]: org.terasoluna.gfw.common.exception.SystemException: not found item entity. item code [10-123456].</span>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">date:2013-09-19 21:03:06      thread:tomcat-http--3   X-Track:c19eec546b054d54a13658f94292b24f        level:DEBUG     logger:o.t.gfw.web.exception.SystemExceptionResolver    message:Resolving exception from handler [public java.lang.String org.terasoluna.exception.app.example.ExampleExceptionController.home(java.util.Locale,org.springframework.ui.Model)]: org.terasoluna.gfw.common.exception.SystemException: not found item entity. item code [10-123456].</span>
 <span class="go">date:2013-09-19 21:03:06      thread:tomcat-http--3   X-Track:c19eec546b054d54a13658f94292b24f        level:DEBUG     logger:o.t.gfw.web.exception.SystemExceptionResolver    message:Resolving to default view &#39;common/error/systemError&#39; for exception of type [org.terasoluna.gfw.common.exception.SystemException]</span>
 <span class="go">date:2013-09-19 21:03:06      thread:tomcat-http--3   X-Track:c19eec546b054d54a13658f94292b24f        level:DEBUG     logger:o.t.gfw.web.exception.SystemExceptionResolver    message:Applying HTTP status code 500</span>
 <span class="go">date:2013-09-19 21:03:06      thread:tomcat-http--3   X-Track:c19eec546b054d54a13658f94292b24f        level:DEBUG     logger:o.t.gfw.web.exception.SystemExceptionResolver    message:Exposing Exception as model attribute &#39;exception&#39;</span>
@@ -2335,7 +2327,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div></blockquote>
 <p>例外を捕捉して、システム例外を発生させる</p>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="o">{</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="o">{</span>
     <span class="k">return</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">preUploadDir</span><span class="o">.</span><span class="na">getFile</span><span class="o">(),</span> <span class="n">key</span><span class="o">);</span>
 <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">FileNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// (1)</span>
     <span class="k">throw</span> <span class="k">new</span> <span class="n">SystemException</span><span class="o">(</span><span class="s">&quot;e.ad.od.9007&quot;</span><span class="o">,</span>
@@ -2387,8 +2379,8 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 <p class="first admonition-title">Note</p>
 <p><strong>監視ログの出力について</strong></p>
 <p class="last">発生した例外をログに出力する際には、例外の種類に応じて監視ログを出力する事を検討する。
-共通ライブラリでは、アプリケーションログと監視ログを同時に出力する機能を持つ<code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.exception.ExceptionLogger</span></code>を提供している。
-アプリケーションログと合わせて、監視ログの出力も必要となる場合には、<code class="docutils literal"><span class="pre">ExceptionLogger</span></code>を使用する事を推奨する。</p>
+共通ライブラリでは、アプリケーションログと監視ログを同時に出力する機能を持つ<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.exception.ExceptionLogger</span></code>を提供している。
+アプリケーションログと合わせて、監視ログの出力も必要となる場合には、<code class="docutils literal notranslate"><span class="pre">ExceptionLogger</span></code>を使用する事を推奨する。</p>
 </div>
 </div></blockquote>
 <div class="line-block">
@@ -2396,13 +2388,13 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 <div class="line">この例では、顧客対応履歴の情報が取得できなくても、業務は継続できるため、処理を継続している。</div>
 </div>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@Inject</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Inject</span>
 <span class="n">ExceptionLogger</span> <span class="n">exceptionLogger</span><span class="o">;</span> <span class="c1">// (1)</span>
 
 <span class="c1">// ...</span>
 </pre></div>
 </div>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">InteractionHistory</span> <span class="n">interactionHistory</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">InteractionHistory</span> <span class="n">interactionHistory</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
 <span class="k">try</span> <span class="o">{</span>
     <span class="n">interactionHistory</span> <span class="o">=</span> <span class="n">restTemplete</span><span class="o">.</span><span class="na">getForObject</span><span class="o">(</span><span class="n">uri</span><span class="o">,</span> <span class="n">InteractionHistory</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">customerId</span><span class="o">);</span>
 <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">RestClientException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// (2)</span>
@@ -2431,7 +2423,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">ログ出力のため、共通ライブラリで提供している<code class="docutils literal"><span class="pre">org.terasoluna.gfw.common.exception.ExceptionLogger</span></code>をDIする。</div>
+<div class="line">ログ出力のため、共通ライブラリで提供している<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.common.exception.ExceptionLogger</span></code>をDIする。</div>
 </div>
 </td>
 </tr>
@@ -2449,7 +2441,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ExceptionLogger</span></code>を利用して、キャッチした例外をログに出力する。例では、例外コードに応じた出力レベルでログ出力するためlogメソッドを呼び出しているが、出力レベルが決まっており、</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ExceptionLogger</span></code>を利用して、キャッチした例外をログに出力する。例では、例外コードに応じた出力レベルでログ出力するためlogメソッドを呼び出しているが、出力レベルが決まっており、</div>
 <div class="line">後に変更する可能性がない場合は、info、warn、errorメソッドを直接呼び出してもよい。</div>
 </div>
 </td>
@@ -2468,14 +2460,14 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div></blockquote>
 <div class="line-block">
 <div class="line">上記例の場合、以下のような、アプリケーションログ、及び監視ログが出力される。</div>
-<div class="line">なお、この挙動は、<code class="docutils literal"><span class="pre">ExceptionCodeResolver</span></code>の設定がデフォルトの場合を前提としている。</div>
-<div class="line"><code class="docutils literal"><span class="pre">ExceptionCodeResolver</span></code>については、<a class="reference internal" href="#exception-handling-about-classes-of-library-label"><span class="std std-ref">共通ライブラリから提供している例外ハンドリング用のクラスについて</span></a>を参照されたい。</div>
+<div class="line">なお、この挙動は、<code class="docutils literal notranslate"><span class="pre">ExceptionCodeResolver</span></code>の設定がデフォルトの場合を前提としている。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ExceptionCodeResolver</span></code>については、<a class="reference internal" href="#exception-handling-about-classes-of-library-label"><span class="std std-ref">共通ライブラリから提供している例外ハンドリング用のクラスについて</span></a>を参照されたい。</div>
 </div>
 <ul class="simple">
 <li>アプリケーションログ</li>
 </ul>
 <blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">date:2013-09-19 21:31:47      thread:tomcat-http--3   X-Track:df5271ece2304b12a2c59ff494806397        level:ERROR     logger:o.t.gfw.common.exception.ExceptionLogger         message:[e.xx.fw.9001] Test example exception</span>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">date:2013-09-19 21:31:47      thread:tomcat-http--3   X-Track:df5271ece2304b12a2c59ff494806397        level:ERROR     logger:o.t.gfw.common.exception.ExceptionLogger         message:[e.xx.fw.9001] Test example exception</span>
 <span class="go">org.springframework.web.client.RestClientException: Test example exception</span>
 <span class="go">...</span>
 <span class="go">// stackTarace omitted</span>
@@ -2486,23 +2478,23 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 <li>監視ログ</li>
 </ul>
 <blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">date:2013-09-19 21:31:47  X-Track:df5271ece2304b12a2c59ff494806397        level:ERROR     message:[e.xx.fw.9001] Test example exception</span>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">date:2013-09-19 21:31:47  X-Track:df5271ece2304b12a2c59ff494806397        level:ERROR     message:[e.xx.fw.9001] Test example exception</span>
 </pre></div>
 </div>
 </div></blockquote>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ExceptionLogger</span></code>を利用してログ出力する場合、デフォルトの設定では、errorレベルのログが監視ログに出力される。</div>
-<div class="line">その為、処理を継続させて問題ない場合など、<code class="docutils literal"><span class="pre">ExceptionLogger</span></code>を利用してログ出力する際に監視ログへの出力対象外にするには、error以外のログレベルで出力すれば良い。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ExceptionLogger</span></code>を利用してログ出力する場合、デフォルトの設定では、errorレベルのログが監視ログに出力される。</div>
+<div class="line">その為、処理を継続させて問題ない場合など、<code class="docutils literal notranslate"><span class="pre">ExceptionLogger</span></code>を利用してログ出力する際に監視ログへの出力対象外にするには、error以外のログレベルで出力すれば良い。</div>
 <div class="line">これには、以下のいずれかの方法を取れば良い。</div>
 </div>
 <ul class="simple">
 <li>infoまたはwarnメソッドでログ出力する。</li>
-<li><code class="docutils literal"><span class="pre">ExceptionCodeResolver</span></code>で該当する例外の例外コードの先頭をe（error）以外に設定し、logメソッドでログ出力する。</li>
-<li>ログ出力する例外が<code class="docutils literal"><span class="pre">SystemException</span></code>である場合には、セットする例外コードの先頭をe（error）以外に設定し、logメソッドでログ出力する。</li>
+<li><code class="docutils literal notranslate"><span class="pre">ExceptionCodeResolver</span></code>で該当する例外の例外コードの先頭をe（error）以外に設定し、logメソッドでログ出力する。</li>
+<li>ログ出力する例外が<code class="docutils literal notranslate"><span class="pre">SystemException</span></code>である場合には、セットする例外コードの先頭をe（error）以外に設定し、logメソッドでログ出力する。</li>
 </ul>
 <p>次の例では、infoメソッドでログ出力する例を示す。</p>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">RestClientException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">RestClientException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">exceptionLogger</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
 <span class="o">}</span>
 </pre></div>
@@ -2510,7 +2502,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div></blockquote>
 <p>上記例の場合は、以下のようにアプリケーションログのみが出力される。</p>
 <blockquote>
-<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">date:2013-09-19 22:17:53    thread:tomcat-http--3   X-Track:999725b111b4445b8d10b4ea44639c61        level:INFO      logger:o.t.gfw.common.exception.ExceptionLogger         message:[e.xx.fw.9001] Test example exception</span>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">date:2013-09-19 22:17:53    thread:tomcat-http--3   X-Track:999725b111b4445b8d10b4ea44639c61        level:INFO      logger:o.t.gfw.common.exception.ExceptionLogger         message:[e.xx.fw.9001] Test example exception</span>
 <span class="go">org.springframework.web.client.RestClientException: Test example exception</span>
 </pre></div>
 </div>
@@ -2531,7 +2523,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 <div class="line">その後、遷移する画面を表示するためのメソッドを呼び出すことで、遷移先で必要なモデルを生成し、View名を決定する。</div>
 </div>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;change&quot;</span><span class="o">,</span> <span class="n">method</span> <span class="o">=</span> <span class="n">RequestMethod</span><span class="o">.</span><span class="na">POST</span><span class="o">)</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;change&quot;</span><span class="o">,</span> <span class="n">method</span> <span class="o">=</span> <span class="n">RequestMethod</span><span class="o">.</span><span class="na">POST</span><span class="o">)</span>
 <span class="kd">public</span> <span class="n">String</span> <span class="nf">change</span><span class="o">(</span><span class="nd">@Validated</span> <span class="n">UserForm</span> <span class="n">userForm</span><span class="o">,</span>
                      <span class="n">BindingResult</span> <span class="n">result</span><span class="o">,</span>
                      <span class="n">RedirectAttributes</span> <span class="n">redirectAttributes</span><span class="o">,</span>
@@ -2610,7 +2602,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 <div class="line">その後、遷移する画面を表示するためのメソッドを呼び出すことで、遷移先で必要なモデルを生成し、View名を決定する。</div>
 </div>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@ExceptionHandler</span><span class="o">(</span><span class="n">BusinessException</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="c1">// (1)</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@ExceptionHandler</span><span class="o">(</span><span class="n">BusinessException</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="c1">// (1)</span>
 <span class="nd">@ResponseStatus</span><span class="o">(</span><span class="n">HttpStatus</span><span class="o">.</span><span class="na">CONFLICT</span><span class="o">)</span> <span class="c1">// (2)</span>
 <span class="kd">public</span> <span class="n">ModelAndView</span> <span class="nf">handleBusinessException</span><span class="o">(</span><span class="n">BusinessException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">ExtendedModelMap</span> <span class="n">modelMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ExtendedModelMap</span><span class="o">();</span>                 <span class="c1">// (3)</span>
@@ -2636,7 +2628,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;ExceptionHandler</span></code>アノテーションのvalue属性に、ハンドリング対象とする例外クラスを指定する。ハンドリング対象とする例外は、複数指定することもできる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;ExceptionHandler</span></code>アノテーションのvalue属性に、ハンドリング対象とする例外クラスを指定する。ハンドリング対象とする例外は、複数指定することもできる。</div>
 </div>
 </td>
 </tr>
@@ -2645,7 +2637,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;ResponseStatus</span></code>アノテーションの、value属性に返却するHTTPステータスコードを指定する。例では、「409:Conflict」を指定している。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;ResponseStatus</span></code>アノテーションの、value属性に返却するHTTPステータスコードを指定する。例では、「409:Conflict」を指定している。</div>
 </div>
 </td>
 </tr>
@@ -2689,14 +2681,14 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </table>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p><code class="docutils literal"><span class="pre">&#64;ExceptionHandler</span></code>を付与したメソッドで<code class="docutils literal"><span class="pre">java.lang.Exception</span></code>や<code class="docutils literal"><span class="pre">javax.servlet.ServletException</span></code>をハンドリングしている場合は、
-致命的なエラーをラップしている<code class="docutils literal"><span class="pre">NestedServletException</span></code>を意図せずハンドリングしてしまうため、サーブレットコンテナに致命的なエラーを通知することができない。
+<p><code class="docutils literal notranslate"><span class="pre">&#64;ExceptionHandler</span></code>を付与したメソッドで<code class="docutils literal notranslate"><span class="pre">java.lang.Exception</span></code>や<code class="docutils literal notranslate"><span class="pre">javax.servlet.ServletException</span></code>をハンドリングしている場合は、
+致命的なエラーをラップしている<code class="docutils literal notranslate"><span class="pre">NestedServletException</span></code>を意図せずハンドリングしてしまうため、サーブレットコンテナに致命的なエラーを通知することができない。
 詳細は、<a class="reference internal" href="#exception-handling-class-fatalerror-warning"><span class="std std-ref">「&#64;ExceptionHandlerとSystemExceptionResolverによる致命的なエラーのハンドリングついて」</span></a>を参照されたい。</p>
 <p>このようなケースで致命的なエラーをサーブレットコンテナに通知するためには、<a class="reference internal" href="#exception-handling-how-to-use-application-configuration-app-label"><span class="std std-ref">SystemExceptionResolverでNestedServletExceptionをハンドリング対象外とする</span></a>ことに加えて、
-<code class="docutils literal"><span class="pre">&#64;ExceptionHandler</span></code>を付与したメソッドで<code class="docutils literal"><span class="pre">NestedServletException</span></code>をハンドリングし、再スローするように実装すればよい。
+<code class="docutils literal notranslate"><span class="pre">&#64;ExceptionHandler</span></code>を付与したメソッドで<code class="docutils literal notranslate"><span class="pre">NestedServletException</span></code>をハンドリングし、再スローするように実装すればよい。
 以下に実装例を示す。</p>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="nd">@ExceptionHandler</span><span class="o">(</span><span class="n">NestedServletException</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="c1">// (1)</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@ExceptionHandler</span><span class="o">(</span><span class="n">NestedServletException</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="c1">// (1)</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handleNestedServletException</span><span class="o">(</span><span class="n">NestedServletException</span> <span class="n">e</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">NestedServletException</span> <span class="o">{</span>
     <span class="k">throw</span> <span class="n">e</span><span class="o">;</span> <span class="c1">// (2)</span>
 <span class="o">}</span>
@@ -2718,7 +2710,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&#64;ExceptionHandler</span></code>アノテーションを付与し、<code class="docutils literal"><span class="pre">NestedServletException.class</span></code>を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&#64;ExceptionHandler</span></code>アノテーションを付与し、<code class="docutils literal notranslate"><span class="pre">NestedServletException.class</span></code>を指定する。</div>
 </div>
 </td>
 </tr>
@@ -2727,7 +2719,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">ハンドリングした<code class="docutils literal"><span class="pre">NestedServletException</span></code>を再スローする。</div>
+<div class="line">ハンドリングした<code class="docutils literal notranslate"><span class="pre">NestedServletException</span></code>を再スローする。</div>
 </div>
 </td>
 </tr>
@@ -2735,8 +2727,8 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </table>
 </div></blockquote>
 <p><strong>複数のControllerでExceptionやServletExceptionを捕捉している場合について</strong></p>
-<p class="last">複数のControllerで<code class="docutils literal"><span class="pre">NestedServletException</span></code>を再スローする<code class="docutils literal"><span class="pre">&#64;ExceptionHandler</span></code>を記述する必要がある場合は、<code class="docutils literal"><span class="pre">&#64;ControllerAdvice</span></code>の使用を検討した方がよい。
-<code class="docutils literal"><span class="pre">&#64;ControllerAdvice</span></code>の詳細は、<a class="reference internal" href="../../ImplementationAtEachLayer/ApplicationLayer.html#application-layer-controller-advice"><span class="std std-ref">&#64;ControllerAdviceの実装</span></a>を参照されたい。</p>
+<p class="last">複数のControllerで<code class="docutils literal notranslate"><span class="pre">NestedServletException</span></code>を再スローする<code class="docutils literal notranslate"><span class="pre">&#64;ExceptionHandler</span></code>を記述する必要がある場合は、<code class="docutils literal notranslate"><span class="pre">&#64;ControllerAdvice</span></code>の使用を検討した方がよい。
+<code class="docutils literal notranslate"><span class="pre">&#64;ControllerAdvice</span></code>の詳細は、<a class="reference internal" href="../../ImplementationAtEachLayer/ApplicationLayer.html#application-layer-controller-advice"><span class="std std-ref">&#64;ControllerAdviceの実装</span></a>を参照されたい。</p>
 </div>
 </div></blockquote>
 </div>
@@ -2758,7 +2750,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 <span id="exception-handling-how-to-use-codingpoint-jsp-panel-label"></span><h4><a class="toc-backref" href="#id96">4.2.3.4.1. MessagesPanelTagを使用して、メッセージを画面表示する方法</a><a class="headerlink" href="#messagespaneltag" title="Permalink to this headline">¶</a></h4>
 <p>任意の場所に、ResultMessagesを出力する際の実装例を、以下に示す。</p>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;t:messagesPanel</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;t:messagesPanel</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- (1) --&gt;</span>
 </pre></div>
 </div>
 <table border="1" class="colwidths-given docutils">
@@ -2786,7 +2778,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 <span id="id33"></span><h4><a class="toc-backref" href="#id97">4.2.3.4.2. システム例外の例外コードを、画面表示する方法</a><a class="headerlink" href="#exception-handling-how-to-use-codingpoint-jsp-exceptioncode-label" title="Permalink to this headline">¶</a></h4>
 <p>任意の場所に、例外コード(メッセージID)と、固定メッセージを表示する際の実装例を、以下に示す。</p>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;p&gt;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;p&gt;</span>
     <span class="nt">&lt;c:if</span> <span class="na">test=</span><span class="s">&quot;${!empty exceptionCode}&quot;</span><span class="nt">&gt;</span>  <span class="c">&lt;!-- (1) --&gt;</span>
         [${f:h(exceptionCode)}]            <span class="c">&lt;!-- (2) --&gt;</span>
     <span class="nt">&lt;/c:if&gt;</span>
@@ -2923,7 +2915,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 <td><div class="first last line-block">
 <div class="line">例外クラスに対応する例外コード（メッセージID）を解決するためのインタフェース。</div>
 <div class="line">例外コードとは、どのような例外が発生したのかを識別するためのコードで、システムエラー画面や、ログに出力することを想定している。</div>
-<div class="line"><code class="docutils literal"><span class="pre">ExceptionLogger</span></code>、<code class="docutils literal"><span class="pre">SystemExceptionResolver</span></code>などから参照される。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ExceptionLogger</span></code>、<code class="docutils literal notranslate"><span class="pre">SystemExceptionResolver</span></code>などから参照される。</div>
 </div>
 </td>
 </tr>
@@ -2938,7 +2930,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div>
 </td>
 <td><div class="first line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ExceptionCodeResolver</span></code>の実装クラスで、例外クラスの名前と、例外コードのマッピングを保持することで、例外コードの解決を実現する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ExceptionCodeResolver</span></code>の実装クラスで、例外クラスの名前と、例外コードのマッピングを保持することで、例外コードの解決を実現する。</div>
 <div class="line">例外クラスの名前は、FQCNではなく、FQCNの一部や、親クラスの名前でもよい。</div>
 </div>
 <blockquote class="last">
@@ -2979,7 +2971,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 <td><div class="first last line-block">
 <div class="line">例外クラスに対応する例外レベル（ログレベル）を解決するためのインタフェース。</div>
 <div class="line">例外レベルとは、どのようなレベルの例外が発生したのかを識別するためのコードで、ログの出力レベルを切り替えるために使われる。</div>
-<div class="line"><code class="docutils literal"><span class="pre">ExceptionLogger</span></code> から参照される。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ExceptionLogger</span></code> から参照される。</div>
 </div>
 </td>
 </tr>
@@ -2993,13 +2985,13 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ExceptionLevelResolver</span></code> の実装クラスで、例外コードの先頭１文字で、例外レベルを解決している。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ExceptionLevelResolver</span></code> の実装クラスで、例外コードの先頭１文字で、例外レベルを解決している。</div>
 <div class="line">先頭の１文字目（case insensitive）が、</div>
 <div class="line-block">
-<div class="line">1. “i”の場合は <code class="docutils literal"><span class="pre">ExceptionLevel.INFO</span></code></div>
-<div class="line">2. “w”の場合は <code class="docutils literal"><span class="pre">ExceptionLevel.WARN</span></code></div>
-<div class="line">3. “e”の場合は <code class="docutils literal"><span class="pre">ExceptionLevel.ERROR</span></code></div>
-<div class="line">4. 上記以外の場合は <code class="docutils literal"><span class="pre">ExceptionLevel.ERROR</span></code></div>
+<div class="line">1. “i”の場合は <code class="docutils literal notranslate"><span class="pre">ExceptionLevel.INFO</span></code></div>
+<div class="line">2. “w”の場合は <code class="docutils literal notranslate"><span class="pre">ExceptionLevel.WARN</span></code></div>
+<div class="line">3. “e”の場合は <code class="docutils literal notranslate"><span class="pre">ExceptionLevel.ERROR</span></code></div>
+<div class="line">4. 上記以外の場合は <code class="docutils literal notranslate"><span class="pre">ExceptionLevel.ERROR</span></code></div>
 </div>
 <div class="line">レベルとして扱う。</div>
 <div class="line">本クラスは、<a class="reference internal" href="MessageManagement.html"><span class="doc">メッセージ</span></a>のガイドラインに記載されている、メッセージIDのルールに則った実装となっている。</div>
@@ -3032,10 +3024,10 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ResultMessages</span></code>を保持している例外(<code class="docutils literal"><span class="pre">ResultMessagesNotificationException</span></code>のサブ例外 )が発生した事をログに出力するためのInterceptorクラス。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>を保持している例外(<code class="docutils literal notranslate"><span class="pre">ResultMessagesNotificationException</span></code>のサブ例外 )が発生した事をログに出力するためのInterceptorクラス。</div>
 <div class="line">ログは全てWARNレベルで出力する。</div>
-<div class="line">本Interceptorは、 <code class="docutils literal"><span class="pre">&#64;Service</span></code> アノテーションが付与されているクラスのメソッドに対して適用することを想定している。</div>
-<div class="line">ログは、<code class="docutils literal"><span class="pre">ExceptionLogger</span></code>を使用して出力している。</div>
+<div class="line">本Interceptorは、 <code class="docutils literal notranslate"><span class="pre">&#64;Service</span></code> アノテーションが付与されているクラスのメソッドに対して適用することを想定している。</div>
+<div class="line">ログは、<code class="docutils literal notranslate"><span class="pre">ExceptionLogger</span></code>を使用して出力している。</div>
 </div>
 </td>
 </tr>
@@ -3049,8 +3041,8 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </td>
 <td><div class="first last line-block">
 <div class="line">ビジネスルールの違反を検知したことを通知するための例外クラスで、ドメイン層のロジックで発生させる例外である。</div>
-<div class="line"><code class="docutils literal"><span class="pre">java.lang.RuntimeException</span></code>を継承しているため、デフォルトの動作として、トランザクションは、ロールバックされる。</div>
-<div class="line">トランザクションをコミットしたい場合は、<code class="docutils literal"><span class="pre">&#64;Transactional</span></code>アノテーションの noRollbackFor 、または noRollbackForClassName に、本例外クラスを指定する必要がある。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">java.lang.RuntimeException</span></code>を継承しているため、デフォルトの動作として、トランザクションは、ロールバックされる。</div>
+<div class="line">トランザクションをコミットしたい場合は、<code class="docutils literal notranslate"><span class="pre">&#64;Transactional</span></code>アノテーションの noRollbackFor 、または noRollbackForClassName に、本例外クラスを指定する必要がある。</div>
 </div>
 </td>
 </tr>
@@ -3065,7 +3057,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </td>
 <td><div class="first last line-block">
 <div class="line">指定されたリソース（データ）が、システム内に存在しないことを通知するための例外クラスで、主に、ドメイン層のロジックで発生させる例外である。</div>
-<div class="line"><code class="docutils literal"><span class="pre">java.lang.RuntimeException</span></code> を継承しているため、デフォルトの動作として、トランザクションは、ロールバックされる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">java.lang.RuntimeException</span></code> を継承しているため、デフォルトの動作として、トランザクションは、ロールバックされる。</div>
 </div>
 </td>
 </tr>
@@ -3080,9 +3072,9 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">結果メッセージ（<code class="docutils literal"><span class="pre">ResultMessages</span></code>）を保持している例外であることを通知するための抽象例外クラスで、共通ライブラリでは、<code class="docutils literal"><span class="pre">BusinessException</span></code>と、<code class="docutils literal"><span class="pre">ResourceNotFoundException</span></code>が継承している。</div>
-<div class="line"><code class="docutils literal"><span class="pre">java.lang.RuntimeException</span></code>を継承しているため、デフォルトの動作としてトランザクションはロールバックされる。</div>
-<div class="line">本例外クラスを継承すると、<code class="docutils literal"><span class="pre">ResultMessagesLoggingInterceptor</span></code>によって、warnレベルのログが出力される。</div>
+<div class="line">結果メッセージ（<code class="docutils literal notranslate"><span class="pre">ResultMessages</span></code>）を保持している例外であることを通知するための抽象例外クラスで、共通ライブラリでは、<code class="docutils literal notranslate"><span class="pre">BusinessException</span></code>と、<code class="docutils literal notranslate"><span class="pre">ResourceNotFoundException</span></code>が継承している。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">java.lang.RuntimeException</span></code>を継承しているため、デフォルトの動作としてトランザクションはロールバックされる。</div>
+<div class="line">本例外クラスを継承すると、<code class="docutils literal notranslate"><span class="pre">ResultMessagesLoggingInterceptor</span></code>によって、warnレベルのログが出力される。</div>
 </div>
 </td>
 </tr>
@@ -3096,7 +3088,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </td>
 <td><div class="first last line-block">
 <div class="line">システム又はアプリケーションの異常を検知した事を通知するための例外クラスで、アプリケーション層又はドメイン層のロジックで発生させる例外である。</div>
-<div class="line"><code class="docutils literal"><span class="pre">java.lang.RuntimeException</span></code>を継承しているため、デフォルトの動作として、トランザクションは、ロールバックされる。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">java.lang.RuntimeException</span></code>を継承しているため、デフォルトの動作として、トランザクションは、ロールバックされる。</div>
 </div>
 </td>
 </tr>
@@ -3109,7 +3101,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">例外コードを保持する役割があることを示すインタフェースで、共通ライブラリでは、<code class="docutils literal"><span class="pre">SystemException</span></code>が実装している。</div>
+<div class="line">例外コードを保持する役割があることを示すインタフェースで、共通ライブラリでは、<code class="docutils literal notranslate"><span class="pre">SystemException</span></code>が実装している。</div>
 <div class="line">本インタフェースを実装した例外クラスを作成すると、共通ライブラリから提供している例外ハンドリング処理にて、例外で保持している例外コードで、そのまま使われる。</div>
 </div>
 </td>
@@ -3140,8 +3132,8 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">&lt;mvc:annotation-driven&gt;</span></code>を指定した際に、自動的に登録される<code class="docutils literal"><span class="pre">HandlerExceptionResolver</span></code>によって、ハンドリングされない例外をハンドリングするためのクラス。</div>
-<div class="line">Spring MVCより提供されている<code class="docutils literal"><span class="pre">SimpleMappingExceptionResolver</span></code>を継承し、例外コード及びResultMessagesを、Viewから参照できるように機能追加を行っている。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">&lt;mvc:annotation-driven&gt;</span></code>を指定した際に、自動的に登録される<code class="docutils literal notranslate"><span class="pre">HandlerExceptionResolver</span></code>によって、ハンドリングされない例外をハンドリングするためのクラス。</div>
+<div class="line">Spring MVCより提供されている<code class="docutils literal notranslate"><span class="pre">SimpleMappingExceptionResolver</span></code>を継承し、例外コード及びResultMessagesを、Viewから参照できるように機能追加を行っている。</div>
 </div>
 </td>
 </tr>
@@ -3156,8 +3148,8 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">HandlerExceptionResolver</span></code>でハンドリングされた例外を、ログに出力するためのInterceptorクラス。</div>
-<div class="line">本Interceptorクラスでは、<code class="docutils literal"><span class="pre">HandlerExceptionResolver</span></code>で解決されたHTTPレスポンスコードの分類に応じて、ログの出力レベルを切り替えている。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">HandlerExceptionResolver</span></code>でハンドリングされた例外を、ログに出力するためのInterceptorクラス。</div>
+<div class="line">本Interceptorクラスでは、<code class="docutils literal notranslate"><span class="pre">HandlerExceptionResolver</span></code>で解決されたHTTPレスポンスコードの分類に応じて、ログの出力レベルを切り替えている。</div>
 <div class="line-block">
 <div class="line">1. “100-399”の場合は、 INFOレベルで出力する。</div>
 <div class="line">2. “400-499”の場合は、 WARNレベルで出力する。</div>
@@ -3165,8 +3157,8 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 <div class="line">4. “-99”の場合は ログ出力しない。</div>
 </div>
 <div class="line">本Interceptorを使用することで、Spring MVC管理下で発生する全ての例外を、ログに出力することができる。</div>
-<div class="line">ログは、<code class="docutils literal"><span class="pre">ExceptionLogger</span></code>を使用して出力している。</div>
-<div class="line">プロジェクトの要件に応じて<code class="docutils literal"><span class="pre">log</span></code>メソッドを拡張することで、デフォルトの挙動を変更してログ出力することが可能である。</div>
+<div class="line">ログは、<code class="docutils literal notranslate"><span class="pre">ExceptionLogger</span></code>を使用して出力している。</div>
+<div class="line">プロジェクトの要件に応じて<code class="docutils literal notranslate"><span class="pre">log</span></code>メソッドを拡張することで、デフォルトの挙動を変更してログ出力することが可能である。</div>
 </div>
 </td>
 </tr>
@@ -3183,7 +3175,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 <div class="line">致命的なエラー、Spring MVC管理外で発生する例外を、ログに出力するためのFilterクラス。</div>
 <div class="line">ログは、すべてERRORレベルで出力する。</div>
 <div class="line">本Filterを使用した場合、致命的なエラー、およびSpring MVC管理外で発生するすべての例外を、ログに出力することができる。</div>
-<div class="line">ログは、<code class="docutils literal"><span class="pre">ExceptionLogger</span></code>を使用して出力している。</div>
+<div class="line">ログは、<code class="docutils literal notranslate"><span class="pre">ExceptionLogger</span></code>を使用して出力している。</div>
 </div>
 </td>
 </tr>
@@ -3364,9 +3356,9 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </tbody>
 </table>
 <div class="line-block">
-<div class="line">(1)-(3)は、<code class="docutils literal"><span class="pre">org.terasoluna.gfw.web.exception.SystemExceptionResolver</span></code>の設定項目。</div>
-<div class="line">(4)は、<code class="docutils literal"><span class="pre">org.springframework.web.servlet.handler.SimpleMappingExceptionResolver</span></code>の設定項目。</div>
-<div class="line">(5)-(7)は、<code class="docutils literal"><span class="pre">org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver</span></code>の設定項目。</div>
+<div class="line">(1)-(3)は、<code class="docutils literal notranslate"><span class="pre">org.terasoluna.gfw.web.exception.SystemExceptionResolver</span></code>の設定項目。</div>
+<div class="line">(4)は、<code class="docutils literal notranslate"><span class="pre">org.springframework.web.servlet.handler.SimpleMappingExceptionResolver</span></code>の設定項目。</div>
+<div class="line">(5)-(7)は、<code class="docutils literal notranslate"><span class="pre">org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver</span></code>の設定項目。</div>
 </div>
 <div class="section" id="id35">
 <h4><a class="toc-backref" href="#id102">4.2.5.2.1. 結果メッセージの属性名</a><a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h4>
@@ -3376,7 +3368,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div>
 <ul>
 <li><p class="first"><strong>spring-mvc.xml</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">&quot;org.terasoluna.gfw.web.exception.SystemExceptionResolver&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">&quot;org.terasoluna.gfw.web.exception.SystemExceptionResolver&quot;</span><span class="nt">&gt;</span>
 
     <span class="c">&lt;!-- omitted --&gt;</span>
 
@@ -3388,7 +3380,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div>
 </li>
 <li><p class="first"><strong>jsp</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;t:messagesPanel</span> <span class="na">messagesAttributeName=</span><span class="s">&quot;resultMessagesForExceptionResolver&quot;</span><span class="nt">/&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;t:messagesPanel</span> <span class="na">messagesAttributeName=</span><span class="s">&quot;resultMessagesForExceptionResolver&quot;</span><span class="nt">/&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
 </pre></div>
 </div>
 </li>
@@ -3435,7 +3427,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div>
 <ul>
 <li><p class="first"><strong>spring-mvc.xml</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">&quot;org.terasoluna.gfw.web.exception.SystemExceptionResolver&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">&quot;org.terasoluna.gfw.web.exception.SystemExceptionResolver&quot;</span><span class="nt">&gt;</span>
 
     <span class="c">&lt;!-- omitted --&gt;</span>
 
@@ -3447,7 +3439,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div>
 </li>
 <li><p class="first"><strong>jsp</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;p&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;p&gt;</span>
     <span class="nt">&lt;c:if</span> <span class="na">test=</span><span class="s">&quot;${!empty exceptionCodeForExceptionResolver}&quot;</span><span class="nt">&gt;</span>  <span class="c">&lt;!-- (2) --&gt;</span>
         [${f:h(exceptionCodeForExceptionResolver)}]            <span class="c">&lt;!-- (3) --&gt;</span>
     <span class="nt">&lt;/c:if&gt;</span>
@@ -3508,7 +3500,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div>
 <ul>
 <li><p class="first"><strong>spring-mvc.xml</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">&quot;org.terasoluna.gfw.web.exception.SystemExceptionResolver&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">&quot;org.terasoluna.gfw.web.exception.SystemExceptionResolver&quot;</span><span class="nt">&gt;</span>
 
     <span class="c">&lt;!-- omitted --&gt;</span>
 
@@ -3553,7 +3545,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div>
 <ul>
 <li><p class="first"><strong>spring-mvc.xml</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">&quot;org.terasoluna.gfw.web.exception.SystemExceptionResolver&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">&quot;org.terasoluna.gfw.web.exception.SystemExceptionResolver&quot;</span><span class="nt">&gt;</span>
 
     <span class="c">&lt;!-- omitted --&gt;</span>
 
@@ -3565,7 +3557,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div>
 </li>
 <li><p class="first"><strong>jsp</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;p&gt;</span>[Exception Message]<span class="nt">&lt;/p&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;p&gt;</span>[Exception Message]<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;p&gt;</span>${f:h(exceptionForExceptionResolver.message)}<span class="nt">&lt;/p&gt;</span> <span class="c">&lt;!-- (2) --&gt;</span>
 </pre></div>
 </div>
@@ -3612,7 +3604,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 </div>
 <ul>
 <li><p class="first"><strong>spring-mvc.xml</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">&quot;org.terasoluna.gfw.web.exception.SystemExceptionResolver&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">&quot;org.terasoluna.gfw.web.exception.SystemExceptionResolver&quot;</span><span class="nt">&gt;</span>
 
     <span class="c">&lt;!-- omitted --&gt;</span>
 
@@ -3656,7 +3648,7 @@ Controllerなどでビジネス例外は、ログを出力しない。プロジ�
 <div class="line">Cache-Control:no-store</div>
 </div>
 </div></blockquote>
-<p class="last"><code class="docutils literal"><span class="pre">SystemExceptionResolver</span></code>によるキャッシュ制御用のヘッダー追加はブラウザキャッシュによる意図しないエラー画面の表示を抑止するためのオプションであるが、Spring Securityの機能を使用してセキュリティの観点からキャッシュ制御用のヘッダーを追加することも可能である。
+<p class="last"><code class="docutils literal notranslate"><span class="pre">SystemExceptionResolver</span></code>によるキャッシュ制御用のヘッダー追加はブラウザキャッシュによる意図しないエラー画面の表示を抑止するためのオプションであるが、Spring Securityの機能を使用してセキュリティの観点からキャッシュ制御用のヘッダーを追加することも可能である。
 Spring Securityの機能については、<a class="reference internal" href="../../Security/LinkageWithBrowser.html#springsecuritylinkagewithbrowser"><span class="std std-ref">ブラウザのセキュリティ対策機能との連携</span></a>を参照されたい。</p>
 </div>
 </div></blockquote>
@@ -3697,15 +3689,15 @@ Spring Securityの機能については、<a class="reference internal" href="..
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">HandlerExceptionResolver</span></code> によってハンドリングされた例外のうち、ログ出力しない例外クラスをリスト形式で指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">HandlerExceptionResolver</span></code> によってハンドリングされた例外のうち、ログ出力しない例外クラスをリスト形式で指定する。</div>
 <div class="line">指定した例外クラス及びサブクラスの例外が発生した場合、 本クラスでログの出力は行われない。</div>
 <div class="line">本項目に指定する例外クラスは、別の場所(別の仕組み)でログ出力される例外のみ指定すること。</div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ResultMessagesNotificationException.class</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ResultMessagesNotificationException.class</span></code></div>
 <div class="line"><br /></div>
-<div class="line"><code class="docutils literal"><span class="pre">ResultMessagesNotificationException.class</span></code> 及びサブクラスの例外は、 <code class="docutils literal"><span class="pre">ResultMessagesLoggingInterceptor</span></code> でログ出力されるため、デフォルト設定として除外している。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">ResultMessagesNotificationException.class</span></code> 及びサブクラスの例外は、 <code class="docutils literal notranslate"><span class="pre">ResultMessagesLoggingInterceptor</span></code> でログ出力されるため、デフォルト設定として除外している。</div>
 </div>
 </td>
 </tr>
@@ -3718,7 +3710,7 @@ Spring Securityの機能については、<a class="reference internal" href="..
 <li><strong>spring-mvc.xml</strong></li>
 </ul>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;handlerExceptionResolverLoggingInterceptor&quot;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;handlerExceptionResolverLoggingInterceptor&quot;</span>
     <span class="na">class=</span><span class="s">&quot;org.terasoluna.gfw.web.exception.HandlerExceptionResolverLoggingInterceptor&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;exceptionLogger&quot;</span> <span class="na">ref=</span><span class="s">&quot;exceptionLogger&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;ignoreExceptions&quot;</span><span class="nt">&gt;</span>
@@ -3748,7 +3740,7 @@ Spring Securityの機能については、<a class="reference internal" href="..
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">共通ライブラリのデフォルト設定で指定されている <code class="docutils literal"><span class="pre">ResultMessagesNotificationException</span></code> を除外対象に指定する。</div>
+<div class="line">共通ライブラリのデフォルト設定で指定されている <code class="docutils literal notranslate"><span class="pre">ResultMessagesNotificationException</span></code> を除外対象に指定する。</div>
 </div>
 </td>
 </tr>
@@ -3772,7 +3764,7 @@ Spring Securityの機能については、<a class="reference internal" href="..
 <li><strong>spring-mvc.xml</strong></li>
 </ul>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;handlerExceptionResolverLoggingInterceptor&quot;</span>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&quot;handlerExceptionResolverLoggingInterceptor&quot;</span>
     <span class="na">class=</span><span class="s">&quot;org.terasoluna.gfw.web.exception.HandlerExceptionResolverLoggingInterceptor&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;exceptionLogger&quot;</span> <span class="na">ref=</span><span class="s">&quot;exceptionLogger&quot;</span> <span class="nt">/&gt;</span>
     <span class="c">&lt;!-- (3) --&gt;</span>
@@ -3796,8 +3788,8 @@ Spring Securityの機能については、<a class="reference internal" href="..
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">ignoreExceptionsプロパティに <code class="docutils literal"><span class="pre">null</span></code> を指定する。</div>
-<div class="line"><code class="docutils literal"><span class="pre">null</span></code> を指定すると、全ての例外クラスがログ出力対象となる。</div>
+<div class="line">ignoreExceptionsプロパティに <code class="docutils literal notranslate"><span class="pre">null</span></code> を指定する。</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">null</span></code> を指定すると、全ての例外クラスがログ出力対象となる。</div>
 </div>
 </td>
 </tr>
@@ -4047,7 +4039,7 @@ Spring Securityの機能については、<a class="reference internal" href="..
     </div>
     <div class="footer">
       © Copyright 2013-2018, NTT DATA Corporation. © Copyright 2013-2018, NTT Corporation.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.6.3.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.1.Theme is <a href="http://github.com/vimalkvn/solar-theme">Solar</a>
     </div>
     
     <script>
